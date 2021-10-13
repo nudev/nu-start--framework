@@ -1,0 +1,40 @@
+/* 
+
+*/
+
+@mixin is_page_level_blocks_wrapper() {
+	> * {
+		// ? top level blocks margin
+		margin: $margin_8x auto 0 auto;
+
+		// ? top level blocks widths
+		max-width: 80%;
+		&.alignwide {
+			max-width: 90%;
+		}
+		&.alignfull,
+		&.is-reusable {
+			max-width: 100%;
+		}
+	}
+	> p,
+	> .wp-block-paragraph {
+		margin-top: $margin_4x;
+	}
+	// group, cover etc blocks alignfull and first child assumed to be "hero" ish
+	> .alignfull:first-child {
+		margin-top: 0;
+	}
+
+	// TODO: fix this it doesnt work!
+	@media screen and ( max-width: 780px ){
+		> :not(.alignfull):not(.is-reusable) {
+			max-width: 90%;
+		}
+	}
+}
+
+.block-editor-block-list__layout.is-root-container,
+.blocks--wrapper {
+	@include is_page_level_blocks_wrapper();
+}

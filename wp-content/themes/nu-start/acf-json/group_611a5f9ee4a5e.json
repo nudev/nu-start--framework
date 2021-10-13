@@ -1,0 +1,499 @@
+{
+    "key": "group_611a5f9ee4a5e",
+    "title": "NU Start - Theme Settings",
+    "fields": [
+        {
+            "key": "field_611a60cf288f7",
+            "label": "Analytics \/ SEO",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "no_preference": 0,
+            "acfe_field_group_condition": 0
+        },
+        {
+            "key": "field_611a61c6a1c63",
+            "label": "Analytics \/ SEO",
+            "name": "analytics__seo",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "acfe_seamless_style": 0,
+            "acfe_group_modal": 0,
+            "acfe_field_group_condition": 0,
+            "sub_fields": [
+                {
+                    "key": "field_611a62e953c2a",
+                    "label": "Address",
+                    "name": "address",
+                    "type": "google_map",
+                    "instructions": "copy\/paste from https:\/\/maps.google.com\r\nuse place name if possible",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "acfe_google_map_preview": "{\"address\":\"Alumni Center at Columbus Place, Columbus Avenue, Boston, MA, USA\",\"lat\":42.3376718,\"lng\":-71.0852932,\"zoom\":15,\"place_id\":\"ChIJTwLeqCJ644kR-asVewZzt2g\",\"name\":\"Alumni Center at Columbus Place\",\"street_number\":\"716\",\"street_name\":\"Columbus Avenue\",\"street_name_short\":\"Columbus Ave\",\"city\":\"Boston\",\"state\":\"Massachusetts\",\"state_short\":\"MA\",\"post_code\":\"02120\",\"country\":\"United States\",\"country_short\":\"US\"}",
+                    "center_lat": "42.33278211130318",
+                    "center_lng": "-71.0852932",
+                    "height": "",
+                    "acfe_google_map_zooms": {
+                        "zoom": "15",
+                        "min_zoom": "0",
+                        "max_zoom": "21"
+                    },
+                    "acfe_google_map_marker_icon": "",
+                    "acfe_google_map_marker_width": 50,
+                    "acfe_google_map_type": "roadmap",
+                    "acfe_google_map_disable_ui": 0,
+                    "acfe_google_map_disable_zoom_control": 0,
+                    "acfe_google_map_disable_map_type": 0,
+                    "acfe_google_map_disable_fullscreen": 0,
+                    "acfe_google_map_disable_streetview": 0,
+                    "acfe_google_map_style": "",
+                    "acfe_google_map_key": "",
+                    "acfe_field_group_condition": 0,
+                    "zoom": "",
+                    "zooms": {
+                        "zoom": 2,
+                        "min_zoom": 0,
+                        "max_zoom": 21
+                    },
+                    "default_value": {
+                        "address": "Alumni Center at Columbus Place, Columbus Avenue, Boston, MA, USA",
+                        "lat": 42.3376718,
+                        "lng": -71.0852932,
+                        "zoom": 15,
+                        "place_id": "ChIJTwLeqCJ644kR-asVewZzt2g",
+                        "name": "Alumni Center at Columbus Place",
+                        "street_number": "716",
+                        "street_name": "Columbus Avenue",
+                        "street_name_short": "Columbus Ave",
+                        "city": "Boston",
+                        "state": "Massachusetts",
+                        "state_short": "MA",
+                        "post_code": "02120",
+                        "country": "United States",
+                        "country_short": "US"
+                    }
+                },
+                {
+                    "key": "field_611a627ebb76c",
+                    "label": "Core Analytics Package",
+                    "name": "core_analytics_package",
+                    "type": "true_false",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "",
+                    "default_value": 0,
+                    "ui": 1,
+                    "ui_on_text": "Enabled",
+                    "ui_off_text": "Disabled",
+                    "acfe_field_group_condition": 0
+                },
+                {
+                    "key": "field_611a6297bb76d",
+                    "label": "Custom Analytics",
+                    "name": "custom_analytics",
+                    "type": "acfe_code_editor",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "mode": "text\/html",
+                    "lines": 1,
+                    "indent_unit": 4,
+                    "maxlength": "",
+                    "rows": "",
+                    "max_rows": "",
+                    "acfe_field_group_condition": 0
+                }
+            ]
+        },
+        {
+            "key": "field_611a610f288f8",
+            "label": "Contact \/ Social",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "no_preference": 0,
+            "acfe_field_group_condition": 0
+        },
+        {
+            "key": "field_611a61b8a1c62",
+            "label": "Contact \/ Social",
+            "name": "contact__social",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "acfe_seamless_style": 0,
+            "acfe_group_modal": 0,
+            "acfe_field_group_condition": 0,
+            "sub_fields": [
+                {
+                    "key": "field_611a631c53c2b",
+                    "label": "Social Media Profiles",
+                    "name": "social_media_profiles",
+                    "type": "group",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "layout": "row",
+                    "acfe_seamless_style": 0,
+                    "acfe_group_modal": 0,
+                    "acfe_field_group_condition": 0,
+                    "sub_fields": [
+                        {
+                            "key": "field_611a637053c2c",
+                            "label": "Facebook",
+                            "name": "facebook",
+                            "type": "url",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "acfe_field_group_condition": 0
+                        },
+                        {
+                            "key": "field_611a637d53c2d",
+                            "label": "Twitter",
+                            "name": "twitter",
+                            "type": "url",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "acfe_field_group_condition": 0
+                        },
+                        {
+                            "key": "field_611a638153c2e",
+                            "label": "Vimeo",
+                            "name": "vimeo",
+                            "type": "url",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "acfe_field_group_condition": 0
+                        },
+                        {
+                            "key": "field_611a638b53c2f",
+                            "label": "Youtube",
+                            "name": "youtube",
+                            "type": "url",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "acfe_field_group_condition": 0
+                        },
+                        {
+                            "key": "field_611a638d53c30",
+                            "label": "Linkedin",
+                            "name": "linkedin",
+                            "type": "url",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "acfe_field_group_condition": 0
+                        },
+                        {
+                            "key": "field_611a639153c31",
+                            "label": "Instagram",
+                            "name": "instagram",
+                            "type": "url",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "acfe_field_group_condition": 0
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "key": "field_611a6152a1c60",
+            "label": "Search",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "no_preference": 0,
+            "acfe_field_group_condition": 0
+        },
+        {
+            "key": "field_611a6183a1c61",
+            "label": "Search",
+            "name": "search",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "acfe_seamless_style": 0,
+            "acfe_group_modal": 0,
+            "acfe_field_group_condition": 0,
+            "sub_fields": [
+                {
+                    "key": "field_611a61f3bb769",
+                    "label": "Status",
+                    "name": "status",
+                    "type": "true_false",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "",
+                    "default_value": 0,
+                    "ui": 1,
+                    "ui_on_text": "Enabled",
+                    "ui_off_text": "Disabled",
+                    "acfe_field_group_condition": 0
+                },
+                {
+                    "key": "field_611a6245bb76b",
+                    "label": "Type of Search",
+                    "name": "type_of_search",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "local-site": "Local Site",
+                        "google-search": "Google Search"
+                    },
+                    "default_value": "local-site",
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "max": "",
+                    "ui": 1,
+                    "ajax": 0,
+                    "return_format": "value",
+                    "allow_custom": 0,
+                    "search_placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "acfe_field_group_condition": 0,
+                    "placeholder": ""
+                }
+            ]
+        },
+        {
+            "key": "field_611a647a5aab8",
+            "label": "Global",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "no_preference": 0,
+            "acfe_field_group_condition": 0
+        },
+        {
+            "key": "field_611a64815aab9",
+            "label": "Global Elements",
+            "name": "global_elements",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "acfe_seamless_style": 0,
+            "acfe_group_modal": 0,
+            "acfe_field_group_condition": 0,
+            "sub_fields": [
+                {
+                    "key": "field_611a64b25aabc",
+                    "label": "Include Global Header \/ Footer",
+                    "name": "include_global_header__footer",
+                    "type": "true_false",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "",
+                    "default_value": 0,
+                    "ui": 1,
+                    "ui_on_text": "",
+                    "ui_off_text": "",
+                    "acfe_field_group_condition": 0
+                },
+                {
+                    "key": "field_611a64da5aabd",
+                    "label": "Show NU Workmark",
+                    "name": "show_nu_workmark",
+                    "type": "true_false",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "",
+                    "default_value": 0,
+                    "ui": 1,
+                    "ui_on_text": "",
+                    "ui_off_text": "",
+                    "acfe_field_group_condition": 0
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "acf-options-theme-settings"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "tooltip",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "acfe_autosync": [
+        "json"
+    ],
+    "acfe_form": 0,
+    "acfe_display_title": "",
+    "acfe_meta": "",
+    "acfe_note": "Dev Note:\r\ntab field names are not important\r\ngroup field names are stored in the database and the groupings help reduce how much is in the scope",
+    "acfe_categories": {
+        "nu-start-theme-settings-v2": "NU Start Theme Settings - V2"
+    },
+    "modified": 1630613090
+}

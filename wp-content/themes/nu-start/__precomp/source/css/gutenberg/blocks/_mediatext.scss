@@ -1,0 +1,19 @@
+.wp-block-media-text {
+	figure img {
+		@extend %transition;
+		transform: scale(1);
+	}
+
+	figure > a {
+		display: block;
+		border: none 0;
+		&:hover,
+		&:focus,
+		&:active {
+			border: none 0;
+			img {
+				transform: scale(1.2);
+			}
+		}
+	}
+}

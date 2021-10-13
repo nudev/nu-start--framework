@@ -1,0 +1,21 @@
+/* 
+?	the main theme stylesheet
+?	this is only loaded on the front end; and will not affect the block editor
+?	as much overlap as possible between the block editor and front end is best, so this must be very DRY
+*/ 
+
+// include rfs and other library stuff
+@import './library';
+
+// include core styles for both front and back ends (DRY)
+@import './partials/core/';
+
+// include frontend only styles
+@import './partials/frontend-only/';
+
+// include styles for blocks
+@import './gutenberg';
+
+@import './vendors';
+
+@import './_overrides';

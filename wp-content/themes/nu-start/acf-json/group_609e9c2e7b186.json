@@ -1,0 +1,193 @@
+{
+    "key": "group_609e9c2e7b186",
+    "title": "Search Settings",
+    "fields": [
+        {
+            "key": "field_609e9e76abf51",
+            "label": "Search Settings",
+            "name": "search_settings",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "acfe_seamless_style": 0,
+            "acfe_group_modal": 0,
+            "acfe_field_group_condition": 0,
+            "sub_fields": [
+                {
+                    "key": "field_609e9e88abf52",
+                    "label": "Enable Site Search",
+                    "name": "enable_site_search",
+                    "type": "true_false",
+                    "instructions": "Whether or not to allow local site search.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "",
+                    "default_value": 0,
+                    "ui": 1,
+                    "ui_on_text": "Yes",
+                    "ui_off_text": "No (Default)",
+                    "acfe_field_group_condition": 0
+                },
+                {
+                    "key": "field_609e9f26abf53",
+                    "label": "Location",
+                    "name": "location",
+                    "type": "acfe_menu_locations",
+                    "instructions": "Where Should Search Appear?",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_609e9e88abf52",
+                                "operator": "==",
+                                "value": "1"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "locations": [
+                        "header"
+                    ],
+                    "field_type": "select",
+                    "default_value": [
+                        "header"
+                    ],
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "ui": 1,
+                    "ajax": 0,
+                    "search_placeholder": "Search for a location...",
+                    "allow_custom": 0,
+                    "acfe_field_group_condition": 0,
+                    "choices": [],
+                    "placeholder": "",
+                    "layout": "",
+                    "toggle": 0
+                },
+                {
+                    "key": "field_609eb494a3cc7",
+                    "label": "Type of search",
+                    "name": "type_of_search",
+                    "type": "select",
+                    "instructions": "What type of search would you like to use? Please note: if using Google Search, please allow 1 - 2 months for results to be indexed by Google before activating on new sites.",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_609e9e88abf52",
+                                "operator": "==",
+                                "value": "1"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "wp": "WordPress",
+                        "gcse": "Google Search"
+                    },
+                    "default_value": "google search",
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "max": "",
+                    "ui": 1,
+                    "ajax": 0,
+                    "return_format": "value",
+                    "allow_custom": 0,
+                    "search_placeholder": "Select search type...",
+                    "acfe_field_group_condition": 0,
+                    "placeholder": ""
+                },
+                {
+                    "key": "field_609eb546a3cc8",
+                    "label": "Search Scope",
+                    "name": "search_scope",
+                    "type": "select",
+                    "instructions": "If using Google Search, would you like to limit searches to this site only?",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_609e9e88abf52",
+                                "operator": "==",
+                                "value": "1"
+                            },
+                            {
+                                "field": "field_609eb494a3cc7",
+                                "operator": "==",
+                                "value": "gcse"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "all": "All of Northeastern",
+                        "local": "Local Only"
+                    },
+                    "default_value": "local only",
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "max": "",
+                    "ui": 1,
+                    "ajax": 0,
+                    "return_format": "value",
+                    "allow_custom": 0,
+                    "search_placeholder": "Search scope...",
+                    "acfe_field_group_condition": 0,
+                    "placeholder": ""
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "acf-options-search"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "left",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "acfe_autosync": [
+        "json"
+    ],
+    "acfe_form": 0,
+    "acfe_display_title": "",
+    "acfe_meta": "",
+    "acfe_note": "",
+    "acfe_categories": {
+        "theme-settings-v1": "Theme Settings - V1"
+    },
+    "modified": 1630613090
+}

@@ -1,0 +1,139 @@
+// *
+// * 		Filtering SCSS
+// *
+div.filteringform {
+	padding: $margin_2x $margin_2x;
+	margin: 0 0 $margin_4x 0;
+	text-align: center;
+	width: 100%;
+
+	// background-color: rgba(#f8f6f6, 1);
+	// @include boxshadow(2);
+
+	// ? when select2 is disabled this helps see what is going on
+	option[selected="selected"] {
+		font-weight: bold;
+		font-style: italic;
+	}
+
+	> form {
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: space-between;
+		width: 100%;
+		align-items: center;
+		position: relative;
+
+		// submission buttons container
+		> .submission {
+			margin: 0 0 0 $base-margin;
+			> div,
+			a {
+				display: inline-block;
+			}
+			> a {
+				margin-left: $base-margin;
+			}
+		}
+
+		.select2.select2-container {
+			background-color: transparent !important;
+			.select2-selection {
+				border: none 0;
+				border-bottom: 1px solid black;
+				border-radius: 0px;
+				@include nu_micon("\e313", after);
+				padding-right: $margin_2x;
+				&:after {
+					position: absolute;
+					right: -$base-margin;
+					top: 50%;
+					transform: translateY(-50%);
+				}
+			}
+
+			.select2-selection--multiple {
+				background-color: transparent !important;
+
+				// min-width: 180px;
+				.select2-selection__choice {
+					background-color: black !important;
+					color: white !important;
+					border-radius: 20px !important;
+					padding: 5px 10px !important;
+				}
+			}
+			.select2-search__field {
+				background-color: transparent;
+			}
+		}
+
+		// ?
+		> .filters {
+			flex: 0 1 auto;
+			text-align: left;
+			max-width: 100%;
+			display: flex;
+			flex-flow: row wrap;
+			align-items: flex-end;
+
+			// ?
+			.filters-filter {
+				flex: 0 1 auto;
+				display: inline-block;
+				margin: $base-margin;
+				vertical-align: middle;
+				position: relative;
+				min-width: 220px;
+
+				> label {
+					display: none;
+				}
+				> select {
+					position: relative;
+				}
+
+				@media screen and (max-width: 640px) {
+					max-width: 100%;
+					margin: $margin_2x 0 0 0;
+
+					&:first-child {
+						margin: 0 0 0 0;
+					}
+				}
+
+				// ? select fills the space it is in
+				select {
+					width: 100%;
+				}
+
+				.select2 {
+					&.select2-container {
+						background-color: rgba($white, 1);
+					}
+				}
+			}
+		}
+
+		@media screen and (max-width: 960px) {
+			flex-flow: column nowrap;
+			justify-content: flex-start;
+			align-items: center;
+			text-align: center;
+
+			> .filters {
+				order: 2;
+				margin: $margin_2x 0 0 0;
+				width: 100%;
+			}
+
+			> .submission {
+				margin: 0 0 0 0;
+			}
+		}
+	}
+
+	@media screen and (max-width: 960px) {
+		padding: $margin_2x $base-margin;
+	}
+}

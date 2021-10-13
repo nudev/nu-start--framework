@@ -1,0 +1,22 @@
+.wp-block-group.nu_pattern-is_hero_banner--type-c {
+
+	// reposition the cover container to the bottom, full width
+	.wp-block-cover__inner-container {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		max-width: 100%;
+		margin: 0;
+	}
+
+	h1,h2,h3,h4,h5,h6{
+		margin: 0;
+	}
+
+
+	// ? re-aligns the content here with the rest of the column width (kind of hacky)
+	.has-background {
+		padding-left: 0;
+	}
+}

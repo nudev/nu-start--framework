@@ -1,0 +1,135 @@
+/** 
+*
+* *		Reset WP Forms styling and further customize to fit NU brand requirements
+*
+*/
+//
+
+div.wpforms-container-full {
+	form.wpforms-form {
+		input[type="checkbox"],
+		input[type="radio"] {
+			// appearance: none;
+			border-width: 1px;
+			width: 16px;
+			height: 16px;
+			display: inline-block;
+			vertical-align: middle;
+		}
+		.wpforms-selected {
+			input[type="checkbox"],
+			input[type="radio"] {
+			}
+		}
+
+		// adjust labels
+		.wpforms-field-sublabel,
+		.wpforms-field-label-inline,
+		.wpforms-field-label {
+			font-weight: 300;
+			font-size: 0.875rem;
+			color: $black--light;
+		}
+
+		// adjust regular fields
+		.wpforms-field {
+			*::placeholder {
+				font-size: 1rem;
+				color: #787878;
+				font-weight: 300;
+				opacity: 1;
+			}
+		}
+
+		// ? handle the submit button style and alignment
+		.wpforms-submit-container {
+			// ? really specific rather than using !important
+			button.wpforms-submit[type="submit"][name="wpforms[submit]"] {
+				@extend %nu__buttonstyle;
+				text-align: right;
+				font-weight: 400;
+				border: 1px solid $black;
+				background-color: $black;
+				color: white;
+				&:hover,
+				&:focus,
+				&:active {
+					border: 1px solid $black;
+					background: white;
+					color: $black;
+				}
+			}
+		}
+	}
+}
+
+//  todo: refactor the junk below
+%is_style_minimal_borders {
+	border-radius: 0 !important;
+	// border: none 0 !important;
+	// border-bottom: 1px solid $grey_4 !important;
+	border: 1px solid $black--light;
+}
+
+// ? reset some basic default styles
+div.wpforms-container-full {
+	form.wpforms-form {
+		// reset elements styled by wpforms
+		.wpforms-field {
+			input,
+			textarea,
+			select,
+			option {
+				border-color: $black--light;
+
+				&:focus,
+				&:active {
+					outline: 1px solid var(--wp--preset--color--vivid-cyan-blue);
+				}
+			}
+			textarea {
+				height: auto;
+			}
+			select {
+				font-weight: 300;
+				font-size: 0.875rem !important;
+				option {
+					font-weight: inherit;
+					font-size: inherit;
+				}
+			}
+		}
+
+		// ? labels need an adjustment
+		.wpforms-field-label-inline,
+		.wpforms-field-label {
+			// ? if a label is hidden...
+			&.wpforms-label-hide {
+				// ? the next input-like-el
+				+ input,
+				+ textarea,
+				+ select {
+					@extend %is_style_minimal_borders;
+				}
+				// ? first/last field has the label above this container that holds the inputs
+				~ .wpforms-field-row {
+					// ? the next input-like-el
+
+					input,
+					textarea,
+					select {
+						@extend %is_style_minimal_borders;
+					}
+				}
+			}
+			input,
+			textarea,
+			select {
+				// ? no label before the input (assumes its hidden)
+				&:first-child {
+					@extend %is_style_minimal_borders;
+				}
+			}
+		}
+	}
+}

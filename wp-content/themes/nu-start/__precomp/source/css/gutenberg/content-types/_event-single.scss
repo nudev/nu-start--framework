@@ -1,0 +1,10 @@
+.wp-block-group.event-content-container {
+	.wp-block-group.event-item-sidebar.is-style-card {
+		@include boxshadow(1);
+		padding: $margin_2x;
+
+		.wp-block-buttons:last-child {
+			margin-top: $margin_6x;
+		}
+	}
+}

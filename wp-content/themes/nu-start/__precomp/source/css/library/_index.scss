@@ -1,0 +1,23 @@
+// 
+// 
+
+// ? silence is golden; dart-sass deprecation warning
+@use "sass:math";
+
+
+// vendor extensions
+@import './extensions/include-media'; 				// enhanced media query "plugin"
+@import './extensions/rfs';							// rfs font system "plugin"
+@import './extensions/deep-get-set';				//	map deep get and set just in case
+
+
+
+// hard-requirements for theme to function
+@import './required/functions'; 					// functions
+@import './required/vars'; 							// variables
+@import './required/mixins'; 						// mixins && functions
+@import './required/extends';						// extends && placeholders
+
+
+// last item before we go to make the stylesheet for real
+@import './required/normalize'; 						// normalize dropped into a scss file

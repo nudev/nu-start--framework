@@ -1,0 +1,33 @@
+{
+    "key": "group_61016e20d3bb1",
+    "title": "Block: Breadcrumbs",
+    "fields": [],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/breadcrumbs"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "side",
+    "style": "seamless",
+    "label_placement": "top",
+    "instruction_placement": "tooltip",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "runs the shortcode to show breadcrumbs (broken in editor?)",
+    "acfe_autosync": [
+        "json"
+    ],
+    "acfe_form": 0,
+    "acfe_display_title": "",
+    "acfe_meta": "",
+    "acfe_note": "",
+    "acfe_categories": {
+        "acf-block": "ACF Block"
+    },
+    "modified": 1630613089
+}

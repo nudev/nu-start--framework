@@ -1,0 +1,173 @@
+{
+	"version": 1,
+	"settings": {
+		"color": {
+			"custom": true,
+			"disableAlpha": false,
+			"duotone": [],
+			"gradients": [],
+			"link": false,
+			"palette": [
+				{
+					"name": "Transparent",
+					"slug": "transparent",
+					"color": "transparent"
+				},
+				{
+					"name": "Light Grey",
+					"slug": "light-grey",
+					"color": "#545454"
+				},
+				{
+					"name": "Dark Grey",
+					"slug": "dark-grey",
+					"color": "#2d2926"
+				},
+				{
+					"name": "Black",
+					"slug": "black",
+					"color": "#000000"
+				},
+				{
+					"name": "White",
+					"slug": "white",
+					"color": "#ffffff"
+				},
+				{
+					"name": "Red",
+					"slug": "red",
+					"color": "#d41b2c"
+				},
+				{
+					"name": "Dark Blue",
+					"slug": "dark-blue",
+					"color": "#297496"
+				}
+			]
+		},
+		"layout": {
+			"contentSize": "80%",
+			"wideSize": "90%"
+		},
+		"spacing": {
+			"customMargin": false,
+			"customPadding": false,
+			"units": ["%", "px"]
+		},
+		"typography": {
+			"customFontSize": false,
+			"customLineHeight": false,
+			"dropCap": false,
+			"fontFamilies": [
+				{
+					"fontFamily": "-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,Oxygen-Sans,Ubuntu,Cantarell,\"Helvetica Neue\",sans-serif",
+					"slug": "system-fonts",
+					"name": "System Fonts"
+				},
+				{
+					"fontFamily": "Lato, sans-serif",
+					"slug": "lato"
+				}
+			],
+			"fontSizes": [
+				{
+					"slug": "tiny",
+					"size": "0.75rem",
+					"name": "Tiny"
+				},
+				{
+					"slug": "smaller",
+					"size": "0.875rem",
+					"name": "Smaller"
+				},
+				{
+					"slug": "normal",
+					"size": "1rem",
+					"name": "Normal"
+				},
+				{
+					"slug": "larger",
+					"size": "1.125rem",
+					"name": "Larger"
+				},
+				{
+					"slug": "large",
+					"size": "1.5rem",
+					"name": "Large"
+				},
+				{
+					"slug": "extra-large",
+					"size": "2rem",
+					"name": "Extra Large"
+				},
+				{
+					"slug": "huge",
+					"size": "3rem",
+					"name": "Huge"
+				}
+			]
+		},
+		"custom": {
+			"font-primary": "'Lato', Lato, 'Helvetica Neue', sans-serif",
+			"line-height": {
+				"body": 1.375,
+				"heading": 1.5,
+				"page-title": 1.5
+			},
+			"spacing": {
+				"unit": "16px",
+				"horizontal": "32px",
+				"vertical": "32px"
+			},
+			"font-weight": {
+				"light": "300",
+				"normal": "normal"
+			}
+		},
+		"blocks": {
+			"core/button": {
+				"border": {
+					"customRadius": false
+				}
+			},
+			"core/column": {
+				"color": {
+					"disableAlpha": false
+				}
+			},
+			"core/cover": {
+				"spacing": {
+					"units": ["%", "px", "vw", "vh"]
+				}
+			},
+			"core/paragraph": {
+				"typography": {
+					"fontSizes": [
+						{
+							"name": "Smaller",
+							"slug": "smaller",
+							"size": "0.875rem"
+						},
+						{
+							"name": "Larger",
+							"slug": "larger",
+							"size": "1.125rem"
+						}
+					]
+				}
+			}
+		}
+	},
+	"styles": {
+        "color": {
+			"text": "var(--wp--preset--color--dark--grey)"
+        },
+        "blocks": {
+            "core/paragraph": {
+                "color": {
+					"text": "var(--wp--preset--color--dark--grey)"
+                }
+            }
+        }
+    }
+}

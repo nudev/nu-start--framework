@@ -1,0 +1,17 @@
+.wp-block-post-navigation-link {
+	&.post-navigation-link-next a {
+		@include nu_micon("\e5cc", after);
+		&:after {
+			display: inline;
+		}
+	}
+	&.post-navigation-link-previous a {
+		@include nu_micon("\e5cb", before);
+		&:after {
+			display: inline;
+		}
+	}
+	> a {
+		white-space: pre-wrap;
+	}
+}

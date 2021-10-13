@@ -1,0 +1,114 @@
+{
+    "key": "group_60a28c57337d0",
+    "title": "Global Settings",
+    "fields": [
+        {
+            "key": "field_60a28c5fb5d92",
+            "label": "Global Settings",
+            "name": "global_settings",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "acfe_seamless_style": 1,
+            "acfe_group_modal": 0,
+            "acfe_field_group_condition": 0,
+            "sub_fields": [
+                {
+                    "key": "field_60a29e911915f",
+                    "label": "Global Header \/ Footer",
+                    "name": "global_header__footer",
+                    "type": "group",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "layout": "block",
+                    "acfe_seamless_style": 0,
+                    "acfe_group_modal": 0,
+                    "acfe_field_group_condition": 0,
+                    "sub_fields": [
+                        {
+                            "key": "field_60a29ecb19160",
+                            "label": "Status",
+                            "name": "status",
+                            "type": "true_false",
+                            "instructions": "Whether or not to show the global university header & footer on this site.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 0,
+                            "ui": 1,
+                            "ui_on_text": "",
+                            "ui_off_text": "",
+                            "acfe_field_group_condition": 0
+                        },
+                        {
+                            "key": "field_60a29ef319161",
+                            "label": "Use wordmark",
+                            "name": "use_wordmark",
+                            "type": "true_false",
+                            "instructions": "Would you like the Northeastern University watermark to appear in the global header?",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 0,
+                            "ui": 1,
+                            "ui_on_text": "",
+                            "ui_off_text": "",
+                            "acfe_field_group_condition": 0
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "acf-options-global"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "left",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "acfe_autosync": [
+        "json"
+    ],
+    "acfe_form": 0,
+    "acfe_display_title": "",
+    "acfe_meta": "",
+    "acfe_note": "",
+    "acfe_categories": {
+        "theme-settings-v1": "Theme Settings - V1"
+    },
+    "modified": 1630613089
+}

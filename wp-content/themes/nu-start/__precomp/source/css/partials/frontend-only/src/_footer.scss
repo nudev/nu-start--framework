@@ -1,0 +1,280 @@
+/* 
+	Site Footer
+*/
+
+//  resets for various elements in the footer
+footer.site-footer {
+	ul,
+	ol {
+		list-style-type: none;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		&.sub-menu {
+			padding-left: ($base-margin * 0.5);
+		}
+	}
+}
+
+// opinionated styles below
+footer.site-footer {
+	//
+	margin: $margin_8x 0 0 0;
+	@media screen and (max-width: 640px) {
+		margin: $margin_4x 0 0 0;
+	}
+
+	background-color: $black;
+	color: $white;
+
+	//
+	> section {
+		//
+		margin: $margin_4x auto;
+		margin-top: 0;
+		width: calc(100% - $margin_8x);
+		//
+		display: flex;
+		flex-flow: row wrap;
+		align-items: flex-start;
+		justify-content: space-between; // forces outer groupings to l/r edges
+	}
+
+	> section > div {
+		flex: 0 1 auto;
+		margin: $margin_4x 0 0 $margin_2x;
+	}
+
+	.footer-siteinfo {
+		.address,
+		.contact,
+		.social {
+			margin: $base-margin 0 0 0;
+			@include font-size(0.875rem);
+
+			a {
+				color: rgba($white, 0.8);
+				border-bottom: 1px solid transparent;
+				font-weight: 300;
+
+				&:hover,
+				&:focus {
+					//border-bottom: 1px solid rgba($white, 1);
+					color: rgba($white, 1);
+				}
+			}
+		}
+
+		.contact {
+			display: flex;
+			flex-flow: column nowrap;
+
+			span {
+				margin: 5px 0 0 0;
+
+				&:first-child {
+					margin: 0;
+				}
+			}
+		}
+
+		.social {
+			display: flex;
+			flex-flow: row nowrap;
+
+			.nu__customsvg {
+				margin: 0 0 0 $base-margin;
+				&:first-child {
+					margin: 0;
+				}
+			}
+		}
+	}
+	.footer-navmenu {
+		flex: 1 1 auto; // lets the navlinks container fill the remaining space in between the other columns
+	}
+	.navlinks {
+		> ul {
+			display: flex;
+			flex-flow: row wrap;
+			justify-content: space-evenly; // evenly distributes remaining space around and between the navlink columns
+		}
+		// ? reset styles for any menu item link
+		a {
+			color: rgba($white, 0.75);
+			border: none 0;
+			border-left: 5px solid transparent;
+			padding-left: 5px;
+			font-weight: 300;
+			font-size: 0.875rem;
+			margin-top: ($base-margin * 0.5);
+			display: inline-block;
+			&:hover,
+			&:focus {
+				border: none 0;
+				color: rgba($white, 1);
+				border-left: 5px solid rgba($white, 1);
+			}
+		}
+		// ? top level nav items are a row that may wrap
+		ul.menu {
+			// ? handle top level nav items
+			> li {
+				margin: 0 0 0 $margin_2x;
+				&:first-child {
+					margin: 0;
+				}
+				&.current_page_item,
+				&.current-page-ancestor {
+					> a {
+						color: rgba($white, 1);
+						border-left: 5px solid rgba($white, 1);
+					}
+				}
+
+				// ? top level nav links stand out
+				> a {
+					font-weight: bold;
+					&:hover,
+					&:focus,
+					&.current-menu-item,
+					&.menu-item-is-open,
+					&.neu__dropdown--active,
+					&.current-menu-parent,
+					&.current-page-ancestor {
+						border-left: 5px solid rgba($white, 1);
+					}
+				}
+			}
+		}
+
+		// ? any level of menu item with children
+		// ?
+		li.menu-item-has-children {
+			> .sub-menu {
+				> li {
+					&.current_page_item {
+						> a {
+							color: rgba($white, 1);
+							border-left: 5px solid rgba($white, 1);
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.footer-sidebar {
+		div.wpforms-container-full form.wpforms-form .wpforms-submit-container {
+			button.wpforms-submit {
+				margin: 0;
+				background-color: var(--wp--preset--color--nu-brand-red);
+				border: 1px solid var(--wp--preset--color--nu-brand-red);
+				color: $white;
+				&:hover,
+				&:focus {
+					border: 1px solid var(--wp--preset--color--nu-brand-red);
+					color: var(--wp--preset--color--nu-brand-red);
+					background-color: $white;
+				}
+			}
+		}
+	}
+
+	// ?
+	@media screen and (max-width: 960px) {
+		> section {
+			flex-flow: column nowrap;
+			> div {
+				margin: $margin_4x 0 0 0;
+			}
+		}
+	}
+
+	// ?
+	@media screen and (max-width: 780px) {
+		> section {
+			width: 90%;
+		}
+
+		.navlinks > ul.menu {
+			> li {
+				flex: 1 0 100%;
+				margin: $margin_2x 0 0 0;
+			}
+		}
+	}
+}
+
+//
+//
+//
+//
+//
+//
+//
+// 	older junkier stuff below
+//
+//
+//
+//
+//
+//
+//
+
+footer.site-footer {
+	.footer-siteinfo {
+	}
+
+	// todo: add this to some kind of dark mode?
+	// ? switch svg fill to white, or invert img
+	a.logo {
+		border-bottom: none 0;
+
+		svg path {
+			fill: $white;
+		}
+		img {
+			filter: invert(100%);
+		}
+	}
+
+	.nu__footer-sidebar.widget_block {
+		form.wpforms-form {
+			.wpforms-field-container,
+			.wpforms-submit-container {
+				display: inline-block;
+				vertical-align: middle;
+				margin: 0;
+				padding: 0;
+			}
+
+			.wpforms-field {
+				padding: 0;
+
+				input {
+					min-height: 44px;
+				}
+			}
+
+			.wpforms-title {
+				font-size: 1rem;
+				font-weight: bold;
+			}
+
+			.wpforms-description {
+				font-size: 0.875rem;
+			}
+		}
+	}
+}
+
+/**
+*		Global  Footer
+*/
+//
+#nu-global-footer a:hover,
+#nu-global-footer a:focus,
+#nu-global-footer a:active {
+	border: none 0;
+}

@@ -1,0 +1,49 @@
+/* 
+
+	NU Patterns
+	- Hero Category
+	- - Pattern "is_type_e"
+
+	? This file takes the KNOWN pattern; which is intended to be developed into a LOCKED TEMPLATE, and styles it.
+	? This is tightly coupled and will break on changes in the editor
+	? Until we move to start really templating; this should be AS MINIMAL AS POSSIBLE.
+
+	* prebuilding patterns is very easily and flexible; and we can massage the 'correct' choice of blocks this way before 'hardening' things into a template.
+	
+*/
+
+// 
+.nu_pattern-is_hero--is_type_e {
+
+
+	// the first spillover part
+	> .wp-block-group:last-of-type {
+		max-width: 80%;
+		margin: 0 auto;
+		position: relative;
+
+		// 
+		> .wp-block-cover.cover_tucks_next_block {
+			// margin-bottom: 0;
+			padding-bottom: $margin_8x;
+			+ .wp-block-group .wp-block-buttons {
+				width: 100%;
+				max-width: 80%;
+				flex-flow: row nowrap;
+				position: absolute;
+				bottom: 0;
+				left: 50%;
+				transform: translate(-50%, 50%);
+
+				.wp-block-button {
+					flex: 1 1 100%;
+				}
+			}
+		}
+	}
+	
+	.wp-block-cover.alignfull.has-background-dim-30.has-black-background-color.has-background-dim.cover_tucks_next_block > .wp-block-cover__inner-container {
+		margin-bottom: $base-margin * 3; 
+	}
+
+}

@@ -1,0 +1,213 @@
+/*
+	"Posts Grid" Block Styling
+*/
+
+// ? basics for aspect ratio for all items here
+@mixin nu__grid_item_cover_ratios {
+	figure {
+		overflow: hidden;
+
+		position: relative;
+		margin: 0;
+	}
+
+	&.has-very-wide-cover-image,
+	&.has-wide-cover-image,
+	&.has-tall-cover-image,
+	&.has-very-tall-cover-image,
+	&.has-square-cover-image
+	{
+		img {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			@extend %transition;
+			transform: scale(1);
+		}
+		
+	}
+	&.has-square-cover-image {
+		figure {
+			@include aspect-ratio(1, 1);
+		}
+	}
+	&.has-wide-cover-image {
+		figure {
+			@include aspect-ratio(4, 3);
+		}
+	}
+	&.has-very-wide-cover-image {
+		figure {
+			@include aspect-ratio(16, 9);
+		}
+	}
+	&.has-tall-cover-image {
+		figure {
+			@include aspect-ratio(3, 4);
+		}
+	}
+	&.has-very-tall-cover-image {
+		figure {
+			@include aspect-ratio(9, 16);
+		}
+	}
+}
+// ? basics for horz/vert orientation here
+@mixin nu__grid_item_orientation {
+	&.has-layout-horizontal {
+		&.has-layout-horizontal {
+			@media screen and ( min-width: 781px ){
+				flex-flow: row nowrap;
+				> figure {
+					flex: 1 0 300px;
+					max-width: 50%;	
+				}
+				> .grid-item-content {
+					flex: 1 1 auto;
+				}
+			}
+		}
+	}
+}
+
+/* 
+	prevent accidental clicks in the block editor (must be a better way)
+*/
+body.wp-admin {
+	.nu_posts-grid {
+		.grid-item a {
+			pointer-events: none;
+		}
+	}
+}
+
+/* 
+
+
+
+*/
+
+// restrict to this acf-block
+.nu_posts-grid {
+
+	.nu__grid {
+		@include nu__responsive_grid_layout();
+	}
+	
+	// restrict to any grid item for basics
+	.grid-item {
+		@include nu__grid_item_cover_ratios();
+		@include nu__grid_item_orientation();
+
+		// ? tighten up items margins inside here
+		> * {
+			margin-left: 0;
+			margin-right: 0;
+			&:first-child {
+				margin-top: 0;
+			}
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+}
+
+.nu_posts-grid {
+	// ? resets just in case
+	ul {
+		list-style: none;
+		list-style-type: none;
+		padding: 0;
+		padding-left: 0;
+	}
+
+	.grid-item {
+		position: relative;
+		border: 1px solid $grey_4;
+		> a,
+		& {
+			display: flex;
+			flex-flow: column nowrap;
+		}
+		> a {
+			height: 100%;
+		}
+		figure {
+			flex: 1 0 auto;
+		}
+	}
+
+	.grid-item-content {
+		padding: $base-margin $margin_2x;
+		padding-bottom: $margin_4x;
+		height: 100%;
+		display: flex;
+		flex-flow: column nowrap;
+		position: relative;
+
+		.featured-tags {
+			margin: 0;
+		}
+		.post-title {
+			margin: $base-margin 0 0 0;
+		}
+		.post-excerpt {
+			font-size: smaller;
+		}
+	}
+
+	a.nu_posts-grid-readmore {
+		position: absolute;
+		bottom: $base-margin;
+		left: $margin_2x;
+		border: none 0;
+		span {
+			@extend %transition;
+			color: $grey_8;
+			display: inline-block;
+			vertical-align: middle;
+			border-bottom: 2px solid transparent;
+			&.moretext {
+				font-size: smaller;
+				@include nu_micon("\e5c8", after);
+				&:after {
+					font-size: 20px;
+					vertical-align: middle;
+					margin: -2px 0 0 $base-margin;
+				}
+			}
+			&.moreicon {
+				margin-left: -8px;
+			}
+		}
+		&:hover,
+		&:focus {
+			border: none 0;
+			span {
+				color: $grey_10;
+			}
+			.moretext {
+				border-bottom: 2px solid currentColor;
+			}
+		}
+	}
+}
+@import "./nu-people";
+@import "./nu-events";
+@import "./is-page";
+@import "./is-initiative";
+
+li.grid-item.broken {
+	&:only-child {
+		flex: 1 0 100% !important;
+		width: 100% !important;
+		p {
+			text-align: center;
+			padding: $base-margin;
+			font-style: italic;
+		}
+	}
+}

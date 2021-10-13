@@ -1,0 +1,126 @@
+.wp-block-eedee-block-gutenslider {
+	.eedee-swiper-outer {
+		.eedee-gutenslider-nav {
+			@extend %transition;
+			width: 40px;
+			height: 40px;
+			background-color: rgba(0, 0, 0, 0.6) !important;
+			border-radius: 0.25em;
+
+			> svg {
+				display: none;
+			}
+
+			&.eedee-gutenslider-prev,
+			&.eedee-gutenslider-next {
+				@include nu_micon("\e5cc", before);
+				position: absolute;
+				&:before {
+					color: white;
+					z-index: 1;
+					font-size: 2rem;
+				}
+			}
+
+			&.eedee-gutenslider-next {
+			}
+			&.eedee-gutenslider-prev {
+				&:before {
+					content: "\e5cb";
+				}
+			}
+
+			&:hover,
+			&:focus,
+			&:active {
+				background-color: rgba(0, 0, 0, 0.8) !important;
+			}
+		}
+
+		.swiper-container {
+			.swiper-slide {
+				.slide-content {
+					padding: $margin_4x;
+
+					.alignfull {
+						width: 100%;
+					}
+				}
+			}
+		}
+	}
+
+	&.is-style-alternate {
+		> .eedee-swiper-outer {
+			position: relative;
+
+			.swiper-container {
+				.swiper-slide {
+					.slide-content {
+						padding: 0;
+
+						> .wp-block-media-text {
+							height: 100%;
+							> figure {
+								height: 100%;
+								margin: 0;
+								> img {
+									min-height: 100%;
+								}
+							}
+						}
+						.wp-block-pullquote {
+							margin: 0;
+						}
+					}
+				}
+			}
+
+			> .eedee-gutenslider-nav {
+				top: auto;
+				left: auto;
+				bottom: 0;
+				right: 0;
+				width: $margin_4x;
+				height: $margin_4x;
+				background-color: $grey_4 !important;
+				border-radius: 0;
+				@extend %transition;
+				&::before {
+					color: $grey_10 !important;
+					font-size: 2rem;
+				}
+				&.eedee-gutenslider-next {
+					transform: translate(0, 0);
+				}
+				&.eedee-gutenslider-prev {
+					transform: translate(-100%, 0);
+				}
+				&:hover,
+				&:focus,
+				&:active {
+					background-color: $grey_2 !important;
+				}
+			}
+			> .eedee-gutenslider-pagination {
+				left: $margin_2x;
+				bottom: $margin_2x;
+				.swiper-pagination-bullet {
+					@extend %transition;
+					width: 16px;
+					height: 16px;
+				}
+				.swiper-pagination-bullet:not(.swiper-pagination-bullet-active) {
+					background-color: transparent;
+					border: 1px solid $grey_1;
+					&:hover,
+					&:focus,
+					&:active {
+						opacity: 0.9;
+						background-color: transparent !important;
+					}
+				}
+			}
+		}
+	}
+}

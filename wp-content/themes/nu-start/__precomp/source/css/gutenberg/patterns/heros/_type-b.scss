@@ -1,0 +1,64 @@
+/* 
+
+	NU Patterns
+	- Hero Category
+	- - Pattern "is_type_b"
+
+	? This file takes the KNOWN pattern; which is intended to be developed into a LOCKED TEMPLATE, and styles it.
+	? This is tightly coupled and will break on changes in the editor
+	? Until we move to start really templating; this should be AS MINIMAL AS POSSIBLE.
+
+	* prebuilding patterns is very easily and flexible; and we can massage the 'correct' choice of blocks this way before 'hardening' things into a template.
+	
+*/
+
+//
+.nu_pattern-is_hero--is_type_b {
+	// ? leave the min height; but always fill vertical space
+	.wp-block-cover[style*="min-height"] {
+		height: 100% !important;
+	}
+
+	border-bottom: 1px solid $grey_4;
+	border-top: 1px solid $grey_4;
+
+	> .wp-block-columns {
+		margin-bottom: 0;
+		&.are-vertically-aligned-center {
+			align-items: stretch;
+		}
+		@media screen and (max-width: 780px) {
+			position: relative;
+			> .wp-block-column {
+				&:last-child {
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: 100%;
+					margin: 0;
+				}
+				&:first-child {
+					position: relative;
+					z-index: 1;
+					.wp-block-group {
+						margin: $margin_4x auto;
+					}
+				}
+			}
+		}
+	}
+
+	figure {
+		margin-bottom: 0;
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		line-height: 1;
+	}
+}

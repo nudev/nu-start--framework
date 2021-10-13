@@ -1,0 +1,30 @@
+/* 
+	admin.scss
+*/
+// 
+
+
+.wp-block-widget-area.components-panel .components-panel__body-title {
+	z-index: 2 !important;
+}
+.edit-widgets-main-block-list > div {
+	margin-top: 48px;
+}
+
+
+
+// 	increase the sidebar width in the block editor to make previews more meaningful
+// 
+// 
+.interface-complementary-area {
+	@media screen and ( min-width: 782px ) {
+		width: 320px !important;
+	}
+}
+
+
+@media screen and (min-width: 782px) {
+	.block-editor-inserter__menu .block-editor-inserter__main-area {
+		// width: 420px;
+	}
+}

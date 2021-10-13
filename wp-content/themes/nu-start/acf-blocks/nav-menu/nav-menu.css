@@ -1,0 +1,10 @@
+/* 
+	ACF Nav Menu Block styling
+	see php function nu__getMenu()
+*/
+.nu__navmenu ul {
+  list-style-type: none;
+}
+body.wp-admin .nu__navmenu a {
+  pointer-events: none;
+}

@@ -1,0 +1,33 @@
+/* 
+
+*/
+
+.nu_posts-grid .nu__grid .grid-item.page {
+	> a {
+		border: none 0;
+		.post-title span {
+			border-bottom: 2px solid transparent;
+			@extend %transition;
+		}
+		figure {
+			overflow: hidden;
+			img {
+				transform: scale(1);
+				@extend %transition;
+			}
+		}
+		&:hover, &:focus, &:active {
+			border: none 0;
+			.post-title span {
+				border-bottom: 2px solid currentColor;
+			}
+
+			img {
+				transform: scale(1.2);
+			}
+		}
+	}
+	&.is-style-card {
+	}
+	
+}

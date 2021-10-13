@@ -1,0 +1,53 @@
+#nu_dev_utility {
+	position: fixed;
+	z-index: 9999;
+	top: 15%;
+	left: 0;
+	background-color: rgba($black, 0.66);
+	color: $white;
+	padding: $base-margin;
+	-webkit-backdrop-filter: blur(16px);
+	backdrop-filter: blur(16px);
+	@extend %transition;
+
+	.devkit-title {
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content: space-between;
+		align-items: center;
+		border-bottom: 1px solid $white;
+	}
+
+	.nu__icon {
+		display: none;
+	}
+
+	.nu__icon--expand {
+		display: block;
+	}
+	.nu__icon--collapse {
+	}
+
+	> section {
+		display: none;
+	}
+
+	&:hover,
+	&:focus,
+	&:active {
+		background-color: rgba($black, 0.75);
+	}
+
+	&.revealed {
+		> section {
+			display: block;
+		}
+
+		.nu__icon--expand {
+			display: none;
+		}
+		.nu__icon--collapse {
+			display: block;
+		}
+	}
+}

@@ -1,0 +1,118 @@
+/* 
+
+	NU Patterns
+	- Feature Category
+	- - Pattern "is_type_c"
+
+	? This file takes the KNOWN pattern; which is intended to be developed into a LOCKED TEMPLATE, and styles it.
+	? This is tightly coupled and will break on changes in the editor
+	? Until we move to start really templating; this should be AS MINIMAL AS POSSIBLE.
+
+	* prebuilding patterns is very easily and flexible; and we can massage the 'correct' choice of blocks this way before 'hardening' things into a template.
+	
+*/
+
+//
+.nu_pattern-is_feature--is_type_c {
+
+	// removes a clearfix from wp core
+	&:after {
+		display: none;
+	}
+	// general layout adjustment
+	> * {
+		margin-top: $margin_2x;
+		margin-bottom: 0;
+		&:first-child {
+			margin-top: 0;
+		}
+	}
+
+	// the intro blurb is in a group
+	> .wp-block-group {
+		> * {
+			margin: ($base-margin * 0.5) 0 0 0;
+		}
+		&:after {
+			display: none;
+		}
+	}
+
+	.wp-block-column {
+		p.has-larger-font-size {
+			&:first-child {
+				margin-top: 0;
+				margin-bottom: 0;
+			}
+		}
+		p:last-child {
+			margin-bottom: 0;
+		}
+
+		.wp-block-image {
+			&:only-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	// break way early and fix layout
+	@media screen and (max-width: 1024px) {
+		> .wp-block-columns {
+			flex-flow: column nowrap;
+			&:last-child {
+				margin-top: 0;
+			}
+
+			> .wp-block-column {
+				&:last-child {
+					margin-left: 0;
+				}
+
+				> .wp-block-columns {
+					flex-flow: row nowrap !important;
+					.wp-block-column {
+						width: auto; // reset wp-core from having w100%
+						&:first-child {
+							width: 96px; 		// 
+							min-width: 96px;	// why was this 80?
+							flex-basis: auto !important;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	@media (min-width: 600px) and (max-width: 781px) {
+
+
+		.wp-block-columns > .wp-block-column > .wp-block-columns {
+			> .wp-block-column {
+				&:last-child {
+					margin-left: $margin_2x;
+				}
+			}
+		}
+		
+		.wp-block-group > .wp-block-columns {
+			> .wp-block-column:first-child {
+				margin-right: $margin_2x;
+			}
+		}
+	}
+
+	@media screen and ( max-width: 640px ){
+		
+		.wp-block-columns > .wp-block-column > .wp-block-columns {
+			&:only-child  {
+				margin-bottom: 0;
+			}
+			> .wp-block-column {
+				&:last-child {
+					margin-left: $margin_2x;
+				}
+			}
+		}
+	}
+}

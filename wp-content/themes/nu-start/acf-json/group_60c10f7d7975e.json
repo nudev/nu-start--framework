@@ -1,0 +1,64 @@
+{
+    "key": "group_60c10f7d7975e",
+    "title": "Block: Nav Menu",
+    "fields": [
+        {
+            "key": "field_60c10f929a399",
+            "label": "Nav Menu",
+            "name": "nav_menu",
+            "type": "acfe_menus",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "menus": "",
+            "field_type": "select",
+            "max": "",
+            "default_value": [],
+            "return_format": "object",
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 1,
+            "ajax": 0,
+            "search_placeholder": "Select a Nav Menu",
+            "allow_custom": 0,
+            "acfe_field_group_condition": 0,
+            "choices": [],
+            "placeholder": "",
+            "layout": "",
+            "toggle": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/nav-menu"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "side",
+    "style": "seamless",
+    "label_placement": "top",
+    "instruction_placement": "tooltip",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "acfe_autosync": [
+        "json"
+    ],
+    "acfe_form": 0,
+    "acfe_display_title": "",
+    "acfe_meta": "",
+    "acfe_note": "",
+    "acfe_categories": {
+        "acf-block": "ACF Block"
+    },
+    "modified": 1630613089
+}

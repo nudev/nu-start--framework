@@ -1,0 +1,37 @@
+.wp-block-pullquote {
+	border: none 0;
+	border-bottom: none 0;
+	border-top: none 0;
+	text-align: left;
+	padding: $base-margin 0;
+	blockquote {
+		color: var(--wp--preset--color--black);
+		max-width: 80%;
+		margin: 0 auto;
+		> *:first-child:not(.wp-block-pullquote__citation) {
+			position: relative;
+			&:before {
+				content: url("/wp-content/themes/nu-start/__lib/icons/quotes.svg");
+				display: block;
+				position: absolute;
+				top: 50%;
+				left: -#{$margin_2x};
+				transform: translate(-100%, -50%);
+				color: var(--wp--preset--color--dark-blue);
+			}
+		}
+
+		p {
+			@include font-size(1.8rem);
+			line-height: 1.375;
+		}
+	}
+}
+
+.wp-block-pullquote__citation {
+	text-transform: none;
+	strong {
+		text-transform: uppercase;
+		font-weight: normal;
+	}
+}

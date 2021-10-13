@@ -1,0 +1,87 @@
+/* 
+	Block Pattern:	Case Study --- see research page from Roux 
+*/
+.wp-block-group.has-tucked-corners {
+	position: relative;
+	overflow: hidden;
+	// reset inner margins
+	> * {
+		margin: 0;
+	}
+
+	> .wp-block-columns {
+		position: relative;
+		z-index: 1;
+	}
+	
+	> .wp-block-columns:first-child + .wp-block-image {
+		margin: -15% 0;
+	}
+	> .wp-block-columns:first-child + .wp-block-group {
+		margin: $margin_8x 0;
+	}
+	
+	.wp-block-column.has-background {
+		padding: $margin_4x;
+	}
+	
+	&.has-background {
+		padding: 0;
+	}
+
+
+	// ? this cleans up the vendor logo feature/section
+	.wp-block-gallery {
+		.blocks-gallery-item {
+			flex-grow: 0;
+			position: relative;
+			@include aspect_ratio(32,9);
+			figure {
+				position: absolute;
+				width: 100%;
+				top: 0;
+				left: 0;
+				align-items: center;
+				img {
+					margin: 0 auto;	
+					max-width: 220px;
+				}
+			}
+		}
+		.blocks-gallery-grid {
+			width: 100%;
+		}
+	}
+
+}
+
+
+
+.wp-block-group.roux-case-study {
+	position: relative;
+	// reset inner margins
+	> * {
+		margin: 0;
+	}
+
+	// super light touch css
+	> .wp-block-columns {
+		margin: 0;
+		
+		.wp-block-column {
+			position: relative;
+			z-index: 1;
+		}
+
+		&:first-child {
+			margin-bottom: -#{$margin_8x};
+		}
+		&:last-child {
+			margin-top: -#{$margin_8x};
+		}
+		.wp-block-column.has-background {
+			padding: $margin_2x;
+		}
+	}
+
+}

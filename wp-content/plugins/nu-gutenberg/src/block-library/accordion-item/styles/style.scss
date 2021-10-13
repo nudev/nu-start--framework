@@ -1,0 +1,80 @@
+/* 
+	sample block - style.scss
+*/
+
+.wp-block-nu-blocks-accordion {
+	margin: 0 auto;
+	margin-top: $margin_2x;
+	&:first-child  {
+		margin-top: 0;
+	}
+	.wp-block-nu-blocks-accordion-item {
+		.dashicon.dashicons {
+			display: none;
+		}
+
+		margin: $base-margin 0 0 0;
+		&:first-child {
+			margin: 0;
+		}
+
+		.wp-block-nublocks-accordion-item__title {
+			cursor: pointer;
+			@extend %transition;
+			padding: $base-margin;
+			padding-right: $margin_4x;
+			border: 1px solid $grey_4;
+			font-weight: normal;
+			&::marker {
+				display: none;
+				content: "";
+			}
+			@include nu_micon("\e145", after);
+			position: relative;
+			&:after {
+				position: absolute;
+				right: $base-margin;
+				top: 50%;
+				transform: translateY(-50%);
+				font-size: 20px;
+			}
+			&:hover,
+			&:focus,
+			&:active {
+				background-color: $grey_2;
+			}
+		}
+
+		.wp-block-nublocks-accordion-item__content {
+			@extend %transition;
+			// opacity: 0;
+			padding: $margin_2x $base-margin;
+			border: 1px solid $grey_4;
+			border-top: none;
+			> p:last-child {
+				margin-bottom: 0;
+			}
+		}
+
+		details[open] {
+			.wp-block-nublocks-accordion-item__content {
+				// opacity: 1;
+			}
+			> .wp-block-nublocks-accordion-item__title {
+				background-color: $grey_4;
+				@include nu_micon("\e15b", after);
+				position: relative;
+				&:after {
+					position: absolute;
+					right: $base-margin;
+					top: 50%;
+					transform: translateY(-50%);
+					font-size: 20px;
+				}
+				&:hover {
+					background-color: $grey_2;
+				}
+			}
+		}
+	}
+}

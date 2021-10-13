@@ -1,0 +1,197 @@
+{
+  "version": 1,
+  "settings": {
+    "border": {
+      "customColor": true,
+      "customRadius": true,
+      "customStyle": true,
+      "customWidth": true
+    },
+    "color": {
+      "disableAlpha": false,
+      "duotone": [],
+      "gradients": [],
+      "link": false,
+      "palette": [
+        {
+          "name": "Black",
+          "slug": "black",
+          "color": "#2d2926"
+        },
+        {
+          "name": "White",
+          "slug": "white",
+          "color": "#ffffff"
+        },
+        {
+          "name": "Red",
+          "slug": "red",
+          "color": "#d41b2c"
+        },
+        {
+          "name": "Blue",
+          "slug": "blue",
+          "color": "#4299e1"
+        },
+		{
+		  "name": "Dark Blue",
+		  "slug": "dark-blue",
+		  "color": "#385d85"
+		},
+        {
+          "name": "Orange",
+          "slug": "orange",
+          "color": "#f86716"
+        },
+        {
+          "name": "Yellow",
+          "slug": "yellow",
+          "color": "#fac515"
+        },
+        {
+          "name": "Green",
+          "slug": "green",
+          "color": "#48bb78"
+        },
+        {
+          "name": "Transparent",
+          "slug": "transparent",
+          "color": "transparent"
+        }
+      ]
+    },
+    "layout": {
+      "contentSize": "80%",
+      "wideSize": "90%"
+    },
+    "spacing": {
+      "customMargin": false,
+      "customPadding": false
+    },
+    "typography": {
+      "customFontSize": false,
+      "customLineHeight": false,
+      "fontFamilies": [
+        {
+          "fontFamily": "Lato, sans-serif",
+          "slug": "lato"
+        }
+      ],
+      "fontSizes": [
+        {
+          "slug": "tiny",
+          "size": "0.75rem",
+          "name": "Tiny"
+        },
+        {
+          "slug": "smaller",
+          "size": "0.875rem",
+          "name": "Smaller"
+        },
+        {
+          "slug": "normal",
+          "size": "1rem",
+          "name": "Normal"
+        },
+        {
+          "slug": "larger",
+          "size": "1.125rem",
+          "name": "Larger"
+        },
+        {
+          "slug": "large",
+          "size": "1.5rem",
+          "name": "Large"
+        },
+        {
+          "slug": "extra-large",
+          "size": "2rem",
+          "name": "Extra Large"
+        },
+        {
+          "slug": "huge",
+          "size": "3rem",
+          "name": "Huge"
+        },
+        {
+          "slug": "hugest",
+          "size": "5rem",
+          "name": "Hugest"
+        }
+      ]
+    },
+    "custom": {
+      "font-primary": "Lato, sans-serif",
+      "line-height": {
+        "body": 1.375,
+        "heading": 1.375,
+        "page-title": 1.5
+      },
+      "spacing": {
+        "unit": "16px",
+        "horizontal": "32px",
+        "vertical": "32px"
+      },
+      "font-weight": {
+        "light": "300",
+        "normal": "400"
+      }
+    },
+    "blocks": {
+      "core/button": {
+        "border": {
+          "customRadius": false
+        }
+      },
+      "core/columns": {
+        "color": {
+          "disableAlpha": false
+        },
+        "spacing": {}
+      },
+      "core/column": {
+        "color": {
+          "disableAlpha": false
+        }
+      },
+      "core/cover": {
+        "spacing": {
+          "units": ["%", "px", "vw"]
+        }
+      }
+    }
+  },
+  "styles": {
+    "color": {
+      "text": "var(--wp--preset--color--nu-brand-black)",
+      "background": "var(--wp--preset--color--nu-brand-white)",
+      "elements": {
+        "link": {
+          "color": {
+            "text": "var(--wp--preset--color--nu-brand-blue)"
+          },
+          "typography": {
+            "fontWeight": "var(--wp--custom--font-weight--normal)"
+          }
+        }
+      }
+    },
+    "blocks": {
+      "core/paragraph": {
+        "color": {
+          "text": "var(--wp--preset--color--nu-brand-black)"
+        },
+        "elements": {
+          "link": {
+            "color": {
+              "text": "var(--wp--preset--color--nu-brand-black)"
+            },
+            "typography": {
+              "fontWeight": "var(--wp--custom--font-weight--normal)"
+            }
+          }
+        }
+      }
+    }
+  }
+}

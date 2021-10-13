@@ -1,0 +1,31 @@
+/* 
+
+*/
+
+.nu_posts-grid {
+
+	.filteringform {
+		padding: 0;
+	}
+	
+	
+	.nu__grid.cols-1 {
+		.grid-item.nu_initiatives {
+			border: none 0;
+			border-bottom: 1px solid $black;
+			.grid-item-content {
+				padding: 0;
+			}
+			padding: $base-margin 0;
+
+			margin: $margin_4x 0 0 0;
+			&:first-child {
+				margin: 0;
+			}
+
+			.featured-tags {
+				font-weight: normal;
+			}
+		}
+	}
+}

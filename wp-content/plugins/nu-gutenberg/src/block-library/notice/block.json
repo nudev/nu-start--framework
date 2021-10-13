@@ -1,0 +1,37 @@
+{
+    "apiVersion": 2,
+    "name": "nu-blocks/notice",
+    "title": "Notice",
+    "category": "nu-blocks",
+    "icon": "star",
+    "description": "Shows warning, error or success notices…",
+    "keywords": [ "alert", "message" ],
+    "version": "1.0.3",
+    "textdomain": "nu-blocks",
+    "attributes": {
+        "message": {
+            "type": "string",
+            "source": "html",
+            "selector": ".message"
+        }
+    },
+    "providesContext": {
+        "nu-blocks/message": "message"
+    },
+    "usesContext": [ "groupId" ],
+    "supports": {
+        "align": true
+    },
+    "styles": [
+        { "name": "default", "label": "Default", "isDefault": true },
+        { "name": "other", "label": "Other" }
+    ],
+    "example": {
+        "attributes": {
+            "message": "This is a notice!"
+        }
+    },
+    "editorScript": "file:../../../build/index.js",
+    "editorStyle": "file:../../../build/index.css",
+    "style": "file:../../../build/style-index.css"
+}

@@ -1,0 +1,95 @@
+{
+    "key": "group_60520d221b709",
+    "title": "Header Settings",
+    "fields": [
+        {
+            "key": "field_60520d2d23ace",
+            "label": "Header Settings",
+            "name": "header_settings",
+            "type": "group",
+            "instructions": "--- Under Development ---\r\n# add header settings here; specific ONLY to the header (i.e., the logo is not part of the header!)",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "acfe_seamless_style": 1,
+            "acfe_group_modal": 0,
+            "acfe_field_group_condition": 0,
+            "sub_fields": [
+                {
+                    "key": "field_6123a4f73d034",
+                    "label": "Status",
+                    "name": "status",
+                    "type": "true_false",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "",
+                    "default_value": 1,
+                    "ui": 1,
+                    "ui_on_text": "Enabled",
+                    "ui_off_text": "Disabled",
+                    "acfe_field_group_condition": 0
+                },
+                {
+                    "key": "field_6123a57195fba",
+                    "label": "Site Logo",
+                    "name": "site_logo",
+                    "type": "textarea",
+                    "instructions": "Copy, and then paste the <a href=\"https:\/\/northeastern.netlify.app\/styleguide\/assets\/logos\/\">SVG code<\/a> for your site logo into this field.\r\nThis will show up in the header and footer.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "maxlength": "",
+                    "rows": "",
+                    "acfe_textarea_code": 1,
+                    "acfe_field_group_condition": 0,
+                    "new_lines": ""
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "acf-options-header"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "left",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "acfe_autosync": [
+        "json"
+    ],
+    "acfe_form": 0,
+    "acfe_display_title": "",
+    "acfe_meta": "",
+    "acfe_note": "",
+    "acfe_categories": {
+        "theme-settings-v1": "Theme Settings - V1"
+    },
+    "modified": 1630613090
+}

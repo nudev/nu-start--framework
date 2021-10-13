@@ -1,0 +1,33 @@
+/* 
+
+	NU Patterns
+	- Stat Highlights Category
+	- - Pattern "is_type_b"
+
+	? This file takes the KNOWN pattern; which is intended to be developed into a LOCKED TEMPLATE, and styles it.
+	? This is tightly coupled and will break on changes in the editor
+	? Until we move to start really templating; this should be AS MINIMAL AS POSSIBLE.
+
+	* prebuilding patterns is very easily and flexible; and we can massage the 'correct' choice of blocks this way before 'hardening' things into a template.
+	
+*/
+
+// 
+.nu_pattern-is_stat_highlight--is_type_b {
+
+	.wp-block-column {
+		padding: $margin_4x $margin_2x;
+		h1,h2,h3,h4,h5,h6, p {
+			margin: 0 0 0 0;
+		}
+		p {
+			margin: $base-margin 0 0 0;
+		}
+	}
+	
+}
+
+.blocks--wrapper > .nu_pattern-is_stat_highlight--is_type_b {
+
+	
+}

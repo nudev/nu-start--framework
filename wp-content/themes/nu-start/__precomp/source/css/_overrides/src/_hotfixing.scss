@@ -1,0 +1,8 @@
+// ! the pathing here blows up the  webpack config in the child theme; idk why.
+.is-icon-twitter {
+	> a {
+		&::before {
+			background-image: url("/wp-content/themes/nu-start/__lib/icons/twitter.svg");
+		}
+	}
+}

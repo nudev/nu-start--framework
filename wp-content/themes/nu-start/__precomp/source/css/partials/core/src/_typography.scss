@@ -1,0 +1,200 @@
+/* 
+?  		typography only, not layout
+?		
+*/
+
+// reset body styling to brand
+body {
+	@extend %base_body_style;
+	position: relative;
+	z-index: 1;
+}
+
+// styling for general headings
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: $sans-serif;
+	font-weight: 400;
+	line-height: 1.5;
+	&.is-style-display {
+		font-weight: 300;
+	}
+	&.has-background {
+		padding: $margin_2x;
+	}
+}
+
+// set the RFS (max) font size, and scale it up for display style
+h1 {
+	$fz: 3rem;
+	@include font-size($fz);
+	&.is-style-display {
+		@include font-size($fz * 1.25);
+	}
+}
+
+h2 {
+	$fz: 2.4rem;
+	@include font-size($fz);
+	&.is-style-display {
+		@include font-size($fz * 1.25); // 48px
+	}
+}
+
+h3 {
+	$fz: 1.5rem;
+	@include font-size($fz);
+	&.is-style-display {
+		@include font-size($fz * 1.25);
+	}
+}
+
+h4 {
+	$fz: 1.25rem;
+	@include font-size($fz);
+	&.is-style-display {
+		@include font-size($fz * 1.25);
+	}
+}
+
+h5 {
+	$fz: 1rem;
+	@include font-size($fz);
+	&.is-style-display {
+		@include font-size($fz * 1.25);
+	}
+}
+
+h6 {
+	$fz: 0.875rem;
+	@include font-size($fz);
+	&.is-style-display {
+		@include font-size($fz * 1.25);
+	}
+}
+
+// ? links need to be styled to our brand
+// ? just the base level, no layout or modifiers
+a {
+	color: currentColor;
+	font-weight: normal;
+	text-decoration: none;
+	border-bottom: 2px solid transparent;
+	@extend %transition;
+	&:hover,
+	&:focus,
+	&:active {
+		text-decoration: none;
+		border-bottom: 2px solid currentColor;
+	}
+	svg {
+		@extend %transition;
+	}
+}
+
+p {
+	margin: $base-margin 0 $half-margin 0;
+}
+
+// deal with issues having the inline text not class the anchor tag; instead creating and tagging a child span
+p > a {
+	> span.has-inline-color {
+		border-bottom: 2px solid transparent;
+	}
+	&:hover,
+	&:focus {
+		border-bottom: 2px solid transparent;
+		> span.has-inline-color {
+			border-bottom: 2px solid currentColor;
+		}
+	}
+}
+
+// *			Pagination
+.pagination {
+	text-align: center;
+	margin: 0 auto $margin_2x auto;
+
+	// some harder resets for these elements
+	a.page-numbers,
+	span.page-numbers {
+		display: block;
+		background: none;
+		padding: 0 0 0 0;
+		margin: 0 0 0 0;
+		border: none 0;
+		@extend %transition;
+		font-weight: normal;
+		width: 24px;
+		height: 24px;
+		line-height: 1;
+		border-radius: 50%;
+		border: 2px solid rgba($black, 0);
+		color: rgba($black, 0.9);
+		// ? a custom <span> wrapper is around both the prev/next and numbers
+		position: relative;
+		> span {
+			@include font-size(0.875rem);
+			line-height: 1;
+			@extend %absolutely_centered;
+		}
+		&.next,
+		&.prev {
+			border: 2px solid rgba($black, 0);
+			> span {
+				display: none;
+			}
+			@include nu_micon("\e5cb", after);
+			&.next:after {
+				content: "\e5cc";
+			}
+			&:after {
+				line-height: 1;
+				@extend %absolutely_centered;
+			}
+		}
+
+		&.current {
+			border: 2px solid rgba($black, 1);
+			background-color: black;
+			color: white;
+		}
+	}
+
+	> ul.page-numbers {
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content: center;
+		align-items: center;
+		list-style-type: none;
+		padding: 0;
+
+		> li {
+			margin: 0 ($base-margin * 0.5) 0 0;
+			&:last-child {
+				margin: 0;
+			}
+
+			> a {
+				&:hover,
+				&:focus,
+				&:active {
+					color: rgba($black, 0.8);
+					border-color: rgba($black, 0.8);
+					&.next,
+					&.prev {
+						border: 2px solid rgba($black, 0);
+					}
+				}
+			}
+		}
+	}
+
+	&:last-of-type {
+		margin: $margin_2x auto 0 auto;
+	}
+}

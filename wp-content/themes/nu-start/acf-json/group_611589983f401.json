@@ -1,0 +1,33 @@
+{
+    "key": "group_611589983f401",
+    "title": "Block: Event",
+    "fields": [],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/nu-event"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "side",
+    "style": "seamless",
+    "label_placement": "top",
+    "instruction_placement": "tooltip",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "ACF Event Block - renders a pre-built template of innerblocks - provides related attributes",
+    "acfe_autosync": [
+        "json"
+    ],
+    "acfe_form": 0,
+    "acfe_display_title": "",
+    "acfe_meta": "",
+    "acfe_note": "",
+    "acfe_categories": {
+        "acf-block": "ACF Block"
+    },
+    "modified": 1630613089
+}

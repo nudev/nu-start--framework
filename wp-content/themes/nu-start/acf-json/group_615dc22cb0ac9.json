@@ -1,0 +1,73 @@
+{
+    "key": "group_615dc22cb0ac9",
+    "title": "Taxonomy Term: Initiatives - School",
+    "fields": [
+        {
+            "key": "field_615dc248030c5",
+            "label": "Associated Color",
+            "name": "associated_color",
+            "type": "color_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "enable_opacity": 0,
+            "return_format": "string",
+            "display": "palette",
+            "color_picker": 0,
+            "allow_null": 1,
+            "theme_colors": 1,
+            "colors": {
+                "#D41B2C": "red",
+                "#1f3343da": "blue-85",
+                "#F7F6F5": "gray",
+                "#FA9265": "orange",
+                "#b64a1cda": "brown-85",
+                "#3D3D3D": "dark-gray",
+                "#3d3d3d1c": "gray-20",
+                "#BADB00": "green",
+                "#006EB5": "blue",
+                "#FFBF3D": "yellow",
+                "#f78ddc": "pink",
+                "#06395c": "dark-blue",
+                "#06395cda": "dark-blue-85",
+                "#523080": "violet",
+                "#325709": "dark-green"
+            },
+            "acfe_field_group_condition": 0,
+            "button_label": "Select Color",
+            "absolute": false,
+            "input": true
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "taxonomy",
+                "operator": "==",
+                "value": "nu_initiatives-schools"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "left",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "acfe_autosync": [
+        "json"
+    ],
+    "acfe_form": 0,
+    "acfe_display_title": "",
+    "acfe_meta": "",
+    "acfe_note": "",
+    "modified": 1633534927
+}

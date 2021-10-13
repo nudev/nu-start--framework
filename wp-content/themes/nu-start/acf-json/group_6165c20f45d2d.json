@@ -1,0 +1,33 @@
+{
+    "key": "group_6165c20f45d2d",
+    "title": "Block: News",
+    "fields": [],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/nu-news"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "side",
+    "style": "seamless",
+    "label_placement": "top",
+    "instruction_placement": "tooltip",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "ACF Event Block - renders a pre-built template of innerblocks - provides related attributes",
+    "acfe_autosync": [
+        "json"
+    ],
+    "acfe_form": 0,
+    "acfe_display_title": "",
+    "acfe_meta": "",
+    "acfe_note": "",
+    "modified": 1634130961,
+    "acfe_categories": {
+        "acf-block": "ACF Block"
+    }
+}

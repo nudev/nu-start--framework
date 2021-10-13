@@ -1,0 +1,48 @@
+/* 
+
+	NU Patterns
+	- Hero Category
+	- - Pattern "is_type_c"
+
+	? This file takes the KNOWN pattern; which is intended to be developed into a LOCKED TEMPLATE, and styles it.
+	? This is tightly coupled and will break on changes in the editor
+	? Until we move to start really templating; this should be AS MINIMAL AS POSSIBLE.
+
+	* prebuilding patterns is very easily and flexible; and we can massage the 'correct' choice of blocks this way before 'hardening' things into a template.
+	
+*/
+
+// 
+.nu_pattern-is_hero--is_type_c {
+
+	> .wp-block-columns {
+		margin-bottom: 0;
+
+		@media (max-width: 1280px) {
+			max-width: 100% !important; 
+		}
+	}
+
+	.wp-block-columns {
+		@media (max-width: 1280px) {
+			max-width: 100%; 
+		}
+	}
+
+	> .wp-block-group:last-child {
+		// remove default margin from nested groups
+		margin: 0 0 0 0;
+
+		.wp-block-columns {
+			padding: 0 $margin_2x;
+		}
+
+		.wp-block-column {
+			padding: $margin_4x $margin_2x;
+			&:last-child {
+				border-left: 2px solid $black;
+			}
+		}
+	}
+	
+}

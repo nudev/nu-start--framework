@@ -1,0 +1,315 @@
+{
+    "key": "group_60520d64d2a43",
+    "title": "Social Settings",
+    "fields": [
+        {
+            "key": "field_60520d836319e",
+            "label": "Social Settings",
+            "name": "social_settings",
+            "type": "group",
+            "instructions": "--- Under Development ---\r\n# social settings for the site owner would go here\r\n# i.e., set this up for Boston Campus and our department",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "acfe_seamless_style": 1,
+            "acfe_group_modal": 0,
+            "acfe_field_group_condition": 0,
+            "sub_fields": [
+                {
+                    "key": "field_609c238c85a03",
+                    "label": "Google Address",
+                    "name": "google_address",
+                    "type": "google_map",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "acfe_google_map_preview": "",
+                    "center_lat": "",
+                    "center_lng": "",
+                    "height": "",
+                    "acfe_google_map_zooms": {
+                        "zoom": "2",
+                        "min_zoom": "0",
+                        "max_zoom": "21"
+                    },
+                    "acfe_google_map_marker_icon": "",
+                    "acfe_google_map_marker_width": 50,
+                    "acfe_google_map_type": "roadmap",
+                    "acfe_google_map_disable_ui": 0,
+                    "acfe_google_map_disable_zoom_control": 0,
+                    "acfe_google_map_disable_map_type": 0,
+                    "acfe_google_map_disable_fullscreen": 0,
+                    "acfe_google_map_disable_streetview": 0,
+                    "acfe_google_map_style": "",
+                    "acfe_google_map_key": "",
+                    "acfe_field_group_condition": 0,
+                    "zoom": "",
+                    "zooms": {
+                        "zoom": 2,
+                        "min_zoom": 0,
+                        "max_zoom": 21
+                    }
+                },
+                {
+                    "key": "field_609c29fa8acd5",
+                    "label": "Contact Info",
+                    "name": "contact_info",
+                    "type": "group",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "layout": "block",
+                    "acfe_seamless_style": 1,
+                    "acfe_group_modal": 0,
+                    "acfe_field_group_condition": 0,
+                    "sub_fields": [
+                        {
+                            "key": "field_609d20f2612ad",
+                            "label": "Email",
+                            "name": "email",
+                            "type": "email",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "acfe_field_group_condition": 0
+                        },
+                        {
+                            "key": "field_609d20d0612aa",
+                            "label": "Phone 1",
+                            "name": "phone_1",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": "",
+                            "acfe_field_group_condition": 0
+                        },
+                        {
+                            "key": "field_609d20e6612ab",
+                            "label": "Phone 2",
+                            "name": "phone_2",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": "",
+                            "acfe_field_group_condition": 0
+                        },
+                        {
+                            "key": "field_609d20eb612ac",
+                            "label": "Phone 3",
+                            "name": "phone_3",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": "",
+                            "acfe_field_group_condition": 0
+                        }
+                    ]
+                },
+                {
+                    "key": "field_609d2039612a3",
+                    "label": "Social Media",
+                    "name": "social_media",
+                    "type": "group",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "layout": "block",
+                    "acfe_seamless_style": 1,
+                    "acfe_group_modal": 0,
+                    "acfe_field_group_condition": 0,
+                    "sub_fields": [
+                        {
+                            "key": "field_609d2085612a4",
+                            "label": "FaceBook",
+                            "name": "facebook",
+                            "type": "url",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "acfe_field_group_condition": 0
+                        },
+                        {
+                            "key": "field_609d2094612a5",
+                            "label": "Twitter",
+                            "name": "twitter",
+                            "type": "url",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "acfe_field_group_condition": 0
+                        },
+                        {
+                            "key": "field_609d2098612a6",
+                            "label": "Youtube",
+                            "name": "youtube",
+                            "type": "url",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "acfe_field_group_condition": 0
+                        },
+                        {
+                            "key": "field_609d209e612a7",
+                            "label": "Vimeo",
+                            "name": "vimeo",
+                            "type": "url",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "acfe_field_group_condition": 0
+                        },
+                        {
+                            "key": "field_609d20a3612a8",
+                            "label": "LinkedIn",
+                            "name": "linkedin",
+                            "type": "url",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "acfe_field_group_condition": 0
+                        },
+                        {
+                            "key": "field_609d20a8612a9",
+                            "label": "Instagram",
+                            "name": "instagram",
+                            "type": "url",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "acfe_field_group_condition": 0
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "acf-options-contact-social"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "left",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "acfe_autosync": [
+        "json"
+    ],
+    "acfe_form": 0,
+    "acfe_display_title": "",
+    "acfe_meta": "",
+    "acfe_note": "",
+    "acfe_categories": {
+        "theme-settings-v1": "Theme Settings - V1"
+    },
+    "modified": 1630613090
+}

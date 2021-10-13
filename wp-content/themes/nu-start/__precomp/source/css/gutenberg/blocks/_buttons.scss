@@ -1,0 +1,196 @@
+/* 
+*/
+
+$theme_json_palette: (
+	"black": "#2d2926",
+	"white": "#ffffff",
+	"red": "#d41b2c",
+	"blue": "#4299e1",
+	"orange": "#f86716",
+	"dark-blue": "#385d85",
+	"yellow": "#fac515",
+	"green": "#48bb78",
+);
+.wp-block-button {
+}
+
+.wp-block-button__link {
+	border-radius: 0px;
+	border: 2px solid var(--wp--preset--color--black);
+	@include font-size(0.875rem);
+	&:hover,
+	&:focus {
+		background-color: var(--wp--preset--color--white);
+		color: var(--wp--preset--color--black);
+		border: 2px solid var(--wp--preset--color--black);
+	}
+	@each $name, $color in $theme_json_palette {
+		&.has-background {
+			&.has-#{$name}-background-color {
+				border-color: var(--wp--preset--color--#{$name}) !important;
+				&:hover,
+				&:focus {
+					color: var(--wp--preset--color--#{$name}) !important;
+					border: 2px
+						solid
+						var(--wp--preset--color--#{$name}) !important;
+					background-color: var(
+						--wp--preset--color--white
+					) !important;
+				}
+				//
+				&.has-white-background-color {
+					border-color: var(
+						--wp--preset--color--black
+					) !important;
+					color: var(--wp--preset--color--black) !important;
+					&:hover,
+					&:focus {
+						background-color: var(
+							--wp--preset--color--black
+						) !important;
+						color: var(
+							--wp--preset--color--white
+						) !important;
+					}
+				}
+			}
+		}
+	}
+}
+
+//
+.wp-block-button.is-style-playhead {
+	.wp-block-button__link {
+		border: 2px solid transparent;
+		background-color: transparent;
+		color: currentColor;
+		padding: 0;
+		&:hover,
+		&:focus {
+			border-bottom: 2px solid currentColor;
+			background-color: transparent !important;
+		}
+		&.has-background {
+			border: none 0 !important;
+			background: none !important;
+			&:hover,
+			&:focus {
+				background: none !important;
+				border: none 0 !important;
+				border-bottom: 2px solid currentColor !important;
+			}
+			&.has-white-background-color {
+				color: var(--wp--preset--color--black) !important;
+			}
+		}
+	}
+	&:before {
+		color: $black;
+		color: currentColor;
+		content: "\e039";
+		display: inline-block;
+		vertical-align: middle;
+		margin: -5px $base-margin 0 0;
+		@extend %nu__playButton;
+		font-size: 2.8rem;
+		border: 2px solid transparent;
+	}
+}
+
+//
+.wp-block-button.is-style-card {
+	min-width: 180px;
+	.wp-block-button__link {
+		padding: $margin_4x $margin_2x;
+		width: 100%;
+		@each $name, $color in $theme_json_palette {
+			&.has-background {
+				&.has-#{$name}-background-color {
+					border-color: var(--wp--preset--color--#{$name}) !important;
+					&:hover,
+					&:focus {
+						color: var(--wp--preset--color--#{$name}) !important;
+						border: 2px
+							solid
+							var(--wp--preset--color--#{$name}) !important;
+						background-color: var(
+							--wp--preset--color--white
+						) !important;
+					}
+
+					//
+					&.has-white-background-color {
+						border-color: var(
+							--wp--preset--color--black
+						) !important;
+						&:hover,
+						&:focus {
+							background-color: var(
+								--wp--preset--color--black
+							) !important;
+							color: var(
+								--wp--preset--color--white
+							) !important;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+//
+.wp-block-button.is-style-outline {
+	.wp-block-button__link {
+		&:hover,
+		&:focus {
+			border: 2px solid var(--wp--preset--color--black);
+			background-color: var(--wp--preset--color--black);
+			color: var(--wp--preset--color--white);
+		}
+
+		@each $name, $color in $theme_json_palette {
+			&.has-background {
+				&.has-#{$name}-background-color {
+					color: var(--wp--preset--color--#{$name}) !important;
+					border-color: var(--wp--preset--color--#{$name}) !important;
+					background-color: var(
+						--wp--preset--color--white
+					) !important;
+					&:hover,
+					&:focus {
+						background-color: var(
+							--wp--preset--color--#{$name}
+						) !important;
+						border: 2px
+							solid
+							var(--wp--preset--color--#{$name}) !important;
+						color: var(
+							--wp--preset--color--white
+						) !important;
+					}
+
+					//
+					&.has-white-background-color {
+						border-color: var(
+							--wp--preset--color--black
+						) !important;
+						color: var(
+							--wp--preset--color--black
+						) !important;
+						&:hover,
+						&:focus {
+							background-color: var(
+								--wp--preset--color--black
+							) !important;
+							color: var(
+								--wp--preset--color--white
+							) !important;
+						}
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,46 @@
+{
+	"apiVersion": 1,
+	"name": "nu-blocks/accordion-item",
+	"title": "Accordion Item",
+	"parent": ["nu-blocks/accordion"],
+	"icon": "dashicons-star-empty",
+	"description": "Add collapsable accordion items to accordions.",
+	"keywords": ["accordion", "nu"],
+	"supports": {
+		"html": false,
+		"inserter": false,
+		"reusable": false
+	},
+	"attributes": {
+		"title": {
+			"type": "string",
+			"selector": ".wp-block-nublocks-accordion__title"
+		},
+		"open": {
+			"type": "boolean",
+			"default": false
+		},
+		"backgroundColor": {
+			"type": "string"
+		},
+		"customBackgroundColor": {
+			"type": "string"
+		},
+		"textColor": {
+			"type": "string"
+		},
+		"customTextColor": {
+			"type": "string"
+		},
+		"borderColor": {
+			"type": "string"
+		}
+	},
+	"styles": [
+	],
+	"example": [],
+	"textdomain": "nublocks",
+    "editorScript": "file:../../../build/index.js",
+    "editorStyle": "file:../../../build/index.css",
+    "style": "file:../../../build/style-index.css"
+}

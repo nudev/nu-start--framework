@@ -1,0 +1,53 @@
+/* 
+	Columns Block
+*/
+
+.wp-block-columns {
+	// ? custom style classes below
+	// just a shim here to test this kind of feature
+	&.is-style-justify-space-between {
+		justify-content: space-between;
+		> .wp-block-column {
+			flex: 0 1 auto;
+		}
+	}
+}
+
+.wp-block-column {
+	// flush bottom edge
+	> *:last-child {
+		margin-bottom: 0;
+	}
+	// flush top edge
+	> *:first-child {
+		margin-top: 0;
+	}
+}
+
+.wp-block-columns:not(.is-not-stacked-on-mobile) > .wp-block-column {
+	@media screen and (min-width: 782px) {
+		// flex-basis: auto;
+		// flex: 1;
+	}
+	@media screen and (max-width: 781px) {
+		&:not(:only-child) {
+			margin: $margin_2x 0 0 0;
+			flex: 1 1 100% !important;
+		}
+		//
+		&:first-child {
+			margin: 0;
+		}
+	}
+}
+
+// adjustments for has-background padding (see about fixing in theme.json etc)
+.wp-block-columns,
+.wp-block-column {
+	&.has-background {
+		padding: $margin_2x;
+		@media screen and (max-width: 781px) {
+			padding: $base-margin;
+		}
+	}
+}

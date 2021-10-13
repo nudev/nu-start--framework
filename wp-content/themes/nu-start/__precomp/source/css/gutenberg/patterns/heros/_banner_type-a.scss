@@ -1,0 +1,48 @@
+/* 
+
+
+*/
+.nu_pattern-is_hero_banner--type-a {
+	.wp-block-column.has-background {
+		padding: $margin_4x $margin_3x;
+
+		p {
+			margin: $base-margin 0 0 0;
+			&:first-child {
+				margin: 0;
+			}
+		}
+		h2 {
+			margin: 5px 0 0 -2px;
+		}
+	}
+
+	.wp-block-columns:only-child {
+		margin-bottom: 0;
+	}
+
+	.wp-block-columns:not(.is-not-stacked-on-mobile)
+		> .wp-block-column:not(:only-child) {
+		margin-top: 0;
+		@media (min-width: 600px) and (max-width: 781px) {
+			margin: 0;
+		}
+	}
+
+	@media screen and (max-width: 1280px) {
+	}
+	@media screen and (max-width: 960px) {
+		.wp-block-column {
+			flex-basis: 100% !important;
+			&:last-child {
+				display: none;
+			}
+			&.has-background {
+				padding: $margin_2x;
+			}
+		}
+	}
+
+	@media screen and (max-width: 640px) {
+	}
+}
