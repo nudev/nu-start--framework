@@ -1034,14 +1034,14 @@ body.wp-admin .nu_posts-grid .grid-item a {
   padding-top: 177.7777777778%;
 }
 @media screen and (min-width: 781px) {
-  .nu_posts-grid .grid-item.has-layout-horizontal.has-layout-horizontal {
+  .nu_posts-grid .grid-item.has-layout-horizontal > .contains-clickable-area, .nu_posts-grid .grid-item.has-layout-horizontal {
     flex-flow: row nowrap;
   }
-  .nu_posts-grid .grid-item.has-layout-horizontal.has-layout-horizontal > figure {
+  .nu_posts-grid .grid-item.has-layout-horizontal > .contains-clickable-area > figure, .nu_posts-grid .grid-item.has-layout-horizontal > figure {
     flex: 1 0 300px;
     max-width: 50%;
   }
-  .nu_posts-grid .grid-item.has-layout-horizontal.has-layout-horizontal > .grid-item-content {
+  .nu_posts-grid .grid-item.has-layout-horizontal > .contains-clickable-area > .grid-item-content, .nu_posts-grid .grid-item.has-layout-horizontal > .grid-item-content {
     flex: 1 1 auto;
   }
 }
@@ -1072,6 +1072,7 @@ body.wp-admin .nu_posts-grid .grid-item a {
 }
 .nu_posts-grid .grid-item > a {
   height: 100%;
+  width: 100%;
 }
 .nu_posts-grid .grid-item figure {
   flex: 1 0 auto;

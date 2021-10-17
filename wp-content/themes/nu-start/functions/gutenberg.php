@@ -6,8 +6,6 @@
 
 include_once( get_template_directory() . '/block-editor/add-reusable-blocks-to-menu.php' );
 include_once( get_template_directory() . '/block-editor/add-remove-block-categories.php' );
-include_once( get_template_directory() . '/block-patterns/register-pattern-categories.php' );
-include_once( get_template_directory() . '/block-patterns/register-block-patterns.php' );
 include_once( get_template_directory() . '/acf-blocks/register-acf-blocks.php' );
 include_once( get_template_directory() . '/block-styles/register-block-styles.php' );
 

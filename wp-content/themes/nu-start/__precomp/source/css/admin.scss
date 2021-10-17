@@ -3,6 +3,8 @@
 */
 // 
 
+// ? seems stable
+@import './library';
 
 .wp-block-widget-area.components-panel .components-panel__body-title {
 	z-index: 2 !important;
@@ -11,7 +13,9 @@
 	margin-top: 48px;
 }
 
-
+.block-editor-inserter__panel-header.block-editor-inserter__panel-header-patterns {
+	width: 100%;
+}
 
 // 	increase the sidebar width in the block editor to make previews more meaningful
 // 
@@ -25,6 +29,10 @@
 
 @media screen and (min-width: 782px) {
 	.block-editor-inserter__menu .block-editor-inserter__main-area {
-		// width: 420px;
+		width: 420px;
+		max-width: 20vw;
 	}
+}
+.block-editor-block-patterns-list__item {
+	border: 1px solid transparentize($black,0.25);
 }

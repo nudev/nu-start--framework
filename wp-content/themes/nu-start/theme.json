@@ -143,17 +143,6 @@
           "customRadius": false
         }
       },
-      "core/columns": {
-        "color": {
-          "disableAlpha": false
-        },
-        "spacing": {}
-      },
-      "core/column": {
-        "color": {
-          "disableAlpha": false
-        }
-      },
       "core/cover": {
         "spacing": {
           "units": ["%", "px", "vw"]
