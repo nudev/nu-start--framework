@@ -3,3 +3,24 @@
 	header/footer/etc expressions should only be tweaking a DRY core default settings
 */
 
+.navlinks {
+	> .menu {
+		display: flex;
+		flex-flow: row nowrap;
+		margin: 0;
+
+		// ? the top-level <li> is always a single row across the header
+		// ? the next level of sub-menu appears directly below
+		> .menu-item {
+		}
+	}
+	.sub-menu {
+		
+	}
+}
+.header {
+	> .menu {
+		> .menu-item {
+		}
+	}
+}

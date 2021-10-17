@@ -112,13 +112,7 @@ header.header {
 
     // * setup some defaults for the nav menu
     .navlinks {
-        // * the top-level <li> is always a single row across the header
-        // ? next level of sub-menu appears directly below
         > ul {
-            display: flex;
-            flex-flow: row nowrap;
-            margin: 0;
-
             // ? A/R
             @media screen and (min-width: 961px) {
                 > li {
@@ -170,7 +164,6 @@ header.header {
         // generic styles for basic elements
         a {
             display: block;
-            font-weight: 300;
             margin: 0 0 0 0;
             height: 100%;
             padding: 5px;

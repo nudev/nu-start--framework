@@ -56,13 +56,14 @@
 }
 // ? basics for horz/vert orientation here
 @mixin nu__grid_item_orientation {
+
 	&.has-layout-horizontal {
-		&.has-layout-horizontal {
+		> .contains-clickable-area, & {
 			@media screen and ( min-width: 781px ){
 				flex-flow: row nowrap;
 				> figure {
 					flex: 1 0 300px;
-					max-width: 50%;	
+					max-width: 50%;
 				}
 				> .grid-item-content {
 					flex: 1 1 auto;
@@ -101,6 +102,7 @@ body.wp-admin {
 		@include nu__grid_item_cover_ratios();
 		@include nu__grid_item_orientation();
 
+
 		// ? tighten up items margins inside here
 		> * {
 			margin-left: 0;
@@ -134,6 +136,7 @@ body.wp-admin {
 		}
 		> a {
 			height: 100%;
+			width: 100%;
 		}
 		figure {
 			flex: 1 0 auto;
