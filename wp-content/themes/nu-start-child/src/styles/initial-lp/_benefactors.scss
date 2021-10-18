@@ -1,0 +1,52 @@
+// ? classed section "benefactors" (subject to change)
+.burnes_lp--benefactors {
+	.wp-block-image.is-video-placeholder {
+		margin-right: $margin_8x;
+		overflow: hidden;
+		img {
+			@extend %transition;
+			position: relative;
+			display: block;
+		}
+		a {
+			border: none 0;
+			display: block;
+			@include nu_micon("\e038", before);
+			&:before {
+				@include center_absolute();
+				z-index: 1;
+				font-size: 40px;
+				color: white;
+				opacity: 0.8;
+			}
+			&:hover,
+			&:focus,
+			&:active {
+				border: none 0;
+				img {
+					transform: scale(1.2);
+				}
+				&:before {
+					opacity: 1;
+				}
+			}
+		}
+	}
+
+	> .wp-block-columns {
+		@media screen and (max-width: 960px) {
+			flex-flow: row wrap;
+
+			> .wp-block-column {
+				flex-basis: 100% !important;
+				margin-left: 0;
+
+				.wp-block-image {
+					&, &.is-video-placeholder{
+						margin: 0;
+					}
+				}
+			}
+		}
+	}
+}

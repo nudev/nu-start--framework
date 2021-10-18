@@ -1,7 +1,213 @@
-// 
-// 
-// 
+@import "./wp-forms/base-form-styles";
+@import "./initial-lp/hero";
+@import "./initial-lp/education";
+@import "./initial-lp/we-believe";
+@import "./initial-lp/benefactors";
+@import "./initial-lp/our-mission";
 
-// ? @import "./files-to-import/here";
+@import "./gutenslider";
 
-// 
+// ? some stuff to help debugging
+body.prod--disabled {
+	.blocks--wrapper {}
+}
+
+footer.site-footer {
+
+	.address {
+		display: none;
+	}
+
+	.footer-navmenu {
+		display: none;
+	}
+}
+
+// TODO: destructure the code from below into partials
+
+.hotfixing__social-change-image {
+	max-width: 820px;
+	margin: 0 0 0 auto;
+}
+
+.hotfixing__director-headshot {
+	margin-right: $margin_8x;
+}
+
+p.has-dark-blue-color.has-smaller-font-size {
+	letter-spacing: 1px;
+	// margin: 0 0 $margin_2x 0;
+}
+
+.wp-block-group.has-background,
+.wp-block-columns.has-background {
+	padding: $margin_2x;
+
+}
+
+.initally--hidden {
+	opacity: 0;
+}
+
+.wp-block-columns.hotfix__collapse-column-widths {
+	margin-top: $margin_4x;
+
+	>.wp-block-column {
+		flex: 0 1 auto;
+		width: auto;
+	}
+}
+
+// ? only target the specific blocks at "top level"
+.blocks--wrapper {
+	&:not(:first-child) {
+		>.wp-block-group.alignfull.has-background {
+			padding: $margin_8x 0;
+		}
+	}
+}
+
+// ? hacky answer to the directors 3 call to action buttons with various iconography
+.hotfix__directors-calls-to-action {
+	justify-content: flex-start;
+
+	.is-style-links-have-arrows {
+		text-align: center;
+
+		a {
+			display: inline;
+		}
+
+		&.is-icon-download,
+		&.is-icon-twitter {
+			a:after {
+				display: none;
+			}
+
+			&.is-icon-twitter {
+				>a {
+					position: relative;
+
+					&:before {
+						content: "";
+						display: block;
+						position: absolute;
+						top: 50%;
+						left: -#{$margin_2x};
+						transform: translate(-100%, -50%);
+					}
+				}
+			}
+
+			&.is-icon-download {
+				>a {
+					@include nu_micon("\e2c4", before);
+				}
+			}
+		}
+	}
+
+	.wp-block-columns {
+		@media screen and (max-width: 960px) {
+			flex-flow: column nowrap;
+		}
+	}
+
+	.wp-block-column {
+		flex: 0 1 (100% / 3);
+		width: auto;
+		border: 0px solid $grey_8;
+		border-right: 1px solid $grey_8;
+		margin: 0;
+		padding: 0 $base-margin;
+
+		&:last-child {
+			border-right: 1px solid transparent;
+		}
+
+		@media screen and (max-width: 599px) {
+			border: 1px solid transparent;
+		}
+	}
+}
+
+html body {
+	header.header {
+		box-shadow: 0 0 0 0;
+	}
+
+	.blocks--wrapper {
+		>.wp-block-group.has-very-large-padding {
+			.has-narrow-max-width {
+				max-width: 380px;
+			}
+		}
+	}
+
+	// ? the youtube embed that must be hooked into magnific
+	.wp-block-embed.wp-block-embed-youtube {
+		margin-right: $margin_8x;
+	}
+
+	.wp-block-group.is-style-card-outlined {
+		position: relative;
+
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6 {
+			margin: $margin_2x 0 $base-margin 0;
+		}
+
+		.wp-block-image.alignfull {
+			position: relative;
+			margin-top: -$margin_2x;
+			top: 0;
+			left: -$margin_2x;
+			width: calc(100% + #{$margin_4x}) !important;
+		}
+
+		p.is-style-links-have-arrows {
+			&:last-child {
+				position: absolute;
+				bottom: $base-margin;
+				left: $margin_2x;
+				margin: 0;
+			}
+		}
+	}
+
+	.wp-block-column .wp-block-group.is-style-card-outlined {
+		min-height: 100%;
+	}
+}
+
+
+
+.wp-block-group {
+	.wp-block-columns:only-child {
+		@media screen and (min-width: 960px) {
+			margin-bottom: 0;
+		}
+	}
+}
+
+.wp-block-group {
+	.wp-block-columns:only-child {
+		@media screen and (min-width: 960px) {
+			margin-bottom: 0;
+		}
+	}
+}
+
+
+.wp-block-acf-posts-grid {
+
+	.filteringform .filters {
+		.filters-filter:not([data-taxonomy="initiatives-schools"]){
+			display: none;
+		}
+	}
+}

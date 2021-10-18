@@ -1,0 +1,95 @@
+// ? classed section "believe" (subject to change)
+.burnes_lp-we-beleive {
+	.wp-block-columns.has-minimal-inner-cards {
+		// ? core styling for all items
+		.wp-block-group.is-style-card-outlined {
+			border: 1px solid transparent;
+			border-right: 1px solid $grey_4;
+			// * theres a clearfix here from WP Core to hide
+			&:after {
+				display: none; // must be hidden or it becomes the last child
+			}
+			@include flush_inner_content_vertical();
+		}
+
+		// ? first item flush left
+		.wp-block-column:first-child {
+			.wp-block-group.is-style-card-outlined {
+				padding-left: 0;
+			}
+		}
+		// ? last item flush right
+		.wp-block-column:last-child {
+			.wp-block-group.is-style-card-outlined {
+				border-right: 1px solid transparent;
+				padding-right: 0;
+			}
+		}
+
+		@media screen and (max-width: 1024px) {
+			flex-wrap: wrap;
+
+			.wp-block-column {
+				margin: 0;
+				flex-basis: 50% !important;
+
+				&:nth-child(2n) {
+					.wp-block-group.is-style-card-outlined {
+						border: 1px solid transparent;
+					}
+					+ .wp-block-column {
+						.wp-block-group.is-style-card-outlined {
+							padding-left: 0;
+						}
+					}
+				}
+			}
+		}
+
+		@media screen and (max-width: 640px) {
+			.wp-block-column {
+				flex-basis: 100% !important;
+				&:nth-child(2n) {
+					.wp-block-group.is-style-card-outlined {
+						border-bottom: 1px solid $grey_4;
+					}
+				}
+				&:last-child {
+					.wp-block-group.is-style-card-outlined {
+						border-bottom: none 0;
+					}
+				}
+			}
+			.wp-block-group.is-style-card-outlined {
+				padding: $margin_2x 0;
+				border: 1px solid transparent;
+				border-bottom: 1px solid $grey_4;
+			}
+		}
+	}
+
+	// ! this breakpoint is used by WP-Core and must be overridden
+	@media (min-width: 600px) and (max-width: 781px) {
+		.wp-block-columns.has-minimal-inner-cards {
+			.wp-block-column {
+				.wp-block-group.is-style-card-outlined {
+					padding: $margin_2x 0;
+					border-right: none 0;
+					border-bottom: 1px solid $grey_4;
+				}
+				&:nth-child(2n) {
+					&:not(:last-child) {
+						.wp-block-group.is-style-card-outlined {
+							border-bottom: 1px solid $grey_4;
+						}
+					}
+				}
+				&:last-child {
+					.wp-block-group.is-style-card-outlined {
+						border-bottom: none 0;
+					}
+				}
+			}
+		}
+	}
+}

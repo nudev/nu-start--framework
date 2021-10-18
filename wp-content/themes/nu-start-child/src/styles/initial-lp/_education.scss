@@ -1,0 +1,140 @@
+/* 
+
+
+*/
+.burnes_lp--education-section {
+	.wp-block-cover__inner-container {
+		.hotfixing__mediatext-as-featured-items-list {
+			display: flex;
+			flex-flow: row wrap;
+			margin: $margin_2x auto;
+
+			@media screen and (max-width: 640px) {
+				flex-flow: column nowrap;
+			}
+
+			.wp-block-media-text {
+				flex: 0 1 auto;
+				margin-top: $base-margin;
+				margin-right: $base-margin !important;
+				margin-left: 0 !important;
+				grid-template-columns: 64px auto !important;
+			}
+
+			.wp-block-media-text__media {
+				width: 48px !important;
+			}
+
+			.wp-block-media-text__content {
+				// padding: 0 $base-margin;
+				padding: 0;
+			}
+
+			// only style over the WP core breakpoint
+			@media screen and (min-width: 601px) {
+				.wp-block-media-text {
+					grid-template-columns: max-content !important;
+
+					figure {
+						margin-right: $base-margin;
+					}
+				}
+			}
+		}
+
+		>.wp-block-group {
+			padding: $margin_4x $base-margin;
+			padding-bottom: 0;
+			margin-bottom: 0;
+
+			>.wp-block-columns {
+				.hotfix__collapse-column-widths {
+					margin-bottom: 0;
+
+					@media screen and (max-width: 640px) {
+						flex-wrap: nowrap;
+						align-items: flex-start;
+
+						.wp-block-column {
+							margin: 0 auto;
+							flex-basis: auto !important;
+						}
+					}
+				}
+
+				@media screen and (max-width: 1024px) {
+					flex-wrap: wrap;
+
+					>.wp-block-column {
+						flex-basis: 100% !important;
+					}
+
+
+					// ? this section has reversed flex wrapping to show the video above the content when stacked
+					&:last-child {
+						flex-wrap: wrap-reverse;
+						margin-bottom: 0;
+						> .wp-block-column {
+							
+							&:first-child {
+								margin-top: $margin_2x;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.wp-block-columns:last-child {
+		margin-bottom: 0;
+	}
+
+	.wp-block-cover.has-large-inner-container {
+		padding-bottom: 0 !important;
+		padding-top: $margin_4x !important;
+
+		.wp-block-cover__inner-container {
+			max-width: calc(100% - #{$margin_8x});
+
+			@media screen and (max-width: 640px) {
+				max-width: calc(90% + #{$margin_2x});
+			}
+
+			>.wp-block-group {
+
+				>.wp-block-group,
+				>.wp-block-columns {
+					max-width: calc(80% + #{$margin_8x});
+
+					@media screen and (max-width: 640px) {
+						max-width: 100%;
+					}
+
+					h3.is-style-display {
+						margin: 0;
+					}
+				}
+			}
+
+			// only style under the WP Core breakpoint
+			@media screen and (max-width: 640px) {
+				max-width: calc(100% - #{$margin_2x});
+
+				>.wp-block-group {
+					padding: $base-margin;
+				}
+			}
+			.wp-block-embed {
+				max-width: 100%;
+				min-width: 0px;
+				min-height: 0px;
+			}
+		}
+	}
+}
+
+//
+
+/* 
+ */

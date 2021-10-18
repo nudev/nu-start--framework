@@ -1,0 +1,92 @@
+/* 
+
+
+*/
+.burnes_lp--our-mission {
+
+
+	.hotfixing__our-mission-card {
+		max-width: 480px;
+		padding: $margin_4x;
+		@include flush_inner_content_vertical();
+
+		p.has-dark-blue-color.has-smaller-font-size {
+			&:before {
+				content: "";
+				display: inline-block;
+				vertical-align: middle;
+				transform: rotate(45deg);
+				width: 10px;
+				height: 10px;
+				background-color: var(--wp--preset--color--dark-blue);
+				margin: 0;
+				margin-top: -4px;
+				margin-right: $base-margin;
+			}
+		}
+	}
+
+
+	.wp-block-column {
+		&[style*="flex-basis:40%"] {
+			@media (min-width:782px) {
+				min-width: 500px;
+			}
+		}
+		&[style*="flex-basis:480px"] {
+			
+		}
+		// items should not push down from the top of this section
+		> *:first-child {
+			margin-top: 0;
+		}
+	}
+
+
+	// ? annoying wp-core style to override
+	@media (min-width:782px) {
+		.wp-block-columns {
+			// flex-wrap: wrap;
+		}
+	}
+
+	
+	// ? first breakpoint overrides
+	@media (max-width:1024px) {
+		.wp-block-columns {
+			flex-wrap: wrap;
+			.wp-block-column {
+				margin: 0;
+				flex-basis: 100% !important;
+				&:not([style*="flex-basis:480px"]){
+					order: 3;
+					margin-top: $margin_2x;
+				}
+				&[style*="flex-basis:480px"]{
+					display: flex;
+					flex-flow: column nowrap;
+					align-items: center;
+					justify-content: center;
+				}
+			}
+		}
+		
+		.wp-block-columns:not(.is-not-stacked-on-mobile) > .wp-block-column:not(:first-child) {
+			margin-left: 0;
+		}
+	}
+
+	@media (max-width:640px) {
+		
+		.wp-block-column[style*="flex-basis:40%"] {
+			+ .wp-block-column {
+				display: none;
+			}
+
+		}
+	}
+
+
+
+
+}

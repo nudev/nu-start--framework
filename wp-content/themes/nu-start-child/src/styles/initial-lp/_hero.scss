@@ -1,0 +1,69 @@
+// ? hero section tweaks
+
+.blocks--wrapper {
+	> .wp-block-group:first-child {
+	}
+	
+	> .burnes_lp--hero:first-child {
+		margin-top: 0;
+		@media screen and (max-width: 640px) {
+			padding: 0;
+		}
+	}
+}
+
+.wp-block-group.burnes_lp--hero {
+
+	&.has-background {
+		padding: 0;
+	}
+
+
+	@media screen and (max-width: 640px) {
+		padding: 0;
+	}
+	.wp-block-cover.alignfull {
+		> img {
+			padding: $margin_2x $margin_4x;
+			@media screen and (max-width: 960px) {
+				padding: $margin_2x 0;
+			}
+		}
+
+		.wp-block-cover__inner-container {
+			> *:only-child {
+				margin-bottom: 0;
+			}
+
+			.wp-block-column {
+				margin-top: 0;
+			}
+		}
+	}
+
+	.has-background.wp-block-column {
+		padding: $margin_4x;
+	}
+
+	@media screen and (min-width: 641px) {
+		.has-background.wp-block-column {
+			transform: translateX(-#{$margin_4x});
+		}
+	}
+
+	@media screen and (max-width: 960px) {
+		.has-background.wp-block-column {
+			flex-basis: 100% !important;
+			padding: $base-margin;
+			line-height: 1.375;
+		}
+	}
+
+	.is-special-fadein {
+		strong {
+			position: relative;
+			font-weight: 300;
+			opacity: 0;
+		}
+	}
+}
