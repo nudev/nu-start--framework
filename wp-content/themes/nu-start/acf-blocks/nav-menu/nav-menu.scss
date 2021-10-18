@@ -5,18 +5,18 @@
 //?
 .nu__navmenu {
 
-	ul {
-		list-style-type: none;
-		// padding: 0;
-	}
+	> .navlinks {
 
-	li.menu-item-has-children  {
-		ul {
-			// padding-left: $base-margin;
+		> .menu {
+			flex-flow: column nowrap;
 		}
 	}
-
 }
+	
+
+
+
+// ? disable clicking links in the editor
 body.wp-admin {
 	.nu__navmenu {
 		a {

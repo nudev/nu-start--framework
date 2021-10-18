@@ -5,6 +5,8 @@
 
 .navlinks {
 	> .menu {
+		list-style-type: none;
+		list-style: none;
 		display: flex;
 		flex-flow: row nowrap;
 		margin: 0;
