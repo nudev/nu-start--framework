@@ -448,9 +448,9 @@
                         "auto": "Auto",
                         "square": "Square",
                         "tall": "Tall",
-                        "tallest": "Tallest",
+                        "very-tall": "Very Tall",
                         "wide": "Wide",
-                        "widest": "Widest"
+                        "very-wide": "Very Wide"
                     },
                     "allow_null": 1,
                     "default_value": "auto",
@@ -516,7 +516,7 @@
     "acfe_display_title": "",
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1634227189,
+    "modified": 1634735706,
     "acfe_categories": {
         "acf-block": "ACF Block"
     }

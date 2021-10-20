@@ -15,18 +15,18 @@ $guides['grid-item'] = '
 
 $thePostThumbnail = !empty($item_style['display_featured_image']) && has_post_thumbnail() ? '<figure>'.get_the_post_thumbnail( ).'</figure>' : '';
 
-$readMore = '<a class="nu_posts-grid-readmore" href="' . esc_url( get_the_permalink() ) . '"><span class="moretext">Read More</span></a>';
+$readMore = '<a class="nu_posts-grid-readmore" href="' . esc_url( get_the_permalink() ) . '"><span class="moretext">More about '.get_the_title().'</span></a>';
 
 $griditems_return .= sprintf(
 	$guides['grid-item'],
-	' '.self::$post['post_type'],
+	' '.$post_type,
 	$thePostThumbnail,
 	get_featured_tagstring( $post['ID'] ),
 	'<h4 class="post-title is-style-display">'.get_the_title($post['ID']).'</h4>',
 	// '<p class="post-title has-larger-font-size">'.get_the_title($post['ID']).'</p>',
 	has_excerpt( $post['ID'] ) ? '<p class="post-excerpt">'.get_the_excerpt($post['ID']).'</p>' : '',
 	$readMore,
-	$aspectRatio,
+	$aspect_ratio_class,
 	$orientationClass
 );
 

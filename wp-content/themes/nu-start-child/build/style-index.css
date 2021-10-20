@@ -384,4 +384,8 @@ input[type=search] {
   box-sizing: inherit;
 }
 
+body.page-id-360 .people-cat-2 span, body.page-id-350 .people-cat-1 span {
+  border-bottom: 2px solid #2d2926;
+}
+
 /*# sourceMappingURL=style-index.css.map*/

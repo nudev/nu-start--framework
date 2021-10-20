@@ -15,7 +15,7 @@ $guides['grid-item'] = '
 
 $temp_string = '';
 
-$initiative_schools = get_the_terms( self::$post['ID'], self::$post['post_type'] . '-schools' );
+$initiative_schools = get_the_terms( $post->ID, $post_type . '-schools' );
 
 if( !empty($initiative_schools) && !is_wp_error( ($initiative_schools) ) ){
 	foreach( $initiative_schools as $school_object ){
@@ -39,13 +39,13 @@ $readMore = '<a class="nu_posts-grid-readmore" href="' . esc_url( get_the_permal
 
 $griditems_return .= sprintf(
 	$guides['grid-item'],
-	' '.self::$post['post_type'],
+	' '.$post_type,
 	$thePostThumbnail,
 	!empty($initiative_schools_string) ? $initiative_schools_string : '',
 	'<h4 class="post-title is-style-display">'.get_the_title($post['ID']).'</h4>',
 	'',
 	do_blocks(get_the_content($post['ID'])),
-	$aspectRatio,
+	$aspect_ratio_class,
 	$orientationClass
 );
 

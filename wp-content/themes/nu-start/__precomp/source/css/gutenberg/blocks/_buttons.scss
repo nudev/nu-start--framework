@@ -40,18 +40,14 @@ $theme_json_palette: (
 				}
 				//
 				&.has-white-background-color {
-					border-color: var(
-						--wp--preset--color--black
-					) !important;
+					border-color: var(--wp--preset--color--black) !important;
 					color: var(--wp--preset--color--black) !important;
 					&:hover,
 					&:focus {
 						background-color: var(
 							--wp--preset--color--black
 						) !important;
-						color: var(
-							--wp--preset--color--white
-						) !important;
+						color: var(--wp--preset--color--white) !important;
 					}
 				}
 			}
@@ -129,9 +125,7 @@ $theme_json_palette: (
 							background-color: var(
 								--wp--preset--color--black
 							) !important;
-							color: var(
-								--wp--preset--color--white
-							) !important;
+							color: var(--wp--preset--color--white) !important;
 						}
 					}
 				}
@@ -166,9 +160,7 @@ $theme_json_palette: (
 						border: 2px
 							solid
 							var(--wp--preset--color--#{$name}) !important;
-						color: var(
-							--wp--preset--color--white
-						) !important;
+						color: var(--wp--preset--color--white) !important;
 					}
 
 					//
@@ -176,17 +168,13 @@ $theme_json_palette: (
 						border-color: var(
 							--wp--preset--color--black
 						) !important;
-						color: var(
-							--wp--preset--color--black
-						) !important;
+						color: var(--wp--preset--color--black) !important;
 						&:hover,
 						&:focus {
 							background-color: var(
 								--wp--preset--color--black
 							) !important;
-							color: var(
-								--wp--preset--color--white
-							) !important;
+							color: var(--wp--preset--color--white) !important;
 						}
 					}
 				}
