@@ -6,27 +6,27 @@
 @mixin nu__grid_item_cover_ratios {
 	figure {
 		overflow: hidden;
-
 		position: relative;
 		margin: 0;
+	}
+	img {
+		width: 100%;
+		min-height: 100%;
 	}
 
 	&.has-very-wide-cover-image,
 	&.has-wide-cover-image,
 	&.has-tall-cover-image,
 	&.has-very-tall-cover-image,
-	&.has-square-cover-image
-	{
+	&.has-square-cover-image {
 		img {
 			position: absolute;
 			top: 0;
 			left: 0;
 			width: 100%;
 			height: 100%;
-			@extend %transition;
 			transform: scale(1);
 		}
-		
 	}
 	&.has-square-cover-image {
 		figure {
@@ -56,10 +56,10 @@
 }
 // ? basics for horz/vert orientation here
 @mixin nu__grid_item_orientation {
-
 	&.has-layout-horizontal {
-		> .contains-clickable-area, & {
-			@media screen and ( min-width: 781px ){
+		> .contains-clickable-area,
+		& {
+			@media screen and (min-width: 781px) {
 				flex-flow: row nowrap;
 				> figure {
 					flex: 1 0 300px;
@@ -92,16 +92,37 @@ body.wp-admin {
 
 // restrict to this acf-block
 .nu_posts-grid {
-
 	.nu__grid {
 		@include nu__responsive_grid_layout();
 	}
-	
+
 	// restrict to any grid item for basics
 	.grid-item {
 		@include nu__grid_item_cover_ratios();
 		@include nu__grid_item_orientation();
 
+		> a {
+			&.contains-clickable-area {
+				border: none 0;
+				.post-title span {
+					@include accentUnderline();
+				}
+				&:hover,
+				&:focus {
+					border: none 0;
+					.post-title span {
+						&:before {
+							width: 100%;
+						}
+					}
+					img {
+						transform: scale(1.2);
+					}
+					&:active {
+					}
+				}
+			}
+		}
 
 		// ? tighten up items margins inside here
 		> * {
@@ -140,6 +161,9 @@ body.wp-admin {
 		}
 		figure {
 			flex: 1 0 auto;
+		}
+		img {
+			@extend %transition;
 		}
 	}
 

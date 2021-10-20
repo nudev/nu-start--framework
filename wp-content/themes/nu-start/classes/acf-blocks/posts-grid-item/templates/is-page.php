@@ -15,14 +15,14 @@ $guides['grid-item-is-page'] = '
 
 $griditems_return .= sprintf(
 	$guides['grid-item-is-page'],
-	' '.self::$post['post_type'],
+	' '.$post_type,
 	has_post_thumbnail( ) ? '<figure>'.get_the_post_thumbnail( ).'</figure>' : '',
 	'<h4 class="post-title"><span>'.get_the_title( ).'</span></h4>',
 	// $the_date_time,
 	'',
 	!empty( get_the_excerpt() ) ? '<p class="post-excerpt">'.get_the_excerpt( ).'</p>' : '',
 	$determined_permalink,
-	$aspectRatio,
+	$aspect_ratio_class,
 	$orientationClass,
 	$maybe_target
 );
