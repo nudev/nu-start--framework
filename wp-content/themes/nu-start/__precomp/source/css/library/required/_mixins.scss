@@ -189,32 +189,41 @@
 	}
 }
 
+// @mixin nuGrid($w, $c, $gX, $gY: $gX) {
+// 	> ul {
+// 		list-style-type: none;
+// 		list-style: none;
+// 		display: flex;
+// 		flex-flow: row wrap;
+// 		> li {
+// 			$basis: calc((#{$w} - ((#{$c} - 1) * #{$gX})) / #{$c});
+// 			flex: 0 1 $basis;
+// 			margin: 0 $gX $gY 0; // set item margins
+
+// 			&:nth-child(n + 1) {
+// 				margin: 0 $gX $gY 0; // reset next item margins
+// 			}
+
+// 			&:nth-child(#{$c}n) {
+// 				margin: 0 0 $gY 0; // clip margin-right for nth-column
+// 			}
+// 		}
+// 	}
+// }
 @mixin nuGrid($w, $c, $gX, $gY: $gX) {
+	// 
 	> ul {
-		list-style-type: none;
-		list-style: none;
-		display: flex;
-		flex-flow: row wrap;
-		> li {
-			$basis: calc((#{$w} - ((#{$c} - 1) * #{$gX})) / #{$c});
-			flex: 0 1 $basis;
-			margin: 0 $gX $gY 0; // set item margins
-
-			&:nth-child(n + 1) {
-				margin: 0 $gX $gY 0; // reset next item margins
-			}
-
-			&:nth-child(#{$c}n) {
-				margin: 0 0 $gY 0; // clip margin-right for nth-column
-			}
-		}
+		display: grid;
+		grid-row-gap: $gX;
+		grid-column-gap: $gY;
+		grid-template-columns: repeat($c, 1fr);
 	}
 }
 
 @mixin nu__responsive_grid_layout() {
 	// ? set margins and width variables
 	$gX: $margin_2x;
-	$gY: $base-margin;
+	$gY: $margin_2x;
 	$w: 100%;
 
 	@for $n from 1 through 7 {

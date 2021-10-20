@@ -40,8 +40,8 @@ class NU_ACF_Blocks
 
 	private function includes(){
 		// ... require_once template files here
-		require_once( get_template_directory(  ) . '/classes/acf-blocks/class.posts-grid.php' );
-		require_once( get_template_directory(  ) . '/classes/acf-blocks/class.posts-grid-item.php' );
+		require_once( get_template_directory(  ) . '/classes/acf-blocks/posts-grid/class.posts-grid.php' );
+		require_once( get_template_directory(  ) . '/classes/acf-blocks/posts-grid-item/class.posts-grid-item.php' );
 		require_once( get_template_directory(  ) . '/classes/acf-blocks/class.pim-programs.php' );
 		require_once( get_template_directory(  ) . '/classes/acf-blocks/datetime-block/class.date-time-block.php' );
 	}

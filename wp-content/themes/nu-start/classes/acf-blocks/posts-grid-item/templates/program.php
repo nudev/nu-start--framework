@@ -17,7 +17,7 @@ $readMore = '<a class="nu_posts-grid-readmore" href="' . esc_url( get_the_permal
 
 $griditems_return .= sprintf(
 	$guides['grid-item'],
-	' '.self::$post['post_type'],
+	' '.$post_type,
 	has_post_thumbnail( ) ? '<figure>'.get_the_post_thumbnail( ).'</figure>' : '',
 	get_featured_tagstring( $post['ID'] ),
 	'<h4 class="post-title">'.get_the_title().'</h4>',
