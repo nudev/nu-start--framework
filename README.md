@@ -1,10 +1,12 @@
-# nu-start--framework
-TBD - The NU Start Framework - Including a Parent Theme and a Child Theme (optional)
+# NU Start Framework
 
-# Important Notes:
 
+## Important Notes:
 # 1: Parent theme uses CodeKit (two separate builds atm) for Blocks and Theme
 # 2: Child theme uses the @wordpress/scripts build proces
- 
- 
- #3: the best workflow will be to make changes to the child theme where it is ideally separated
+
+## Install Instructions
+1. clone and extract per usual
+2. unzip the archive in the plugins folder to deploy all required plugins
+3. be sure to activate them before activating our theme
+4. tbd; the post-activation config
