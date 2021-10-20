@@ -217,6 +217,8 @@
 		grid-row-gap: $gX;
 		grid-column-gap: $gY;
 		grid-template-columns: repeat($c, 1fr);
+		grid-template-columns: repeat($c, minmax(200px, 1fr));
+		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 	}
 }
 

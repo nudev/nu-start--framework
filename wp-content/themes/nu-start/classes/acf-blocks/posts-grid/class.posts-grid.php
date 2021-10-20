@@ -144,7 +144,7 @@ class PostsGrid
 			$guides['acf-block-container'],
 			!empty( self::$block['anchor' ]) ? self::$block['anchor'] : self::$block['id'],	// block anchor or a unique ID
 			!empty(self::$block['className']) ? ' '.self::$block['className'] : '',
-			!empty(self::$block['align']) ? ' '.self::$block['align'] : '',
+			!empty(self::$block['align']) ? ' justify-'.self::$block['align'] : '',
 			self::$post_fields['options']['columns'],  // column count value (required field)
 			$this->grid_items_str,
 			$this->pagination_str,

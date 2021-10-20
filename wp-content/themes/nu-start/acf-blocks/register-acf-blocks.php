@@ -165,11 +165,8 @@ if( function_exists('acf_register_block_type') ):
 		'icon' => '',
 		'supports' => array(
 			'align' => array(
-				0 => 'wide',
-				1 => 'full',
-				2 => 'center',
-				3 => 'left',
-				4 => 'right',
+				'wide',
+				'full'
 			),
 			'mode' => true,
 			'multiple' => true,

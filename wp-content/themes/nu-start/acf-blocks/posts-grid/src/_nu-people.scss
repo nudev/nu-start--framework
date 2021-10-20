@@ -4,6 +4,12 @@
 
 .nu_posts-grid .nu__grid .grid-item.nu_people {
 
+	figure {
+		min-height: 280px;
+		@media screen and ( min-width: 1281px ){
+			max-height: 20vw;
+		}
+	}
 	.featured-tags {
 		width: 100%;
 		.tags {
