@@ -112,6 +112,10 @@ Thumbs.db
 
 !wp-content/plugins/nu-gutenberg/
 
+# for the moment; were going to track a zip file that has all the plugins as we want them
+# ideally; this  will be replaced by a theme_activation installer
+!wp-content/plugins/unpack_required_plugins_here.zip
+
 
 #!wp-content/themes/example-theme/
 !wp-content/themes/nu-start
