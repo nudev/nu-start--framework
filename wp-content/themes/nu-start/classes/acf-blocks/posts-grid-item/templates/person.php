@@ -9,12 +9,12 @@
 
 
 $excerpt = '';
-$excerpt .= !empty(self::$fields['excerpt_title']) ? '<p class="has-smaller-font-size"><i>'.self::$fields['excerpt_title'].'</i></p>' : '';
-$excerpt .= !empty(self::$fields['excerpt_body']) ? '<p class="has-smaller-font-size">'.self::$fields['excerpt_body'].'</p>' : '';
+$excerpt .= !empty($fields['excerpt_title']) ? '<p class="has-smaller-font-size"><i>'.$fields['excerpt_title'].'</i></p>' : '';
+$excerpt .= !empty($fields['excerpt_body']) ? '<p class="has-smaller-font-size">'.$fields['excerpt_body'].'</p>' : '';
 
 // todo: lol this is too much
-$excerpt .= !empty(self::$fields['person_phone_number']) ? '<span><a href="tel:' .self::$fields['person_phone_number']. '" target="_blank">' .preg_replace('/\d{3}/', '$0.', str_replace('.', null, self::$fields['person_phone_number']), 2). '</a></span>' : '';
-$excerpt .= !empty(self::$fields['person_email']) ? '<span><a href="mailto:' .self::$fields['person_email']. '" target="_blank">' .self::$fields['person_email']. '</a></span>' : '';
+$excerpt .= !empty($fields['person_phone_number']) ? '<span><a href="tel:' .$fields['person_phone_number']. '" target="_blank">' .preg_replace('/\d{3}/', '$0.', str_replace('.', null, $fields['person_phone_number']), 2). '</a></span>' : '';
+$excerpt .= !empty($fields['person_email']) ? '<span><a href="mailto:' .$fields['person_email']. '" target="_blank">' .$fields['person_email']. '</a></span>' : '';
 
 $guides['grid-item-person'] = '
 	<li class="grid-item%1$s%7$s%8$s">
@@ -29,7 +29,7 @@ $griditems_return .= sprintf(
 	$guides['grid-item-person'],
 	' '.$post_type,
 	has_post_thumbnail( ) ? '<figure>'.get_the_post_thumbnail( ).'</figure>' : '',
-	get_featured_tagstring( $post['ID'] ),
+	get_featured_tagstring( $post->ID ),
 	'<h4 class="post-title">'.get_the_title().'</h4>',
 	$excerpt,
 	$readMore,

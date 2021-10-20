@@ -1,18 +1,12 @@
 /* 
-	Columns Block
+
+
+Columns Block
+
+
 */
 
-.wp-block-columns {
-	// ? custom style classes below
-	// just a shim here to test this kind of feature
-	&.is-style-justify-space-between {
-		justify-content: space-between;
-		> .wp-block-column {
-			flex: 0 1 auto;
-		}
-	}
-}
-
+// ? flush generic margins away
 .wp-block-column {
 	// flush bottom edge
 	> *:last-child {
@@ -24,30 +18,18 @@
 	}
 }
 
+// ? simplest A/R is just to break to 1 column early
 .wp-block-columns:not(.is-not-stacked-on-mobile) > .wp-block-column {
-	@media screen and (min-width: 782px) {
-		// flex-basis: auto;
-		// flex: 1;
-	}
 	@media screen and (max-width: 781px) {
-		&:not(:only-child) {
-			margin: $margin_2x 0 0 0;
-			flex: 1 1 100% !important;
-		}
-		//
+		// general reset margins
 		&:first-child {
 			margin: 0;
 		}
-	}
-}
 
-// adjustments for has-background padding (see about fixing in theme.json etc)
-.wp-block-columns,
-.wp-block-column {
-	&.has-background {
-		padding: $margin_2x;
-		@media screen and (max-width: 781px) {
-			padding: $base-margin;
+		// multi-columns just drop to 1 here
+		&:not(:only-child) {
+			margin: $margin_2x 0 0 0;
+			flex: 1 1 100% !important;
 		}
 	}
 }
