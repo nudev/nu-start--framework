@@ -4,12 +4,27 @@
 @import './reusables';
 @import './content-types';
 
-
 .has-background {
-	&:not(hr){
-		padding: $margin_2x;
-		@media screen and (max-width: 781px) {
-			padding: $base-margin;
+
+	padding: $margin_2x;
+
+	&.wp-block-group {
+		padding: $base-margin;
+	}
+	&.wp-block-button__link {
+		padding: $half-margin $base-margin;
+	}
+	
+	@media screen and ( max-width: 781px ){
+		
+		padding: $base-margin;
+		
+		&.wp-block-button__link {
+			padding: $half-margin $base-margin;
 		}
+	}
+	
+	&.wp-block-separator {
+		padding: 0;
 	}
 }

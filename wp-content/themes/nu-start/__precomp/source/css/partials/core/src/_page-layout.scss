@@ -28,11 +28,13 @@
 
 	// TODO: fix this it doesnt work!
 	@media screen and ( max-width: 781px ){
+		padding: 0 $half-margin;
 		> * {
 			margin-top: $margin_4x;
 		}
 		> :not(.alignfull):not(.is-reusable) {
 			max-width: 90%;
+			max-width: 100%;
 		}
 	}
 }

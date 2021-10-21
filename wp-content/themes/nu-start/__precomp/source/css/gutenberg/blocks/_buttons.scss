@@ -11,21 +11,17 @@ $theme_json_palette: (
 	"yellow": "#fac515",
 	"green": "#48bb78",
 );
-.wp-block-button {
-}
 
 .wp-block-button__link {
 	border-radius: 0px;
 	border: 2px solid var(--wp--preset--color--black);
 	@include font-size(0.875rem);
+	padding: $half-margin $base-margin;
 	&:hover,
 	&:focus {
 		background-color: var(--wp--preset--color--white);
 		color: var(--wp--preset--color--black);
 		border: 2px solid var(--wp--preset--color--black);
-	}
-	&.has-background {
-		padding: ($base-margin * 0.5) $base-margin;
 	}
 	@each $name, $color in $theme_json_palette {
 		&.has-background {
