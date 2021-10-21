@@ -6,8 +6,10 @@
 
 
 .has-background {
-	padding: $margin_2x;
-	@media screen and (max-width: 781px) {
-		padding: $base-margin;
+	&:not(hr){
+		padding: $margin_2x;
+		@media screen and (max-width: 781px) {
+			padding: $base-margin;
+		}
 	}
 }
