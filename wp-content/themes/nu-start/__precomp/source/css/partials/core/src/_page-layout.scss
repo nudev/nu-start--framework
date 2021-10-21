@@ -27,7 +27,10 @@
 	}
 
 	// TODO: fix this it doesnt work!
-	@media screen and ( max-width: 780px ){
+	@media screen and ( max-width: 781px ){
+		> * {
+			margin-top: $margin_4x;
+		}
 		> :not(.alignfull):not(.is-reusable) {
 			max-width: 90%;
 		}

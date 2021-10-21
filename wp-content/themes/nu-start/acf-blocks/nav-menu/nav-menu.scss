@@ -9,6 +9,15 @@
 
 		> .menu {
 			flex-flow: column nowrap;
+			padding: 0;
+
+		}
+
+		.menu-item {
+			margin: 5px 0 0 0;
+			&:first-child {
+				margin: 0;
+			}
 		}
 	}
 }

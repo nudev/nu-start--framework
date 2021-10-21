@@ -5,38 +5,10 @@
 @import './testimonials';
 @import './newsletter-sections';
 @import './faq-sections';
-
+@import './content-types';
 
 
 // todo: structure this properly
-
-// 
-.nu_start--magazine-layout-type-a{}
-
-
-.nu_start--event-item-single-type-a{
-	
-}
-
-.nu_start--news-item-single-type-a{
-
-	.is-news-item-content {
-
-		max-width: 960px;
-		margin:  0 auto;
-
-	}
-}
-
-
-.nu_start--person-item-single-type-a{
-
-	.is-headshot-and-bio {
-		max-width: 960px;
-		margin:  0 auto;
-	}
-	
-}
 
 .nu_pattern_collection--personal-cover-photo {}
 

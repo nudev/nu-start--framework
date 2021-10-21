@@ -4,6 +4,13 @@
 */
 .nu__navmenu > .navlinks > .menu {
   flex-flow: column nowrap;
+  padding: 0;
+}
+.nu__navmenu > .navlinks .menu-item {
+  margin: 5px 0 0 0;
+}
+.nu__navmenu > .navlinks .menu-item:first-child {
+  margin: 0;
 }
 
 body.wp-admin .nu__navmenu a {

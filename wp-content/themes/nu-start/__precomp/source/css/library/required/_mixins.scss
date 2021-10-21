@@ -213,19 +213,19 @@
 @mixin nuGrid($w, $c, $gX, $gY: $gX) {
 	// 
 	> ul {
+		max-width: 100%;
 		display: grid;
 		grid-row-gap: $gX;
 		grid-column-gap: $gY;
 		grid-template-columns: repeat($c, 1fr);
-		grid-template-columns: repeat($c, minmax(200px, 1fr));
-		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+		// grid-template-columns: repeat($c, minmax(300px, 1fr));
 	}
 }
 
 @mixin nu__responsive_grid_layout() {
 	// ? set margins and width variables
-	$gX: $margin_2x;
-	$gY: $margin_2x;
+	$gX: 30px;
+	$gY: 30px;
 	$w: 100%;
 
 	@for $n from 1 through 7 {

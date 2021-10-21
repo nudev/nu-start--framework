@@ -104,13 +104,19 @@
 
 	@media screen and ( max-width: 640px ){
 		
+
+		// traverse to the nested columns (sort of a media text block replacement)
 		.wp-block-columns > .wp-block-column > .wp-block-columns {
+			flex-flow: column nowrap !important;
 			&:only-child  {
 				margin-bottom: 0;
 			}
 			> .wp-block-column {
+				&:first-child {
+					margin: 0 0 0 0;
+				}
 				&:last-child {
-					margin-left: $margin_2x;
+					margin: $margin_2x 0 0 0;
 				}
 			}
 		}

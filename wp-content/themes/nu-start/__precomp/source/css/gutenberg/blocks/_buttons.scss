@@ -24,6 +24,9 @@ $theme_json_palette: (
 		color: var(--wp--preset--color--black);
 		border: 2px solid var(--wp--preset--color--black);
 	}
+	&.has-background {
+		padding: ($base-margin * 0.5) $base-margin;
+	}
 	@each $name, $color in $theme_json_palette {
 		&.has-background {
 			&.has-#{$name}-background-color {

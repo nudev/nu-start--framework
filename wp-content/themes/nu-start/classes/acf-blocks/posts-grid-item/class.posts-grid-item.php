@@ -59,10 +59,6 @@ class PostsGrid_Item
 		// the featured image in markup
 		$the_cover_image = has_post_thumbnail( ) ? '<figure>'.get_the_post_thumbnail( ).'</figure>' : '';
 
-		$clickable_area_anchor = '';
-
-
-
 
 		$guides = [];
 		$return = '';
@@ -185,7 +181,7 @@ class PostsGrid_Item
 
 			$guides['grid-item-event'] = '
 				<li class="grid-item%1$s%7$s%8$s">
-					<a href="%6$s" title="Read More about '.get_the_title( ).'"%9$s>
+					<a class="contains-clickable-area" href="%6$s" title="Read More about '.get_the_title( ).'"%9$s>
 						%2$s
 						<div class="grid-item-content">%3$s%4$s%5$s</div>
 					</a>
