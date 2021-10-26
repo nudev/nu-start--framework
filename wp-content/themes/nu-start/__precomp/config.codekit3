@@ -675,6 +675,21 @@
       "pg" : 0,
       "sct" : 0
     },
+    "\/source\/css\/gutenberg\/patterns\/for-developers\/_index.scss" : {
+      "aP" : 1,
+      "bl" : 0,
+      "co" : 0,
+      "dP" : 10,
+      "ec" : 1,
+      "ft" : 4,
+      "ma" : 1,
+      "oA" : 1,
+      "oAP" : "\/build\/css\/gutenberg\/patterns\/for-developers\/_index.css",
+      "oF" : 0,
+      "oS" : 0,
+      "pg" : 0,
+      "sct" : 0
+    },
     "\/source\/css\/gutenberg\/patterns\/heros\/_banner_type-a.scss" : {
       "aP" : 1,
       "bl" : 0,
@@ -2312,14 +2327,14 @@
         "optionString" : "{'allowEmptyCatch': false}"
       },
       "no-empty-character-class" : {
-        "active" : 1
+        "active" : 0
       },
       "no-empty-function" : {
         "active" : 0,
         "optionString" : "{'allow': []}"
       },
       "no-empty-pattern" : {
-        "active" : 1
+        "active" : 0
       },
       "no-eq-null" : {
         "active" : 0
