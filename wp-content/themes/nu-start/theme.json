@@ -11,7 +11,7 @@
     "color": {
       "duotone": [],
       "gradients": [],
-      "link": false,
+      "link": true,
       "palette": [
         {
           "name": "Black",
@@ -65,12 +65,12 @@
       "wideSize": "90%"
     },
     "spacing": {
-      "customMargin": false,
-      "customPadding": false
+      "customMargin": true,
+      "customPadding": true
     },
     "typography": {
-      "customFontSize": false,
-      "customLineHeight": false,
+      "customFontSize": true,
+      "customLineHeight": true,
       "fontFamilies": [
         {
           "fontFamily": "Lato, sans-serif",

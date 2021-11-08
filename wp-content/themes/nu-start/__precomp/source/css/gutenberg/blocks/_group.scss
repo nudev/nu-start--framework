@@ -3,14 +3,14 @@
 */
 
 .wp-block-group {
-
 	// ? generally speaking, inner-blocks push from the top by a reduced margin compared to ungrouped blocks
 	> * {
 		margin-top: $margin_2x;
 	}
 
 	// ? typographical elements should push down by even less
-	> p, .wp-block-paragraph {
+	> p,
+	.wp-block-paragraph {
 		margin-top: $half-margin;
 	}
 
@@ -24,18 +24,32 @@
 	}
 }
 
-
 // * the "card style" adds a border and padding; and some inner content behaves differently
 .wp-block-group.is-style-card-outlined {
-	border: 1px solid $grey_4;
-	padding: $margin_2x;
 
+	border: 1px solid $grey_4;  // ? this may be overriden by the CMS
+
+	// ? force through a specific level of padding
+	&.has-background, & {
+		padding: $margin_2x;
+	}
+	
+
+	
 	// ? tuck over the padding, flush with top and side edges
-	.wp-block-image.size-full {
+	> .wp-block-image.size-full {
 		position: relative;
 		top: -$margin_2x;
 		left: -$margin_2x;
 		width: calc(100% + #{$margin_4x});
 		max-width: calc(100% + #{$margin_4x});
+		img {
+			width: 100%;
+		}
+	}
+
+	// ? shim a footer text style here, pushing the last link down as if it were a c2a
+	> p.is-style-links-have-arrows:last-child {
+		margin-top: $margin_4x;
 	}
 }
