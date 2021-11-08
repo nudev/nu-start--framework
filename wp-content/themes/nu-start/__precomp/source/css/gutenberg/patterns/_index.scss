@@ -8,8 +8,27 @@
 @import './content-types';
 
 
-@import './for-developers';
-
 // todo: structure this properly
 
 .nu_pattern_collection--personal-cover-photo {}
+
+.nu_pattern--design-helper--color-palette {
+	.wp-block-cover {
+		min-height: 72px;
+		max-width: 320px;
+		margin: 0 auto;
+		overflow: hidden;
+		@include aspect-ratio(16,10);
+		&:before {
+			position: relative !important;
+			width: 100%;
+		}
+		.wp-block-cover__inner-container {
+			display: none;
+		}
+
+		&.has-white-background-color {
+			border: 1px solid $black;
+		}
+	}
+}

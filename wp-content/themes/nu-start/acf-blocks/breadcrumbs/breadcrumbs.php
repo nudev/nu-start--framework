@@ -12,12 +12,16 @@
  */
 // 
 
+// print_r($block);
 
 
 if(function_exists('bcn_display') && !is_front_page() )
 {
 	
-	$guides['acf-block-container'] = '<div id="%1$s" class="nu_breadcrumbs%2$s%3$s">%4$s</div>';
+	$guides['acf-block-container'] = '
+	<div id="%1$s" class="nu_breadcrumbs%2$s%3$s%5$s">
+		<div>%4$s</div>
+	</div>';
 
 
 	$breadcrumbs = '';
@@ -25,11 +29,12 @@ if(function_exists('bcn_display') && !is_front_page() )
 	echo '<div class="breadcrumbs" typeof="BreadcrumbList" vocab="https://schema.org/">';
 		if( is_admin() ){
 
-			echo '<p>Breadcrumbs disabled in Editor</p>';
+			echo '<div>
+				<p>Breadcrumbs disabled in Editor</p>
+			</div>';
 		
 		} else {
 			bcn_display(false, true, false, true);
-			
 		}
 	echo '</div>';
 	$breadcrumbs = ob_get_clean();
@@ -39,7 +44,8 @@ if(function_exists('bcn_display') && !is_front_page() )
 		!empty( $block['anchor' ]) ? $block['anchor'] : $block['id'],	// block anchor or a unique ID
 		!empty($block['className']) ? ' '.$block['className'] : '',
 		!empty($block['align']) ? ' '.$block['align'] : '',
-		$breadcrumbs
+		$breadcrumbs,
+		!empty($block['align_text']) ? ' textalign-'.$block['align_text'] : '',
 	);
 	
 	echo $return;

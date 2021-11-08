@@ -1,4 +1,5 @@
 {
+  "$schema": "https://json.schemastore.org/theme-v1.json",
   "version": 1,
   "settings": {
     "border": {
@@ -8,7 +9,6 @@
       "customWidth": true
     },
     "color": {
-      "disableAlpha": false,
       "duotone": [],
       "gradients": [],
       "link": false,
@@ -153,15 +153,15 @@
   "styles": {
     "color": {
       "text": "var(--wp--preset--color--nu-brand-black)",
-      "background": "var(--wp--preset--color--nu-brand-white)",
-      "elements": {
-        "link": {
-          "color": {
-            "text": "var(--wp--preset--color--nu-brand-blue)"
-          },
-          "typography": {
-            "fontWeight": "var(--wp--custom--font-weight--normal)"
-          }
+      "background": "var(--wp--preset--color--nu-brand-white)"
+    },
+    "elements": {
+      "link": {
+        "color": {
+          "text": "var(--wp--preset--color--nu-brand-blue)"
+        },
+        "typography": {
+          "fontWeight": "var(--wp--custom--font-weight--normal)"
         }
       }
     },

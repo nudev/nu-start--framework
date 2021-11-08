@@ -7,8 +7,8 @@
 // ? breakpoints has a !default set in the include_media plugin
 // ? we're going to override it locally not globally; although a global flag could work great here on a hunch
 $breakpoints: (
-	"phone"		:		320px,
-	"small"		:		768px,
+	"phone"		:		400px,
+	"small"		:		780px,
 	"medium"	:		1024px,
 	"large"		:		1280px,
 	"xlarge"	:		1620px,

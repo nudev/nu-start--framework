@@ -26,19 +26,19 @@ if( function_exists('acf_register_block_type') ):
 		'icon' => '',
 		'supports' => array(
 			'align' => array(
-				0 => 'left',
-				1 => 'center',
-				2 => 'right',
-				3 => 'wide',
-				4 => 'full',
+				// 'left',
+				// 'center',
+				// 'right',
+				'wide',
+				'full',
 			),
 			'mode' => true,
 			'multiple' => false,
 			'jsx' => true,
-			'align_content' => false,
+			'align_text' => true,
+			// 'align_content' => true,
 			'anchor' => true,
 		),
-		'active' => true,
 	));
 	
 

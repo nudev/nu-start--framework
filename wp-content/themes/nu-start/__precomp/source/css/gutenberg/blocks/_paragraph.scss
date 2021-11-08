@@ -6,8 +6,7 @@ p {
 	a {
 		border-bottom: 2px solid transparent;
 		&:hover,
-		&:focus,
-		&:active {
+		&:focus {
 			border-bottom: 2px solid currentColor;
 		}
 	}

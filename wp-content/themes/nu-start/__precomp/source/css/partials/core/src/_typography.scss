@@ -30,7 +30,7 @@ h6 {
 
 // set the RFS (max) font size, and scale it up for display style
 h1 {
-	$fz: 3rem;
+	$fz: 48px;
 	@include font-size($fz);
 	&.is-style-display {
 		@include font-size($fz * 1.25);
@@ -38,7 +38,7 @@ h1 {
 }
 
 h2 {
-	$fz: 2.4rem;
+	$fz: 36px;
 	@include font-size($fz);
 	&.is-style-display {
 		@include font-size($fz * 1.25); // 48px
@@ -46,7 +46,7 @@ h2 {
 }
 
 h3 {
-	$fz: 1.5rem;
+	$fz: 30px;
 	@include font-size($fz);
 	&.is-style-display {
 		@include font-size($fz * 1.25);
@@ -54,7 +54,7 @@ h3 {
 }
 
 h4 {
-	$fz: 1.25rem;
+	$fz: 20px;
 	@include font-size($fz);
 	&.is-style-display {
 		@include font-size($fz * 1.25);
@@ -62,7 +62,7 @@ h4 {
 }
 
 h5 {
-	$fz: 1rem;
+	$fz: 16px;
 	@include font-size($fz);
 	&.is-style-display {
 		@include font-size($fz * 1.25);
@@ -70,9 +70,12 @@ h5 {
 }
 
 h6 {
-	$fz: 0.875rem;
+	text-transform: uppercase;
+	$fz: 16px;
 	@include font-size($fz);
+	font-weight: bold;
 	&.is-style-display {
+		font-weight: normal;
 		@include font-size($fz * 1.25);
 	}
 }
@@ -95,6 +98,22 @@ a {
 		@extend %transition;
 	}
 }
+
+
+
+// ? note; RFS will auto-convert these to REM (16px === 1rem && 36px === 2rem)
+// ? this overrides the wordpress variables attached to the body
+body {
+	@include rfs(72px, --wp--preset--font-size--hugest);
+	@include rfs(48px, --wp--preset--font-size--huge);
+	@include rfs(36px, --wp--preset--font-size--extra-large);
+	@include rfs(30px, --wp--preset--font-size--large);
+	@include rfs(20px, --wp--preset--font-size--larger);
+	@include rfs(16px, --wp--preset--font-size--normal);
+	@include rfs(14px, --wp--preset--font-size--smaller);
+	@include rfs(12px, --wp--preset--font-size--tiny);
+}
+
 
 p {
 	margin: $base-margin 0 $half-margin 0;

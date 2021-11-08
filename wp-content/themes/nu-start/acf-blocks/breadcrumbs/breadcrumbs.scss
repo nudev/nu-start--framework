@@ -1,11 +1,24 @@
 /* 
- */
-.wp-block-acf-breadcrumbs {
 
-	&.center {
+*/
+
+@import "../../__precomp/source/css/library";
+
+.acf-block-breadcrumbs {
+	position: relative;
+	z-index: 1;
+	display: block;
+	width: 100%;
+	margin: $margin_4x auto 0 auto;
+	padding: $base-margin;
+	float: none !important;
+
+	&.textalign-center {
 		text-align: center;
 	}
-	&.right {
+	&.textalign-right {
 		text-align: right;
 	}
+
+	@include clearfix();
 }
