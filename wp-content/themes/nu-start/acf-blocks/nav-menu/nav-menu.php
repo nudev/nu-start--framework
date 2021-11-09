@@ -41,9 +41,6 @@ if( !empty($fields['nav_menu']) ){
 	$return .= nu__getMenu('',false,$fields['nav_menu']);
 }
 
-	
-wp_reset_postdata();
-
 ?>
 <div id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?>">
 

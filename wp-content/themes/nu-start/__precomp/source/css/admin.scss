@@ -36,3 +36,10 @@
 .block-editor-block-patterns-list__item {
 	border: 1px solid transparentize($black,0.25);
 }
+
+
+.jvm-richtext-icons-popover {
+	> div {
+		max-height: 300px !important;
+	}
+}

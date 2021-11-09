@@ -1,0 +1,17 @@
+{
+  	"$schema": "https://json.schemastore.org/block.json",
+	"apiVersion": 2,
+	"name": "nu-blocks/tabbed-content",
+	"version": "0.1.0",
+	"title": "Tabbed Content",
+	"category": "nu-blocks",
+	"icon": "smiley",
+	"description": "Example block written with ESNext standard and JSX support – build step required.",
+	"supports": {
+		"html": false
+	},
+	"textdomain": "nu-blocks",
+	"editorScript": "file:../../../build/index.js",
+    "editorStyle": "file:../../../build/index.css",
+    "style": "file:../../../build/style-index.css"
+}

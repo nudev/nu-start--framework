@@ -23,7 +23,10 @@
 	}
 	// group, cover etc blocks alignfull and first child assumed to be "hero" ish
 	> .alignfull:first-child {
-		margin-top: 0;
+		&.wp-block-group,
+		&.wp-block-cover {
+			margin-top: 0;
+		}
 	}
 
 	// TODO: fix this it doesnt work!

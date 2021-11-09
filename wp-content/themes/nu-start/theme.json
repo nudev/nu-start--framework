@@ -140,7 +140,7 @@
     "blocks": {
       "core/button": {
         "border": {
-          "customRadius": false
+          "customRadius": true
         }
       },
       "core/cover": {

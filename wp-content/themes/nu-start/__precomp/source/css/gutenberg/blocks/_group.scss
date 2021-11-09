@@ -3,6 +3,9 @@
 */
 
 .wp-block-group {
+	&.has-background {
+		padding: 0;
+	}
 	// ? generally speaking, inner-blocks push from the top by a reduced margin compared to ungrouped blocks
 	> * {
 		margin-top: $margin_2x;
@@ -37,6 +40,7 @@
 
 	
 	// ? tuck over the padding, flush with top and side edges
+	> .wp-block-media-text,
 	> .wp-block-image.size-full {
 		position: relative;
 		top: -$margin_2x;
@@ -47,6 +51,10 @@
 			width: 100%;
 		}
 	}
+	> .wp-block-media-text {
+		margin-bottom: -$margin_4x;
+	}
+
 
 	// ? shim a footer text style here, pushing the last link down as if it were a c2a
 	> p.is-style-links-have-arrows:last-child {

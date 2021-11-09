@@ -386,7 +386,7 @@ class SetupTheme
 		add_theme_support( 'custom-spacing' );
 		// 
 		remove_theme_support( 'core-block-patterns' ); 					// remove the "patterns" library
-
+		// remove_theme_support( 'block-templates' );
 		/* 
 			* this only goes in the block editor!
 			! NOTE 
@@ -403,6 +403,9 @@ class SetupTheme
 		// add_editor_style( get_template_directory_uri() . '/__precomp/build/css/editor-style.css' );
 		add_editor_style( '__precomp/build/css/editor-style.css' );
 		
+
+		add_filter( 'should_load_separate_core_block_assets', '__return_true' );
+
 		/* 
 			! Note see @link '/theme.json' for most of what was here
 		*/

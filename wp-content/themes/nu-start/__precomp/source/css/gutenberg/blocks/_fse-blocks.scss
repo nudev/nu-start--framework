@@ -15,3 +15,117 @@
 		white-space: pre-wrap;
 	}
 }
+
+// ? make required adjustments to the default settings of the nav block
+nav.wp-block-navigation {
+	width: auto;
+	margin: 0 auto;
+	text-align: left;
+
+	&.has-background {
+		padding: $base-margin;
+	}
+
+	.has-child :where(.wp-block-navigation__submenu-container) {
+		position: relative;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+	}
+
+	.wp-block-navigation-link__label {
+		border: none 0;
+		@extend %transition;
+		border-left: 2px solid white;
+		padding-left: 5px;
+		&:hover,
+		&:focus {
+			border: none 0;
+			border-left: 2px solid map-get($brand_colors, "red");
+			&:active {
+			}
+		}
+	}
+
+	li.wp-block-navigation-item {
+		align-items: flex-start;
+		margin-top: $half-margin;
+
+		&.has-child.open-on-click {
+			display: flex;
+			flex-flow: column nowrap;
+
+			.wp-block-navigation__submenu-container {
+				height: 0;
+			}
+			&.reveal-submenu {
+				.wp-block-navigation__submenu-container {
+					height: auto;
+					min-width: 200px;
+					opacity: 1;
+					visibility: visible;
+					width: auto;
+					padding-left: $base-margin;
+				}
+				.wp-block-navigation__submenu-icon {
+					svg {
+						transform: rotate(180deg);
+					}
+				}
+			}
+		}
+	}
+
+	// ? item content
+	.wp-block-navigation-item__content {
+		margin: 0;
+		padding: 0;
+		// ? item content is a link
+		&.wp-block-navigation-link__content {
+			border: 0px solid transparent;
+			&:hover,
+			&:focus {
+				border: 0px solid transparent;
+				&:active {
+				}
+			}
+		}
+	}
+
+	.wp-block-navigation-item {
+		&.current-menu-item {
+			.wp-block-navigation-link__label {
+				border: none 0;
+				@extend %transition;
+				border-left: 2px solid white;
+				border-left: 2px solid map-get($brand_colors, "red");
+				padding-left: 5px;
+			}
+			a,
+			span {
+				border-bottom: 0px solid transparent;
+			}
+		}
+	}
+}
+
+// ! hacky solution to touching up the back end
+nav.wp-block.wp-block-navigation {
+	.wp-block-navigation__submenu-container.block-editor-block-list__layout {
+		padding: 0;
+		display: none;
+	}
+	div.wp-block.wp-block-navigation-item {
+		flex-flow: column nowrap;
+		&.has-background {
+			padding: 0;
+		}
+
+		&.is-selected {
+			.wp-block-navigation__submenu-container.block-editor-block-list__layout {
+				display: flex;
+			}
+		}
+	}
+}

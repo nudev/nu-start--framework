@@ -1,6 +1,7 @@
 /* 
 	sample block - style.scss
 */
+@import '../../../../../themes/nu-start/__precomp/source/css/library';
 
 .wp-block-nu-blocks-accordion {
 	margin: 0 auto;
@@ -16,6 +17,13 @@
 		margin: $base-margin 0 0 0;
 		&:first-child {
 			margin: 0;
+		}
+
+		summary {
+			&::marker,
+			&::-webkit-details-marker {
+				display: none;
+			}
 		}
 
 		.wp-block-nublocks-accordion-item__title {

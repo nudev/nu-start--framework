@@ -54,5 +54,6 @@ require_once(  get_template_directory() . '/classes/acf-blocks.php');
  */
 require_once(  get_template_directory() . '/classes/pim-handler.php'); 			
 
+
 // 
 ?>

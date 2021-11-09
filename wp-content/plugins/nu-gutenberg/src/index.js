@@ -9,13 +9,19 @@ import { registerBlockType } from "@wordpress/blocks";
 /**
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-scripts/#working-with-build-scripts
  */
-import "./styles/index.scss";
-import "./styles/style.scss";
+
+
+// import "./styles/index.scss";
+// import "./styles/style.scss";
+
+
 
 import * as accordion from "../src/block-library/accordion";
 import * as accordion_item from "../src/block-library/accordion-item";
-// import * as tabs from "../src/block-library/tabs";
-// import * as tabs_item from "../src/block-library/tabs-item";
+import * as tabbed_content from "../src/block-library/tabbed-content";
+
+
+
 
 /**
  * Function to register an individual block.
@@ -37,7 +43,6 @@ const registerBlock = (block) => {
 };
 
 const registerBlocks = () => {
-	// [tabs, tabs_item, accordion, accordion_item].forEach(registerBlock);
-	[accordion, accordion_item].forEach(registerBlock);
+	[accordion, accordion_item, tabbed_content].forEach(registerBlock);
 };
 registerBlocks();

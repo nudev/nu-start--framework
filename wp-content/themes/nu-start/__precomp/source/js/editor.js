@@ -49,7 +49,7 @@ wp.domReady(function () {
 		"core/home-link",
 		"core/template-part",
 		"core/term-description",
-		"core/posts-list",
+		// "core/posts-list",
 		"core/post-author",
 		"core/post-comment",
 		"core/post-comment-content",

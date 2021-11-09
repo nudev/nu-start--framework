@@ -8,6 +8,31 @@
 	 *   ... code in here will run after jQuery says document is ready
 	 */
 	$(function () {
+
+
+
+		let nav_block_customization = {
+
+			_init : function( ){
+
+
+				$('.open-on-click.wp-block-navigation-submenu').on('click','.wp-block-navigation-submenu__toggle', function(e){
+
+					$(e.delegateTarget).toggleClass('reveal-submenu');
+					
+					
+				});
+
+
+			}
+		};
+
+		nav_block_customization._init();
+		
+		
+		
+		
+		
 		//
 		$(".wp-block-nu-blocks-accordion").on(
 			"click",

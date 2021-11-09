@@ -19,7 +19,13 @@ import { compose } from "@wordpress/compose";
 import { withSelect } from "@wordpress/data";
 import { InnerBlocks, RichText } from "@wordpress/block-editor";
 import { Icon } from "@wordpress/components";
-
+/**
+ * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
+ * Those files can contain any CSS code that gets applied to the editor.
+ *
+ * @see https://www.npmjs.com/package/@wordpress/scripts#using-css
+ */
+ import "./index.scss";
 /**
  * Constants
  */
