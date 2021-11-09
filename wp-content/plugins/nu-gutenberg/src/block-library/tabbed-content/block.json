@@ -7,8 +7,34 @@
 	"category": "nu-blocks",
 	"icon": "smiley",
 	"description": "Example block written with ESNext standard and JSX support – build step required.",
+	"attributes": {
+		"align": {
+			"type": "string",
+			"default": "none"
+		},
+		"content": {
+			"type": "string",
+			"source": "html",
+			"selector": "p"
+		},
+		"backgroundColor": {
+			"type": "string"
+		},
+		"customBackgroundColor": {
+			"type": "string"
+		},
+		"textColor": {
+			"type": "string"
+		},
+		"customTextColor": {
+			"type": "string"
+		},
+		"borderColor": {
+			"type": "string"
+		}
+	},
 	"supports": {
-		"html": false
+		"html": true
 	},
 	"textdomain": "nu-blocks",
 	"editorScript": "file:../../../build/index.js",
