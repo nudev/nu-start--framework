@@ -1,16 +1,13 @@
-/**
- * External dependencies
- */
-
-/**
- * WordPress dependencies
- */
-import { InnerBlocks, useBlockProps } from "@wordpress/block-editor";
-
-export default function save({ attributes }) {
-	return (
-		<div {...useBlockProps.save()}>
-			<InnerBlocks.Content />
-		</div>
-	);
-}
+ /**
+  * WordPress dependencies
+  */
+ import { useInnerBlocksProps, useBlockProps } from '@wordpress/block-editor';
+ 
+ export default function save( { attributes } ) {
+ 
+	 const blockProps = useBlockProps.save( );
+	 const innerBlocksProps = useInnerBlocksProps.save( blockProps );
+ 
+	 return <div { ...innerBlocksProps } />;
+ }
+ 

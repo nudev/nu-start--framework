@@ -99,6 +99,8 @@ body.wp-admin {
 		padding-left: 0;
 	}
 
+	
+	
 	.grid-item {
 		position: relative;
 		border: 1px solid $grey_4;
@@ -176,6 +178,7 @@ body.wp-admin {
 }
 // restrict to this acf-block
 .nu_posts-grid {
+	
 	.nu__grid {
 		@include nu__responsive_grid_layout();
 	}
@@ -184,7 +187,7 @@ body.wp-admin {
 	.grid-item {
 		@include nu__grid_item_cover_ratios();
 		@include nu__grid_item_orientation();
-
+		
 		> a {
 			&.contains-clickable-area {
 				border: none 0;

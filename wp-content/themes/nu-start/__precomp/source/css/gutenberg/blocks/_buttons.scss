@@ -12,8 +12,13 @@ $theme_json_palette: (
 	"green": "#48bb78",
 );
 
-.wp-block-button__link {
+
+// override default inline styles values
+.wp-block-button .wp-block-button__link {
 	border-radius: 0px;
+}
+
+.wp-block-button__link {
 	border: 2px solid var(--wp--preset--color--black);
 	@include font-size(0.875rem);
 	padding: $half-margin $base-margin;

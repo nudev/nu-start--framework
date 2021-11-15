@@ -62,13 +62,13 @@ class NU_Gutenberg_Register_Blocks
 			NU_GUTENBERG_PLUGIN_DIR . '/src/block-library/accordion-item',
 		);
 
-		// register_block_type(
-		// 	NU_GUTENBERG_PLUGIN_DIR . '/src/block-library/tabs',
-		// );
+		register_block_type(
+			NU_GUTENBERG_PLUGIN_DIR . '/src/block-library/tabs',
+		);
 
-		// register_block_type(
-		// 	NU_GUTENBERG_PLUGIN_DIR . '/src/block-library/tabs-item',
-		// );
+		register_block_type(
+			NU_GUTENBERG_PLUGIN_DIR . '/src/block-library/tabs-item',
+		);
 
 		register_block_style(
 			'nu-blocks/accordion',

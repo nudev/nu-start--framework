@@ -1,26 +1,11 @@
-/**
- *
- * wordpress 5.8+ changed registration to recommending metadata and server side
- * @see https://make.wordpress.org/core/2021/06/23/block-api-enhancements-in-wordpress-5-8/
- * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-registration/
- */
+
 import { registerBlockType } from "@wordpress/blocks";
-
-/**
- * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-scripts/#working-with-build-scripts
- */
-
-
-// import "./styles/index.scss";
-// import "./styles/style.scss";
-
 
 
 import * as accordion from "../src/block-library/accordion";
 import * as accordion_item from "../src/block-library/accordion-item";
-import * as tabbed_content from "../src/block-library/tabbed-content";
-
-
+import * as tabbed_content from "../src/block-library/tabs";
+import * as tabbed_content_item from "../src/block-library/tabs-item";
 
 
 /**
@@ -43,6 +28,7 @@ const registerBlock = (block) => {
 };
 
 const registerBlocks = () => {
-	[accordion, accordion_item, tabbed_content].forEach(registerBlock);
+	[accordion, accordion_item].forEach(registerBlock);
+	// [accordion, accordion_item, tabbed_content, tabbed_content_item].forEach(registerBlock);
 };
 registerBlocks();

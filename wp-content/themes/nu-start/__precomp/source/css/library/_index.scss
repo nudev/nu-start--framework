@@ -1,24 +1,18 @@
-// 
-// 
-
-// ? silence is golden; dart-sass deprecation warning
+// ? utility level dependencies
 @use "sass:math";
 
+// ? vendor extensions
+@import './extensions/rfs';							// @link https://github.com/twbs/rfs
+@import './extensions/include-media'; 				// @link https://eduardoboucas.github.io/include-media/
+@import './extensions/deep-get-set';				// @link https://gist.github.com/zellwk/b7f3317a56ad52b7700e
 
-// vendor extensions
-@import './extensions/include-media'; 				// enhanced media query "plugin"
-@import './extensions/rfs';							// rfs font system "plugin"
-@import './extensions/deep-get-set';				//	map deep get and set just in case
-
-
-
-// hard-requirements for theme to function
+// ? functions; variables; mixins; extends ( order matters )
 @import './required/functions'; 					// functions
 @import './required/vars'; 							// variables
-@import './required/mixins'; 						// mixins && functions
-@import './required/extends';						// extends && placeholders
+@import './required/mixins'; 						// mixins
+@import './required/extends';						// extends
 
 
-// last item before we go to make the stylesheet for real
 @import './required/normalize'; 						// normalize dropped into a scss file
-// @import './required/css-reset'; 						// the-new-css-reset
+
+/* ... project styles will always load after this ... */

@@ -215,7 +215,7 @@ class PIM_Handler
 	
 }
 
-add_action('nu__pullPrograms_cron', array( 'PIM_Handler', '_init' ) );
+// add_action('nu__pullPrograms_cron', array( 'PIM_Handler', '_init' ) );
 
 // 
 // 

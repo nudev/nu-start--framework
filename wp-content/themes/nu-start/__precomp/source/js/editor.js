@@ -2,41 +2,6 @@
 
 */
 
-wp.hooks.addFilter(
-	"blocks.getSaveContent.extraProps",
-	"acfBlocks/addACFExtraProps",
-	addACFExtraProps
-);
-function addACFExtraProps(props, blockType, attributes) {
-
-	
-	// bail early if...
-	if (
-		blockType.name !== "acf/posts-grid" &&
-		blockType.name !== "acf/breadcrumbs"
-	) {
-		return props;
-	}
-
-	// selectively add this
-	if (blockType.name == "acf/posts-grid") {
-		props = Object.assign(props, {
-			className: "acf-posts-grid",
-		});
-	}
-
-	// selectively add this
-	if (blockType.name == "acf/breadcrumbs") {
-
-		props = Object.assign(props, {
-			className: "acf-block-breadcrumbs",
-		});
-	}
-
-	// return updated props
-	return props;
-}
-
 // todo: update this stuff to above syntax; but fix linting first?
 // ? this is all es5 native quick work
 wp.domReady(function () {

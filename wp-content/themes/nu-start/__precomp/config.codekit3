@@ -930,25 +930,6 @@
       "pg" : 0,
       "sct" : 0
     },
-    "\/source\/css\/gutenberg\/README.MD" : {
-      "cB" : 0,
-      "cS" : 0,
-      "eF" : 1,
-      "eL" : 1,
-      "ema" : 1,
-      "eSQ" : 1,
-      "ft" : 4096,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/build\/css\/gutenberg\/README.html",
-      "oF" : 0,
-      "oFM" : 0,
-      "oS" : 0,
-      "pHT" : 0,
-      "pME" : 1,
-      "rFN" : 0,
-      "uCM" : 0
-    },
     "\/source\/css\/gutenberg\/reusables\/_in-the-news.scss" : {
       "aP" : 1,
       "bl" : 0,
@@ -1034,21 +1015,6 @@
       "ma" : 1,
       "oA" : 1,
       "oAP" : "\/build\/css\/library\/extensions\/_rfs.css",
-      "oF" : 0,
-      "oS" : 0,
-      "pg" : 0,
-      "sct" : 0
-    },
-    "\/source\/css\/library\/required\/_css-reset.scss" : {
-      "aP" : 1,
-      "bl" : 0,
-      "co" : 0,
-      "dP" : 10,
-      "ec" : 1,
-      "ft" : 4,
-      "ma" : 1,
-      "oA" : 1,
-      "oAP" : "\/build\/css\/library\/required\/_css-reset.css",
       "oF" : 0,
       "oS" : 0,
       "pg" : 0,
@@ -1156,6 +1122,21 @@
       "oAP" : "\/build\/css\/main.css",
       "oF" : 2,
       "oS" : 3,
+      "pg" : 0,
+      "sct" : 0
+    },
+    "\/source\/css\/nu-gutenberg.scss" : {
+      "aP" : 1,
+      "bl" : 0,
+      "co" : 0,
+      "dP" : 10,
+      "ec" : 1,
+      "ft" : 4,
+      "ma" : 1,
+      "oA" : 0,
+      "oAP" : "\/build\/css\/nu-gutenberg.css",
+      "oF" : 1,
+      "oS" : 0,
       "pg" : 0,
       "sct" : 0
     },
@@ -1429,7 +1410,7 @@
       "bF" : 0,
       "ft" : 64,
       "ma" : 1,
-      "mi" : 0,
+      "mi" : 1,
       "oA" : 0,
       "oAP" : "\/build\/js\/editor-min.js",
       "oF" : 0,
@@ -1488,7 +1469,7 @@
     "displayValueWasSetByUser" : 1,
     "iconImageName" : "brackets-ucla",
     "iconImageWasSetByUser" : 0,
-    "lastBuiltDate" : 641337136.16987705
+    "lastBuiltDate" : 658626054.01575005
   },
   "projectSettings" : {
     "abortBuildOnError" : 1,
@@ -2909,7 +2890,7 @@
     },
     "esLintSourceType" : 0,
     "externalServerAddress" : "http:\/\/localhost:8888",
-    "gitIgnoreBuildFolder" : 1,
+    "gitIgnoreBuildFolder" : 0,
     "hideConfigFile" : 0,
     "jsCheckerReservedNamesString" : "",
     "languageDefaultsCOFFEE" : {

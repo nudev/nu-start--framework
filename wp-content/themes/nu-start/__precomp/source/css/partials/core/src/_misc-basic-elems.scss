@@ -15,3 +15,7 @@ img {
 button.button {
 	@extend %nu__buttonstyle;
 }
+
+a {
+    cursor: pointer;
+}

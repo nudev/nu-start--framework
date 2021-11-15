@@ -12,7 +12,7 @@ include_once( get_template_directory() . '/block-editor/add-remove-block-categor
 // 
 include_once( get_template_directory() . '/acf-blocks/register-acf-blocks.php' );
 // 
-include_once( get_template_directory() . '/block-styles/register-block-styles.php' );
+include_once( get_template_directory() . '/block-editor/register-block-styles.php' );
 
 
 /**

@@ -51,7 +51,7 @@ class NU_Gutenberg_Block_Assets
 	}
 	public function block_assets(){
 
-		wp_enqueue_style(
+		wp_register_style(
 			'nublocks-frontend',
 			NU_GUTENBERG_PLUGIN_URL . '/build/style-index.css',
 			array(),

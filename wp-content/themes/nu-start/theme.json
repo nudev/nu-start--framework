@@ -4,7 +4,7 @@
   "settings": {
     "border": {
       "customColor": true,
-      "customRadius": true,
+      "customRadius": false,
       "customStyle": true,
       "customWidth": true
     },
@@ -33,11 +33,11 @@
           "slug": "blue",
           "color": "#4299e1"
         },
-		{
-		  "name": "Dark Blue",
-		  "slug": "dark-blue",
-		  "color": "#385d85"
-		},
+        {
+          "name": "Dark Blue",
+          "slug": "dark-blue",
+          "color": "#385d85"
+        },
         {
           "name": "Orange",
           "slug": "orange",
@@ -138,11 +138,6 @@
       }
     },
     "blocks": {
-      "core/button": {
-        "border": {
-          "customRadius": true
-        }
-      },
       "core/cover": {
         "spacing": {
           "units": ["%", "px", "vw"]
@@ -166,6 +161,11 @@
       }
     },
     "blocks": {
+      "core/button" : {
+        "border": {
+          "radius": ""
+        }
+      },
       "core/paragraph": {
         "color": {
           "text": "var(--wp--preset--color--nu-brand-black)"
@@ -177,6 +177,9 @@
             },
             "typography": {
               "fontWeight": "var(--wp--custom--font-weight--normal)"
+            },
+            "border": {
+              "radius": "0px"
             }
           }
         }
