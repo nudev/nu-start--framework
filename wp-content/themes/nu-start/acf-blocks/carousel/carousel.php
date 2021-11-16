@@ -44,10 +44,16 @@ if( !empty($block['className']) ) {
     $className .= ' ' . $block['className'];
 }
 
+$background_color = get_field('background_color');
+$text_color = get_field('text_color');
+
+if( !empty( $background_color ) ){
+	$className .= ' has-background';
+}
+
 if( !empty($block['align']) ) {
     $className .= ' align' . $block['align'];
 }
-
 
 $fields = get_fields();
 
@@ -86,5 +92,10 @@ if( $slider && count($slider) ){
 <div id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?>">
 
 <?php echo $return; ?>
-
+<style type="text/css">
+	#<?php echo $id; ?> {
+		background: <?php echo $background_color; ?>;
+		color: <?php echo $text_color; ?>;
+	}
+</style>
 </div>

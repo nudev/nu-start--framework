@@ -3,6 +3,58 @@
     "title": "Block: Carousel",
     "fields": [
         {
+            "key": "field_6192709abb707",
+            "label": "Background Color",
+            "name": "background_color",
+            "type": "color_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "enable_opacity": 0,
+            "return_format": "string",
+            "display": "default",
+            "button_label": "Select Color",
+            "color_picker": 1,
+            "absolute": 0,
+            "input": 1,
+            "allow_null": 1,
+            "theme_colors": 1,
+            "colors": [],
+            "acfe_field_group_condition": 0
+        },
+        {
+            "key": "field_619270adbb708",
+            "label": "Text Color",
+            "name": "text_color",
+            "type": "color_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "enable_opacity": 0,
+            "return_format": "string",
+            "display": "default",
+            "button_label": "Select Color",
+            "color_picker": 1,
+            "absolute": 0,
+            "input": 1,
+            "allow_null": 1,
+            "theme_colors": 1,
+            "colors": [],
+            "acfe_field_group_condition": 0
+        },
+        {
             "key": "field_60bf787f634fd",
             "label": "Items",
             "name": "items",
@@ -125,8 +177,8 @@
     "acfe_display_title": "",
     "acfe_meta": "",
     "acfe_note": "",
+    "modified": 1636987176,
     "acfe_categories": {
         "acf-block": "ACF Block"
-    },
-    "modified": 1630613089
+    }
 }

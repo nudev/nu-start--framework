@@ -4,8 +4,8 @@
 	border-top: none 0;
 	text-align: left;
 	padding: $base-margin 0;
+	color: var(--wp--preset--color--black);
 	blockquote {
-		color: var(--wp--preset--color--black);
 		max-width: 80%;
 		margin: 0 auto;
 		> *:first-child:not(.wp-block-pullquote__citation) {

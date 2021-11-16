@@ -5,6 +5,9 @@
 // todo: update this stuff to above syntax; but fix linting first?
 // ? this is all es5 native quick work
 wp.domReady(function () {
+
+
+	
 	var i = 0;
 	var disallowed_blocks = [
 		"core/site-logo",

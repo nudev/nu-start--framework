@@ -28,4 +28,11 @@
 			}
 		}
 	}
+
+	.grid-item-content {
+		padding: $margin_2x;
+		> :first-child {
+			margin-top: 0;
+		}
+	}
 }

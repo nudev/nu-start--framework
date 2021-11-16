@@ -819,6 +819,9 @@ body.wp-admin .nu_posts-grid .grid-item a {
     grid-template-columns: repeat(1, 1fr);
   }
 }
+.nu_posts-grid .grid-item {
+  background-color: white;
+}
 .nu_posts-grid .grid-item figure {
   overflow: hidden;
   position: relative;
@@ -1041,6 +1044,12 @@ body.wp-admin .nu_posts-grid .grid-item a {
 }
 .nu_posts-grid .nu__grid .grid-item.nu_events > a:hover img, .nu_posts-grid .nu__grid .grid-item.nu_events > a:focus img {
   transform: scale(1.2);
+}
+.nu_posts-grid .nu__grid .grid-item.nu_events .grid-item-content {
+  padding: 32px;
+}
+.nu_posts-grid .nu__grid .grid-item.nu_events .grid-item-content > :first-child {
+  margin-top: 0;
 }
 
 /* 

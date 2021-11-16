@@ -19,9 +19,9 @@ footer.site-footer {
 // opinionated styles below
 footer.site-footer {
 	//
-	margin: $margin_8x 0 0 0;
+	margin: 0 0 0 0;
 	@media screen and (max-width: 781px) {
-		margin: $margin_4x 0 0 0;
+		margin: 0 0 0 0;
 	}
 
 	background-color: $black;

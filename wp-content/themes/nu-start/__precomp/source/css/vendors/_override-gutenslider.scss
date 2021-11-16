@@ -124,3 +124,24 @@
 		}
 	}
 }
+
+.nu_pattern-is_gutenslider--is_type_a {
+	.slide-content {
+		padding: 0 !important;
+
+		> .wp-block-columns {
+			height: 100%;
+
+			.gutenslider--imageside {
+				height: 100%;
+				figure {
+					height: 100%;
+					img,
+					& {
+						min-height: 100%;
+					}
+				}
+			}
+		}
+	}
+}

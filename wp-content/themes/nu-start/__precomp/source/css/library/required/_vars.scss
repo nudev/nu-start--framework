@@ -106,6 +106,12 @@ $highlight: brand-color("red");
 
 
 // Content
+$layout_sizes : (
+	'content' 	: '80%',
+	'wide'		: '90%'
+);
+
+
 $content-width: 768px;
 $block-margin: 20px;
 

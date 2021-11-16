@@ -28,6 +28,9 @@
 			margin-top: 0;
 		}
 	}
+	> :last-child:not(.alignfull):not(.has-background) {
+		margin-bottom: $margin_8x;
+	}
 
 	// TODO: fix this it doesnt work!
 	@media screen and ( max-width: 781px ){
@@ -38,6 +41,9 @@
 		> :not(.alignfull):not(.is-reusable) {
 			max-width: 90%;
 			max-width: 100%;
+		}
+		> :last-child:not(.alignfull):not(.has-background) {
+			margin-bottom: $margin_4x;
 		}
 	}
 }

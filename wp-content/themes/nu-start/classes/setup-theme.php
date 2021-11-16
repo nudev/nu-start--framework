@@ -404,11 +404,12 @@ class SetupTheme
 		add_editor_style( '__precomp/build/css/editor-style.css' );
 		
 
-		add_filter( 'should_load_separate_core_block_assets', '__return_true' );
 
-		/* 
-			! Note see @link '/theme.json' for most of what was here
-		*/
+		// ! this is causing some problems
+		// add_filter( 'should_load_separate_core_block_assets', '__return_true' );
+
+		
+		
 	}
 
 
