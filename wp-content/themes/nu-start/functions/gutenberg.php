@@ -83,13 +83,13 @@ if( !function_exists( 'nu__register_block_styles' ) ){
 		);
 
 
-		register_block_style(
-			'core/paragraph',
-			array(
-				'name'         => 'links-have-arrows',
-				'label'        => __( 'Links have arrows', 'nu-start' ),
-			)
-		);
+		// register_block_style(
+		// 	'core/paragraph',
+		// 	array(
+		// 		'name'         => 'links-have-arrows',
+		// 		'label'        => __( 'Links have arrows', 'nu-start' ),
+		// 	)
+		// );
 
 		register_block_style(
 			'core/post-title',
@@ -118,8 +118,8 @@ if( !function_exists( 'nu__register_block_styles' ) ){
 		register_block_style(
 			'core/button',
 			array(
-				'name'         => 'playhead',
-				'label'        => __( 'Playhead', 'nu-start' ),
+				'name'         => 'clear',
+				'label'        => __( 'Clear', 'nu-start' ),
 			)
 		);
 
@@ -215,6 +215,41 @@ if( function_exists('acf_register_block_type') ):
 			'anchor' => true,
 		),
 		'active' => true,
+	));
+
+	acf_register_block_type(array(
+		'name' => 'breadcrumbs',
+		'title' => 'Breadcrumbs',
+		'description' => '',
+		'category' => 'nu-blocks',
+		'keywords' => array(
+		),
+		'post_types' => array(
+		),
+		'mode' => 'preview',
+		'align' => '',
+		'align_content' => NULL,
+		'render_template' => get_template_directory(  ) . '/acf-blocks/breadcrumbs/breadcrumbs.php',
+		'render_callback' => '',
+		'enqueue_style' => get_template_directory_uri(  ) . '/acf-blocks/breadcrumbs/breadcrumbs.css',
+		// 'enqueue_script' => get_template_directory_uri(  ) . '/acf-blocks/breadcrumbs/breadcrumbs-min.js',
+		'enqueue_assets' => '',
+		'icon' => '',
+		'supports' => array(
+			'align' => array(
+				// 'left',
+				// 'center',
+				// 'right',
+				'wide',
+				'full',
+			),
+			'mode' => true,
+			'multiple' => false,
+			'jsx' => true,
+			'align_text' => true,
+			// 'align_content' => true,
+			'anchor' => true,
+		),
 	));
 	
 

@@ -1,5 +1,7 @@
 /* 
 
+	this handles generic paragraphs that could be anywhere ( paragraph blocks dont get a special class )
+
 */
 
 p {
@@ -9,6 +11,9 @@ p {
 		&:focus {
 			border-bottom: 2px solid currentColor;
 		}
+	}
+	strong {
+		color: var(--wp--preset--color--black);
 	}
 }
 

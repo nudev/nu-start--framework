@@ -12,13 +12,27 @@ $theme_json_palette: (
 	"green": "#48bb78",
 );
 
-
 // override default inline styles values
 .wp-block-button .wp-block-button__link {
 	border-radius: 0px;
 }
 
 .wp-block-button__link {
+	i.fa-play-circle-o {
+		font-family: "Material Icons";
+		&:before {
+			color: $black;
+			color: currentColor;
+			content: "\e039";
+			display: inline-block;
+			vertical-align: middle;
+			margin: -5px $base-margin 0 0;
+			@extend %nu__playButton;
+			font-size: 2.8rem;
+			border: 2px solid transparent;
+		}
+	}
+
 	border: 2px solid var(--wp--preset--color--black);
 	@include font-size(0.875rem);
 	padding: $half-margin $base-margin;
@@ -60,41 +74,30 @@ $theme_json_palette: (
 }
 
 //
-.wp-block-button.is-style-playhead {
+.wp-block-button.is-style-clear {
 	.wp-block-button__link {
-		border: 2px solid transparent;
-		background-color: transparent;
 		color: currentColor;
-		padding: 0;
+		background-color: transparent !important;
+		border: 0px solid transparent;
+		border-bottom: 2px solid transparent !important;
 		&:hover,
 		&:focus {
-			border-bottom: 2px solid currentColor;
-			background-color: transparent !important;
+			border: 0px solid transparent !important;
+			border-bottom: 2px solid currentColor !important;
+			&:active {
+			}
 		}
-		&.has-background {
-			border: none 0 !important;
-			background: none !important;
+
+		&.has-white-background-color {
+			border-color: transparent !important;
+			color: var(--wp--preset--color--black) !important;
 			&:hover,
 			&:focus {
-				background: none !important;
-				border: none 0 !important;
-				border-bottom: 2px solid currentColor !important;
-			}
-			&.has-white-background-color {
+				background-color: transparent !important;
 				color: var(--wp--preset--color--black) !important;
+				border-bottom: 2px solid var(--wp--preset--color--black) !important;
 			}
 		}
-	}
-	&:before {
-		color: $black;
-		color: currentColor;
-		content: "\e039";
-		display: inline-block;
-		vertical-align: middle;
-		margin: -5px $base-margin 0 0;
-		@extend %nu__playButton;
-		font-size: 2.8rem;
-		border: 2px solid transparent;
 	}
 }
 

@@ -61,7 +61,11 @@
 	box-shadow: 0 2px 4px rgba(0,0,0,0.5);
 
 	p {
-		color: inherit;
+		color: $white;
+
+		strong {
+			color: inherit;
+		}
 		a {
 			color: inherit;
 		}

@@ -21,7 +21,10 @@
 	}
 	.nu__datetime-times,
 	.nu__datetime-dates {
-		margin: 0;
+		margin: $half-margin 0 0 0;
+		&:first-child {
+			margin: 0;
+		}
 		&:before {
 			vertical-align: text-bottom;
 			display: inline-block;

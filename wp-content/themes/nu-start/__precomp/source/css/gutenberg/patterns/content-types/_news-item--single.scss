@@ -1,14 +1,12 @@
 body.nu_news-template-default.single-nu_news {
-
 	// ? remove the svg and add full width to the quote
-	
+
 	.wp-block-acf-breadcrumbs {
 		margin-top: $margin_2x;
 	}
 	.wp-block-cover.alignfull:first-child {
-
 		.wp-block-cover__inner-container {
-			@media screen and ( min-width: 781px ){
+			@media screen and (min-width: 781px) {
 				max-width: 90%;
 			}
 		}
@@ -22,17 +20,12 @@ body.nu_news-template-default.single-nu_news {
 			}
 		}
 	}
-
 }
 
-
-
-.nu_start--news-item-single-type-a{
-	
+.nu_start--news-item-single-type-a {
 	.is-news-item-content {
 		max-width: 1024px;
 		margin: 0 auto;
-
 
 		.wp-block-pullquote {
 			padding: 0;
@@ -55,12 +48,11 @@ body.nu_news-template-default.single-nu_news {
 			margin-top: 0;
 		}
 
-
 		// ? adjustments to make the featured image a constant aspect ratio
 		.wp-block-post-featured-image {
 			margin: $margin_2x 0;
 			min-height: 220px;
-			@include aspect-ratio(3,1);
+			@include aspect-ratio(3, 1);
 			> img {
 				position: absolute;
 				top: 0;
@@ -70,7 +62,7 @@ body.nu_news-template-default.single-nu_news {
 			}
 		}
 
-		@media screen and ( max-width: 781px ){
+		@media screen and (max-width: 781px) {
 			> .wp-block-columns:last-child {
 				margin-bottom: 0;
 				> .wp-block-column:first-child {
@@ -80,10 +72,8 @@ body.nu_news-template-default.single-nu_news {
 		}
 	}
 
-
-
 	> .wp-block-columns {
-		@media screen and ( max-width: 1280px ){
+		@media screen and (max-width: 1280px) {
 			flex-flow: column nowrap;
 			> .wp-block-column {
 				flex: 1 0 100%;
@@ -94,7 +84,20 @@ body.nu_news-template-default.single-nu_news {
 				}
 			}
 		}
+	}
+}
+
+
+.news-item-content--type-b {
+
+
+	.wp-block-image {
 		
+		figure.alignright {
+			margin-right: -220px;
+		}
 		
 	}
+	
+	
 }

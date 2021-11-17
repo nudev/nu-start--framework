@@ -25,8 +25,8 @@ class NU_DateTime_Helper
 		$guides = [];
 		$guides['single-day'] = '
 			<div class="nu__datetime">
-				%1$s
 				%2$s
+				%1$s
 			</div>
 		';
 		$guides['multiple-days'] = '
@@ -50,8 +50,11 @@ class NU_DateTime_Helper
 			);
 			
 		} else {
+
+			// $date_format = "m/d/Y";
+			$date_format = "M d";
 			
-			$happensOn = !empty( $fields['one_day']['happens_on'] ) ? '<p class="nu__datetime-dates has-smaller-font-size"><span class="nu__datetime-startsat">'. DateTime::createFromFormat('Ymd', $fields['one_day']['happens_on'] )->format('m/d/Y') . '</span></p>' : '';
+			$happensOn = !empty( $fields['one_day']['happens_on'] ) ? '<p class="nu__datetime-dates has-smaller-font-size"><span class="nu__datetime-startsat">'. DateTime::createFromFormat('Ymd', $fields['one_day']['happens_on'] )->format($date_format) . '</span></p>' : '';
 			$startsAt = !empty($fields['one_day']['starts_at']) ? '<span class="nu__datetime-startson">'. DateTime::createFromFormat('H:i:s', $fields['one_day']['starts_at'] )->format('g:i a') . '</span>' : '';
 			$endsAt = !empty($fields['one_day']['ends_at']) ? ' - <span>'. DateTime::createFromFormat('H:i:s', $fields['one_day']['ends_at'] )->format('g:i a') . '</span>' : '';
 			

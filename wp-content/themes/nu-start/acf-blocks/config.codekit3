@@ -9,6 +9,41 @@
   ],
   "creatorBuild" : "34214",
   "files" : {
+    "\/breadcrumbs\/breadcrumbs.css" : {
+      "aP" : 1,
+      "bl" : 0,
+      "ci" : 0,
+      "co" : 0,
+      "ft" : 16,
+      "ma" : 0,
+      "oA" : 0,
+      "oAP" : "\/breadcrumbs\/breadcrumbs-min.css",
+      "oF" : 0,
+      "pg" : 0
+    },
+    "\/breadcrumbs\/breadcrumbs.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/breadcrumbs\/breadcrumbs.php",
+      "oF" : 0
+    },
+    "\/breadcrumbs\/breadcrumbs.scss" : {
+      "aP" : 1,
+      "bl" : 0,
+      "co" : 0,
+      "dP" : 10,
+      "ec" : 1,
+      "ft" : 4,
+      "ma" : 0,
+      "oA" : 0,
+      "oAP" : "\/breadcrumbs\/breadcrumbs.css",
+      "oF" : 0,
+      "oS" : 0,
+      "pg" : 0,
+      "sct" : 0
+    },
     "\/carousel\/carousel-editor-min.js" : {
       "bF" : 0,
       "ft" : 64,
@@ -401,6 +436,21 @@
       "ma" : 0,
       "oA" : 1,
       "oAP" : "\/posts-grid\/src\/_nu-events.css",
+      "oF" : 0,
+      "oS" : 0,
+      "pg" : 0,
+      "sct" : 0
+    },
+    "\/posts-grid\/src\/_nu-news.scss" : {
+      "aP" : 0,
+      "bl" : 0,
+      "co" : 0,
+      "dP" : 10,
+      "ec" : 1,
+      "ft" : 4,
+      "ma" : 0,
+      "oA" : 1,
+      "oAP" : "\/posts-grid\/src\/_nu-news.css",
       "oF" : 0,
       "oS" : 0,
       "pg" : 0,

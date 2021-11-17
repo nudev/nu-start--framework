@@ -138,7 +138,7 @@ class PostsGrid
 
 	private function _build_acf_block_output(){
 
-		$guides['acf-block-container'] = '<div id="%1$s" class="nu-acf-block nu_posts-grid%2$s%3$s">%7$s<div class="nu__grid cols-%4$s">%6$s<ul>%5$s</ul>%6$s</div></div>';
+		$guides['acf-block-container'] = '<div id="%1$s" class="nu-acf-block nu_posts-grid%2$s%3$s">%7$s<div class="nu__grid cols-%4$s"><ul>%5$s</ul>%6$s</div></div>';
 
 		$return = sprintf(
 			$guides['acf-block-container'],

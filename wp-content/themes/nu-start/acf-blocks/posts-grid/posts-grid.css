@@ -376,8 +376,13 @@ input[type=search] {
 }
 
 /* ... project styles will always load after this ... */
+/* 
+
+	this file handles styling the posts-grid block filtering form
+	(this is all leading up to a leap to the query block and extensions for it)
+
+*/
 div.filteringform {
-  padding: 32px 32px;
   margin: 0 0 64px 0;
   text-align: center;
   width: 100%;
@@ -387,69 +392,36 @@ div.filteringform option[selected=selected] {
   font-style: italic;
 }
 div.filteringform > form {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
   width: 100%;
-  align-items: center;
   position: relative;
+  background-color: #fafafa;
+  padding: 32px 64px;
 }
 div.filteringform > form > .submission {
+  position: absolute;
+  bottom: 0;
+  right: 64px;
+  transform: translateY(50%);
+  z-index: 1;
   margin: 0 0 0 16px;
 }
-div.filteringform > form > .submission > div,
-div.filteringform > form > .submission a {
+div.filteringform > form > .submission button.is-style-default {
   display: inline-block;
+  padding: 8px 16px;
+  margin: 0;
 }
-div.filteringform > form > .submission > a {
-  margin-left: 16px;
-}
-div.filteringform > form .select2.select2-container {
-  background-color: transparent !important;
-}
-div.filteringform > form .select2.select2-container .select2-selection {
-  border: none 0;
-  border-bottom: 1px solid black;
-  border-radius: 0px;
-  position: relative;
-  padding-right: 32px;
-}
-div.filteringform > form .select2.select2-container .select2-selection:after {
-  content: "\e313";
-  font-family: "Material Icons";
-  font-weight: normal;
-  font-style: normal;
-  font-size: 24px;
-  line-height: 1;
-  line-height: inherit;
-  letter-spacing: normal;
-  text-transform: none;
+div.filteringform > form > .submission .button.is-style-outline {
   display: inline-block;
-  vertical-align: middle;
-  white-space: nowrap;
-  word-wrap: normal;
-  direction: ltr;
-  font-feature-settings: "liga";
-  -moz-font-feature-settings: "liga";
-  -moz-osx-font-smoothing: grayscale;
+  margin-left: 8px;
+  border: 2px solid var(--wp--preset--color--black);
+  padding: 8px 16px;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
 }
-div.filteringform > form .select2.select2-container .select2-selection:after {
-  position: absolute;
-  right: -16px;
-  top: 50%;
-  transform: translateY(-50%);
-}
-div.filteringform > form .select2.select2-container .select2-selection--multiple {
-  background-color: transparent !important;
-}
-div.filteringform > form .select2.select2-container .select2-selection--multiple .select2-selection__choice {
-  background-color: black !important;
-  color: white !important;
-  border-radius: 20px !important;
-  padding: 5px 10px !important;
-}
-div.filteringform > form .select2.select2-container .select2-search__field {
-  background-color: transparent;
+div.filteringform > form > .submission .button.is-style-outline:hover, div.filteringform > form > .submission .button.is-style-outline:focus {
+  border: 2px solid var(--wp--preset--color--black);
+  background-color: var(--wp--preset--color--black);
+  color: var(--wp--preset--color--white);
 }
 div.filteringform > form > .filters {
   flex: 0 1 auto;
@@ -462,10 +434,13 @@ div.filteringform > form > .filters {
 div.filteringform > form > .filters .filters-filter {
   flex: 0 1 auto;
   display: inline-block;
-  margin: 16px;
   vertical-align: middle;
   position: relative;
   min-width: 220px;
+  margin: 0 0 0 16px;
+}
+div.filteringform > form > .filters .filters-filter:first-child {
+  margin: 0;
 }
 div.filteringform > form > .filters .filters-filter > label {
   display: none;
@@ -504,9 +479,62 @@ div.filteringform > form > .filters .filters-filter .select2.select2-container {
     margin: 0 0 0 0;
   }
 }
+div.filteringform .select2.select2-container {
+  background-color: transparent !important;
+}
+div.filteringform .select2.select2-container .select2-selection {
+  font-size: 14px;
+  font-weight: 400;
+  color: #545454;
+  border: none 0;
+  border-bottom: 1px solid black;
+  border-radius: 0px;
+  position: relative;
+}
+div.filteringform .select2.select2-container .select2-selection:after {
+  content: "\e313";
+  font-family: "Material Icons";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  line-height: inherit;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  vertical-align: middle;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  font-feature-settings: "liga";
+  -moz-font-feature-settings: "liga";
+  -moz-osx-font-smoothing: grayscale;
+}
+div.filteringform .select2.select2-container .select2-selection:after {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+div.filteringform .select2.select2-container .select2-selection__rendered {
+  padding: 0;
+}
+div.filteringform .select2.select2-container .select2-selection--multiple {
+  background-color: transparent !important;
+}
+div.filteringform .select2.select2-container .select2-selection--multiple .select2-selection__choice {
+  background-color: black !important;
+  color: white !important;
+  border-radius: 20px !important;
+  padding: 8px 0 !important;
+}
+div.filteringform .select2.select2-container .select2-search__field {
+  background-color: transparent;
+  letter-spacing: 0.1ch;
+}
 @media screen and (max-width: 960px) {
   div.filteringform {
-    padding: 32px 16px;
+    padding: 32px;
   }
 }
 
@@ -565,7 +593,7 @@ body.wp-admin .nu_posts-grid .grid-item a {
   margin: 16px 0 0 0;
 }
 .nu_posts-grid .grid-item-content .post-excerpt {
-  font-size: smaller;
+  font-size: 14px;
 }
 .nu_posts-grid a.nu_posts-grid-readmore {
   position: absolute;
@@ -1019,6 +1047,10 @@ body.wp-admin .nu_posts-grid .grid-item a {
 }
 .nu_posts-grid .nu__grid .grid-item.nu_events .nu__datetime .nu__datetime-times,
 .nu_posts-grid .nu__grid .grid-item.nu_events .nu__datetime .nu__datetime-dates {
+  margin: 8px 0 0 0;
+}
+.nu_posts-grid .nu__grid .grid-item.nu_events .nu__datetime .nu__datetime-times:first-child,
+.nu_posts-grid .nu__grid .grid-item.nu_events .nu__datetime .nu__datetime-dates:first-child {
   margin: 0;
 }
 .nu_posts-grid .nu__grid .grid-item.nu_events .nu__datetime .nu__datetime-times:before,
@@ -1046,9 +1078,105 @@ body.wp-admin .nu_posts-grid .grid-item a {
   transform: scale(1.2);
 }
 .nu_posts-grid .nu__grid .grid-item.nu_events .grid-item-content {
-  padding: 32px;
+  padding: 16px;
 }
 .nu_posts-grid .nu__grid .grid-item.nu_events .grid-item-content > :first-child {
+  margin-top: 0;
+}
+
+/* 
+
+*/
+.nu_posts-grid .nu__grid .grid-item.nu_news .nu__datetime {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+}
+.nu_posts-grid .nu__grid .grid-item.nu_news .nu__datetime span {
+  letter-spacing: 0;
+  font-weight: normal;
+}
+.nu_posts-grid .nu__grid .grid-item.nu_news .nu__datetime .nu__datetime-times {
+  position: relative;
+}
+.nu_posts-grid .nu__grid .grid-item.nu_news .nu__datetime .nu__datetime-times:before {
+  content: "\e8b5";
+  font-family: "Material Icons";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  line-height: inherit;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  vertical-align: middle;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  font-feature-settings: "liga";
+  -moz-font-feature-settings: "liga";
+  -moz-osx-font-smoothing: grayscale;
+}
+.nu_posts-grid .nu__grid .grid-item.nu_news .nu__datetime .nu__datetime-dates {
+  margin-top: 16px;
+  position: relative;
+}
+.nu_posts-grid .nu__grid .grid-item.nu_news .nu__datetime .nu__datetime-dates:before {
+  content: "\e878";
+  font-family: "Material Icons";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  line-height: inherit;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  vertical-align: middle;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  font-feature-settings: "liga";
+  -moz-font-feature-settings: "liga";
+  -moz-osx-font-smoothing: grayscale;
+}
+.nu_posts-grid .nu__grid .grid-item.nu_news .nu__datetime .nu__datetime-times,
+.nu_posts-grid .nu__grid .grid-item.nu_news .nu__datetime .nu__datetime-dates {
+  margin: 8px 0 0 0;
+}
+.nu_posts-grid .nu__grid .grid-item.nu_news .nu__datetime .nu__datetime-times:first-child,
+.nu_posts-grid .nu__grid .grid-item.nu_news .nu__datetime .nu__datetime-dates:first-child {
+  margin: 0;
+}
+.nu_posts-grid .nu__grid .grid-item.nu_news .nu__datetime .nu__datetime-times:before,
+.nu_posts-grid .nu__grid .grid-item.nu_news .nu__datetime .nu__datetime-dates:before {
+  vertical-align: text-bottom;
+  display: inline-block;
+  font-size: 16px;
+  margin-right: 8px;
+  line-height: 1;
+}
+.nu_posts-grid .nu__grid .grid-item.nu_news > a {
+  border: none 0;
+  display: flex;
+}
+.nu_posts-grid .nu__grid .grid-item.nu_news > a .post-title span {
+  border-bottom: 2px solid transparent;
+}
+.nu_posts-grid .nu__grid .grid-item.nu_news > a:hover, .nu_posts-grid .nu__grid .grid-item.nu_news > a:focus {
+  border: none 0;
+}
+.nu_posts-grid .nu__grid .grid-item.nu_news > a:hover .post-title span, .nu_posts-grid .nu__grid .grid-item.nu_news > a:focus .post-title span {
+  border-bottom: 2px solid currentColor;
+}
+.nu_posts-grid .nu__grid .grid-item.nu_news > a:hover img, .nu_posts-grid .nu__grid .grid-item.nu_news > a:focus img {
+  transform: scale(1.2);
+}
+.nu_posts-grid .nu__grid .grid-item.nu_news .grid-item-content {
+  padding: 16px;
+}
+.nu_posts-grid .nu__grid .grid-item.nu_news .grid-item-content > :first-child {
   margin-top: 0;
 }
 
@@ -1079,9 +1207,6 @@ body.wp-admin .nu_posts-grid .grid-item a {
 /* 
 
 */
-.nu_posts-grid .filteringform {
-  padding: 0;
-}
 .nu_posts-grid .nu__grid.cols-1 .grid-item.nu_initiatives {
   border: none 0;
   border-bottom: 1px solid #2d2926;

@@ -136,7 +136,7 @@ body.wp-admin {
 			margin: $base-margin 0 0 0;
 		}
 		.post-excerpt {
-			font-size: smaller;
+			font-size: 14px;
 		}
 	}
 
@@ -225,6 +225,7 @@ body.wp-admin {
 
 @import "./nu-people";
 @import "./nu-events";
+@import "./nu-news";
 @import "./is-page";
 @import "./is-initiative";
 

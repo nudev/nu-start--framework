@@ -1,0 +1,28 @@
+/* 
+
+*/
+
+@import "../../__precomp/source/css/library";
+
+.nu__breadcrumbs {
+	position: relative;
+	z-index: 1;
+	display: block;
+	width: 100%;
+	margin: $margin_2x auto 0 auto;
+	padding: $base-margin;
+	float: none !important;
+
+	&.textalign-center {
+		text-align: center;
+	}
+	&.textalign-right {
+		text-align: right;
+	}
+
+	@include clearfix();
+
+	&.wide {
+		max-width: 90%;
+	}
+}
