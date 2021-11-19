@@ -1,53 +1,13 @@
-body.nu_people-template-default.single-nu_people {
-	.wp-block-acf-breadcrumbs {
-		margin-top: $margin_2x;
-	}
-	.wp-block-cover.alignfull:first-child {
-		.wp-block-cover__inner-container {
-			@media screen and (min-width: 781px) {
-				max-width: 90%;
-			}
-		}
-	}
-}
-
 .nu_start--person-item-single-type-a {
-
+	.wp-block-columns:not(.is-not-stacked-on-mobile)
+		.nu_person_detail--content-area.wp-block-column {
+		margin: 0 0 0 auto;
+		margin-left: auto;
+	}
 
 	.is-headshot-and-bio {
-		max-width: 1024px;
-		margin: 0 auto;
-
 		.wp-block-post-title {
 			margin-top: 0;
-		}
-
-		// ? adjustments to make the featured image a constant aspect ratio
-		.wp-block-image {
-			figure {
-				max-width: 400px;
-				width: 100%;
-				@include aspect-ratio(1, 1);
-				> img {
-					position: absolute;
-					top: 0;
-					left: 0;
-					width: 100%;
-					height: 100% !important;
-				}
-			}
-		}
-
-
-		> .wp-block-column:last-child {
-			> .wp-block-group:first-child {
-				h2, p  {
-					margin: 0;
-				}
-				+ .wp-block-separator {
-					margin: $margin_4x 0;
-				}
-			}
 		}
 
 		@media screen and (max-width: 781px) {

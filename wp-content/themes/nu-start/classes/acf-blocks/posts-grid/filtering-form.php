@@ -48,7 +48,7 @@ class FilteringForm extends PostsGrid
 				<form name="postsgrid_filter-'.self::$block['id'].'">
 					%1$s
 					<div class="submission">
-						<button type="submit" value="Filter" class="button is-style-default">Submit</button><a href="'.get_permalink(self::$post_id).'" class="is-style-outline button">Clear</a>
+						<button type="submit" value="Filter" class="button is-style-default">Filter</button><a href="'.get_permalink(self::$post_id).'" class="is-style-outline button">Clear</a>
 					</div>
 				</form>
 			</div>

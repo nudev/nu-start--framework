@@ -381,7 +381,7 @@ input[type=search] {
   z-index: 1;
   display: block;
   width: 100%;
-  margin: 32px auto 0 auto;
+  margin: 16px auto 0 auto;
   padding: 16px;
   float: none !important;
 }
@@ -398,4 +398,22 @@ input[type=search] {
 }
 .nu__breadcrumbs.wide {
   max-width: 90%;
+}
+
+div.breadcrumbs[typeof=BreadcrumbList] {
+  font-size: 12px;
+}
+div.breadcrumbs[typeof=BreadcrumbList] a {
+  border-bottom: 1px solid transparent;
+}
+div.breadcrumbs[typeof=BreadcrumbList] a:hover, div.breadcrumbs[typeof=BreadcrumbList] a:focus {
+  border-bottom: 1px solid black;
+}
+div.breadcrumbs[typeof=BreadcrumbList] span.material-icons-outlined {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 14px;
+  line-height: 14px;
+  margin: 0 4px;
+  border-bottom: 1px solid transparent;
 }

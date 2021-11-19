@@ -32,7 +32,7 @@
  * Clearfix
  *
  */
-.nu_posts-grid .nu__grid .grid-item.page > a figure img, .nu_posts-grid .nu__grid .grid-item.page > a .post-title span, .nu_posts-grid .grid-item > a.contains-clickable-area .post-title span:before, .nu_posts-grid a.nu_posts-grid-readmore span, .nu_posts-grid .grid-item img {
+.nu_posts-grid .nu__grid .grid-item.page > a figure img, .nu_posts-grid .nu__grid .grid-item.page > a .post-title span, .nu_posts-grid .grid-item > a.contains-clickable-area .post-title span:before, .nu_posts-grid .grid-item, .nu_posts-grid a.nu_posts-grid-readmore span, .nu_posts-grid .grid-item img {
   transition: all 0.1s ease-in-out;
 }
 
@@ -586,11 +586,17 @@ body.wp-admin .nu_posts-grid .grid-item a {
   flex-flow: column nowrap;
   position: relative;
 }
+.nu_posts-grid .grid-item-content > :last-child {
+  margin-bottom: 0;
+}
+.nu_posts-grid .grid-item-content > :first-child {
+  margin-top: 0;
+}
 .nu_posts-grid .grid-item-content .featured-tags {
   margin: 0;
 }
 .nu_posts-grid .grid-item-content .post-title {
-  margin: 16px 0 0 0;
+  margin: 0 0 0 0;
 }
 .nu_posts-grid .grid-item-content .post-excerpt {
   font-size: 14px;
@@ -849,6 +855,7 @@ body.wp-admin .nu_posts-grid .grid-item a {
 }
 .nu_posts-grid .grid-item {
   background-color: white;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.06);
 }
 .nu_posts-grid .grid-item figure {
   overflow: hidden;
@@ -924,6 +931,9 @@ body.wp-admin .nu_posts-grid .grid-item a {
     flex: 1 1 auto;
   }
 }
+.nu_posts-grid .grid-item:hover, .nu_posts-grid .grid-item:focus {
+  box-shadow: 0px 20px 25px -5px rgba(0, 0, 0, 0.1), 0px 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
 .nu_posts-grid .grid-item > a.contains-clickable-area {
   border: none 0;
 }
@@ -965,27 +975,15 @@ body.wp-admin .nu_posts-grid .grid-item a {
 /* 
 
 */
-.nu_posts-grid .nu__grid .grid-item.nu_people figure {
-  min-height: 280px;
-}
-@media screen and (min-width: 1281px) {
-  .nu_posts-grid .nu__grid .grid-item.nu_people figure {
-    max-height: 20vw;
-  }
-}
-.nu_posts-grid .nu__grid .grid-item.nu_people .featured-tags {
-  width: 100%;
-}
-.nu_posts-grid .nu__grid .grid-item.nu_people .featured-tags .tags {
-  font-weight: normal;
-  font-size: normal;
-}
-.nu_posts-grid .nu__grid .grid-item.nu_people .featured-tags .cats {
-  font-size: smaller;
-}
 .nu_posts-grid .nu__grid .grid-item.nu_people .nu_posts-grid-readmore {
   display: block;
   margin: 64px 0 0 0;
+}
+.nu_posts-grid .nu__grid .grid-item.nu_people .person-excerpt p {
+  margin: 8px 0 0 0;
+}
+.nu_posts-grid .nu__grid .grid-item.nu_people .moretext:after {
+  display: none;
 }
 
 /* 
@@ -1175,6 +1173,7 @@ body.wp-admin .nu_posts-grid .grid-item a {
 }
 .nu_posts-grid .nu__grid .grid-item.nu_news .grid-item-content {
   padding: 16px;
+  padding: 32px;
 }
 .nu_posts-grid .nu__grid .grid-item.nu_news .grid-item-content > :first-child {
   margin-top: 0;

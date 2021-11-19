@@ -4,9 +4,11 @@
 hr,
 .wp-block-separator {
 
+	margin: $margin_2x auto;
+
 	opacity: 1;
 	&.is-style-wide {
-		height: 2px !important;
+		height: 1px !important;
 	}
 }
 

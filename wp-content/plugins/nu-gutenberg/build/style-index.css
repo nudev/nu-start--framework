@@ -382,6 +382,7 @@ input[type=search] {
   box-sizing: inherit;
 }
 
+/* ... project styles will always load after this ... */
 .wp-block-nu-blocks-accordion.is-style-icon-appears-before-title .wp-block-nu-blocks-accordion-item .wp-block-nublocks-accordion-item__title {
   position: relative;
   position: relative;
@@ -460,7 +461,7 @@ input[type=search] {
  * Clearfix
  *
  */
-.wp-block-nu-blocks-accordion .wp-block-nu-blocks-accordion-item .wp-block-nublocks-accordion-item__content, .wp-block-nu-blocks-accordion .wp-block-nu-blocks-accordion-item .wp-block-nublocks-accordion-item__title {
+.wp-block-nu-blocks-accordion .wp-block-nu-blocks-accordion-item .wp-block-nublocks-accordion-item__content, .wp-block-nu-blocks-accordion .wp-block-nu-blocks-accordion-item .wp-block-nublocks-accordion-item__title, .wp-block-nu-blocks-accordion .wp-block-nu-blocks-accordion-item summary {
   transition: all 0.1s ease-in-out;
 }
 
@@ -804,6 +805,7 @@ input[type=search] {
   box-sizing: inherit;
 }
 
+/* ... project styles will always load after this ... */
 .wp-block-nu-blocks-accordion {
   margin: 0 auto;
   margin-top: 32px;

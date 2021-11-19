@@ -3,8 +3,9 @@
 	border-bottom: none 0;
 	border-top: none 0;
 	text-align: left;
-	padding: $base-margin 0;
+	padding: 0;
 	color: var(--wp--preset--color--black);
+
 	blockquote {
 		max-width: 80%;
 		margin: 0 auto;
@@ -22,16 +23,20 @@
 		}
 
 		p {
-			@include font-size(1.8rem);
-			line-height: 1.5;
+			@include font-size(36px);
+			line-height: 40px;
 		}
 	}
-}
 
-.wp-block-pullquote__citation {
-	text-transform: none;
-	strong {
-		text-transform: uppercase;
-		font-weight: normal;
+	cite {
+		margin-top: $base-margin;
+		display: inline-block;
+		text-transform: none;
+		font-size: 14px;
+		letter-spacing: 0.5px;
+		strong {
+			text-transform: uppercase;
+			font-weight: normal;
+		}
 	}
 }

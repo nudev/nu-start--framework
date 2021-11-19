@@ -13,12 +13,22 @@
 .nu_pattern_collection--personal-cover-photo {}
 
 .nu_pattern--design-helper--color-palette {
+
+	> :first-child {
+		margin-top: $margin_8x;
+	}
+
+	> h2 {
+		margin: $margin_8x auto 0 auto;
+	}
+	> .wp-block-columns {
+		margin: $margin_4x auto 0 auto;
+	}
+	
 	.wp-block-cover {
 		min-height: 72px;
-		max-width: 320px;
-		margin: 0 auto;
 		overflow: hidden;
-		@include aspect-ratio(16,10);
+		@include aspect-ratio(16,9);
 		&:before {
 			position: relative !important;
 			width: 100%;

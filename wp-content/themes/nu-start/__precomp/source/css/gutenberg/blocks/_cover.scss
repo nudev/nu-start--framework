@@ -12,9 +12,7 @@
 			line-height: 1;
 		}
 
-		&:not(.is-style-used-as-a-card) {
-			padding: $margin_6x 0;
-		}
+		padding: $base-margin 0;
 
 		.wp-block-cover__inner-container {
 			max-width: 80%;

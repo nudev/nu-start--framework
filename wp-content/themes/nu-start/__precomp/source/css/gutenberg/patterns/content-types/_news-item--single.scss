@@ -41,6 +41,12 @@ body.nu_news-template-default.single-nu_news {
 				> :first-child:not(.wp-block-pullquote__citation)::before {
 					display: none;
 				}
+				cite {
+					text-transform: none;
+					strong {
+						text-transform: uppercase;
+					}
+				}		
 			}
 		}
 
