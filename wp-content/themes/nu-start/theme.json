@@ -14,49 +14,204 @@
       "link": true,
       "palette": [
         {
-          "name": "Warm Gray",
-          "slug": "warm-gray",
-          "color": "#4D4A45"
-        },
-        {
           "name": "Black",
-          "slug": "black",
+          "slug": "black-1",
           "color": "#000000"
         },
         {
+          "name": "Black 2",
+          "slug": "black-2",
+          "color": "#2D2926"
+        },
+        {
+          "name": "Black 3",
+          "slug": "black-3",
+          "color": "#696158"
+        },
+        {
+          "name": "Black 4",
+          "slug": "black-4",
+          "color": "#8C857B"
+        },
+        {
+          "name": "Black 5",
+          "slug": "black-5",
+          "color": "#9D968D"
+        },
+        {
           "name": "White",
-          "slug": "white",
-          "color": "#ffffff"
+          "slug": "white-1",
+          "color": "#FFFFFF"
+        },
+        {
+          "name": "White 2",
+          "slug": "white-2",
+          "color": "#F4F2F0"
+        },
+        {
+          "name": "White 3",
+          "slug": "white-3",
+          "color": "#ECE9E6"
+        },
+        {
+          "name": "White 4",
+          "slug": "white-4",
+          "color": "#DEDAD7"
+        },
+        {
+          "name": "White 5",
+          "slug": "white-5",
+          "color": "#D2CDCA"
         },
         {
           "name": "Red",
-          "slug": "red",
-          "color": "#d41b2c"
+          "slug": "red-1",
+          "color": "#F9423A"
         },
         {
-          "name": "Blue",
-          "slug": "blue",
-          "color": "#4299e1"
+          "name": "Red 2",
+          "slug": "red-2",
+          "color": "#E4002B"
         },
         {
-          "name": "Dark Blue",
-          "slug": "dark-blue",
-          "color": "#385d85"
+          "name": "Red 3",
+          "slug": "red-3",
+          "color": "#C8102E"
         },
         {
-          "name": "Orange",
-          "slug": "orange",
-          "color": "#f86716"
+          "name": "Red 4",
+          "slug": "red-4",
+          "color": "#A6192E"
         },
         {
-          "name": "Yellow",
-          "slug": "yellow",
-          "color": "#fac515"
+          "name": "Red 5",
+          "slug": "red-5",
+          "color": "#77232F"
         },
         {
-          "name": "Green",
-          "slug": "green",
-          "color": "#48bb78"
+          "name": "Orange 1",
+          "slug": "orange-1",
+          "color": "#FFAF80"
+        },
+        {
+          "name": "Orange 2",
+          "slug": "orange-2",
+          "color": "#FF9966"
+        },
+        {
+          "name": "Orange 3",
+          "slug": "orange-3",
+          "color": "#FF854F"
+        },
+        {
+          "name": "Orange 4",
+          "slug": "orange-4",
+          "color": "#E5621C"
+        },
+        {
+          "name": "Orange 5",
+          "slug": "orange-5",
+          "color": "#BB4100"
+        },
+        {
+          "name": "Yellow 1",
+          "slug": "yellow-1",
+          "color": "#FFE1A5"
+        },
+        {
+          "name": "Yellow 2",
+          "slug": "yellow-2",
+          "color": "#FFD580"
+        },
+        {
+          "name": "Yellow 3",
+          "slug": "yellow-3",
+          "color": "#FFC44B"
+        },
+        {
+          "name": "Yellow 4",
+          "slug": "yellow-4",
+          "color": "#FFB838"
+        },
+        {
+          "name": "Yellow 5",
+          "slug": "yellow-5",
+          "color": "#E2A855"
+        },
+        {
+          "name": "Green 1",
+          "slug": "green-1",
+          "color": "#BDE9C9"
+        },
+        {
+          "name": "Green 2",
+          "slug": "green-2",
+          "color": "#98D1B5"
+        },
+        {
+          "name": "Green 3",
+          "slug": "green-3",
+          "color": "#609F80"
+        },
+        {
+          "name": "Green 4",
+          "slug": "green-4",
+          "color": "#025944"
+        },
+        {
+          "name": "Green 5",
+          "slug": "green-5",
+          "color": "#1A4538"
+        },
+        {
+          "name": "Blue 1",
+          "slug": "blue-1",
+          "color": "#C6EFFC"
+        },
+        {
+          "name": "Blue 2",
+          "slug": "blue-2",
+          "color": "#A3DCEC"
+        },
+        {
+          "name": "Blue 3",
+          "slug": "blue-3",
+          "color": "#62B6D0"
+        },
+        {
+          "name": "Blue 4",
+          "slug": "blue-4",
+          "color": "#2B7496"
+        },
+        {
+          "name": "Blue 5",
+          "slug": "blue-5",
+          "color": "#0C3354"
+        },
+        {
+          "name": "Magenta 1",
+          "slug": "magenta-1",
+          "color": "#D699BE"
+        },
+        {
+          "name": "Magenta 2",
+          "slug": "magenta-2",
+          "color": "#B9659C"
+        },
+        {
+          "name": "Magenta 3",
+          "slug": "magenta-3",
+          "color": "#802061"
+        },
+        {
+          "name": "Magenta 4",
+          "slug": "magenta-4",
+          "color": "#690047"
+        },
+        {
+          "name": "Magenta 5",
+          "slug": "magenta-5",
+          "color": "#4B003B"
         },
         {
           "name": "Transparent",
@@ -152,7 +307,7 @@
   },
   "styles": {
     "color": {
-      "text": "var(--wp--preset--color--warm-gray)",
+      "text": "var(--wp--preset--color--black-1)",
       "background": "var(--wp--preset--color--white)"
     },
     "elements": {
@@ -163,7 +318,7 @@
       },
       "h1": {
         "color": {
-          "text": "var(--wp--preset--color--black)"
+          "text": "var(--wp--preset--color--black-1)"
         },
         "typography": {
           "fontWeight": "400",
@@ -174,7 +329,7 @@
       },
       "h2": {
         "color": {
-          "text": "var(--wp--preset--color--black)"
+          "text": "var(--wp--preset--color--black-1)"
         },
         "typography": {
           "fontWeight": "400",
@@ -185,7 +340,7 @@
       },
       "h3": {
         "color": {
-          "text": "var(--wp--preset--color--black)"
+          "text": "var(--wp--preset--color--black-1)"
         },
         "typography": {
           "fontWeight": "400",
@@ -196,7 +351,7 @@
       },
       "h4": {
         "color": {
-          "text": "var(--wp--preset--color--black)"
+          "text": "var(--wp--preset--color--black-1)"
         },
         "typography": {
           "fontWeight": "700",
@@ -207,7 +362,7 @@
       },
       "h5": {
         "color": {
-          "text": "var(--wp--preset--color--black)"
+          "text": "var(--wp--preset--color--black-1)"
         },
         "typography": {
           "fontWeight": "700",
@@ -218,7 +373,7 @@
       },
       "h6": {
         "color": {
-          "text": "var(--wp--preset--color--black)"
+          "text": "var(--wp--preset--color--black-1)"
         },
         "typography": {
           "fontWeight": "700",
@@ -237,12 +392,12 @@
       },
       "core/paragraph": {
         "color": {
-          "text": "var(--wp--preset--color--warm-gray)"
+          "text": "var(--wp--preset--color--black-2)"
         },
         "elements": {
           "link": {
             "color": {
-              "text": "var(--wp--preset--color--warm-gray)"
+              "text": "var(--wp--preset--color--black-1)"
             },
             "typography": {
               "fontWeight": "var(--wp--custom--font-weight--normal)"

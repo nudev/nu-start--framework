@@ -5,7 +5,7 @@
 header.header {
 	// ? sticky header floats over all content with lightest shadow
 	background-color: rgba($white, 1);
-	@include boxshadow(1);
+	@include nu__boxshadow(2);
 	display: block;
 	position: fixed;
 	z-index: 999;
@@ -146,7 +146,7 @@ header.header {
 			top: 100%;
 			right: 0;
 			background-color: rgba($white, 1);
-			@include boxshadow(1);
+			@include nu__boxshadow(2);
 			min-width: 220px;
 
 			@media screen and (min-width: 961px) {
@@ -169,12 +169,12 @@ header.header {
 			height: 100%;
 			padding: 5px;
 			border-bottom: none 0;
-
+			opacity: 0.8;
 			// style link text and underline effect
 			> span {
 				font-size: 0.875rem;
 				display: inline-block;
-				letter-spacing: 0;
+				letter-spacing: 0.33px;
 				@include accentUnderline();
 			}
 
@@ -182,7 +182,7 @@ header.header {
 			&:focus,
 			&:active {
 				border-bottom: none 0;
-
+				opacity: 1;
 				> span:before {
 					width: 100%; // underline any item on hover
 				}
@@ -200,7 +200,12 @@ header.header {
 					display: none;
 
 					a {
-						padding: $base-margin;
+						@extend %transition;
+						padding: $base-margin ($base-margin + $half-margin);
+						&:hover,
+						&:focus {
+							background-color: var(--wp--preset--color--white-2);
+						}
 					}
 				}
 
@@ -208,7 +213,7 @@ header.header {
 					> span {
 						position: relative;
 						@include nu_micon("\e5cf", after);
-						padding-right: $margin_2x;
+						padding-right: ($base-margin + $half-margin);
 
 						&:after {
 							position: absolute;
@@ -247,9 +252,50 @@ header.header {
 			&.current-page-ancestor,
 			&.current-menu-ancestor,
 			&.current-menu-parent {
+				> a {
+					opacity: 1;
+				}
 				> a > span:before {
 					width: 100%;
 				}
+			}
+		}
+	}
+
+	// * traverse to the top-level nav items (only)
+	.navlinks > ul.menu > li {
+		// ? top level items underline is on the container not on the text
+		> a > span {
+			padding-bottom: 0;
+			&:before {
+				display: none; // hide the underline on the text
+			}
+		}
+
+		// ? apply the accent underline to the clickable area, and flip it to start from the right
+		> a {
+			padding: 0;
+			@include accentUnderline();
+			&:before {
+				bottom: 0;
+				left: auto;
+				right: 0;
+			}
+			&:hover,
+			&:focus {
+				&:before {
+					width: 100%;
+				}
+			}
+		}
+
+		// ? conditional classes may appear on this element
+		&.current-menu-item,
+		&.current-page-ancestor,
+		&.current-menu-ancestor,
+		&.current-menu-parent {
+			> a:before {
+				width: 100%;
 			}
 		}
 	}
@@ -282,7 +328,7 @@ header.header {
 
 		// mobile nav changes
 		.navlinks {
-			@include boxshadow(1);
+			@include nu__boxshadow(2);
 			height: auto;
 			position: absolute;
 			top: 100%;

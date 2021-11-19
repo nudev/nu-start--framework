@@ -1,10 +1,10 @@
 /* 
 	admin.scss
 */
-// 
+//
 
 // ? seems stable
-@import './library';
+@import "./library";
 
 .wp-block-widget-area.components-panel .components-panel__body-title {
 	z-index: 2 !important;
@@ -18,14 +18,13 @@
 }
 
 // 	increase the sidebar width in the block editor to make previews more meaningful
-// 
-// 
+//
+//
 .interface-complementary-area {
-	@media screen and ( min-width: 782px ) {
+	@media screen and (min-width: 782px) {
 		width: 320px !important;
 	}
 }
-
 
 @media screen and (min-width: 782px) {
 	.block-editor-inserter__menu .block-editor-inserter__main-area {
@@ -34,12 +33,33 @@
 	}
 }
 .block-editor-block-patterns-list__item {
-	border: 1px solid transparentize($black,0.25);
+	border: 1px solid transparentize($black, 0.25);
 }
-
 
 .jvm-richtext-icons-popover {
 	> div {
 		max-height: 300px !important;
+	}
+}
+
+@media screen and (min-width: 782px) {
+	// * traverse to the color picker component
+	.block-editor-panel-color-gradient-settings {
+		// * traverse to the color picker control
+		.block-editor-color-gradient-control {
+			// * traverse to the color picker swatches
+			.components-circular-option-picker__swatches {
+				display: grid;
+				grid-template-columns: repeat(5, 1fr);
+				grid-row-gap: $half-margin;
+
+				// 
+				.components-circular-option-picker__option-wrapper {
+					margin: 0 !important;
+					width: 32px;
+					height: 32px;
+				}
+			}
+		}
 	}
 }

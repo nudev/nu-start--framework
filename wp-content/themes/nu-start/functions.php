@@ -55,5 +55,25 @@ require_once(  get_template_directory() . '/classes/acf-blocks.php');
 require_once(  get_template_directory() . '/classes/pim-handler.php'); 			
 
 
+
+
+
+
+
+function add_my_icons($file) {
+    $file = get_template_directory().'/__lib/icons/material-icons/config.json';
+    return $file;
+}
+
+function add_my_css($cssfile) {
+    $cssfile = get_template_directory_uri().'/__lib/icons/material-icons/css/fontello.css';
+    return $cssfile;
+}
+
+add_filter( 'jvm_richtext_icons_iconset_file', 'add_my_icons');
+
+add_filter( 'jvm_richtext_icons_css_file', 'add_my_css');
+
+
 // 
 ?>

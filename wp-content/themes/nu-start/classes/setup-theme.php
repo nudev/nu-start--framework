@@ -295,9 +295,9 @@ class SetupTheme
 			, filemtime(get_template_directory() . '/__precomp/build/css/admin.css')
 		);
 		//
-		// wp_enqueue_style( 'admin' );
+		wp_enqueue_style( 'admin' );
 		//
-		// wp_enqueue_script( 'admin' );
+		wp_enqueue_script( 'admin' );
 	}
 
 

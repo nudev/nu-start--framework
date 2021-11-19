@@ -82,31 +82,6 @@ if( !function_exists( 'nu__register_block_styles' ) ){
 			)
 		);
 
-
-		// register_block_style(
-		// 	'core/paragraph',
-		// 	array(
-		// 		'name'         => 'links-have-arrows',
-		// 		'label'        => __( 'Links have arrows', 'nu-start' ),
-		// 	)
-		// );
-
-		register_block_style(
-			'core/post-title',
-			array(
-				'name'         => 'display',
-				'label'        => __( 'Display', 'nu-start' ),
-			)
-		);
-
-		register_block_style(
-			'core/heading',
-			array(
-				'name'         => 'display',
-				'label'        => __( 'Display', 'nu-start' ),
-			)
-		);
-
 		register_block_style(
 			'core/button',
 			array(
@@ -144,43 +119,50 @@ if( !function_exists( 'nu__register_block_styles' ) ){
 }
 
 
+
+/**
+ * 
+ * 
+ * ?		register all our ACF Blocks
+ * 
+ */
 if( function_exists('acf_register_block_type') ):
 
-	acf_register_block_type(array(
-		'name' => 'nu-program',
-		'title' => 'Program',
-		'description' => '',
-		'category' => 'nu-blocks',
-		'keywords' => array(
-		),
-		'post_types' => array(
-			'nu_programs',
-		),
-		'mode' => 'preview',
-		'align' => '',
-		'align_content' => NULL,
-		'render_template' => get_template_directory(  ) . '/acf-blocks/programs/program.php',
-		'render_callback' => '',
-		'enqueue_style' => get_template_directory_uri(  ) . '/acf-blocks/programs/program.css',
-		'enqueue_script' => get_template_directory_uri(  ) . '/acf-blocks/programs/program-min.js',
-		'enqueue_assets' => '',
-		'icon' => '',
-		'supports' => array(
-			'align' => array(
-				'left',
-				'right',
-				'center',
-				'wide',
-				'full',
-			),
-			'mode' => true,
-			'multiple' => false,
-			'jsx' => true,
-			'align_content' => false,
-			'anchor' => true,
-		),
-		'active' => true,
-	));
+	// acf_register_block_type(array(
+	// 	'name' => 'nu-program',
+	// 	'title' => 'Program',
+	// 	'description' => '',
+	// 	'category' => 'nu-blocks',
+	// 	'keywords' => array(
+	// 	),
+	// 	'post_types' => array(
+	// 		'nu_programs',
+	// 	),
+	// 	'mode' => 'preview',
+	// 	'align' => '',
+	// 	'align_content' => NULL,
+	// 	'render_template' => get_template_directory(  ) . '/acf-blocks/programs/program.php',
+	// 	'render_callback' => '',
+	// 	'enqueue_style' => get_template_directory_uri(  ) . '/acf-blocks/programs/program.css',
+	// 	'enqueue_script' => get_template_directory_uri(  ) . '/acf-blocks/programs/program-min.js',
+	// 	'enqueue_assets' => '',
+	// 	'icon' => '',
+	// 	'supports' => array(
+	// 		'align' => array(
+	// 			'left',
+	// 			'right',
+	// 			'center',
+	// 			'wide',
+	// 			'full',
+	// 		),
+	// 		'mode' => true,
+	// 		'multiple' => false,
+	// 		'jsx' => true,
+	// 		'align_content' => false,
+	// 		'anchor' => true,
+	// 	),
+	// 	'active' => true,
+	// ));
 
 	acf_register_block_type(array(
 		'name' => 'carousel',
