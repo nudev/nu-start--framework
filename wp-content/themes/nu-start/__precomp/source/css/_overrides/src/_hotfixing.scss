@@ -89,3 +89,16 @@ body.single-nu_news {
 .narrow-pullquote-container {
 	margin: $margin_4x 0;
 }
+
+.wp-block-nu-blocks-accordion-item {
+
+	.wp-block-nublocks-accordion-item__content{
+		@extend %transition;
+		// opacity: 1;
+		&:not(.revealed){
+			// opacity: 0;
+			// height: 0;
+			// @include displayedInvisible;
+		}
+	}
+}

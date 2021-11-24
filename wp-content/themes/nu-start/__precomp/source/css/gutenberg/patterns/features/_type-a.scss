@@ -6,46 +6,31 @@
 
 //
 .nu_pattern-is_feature--is_type_a {
+
+
+	.is-row-block {
+		> .wp-block-group:first-child {
+			max-width: 600px;
+		}
+	}
 	
-	> .wp-block-columns {
-		margin: $margin_2x 0 0 0;
-		&:first-child {
-			margin: 0;
-		}
+	.wp-block-navigation__container {
+		gap: 0;
+		flex-flow: column nowrap;
+		margin-right: $margin_2x;
 	}
 
-	&.has-background {
-		padding: $margin_4x; // increase default has-background padding
-		padding-bottom: 0;
-		@media screen and (max-width: 781px) {
-			padding: $margin_2x;
-			padding-bottom: $margin_2x;
-		}
-	}
+	.does-spillover-container {
+		margin-top: 0;
+		transform: translateY($margin_4x);
 
-	// a grouping of paragraph blocks used as links; rather than a navmenu ( for editor simplicty )
-	.wp-block-group.feature-is_type_a-navlinks {
-		min-width: 220px;
-		@media screen and (min-width: 782px) {
-			margin-left: $margin_4x;
-		}
-		p.is-style-links-have-arrows {
-			margin: $base-margin 0 0 0;
-		}
-	}
-
-	.wp-block-buttons {
-		// force a single row, until we force a single column
-		@media screen and (min-width: 782px) {
-			margin-bottom: -#{$margin_4x} !important;
-			flex-wrap: nowrap;
-		}
-		@media screen and (max-width: 781px) {
-			flex-flow: column nowrap;
-			.wp-block-button__link {
-				width: 100%;
+		> .wp-block-column {
+			&:first-child {
+			}
+			&:last-child {
+				flex: 1 0 320px;
 			}
 		}
 	}
-
+	
 }

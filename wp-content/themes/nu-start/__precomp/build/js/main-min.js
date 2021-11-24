@@ -8,31 +8,39 @@
 	 *   ... code in here will run after jQuery says document is ready
 	 */
 	$(function () {
+		let accordion_block_handler = {
+			details_el: $(".wp-block-nu-blocks-accordion-item details"),
+			content_el: $(".wp-block-nublocks-accordion-item__content"),
 
+			_init: function () {
+				this.details_el.on("click", function (e) {
+					let content_el = $(this).find(
+						".wp-block-nublocks-accordion-item__content"
+					);
+					content_el.toggleClass("revealed");
+					content_el.slideDown(400, function () {
+						console.log("slide done");
+					});
+				});
+			},
+		};
 
+		accordion_block_handler._init();
 
 		let nav_block_customization = {
-
-			_init : function( ){
-
-
-				$('.open-on-click.wp-block-navigation-submenu').on('click','.wp-block-navigation-submenu__toggle', function(e){
-
-					$(e.delegateTarget).toggleClass('reveal-submenu');
-					
-					
-				});
-
-
-			}
+			_init: function () {
+				$(".open-on-click.wp-block-navigation-submenu").on(
+					"click",
+					".wp-block-navigation-submenu__toggle",
+					function (e) {
+						$(e.delegateTarget).toggleClass("reveal-submenu");
+					}
+				);
+			},
 		};
 
 		nav_block_customization._init();
-		
-		
-		
-		
-		
+
 		//
 		$(".wp-block-nu-blocks-accordion").on(
 			"click",
@@ -110,7 +118,6 @@
 			type: "iframe",
 		});
 
-		//
 		$(
 			".wp-block-button.is-style-playhead .wp-block-button__link"
 		).magnificPopup({

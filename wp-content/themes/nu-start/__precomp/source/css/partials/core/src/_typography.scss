@@ -10,60 +10,30 @@ body {
 	z-index: 1;
 }
 
-// styling for general headings
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	&.is-style-display {
-		font-weight: 300;
-	}
-	&.has-background {
-		padding: $margin_2x;
-	}
-}
-
 // set the RFS (max) font size, and scale it up for display style
 h1 {
 	$fz: 48px;
 	@include font-size($fz);
-	&.is-style-display {
-		@include font-size($fz * 1.25);
-	}
 }
 
 h2 {
 	$fz: 36px;
 	@include font-size($fz);
-	&.is-style-display {
-		@include font-size($fz * 1.25); // 48px
-	}
 }
 
 h3 {
 	$fz: 30px;
 	@include font-size($fz);
-	&.is-style-display {
-		@include font-size($fz * 1.25);
-	}
 }
 
 h4 {
 	$fz: 20px;
 	@include font-size($fz);
-	&.is-style-display {
-		@include font-size($fz * 1.25);
-	}
 }
 
 h5 {
 	$fz: 16px;
 	@include font-size($fz);
-	&.is-style-display {
-		@include font-size($fz * 1.25);
-	}
 }
 
 h6 {
@@ -71,10 +41,6 @@ h6 {
 	$fz: 16px;
 	@include font-size($fz);
 	font-weight: bold;
-	&.is-style-display {
-		font-weight: normal;
-		@include font-size($fz * 1.25);
-	}
 }
 
 // ? links need to be styled to our brand
@@ -83,34 +49,69 @@ a {
 	color: currentColor;
 	font-weight: normal;
 	text-decoration: none;
-	border-bottom: 2px solid transparent;
+	// border-bottom: 2px solid transparent;
 	@extend %transition;
 	&:hover,
 	&:focus,
 	&:active {
 		text-decoration: none;
-		border-bottom: 2px solid currentColor;
+		// border-bottom: 2px solid currentColor;
 	}
 	svg {
 		@extend %transition;
 	}
 }
 
-
-
 // ? note; RFS will auto-convert these to REM (16px === 1rem && 36px === 2rem)
 // ? this overrides the wordpress variables attached to the body
 body {
-	@include rfs(72px, --wp--preset--font-size--hugest);
-	@include rfs(48px, --wp--preset--font-size--huge);
-	@include rfs(36px, --wp--preset--font-size--extra-large);
-	@include rfs(30px, --wp--preset--font-size--large);
-	@include rfs(20px, --wp--preset--font-size--larger);
-	@include rfs(16px, --wp--preset--font-size--normal);
-	@include rfs(14px, --wp--preset--font-size--smaller);
-	@include rfs(12px, --wp--preset--font-size--tiny);
-}
+	@include rfs(128px, --wp--preset--font-size--128-128);
+	@include rfs(96px, --wp--preset--font-size--96-96);
+	@include rfs(72px, --wp--preset--font-size--72-72);
+	@include rfs(60px, --wp--preset--font-size--60-60);
+	@include rfs(48px, --wp--preset--font-size--48-48);
+	@include rfs(36px, --wp--preset--font-size--36-40);
+	@include rfs(30px, --wp--preset--font-size--30-36);
+	@include rfs(24px, --wp--preset--font-size--24-32);
+	@include rfs(20px, --wp--preset--font-size--20-28);
+	@include rfs(18px, --wp--preset--font-size--18-28);
+	@include rfs(16px, --wp--preset--font-size--16-24);
+	@include rfs(14px, --wp--preset--font-size--14-20);
+	@include rfs(12px, --wp--preset--font-size--12-16);
 
+	.has-12-16-font-size {
+		@include rfs(16px, line-height);
+	}
+	.has-14-20-font-size {
+		@include rfs(20px, line-height);
+	}
+	.has-16-24-font-size {
+		@include rfs(24px, line-height);
+	}
+	.has-18-28-font-size {
+		@include rfs(28px, line-height);
+	}
+	.has-20-28-font-size {
+		@include rfs(28px, line-height);
+	}
+	.has-24-32-font-size {
+		@include rfs(32px, line-height);
+	}
+	.has-30-36-font-size {
+		@include rfs(36px, line-height);
+	}
+	.has-36-40-font-size {
+		@include rfs(40px, line-height);
+	}
+
+	.has-48-48-font-size,
+	.has-60-60-font-size,
+	.has-72-72-font-size,
+	.has-96-96-font-size,
+	.has-128-128-font-size {
+		line-height: 1;
+	}
+}
 
 p {
 	margin: $base-margin 0 $half-margin 0;

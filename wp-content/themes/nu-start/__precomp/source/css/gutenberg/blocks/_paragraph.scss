@@ -15,18 +15,9 @@ p {
 	strong {
 		color: var(--wp--preset--color--black);
 	}
-}
-
-p.is-style-links-have-arrows {
-	a {
-		display: inline-block;
-		vertical-align: middle;
-		@include nu_micon("\e5c8", after);
-		&:after {
-			display: inline;
-			margin: -4px 0 0 5px;
-			color: currentColor;
-			font-size: inherit;
+	&.has-text-color {
+		strong {
+			color: inherit;
 		}
 	}
 }

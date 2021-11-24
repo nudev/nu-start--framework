@@ -1,188 +1,165 @@
 /* 
+	?		button block styling
 */
 
-$theme_json_palette: (
-	"black": "#2d2926",
-	"white": "#ffffff",
-	"red": "#d41b2c",
-	"blue": "#4299e1",
-	"orange": "#f86716",
-	"dark-blue": "#385d85",
-	"yellow": "#fac515",
-	"green": "#48bb78",
-);
-
-// override default inline styles values
-.wp-block-button .wp-block-button__link {
-	border-radius: 0px;
-}
-
-.wp-block-button__link {
-	i.fa-play-circle-o {
-		font-family: "Material Icons";
-		&:before {
-			color: $black;
-			color: currentColor;
-			content: "\e039";
-			display: inline-block;
-			vertical-align: middle;
-			margin: -5px $base-margin 0 0;
-			@extend %nu__playButton;
-			font-size: 2.8rem;
-			border: 2px solid transparent;
-		}
+// ? handle the default state for buttons ( no color customizations yet )
+.wp-block-button {
+	.wp-block-button__link {
+		border-width: 1px;
+		@extend %transition;
 	}
-
-	border: 2px solid var(--wp--preset--color--black);
-	@include font-size(0.875rem);
-	padding: $half-margin $base-margin;
-	&:hover,
-	&:focus {
-		background-color: var(--wp--preset--color--white);
-		color: var(--wp--preset--color--black);
-		border: 2px solid var(--wp--preset--color--black);
-	}
-	@each $name, $color in $theme_json_palette {
-		&.has-background {
-			&.has-#{$name}-background-color {
-				border-color: var(--wp--preset--color--#{$name}) !important;
+	&:not(.is-style-outline) {
+		.wp-block-button__link {
+			// ? avoid having to override this later if there are custom colors involved
+			&:not(.has-background):not(.has-text-color) {
+				border: 1px solid transparent;
 				&:hover,
 				&:focus {
-					color: var(--wp--preset--color--#{$name}) !important;
-					border: 2px
-						solid
-						var(--wp--preset--color--#{$name}) !important;
-					background-color: var(
-						--wp--preset--color--white
-					) !important;
-				}
-				//
-				&.has-white-background-color {
-					border-color: var(--wp--preset--color--black) !important;
-					color: var(--wp--preset--color--black) !important;
-					&:hover,
-					&:focus {
-						background-color: var(
-							--wp--preset--color--black
-						) !important;
-						color: var(--wp--preset--color--white) !important;
-					}
+					border: 1px solid;
+					background-color: var(--wp--preset--color--white-1);
+					color: var(--wp--preset--color--black-1);
+					border-color: var(--wp--preset--color--black-1);
 				}
 			}
 		}
 	}
-}
-
-//
-.wp-block-button.is-style-clear {
-	.wp-block-button__link {
-		color: currentColor;
-		background-color: transparent !important;
-		border: 0px solid transparent;
-		border-bottom: 2px solid transparent !important;
-		&:hover,
-		&:focus {
-			border: 0px solid transparent !important;
-			border-bottom: 2px solid currentColor !important;
-			&:active {
+	&.is-style-outline {
+		.wp-block-button__link {
+			// ? avoid having to override this later if there are custom colors involved
+			&:not(.has-background):not(.has-text-color) {
+				&:hover,
+				&:focus {
+					background-color: var(--wp--preset--color--black-1);
+					color: var(--wp--preset--color--white-1);
+					border-color: var(--wp--preset--color--black-1);
+				}
 			}
 		}
+	}
+	.wp-block-button__link {
+		&.has-background {
+			padding: $base-margin;
+		}
+	}
+}
 
-		&.has-white-background-color {
-			border-color: transparent !important;
-			color: var(--wp--preset--color--black) !important;
-			&:hover,
-			&:focus {
+.wp-block-button {
+	&.is-style-outline {
+		.wp-block-button__link {
+			&.has-background {
 				background-color: transparent !important;
-				color: var(--wp--preset--color--black) !important;
-				border-bottom: 2px solid var(--wp--preset--color--black) !important;
 			}
 		}
 	}
 }
 
-//
-.wp-block-button.is-style-card {
-	min-width: 180px;
-	.wp-block-button__link {
-		padding: $margin_4x $margin_2x;
-		width: 100%;
-		@each $name, $color in $theme_json_palette {
-			&.has-background {
-				&.has-#{$name}-background-color {
-					border-color: var(--wp--preset--color--#{$name}) !important;
+// ?
+$color_list: (
+	"black",
+	"white",
+	"red",
+	"blue",
+	"green",
+	"orange",
+	"yellow",
+	"magenta"
+);
+@for $i from 1 through 5 {
+	@each $name in $color_list {
+		// ? hoist the var() name
+		$realName: #{$name}-#{$i};
+		// ? hoist the var() value
+		$color: var(--wp--preset--color--#{$realName});
+
+		// ? dodge the outline style class / is-default-style
+		// * IS NOT STYLE OUTLINE
+		.wp-block-button:not(.is-style-outline) {
+			// ? has-background
+			.wp-block-button__link.has-#{$realName}-background-color {
+				border: 1px solid $color;
+				&:hover,
+				&:focus {
+					color: $color;
+					border: 1px solid $color;
+					background-color: var(
+						--wp--preset--color--white-1
+					) !important;
+				}
+
+				&.has-text-color {
+					border-color: $color !important;
 					&:hover,
 					&:focus {
-						color: var(--wp--preset--color--#{$name}) !important;
-						border: 2px
-							solid
-							var(--wp--preset--color--#{$name}) !important;
-						background-color: var(
-							--wp--preset--color--white
-						) !important;
+						border-color: $color !important;
 					}
 
-					//
-					&.has-white-background-color {
-						border-color: var(
-							--wp--preset--color--black
-						) !important;
-						&:hover,
-						&:focus {
-							background-color: var(
-								--wp--preset--color--black
-							) !important;
-							color: var(--wp--preset--color--white) !important;
-						}
+				}
+			}
+
+			// ? has-text-color
+			.wp-block-button__link.has-#{$realName}-color {
+				// ? has-text-color, AND no-background
+				&:not(.has-background) {
+					&:hover,
+					&:focus {
+						background-color: $color !important;
+						color: var(--wp--preset--color--white-1) !important;
+					}
+				}
+				&.has-background {
+					&:hover,
+					&:focus {
+						color: currentColor !important;
+					}
+				}
+
+				&.has-white-#{$i}-color {
+					border: 1px
+						solid
+						var(--wp--preset--color--black-1) !important;
+					&:hover,
+					&:focus {
+						border: 1px
+							solid
+							var(--wp--preset--color--black-1) !important;
+						color: var(--wp--preset--color--black-1) !important;
 					}
 				}
 			}
 		}
-	}
-}
 
-//
-.wp-block-button.is-style-outline {
-	.wp-block-button__link {
-		&:hover,
-		&:focus {
-			border: 2px solid var(--wp--preset--color--black);
-			background-color: var(--wp--preset--color--black);
-			color: var(--wp--preset--color--white);
-		}
+		// ? is style outline here
+		.wp-block-button.is-style-outline {
+			// ? has-text-color
+			.wp-block-button__link.has-#{$realName}-color {
+				&:hover,
+				&:focus {
+					border-color: $color !important;
+					background-color: $color !important;
+					color: white !important;
+				}
+			}
 
-		@each $name, $color in $theme_json_palette {
-			&.has-background {
-				&.has-#{$name}-background-color {
-					color: var(--wp--preset--color--#{$name}) !important;
-					border-color: var(--wp--preset--color--#{$name}) !important;
-					background-color: var(
-						--wp--preset--color--white
-					) !important;
+			// ? has-background
+			.wp-block-button__link.has-#{$realName}-background-color {
+				// ? has-background AND no-text-color
+				&:not(.has-text-color) {
+					color: $color;
 					&:hover,
 					&:focus {
-						background-color: var(
-							--wp--preset--color--#{$name}
-						) !important;
-						border: 2px
-							solid
-							var(--wp--preset--color--#{$name}) !important;
-						color: var(--wp--preset--color--white) !important;
+						border: 1px solid $color !important;
+						background-color: $color !important;
+						color: var(--wp--preset--color--white-1) !important;
 					}
+				}
 
-					//
-					&.has-white-background-color {
-						border-color: var(
-							--wp--preset--color--black
-						) !important;
-						color: var(--wp--preset--color--black) !important;
-						&:hover,
-						&:focus {
-							background-color: var(
-								--wp--preset--color--black
-							) !important;
-							color: var(--wp--preset--color--white) !important;
-						}
+				&.has-text-color {
+					color: $color !important;
+					border: 1px solid $color !important;
+					&:hover,
+					&:focus {
+						background-color: $color !important;
+						color: var(--wp--preset--color--white-1) !important;
 					}
 				}
 			}

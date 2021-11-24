@@ -1,22 +1,24 @@
 /* 
 
-	NU Patterns
-	- Hero Category
-	- - Pattern "is_type_d"
+	*	vertical-split hero:
+	?	content is not over the image on this style
 
-	? This file takes the KNOWN pattern; which is intended to be developed into a LOCKED TEMPLATE, and styles it.
-	? This is tightly coupled and will break on changes in the editor
-	? Until we move to start really templating; this should be AS MINIMAL AS POSSIBLE.
-
-	* prebuilding patterns is very easily and flexible; and we can massage the 'correct' choice of blocks this way before 'hardening' things into a template.
-	
 */
 
-// 
-.nu_pattern-is_hero--is_type_d {
 
-	> .wp-block-columns {
+.nu_pattern--hero--video-bg {
+	.wp-block-buttons {
+		&:last-child {
+			margin-top: $margin_2x;
+		}
+	}
+	
+
+	.wp-block-columns:first-child:last-child {
 		margin-bottom: 0;
 	}
 	
+	p.has-36-40-font-size {
+		margin: $base-margin 0 $margin_2x 0;
+	}
 }

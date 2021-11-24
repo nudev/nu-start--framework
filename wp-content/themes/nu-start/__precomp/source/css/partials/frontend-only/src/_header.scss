@@ -175,7 +175,7 @@ header.header {
 				font-size: 0.875rem;
 				display: inline-block;
 				letter-spacing: 0.33px;
-				@include accentUnderline();
+				// @include accentUnderline();
 			}
 
 			&:hover,
@@ -399,7 +399,7 @@ body {
 				position: fixed;
 				top: 0;
 				left: 0;
-				z-index: 999;
+				z-index: 9999;
 			}
 		}
 	}

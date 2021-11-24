@@ -28,7 +28,7 @@
 			margin-top: 0;
 		}
 	}
-	> :last-child:not(.has-background) {
+	> :last-child:not(.alignfull.has-background) {
 		margin-bottom: $margin_8x;
 	}
 
@@ -42,7 +42,7 @@
 			max-width: 90%;
 			max-width: 100%;
 		}
-		> :last-child:not(.has-background) {
+		> :last-child:not(.alignfull.has-background) {
 			margin-bottom: $margin_4x;
 		}
 	}

@@ -1,41 +1,52 @@
 /* 
 	sample block - style.scss
 */
-@import '../../../../../themes/nu-start/__precomp/source/css/library';
+@import "../../../../../themes/nu-start/__precomp/source/css/library";
 
 .wp-block-nu-blocks-accordion {
-	&.is-style-icon-appears-before-title {
-		.wp-block-nu-blocks-accordion-item {
-			.wp-block-nublocks-accordion-item__title {
-				@include nu_micon("\e5cc", before);
-				position: relative;
-				&:before {
-					// position: absolute;
-					// left: $base-margin;
-					// top: 50%;
-					// transform: translateY(-50%);
-					font-size: 20px;
-					line-height: 1;
-					vertical-align: text-top;
-					margin-right: $half-margin;
-					@extend %transition;
-				}
-				&:after {
-					display: none;
-				}
-			}
+  &.is-style-icon-appears-before-title {
+    .wp-block-nu-blocks-accordion-item {
 
-			details[open] {
-				> .wp-block-nublocks-accordion-item__title {
-					&::before {
-						transform: rotate(90deg);
-					}
+      @keyframes sweep {
+        0% {
+          opacity: 0;
+          margin-left: -10px;
+        }
+        100% {
+          opacity: 1;
+          margin-left: 0px;
+        }
+      }
+      .wp-block-nublocks-accordion-item__title {
+        @include nu_micon("\e5cc", before);
+        position: relative;
+        &:before {
+          // position: absolute;
+          // left: $base-margin;
+          // top: 50%;
+          // transform: translateY(-50%);
+          font-size: 20px;
+          line-height: 1;
+          vertical-align: text-top;
+          margin-right: $half-margin;
+          @extend %transition;
+        }
+        &:after {
+          display: none;
+        }
+      }
 
-					&:after {
-						display: none;
-					}
-				}
-			}
-		}
-	}
+      details[open] {
+        > .wp-block-nublocks-accordion-item__title {
+          &::before {
+            transform: rotate(90deg);
+          }
+
+          &:after {
+            display: none;
+          }
+        }
+      }
+    }
+  }
 }

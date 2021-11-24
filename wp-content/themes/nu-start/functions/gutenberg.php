@@ -45,6 +45,16 @@ if( !function_exists('nu__manage_block_categories') ){
 }
 
 
+
+
+
+
+
+
+
+
+
+
 add_action( 'init', 'nu__register_block_styles' );
 if( !function_exists( 'nu__register_block_styles' ) ){
 	function nu__register_block_styles(){
@@ -82,22 +92,6 @@ if( !function_exists( 'nu__register_block_styles' ) ){
 			)
 		);
 
-		register_block_style(
-			'core/button',
-			array(
-				'name'         => 'card',
-				'label'        => __( 'Card', 'nu-start' ),
-			)
-		);
-
-		register_block_style(
-			'core/button',
-			array(
-				'name'         => 'clear',
-				'label'        => __( 'Clear', 'nu-start' ),
-			)
-		);
-
 		// 
 		register_block_style(
 			'core/group',
@@ -106,14 +100,17 @@ if( !function_exists( 'nu__register_block_styles' ) ){
 				'label'        => __( 'Outlined Card', 'nu-start' ),
 			)
 		);
+
+
+		
 		// 
-		register_block_style(
-			'core/columns',
-			array(
-				'name'         => 'justify-space-between',
-				'label'        => __( 'Space Between', 'nu-start' ),
-			)
-		);
+		// register_block_style(
+		// 	'core/columns',
+		// 	array(
+		// 		'name'         => 'justify-space-between',
+		// 		'label'        => __( 'Space Between', 'nu-start' ),
+		// 	)
+		// );
 
 	}
 }
@@ -127,77 +124,6 @@ if( !function_exists( 'nu__register_block_styles' ) ){
  * 
  */
 if( function_exists('acf_register_block_type') ):
-
-	// acf_register_block_type(array(
-	// 	'name' => 'nu-program',
-	// 	'title' => 'Program',
-	// 	'description' => '',
-	// 	'category' => 'nu-blocks',
-	// 	'keywords' => array(
-	// 	),
-	// 	'post_types' => array(
-	// 		'nu_programs',
-	// 	),
-	// 	'mode' => 'preview',
-	// 	'align' => '',
-	// 	'align_content' => NULL,
-	// 	'render_template' => get_template_directory(  ) . '/acf-blocks/programs/program.php',
-	// 	'render_callback' => '',
-	// 	'enqueue_style' => get_template_directory_uri(  ) . '/acf-blocks/programs/program.css',
-	// 	'enqueue_script' => get_template_directory_uri(  ) . '/acf-blocks/programs/program-min.js',
-	// 	'enqueue_assets' => '',
-	// 	'icon' => '',
-	// 	'supports' => array(
-	// 		'align' => array(
-	// 			'left',
-	// 			'right',
-	// 			'center',
-	// 			'wide',
-	// 			'full',
-	// 		),
-	// 		'mode' => true,
-	// 		'multiple' => false,
-	// 		'jsx' => true,
-	// 		'align_content' => false,
-	// 		'anchor' => true,
-	// 	),
-	// 	'active' => true,
-	// ));
-
-	acf_register_block_type(array(
-		'name' => 'carousel',
-		'title' => 'Carousel',
-		'description' => '',
-		'category' => 'nu-blocks',
-		'keywords' => array(
-		),
-		'post_types' => array(
-		),
-		'mode' => 'preview',
-		'align' => 'full',
-		'align_content' => NULL,
-		'render_template' => get_template_directory(  ) . '/acf-blocks/carousel/carousel.php',
-		'render_callback' => '',
-		'enqueue_style' => get_template_directory_uri(  ) . '/acf-blocks/carousel/carousel.css',
-		'enqueue_script' => get_template_directory_uri(  ) . '/acf-blocks/carousel/carousel-min.js',
-		'enqueue_assets' => 'nu__enqueueCarouselAssets',
-		'icon' => '',
-		'supports' => array(
-			'align' => array(
-				'left',
-				'center',
-				'right',
-				'wide',
-				'full',
-			),
-			'mode' => true,
-			'multiple' => true,
-			'jsx' => false,
-			'align_content' => false,
-			'anchor' => true,
-		),
-		'active' => true,
-	));
 
 	acf_register_block_type(array(
 		'name' => 'breadcrumbs',
@@ -219,9 +145,9 @@ if( function_exists('acf_register_block_type') ):
 		'icon' => '',
 		'supports' => array(
 			'align' => array(
-				// 'left',
-				// 'center',
-				// 'right',
+				'left',
+				'center',
+				'right',
 				'wide',
 				'full',
 			),

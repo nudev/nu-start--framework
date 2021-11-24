@@ -10,6 +10,10 @@
 	//
 	$(function () {
 		var tr_nav = {
+
+			navlinks_el : $("header.header .navlinks"),
+			navicons_el : $("header.header .navicons"),
+			
 			// Constructor
 			_init: function () {
 				// ! disabled because it makes you click twice --- but i think i needed it for keyboard nav
@@ -43,7 +47,7 @@
 
 			_didClickParent: function (e) {
 				// stop the click from navigating (only toggles the menu open)
-				if (!$(e.target.offsetParent).hasClass("revealed")) {
+				if (!$(e.target.offsetParent).hasClass("revealed") )  {
 					e.preventDefault();
 				}
 

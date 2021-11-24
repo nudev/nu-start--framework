@@ -12,46 +12,17 @@
 	
 */
 
-
 // ? traversal and selection with a little extra specificity
 .wp-block-group.nu_pattern-is_feature--is_type_c {
+	> .wp-block-group:first-child {
+		margin-left: 0 !important;
+	}
 
-	// ? adjust the arrow into a chevron
-	.is-style-links-have-arrows {
-		margin: 0;
-		a {
-			&:after {
-				content: "\e5cc";
-				font-size: var(--wp--preset--font-size--larger);
+	.wp-block-column {
+		&[style="flex-basis:84px"] {
+			.wp-block-image {
+				max-width: 84px;
 			}
 		}
 	}
-
-	// ? if has background; use custom spacing values
-	&.has-background {
-		padding: $margin_4x;
-		@media screen and (max-width: 781px) {
-			padding: $margin_2x $base-margin;
-		}
-	}
-
-	// ? clean up some of the hanging margins
-	.wp-block-image:only-child {
-		margin-bottom: 0;
-	}
-
-
-	// ? the intro blurb
-	> .wp-block-group:first-child {
-		
-	}
-	
-	// ? the four featured items ( using columns block right now! )
-	> .wp-block-group:last-child {
-
-	}
-
-
-
-
 }

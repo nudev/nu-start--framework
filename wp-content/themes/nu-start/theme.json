@@ -11,7 +11,7 @@
     "color": {
       "duotone": [],
       "gradients": [],
-      "link": true,
+      "link": false,
       "palette": [
         {
           "name": "Black",
@@ -239,44 +239,69 @@
       ],
       "fontSizes": [
         {
-          "slug": "tiny",
-          "size": "0.75rem",
-          "name": "Tiny"
+          "slug": "12-16",
+          "size": "12px",
+          "name": "12/16"
         },
         {
-          "slug": "smaller",
-          "size": "0.875rem",
-          "name": "Smaller"
+          "slug": "14-20",
+          "size": "14px",
+          "name": "14/20"
         },
         {
-          "slug": "normal",
-          "size": "1rem",
-          "name": "Normal"
+          "slug": "16-24",
+          "size": "16px",
+          "name": "16/24"
         },
         {
-          "slug": "larger",
-          "size": "1.125rem",
-          "name": "Larger"
+          "slug": "18-28",
+          "size": "18px",
+          "name": "18/28"
         },
         {
-          "slug": "large",
-          "size": "1.5rem",
-          "name": "Large"
+          "slug": "20-28",
+          "size": "20px",
+          "name": "20/28"
         },
         {
-          "slug": "extra-large",
-          "size": "2rem",
-          "name": "Extra Large"
+          "slug": "24-32",
+          "size": "24px",
+          "name": "24/32"
         },
         {
-          "slug": "huge",
-          "size": "3rem",
-          "name": "Huge"
+          "slug": "30-36",
+          "size": "30px",
+          "name": "30/36"
         },
         {
-          "slug": "hugest",
-          "size": "5rem",
-          "name": "Hugest"
+          "slug": "36-40",
+          "size": "36px",
+          "name": "36/40"
+        },
+        {
+          "slug": "48-48",
+          "size": "48px",
+          "name": "48/48"
+        },
+        {
+          "slug": "60-60",
+          "size": "60px",
+          "name": "60/60"
+        },
+        {
+          "slug": "72-72",
+          "size": "72px",
+          "name": "72/72"
+        },
+        {
+          "slug": "96-96",
+          "size": "96px",
+          "name": "96/96"
+        },
+        {
+          "slug": "128-128",
+          "size": "128px",
+          "name": "128/128"
         }
       ]
     },
@@ -301,6 +326,16 @@
       "core/cover": {
         "spacing": {
           "units": ["%", "px", "vw"]
+        }
+      },
+      "core/image": {
+        "spacing": {
+          "units": ["px", "rem", "%"]
+        }
+      },
+      "core/group": {
+        "spacing": {
+          "units": ["px", "rem", "%"]
         }
       }
     }
@@ -387,7 +422,20 @@
     "blocks": {
       "core/button": {
         "border": {
-          "radius": ""
+          "radius": "0",
+          "width": "2px"
+        },
+        "typography": {
+          "fontSize": "var(--wp--preset--font-size--14-20)",
+          "lineHeight": "1"
+        },
+        "spacing": {
+          "padding": {
+            "top": "16px",
+            "right": "16px",
+            "bottom": "16px",
+            "left": "16px"
+          }
         }
       },
       "core/paragraph": {

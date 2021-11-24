@@ -54,10 +54,4 @@
 	> .wp-block-media-text {
 		margin-bottom: -$margin_4x;
 	}
-
-
-	// ? shim a footer text style here, pushing the last link down as if it were a c2a
-	> p.is-style-links-have-arrows:last-child {
-		margin-top: $margin_4x;
-	}
 }

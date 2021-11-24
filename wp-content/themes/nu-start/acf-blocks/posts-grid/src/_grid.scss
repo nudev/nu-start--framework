@@ -133,7 +133,6 @@ body.wp-admin {
 		> :first-child {
 			margin-top: 0;
 		}
-		
 
 		.featured-tags {
 			margin: 0;
@@ -194,7 +193,11 @@ body.wp-admin {
 		@include nu__grid_item_orientation();
 		background-color: white;
 
-		@extend %transition;
+		.grid-item-content,
+		& {
+			@extend %transition;
+		}
+
 		@include nu__boxshadow(2);
 		&:hover,
 		&:focus {
@@ -217,6 +220,9 @@ body.wp-admin {
 					}
 					img {
 						transform: scale(1.2);
+					}
+					.grid-item-content {
+						background-color: var(--wp--preset--color--white-2);
 					}
 				}
 			}

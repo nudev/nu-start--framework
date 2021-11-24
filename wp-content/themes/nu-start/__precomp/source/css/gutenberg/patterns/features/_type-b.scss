@@ -13,21 +13,24 @@
 */
 
 //
-.nu_pattern-is_feature--is_type_b {
+.wp-block-group.nu_pattern-is_feature--is_type_b {
 	&.has-background {
-		padding: 0; // remove padding to flush image with edges
+		padding: 0;
 	}
 
-	p {
-		margin-top: $base-margin;
-		margin-bottom: $base-margin;
-
-		&.is-style-links-have-arrows {
-			a:after {
-				content: "\e315";
-				font-size: 20px;
+	.wp-block-column {
+		&[style="flex-basis:84px"] {
+			.wp-block-image {
+				max-width: 84px;
 			}
 		}
+	}
+
+
+	.wp-block-column.is-featured-content {
+
+		padding: $margin_4x;
+
 	}
 
 	.wp-block-image {
@@ -46,83 +49,6 @@
 		}
 		> .wp-block-column:last-child {
 			flex: 0 1 45% !important;
-			
-		}
-	}
-
-	@media screen and (max-width: 1280px) {
-		// ? enforce cover height; min-height:100% set in cms
-		.wp-block-cover {
-			height: 300px;
-		}
-
-		.wp-block-group > .wp-block-columns {
-			max-width: 95%;
-			margin-left: $base-margin;
-			margin-right: $base-margin;
-		}
-
-		// ? break early
-		> .wp-block-columns {
-			flex-flow: column nowrap;
-
-			> .wp-block-column {
-				&:last-child {
-					margin-left: 0;
-				}
-			}
-		}
-	}
-	@media screen and (max-width: 960px) {
-		.wp-block-columns .wp-block-columns {
-			flex-flow: row nowrap !important;
-			.wp-block-column {
-				width: auto;
-				&:first-child {
-					width: 80px;
-					min-width: 80px;
-					flex-basis: auto !important;
-				}
-			}
-		}
-	}
-
-	@media (min-width: 600px) and (max-width: 781px) {
-		.wp-block-group > .wp-block-columns {
-			> .wp-block-column:first-child {
-				margin-right: $margin_2x;
-			}
-		}
-
-		.wp-block-columns:not(.is-not-stacked-on-mobile)
-			> .wp-block-column:not(:only-child) {
-			margin-bottom: 0;
-		}
-	}
-
-	@media screen and (max-width: 640px) {
-		> .wp-block-columns > .wp-block-column:first-child {
-			margin-bottom: 0;
-		}
-		.wp-block-group > .wp-block-columns {
-			> .wp-block-column:first-child {
-				margin-right: $margin_2x;
-			}
-		}
-		.wp-block-columns .wp-block-columns {
-			max-width: 90%;
-			margin-bottom: 0;
-			> .wp-block-column {
-				margin-top: 0;
-			}
-		}
-		> .wp-block-columns > .wp-block-column:first-child > .wp-block-group {
-			> * {
-				max-width: 90%;
-			}
-			&::after {
-				display: none;
-			}
 		}
 	}
 }

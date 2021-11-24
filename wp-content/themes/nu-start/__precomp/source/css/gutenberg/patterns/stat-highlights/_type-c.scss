@@ -12,13 +12,17 @@
 	
 */
 
-// 
+//
 .nu_pattern-is_stat_highlight--is_type_c {
 
-	
-	.wp-block-image {
-		padding: $margin_2x 0;
+
+	.is-row-block {
+		> .wp-block-group:first-child {
+			margin-right: $margin_4x;
+		}
+		.wp-block-image {
+			max-width: 320px;
+		}
 	}
-	
 	
 }

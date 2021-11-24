@@ -1,48 +1,32 @@
 /* 
 
+	*	card-style hero:
+	?	no gradient is used over the image; instead we use a "card" style of overlay behind just the content in the hero
 
 */
-.nu_pattern-is_hero_banner--type-a {
-	.wp-block-column.has-background {
-		padding: $margin_4x $margin_3x;
 
-		p {
-			margin: $base-margin 0 0 0;
-			&:first-child {
-				margin: 0;
-			}
-		}
-		h2 {
-			margin: 5px 0 0 -2px;
-		}
+.nu_pattern--hero--card-style {
+
+
+	.wp-block-separator.has-background:not(.is-style-wide):not(.is-style-dots) {
+		margin: $margin_2x auto $margin_2x 0;
+		height: 1px;
+		max-width: $margin_2x;
 	}
 
-	.wp-block-columns:only-child {
+	.wp-block-buttons {
+		&:last-child {
+			margin-top: $margin_2x;
+		}
+	}
+	
+
+	.wp-block-columns:first-child:last-child {
 		margin-bottom: 0;
 	}
 
-	.wp-block-columns:not(.is-not-stacked-on-mobile)
-		> .wp-block-column:not(:only-child) {
-		margin-top: 0;
-		@media (min-width: 600px) and (max-width: 781px) {
-			margin: 0;
-		}
+	p.has-36-40-font-size {
+		margin: $base-margin 0 $margin_2x 0;
 	}
-
-	@media screen and (max-width: 1280px) {
-	}
-	@media screen and (max-width: 960px) {
-		.wp-block-column {
-			flex-basis: 100% !important;
-			&:last-child {
-				display: none;
-			}
-			&.has-background {
-				padding: $margin_2x;
-			}
-		}
-	}
-
-	@media screen and (max-width: 640px) {
-	}
+	
 }
