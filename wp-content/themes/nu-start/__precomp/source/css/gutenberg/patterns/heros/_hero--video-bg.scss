@@ -1,0 +1,24 @@
+/* 
+
+	*	vertical-split hero:
+	?	content is not over the image on this style
+
+*/
+
+
+.nu_pattern--hero--video-bg {
+	.wp-block-buttons {
+		&:last-child {
+			margin-top: $margin_2x;
+		}
+	}
+	
+
+	.wp-block-columns:first-child:last-child {
+		margin-bottom: 0;
+	}
+	
+	p.has-36-40-font-size {
+		margin: $base-margin 0 $margin_2x 0;
+	}
+}

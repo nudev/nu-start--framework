@@ -65,19 +65,19 @@ body.single-nu_news {
 		.wp-block-cover {
 			min-height: 100%;
 		}
-		.nu_pattern-is_hero_banner--type-a {
+		.nu_pattern--hero--card-style{
 			.wp-block-columns,
 			& {
 				min-height: 100% !important;
 			}
 		}
-		.nu_pattern-is_hero_banner--type-b {
+		.nu_pattern--hero--full-overlay {
 			.wp-block-cover,
 			& {
 				min-height: 100% !important;
 			}
 		}
-		.nu_pattern-is_hero--is_type_b {
+		.nu_pattern--hero--vertical-split {
 			.wp-block-columns,
 			& {
 				min-height: 100%;
