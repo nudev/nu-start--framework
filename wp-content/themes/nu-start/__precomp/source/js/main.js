@@ -86,25 +86,25 @@ import "../../vendor/js/waapi-animate-details";
 		//
 		//
 		//
-		if ($("body").hasClass("prod--disabled")) {
-			if ($theme_info) {
-				$("main").append($theme_info["devpanel"]);
+		// if ($("body").hasClass("prod--disabled")) {
+		// 	if ($theme_info) {
+		// 		$("main").append($theme_info["devpanel"]);
 
-				$("#nu_dev_utility .window-width span").html(
-					window.innerWidth + "px"
-				);
+		// 		$("#nu_dev_utility .window-width span").html(
+		// 			window.innerWidth + "px"
+		// 		);
 
-				$(window).on("resize", function () {
-					$("#nu_dev_utility .window-width span").html(
-						window.innerWidth + "px"
-					);
-				});
+		// 		$(window).on("resize", function () {
+		// 			$("#nu_dev_utility .window-width span").html(
+		// 				window.innerWidth + "px"
+		// 			);
+		// 		});
 
-				$("#nu_dev_utility").on("click", function (e) {
-					$(this).toggleClass("revealed");
-				});
-			}
-		}
+		// 		$("#nu_dev_utility").on("click", function (e) {
+		// 			$(this).toggleClass("revealed");
+		// 		});
+		// 	}
+		// }
 
 		//
 		//
