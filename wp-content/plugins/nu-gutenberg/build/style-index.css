@@ -763,11 +763,10 @@ input[type=search] {
 
 /* ... project styles will always load after this ... */
 .wp-block-nu-blocks-accordion {
-  margin: 0 auto;
-  margin-top: 32px;
+  margin: 64px 0 auto 0;
 }
-.wp-block-nu-blocks-accordion:first-child {
-  margin-top: 0;
+.wp-block-nu-blocks-accordion:first-of-type {
+  margin: 0 auto 0 auto;
 }
 .wp-block-nu-blocks-accordion .wp-block-nu-blocks-accordion-item {
   margin: 16px 0 0 0;
@@ -823,8 +822,8 @@ input[type=search] {
   transform: translateY(-50%);
   font-size: 20px;
 }
-.wp-block-nu-blocks-accordion .wp-block-nu-blocks-accordion-item .wp-block-nublocks-accordion-item__title:hover, .wp-block-nu-blocks-accordion .wp-block-nu-blocks-accordion-item .wp-block-nublocks-accordion-item__title:focus, .wp-block-nu-blocks-accordion .wp-block-nu-blocks-accordion-item .wp-block-nublocks-accordion-item__title:active {
-  background-color: var(--wp--preset--color--black-5);
+.wp-block-nu-blocks-accordion .wp-block-nu-blocks-accordion-item .wp-block-nublocks-accordion-item__title:hover, .wp-block-nu-blocks-accordion .wp-block-nu-blocks-accordion-item .wp-block-nublocks-accordion-item__title:focus {
+  background-color: var(--wp--preset--color--white-2);
 }
 .wp-block-nu-blocks-accordion .wp-block-nu-blocks-accordion-item .wp-block-nublocks-accordion-item__content {
   padding: 32px 16px;
@@ -835,7 +834,7 @@ input[type=search] {
   margin-bottom: 0;
 }
 .wp-block-nu-blocks-accordion .wp-block-nu-blocks-accordion-item details[open] > .wp-block-nublocks-accordion-item__title {
-  background-color: var(--wp--preset--color--black-5);
+  background-color: var(--wp--preset--color--white-3);
   position: relative;
   position: relative;
 }
@@ -866,7 +865,16 @@ input[type=search] {
   font-size: 20px;
 }
 .wp-block-nu-blocks-accordion .wp-block-nu-blocks-accordion-item details[open] > .wp-block-nublocks-accordion-item__title:hover {
-  background-color: var(--wp--preset--color--black-5);
+  background-color: var(--wp--preset--color--white-4);
+}
+
+.blocks--wrapper > .wp-block-nu-blocks-accordion:first-of-type {
+  margin-top: 128px;
+}
+@media (max-width: 1024px) {
+  .blocks--wrapper > .wp-block-nu-blocks-accordion:first-of-type {
+    margin-top: 64px;
+  }
 }
 
 /*# sourceMappingURL=style-index.css.map*/

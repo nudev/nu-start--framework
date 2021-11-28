@@ -7,11 +7,7 @@
 	border-top: none 0;
 	text-align: left;
 	padding: 0;
-	color: var(--wp--preset--color--black-1);
-
 	blockquote {
-		// max-width: 80%;
-		// margin: 0 auto;
 		padding-left: $margin_2x;
 		> *:first-child:not(.wp-block-pullquote__citation) {
 			position: relative;

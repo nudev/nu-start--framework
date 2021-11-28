@@ -4,18 +4,15 @@
 @import "../../../../../themes/nu-start/__precomp/source/css/library";
 
 .wp-block-nu-blocks-accordion {
-  margin: 0 auto;
-  margin-top: $margin_2x;
-  &:first-child {
-    margin-top: 0;
+  margin: $margin_4x 0 auto 0;
+  &:first-of-type {
+    margin: 0 auto 0 auto;
   }
   .wp-block-nu-blocks-accordion-item {
-
     details summary::-webkit-details-marker {
       display: none;
     }
-  
-    
+
     .dashicon.dashicons {
       display: none;
     }
@@ -54,9 +51,8 @@
         font-size: 20px;
       }
       &:hover,
-      &:focus,
-      &:active {
-        background-color: var(--wp--preset--color--black-5);
+      &:focus {
+        background-color: var(--wp--preset--color--white-2);
       }
     }
 
@@ -73,7 +69,7 @@
 
     details[open] {
       > .wp-block-nublocks-accordion-item__title {
-        background-color: var(--wp--preset--color--black-5);
+        background-color: var(--wp--preset--color--white-3);
         @include nu_micon("\e15b", after);
         position: relative;
         &:after {
@@ -84,9 +80,17 @@
           font-size: 20px;
         }
         &:hover {
-          background-color: var(--wp--preset--color--black-5);
+          background-color: var(--wp--preset--color--white-4);
         }
       }
+    }
+  }
+}
+.blocks--wrapper {
+  > .wp-block-nu-blocks-accordion:first-of-type {
+    margin-top: $margin_8x;
+    @include media("<=medium") {
+      margin-top: $margin_4x;
     }
   }
 }
