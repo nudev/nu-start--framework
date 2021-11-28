@@ -110,7 +110,7 @@ class AccordionItemEdit extends Component {
 
 					{(isEditing === true || attributes.open) && (
 						<div
-							className="wp-block-nublocks-accordion-item__content"
+							className="wp-block-nublocks-accordion-item__content content"
 							style={{ borderColor: backgroundColor.color }}
 						>
 							<InnerBlocks

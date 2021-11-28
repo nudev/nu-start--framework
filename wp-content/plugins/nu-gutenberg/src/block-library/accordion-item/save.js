@@ -49,7 +49,7 @@
 					 value={ title }
 					 style={ titleStyles }
 				 />
-				 <div className="wp-block-nublocks-accordion-item__content" style={ borderStyle }>
+				 <div className="wp-block-nublocks-accordion-item__content content" style={ borderStyle }>
 					 <InnerBlocks.Content />
 				 </div>
 			 </details>

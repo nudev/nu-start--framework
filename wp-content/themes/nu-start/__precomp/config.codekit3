@@ -1358,7 +1358,7 @@
       "tS" : 0
     },
     "\/source\/js\/main.js" : {
-      "bF" : 0,
+      "bF" : 6,
       "ft" : 64,
       "ma" : 1,
       "mi" : 0,
@@ -1395,6 +1395,17 @@
       "oA" : 1,
       "oAP" : "\/build\/vendor",
       "oF" : 0
+    },
+    "\/vendor\/js\/waapi-animate-details.js" : {
+      "bF" : 0,
+      "ft" : 64,
+      "ma" : 0,
+      "mi" : 1,
+      "oA" : 1,
+      "oAP" : "\/build\/vendor\/js\/waapi-animate-details-min.js",
+      "oF" : 0,
+      "sC" : 3,
+      "tS" : 0
     }
   },
   "hooks" : [

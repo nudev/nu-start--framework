@@ -10,6 +10,12 @@
     margin-top: 0;
   }
   .wp-block-nu-blocks-accordion-item {
+
+    details summary::-webkit-details-marker {
+      display: none;
+    }
+  
+    
     .dashicon.dashicons {
       display: none;
     }
@@ -19,7 +25,6 @@
       margin: 0;
     }
 
-	
     summary {
       @extend %transition;
       &::marker,
@@ -33,7 +38,7 @@
       @extend %transition;
       padding: $base-margin;
       padding-right: $margin_4x;
-      border: 1px solid $grey_4;
+      border: 1px solid var(--wp--preset--color--black-5);
       font-weight: normal;
       &::marker {
         display: none;
@@ -51,7 +56,7 @@
       &:hover,
       &:focus,
       &:active {
-        background-color: $grey_2;
+        background-color: var(--wp--preset--color--black-5);
       }
     }
 
@@ -59,7 +64,7 @@
       @extend %transition;
       // opacity: 0;
       padding: $margin_2x $base-margin;
-      border: 1px solid $grey_4;
+      border: 1px solid var(--wp--preset--color--black-5);
       border-top: none;
       > p:last-child {
         margin-bottom: 0;
@@ -67,11 +72,8 @@
     }
 
     details[open] {
-      .wp-block-nublocks-accordion-item__content {
-        // opacity: 1;
-      }
       > .wp-block-nublocks-accordion-item__title {
-        background-color: $grey_4;
+        background-color: var(--wp--preset--color--black-5);
         @include nu_micon("\e15b", after);
         position: relative;
         &:after {
@@ -82,7 +84,7 @@
           font-size: 20px;
         }
         &:hover {
-          background-color: $grey_2;
+          background-color: var(--wp--preset--color--black-5);
         }
       }
     }

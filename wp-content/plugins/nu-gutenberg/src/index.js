@@ -1,4 +1,5 @@
 
+
 import { registerBlockType } from "@wordpress/blocks";
 
 
@@ -32,3 +33,4 @@ const registerBlocks = () => {
 	// [accordion, accordion_item, tabbed_content, tabbed_content_item].forEach(registerBlock);
 };
 registerBlocks();
+

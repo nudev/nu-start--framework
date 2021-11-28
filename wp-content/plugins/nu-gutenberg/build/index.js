@@ -305,7 +305,7 @@ class AccordionItemEdit extends _wordpress_element__WEBPACK_IMPORTED_MODULE_0__.
       },
       icon: isEditing === true || attributes.open ? "arrow-down" : "arrow-right"
     }), (isEditing === true || attributes.open) && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-      className: "wp-block-nublocks-accordion-item__content",
+      className: "wp-block-nublocks-accordion-item__content content",
       style: {
         borderColor: backgroundColor.color
       }
@@ -547,7 +547,7 @@ const save = _ref => {
     value: title,
     style: titleStyles
   }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "wp-block-nublocks-accordion-item__content",
+    className: "wp-block-nublocks-accordion-item__content content",
     style: borderStyle
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InnerBlocks.Content, null))));
 };
