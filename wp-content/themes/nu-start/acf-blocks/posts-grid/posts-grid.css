@@ -1,38 +1,16 @@
 /**
- * Brand Color
- * TODO: see about using this to lighten/darken for interactions?
- */
-/**
 *
 * *		Setup Document Model Vars / Breakpoints
 *
 */
-/** 
-*
-*
-* *		Set Fonts / Typographic Styling
-*
-*
-*/
-/** 
-*
-*
-* *		Set Colors / Color Styling
-*
-*
-*/
-/** 
-*
-*
-* *		Set Sizing Vars / Layout Styling
-*
-*
+/* 
+	because the block may or may not be loaded when we call this in (the posts grid just calls it in for now)
 */
 /**
  * Clearfix
  *
  */
-.nu_posts-grid .nu__grid .grid-item.page > a figure img, .nu_posts-grid .nu__grid .grid-item.page > a .post-title span, .nu_posts-grid .grid-item > a.contains-clickable-area .post-title span:before, .nu_posts-grid .grid-item .grid-item-content, .nu_posts-grid .grid-item, .nu_posts-grid a.nu_posts-grid-readmore span, .nu_posts-grid .grid-item img {
+.nu_posts-grid .nu__grid .grid-item.page > a figure img, .nu_posts-grid .nu__grid .grid-item.page > a .post-title span, .nu_posts-grid .grid-item .grid-item-content, .nu_posts-grid .grid-item, .nu_posts-grid a.nu_posts-grid-readmore span, .nu_posts-grid .grid-item img {
   transition: all 0.1s ease-in-out;
 }
 
@@ -461,7 +439,7 @@ div.filteringform > form > .filters .filters-filter select {
   width: 100%;
 }
 div.filteringform > form > .filters .filters-filter .select2.select2-container {
-  background-color: white;
+  background-color: var(--wp--preset--color--white-1);
 }
 @media screen and (max-width: 960px) {
   div.filteringform > form {
@@ -565,7 +543,7 @@ body.wp-admin .nu_posts-grid .grid-item a {
 }
 .nu_posts-grid .grid-item {
   position: relative;
-  border: 1px solid #e3e3e3;
+  border: 1px solid var(--wp--preset--color--white-2);
 }
 .nu_posts-grid .grid-item > a, .nu_posts-grid .grid-item {
   display: flex;
@@ -608,7 +586,7 @@ body.wp-admin .nu_posts-grid .grid-item a {
   border: none 0;
 }
 .nu_posts-grid a.nu_posts-grid-readmore span {
-  color: #616161;
+  color: var(--wp--preset--color--black-3);
   display: inline-block;
   vertical-align: middle;
   border-bottom: 2px solid transparent;
@@ -648,7 +626,7 @@ body.wp-admin .nu_posts-grid .grid-item a {
   border: none 0;
 }
 .nu_posts-grid a.nu_posts-grid-readmore:hover span, .nu_posts-grid a.nu_posts-grid-readmore:focus span {
-  color: #1f1f1f;
+  color: var(--wp--preset--color--black-3);
 }
 .nu_posts-grid a.nu_posts-grid-readmore:hover .moretext, .nu_posts-grid a.nu_posts-grid-readmore:focus .moretext {
   border-bottom: 2px solid currentColor;
@@ -703,7 +681,7 @@ body.wp-admin .nu_posts-grid .grid-item a {
   grid-column-gap: 30px;
   grid-template-columns: repeat(7, 1fr);
 }
-@media screen and (max-width: 1620px) {
+@media (max-width: 1620px) {
   .nu_posts-grid .nu__grid.cols-6 > ul {
     max-width: 100%;
     display: grid;
@@ -719,7 +697,7 @@ body.wp-admin .nu_posts-grid .grid-item a {
     grid-template-columns: repeat(5, 1fr);
   }
 }
-@media screen and (max-width: 1280px) {
+@media (max-width: 1280px) {
   .nu_posts-grid .nu__grid.cols-5 > ul {
     max-width: 100%;
     display: grid;
@@ -742,7 +720,7 @@ body.wp-admin .nu_posts-grid .grid-item a {
     grid-template-columns: repeat(4, 1fr);
   }
 }
-@media screen and (max-width: 1024px) {
+@media (max-width: 1024px) {
   .nu_posts-grid .nu__grid.cols-4 > ul {
     max-width: 100%;
     display: grid;
@@ -772,7 +750,7 @@ body.wp-admin .nu_posts-grid .grid-item a {
     grid-template-columns: repeat(3, 1fr);
   }
 }
-@media screen and (max-width: 780px) {
+@media (max-width: 780px) {
   .nu_posts-grid .nu__grid.cols-3 > ul {
     max-width: 100%;
     display: grid;
@@ -809,7 +787,7 @@ body.wp-admin .nu_posts-grid .grid-item a {
     grid-template-columns: repeat(2, 1fr);
   }
 }
-@media screen and (max-width: 480px) {
+@media (max-width: 640px) {
   .nu_posts-grid .nu__grid.cols-2 > ul {
     max-width: 100%;
     display: grid;
@@ -949,6 +927,7 @@ body.wp-admin .nu_posts-grid .grid-item a {
   position: absolute;
   border-bottom: 2px solid currentColor;
   bottom: -2px;
+  transition: all 0.1s ease-in-out;
   left: 0;
   right: auto;
 }
@@ -1212,7 +1191,7 @@ body.wp-admin .nu_posts-grid .grid-item a {
 */
 .nu_posts-grid .nu__grid.cols-1 .grid-item.nu_initiatives {
   border: none 0;
-  border-bottom: 1px solid #2d2926;
+  border-bottom: 1px solid var(--wp--preset--color--black-1);
   padding: 16px 0;
   margin: 64px 0 0 0;
 }

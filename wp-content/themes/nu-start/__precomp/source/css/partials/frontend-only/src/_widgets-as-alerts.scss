@@ -42,7 +42,7 @@
 					right: 0;
 				}
 			}
-			@include boxshadow(1);
+			@include nu__boxshadow(2);
 			border-radius: 0.375rem;
 			padding: $base-margin $margin_2x;
 		}

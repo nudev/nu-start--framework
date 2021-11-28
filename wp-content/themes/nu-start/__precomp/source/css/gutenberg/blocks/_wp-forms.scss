@@ -9,17 +9,11 @@ div.wpforms-container-full {
 	form.wpforms-form {
 		input[type="checkbox"],
 		input[type="radio"] {
-			// appearance: none;
 			border-width: 1px;
 			width: 16px;
 			height: 16px;
 			display: inline-block;
 			vertical-align: middle;
-		}
-		.wpforms-selected {
-			input[type="checkbox"],
-			input[type="radio"] {
-			}
 		}
 
 		// adjust labels
@@ -28,8 +22,7 @@ div.wpforms-container-full {
 		.wpforms-field-label {
 			font-weight: 300;
 			font-size: 0.875rem;
-			color: $black--light;
-		}
+	}
 
 		// adjust regular fields
 		.wpforms-field {
@@ -48,15 +41,15 @@ div.wpforms-container-full {
 				@extend %nu__buttonstyle;
 				text-align: right;
 				font-weight: 400;
-				border: 1px solid $black;
-				background-color: $black;
+				border: 1px solid var(--wp--preset--color--black-1);
+				background-color: var(--wp--preset--color--black-1);
 				color: white;
 				&:hover,
 				&:focus,
 				&:active {
-					border: 1px solid $black;
+					border: 1px solid var(--wp--preset--color--black-1);
 					background: white;
-					color: $black;
+					color: var(--wp--preset--color--black-1);
 				}
 			}
 		}
@@ -66,21 +59,18 @@ div.wpforms-container-full {
 //  todo: refactor the junk below
 %is_style_minimal_borders {
 	border-radius: 0 !important;
-	// border: none 0 !important;
-	// border-bottom: 1px solid $grey_4 !important;
-	border: 1px solid $black--light;
+	border: 1px solid var(--wp--preset--color--black-2);
 }
 
 // ? reset some basic default styles
 div.wpforms-container-full {
 	form.wpforms-form {
-		// reset elements styled by wpforms
 		.wpforms-field {
 			input,
 			textarea,
 			select,
 			option {
-				border-color: $black--light;
+				border-color: var(--wp--preset--color--black-2);
 
 				&:focus,
 				&:active {

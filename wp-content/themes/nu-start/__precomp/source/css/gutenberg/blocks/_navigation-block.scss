@@ -42,7 +42,7 @@ nav.wp-block-navigation {
 		&:hover,
 		&:focus {
 			border: none 0;
-			border-left: 2px solid map-get($brand_colors, "red");
+			border-left: 2px solid var(--wp--preset--color--red-3);
 		}
 	}
 
@@ -95,7 +95,7 @@ nav.wp-block-navigation {
 				border: none 0;
 				@extend %transition;
 				border-left: 2px solid white;
-				border-left: 2px solid map-get($brand_colors, "red");
+				border-left: 2px solid var(--wp--preset--color--red-3);
 				padding-left: 5px;
 			}
 			a,

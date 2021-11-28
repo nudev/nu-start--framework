@@ -2,34 +2,12 @@
 
 */
 /**
- * Brand Color
- * TODO: see about using this to lighten/darken for interactions?
- */
-/**
 *
 * *		Setup Document Model Vars / Breakpoints
 *
 */
-/** 
-*
-*
-* *		Set Fonts / Typographic Styling
-*
-*
-*/
-/** 
-*
-*
-* *		Set Colors / Color Styling
-*
-*
-*/
-/** 
-*
-*
-* *		Set Sizing Vars / Layout Styling
-*
-*
+/* 
+	because the block may or may not be loaded when we call this in (the posts grid just calls it in for now)
 */
 /**
  * Clearfix

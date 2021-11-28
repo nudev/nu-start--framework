@@ -15,6 +15,21 @@
 // 
 .nu_pattern-is_testimonial--is_type_a {
 
+	
+	.wp-block-image {
+		figure {
+			width: 160px;
+			height: 160px;
+		}
+	}
+
+	blockquote {
+		p {
+			@include rfs(32px, line-height);
+			@include rfs(24px);
+		}
+	}
+	
 }
 
 .blocks--wrapper > .nu_pattern-is_testimonial--is_type_a {

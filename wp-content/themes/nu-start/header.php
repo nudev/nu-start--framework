@@ -24,7 +24,7 @@
 		$bodyClasses[] = !empty(NU__Starter::$themeSettings['global']['global_header__footer']['status']) ? 'has-nu-global-header-footer' : '';
 		$bodyClasses[] = empty(NU__Starter::$themeSettings['dev']['build_status']) ? 'prod--disabled' : '';
 		$bodyClasses[] = has_nav_menu('utility') ? 'has-utility-nav' : '';
-
+		
 		// ? init wp head
 		wp_head();
 

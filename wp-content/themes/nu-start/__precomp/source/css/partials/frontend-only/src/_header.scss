@@ -1,17 +1,144 @@
-/**
-*		styling all contents of site header
+/*
+
+
 */
 
+// ? styles for all screen sizes
 header.header {
-	// ? sticky header floats over all content with lightest shadow
-	background-color: rgba($white, 1);
-	@include nu__boxshadow(2);
+	@mixin nav_item_is_active {
+		opacity: 1;
+		background-color: var(--wp--preset--color--white-2);
+		> span {
+			&:before {
+				width: 100%;
+			}
+		}
+	}
+
+	ul,
+	ol {
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	// ? stick to the top of the viewport at all times
 	display: block;
 	position: fixed;
 	z-index: 999;
 	width: 100%;
 
-	// ? utility nav is an extra nav menu bar within the header element before the container
+	.sub-menu,
+	.navlinks,
+	& {
+		background-color: var(--wp--preset--color--white-1);
+	}
+
+	// ? style with box shadow to show elevation
+	@include nu__boxshadow(2);
+
+	.navlinks a {
+		@extend %transition;
+		opacity: 0.8;
+		display: block;
+		letter-spacing: 0.66px;
+		font-weight: 400;
+		font-size: var(--wp--preset--font-size--14-20);
+		padding: $base-margin;
+		color: var(--wp--preset--color--black-2);
+		> span {
+			display: inline-block;
+		}
+		&:hover,
+		&:focus {
+			@include nav_item_is_active();
+		}
+	}
+
+	.site-search-icon {
+		line-height: 1.5;
+		color: var(--wp--preset--color--black-2);
+	}
+
+	// ? navlinks styling at any screen size
+	.navlinks {
+		background-color: var(--wp--preset--color--white-1);
+
+
+		.menu-item {
+			> a {
+				span {
+					@include accentUnderline();
+				}
+			}
+		}
+		
+		li {
+			&.current-menu-item,
+			&.current_page_ancestor {
+				> a {
+					opacity: 1;
+					span:before {
+						width: $base-margin;
+					}
+				}
+			}
+
+			&.menu-item-has-children {
+				// sub menus positioned from their parent
+				position: relative;
+
+				// initially hidden sub menus
+				.sub-menu {
+					display: none;
+				}
+
+				// parent item link has chevron
+				> a {
+					> span {
+						padding-right: $half-margin;
+						@include nu_micon("\e5cf", after);
+						&:after {
+							position: absolute;
+							top: 50%;
+							right: -$half-margin;
+							line-height: 1;
+							transform: translateY(-50%) rotate(90deg);
+							@extend %transition;
+							font-size: 18px;
+						}
+					}
+				}
+				// * hover to reveal sub-menus (allow clicking parent to nav to that location)
+				&:hover,
+				&:focus {
+					> a > span {
+						&::after {
+							transform: translateY(-50%) rotate(0deg);
+						}
+					}
+				}
+			}
+		}
+	}
+
+	// * mobile navicons hidden by default
+	.navicons {
+		display: none;
+		cursor: pointer;
+	}
+
+	// ? content container to match width with content/blocks on the page
+	> .container {
+		position: relative;
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content: space-between;
+		align-items: center;
+		max-width: 100%;
+		height: $headerHeight;
+	}
+
 	.utilitynav {
 		position: relative;
 		display: flex;
@@ -20,7 +147,7 @@ header.header {
 		height: $utilityNavHeight;
 		text-align: right;
 		z-index: 999;
-		border-bottom: 1px solid $grey_4;
+		border-bottom: 1px solid var(--wp--preset--color--black-3);
 		padding: 0 $margin_4x;
 		@media screen and (max-width: 960px) {
 			padding: 0 $base-margin;
@@ -49,258 +176,140 @@ header.header {
 			}
 		}
 	}
-
-	// ? the container for the core header content
-	> .container {
-		position: relative;
-		height: $headerHeight;
-		display: flex;
-		flex-flow: row nowrap;
-		align-items: center;
-		justify-content: space-between;
-		margin: 0 $margin_4x;
-		@media screen and (max-width: 960px) {
-			margin: 0 $base-margin;
-		}
-	}
 }
 
-.site-search-icon {
-	line-height: 1.5;
-	color: $grey_8;
-}
-
-.itsglobalheader--container {
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	z-index: 9999;
-	#itsglobalheader {
-		a {
-			//
-		}
-	}
-}
-
-//
-// *			Header Navigation Styling
-//
-// ? styles for the <header> must be placed in header.scss NOT this file
-header.header {
-	ul,
-	ol {
-		list-style-type: none;
-		margin: 0;
-		padding: 0;
-	}
-
-	// * top-level <li> fill the height of the header
-	.navlinks,
-	.navlinks > ul,
-	.navlinks > ul > li {
-		height: 100%;
-	}
-
-	// * mobile navicons hidden by default
-	.navicons {
-		display: none;
-		margin-right: $margin_2x;
-		cursor: pointer;
-	}
-
-	// * setup some defaults for the nav menu
-	.navlinks {
-		> ul {
-			// ? A/R
-			@media screen and (min-width: 961px) {
-				> li {
-					margin: 0 0 0 $base-margin;
-
-					&:first-of-type {
-						margin: 0 0 0 0;
-					}
-
-					> a {
-						// top-level <li> text is centered vertically
-						> span {
-							position: relative;
-							top: 50%;
-							transform: translateY(-50%);
-						}
-					}
-
-					> .sub-menu {
-						top: 90%;
-						top: 100%;
-					}
-				}
-			}
+// *
+// *
+// *
+// *
+// *
+// *
+// *
+// *
+// *
+// *
+// *	 			DESKTOP NAV
+// *	 			DESKTOP NAV
+// *	 			DESKTOP NAV
+// *
+// *
+// *
+// *
+// *
+// *
+// *
+// *
+// *
+// *
+// *
+@include media(">medium") {
+	header.header {
+		// ? content container to match width with content/blocks on the page
+		> .container {
+			margin: 0 $margin_4x;
 		}
 
-		// * generic styling for any sub-menu
-		.sub-menu {
-			display: flex;
-			flex-flow: column nowrap;
-			position: absolute;
-			top: 100%;
-			right: 0;
-			background-color: rgba($white, 1);
-			@include nu__boxshadow(2);
-			min-width: 220px;
-
-			@media screen and (min-width: 961px) {
-				// nested submenus always fly out to the left
-				.sub-menu {
-					top: 0;
-					left: 0;
-					transform: translateX(-100%);
-				}
-			}
-			li {
-				flex: 1 1 auto;
-			}
-		}
-
-		// generic styles for basic elements
-		a {
-			display: block;
-			margin: 0 0 0 0;
-			height: 100%;
-			padding: 5px;
-			border-bottom: none 0;
-			opacity: 0.8;
-			// style link text and underline effect
-			> span {
-				font-size: 0.875rem;
-				display: inline-block;
-				letter-spacing: 0.33px;
-				// @include accentUnderline();
-			}
-
-			&:hover,
-			&:focus,
-			&:active {
-				border-bottom: none 0;
-				opacity: 1;
-				> span:before {
-					width: 100%; // underline any item on hover
-				}
-			}
-		}
-
-		// conditional classes for line items
-		li {
-			word-break: break-word;
-
-			&.menu-item-has-children {
-				position: relative; // sub-menus align to their parent
-
-				.sub-menu {
-					display: none;
-
-					a {
-						@extend %transition;
-						padding: $base-margin ($base-margin + $half-margin);
-						&:hover,
-						&:focus {
-							background-color: var(--wp--preset--color--white-2);
-						}
-					}
-				}
-
-				> a {
-					> span {
-						position: relative;
-						@include nu_micon("\e5cf", after);
-						padding-right: ($base-margin + $half-margin);
-
-						&:after {
-							position: absolute;
-							top: 50%;
-							right: 0;
-							transform: translateY(-50%) rotate(0);
-							transition: transform 0.33s ease;
-							font-size: 20px;
-							color: $grey_7;
-						}
-					}
-				}
-
-				&:hover,
-				&:focus,
-				&:active {
-					> a {
-						> span {
-							&:after {
-								transform: translateY(-50%) rotate(90deg);
-								color: currentColor;
-							}
-						}
-					}
-
-					@media screen and (min-width: 961px) {
-						> .sub-menu {
-							display: flex;
-						}
-					}
-				}
-			}
-
-			// underline active pages and parents of active pages
-			&.current-menu-item,
-			&.current-page-ancestor,
-			&.current-menu-ancestor,
-			&.current-menu-parent {
-				> a {
-					opacity: 1;
-				}
-				> a > span:before {
-					width: 100%;
-				}
-			}
-		}
-	}
-
-	// * traverse to the top-level nav items (only)
-	.navlinks > ul.menu > li {
-		// ? top level items underline is on the container not on the text
-		> a > span {
-			padding-bottom: 0;
-			&:before {
-				display: none; // hide the underline on the text
-			}
-		}
-
-		// ? apply the accent underline to the clickable area, and flip it to start from the right
-		> a {
-			padding: 0;
-			@include accentUnderline();
-			&:before {
-				bottom: 0;
-				left: auto;
-				right: 0;
-			}
+		.navlinks .menu-item {
 			&:hover,
 			&:focus {
-				&:before {
-					width: 100%;
+				> .sub-menu {
+					display: flex;
 				}
 			}
 		}
 
-		// ? conditional classes may appear on this element
-		&.current-menu-item,
-		&.current-page-ancestor,
-		&.current-menu-ancestor,
-		&.current-menu-parent {
-			> a:before {
-				width: 100%;
+		.navlinks {
+			// * in desktop view; top-level nav items underline is at the bottom of the header; not under the text
+			> .menu > .menu-item {
+				// * generic styling for any sub-menu
+				.sub-menu {
+					flex-flow: column nowrap;
+					position: absolute;
+					top: 100%;
+					right: 0;
+					@include nu__boxshadow(2);
+					min-width: 220px;
+					li {
+						flex: 1 1 auto;
+					}
+				}
+
+				> .sub-menu {
+					top: 90%;
+					top: 100%;
+					.sub-menu {
+						top: 0;
+						left: 0;
+						transform: translateX(-100%);
+					}
+				}
+				> a {
+					padding: 2px $base-margin;
+					height: $headerHeight;
+					// underline flyout from the right
+					&:before {
+						bottom: 0;
+						left: auto;
+						right: 0;
+					}
+
+					&:hover,
+					&:focus {
+						&:before {
+							width: 100%;
+						}
+					}
+					// ? vertically center the text inside the click area
+					span {
+						position: relative;
+						top: 50%;
+						transform: translateY(-50%);
+						&:after {
+							right: -$base-margin;
+						}
+						&:before {
+							display: none;
+						}
+					}
+				}
+				&.current-menu-item,
+				&.current-page-ancestor,
+				&.current-menu-ancestor,
+				&.current-menu-parent {
+					> a:before {
+						width: 100%;
+					}
+				}
 			}
 		}
 	}
+}
 
-	@media screen and (max-width: 1024px) {
+// *
+// *
+// *
+// *
+// *
+// *
+// *
+// *
+// *	 MOBILE NAV
+// *	 MOBILE NAV
+// *	 MOBILE NAV
+// *
+// *
+// *
+// *
+// *
+// *
+// *
+@include media("<=medium") {
+	header.header {
+		// ? content container to match width with content/blocks on the page
+		> .container {
+			margin: 0 $margin_2x;
+		}
+
 		// position: relative;
 
 		// revealed / hidden navicons
@@ -326,6 +335,11 @@ header.header {
 			}
 		}
 
+		.navlinks,
+		.sub-menu {
+			flex-flow: column nowrap;
+		}
+
 		// mobile nav changes
 		.navlinks {
 			@include nu__boxshadow(2);
@@ -334,20 +348,22 @@ header.header {
 			top: 100%;
 			left: 0;
 			width: 100%;
-
-			@media screen and (max-width: 960px) {
-				background-color: rgba($white, 1);
-			}
-
-			ul {
-				display: none;
-				flex-flow: column nowrap; // force 1 column
-
-				li {
-					> a {
-						padding: $base-margin; // accordion style padding/margin for line items
+			max-height: calc(100vh - $globalHeaderHeight - $headerHeight);
+			overflow: hidden;
+			overflow-y: auto;
+			&.revealed {
+				> ul {
+					height: auto;
+					//
+					> li {
+						margin: 0;
 					}
 				}
+			}
+
+			> .menu {
+				display: none;
+				flex-flow: column nowrap; // force 1 column
 			}
 
 			// the mobile nav is revealed
@@ -361,15 +377,16 @@ header.header {
 				// transition: background-color 0.3s ease;
 				.sub-menu {
 					box-shadow: none;
-
 					> li {
-						// padding: 0 0 0 $base-margin;
-						margin-left: $base-margin;
+						padding-left: $base-margin;
 					}
 				}
 
 				&.revealed {
-					background-color: rgba($grey_4, 1);
+					background-color: rgba(
+						var(--wp--preset--color--black-3),
+						1
+					);
 
 					> a > span:before {
 						width: 100%;

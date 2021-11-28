@@ -38,8 +38,8 @@
 
 .nu_pattern-is_hero--is_type_b {
 
-	border-bottom: 1px solid $grey_4;
-	border-top: 1px solid $grey_4;
+	border-bottom: 1px solid var(--wp--preset--color--black-3);
+	border-top: 1px solid var(--wp--preset--color--black-3);
 
 	> .wp-block-columns {
 		margin-bottom: 0;

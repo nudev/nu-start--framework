@@ -150,13 +150,13 @@ header.header {
 				height: 100%;
 				min-width: 50vw;
 				padding: $base-margin;
-				background-color: $white;
+				background-color: var(--wp--preset--color--white-1);
 				border: none 0;
 				input {
 					flex: 1 0 auto;
 					margin: 0 $margin_2x;
 					border: none 0;
-					border-bottom: 2px solid $grey_8;
+					border-bottom: 2px solid var(--wp--preset--color--black-3);
 					&:hover,
 					&:focus,
 					&:active {
@@ -178,7 +178,7 @@ header.header {
 					&:hover,
 					&:focus,
 					&:active {
-						border-bottom: 2px solid $grey_8;
+						border-bottom: 2px solid var(--wp--preset--color--black-3);
 					}
 				}
 			}
@@ -192,7 +192,6 @@ header.header {
 			.nu__sitesearch-form--container {
 				form {
 					transform: translateX(-100%);
-					// @include boxshadow(2);
 				}
 			}
 		}

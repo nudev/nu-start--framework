@@ -7,7 +7,7 @@
 	.nu__grid.cols-1 {
 		.grid-item.nu_initiatives {
 			border: none 0;
-			border-bottom: 1px solid $black;
+			border-bottom: 1px solid var(--wp--preset--color--black-1);
 			.grid-item-content {
 				padding: 0;
 			}

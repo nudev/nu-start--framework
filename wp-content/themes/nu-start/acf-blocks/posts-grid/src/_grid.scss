@@ -101,7 +101,7 @@ body.wp-admin {
 
 	.grid-item {
 		position: relative;
-		border: 1px solid $grey_4;
+		border: 1px solid var(--wp--preset--color--white-2);
 		> a,
 		& {
 			display: flex;
@@ -152,7 +152,7 @@ body.wp-admin {
 		border: none 0;
 		span {
 			@extend %transition;
-			color: $grey_8;
+			color: var(--wp--preset--color--black-3);
 			display: inline-block;
 			vertical-align: middle;
 			border-bottom: 2px solid transparent;
@@ -173,7 +173,7 @@ body.wp-admin {
 		&:focus {
 			border: none 0;
 			span {
-				color: $grey_10;
+				color: var(--wp--preset--color--black-3);
 			}
 			.moretext {
 				border-bottom: 2px solid currentColor;

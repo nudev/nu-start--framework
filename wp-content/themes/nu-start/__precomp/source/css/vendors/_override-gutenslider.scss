@@ -83,11 +83,11 @@
 				right: 0;
 				width: $margin_4x;
 				height: $margin_4x;
-				background-color: $grey_4 !important;
+				background-color: var(--wp--preset--color--black-3) !important;
 				border-radius: 0;
 				@extend %transition;
 				&::before {
-					color: $grey_10 !important;
+					color: var(--wp--preset--color--black-3) !important;
 					font-size: 2rem;
 				}
 				&.eedee-gutenslider-next {
@@ -99,7 +99,7 @@
 				&:hover,
 				&:focus,
 				&:active {
-					background-color: $grey_2 !important;
+					background-color: var(--wp--preset--color--black-5) !important;
 				}
 			}
 			> .eedee-gutenslider-pagination {
@@ -112,7 +112,7 @@
 				}
 				.swiper-pagination-bullet:not(.swiper-pagination-bullet-active) {
 					background-color: transparent;
-					border: 1px solid $grey_1;
+					border: 1px solid var(--wp--preset--color--black-5);
 					&:hover,
 					&:focus,
 					&:active {

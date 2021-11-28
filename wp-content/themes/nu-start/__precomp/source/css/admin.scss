@@ -33,7 +33,7 @@
 	}
 }
 .block-editor-block-patterns-list__item {
-	border: 1px solid transparentize($black, 0.25);
+	border: 1px solid var(--wp--preset--color--black-1);
 }
 
 .jvm-richtext-icons-popover {

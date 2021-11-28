@@ -3,7 +3,7 @@ body.eplus_styles {
 		.ep_tab_item_wrapper {
 			background-image: none !important;
 			padding: $margin_2x;
-			border: 1px solid $grey_4;
+			border: 1px solid var(--wp--preset--color--black-3);
 		}
 
 		// wrapper for the tabs
@@ -41,13 +41,13 @@ body.eplus_styles {
 				.ep_label_main {
 					border: 1px solid transparent;
 					&.ep_active_tab {
-						border: 1px solid $grey_4;
+						border: 1px solid var(--wp--preset--color--black-3);
 						border-bottom: 1px solid white;
 					}
 					&:hover,
 					&:focus,
 					&:active {
-						border: 1px solid $grey_4;
+						border: 1px solid var(--wp--preset--color--black-3);
 						border-bottom: 1px solid white;
 					}
 				}
@@ -85,7 +85,7 @@ body.eplus_styles {
 				&:hover,
 				&:focus,
 				&:active {
-					background-color: rgba($grey_4, 0.5);
+					background-color: var(--wp--preset--color--black-3);
 					border-bottom: 4px solid transparent;
 					&.ep_active_tab {
 						border-bottom: 4px solid var(--wp--preset--color--red);
@@ -109,7 +109,7 @@ body.eplus_styles {
 			.ep_toggle_item_title {
 				background-image: none !important;
 				color: black !important;
-				border: 1px solid $grey_4;
+				border: 1px solid var(--wp--preset--color--black-3);
 				&:hover,
 				&:focus,
 				&:active {
@@ -119,7 +119,7 @@ body.eplus_styles {
 
 			.ep_toggle_item_content {
 				background-image: none !important;
-				border: 1px solid $grey_4;
+				border: 1px solid var(--wp--preset--color--black-3);
 				border-top: none 0;
 				padding: $margin_2x !important;
 			}

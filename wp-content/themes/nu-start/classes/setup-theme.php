@@ -111,8 +111,8 @@ class SetupTheme
 				'description'   => __( 'The "sidebar" refers to a block editor widget area we can place into templates.' ),
 				'before_widget' => '<div id="%1$s" class="widget nu__alerts %2$s">',
 				'after_widget'  => '</div>',
-				'before_title'  => '<h3 class="widget-title">',
-				'after_title'   => '</h3>',
+				'before_title'  => '<p class="widget-title">',
+				'after_title'   => '</p>',
 			)
 		);
 
@@ -123,8 +123,20 @@ class SetupTheme
 				'description'   => __( 'Create an engagement area in the footer, like a form.' ),
 				'before_widget' => '<div id="%1$s" class="widget nu__footer-sidebar %2$s">',
 				'after_widget'  => '</div>',
-				'before_title'  => '<h3 class="widget-title">',
-				'after_title'   => '</h3>',
+				'before_title'  => '<p class="widget-title">',
+				'after_title'   => '</p>',
+			)
+		);
+
+		register_sidebar(
+			array(
+				'id'            => 'footer-social',
+				'name'          => __( 'Footer Area Social' ),
+				'description'   => __( 'Create social media links area.' ),
+				'before_widget' => '<div id="%1$s" class="widget nu__footer-sidebar %2$s">',
+				'after_widget'  => '</div>',
+				'before_title'  => '<p class="widget-title">',
+				'after_title'   => '</p>',
 			)
 		);
 
@@ -135,8 +147,8 @@ class SetupTheme
 				'description'   => __( 'These alerts (should) appear only on the front (home) page.' ),
 				'before_widget' => '<div id="%1$s" class="widget nu__alerts nu__alerts-frontpage %2$s">',
 				'after_widget'  => '<span class="material-icons-outlined closeicon">highlight_off</span></div>',
-				'before_title'  => '<h3 class="widget-title">',
-				'after_title'   => '</h3>',
+				'before_title'  => '<p class="widget-title">',
+				'after_title'   => '</p>',
 			)
 		);
 		register_sidebar(
@@ -146,8 +158,8 @@ class SetupTheme
 				'description'   => __( 'These alerts (should) appear everywhere.' ),
 				'before_widget' => '<div class="nu__alerts--wrapper"><div id="%1$s" class="widget nu__alerts nu__alerts-sitewide %2$s">',
 				'after_widget'  => '<span class="material-icons-outlined closeicon">highlight_off</span></div></div>',
-				'before_title'  => '<h3 class="widget-title">',
-				'after_title'   => '</h3>',
+				'before_title'  => '<p class="widget-title">',
+				'after_title'   => '</p>',
 			)
 		);
 

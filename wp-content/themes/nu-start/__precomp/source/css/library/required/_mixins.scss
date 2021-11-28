@@ -1,4 +1,6 @@
-// may be used outside of a block sadly
+/* 
+	because the block may or may not be loaded when we call this in (the posts grid just calls it in for now)
+*/
 @mixin nu__date_time_block_styles() {
 	display: flex;
 	flex-flow: column nowrap;
@@ -29,7 +31,7 @@
 			vertical-align: text-bottom;
 			display: inline-block;
 			font-size: 16px;
-			margin-right: ($base-margin * 0.5);
+			margin-right: $half-margin;
 			line-height: 1;
 		}
 	}
@@ -99,12 +101,13 @@
 }
 
 @mixin bgImage {
-	background: rgba($black, 0.5);
+	background: var(--wp--preset--color--black-1);
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: cover;
 }
 
+// ? these shadows are approved by design ( matches figma v1 design review )
 @mixin nu__boxshadow($depth: 0) {
 	@if ($depth==0) {
 		box-shadow: 0px 1px 2px transparent;
@@ -133,27 +136,6 @@
 	}
 }
 
-@mixin boxshadow($depth: 1) {
-	@if $depth==0 {
-		box-shadow: 0 1px 3px rgba(0, 0, 0, 0), 0 1px 2px rgba(0, 0, 0, 0);
-	}
-
-	@if $depth==1 {
-		box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-	} @else if $depth==2 {
-		box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-	} @else if $depth==3 {
-		box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19),
-			0 6px 6px rgba(0, 0, 0, 0.23);
-	} @else if $depth==4 {
-		box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
-			0 10px 10px rgba(0, 0, 0, 0.22);
-	} @else if $depth==5 {
-		box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3),
-			0 15px 12px rgba(0, 0, 0, 0.22);
-	}
-}
-
 @mixin accentUnderline($el: before, $h: 2px, $d: right) {
 	position: relative;
 
@@ -168,7 +150,7 @@
 		border-bottom: $h solid currentColor;
 		bottom: -#{$h};
 
-		@extend %transition;
+		transition: all 0.1s ease-in-out;
 
 		@if $d==right {
 			left: 0;
@@ -220,6 +202,8 @@
 	}
 }
 
+// ? this is older code that handles a grid layout using flexbox
+// ? we disabled it for now; to use CSS Grid instead; but there may be cases it wont work
 // @mixin nuGrid($w, $c, $gX, $gY: $gX) {
 // 	> ul {
 // 		list-style-type: none;
@@ -241,7 +225,9 @@
 // 		}
 // 	}
 // }
+
 @mixin nuGrid($w, $c, $gX, $gY: $gX) {
+	$w: 100%;
 	//
 	> ul {
 		max-width: 100%;
@@ -265,7 +251,7 @@
 			@include nuGrid($w, $n, $gX, $gY);
 		}
 	}
-	@media screen and (max-width: 1620px) {
+	@include media("<=xlarge") {
 		// ? restrict max-cols in the layout to 5
 		@for $n from 6 through 7 {
 			&.cols-#{$n} {
@@ -274,7 +260,7 @@
 		}
 	}
 
-	@media screen and (max-width: 1280px) {
+	@include media("<=large") {
 		// ? restrict max-cols in the layout to 4
 		@for $n from 5 through 7 {
 			&.cols-#{$n} {
@@ -283,7 +269,7 @@
 		}
 	}
 
-	@media screen and (max-width: 1024px) {
+	@include media("<=medium") {
 		// ? restrict max-cols in the layout to 3
 		@for $n from 4 through 7 {
 			&.cols-#{$n} {
@@ -292,7 +278,7 @@
 		}
 	}
 
-	@media screen and (max-width: 780px) {
+	@include media("<=small") {
 		// ? restrict max-cols in the layout to 2
 		@for $n from 3 through 7 {
 			&.cols-#{$n} {
@@ -301,7 +287,7 @@
 		}
 	}
 
-	@media screen and (max-width: 480px) {
+	@include media("<=phone") {
 		// ? restrict max-cols in the layout to 1
 		@for $n from 2 through 7 {
 			&.cols-#{$n} {

@@ -15,6 +15,18 @@
 // 
 .nu_pattern-is_stat_highlight--is_type_a {
 
+	.wp-block-column {
+		padding: $margin_2x;
+		@include media( "<=medium" ){
+			padding: $base-margin;
+		}
+		@include media( "<=phone" ){
+			padding: 0;
+		}
+	}
+	.wp-block-columns {}
+	.wp-block-columns .wp-block-column {}
+	
 }
 
 .blocks--wrapper > .nu_pattern-is_stat_highlight--is_type_a {

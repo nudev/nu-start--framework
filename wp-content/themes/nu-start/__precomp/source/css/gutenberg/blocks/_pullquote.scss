@@ -1,14 +1,18 @@
+/* 
+
+*/
 .wp-block-pullquote {
 	border: none 0;
 	border-bottom: none 0;
 	border-top: none 0;
 	text-align: left;
 	padding: 0;
-	color: var(--wp--preset--color--black);
+	color: var(--wp--preset--color--black-1);
 
 	blockquote {
-		max-width: 80%;
-		margin: 0 auto;
+		// max-width: 80%;
+		// margin: 0 auto;
+		padding-left: $margin_2x;
 		> *:first-child:not(.wp-block-pullquote__citation) {
 			position: relative;
 			&:before {
@@ -16,18 +20,11 @@
 				display: block;
 				position: absolute;
 				top: 50%;
-				left: -#{$margin_2x};
+				left: -$base-margin;
 				transform: translate(-100%, -50%);
-				color: var(--wp--preset--color--dark-blue);
 			}
 		}
-
-		p {
-			@include font-size(36px);
-			line-height: 40px;
-		}
 	}
-
 	cite {
 		margin-top: $base-margin;
 		display: inline-block;

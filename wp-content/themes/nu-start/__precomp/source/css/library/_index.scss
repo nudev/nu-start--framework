@@ -7,7 +7,6 @@
 @import './extensions/deep-get-set';				// @link https://gist.github.com/zellwk/b7f3317a56ad52b7700e
 
 // ? functions; variables; mixins; extends ( order matters )
-@import './required/functions'; 					// functions
 @import './required/vars'; 							// variables
 @import './required/mixins'; 						// mixins
 @import './required/extends';						// extends

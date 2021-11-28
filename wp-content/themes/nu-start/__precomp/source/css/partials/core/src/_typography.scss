@@ -65,6 +65,7 @@ a {
 // ? note; RFS will auto-convert these to REM (16px === 1rem && 36px === 2rem)
 // ? this overrides the wordpress variables attached to the body
 body {
+	
 	@include rfs(128px, --wp--preset--font-size--128-128);
 	@include rfs(96px, --wp--preset--font-size--96-96);
 	@include rfs(72px, --wp--preset--font-size--72-72);
@@ -150,8 +151,8 @@ p > a {
 		height: 24px;
 		line-height: 1;
 		border-radius: 50%;
-		border: 2px solid rgba($black, 0);
-		color: rgba($black, 0.9);
+		border: 2px solid var(--wp--preset--color--black-1);
+		color: var(--wp--preset--color--black-1);
 		// ? a custom <span> wrapper is around both the prev/next and numbers
 		position: relative;
 		> span {
@@ -161,7 +162,7 @@ p > a {
 		}
 		&.next,
 		&.prev {
-			border: 2px solid rgba($black, 0);
+			border: 2px solid var(--wp--preset--color--black-1);
 			> span {
 				display: none;
 			}
@@ -176,7 +177,7 @@ p > a {
 		}
 
 		&.current {
-			border: 2px solid rgba($black, 1);
+			border: 2px solid var(--wp--preset--color--black-1);
 			background-color: black;
 			color: white;
 		}
@@ -191,7 +192,7 @@ p > a {
 		padding: 0;
 
 		> li {
-			margin: 0 ($base-margin * 0.5) 0 0;
+			margin: 0 $half-margin 0 0;
 			&:last-child {
 				margin: 0;
 			}
@@ -200,11 +201,11 @@ p > a {
 				&:hover,
 				&:focus,
 				&:active {
-					color: rgba($black, 0.8);
-					border-color: rgba($black, 0.8);
+					color: var(--wp--preset--color--black-1);
+					border-color: var(--wp--preset--color--black-1);
 					&.next,
 					&.prev {
-						border: 2px solid rgba($black, 0);
+						border: 2px solid var(--wp--preset--color--black-1);
 					}
 				}
 			}

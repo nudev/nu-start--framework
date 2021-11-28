@@ -10,10 +10,9 @@
 	//
 	$(function () {
 		var tr_nav = {
+			navlinks_el: $("header.header .navlinks"),
+			navicons_el: $("header.header .navicons"),
 
-			navlinks_el : $("header.header .navlinks"),
-			navicons_el : $("header.header .navicons"),
-			
 			// Constructor
 			_init: function () {
 				// ! disabled because it makes you click twice --- but i think i needed it for keyboard nav
@@ -24,11 +23,7 @@
 				);
 
 				//
-				$("header.header").on(
-					"click",
-					".navicons",
-					this._didClickNavIcons
-				);
+				$("header.header").on( "click", ".navicons", this._didClickNavIcons);
 
 				$(window).on("resize scroll", this._onResizeScroll);
 
@@ -47,9 +42,11 @@
 
 			_didClickParent: function (e) {
 				// stop the click from navigating (only toggles the menu open)
-				if (!$(e.target.offsetParent).hasClass("revealed") )  {
+				if (!$(e.target.offsetParent).hasClass("revealed")) {
 					e.preventDefault();
 				}
+
+				$(e.target.offsetParent).siblings().removeClass("revealed");
 
 				$(e.target.offsetParent).toggleClass("revealed"); // toggle this <li> reveal class (active state)
 			},

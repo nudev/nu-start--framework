@@ -98,7 +98,7 @@ div.filteringform {
 
 				.select2 {
 					&.select2-container {
-						background-color: rgba($white, 1);
+						background-color: var(--wp--preset--color--white-1);
 					}
 				}
 			}

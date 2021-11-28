@@ -38,6 +38,9 @@ wp.domReady(function () {
 		"core/tag-cloud",
 		"core/latest-posts",
 		"core/latest-comments",
+		"core/navigation-area",
+		"core/comments-query-loop",
+		"core/search",
 		// 'core/missing',
 		"core/audio",
 		"core/file",
@@ -91,6 +94,8 @@ wp.domReady(function () {
 		"videopress",
 		"wordpress",
 		"wordpress-tv",
+		"pinterest",
+		"wolfram-cloud"
 		//'vimeo'
 		//'youtube'
 	];

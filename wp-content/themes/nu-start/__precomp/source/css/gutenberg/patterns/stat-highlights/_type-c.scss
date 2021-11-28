@@ -23,6 +23,24 @@
 		.wp-block-image {
 			max-width: 320px;
 		}
+
+		@include media( "<=medium" ){
+
+			flex-flow: column-reverse nowrap;
+
+			> * {
+				margin: 0 0 0 0;
+			}
+			> :not(:last-child){
+				margin: $base-margin 0 0 0;
+			}
+			> .wp-block-group:last-child {
+				margin-right: 0;
+			}
+
+		}
 	}
+
+	
 	
 }

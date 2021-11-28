@@ -14,13 +14,13 @@ $guides = [];
 // * guide string for the entire footer
 $guides['footer'] = '
 	<footer class="site-footer">
-		<section>
-			<div class="footer-siteinfo">%1$s%3$s%4$s%5$s</div>
-			<div class="footer-navmenu">
+		<div class="container">
+			<section class="footer-siteinfo">%1$s%3$s%4$s</section>
+			<section class="footer-content">
 				%2$s
-			</div>
-			<div class="footer-sidebar">%6$s</div>
-		</section>
+				%5$s
+			</section>
+		</div>
 	</footer>
 ';
 
@@ -75,13 +75,21 @@ if( is_active_sidebar( 'footer-engagement' ) ){
 }
 
 
+
+$social_icon_sidebar = '';
+if( is_active_sidebar( 'footer-social' ) ){
+	ob_start();
+	dynamic_sidebar( 'footer-social' );
+	$social_icon_sidebar = ob_get_clean();
+}
+
+
 $return['footer'] = sprintf(
 	$guides['footer']
 	,nu__getLogo()
 	,has_nav_menu('footer_1') ? nu__getMenu('footer_1') : ''
 	,!empty(NU__Starter::$themeSettings['social']['google_address']) ? '<div class="address">' . nu__getGoogleMapAddress(NU__Starter::$themeSettings['social']['google_address']) . '</div>' : ''
-	,!empty($contact_info) ? '<div class="contact">' . $contact_info . '</div>' :''
-	,!empty($social_media) ? '<div class="social">' . $social_media . '</div>' :''
+	,!empty($social_icon_sidebar) ? $social_icon_sidebar :''
 	,$footer_sidebar
 );
 

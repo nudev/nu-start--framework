@@ -1,2 +1,29 @@
+@mixin styles_for_all_newsletter_sections(){
+
+    .wpforms-container-full {
+
+        form {
+
+            display: flex;
+            flex-flow: row nowrap;
+            > .wpforms-fields-container,
+            > .wpforms-submit-container {
+                flex: 1 0 auto;
+            }
+
+            .wpforms-submit-container {
+                padding: 0;
+                button[type="submit"] {
+                    margin: 0 !important;
+                }
+            }
+        }
+
+        
+    }
+
+}
+
+
 @import './type-a';
 @import './type-b';

@@ -3,8 +3,8 @@
 	z-index: 9;
 	top: 15%;
 	left: 0;
-	background-color: rgba($black, 0.66);
-	color: $white;
+	background-color: var(--wp--preset--color--black-3);
+	color: var(--wp--preset--color--white-1);
 	padding: $base-margin;
 	-webkit-backdrop-filter: blur(16px);
 	backdrop-filter: blur(16px);
@@ -15,7 +15,7 @@
 		flex-flow: row nowrap;
 		justify-content: space-between;
 		align-items: center;
-		border-bottom: 1px solid $white;
+		border-bottom: 1px solid var(--wp--preset--color--white-1);
 	}
 
 	.nu__icon {
@@ -35,7 +35,7 @@
 	&:hover,
 	&:focus,
 	&:active {
-		background-color: rgba($black, 0.75);
+		background-color: var(--wp--preset--color--black-4);
 	}
 
 	&.revealed {

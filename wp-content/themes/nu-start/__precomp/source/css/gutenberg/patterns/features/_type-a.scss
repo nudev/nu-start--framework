@@ -8,6 +8,10 @@
 .nu_pattern-is_feature--is_type_a {
 
 
+	.shim--offset-nav-items {
+		min-width: 240px;
+	}
+
 	.is-row-block {
 		> .wp-block-group:first-child {
 			max-width: 600px;

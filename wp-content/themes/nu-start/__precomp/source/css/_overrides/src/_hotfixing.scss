@@ -8,6 +8,12 @@
 }
 
 .nu_section--similar-events {
+
+	&:last-child:not(.has-background) {
+		margin-bottom: 0 !important;
+	}
+
+
 	> .wp-block-group.alignfull.has-background:last-child {
 		padding-bottom: $margin_8x;
 		padding-left: 0;

@@ -320,6 +320,9 @@
       "font-weight": {
         "light": "300",
         "normal": "400"
+      },
+      "footer-background" : {
+        "dark" : "#292929"
       }
     },
     "blocks": {
