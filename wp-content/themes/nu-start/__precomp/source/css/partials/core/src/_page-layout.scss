@@ -32,9 +32,7 @@
 		margin-bottom: $margin_8x;
 	}
 
-	// TODO: fix this it doesnt work!
-	@media screen and ( max-width: 781px ){
-		padding: 0 $half-margin;
+	@include media("<=medium") {
 		> * {
 			margin-top: $margin_4x;
 		}
