@@ -85,9 +85,16 @@ class PostsGrid
 			$this->_build_manual_query();
 		}
 
+		if( self::$post_fields['autoselect_posts']['post_type'] == 'nu_people' ){
+			add_filter( 'posts_orderby' , 'posts_orderby_lastname' ); // order by last name alphabetically; does not effect the manually added posts
+		}
 		// do the WP Query
 		$this->wp_query = new WP_Query($this->wp_query_args);
 		self::$the_wp_query = $this->wp_query;
+
+		if( self::$post_fields['autoselect_posts']['post_type'] == 'nu_people' ){
+			remove_filter( 'posts_orderby' , 'posts_orderby_lastname' ); // order by last name alphabetically; does not effect the manually added posts
+		}
 
 		// maybe build pagination
 		if( !empty( self::$post_fields['options']['pagination'] ) ){

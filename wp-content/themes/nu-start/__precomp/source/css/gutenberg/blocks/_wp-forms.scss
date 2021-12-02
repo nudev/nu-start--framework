@@ -20,17 +20,62 @@ div.wpforms-container-full {
 		.wpforms-field-sublabel,
 		.wpforms-field-label-inline,
 		.wpforms-field-label {
-			font-weight: 300;
-			font-size: 0.875rem;
-	}
+			letter-spacing: 0.33px;
+			font-weight: 400;
+			@include rfs(20px, line-height);
+			@include rfs(14px);
+			color: var(--wp--preset--color--black-2);
+		}
 
-		// adjust regular fields
+		// ? reset wpforms included styles for various elements
+		// ? this codeblock should stay generic
 		.wpforms-field {
 			*::placeholder {
-				font-size: 1rem;
-				color: #787878;
+				letter-spacing: 0.33px;
 				font-weight: 300;
-				opacity: 1;
+				@include rfs(20px, line-height);
+				@include rfs(14px);
+				opacity: 0.8;
+				color: var(--wp--preset--color--black-2);
+			}
+
+			input,
+			textarea,
+			select,
+			option {
+				border-color: var(--wp--preset--color--white-5);
+				&:focus,
+				&:active {
+					outline: 1px solid var(--wp--preset--color--blue-2);
+				}
+			}
+			select {
+				font-weight: 300;
+				@include rfs(20px, line-height);
+				@include rfs(14px);
+				option {
+					font-weight: inherit;
+					font-size: inherit;
+				}
+			}
+		}
+
+		.wpforms-field-textarea {
+			textarea {
+				min-height: 200px;
+			}
+		}
+		.wpforms-field-name {
+			.wpforms-field-row-block {
+				display: flex;
+				flex-flow: column-reverse nowrap;
+				label {
+					margin: 0;
+				}
+				input {
+					margin: 0;
+					margin-top: $half-margin;
+				}
 			}
 		}
 
@@ -50,74 +95,6 @@ div.wpforms-container-full {
 					border: 1px solid var(--wp--preset--color--black-1);
 					background: white;
 					color: var(--wp--preset--color--black-1);
-				}
-			}
-		}
-	}
-}
-
-//  todo: refactor the junk below
-%is_style_minimal_borders {
-	border-radius: 0 !important;
-	border: 1px solid var(--wp--preset--color--black-2);
-}
-
-// ? reset some basic default styles
-div.wpforms-container-full {
-	form.wpforms-form {
-		.wpforms-field {
-			input,
-			textarea,
-			select,
-			option {
-				border-color: var(--wp--preset--color--black-2);
-
-				&:focus,
-				&:active {
-					outline: 1px solid var(--wp--preset--color--vivid-cyan-blue);
-				}
-			}
-			textarea {
-				height: auto;
-			}
-			select {
-				font-weight: 300;
-				font-size: 0.875rem !important;
-				option {
-					font-weight: inherit;
-					font-size: inherit;
-				}
-			}
-		}
-
-		// ? labels need an adjustment
-		.wpforms-field-label-inline,
-		.wpforms-field-label {
-			// ? if a label is hidden...
-			&.wpforms-label-hide {
-				// ? the next input-like-el
-				+ input,
-				+ textarea,
-				+ select {
-					@extend %is_style_minimal_borders;
-				}
-				// ? first/last field has the label above this container that holds the inputs
-				~ .wpforms-field-row {
-					// ? the next input-like-el
-
-					input,
-					textarea,
-					select {
-						@extend %is_style_minimal_borders;
-					}
-				}
-			}
-			input,
-			textarea,
-			select {
-				// ? no label before the input (assumes its hidden)
-				&:first-child {
-					@extend %is_style_minimal_borders;
 				}
 			}
 		}

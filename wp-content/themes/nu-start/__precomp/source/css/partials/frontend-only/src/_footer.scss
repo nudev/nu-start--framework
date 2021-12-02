@@ -254,11 +254,16 @@ footer.site-footer {
 		}
 	}
 	.nu__footer-sidebar {
-		* {
-			color: var(--wp--preset--color--white-1);
-		}
-
+		
 		div.wpforms-container-full {
+			* {
+				color: var(--wp--preset--color--white-1);
+			}
+			.wpforms-field-sublabel,
+			.wpforms-field-label-inline,
+			.wpforms-field-label{
+				color: var(--wp--preset--color--white-1);
+			}
 			form.wpforms-form {
 				display: flex;
 				flex-flow: row nowrap;

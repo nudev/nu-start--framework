@@ -38,6 +38,11 @@ function nu__getMenu($location = '', $echo = false, $menu = ''){
 
 
 
+function posts_orderby_lastname ($orderby_statement) 
+{
+  $orderby_statement = "RIGHT(post_title, LOCATE(' ', REVERSE(post_title)) - 1) ASC";
+	return $orderby_statement;
+}
 
 function get_featured_tagstring($post){
 
@@ -82,13 +87,6 @@ function get_featured_tagstring($post){
 	}
 
 	return '<p class="featured-tags has-smaller-font-size">'.$featuredTag.'</p>';
-}
-
-
-function posts_orderby_lastname ($orderby_statement) 
-{
-  $orderby_statement = "RIGHT(post_title, LOCATE(' ', REVERSE(post_title)) - 1) ASC";
-	return $orderby_statement;
 }
 
 

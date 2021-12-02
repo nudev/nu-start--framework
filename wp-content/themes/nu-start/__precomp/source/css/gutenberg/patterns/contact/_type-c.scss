@@ -11,6 +11,11 @@
 			vertical-align: top !important;
 			display: inline-block !important;
 			float: none !important;
+			textarea {
+				min-height: 0px !important;
+				height: 128px !important;
+			}
 		}
 	}
+
 }

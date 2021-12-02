@@ -33,3 +33,12 @@ Columns Block
 		}
 	}
 }
+
+
+.wp-block-column {
+	> .wp-block-group {
+		&:not(:first-child){
+			margin-top: $margin_4x;
+		}
+	}
+}

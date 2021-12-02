@@ -1,5 +1,5 @@
 {
-  "$schema": "https://json.schemastore.org/theme-v1.json",
+  "$schema": "http://json-schema.org/draft-04/schema#",
   "version": 1,
   "settings": {
     "border": {
@@ -9,6 +9,8 @@
       "customWidth": true
     },
     "color": {
+      "corePalette": false,
+      "coreGradients": false,
       "duotone": [],
       "gradients": [],
       "link": false,
@@ -321,8 +323,8 @@
         "light": "300",
         "normal": "400"
       },
-      "footer-background" : {
-        "dark" : "#292929"
+      "footer-background": {
+        "dark": "#292929"
       }
     },
     "blocks": {
