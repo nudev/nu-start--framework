@@ -8,11 +8,9 @@
 }
 
 .nu_section--similar-events {
-
 	&:last-child:not(.has-background) {
 		margin-bottom: 0 !important;
 	}
-
 
 	> .wp-block-group.alignfull.has-background:last-child {
 		padding-bottom: $margin_8x;
@@ -71,7 +69,7 @@ body.single-nu_news {
 		.wp-block-cover {
 			min-height: 100%;
 		}
-		.nu_pattern--hero--card-style{
+		.nu_pattern--hero--card-style {
 			.wp-block-columns,
 			& {
 				min-height: 100% !important;
@@ -97,11 +95,10 @@ body.single-nu_news {
 }
 
 .wp-block-nu-blocks-accordion-item {
-
-	.wp-block-nublocks-accordion-item__content{
+	.wp-block-nublocks-accordion-item__content {
 		@extend %transition;
 		// opacity: 1;
-		&:not(.revealed){
+		&:not(.revealed) {
 			// opacity: 0;
 			// height: 0;
 			// @include displayedInvisible;
@@ -109,15 +106,93 @@ body.single-nu_news {
 	}
 }
 
-
-
-h1,h2,h3,h4,h5,h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
 	scroll-margin-top: 124px;
 }
-
 
 .is-sticky-on-scroll {
 	position: -webkit-sticky;
 	position: sticky;
 	top: (124px + $margin_4x);
+}
+
+figure.wp-block-embed {
+	margin-left: 0 !important;
+	margin-right: 0 !important;
+
+	iframe {
+		@extend %transition;
+		@include nu__boxshadow(2);
+	}
+	&:hover,
+	&:focus {
+		iframe {
+			@include nu__boxshadow(4);
+		}
+	}
+}
+
+.shim-fullscreen-slider {
+	margin-top: 0 !important;
+	margin-bottom: 0 !important;
+	.slide-content {
+		min-height: 0;
+		max-height: 90vh;
+		padding: 0 !important;
+
+		>.wp-block-columns,
+		>.wp-block-video,
+		>.wp-block-video video,
+		>.wp-block-embed__wrapper,
+		>.wp-block-embed {
+			height: 100%;
+			width: 100%;
+			min-height: 100%;
+			min-width: 100%;
+		}
+		video {
+			background-color: black;
+		}
+
+		> .wp-block-columns > .wp-block-column {
+			display: flex;
+			flex-flow: column nowrap;
+			justify-content: center;
+			margin-left: 0 !important;
+		}
+
+		.wp-block-columns > .wp-block-column > .wp-block-image.size-full {
+			img,
+			& {
+				min-width: 100%;
+				height: 100%;
+			}
+		}
+
+		.shim-fixed-height-content-area {
+			margin: 0 auto;
+			max-width: 640px;
+			max-height: 90%;
+			overflow: hidden;
+			overflow-x: hidden;
+			overflow-y: auto;
+			// @include nu__boxshadow(4);
+			padding: $margin_2x;
+			> * {
+				margin-top: $margin_2x;
+			}
+			> :first-child {
+				margin-top: 0;
+			}
+		}
+	}
+	.gutenslider-divider-bottom,
+	.gutenslider-divider-top {
+		display: none;
+	}
 }

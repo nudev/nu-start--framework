@@ -135,6 +135,21 @@
       "pg" : 0,
       "sct" : 0
     },
+    "\/source\/css\/gutenberg\/blocks\/_columns-column.scss" : {
+      "aP" : 1,
+      "bl" : 0,
+      "co" : 0,
+      "dP" : 10,
+      "ec" : 1,
+      "ft" : 4,
+      "ma" : 1,
+      "oA" : 1,
+      "oAP" : "\/build\/css\/gutenberg\/blocks\/_columns-column.css",
+      "oF" : 0,
+      "oS" : 0,
+      "pg" : 0,
+      "sct" : 0
+    },
     "\/source\/css\/gutenberg\/blocks\/_columns.scss" : {
       "aP" : 1,
       "bl" : 0,
@@ -1480,7 +1495,7 @@
     "displayValueWasSetByUser" : 1,
     "iconImageName" : "brackets-ucla",
     "iconImageWasSetByUser" : 0,
-    "lastBuiltDate" : 659748799.90035701
+    "lastBuiltDate" : 660488993.387025
   },
   "projectSettings" : {
     "abortBuildOnError" : 1,

@@ -2,6 +2,12 @@
 	Site Footer
 */
 footer.site-footer {
+
+	&.disabled {
+		display: none;
+	}
+	
+	
 	// ? switch svg fill to white, or invert img
 	a.logo {
 		border-bottom: none 0;

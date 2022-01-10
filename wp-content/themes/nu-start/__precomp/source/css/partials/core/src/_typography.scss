@@ -12,8 +12,8 @@ body {
 
 // set the RFS (max) font size, and scale it up for display style
 h1 {
-	$fz: 48px;
-	@include font-size($fz);
+	// $fz: 48px;
+	// @include font-size($fz);
 }
 
 h2 {

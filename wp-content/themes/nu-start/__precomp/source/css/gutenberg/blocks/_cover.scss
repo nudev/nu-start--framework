@@ -59,6 +59,7 @@
 
 .wp-block-group,
 .wp-block-cover {
+	&.has-style-tucks-next-block-over,
 	&.cover_tucks_next_block {
 		margin-bottom: -#{$margin_6x} !important; // 2x margin less than the padding; to have vertical space (difference will be visible margin)
 		// padding-bottom: $margin_12x;
@@ -79,4 +80,25 @@
 
 .blocks--wrapper > .wp-block-cover:first-child {
 	margin-top: 0;
+}
+
+
+
+.wp-block-cover {
+	&.has-custom-content-position {
+		&.is-position-top-left,
+		&.is-position-bottom-left,
+		&.is-position-center-left {
+			.wp-block-cover__inner-container {
+				margin-left: 10%;
+			}
+		}
+		&.is-position-top-right,
+		&.is-position-bottom-right,
+		&.is-position-center-right {
+			.wp-block-cover__inner-container {
+				margin-right: 10%;
+			}
+		}
+	}
 }

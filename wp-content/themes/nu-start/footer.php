@@ -95,7 +95,7 @@ $return['footer'] = sprintf(
 
 
 // ? the empty footer elem enables DRY bottom margin for the site
-echo !empty(NU__Starter::$themeSettings['footer']['site_footer']['status']) ? $return['footer'] : '<footer class="site-footer"></footer>';
+echo !empty(NU__Starter::$themeSettings['footer']['site_footer']['status']) ? $return['footer'] : '<footer class="site-footer disabled"></footer>';
 
 
 

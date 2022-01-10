@@ -1,4 +1,12 @@
 .wp-block-eedee-block-gutenslider {
+
+	
+	&.alignfull {
+		&.content-change {
+			margin-top: 0;
+		}
+	}
+	
 	.eedee-swiper-outer {
 		.eedee-gutenslider-nav {
 			@extend %transition;

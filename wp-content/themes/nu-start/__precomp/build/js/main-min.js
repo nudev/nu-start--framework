@@ -121,9 +121,6 @@
   });
 
   (function ($, window, document) {
-  	/**
-  	 *   ... code out here will run immediately on load
-  	 */
 
   	/**
   	 *

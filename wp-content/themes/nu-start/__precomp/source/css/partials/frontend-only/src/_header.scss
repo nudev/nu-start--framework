@@ -64,7 +64,6 @@ header.header {
 	.navlinks {
 		background-color: var(--wp--preset--color--white-1);
 
-
 		.menu-item {
 			> a {
 				span {
@@ -72,7 +71,7 @@ header.header {
 				}
 			}
 		}
-		
+
 		li {
 			&.current-menu-item,
 			&.current_page_ancestor {
@@ -154,7 +153,7 @@ header.header {
 			align-items: center;
 			justify-content: flex-start;
 		}
-		ul {
+		ul.navlinks {
 			display: flex;
 			flex-flow: row nowrap;
 			justify-content: flex-end;
@@ -280,6 +279,23 @@ header.header {
 				&.current-menu-parent {
 					> a:before {
 						width: 100%;
+					}
+				}
+			}
+		}
+
+		.utilitynav .navlinks {
+			display: flex;
+			flex-flow: row nowrap;
+			align-items: center;
+			> .menu {
+				> .menu-item {
+					> a {
+						height: auto;
+						> span {
+							top: 0;
+							transform: none;
+						}
 					}
 				}
 			}
