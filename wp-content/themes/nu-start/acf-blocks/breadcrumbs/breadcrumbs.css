@@ -1,8 +1,10 @@
 /* 
  */
+.nu_breadcrumbs.center,
 .wp-block-acf-breadcrumbs.center {
   text-align: center;
 }
+.nu_breadcrumbs.right,
 .wp-block-acf-breadcrumbs.right {
   text-align: right;
 }

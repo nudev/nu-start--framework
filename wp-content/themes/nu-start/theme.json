@@ -33,11 +33,11 @@
           "slug": "blue",
           "color": "#4299e1"
         },
-		{
-		  "name": "Dark Blue",
-		  "slug": "dark-blue",
-		  "color": "#385d85"
-		},
+        {
+          "name": "Dark Blue",
+          "slug": "dark-blue",
+          "color": "#385d85"
+        },
         {
           "name": "Orange",
           "slug": "orange",
