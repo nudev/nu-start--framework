@@ -3,17 +3,7 @@
 	// TODO: ??? --- maybe drop this and include it within a style or custom class?
 	&.alignfull,
 	&[data-align="full"] {
-		h1,
-		h2,
-		h3,
-		h4,
-		h5,
-		h6 {
-			line-height: 1;
-		}
-
 		padding: $base-margin 0;
-
 		.wp-block-cover__inner-container {
 			max-width: 80%;
 			margin: 0 auto;
@@ -81,8 +71,6 @@
 .blocks--wrapper > .wp-block-cover:first-child {
 	margin-top: 0;
 }
-
-
 
 .wp-block-cover {
 	&.has-custom-content-position {

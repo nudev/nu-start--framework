@@ -2,9 +2,8 @@
 *    basic elements
 */
 
-
-
 // image elements
+video,
 img {
     max-width: 100%;
     height: auto;
@@ -14,8 +13,4 @@ img {
 
 button.button {
 	@extend %nu__buttonstyle;
-}
-
-a {
-    cursor: pointer;
 }

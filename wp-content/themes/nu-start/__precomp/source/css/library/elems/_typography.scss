@@ -1,0 +1,41 @@
+/* 
+?  		typography only, not layout
+?		
+*/
+
+// reset body styling to brand
+body {
+	@extend %base_body_style;
+	position: relative;
+	z-index: 1;
+}
+
+// ? links need to be styled to our brand
+// ? just the base level, no layout or modifiers
+a {
+	color: currentColor;
+	font-weight: normal;
+	text-decoration: none;
+	@extend %transition;
+	svg {
+		@extend %transition;
+	}
+}
+
+// * RFS will auto-convert these to REM (16px === 1rem && 36px === 2rem)
+// * enable RFS for the existing theme.json font sizes
+body {
+	@include rfs(128px, --wp--preset--font-size--128-128);
+	@include rfs(96px, --wp--preset--font-size--96-96);
+	@include rfs(72px, --wp--preset--font-size--72-72);
+	@include rfs(60px, --wp--preset--font-size--60-60);
+	@include rfs(48px, --wp--preset--font-size--48-48);
+	@include rfs(36px, --wp--preset--font-size--36-40);
+	@include rfs(30px, --wp--preset--font-size--30-36);
+	@include rfs(24px, --wp--preset--font-size--24-32);
+	@include rfs(20px, --wp--preset--font-size--20-28);
+	@include rfs(18px, --wp--preset--font-size--18-28);
+	@include rfs(16px, --wp--preset--font-size--16-24);
+	@include rfs(14px, --wp--preset--font-size--14-20);
+	@include rfs(12px, --wp--preset--font-size--12-16);
+}

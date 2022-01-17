@@ -27,9 +27,8 @@ nav.wp-block-navigation {
 	margin: 0 auto;
 	text-align: left;
 
-
 	.wp-block-navigation__container {
-		gap: 0;
+		// gap: 0;
 	}
 
 	&.has-background {
@@ -44,7 +43,7 @@ nav.wp-block-navigation {
 		bottom: 0;
 	}
 
-	.wp-block-navigation-link__label {
+	.wp-block-navigation-item__label {
 		border: none 0;
 		@extend %transition;
 		border-left: 2px solid white;
@@ -101,7 +100,7 @@ nav.wp-block-navigation {
 
 	.wp-block-navigation-item {
 		&.current-menu-item {
-			.wp-block-navigation-link__label {
+			.wp-block-navigation-item__label {
 				border: none 0;
 				@extend %transition;
 				border-left: 2px solid white;
