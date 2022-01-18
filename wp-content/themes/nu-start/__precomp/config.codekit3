@@ -180,21 +180,6 @@
       "pg" : 0,
       "sct" : 0
     },
-    "\/source\/css\/frontend\/src\/_new-css-reset.scss" : {
-      "aP" : 1,
-      "bl" : 0,
-      "co" : 0,
-      "dP" : 10,
-      "ec" : 1,
-      "ft" : 4,
-      "ma" : 1,
-      "oA" : 1,
-      "oAP" : "\/build\/css\/frontend\/src\/_new-css-reset.css",
-      "oF" : 0,
-      "oS" : 0,
-      "pg" : 0,
-      "sct" : 0
-    },
     "\/source\/css\/frontend\/src\/_nu_global_elements.scss" : {
       "aP" : 1,
       "bl" : 0,

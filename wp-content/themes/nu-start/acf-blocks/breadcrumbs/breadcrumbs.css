@@ -22,6 +22,16 @@ html :where(body:not(.wp-admin), .editor-styles-wrapper) {
 }
 
 /* ... project styles will always load after this ... */
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
 html :where(body:not(.wp-admin), .editor-styles-wrapper) {
   position: relative;
   z-index: 1;

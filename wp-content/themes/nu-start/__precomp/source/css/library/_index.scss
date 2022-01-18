@@ -13,13 +13,22 @@
 
 /* ... project styles will always load after this ... */
 
+html {
+	box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}
+
 // reset body styling to brand
 html :where(body:not(.wp-admin), .editor-styles-wrapper) {
 	@extend %base_body_style;
 	position: relative;
 	z-index: 1;
 
-	:where(p a){
+	:where(p a) {
 		text-decoration: none;
 	}
 }
