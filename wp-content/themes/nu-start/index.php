@@ -19,11 +19,6 @@ the_content();
 echo '</div>';
 
 
-// $parsed_blocks = parse_blocks( get_the_content() );
-// error_log(print_r($parsed_blocks, true));
-
-
-
 get_footer(); // ?	close </main>
 
 

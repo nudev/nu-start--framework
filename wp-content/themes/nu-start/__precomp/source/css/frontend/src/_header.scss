@@ -5,6 +5,19 @@
 
 // ? styles for all screen sizes
 header.header {
+	#skiptomaincontent {
+		background: var(--wp--preset--color--white-2);
+		height: 30px;
+		top: 0;
+		left: 0;
+		padding: 8px;
+		position: absolute;
+		transform: translateY(-100%);
+		transition: transform 0.3s;
+		&:focus {
+			transform: translateY(0%);
+		}
+	}
 	@mixin nav_item_is_active {
 		opacity: 1;
 		background-color: var(--wp--preset--color--white-2);

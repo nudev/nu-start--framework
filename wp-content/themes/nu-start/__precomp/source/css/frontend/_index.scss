@@ -1,3 +1,4 @@
+@import './src/new-css-reset';
 @import './src/basic-page-layout';
 @import './src/navlinks';
 @import './src/footer';
@@ -6,3 +7,9 @@
 @import './src/site-logo';
 @import './src/widgets-as-alerts';
 @import './src/nu_global_elements';
+
+
+
+@import './src/elems/typography';
+@import './src/elems/misc-basic-elems';
+@import './src/elems/misc-custom-elems';

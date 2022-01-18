@@ -59,4 +59,4 @@
 	// ? get the main nav
 	include( locate_template('partials/nav-header.php') );
 ?>
-<main>
+<main id="main">

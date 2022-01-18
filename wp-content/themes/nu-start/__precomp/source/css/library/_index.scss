@@ -13,6 +13,13 @@
 
 /* ... project styles will always load after this ... */
 
-@import './elems/typography';
-@import './elems/misc-basic-elems';
-@import './elems/misc-custom-elems';
+// reset body styling to brand
+html :where(body:not(.wp-admin), .editor-styles-wrapper) {
+	@extend %base_body_style;
+	position: relative;
+	z-index: 1;
+
+	:where(p a){
+		text-decoration: none;
+	}
+}

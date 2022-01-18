@@ -246,6 +246,7 @@
       "fontFamilies": [
         {
           "fontFamily": "Lato, sans-serif",
+          "name": "Lato",
           "slug": "lato"
         }
       ],
@@ -334,7 +335,7 @@
         "normal": "400"
       },
       "footer-background": {
-        "dark": "#292929"
+        "dark": "var(--wp--preset--color--black-2)"
       }
     },
     "blocks": {
@@ -349,17 +350,17 @@
             {
               "name": "Black",
               "slug": "black-1",
-              "color": "#000000"
+              "color": "var(--wp--preset--color--black-1)"
             },
             {
               "name": "White",
               "slug": "white-1",
-              "color": "#FFFFFF"
+              "color": "var(--wp--preset--color--white-1)"
             },
             {
               "name": "Red 3",
               "slug": "red-3",
-              "color": "#C8102E"
+              "color": "var(--wp--preset--color--red-3)"
             }
           ]
         }
@@ -481,5 +482,7 @@
         }
       }
     }
-  }
+  },
+  "templateParts": [],
+  "customTemplates": []
 }
