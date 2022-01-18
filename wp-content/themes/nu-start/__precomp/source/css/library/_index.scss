@@ -28,7 +28,8 @@ html :where(body:not(.wp-admin), .editor-styles-wrapper) {
 	position: relative;
 	z-index: 1;
 
-	:where(p a) {
+	a {
+		color: currentColor;
 		text-decoration: none;
 	}
 }
