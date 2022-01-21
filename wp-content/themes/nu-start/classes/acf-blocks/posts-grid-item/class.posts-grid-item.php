@@ -157,8 +157,8 @@ class PostsGrid_Item
 			$excerpt .= '</div>';
 
 			// ? saving this code that builds the phone and email into the excerpt manually
-			// $excerpt .= !empty($fields['person_phone_number']) ? '<span><a href="tel:' .$fields['person_phone_number']. '" target="_blank">' .preg_replace('/\d{3}/', '$0.', str_replace('.', null, $fields['person_phone_number']), 2). '</a></span>' : '';
-			// $excerpt .= !empty($fields['person_email']) ? '<span><a href="mailto:' .$fields['person_email']. '" target="_blank">' .$fields['person_email']. '</a></span>' : '';
+			$excerpt .= !empty($fields['person_phone_number']) ? '<span><a href="tel:' .$fields['person_phone_number']. '" target="_blank">' .preg_replace('/\d{3}/', '$0.', str_replace('.', null, $fields['person_phone_number']), 2). '</a></span>' : '';
+			$excerpt .= !empty($fields['person_email']) ? '<span><a href="mailto:' .$fields['person_email']. '" target="_blank">' .$fields['person_email']. '</a></span>' : '';
 
 			$guides['grid-item-person'] = '
 				<li class="grid-item%1$s%7$s%8$s">
@@ -172,9 +172,8 @@ class PostsGrid_Item
 			$return .= sprintf(
 				$guides['grid-item-person'],
 				' '.$post_type,
-				has_post_thumbnail( ) ? '<figure>'.get_the_post_thumbnail( ).'</figure>' : '',
-				// get_featured_tagstring( $post->ID ),
-				'',
+				!empty($item_styles['display_featured_image']) && has_post_thumbnail( ) ? '<figure>'.get_the_post_thumbnail( ).'</figure>' : '',
+				get_featured_tagstring( $post->ID ),
 				'<h4 class="post-title">'.get_the_title().'</h4>',
 				$excerpt,
 				$readMore,
@@ -213,7 +212,7 @@ class PostsGrid_Item
 			$return .= sprintf(
 				$guides['grid-item-event'],
 				' '.$post_type,
-				has_post_thumbnail( ) ? '<figure>'.get_the_post_thumbnail( ).'</figure>' : '',
+				!empty($item_styles['display_featured_image']) && has_post_thumbnail( ) ? '<figure>'.get_the_post_thumbnail( ).'</figure>' : '',
 				$the_date_time,
 				'<p class="post-title has-24-32-font-size"><span>'.get_the_title( ).'</span></p>',
 				has_excerpt() ? '<p class="post-excerpt">'.get_the_excerpt( ).'</p>' : '',

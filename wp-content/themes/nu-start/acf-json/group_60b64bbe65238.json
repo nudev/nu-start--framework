@@ -3,28 +3,6 @@
     "title": "Block: Posts Grid",
     "fields": [
         {
-            "key": "field_619428bffa941",
-            "label": "Core Attributes",
-            "name": "core_attributes",
-            "type": "clone",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "clone": [
-                "group_619428918bc0b"
-            ],
-            "display": "seamless",
-            "layout": "block",
-            "prefix_label": 0,
-            "prefix_name": 0,
-            "acfe_field_group_condition": 0
-        },
-        {
             "key": "field_60b64c1af5170",
             "label": "Options",
             "name": "options",
@@ -539,7 +517,7 @@
     "acfe_display_title": "",
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1637099736,
+    "modified": 1642458411,
     "acfe_categories": {
         "acf-block": "ACF Block"
     }

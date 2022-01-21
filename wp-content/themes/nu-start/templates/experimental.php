@@ -1,8 +1,9 @@
 <?php
 /**
- * 
+ * 	Template Name: Experimental
  */
-// 
+//  
+
 
 // * the pattern is the pattern
 $guides = [];
@@ -16,11 +17,13 @@ if( is_active_sidebar( 'alerts-sitewide' ) ){
 }
 echo '<div class="blocks--wrapper">';
 the_content();
+// do_blocks( );
 echo '</div>';
-
 
 get_footer(); // ?	close </main>
 
 
-// 
+
+//  
+//  
 ?>

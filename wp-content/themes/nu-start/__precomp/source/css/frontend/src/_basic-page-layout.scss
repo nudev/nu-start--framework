@@ -1,6 +1,23 @@
 /* 
-
+? 	page height always fills viewport using flexbox
 */
+html {
+	height: 100%;
+}
+body {
+	scroll-behavior: smooth;
+	min-height: 100%;
+	display: flex;
+	flex-flow: column nowrap;
+	> header,
+	> footer {
+		flex: none 0;
+	}
+	> main {
+		flex: 1 0 auto;
+		margin-top: $headerHeight; // default values
+	}
+}
 
 @mixin is_page_level_blocks_wrapper() {
 	> * {

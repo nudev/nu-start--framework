@@ -1,7 +1,7 @@
 (function (factory) {
   typeof define === 'function' && define.amd ? define(factory) :
   factory();
-}((function () { 'use strict';
+})((function () { 'use strict';
 
   class Accordion {
     constructor(el) {
@@ -256,5 +256,5 @@
   	});
   })(window.jQuery);
 
-})));
+}));
 //# sourceMappingURL=main-min.js.map
