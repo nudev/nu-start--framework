@@ -28,6 +28,29 @@ NU__ContentTypes::_register_custom_taxonomy(
 );
 
 
+
+NU__ContentTypes::_register_custom_taxonomy(
+	$literal = 'events-topics',
+	$post_type = 'events',
+	$name = 'Events Topics',
+	$singular = 'Events Topic',
+	$rewrite = 'Events Topics'
+);
+
+
+NU__ContentTypes::_register_custom_taxonomy(
+	$literal = 'events-audiences',
+	$post_type = 'events',
+	$name = 'Events Audiences',
+	$singular = 'Events Audience',
+	$rewrite = 'Events Audiences'
+);
+
+
+
+
+
+
 $reusableHero = new  WP_Query([
 	'post_type' => 'wp_block',
 	'title' 	=> 'Hero: All Event Items'
@@ -44,10 +67,8 @@ if( !empty( $reusableHero->posts ) ){
 	 * 
 	 */
 	$post_type_object->template = array(
-		array( 'acf/nu-event', [ 'align' => 'full' ], [
-			array( 'core/block', [ 'ref' => $reusableHero->posts[0]->ID ] ),
-			array( 'core/paragraph', [ 'placeholder' => 'Insert a pattern here?' ] ),
-		]),
+		array( 'core/block', [ 'ref' => $reusableHero->posts[0]->ID ] ),
+		array( 'core/paragraph', [ 'placeholder' => 'Insert a pattern here?' ] ),
 	);
 
 	$post_type_object->template_lock = '';

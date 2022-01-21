@@ -3,8 +3,7 @@
 	@see https://www.npmjs.com/package/@wordpress/scripts#user-content-advanced-usage
 */
 
-@import '../../nu-start/__precomp/source/css/library'; 		// include parent theme library (vars, mixins, etc)
-
+@import "../../nu-start/__precomp/source/css/library"; // include parent theme library (vars, mixins, etc)
 
 // ? this is part of the scripts package built-in workflow
-// @import './styles';
+@import './styles';
