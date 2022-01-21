@@ -344,27 +344,6 @@
           "blockGap": true
         }
       },
-      "core/button": {
-        "color": {
-          "palette": [
-            {
-              "name": "Black",
-              "slug": "black-1",
-              "color": "var(--wp--preset--color--black-1)"
-            },
-            {
-              "name": "White",
-              "slug": "white-1",
-              "color": "var(--wp--preset--color--white-1)"
-            },
-            {
-              "name": "Red 3",
-              "slug": "red-3",
-              "color": "var(--wp--preset--color--red-3)"
-            }
-          ]
-        }
-      },
       "core/cover": {
         "spacing": {
           "units": ["%", "px", "vw"]

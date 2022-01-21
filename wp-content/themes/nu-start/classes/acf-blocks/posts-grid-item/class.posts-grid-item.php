@@ -172,7 +172,7 @@ class PostsGrid_Item
 			$return .= sprintf(
 				$guides['grid-item-person'],
 				' '.$post_type,
-				has_post_thumbnail( ) ? '<figure>'.get_the_post_thumbnail( ).'</figure>' : '',
+				!empty($item_styles['display_featured_image']) && has_post_thumbnail( ) ? '<figure>'.get_the_post_thumbnail( ).'</figure>' : '',
 				get_featured_tagstring( $post->ID ),
 				'<h4 class="post-title">'.get_the_title().'</h4>',
 				$excerpt,
@@ -212,7 +212,7 @@ class PostsGrid_Item
 			$return .= sprintf(
 				$guides['grid-item-event'],
 				' '.$post_type,
-				has_post_thumbnail( ) ? '<figure>'.get_the_post_thumbnail( ).'</figure>' : '',
+				!empty($item_styles['display_featured_image']) && has_post_thumbnail( ) ? '<figure>'.get_the_post_thumbnail( ).'</figure>' : '',
 				$the_date_time,
 				'<p class="post-title has-24-32-font-size"><span>'.get_the_title( ).'</span></p>',
 				has_excerpt() ? '<p class="post-excerpt">'.get_the_excerpt( ).'</p>' : '',

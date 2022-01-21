@@ -132,3 +132,60 @@ figure.wp-block-embed {
 		}
 	}
 }
+
+.nu__pattern--event-item-hero {
+	@include media(">=small") {
+		.wp-block-cover {
+			.wp-block-cover__inner-container {
+				margin-left: $margin_8x !important;
+			}
+	
+			h2 {
+				max-width: 720px;
+			}
+		}
+		> .nu__pattern--event-item-hero-spillover {
+			> .wp-block-group.has-background {
+				margin-top: -$margin_4x;
+				z-index: 1;
+				position: relative;
+			}
+		}
+	}
+}
+
+.nu__shim--columns-are-cards-and-centered {
+	> .wp-block-columns > .wp-block-column {
+		display: flex;
+		flex-flow: column nowrap;
+		justify-content: center;
+		> p {
+			margin: 0;
+		}
+	}
+}
+
+.wp-block-group.nu__pattern--hero-type-a {
+	@include media(">=small") {
+		.wp-block-cover {
+			.wp-block-cover__inner-container {
+				margin-left: $margin_8x !important;
+			}
+
+			h2 {
+				max-width: 720px;
+			}
+		}
+
+		> .nu__pattern--hero-type-a-spillover {
+			margin-top: -$margin_4x;
+			z-index: 1;
+			position: relative;
+			> .wp-block-group {
+				max-width: 70%;
+				margin-left: $margin_4x !important;
+				padding: $margin_4x;
+			}
+		}
+	}
+}
