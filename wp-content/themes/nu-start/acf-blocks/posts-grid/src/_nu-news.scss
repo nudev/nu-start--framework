@@ -21,9 +21,12 @@
 	> a {
 		border: none 0;
 		display: flex;
-		.post-title span {
-			border-bottom: 2px solid transparent;
-		}
+		.post-title {
+			margin-top: $base-margin; 
+			span {
+				border-bottom: 2px solid transparent;
+			}
+		} 
 		&:hover,
 		&:focus {
 			border: none 0;
@@ -39,6 +42,15 @@
 	.grid-item-content {
 		padding: $base-margin;
 		padding: $margin_2x;
+		justify-content: center;
+
+		.is-the-publication-date {
+			justify-content: flex-end; 
+		}
+
+		.is-the-publication-publisher {
+			font-style: italic; 
+		}
 		> :first-child {
 			margin-top: 0;
 		}

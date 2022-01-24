@@ -61,6 +61,26 @@
                     "append": "",
                     "maxlength": "",
                     "acfe_field_group_condition": 0
+                },
+                {
+                    "key": "field_61ef0bb8c7584",
+                    "label": "Publisher",
+                    "name": "publisher",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": "",
+                    "acfe_field_group_condition": 0
                 }
             ]
         }
@@ -90,7 +110,7 @@
     "acfe_display_title": "",
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1643040953,
+    "modified": 1643056070,
     "acfe_categories": {
         "custom-post-metadata": "Custom Post Metadata"
     }
