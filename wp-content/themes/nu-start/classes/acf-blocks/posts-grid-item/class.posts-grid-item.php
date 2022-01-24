@@ -32,7 +32,7 @@ class PostsGrid_Item
 		$item_styles = !empty($gridOptions['item_style']) ? $gridOptions['item_style'] : '';
 
 		// * get the capitalcase post type name (label)
-		$post_type_label = !empty(get_post_type_object($post_type)->labels->singular_name) ? '<span class="is-post-type-label">'.get_post_type_object($post_type)->labels->singular_name.'</span>' : '';
+		$post_type_label = !empty(get_post_type_object($post_type)->labels->singular_name) ? '<span class="is-post-type-label has-14-20-font-size">'.get_post_type_object($post_type)->labels->singular_name.'</span>' : '';
 		// 
 		$orientationClass = !empty($item_styles['orientation']) ? ' has-layout-' . $item_styles['orientation'] : '';
 

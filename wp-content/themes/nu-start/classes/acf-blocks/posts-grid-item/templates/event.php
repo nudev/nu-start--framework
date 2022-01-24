@@ -53,13 +53,16 @@ $return .= sprintf();
 
 $guides['grid-item-event'] = '
   <li class="grid-item%1$s%8$s%9$s">
-    <a class="contains-clickable-area" href="%7$s" title="Read More about '.get_the_title( ).'" %10$s>
+    <a class="contains-clickable-area" href="%7$s"'.$the_title_attribute.' %10$s>
       <div class="grid-item-content">
         %11$s
         %2$s
-        %3$s
         %4$s
-        %5$s
+        <div class="date_time_container">
+          %3$s
+          %6$s
+          %5$s
+        </div>
       </div>
     </a>
   </li>
