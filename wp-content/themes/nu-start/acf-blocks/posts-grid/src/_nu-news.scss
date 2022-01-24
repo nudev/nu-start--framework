@@ -4,6 +4,13 @@
 
 .nu_posts-grid .nu__grid .grid-item.nu_news {
 
+
+	.is-the-publication-date {
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content: space-between;
+	}
+
 	// ? the date-time block is not loading this properly idk why
 	// todo: fix this so its DRY
 	.nu__datetime {

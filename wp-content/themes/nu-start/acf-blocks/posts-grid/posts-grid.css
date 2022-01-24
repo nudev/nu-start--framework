@@ -755,6 +755,11 @@ body.wp-admin .nu_posts-grid .grid-item a {
 /* 
 
 */
+.nu_posts-grid .nu__grid .grid-item.nu_news .is-the-publication-date {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}
 .nu_posts-grid .nu__grid .grid-item.nu_news .nu__datetime {
   display: flex;
   flex-flow: column nowrap;

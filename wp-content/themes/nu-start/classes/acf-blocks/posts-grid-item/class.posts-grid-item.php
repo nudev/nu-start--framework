@@ -31,6 +31,8 @@ class PostsGrid_Item
 		$post_type = $post->post_type;
 		$item_styles = !empty($gridOptions['item_style']) ? $gridOptions['item_style'] : '';
 
+		// * get the capitalcase post type name (label)
+		$post_type_label = !empty(get_post_type_object($post_type)->labels->singular_name) ? '<span class="is-post-type-label">'.get_post_type_object($post_type)->labels->singular_name.'</span>' : '';
 		// 
 		$orientationClass = !empty($item_styles['orientation']) ? ' has-layout-' . $item_styles['orientation'] : '';
 
@@ -62,6 +64,8 @@ class PostsGrid_Item
 
 		// the featured image in markup
 		$the_cover_image = !empty($item_styles['display_featured_image']) && has_post_thumbnail( ) ? '<figure>'.get_the_post_thumbnail( ).'</figure>' : '';
+
+		$the_title_attribute = ' title="Read More about '.get_the_title( ).'"';
 
 
 		$guides = [];

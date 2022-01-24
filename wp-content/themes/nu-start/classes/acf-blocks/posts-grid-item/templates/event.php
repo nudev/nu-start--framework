@@ -3,6 +3,7 @@
  *    Posts Grid Item --- Event Item Template Type A
  * 
  *    This template will render a single Event item into the Posts Grid.
+ *    - this is a "clickable area" template
  */
 // 
 
@@ -48,16 +49,18 @@ $return .= sprintf();
 
 
 
-
-
-
 // This template is loaded by the post grid
 
 $guides['grid-item-event'] = '
   <li class="grid-item%1$s%8$s%9$s">
     <a class="contains-clickable-area" href="%7$s" title="Read More about '.get_the_title( ).'" %10$s>
-      %2$s
-      <div class="grid-item-content">%3$s%4$s%5$s</div>
+      <div class="grid-item-content">
+        %11$s
+        %2$s
+        %3$s
+        %4$s
+        %5$s
+      </div>
     </a>
   </li>
 ';
@@ -73,7 +76,8 @@ $the_basic_excerpt,
 $determined_permalink,
 $aspect_ratio_class,
 $orientationClass,
-$maybe_target
+$maybe_target,
+$post_type_label
 );
 
 
