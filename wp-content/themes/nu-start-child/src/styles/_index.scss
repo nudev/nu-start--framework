@@ -4,23 +4,4 @@
 
 // ? @import "./files-to-import/here";
 
-// 
-
-%link_is_active {
-	span {
-		border-bottom: 2px solid var(--wp--preset--color--black-1);
-	}
-}
-
-body.page-id-350 {
-
-	.people-cat-1 {
-		@extend %link_is_active;
-	}
-}
-body.page-id-360 {
-	
-	.people-cat-2 {
-		@extend %link_is_active;
-	}
-}
+@import './src/hotfixing';
