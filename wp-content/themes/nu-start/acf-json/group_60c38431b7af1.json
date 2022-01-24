@@ -253,6 +253,26 @@
             "append": "",
             "maxlength": "",
             "acfe_field_group_condition": 0
+        },
+        {
+            "key": "field_61ef12cf856d1",
+            "label": "Hashtags",
+            "name": "hashtags",
+            "type": "text",
+            "instructions": "Hashtags should be one word. Separate hashtags by commas.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "acfe_field_group_condition": 0
         }
     ],
     "location": [
@@ -280,7 +300,7 @@
     "acfe_display_title": "",
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1642796158,
+    "modified": 1643057937,
     "acfe_categories": {
         "custom-post-metadata": "Custom Post Metadata"
     }

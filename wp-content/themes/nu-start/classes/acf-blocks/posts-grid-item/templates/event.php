@@ -31,7 +31,10 @@ extra data:
 */
 
 $event_location = !empty($fields['location']) ? '<p>'.$fields['location'].'</p>' : '';
+// if !empty($fields['hashtags']) {
 
+// }
+// $event_hashtags = !empty($fields['hashstags']) ? '<p>'.$fields['hashstags'].'</p>' : '';
 
 
 
