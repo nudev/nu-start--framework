@@ -30,7 +30,13 @@ class PostsGrid_Item
 		$fields = get_fields($post->ID);
 		$post_type = $post->post_type;
 		$item_styles = !empty($gridOptions['item_style']) ? $gridOptions['item_style'] : '';
+
+		// * get the capitalcase post type name (label)
+		$post_type_label = !empty(get_post_type_object($post_type)->labels->singular_name) ? '<span class="is-post-type-label has-14-20-font-size">'.get_post_type_object($post_type)->labels->singular_name.'</span>' : '';
+		// 
 		$orientationClass = !empty($item_styles['orientation']) ? ' has-layout-' . $item_styles['orientation'] : '';
+
+		// ! we need to actually do this
 		$aspect_ratio_class = '';
 
 		// call in the date-time block
@@ -45,7 +51,7 @@ class PostsGrid_Item
 		}
 
 		// ? the fully formatted post title markup
-		$the_post_title = '<h4 class="post-title"><span>'.get_the_title( ).'</span></h4>';
+		$the_post_title = '<p class="post-title has-24-32-font-size"><span>'.get_the_title( ).'</span></p>';
 
 		// ? either use a custom url redirect via a known custom field; or just the normal get_permalink
 		$determined_permalink = !empty($fields['custom_permalink_redirect']) ? $fields['custom_permalink_redirect'] : esc_url( get_the_permalink( ) );
@@ -57,7 +63,9 @@ class PostsGrid_Item
 		$the_basic_excerpt = has_excerpt() ? '<p class="post-excerpt">'.get_the_excerpt( ).'</p>' : '';
 
 		// the featured image in markup
-		$the_cover_image = has_post_thumbnail( ) ? '<figure>'.get_the_post_thumbnail( ).'</figure>' : '';
+		$the_cover_image = !empty($item_styles['display_featured_image']) && has_post_thumbnail( ) ? '<figure>'.get_the_post_thumbnail( ).'</figure>' : '';
+
+		$the_title_attribute = ' title="Read More about '.get_the_title( ).'"';
 
 
 		$guides = [];

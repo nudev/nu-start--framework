@@ -7,6 +7,35 @@
 	}
 }
 
+.wp-block-eedee-block-gutenslider.the-timeline-slider {
+	// handle adjustments to the arrows; they "wrap" the year
+	.eedee-gutenslider-nav {
+		transform: translateY(-50%);
+		&.eedee-gutenslider-prev {
+		}
+		&.eedee-gutenslider-next {
+			right: 0 !important;
+			left: auto !important;
+		}
+	}
+	// handle adjustments to the bullets - they become a timeline!
+	.eedee-gutenslider-pagination.swiper-pagination-bullets {
+		width: 100%;
+		border-bottom: 1px solid var(--wp--preset--color--white-2);
+		.swiper-pagination-bullet {
+			width: auto;
+			height: auto;
+			margin: 0 0 0 $base-margin;
+			background-color: transparent;
+			&:first-child {
+				margin: 0 0 0 0;
+			}
+			&.swiper-pagination-bullet-active {
+			}
+		}
+	}
+}
+
 // ! FIX ALL OF THIS WHAT IS THIS OMG
 
 .nu_section--similar-events {

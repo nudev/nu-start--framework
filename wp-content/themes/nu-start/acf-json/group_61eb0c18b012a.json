@@ -4,20 +4,12 @@
     "fields": [
         {
             "key": "field_61eb0c18b54fa",
-            "label": "Publication Date",
-            "name": "publication_date",
+            "label": "Publication Info",
+            "name": "publication_info",
             "type": "group",
             "instructions": "",
             "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_61eb0c18b54ed",
-                        "operator": "!=",
-                        "value": "1"
-                    }
-                ]
-            ],
+            "conditional_logic": 0,
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -30,8 +22,8 @@
             "sub_fields": [
                 {
                     "key": "field_61eb0c18b7f33",
-                    "label": "Happens On",
-                    "name": "happens_on",
+                    "label": "Date",
+                    "name": "date",
                     "type": "date_picker",
                     "instructions": "",
                     "required": 0,
@@ -41,7 +33,7 @@
                         "class": "",
                         "id": ""
                     },
-                    "display_format": "d\/m\/Y",
+                    "display_format": "M j, Y",
                     "return_format": "Ymd",
                     "first_day": 1,
                     "placeholder": "",
@@ -51,10 +43,10 @@
                     "acfe_field_group_condition": 0
                 },
                 {
-                    "key": "field_61eb0c18b7f4e",
-                    "label": "Starts At",
-                    "name": "starts_at",
-                    "type": "time_picker",
+                    "key": "field_61eecfa732e9b",
+                    "label": "Author",
+                    "name": "author",
+                    "type": "text",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -63,24 +55,18 @@
                         "class": "",
                         "id": ""
                     },
-                    "display_format": "g:i a",
-                    "return_format": "H:i:s",
+                    "default_value": "",
                     "placeholder": "",
-                    "min_time": "",
-                    "max_time": "",
-                    "min_hour": "",
-                    "max_hour": "",
-                    "min_min": "",
-                    "max_min": "",
-                    "min_sec": "",
-                    "max_sec": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": "",
                     "acfe_field_group_condition": 0
                 },
                 {
-                    "key": "field_61eb0c18b7f58",
-                    "label": "Ends At",
-                    "name": "ends_at",
-                    "type": "time_picker",
+                    "key": "field_61ef0bb8c7584",
+                    "label": "Publisher",
+                    "name": "publisher",
+                    "type": "text",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -89,17 +75,11 @@
                         "class": "",
                         "id": ""
                     },
-                    "display_format": "g:i a",
-                    "return_format": "H:i:s",
+                    "default_value": "",
                     "placeholder": "",
-                    "min_time": "",
-                    "max_time": "",
-                    "min_hour": "",
-                    "max_hour": "",
-                    "min_min": "",
-                    "max_min": "",
-                    "min_sec": "",
-                    "max_sec": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": "",
                     "acfe_field_group_condition": 0
                 }
             ]
@@ -130,8 +110,8 @@
     "acfe_display_title": "",
     "acfe_meta": "",
     "acfe_note": "",
+    "modified": 1643056070,
     "acfe_categories": {
         "custom-post-metadata": "Custom Post Metadata"
-    },
-    "modified": 1642794220
+    }
 }
