@@ -7,6 +7,183 @@
 	}
 }
 
+// adjust the animate.css utility classes to be twice as fast as they say
+:root {
+	--animate-duration: 0.5s;
+}
+
+// the wrapper is the scene
+.wp-block-group.nu__shim--avoid-instead-flip-cards {
+	perspective: 1000px;
+
+	// this is the card
+	> .wp-block-columns {
+		transform-style: preserve-3d;
+		transition: transform 0.3s ease;
+		display: block;
+
+		// this is a card face
+		> .wp-block-column {
+			// both sides
+			margin: 0;
+			width: 100%;
+			backface-visibility: hidden;
+			background-color: white;
+			padding: $margin_2x;
+			border: 1px solid var(--wp--preset--color--black-3);
+			display: flex;
+			flex-flow: column nowrap;
+			justify-content: center;
+
+			// the larger side
+			&:last-child {
+				transform: rotateX(180deg);
+				border-left: 4px solid var(--wp--preset--color--green-3);
+				@include nu_micon("\e5c8", before);
+				&:before {
+					position: absolute;
+					bottom: 0;
+					right: $half-margin;
+				}
+				&:after {
+					content: "Back";
+					text-transform: uppercase;
+					font-size: var(--wp--preset--font-size--12-16);
+					display: inline-block;
+					position: absolute;
+					right: $margin_3x;
+					bottom: $half-margin;
+				}
+			}
+
+			// the smaller side
+			&:first-child {
+				top: 0;
+				left: 0;
+				height: 100%;
+				width: 100%;
+				border-left: 4px solid var(--wp--preset--color--red-3);
+				@include nu_micon("\e5c8", before);
+				position: absolute;
+				&:before,
+				&:after {
+					position: absolute;
+					bottom: 0;
+					right: 0;
+				}
+				&:before {
+					width: $margin_2x;
+					height: $margin_2x;
+					background-color: var(--wp--preset--color--red-3);
+					color: white;
+				}
+				&:after {
+					content: "Do this instead";
+					text-transform: uppercase;
+					font-size: var(--wp--preset--font-size--12-16);
+					display: inline-block;
+					position: absolute;
+					right: $margin_3x;
+					bottom: $half-margin;
+				}
+			}
+		}
+	}
+	&:hover {
+		> .wp-block-columns {
+			transform: rotateX(180deg);
+		}
+	}
+}
+
+.wp-block-cover
+	.wp-block-cover__inner-container
+	> .is-brand-hero-content-wrapper {
+	.has-72-72-font-size {
+		line-height: 1;
+		margin: $margin_4x 0 $margin_3x 0;
+	}
+
+	@include media(">=medium") {
+		max-width: 720px;
+		// margin: 0 0 0 $margin_4x;
+		margin: $margin_8x 0 $margin_4x $margin_4x;
+	}
+}
+
+.wp-block-group {
+	&.is-brand-magazine-layout {
+		> .wp-block-columns {
+			&:not(:first-child) {
+				margin-top: $margin_8x;
+			}
+			> .wp-block-column {
+				@include media(">=medium") {
+					&:not(:first-child) {
+						margin-left: $margin_6x;
+					}
+				}
+			}
+		}
+	}
+
+	// full width columns
+	&.alignfull {
+		@include media(">=medium") {
+			.wp-block-column:first-child {
+				.is-editorial-content-wrapper {
+					margin-left: $margin_4x;
+				}
+			}
+			.wp-block-column:last-child {
+				.is-editorial-content-wrapper {
+					margin-right: $margin_4x;
+				}
+			}
+		}
+	}
+}
+.wp-block-columns.is-steps-one-two-three {
+	margin-top: $margin_4x;
+	p.has-48-48-font-size {
+		display: inline-block;
+		position: relative;
+		margin: 0 0 0 $margin_2x;
+		padding: $base-margin 0;
+		&:after {
+			content: "";
+			@include center_absolute();
+			border-radius: 50%;
+			border: 1px solid var(--wp--preset--color--black-3);
+			width: $margin_6x;
+			height: $margin_6x;
+		}
+	}
+}
+
+.nu__shim--cover-is-full-height {
+	min-height: calc(80vh - 92px) !important;
+}
+//
+.wp-block-group.nu__pattern--editorial-type-a {
+	margin-top: 0;
+
+	&.has-background {
+		padding: 0;
+		padding-top: $margin_8x;
+	}
+
+	> .wp-block-columns:not(:first-child) {
+		margin-top: $margin_8x;
+	}
+
+	.wp-block-image {
+		> figure {
+			margin: 0;
+		}
+	}
+}
+
 // ! FIX ALL OF THIS WHAT IS THIS OMG
 
 .nu_section--similar-events {

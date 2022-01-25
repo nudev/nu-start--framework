@@ -261,6 +261,15 @@ class SetupTheme
 		wp_enqueue_script('jquery', get_template_directory_uri().'/__precomp/vendor/js/jquery.min.js', array(), null, true);
 		// register fonts
 		wp_enqueue_style( 'nu-site-fonts', get_template_directory_uri() . '/__precomp/build/css/fonts.css', array(), filemtime( get_template_directory() . '/__precomp/build/css/fonts.css' ) );
+
+		
+		// register magnific popup
+		wp_enqueue_style(
+			'animate-css'
+			,"https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+		);
+
+
 		// register magnific popup
 		wp_register_style(
 			'magnific'
@@ -284,6 +293,8 @@ class SetupTheme
 			,array()
 			,filemtime(get_template_directory() . '/__precomp/build/css/main.css')
 		);
+
+
 
 
 		// enqueue the registered styles

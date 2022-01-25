@@ -127,6 +127,62 @@
   	 *   ... code in here will run after jQuery says document is ready
   	 */
   	$(function () {
+  		//
+  		let homepage_slider = {
+  			// variables
+
+  			// methods; starting with init
+  			_init: function () {
+  				let slider_instance = $(
+  					".wp-block-eedee-block-gutenslider.the-brand-homepage-slider"
+  				)[0].gutenslider.swiperInstance;
+  				slider_instance.allowTouchMove = false;
+
+  				homepage_slider._animate_css_handler(slider_instance);
+  			},
+  			//
+  			_animate_css_handler: function (slider_instance) {
+  				slider_instance.on("slideChange", function () {
+  					//
+  					let real_current_slide =
+  						slider_instance.slides[slider_instance.activeIndex];
+
+  					// DO STUFF NOW
+  					let general_anim_classes =
+  						"animate__slow animate__animated";
+
+  					var fadeUp = $(real_current_slide).find(
+  						".wp-block-column:first-child"
+  					);
+  					var fadeLeft = $(real_current_slide).find(
+  						".wp-block-column:last-child"
+  					);
+
+  					$(slider_instance.slides)
+  						.find(".wp-block-column:first-child")
+  						.removeClass(
+  							general_anim_classes + " animate__fadeInUp animate__delay-1s"
+  						);
+  					$(slider_instance.slides)
+  						.find(".wp-block-column:last-child")
+  						.removeClass(
+  							general_anim_classes + " animate__fadeInRight animate__delay-2s"
+  						);
+
+  					$(fadeUp).addClass(
+  						general_anim_classes + " animate__fadeInUp animate__delay-1s"
+  					);
+  					$(fadeLeft).addClass(
+  						general_anim_classes + " animate__fadeInRight animate__delay-2s"
+  					);
+  				});
+  			},
+  		};
+  		//
+  		homepage_slider._init();
+  		//
+  		//
+
   		let nav_block_customization = {
   			_init: function () {
   				$(".open-on-click.wp-block-navigation-submenu").on(

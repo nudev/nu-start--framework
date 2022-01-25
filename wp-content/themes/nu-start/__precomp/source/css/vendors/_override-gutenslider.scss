@@ -1,12 +1,10 @@
 .wp-block-eedee-block-gutenslider {
-
-	
 	&.alignfull {
 		&.content-change {
 			margin-top: 0;
 		}
 	}
-	
+
 	.eedee-swiper-outer {
 		.eedee-gutenslider-nav {
 			@extend %transition;
@@ -161,5 +159,49 @@
 				}
 			}
 		}
+	}
+}
+
+//
+//
+// ?		adjust the "full screen slider" settings for gutenslider --- must sit below the fixed header
+//
+//
+body main#main > .blocks--wrapper > .wp-block-eedee-block-gutenslider.is-full {
+	&.the-brand-homepage-slider {
+		height: calc(100vh - 124px) !important;
+		top: 124px !important;
+
+		.swiper-wrapper {
+			min-height: 100%;
+		}
+
+		.swiper-slide[aria-label="5 / 6"],
+		.swiper-slide[aria-label="4 / 6"],
+		.swiper-slide[aria-label="3 / 6"],
+		.swiper-slide[aria-label="2 / 6"] {
+			.eedee-background-div .eedee-background-div__overlay {
+				width: 50%;
+				left: 0;
+				right: auto;
+			}
+		}
+
+		.slide-content {
+			> .wp-block-columns {
+				width: 80%;
+			}
+		}
+
+		.eedee-gutenslider-nav {
+			
+			&.eedee-gutenslider-prev {
+				transform: rotate(90deg);
+			}
+			&.eedee-gutenslider-next {
+				transform: rotate(90deg) translate(110%,30px);
+			}
+		}
+		
 	}
 }

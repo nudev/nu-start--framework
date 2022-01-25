@@ -157,10 +157,10 @@
                 "nu_people",
                 "post",
                 "nu_events",
-                "nu_programs",
                 "page",
                 "nu_component-demos",
-                "nu_news"
+                "nu_news",
+                "nu_key-terms"
             ],
             "taxonomy": "",
             "filters": [
@@ -223,10 +223,8 @@
                         "nu_events",
                         "nu_people",
                         "nu_component-demos",
-                        "nu_initiatives",
-                        "nu_locations",
-                        "nu_programs",
-                        "nu_news"
+                        "nu_news",
+                        "nu_key-terms"
                     ],
                     "field_type": "select",
                     "max": "",
@@ -517,7 +515,7 @@
     "acfe_display_title": "",
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1642458411,
+    "modified": 1643045008,
     "acfe_categories": {
         "acf-block": "ACF Block"
     }
