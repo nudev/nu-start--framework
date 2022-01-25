@@ -12,6 +12,94 @@
 	--animate-duration: 0.5s;
 }
 
+.wp-block-nu-blocks-accordion
+	.wp-block-nu-blocks-accordion-item
+	.wp-block-nublocks-accordion-item__title {
+	background-color: transparent;
+	border: none 0;
+	border-bottom: 1px solid var(--wp--preset--color--black-3);
+	padding: $base-margin 0;
+	padding-right: $margin_4x;
+}
+.wp-block-nu-blocks-accordion
+	.wp-block-nu-blocks-accordion-item
+	details[open]
+	> .wp-block-nublocks-accordion-item__title {
+	background-color: transparent;
+}
+.wp-block-nu-blocks-accordion
+	.wp-block-nu-blocks-accordion-item
+	.wp-block-nublocks-accordion-item__content {
+	border: none 0;
+	padding: $margin_2x 0;
+}
+
+.wp-block-group.is-spillover-magazine-layout {
+	@include media(">=medium") {
+		margin-top: 0;
+
+		.wp-block-columns:not(:first-child) {
+			margin-top: $margin_8x;
+		}
+
+		.wp-block-columns > .wp-block-column {
+			height: min(75vh, 800px);
+			display: flex;
+			flex-flow: column nowrap;
+			justify-content: center;
+			align-items: center;
+		}
+		.wp-block-column:first-child .wp-block-image {
+			transform: translateX(33%);
+		}
+		.wp-block-column:not(:first-child) {
+			.wp-block-image {
+				transform: translateX(-33%);
+			}
+		}
+		.wp-block-image {
+			height: 80%;
+			img {
+				min-height: 100%;
+			}
+		}
+	}
+}
+
+.wp-block-group.has-linked-clickable-cards {
+	.wp-block-columns:not(.is-not-stacked-on-mobile) {
+		&:not(:first-child) {
+			margin-top: $margin_4x;
+		}
+		.wp-block-column {
+			&:not(:first-child) {
+				margin-left: $margin_4x;
+			}
+		}
+	}
+
+	.wp-block-column.ek-linked-block {
+		border-top: 1px solid var(--wp--preset--color--black-2);
+		padding: $margin_2x;
+		&:hover {
+			background-color: var(--wp--preset--color--black-2);
+			color: var(--wp--preset--color--white-1);
+		}
+
+		@include nu_micon("\e5c8", after);
+		&:after {
+			position: absolute;
+			bottom: 0;
+			right: 0;
+			background-color: var(--wp--preset--color--red-3);
+			color: var(--wp--preset--color--white-1);
+			text-align: center;
+			font-size: var(--wp--preset--font-size--16-24);
+			padding: $half-margin $base-margin;
+		}
+	}
+}
+
 // the wrapper is the scene
 .wp-block-group.nu__shim--avoid-instead-flip-cards {
 	perspective: 1000px;
