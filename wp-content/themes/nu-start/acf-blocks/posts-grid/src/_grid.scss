@@ -112,7 +112,7 @@ body.wp-admin {
 			width: 100%;
 		}
 		figure {
-			flex: 0 1 auto;
+			flex: none;
 		}
 		img {
 			@extend %transition;

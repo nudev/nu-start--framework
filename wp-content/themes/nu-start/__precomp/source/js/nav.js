@@ -23,7 +23,11 @@
 				);
 
 				//
-				$("header.header").on( "click", ".navicons", this._didClickNavIcons);
+				$("header.header").on(
+					"click",
+					".navicons",
+					this._didClickNavIcons
+				);
 
 				$(window).on("resize scroll", this._onResizeScroll);
 

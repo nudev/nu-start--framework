@@ -25,21 +25,7 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "nu_people"
-            }
-        ],
-        [
-            {
-                "param": "post_type",
-                "operator": "==",
-                "value": "nu_events"
-            }
-        ],
-        [
-            {
-                "param": "post_type",
-                "operator": "==",
-                "value": "nu_news"
+                "value": "all"
             }
         ]
     ],
@@ -51,6 +37,7 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
+    "show_in_rest": 0,
     "acfe_autosync": [
         "json"
     ],
@@ -58,7 +45,7 @@
     "acfe_display_title": "",
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1634325580,
+    "modified": 1643145131,
     "acfe_categories": {
         "custom-post-metadata": "Custom Post Metadata"
     }

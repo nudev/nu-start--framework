@@ -7,6 +7,13 @@
 	}
 }
 
+
+body.single-nu_partnerships {
+	.blocks--wrapper > .wp-block-group.alignfull:first-child {
+		margin-top: 0;
+	}
+}
+
 .wp-block-eedee-block-gutenslider.the-timeline-slider {
 	// handle adjustments to the arrows; they "wrap" the year
 	.eedee-gutenslider-nav {

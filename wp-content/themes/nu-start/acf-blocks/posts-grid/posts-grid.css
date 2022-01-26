@@ -242,7 +242,7 @@ body.wp-admin .nu_posts-grid .grid-item a {
   width: 100%;
 }
 .nu_posts-grid .grid-item figure {
-  flex: 0 1 auto;
+  flex: none;
 }
 .nu_posts-grid .grid-item-content {
   padding: 16px 32px;

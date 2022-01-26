@@ -9,7 +9,7 @@ header.header {
 		background: var(--wp--preset--color--white-2);
 		height: 30px;
 		top: 0;
-		left: 0;
+		left: -9999px;
 		padding: 8px;
 		position: absolute;
 		transform: translateY(-100%);
