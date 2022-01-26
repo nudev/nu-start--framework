@@ -1,0 +1,95 @@
+
+// the wrapper is the scene
+.wp-block-group.nu__shim--avoid-instead-flip-cards {
+	perspective: 1000px;
+	cursor: pointer;
+
+	// this is the card
+	> .wp-block-columns {
+		transform-style: preserve-3d;
+		transition: transform 0.3s ease;
+		display: block;
+
+		// this is a card face
+		> .wp-block-column {
+			// both sides
+			margin: 0;
+			width: 100%;
+			backface-visibility: hidden;
+			background-color: white;
+			padding: $margin_2x;
+			border: 1px solid var(--wp--preset--color--black-3);
+			display: flex;
+			flex-flow: column nowrap;
+			justify-content: center;
+
+			// the larger side
+			&:last-child {
+				transform: rotateX(180deg);
+				border-left: 4px solid var(--wp--preset--color--green-3);
+				@include nu_micon("\e5c8", before);
+				&:before {
+					position: absolute;
+					bottom: 0;
+					right: $half-margin;
+				}
+				&:after {
+					content: "Back";
+					text-transform: uppercase;
+					font-size: var(--wp--preset--font-size--12-16);
+					display: inline-block;
+					position: absolute;
+					right: $margin_3x;
+					bottom: $half-margin;
+				}
+			}
+
+			// the smaller side
+			&:first-child {
+				top: 0;
+				left: 0;
+				height: 100%;
+				width: 100%;
+				border-left: 4px solid var(--wp--preset--color--red-3);
+				@include nu_micon("\e5c8", before);
+				position: absolute;
+				&:before,
+				&:after {
+					position: absolute;
+					bottom: 0;
+					right: 0;
+				}
+				&:before {
+					width: $margin_2x;
+					height: $margin_2x;
+					background-color: var(--wp--preset--color--red-3);
+					color: white;
+				}
+				&:after {
+					content: "Do this instead";
+					text-transform: uppercase;
+					font-size: var(--wp--preset--font-size--12-16);
+					display: inline-block;
+					position: absolute;
+					right: $margin_3x;
+					bottom: $half-margin;
+				}
+			}
+		}
+	}
+	&.is-flipped{
+		> .wp-block-columns {
+			transform: rotateX(180deg);
+		}
+	}
+	&:hover {
+
+
+		// ? SOME OTHER BEHAVIOR
+		
+		
+		// > .wp-block-columns {
+		// 	transform: rotateX(180deg);
+		// }
+	}
+}

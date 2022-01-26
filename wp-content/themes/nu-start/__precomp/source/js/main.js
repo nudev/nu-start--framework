@@ -34,12 +34,38 @@ import "../../vendor/js/waapi-animate-details";
 	 *   ... code in here will run after jQuery says document is ready
 	 */
 	$(function () {
+
+
+		let flipCards = {
+
+			_init : function(){
+
+				let $elems = $('.wp-block-group.nu__shim--avoid-instead-flip-cards');
+
+				$elems.on('click', function(e){
+
+					$(this).toggleClass('is-flipped');
+
+				});
+				
+			}
+		}
+		flipCards._init();
+		
+		
+		
+		
+		
+		
 		//
 		let homepage_slider = {
 			// variables
 
 			// methods; starting with init
 			_init: function () {
+				if( !$(".wp-block-eedee-block-gutenslider.the-brand-homepage-slider").length ){
+					return;
+				}
 				let slider_instance = $(
 					".wp-block-eedee-block-gutenslider.the-brand-homepage-slider"
 				)[0].gutenslider.swiperInstance;

@@ -1,0 +1,21 @@
+.wp-block-nu-blocks-accordion
+	.wp-block-nu-blocks-accordion-item
+	.wp-block-nublocks-accordion-item__title {
+	background-color: transparent;
+	border: none 0;
+	border-bottom: 1px solid var(--wp--preset--color--black-3);
+	padding: $base-margin 0;
+	padding-right: $margin_4x;
+}
+.wp-block-nu-blocks-accordion
+	.wp-block-nu-blocks-accordion-item
+	details[open]
+	> .wp-block-nublocks-accordion-item__title {
+	background-color: transparent;
+}
+.wp-block-nu-blocks-accordion
+	.wp-block-nu-blocks-accordion-item
+	.wp-block-nublocks-accordion-item__content {
+	border: none 0;
+	padding: $margin_2x 0;
+}

@@ -45,6 +45,36 @@
       "pg" : 0,
       "sct" : 0
     },
+    "\/source\/css\/_overrides\/src\/brand-tweaks\/_accordion.scss" : {
+      "aP" : 1,
+      "bl" : 0,
+      "co" : 0,
+      "dP" : 10,
+      "ec" : 1,
+      "ft" : 4,
+      "ma" : 1,
+      "oA" : 1,
+      "oAP" : "\/build\/css\/_overrides\/src\/brand-tweaks\/_accordion.css",
+      "oF" : 0,
+      "oS" : 0,
+      "pg" : 0,
+      "sct" : 0
+    },
+    "\/source\/css\/_overrides\/src\/brand-tweaks\/_flip-cards.scss" : {
+      "aP" : 1,
+      "bl" : 0,
+      "co" : 0,
+      "dP" : 10,
+      "ec" : 1,
+      "ft" : 4,
+      "ma" : 1,
+      "oA" : 1,
+      "oAP" : "\/build\/css\/_overrides\/src\/brand-tweaks\/_flip-cards.css",
+      "oF" : 0,
+      "oS" : 0,
+      "pg" : 0,
+      "sct" : 0
+    },
     "\/source\/css\/admin.scss" : {
       "aP" : 1,
       "bl" : 0,
