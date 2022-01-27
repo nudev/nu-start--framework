@@ -127,36 +127,79 @@
   	 *   ... code in here will run after jQuery says document is ready
   	 */
   	$(function () {
+  		let htmlSVG_handler = {
+  			_init: function () {
+  				let $elems = $(".is-the-html-svg-color-toggle-feature");
+  				let $toggles = $elems.find(
+  					".is-html-svg-color-toggles .wp-block-button__link"
+  				);
 
+  				$toggles.each(function (index, element) {
+  					let $realColor = $(element).css("background-color");
+
+  					$(element).on("click", function (e) {
+  						$(element)
+  							.parent()
+  							.siblings()
+  							.removeClass("is-currently-active");
+  						$(element).parent().addClass("is-currently-active");
+
+  						// ? if button background is transparent (its an outline button and means white)
+  						if (
+  							$realColor == "rgba(0, 0, 0, 0)" ||
+  							$realColor == "rgb(255,255,255)"
+  						) {
+  							$realColor = "rgb(255,255,255)"; // change svg fill color to white instead of transparent
+  							$(
+  								".is-the-html-svg-color-toggle-feature .is-the-html-svg-wrapper"
+  							).css("background-color", "rgb(0,0,0)");
+  							// ? always fill the SVG with the real color
+  							$(
+  								".is-the-html-svg-color-toggle-feature .is-the-html-svg-wrapper svg"
+  							)
+  								.find("path")
+  								.css("fill", $realColor);
+  						} else {
+  							$(
+  								".is-the-html-svg-color-toggle-feature .is-the-html-svg-wrapper"
+  							).css("background-color", "rgb(255,255,255)");
+  							// ? always fill the SVG with the real color
+  							$(
+  								".is-the-html-svg-color-toggle-feature .is-the-html-svg-wrapper svg"
+  							)
+  								.find("path")
+  								.css("fill", $realColor);
+  						}
+  					});
+  				});
+  			},
+  		};
+  		htmlSVG_handler._init();
 
   		let flipCards = {
+  			_init: function () {
+  				let $elems = $(
+  					".wp-block-group.nu__shim--avoid-instead-flip-cards"
+  				);
 
-  			_init : function(){
-
-  				let $elems = $('.wp-block-group.nu__shim--avoid-instead-flip-cards');
-
-  				$elems.on('click', function(e){
-
-  					$(this).toggleClass('is-flipped');
-
+  				$elems.on("click", function (e) {
+  					$(this).toggleClass("is-flipped");
   				});
-  				
-  			}
+  			},
   		};
   		flipCards._init();
-  		
-  		
-  		
-  		
-  		
-  		
+
   		//
   		let homepage_slider = {
   			// variables
 
   			// methods; starting with init
   			_init: function () {
-  				if( !$(".wp-block-eedee-block-gutenslider.the-brand-homepage-slider").length ){
+  				if (
+  					!$(
+  						".wp-block-eedee-block-gutenslider.the-brand-homepage-slider"
+  					).length
+  				) {
   					return;
   				}
   				let slider_instance = $(
@@ -187,19 +230,23 @@
   					$(slider_instance.slides)
   						.find(".wp-block-column:first-child")
   						.removeClass(
-  							general_anim_classes + " animate__fadeInUp animate__delay-1s"
+  							general_anim_classes +
+  								" animate__fadeInUp animate__delay-1s"
   						);
   					$(slider_instance.slides)
   						.find(".wp-block-column:last-child")
   						.removeClass(
-  							general_anim_classes + " animate__fadeInRight animate__delay-2s"
+  							general_anim_classes +
+  								" animate__fadeInRight animate__delay-2s"
   						);
 
   					$(fadeUp).addClass(
-  						general_anim_classes + " animate__fadeInUp animate__delay-1s"
+  						general_anim_classes +
+  							" animate__fadeInUp animate__delay-1s"
   					);
   					$(fadeLeft).addClass(
-  						general_anim_classes + " animate__fadeInRight animate__delay-2s"
+  						general_anim_classes +
+  							" animate__fadeInRight animate__delay-2s"
   					);
   				});
   			},

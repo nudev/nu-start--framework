@@ -14,6 +14,7 @@
 
 @import './brand-tweaks/accordion';
 @import './brand-tweaks/flip-cards';
+@import './brand-tweaks/html-svgs';
 
 .wp-block-group.is-spillover-magazine-layout {
 	@include media(">=medium") {

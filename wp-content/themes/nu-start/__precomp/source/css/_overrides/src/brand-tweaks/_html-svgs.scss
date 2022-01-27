@@ -1,0 +1,35 @@
+/* 
+
+*/
+
+.is-the-html-svg-color-toggle-feature {
+	// ? the button block used as these color toggles (buttons have no link set)
+	.wp-block-buttons.is-html-svg-color-toggles {
+		.wp-block-button {
+			.wp-block-button__link {
+				border-radius: 50%;
+				width: $margin_2x;
+				height: $margin_2x;
+				padding: 0;
+			}
+			&.is-currently-active {
+				.wp-block-button__link {
+					@include nu__boxshadow(4);
+				}
+			}
+		}
+	}
+	.wp-block-group.is-the-html-svg-wrapper {
+		padding: $margin_4x;
+	}
+}
+
+// ? container for all the svg items associated with the previous sibling toggles
+.wp-block-group.is-the-html-svg-wrapper {
+	display: flex;
+	align-items: center;
+	svg {
+		max-width: 200px;
+		margin: 0 auto;
+	}
+}

@@ -45,7 +45,7 @@ body {
 			margin-top: 0;
 		}
 	}
-	> :last-child:not(.alignfull.has-background) {
+	> :last-child:not(.alignfull) {
 		margin-bottom: $margin_8x;
 	}
 
