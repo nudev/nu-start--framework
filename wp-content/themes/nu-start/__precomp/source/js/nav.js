@@ -45,8 +45,9 @@
 			},
 
 			_didClickParent: function (e) {
-				// stop the click from navigating (only toggles the menu open)
-				if (!$(e.target.offsetParent).hasClass("revealed")) {
+				// ? stop the click from navigating (only toggles the menu open) --- for mobile
+				// if (!$(e.target.offsetParent).hasClass("revealed")) {
+				if (!$(e.target.offsetParent).is(":focus")) {
 					e.preventDefault();
 				}
 

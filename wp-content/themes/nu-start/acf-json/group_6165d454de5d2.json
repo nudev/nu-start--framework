@@ -26,6 +26,21 @@
                 "param": "post_type",
                 "operator": "==",
                 "value": "all"
+            },
+            {
+                "param": "post_type",
+                "operator": "!=",
+                "value": "blockmeister_pattern"
+            },
+            {
+                "param": "post_type",
+                "operator": "!=",
+                "value": "page"
+            },
+            {
+                "param": "post_type",
+                "operator": "!=",
+                "value": "post"
             }
         ]
     ],
@@ -38,14 +53,14 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
+    "acfe_display_title": "",
     "acfe_autosync": [
         "json"
     ],
     "acfe_form": 0,
-    "acfe_display_title": "",
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1643145131,
+    "modified": 1643298573,
     "acfe_categories": {
         "custom-post-metadata": "Custom Post Metadata"
     }
