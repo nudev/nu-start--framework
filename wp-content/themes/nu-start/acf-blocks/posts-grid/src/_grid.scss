@@ -242,11 +242,12 @@ body.wp-admin {
 	}
 }
 
-@import "./nu-people";
-@import "./nu-events";
-@import "./nu-news";
-@import "./is-page";
-@import "./is-initiative";
+@import "./grid-item-template-styles/nu-people";
+@import "./grid-item-template-styles/nu-events";
+@import "./grid-item-template-styles/nu-news";
+@import "./grid-item-template-styles/is-page";
+@import "./grid-item-template-styles/is-initiative";
+@import "./grid-item-template-styles/is-project";
 
 li.grid-item.broken {
 	&:only-child {

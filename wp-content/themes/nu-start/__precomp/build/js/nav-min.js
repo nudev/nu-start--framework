@@ -46,8 +46,7 @@
 
 			_didClickParent: function (e) {
 				// ? stop the click from navigating (only toggles the menu open) --- for mobile
-				// if (!$(e.target.offsetParent).hasClass("revealed")) {
-				if (!$(e.target.offsetParent).is(":focus")) {
+				if ( window.innerWidth < 1025 && !$(e.target.offsetParent).hasClass("revealed")  ) {
 					e.preventDefault();
 				}
 
