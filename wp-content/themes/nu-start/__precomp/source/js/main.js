@@ -66,7 +66,10 @@ import "../../vendor/js/waapi-animate-details";
 							)
 								.find("path")
 								.css("fill", $realColor);
-						} else {
+						}
+
+						// ? if the button background is a color
+						else {
 							$(
 								".is-the-html-svg-color-toggle-feature .is-the-html-svg-wrapper"
 							).css("background-color", "rgb(255,255,255)");
@@ -76,6 +79,17 @@ import "../../vendor/js/waapi-animate-details";
 							)
 								.find("path")
 								.css("fill", $realColor);
+
+							if (
+								$realColor == "rgb(200, 16, 46)" ||
+								$realColor == "rgb(158, 129, 82)"
+							) {
+								$(
+									".is-the-html-svg-color-toggle-feature .is-the-html-svg-wrapper svg"
+								)
+									.find("path.words")
+									.css("fill", "rgb(0,0,0)");
+							}
 						}
 					});
 				});

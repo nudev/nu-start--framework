@@ -29,6 +29,7 @@
 	display: flex;
 	align-items: center;
 	svg {
+		padding: $half-margin;
 		max-width: 200px;
 		margin: 0 auto;
 	}
