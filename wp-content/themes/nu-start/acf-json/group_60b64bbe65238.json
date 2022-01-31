@@ -3,6 +3,28 @@
     "title": "Block: Posts Grid",
     "fields": [
         {
+            "key": "field_619428bffa941",
+            "label": "Core Attributes",
+            "name": "core_attributes",
+            "type": "clone",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "clone": [
+                "group_619428918bc0b"
+            ],
+            "display": "seamless",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 0,
+            "acfe_field_group_condition": 0
+        },
+        {
             "key": "field_60b64c1af5170",
             "label": "Options",
             "name": "options",
@@ -157,11 +179,10 @@
                 "nu_people",
                 "post",
                 "nu_events",
-                "page",
-                "nu_news",
-                "nu_projects",
                 "nu_programs",
-                "nu_profiles"
+                "page",
+                "nu_component-demos",
+                "nu_news"
             ],
             "taxonomy": "",
             "filters": [
@@ -173,9 +194,12 @@
             "min": "",
             "max": "",
             "return_format": "id",
+            "acfe_add_post": 0,
+            "acfe_edit_post": 0,
             "acfe_bidirectional": {
                 "acfe_bidirectional_enabled": "0"
-            }
+            },
+            "acfe_field_group_condition": 0
         },
         {
             "key": "field_60c257da7f635",
@@ -220,12 +244,14 @@
                         "post",
                         "nu_events",
                         "nu_people",
-                        "nu_news",
-                        "nu_projects",
+                        "nu_component-demos",
+                        "nu_initiatives",
+                        "nu_locations",
                         "nu_programs",
-                        "nu_profiles"
+                        "nu_news"
                     ],
                     "field_type": "select",
+                    "max": "",
                     "default_value": [],
                     "return_format": "name",
                     "allow_null": 0,
@@ -234,6 +260,7 @@
                     "ajax": 0,
                     "search_placeholder": "",
                     "allow_custom": 0,
+                    "acfe_field_group_condition": 0,
                     "choices": [],
                     "placeholder": "",
                     "layout": "",
@@ -505,14 +532,14 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "acfe_display_title": "",
     "acfe_autosync": [
         "json"
     ],
     "acfe_form": 0,
+    "acfe_display_title": "",
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1643298486,
+    "modified": 1637099736,
     "acfe_categories": {
         "acf-block": "ACF Block"
     }

@@ -13,7 +13,6 @@ $guides = [];
 // * header nav guide string
 $guides['nav-header'] = '
 	<header class="header">
-		<a id="skiptomaincontent" href="#main">Skip to content</a>
 		%4$s
 		<div class="container wide">
 			%1$s

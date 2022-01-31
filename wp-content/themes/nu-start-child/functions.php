@@ -11,7 +11,7 @@
 
 
 // Hook the enqueue functions into the frontend and editor
-// add_action( 'enqueue_block_assets', 'nu__enqueue_block_scripts' );
+add_action( 'enqueue_block_assets', 'nu__enqueue_block_scripts' );
 add_action( 'wp_enqueue_scripts', 'nu__enqueue_block_scripts' );
 
 // Hook the enqueue functions into the editor
@@ -42,7 +42,7 @@ function nu__enqueue_block_editor_scripts() {
     wp_enqueue_script(
         'nu-start-child-block-editor-scripts',
         get_stylesheet_directory_uri() . '/build/index.js',
-        [ 'wp-blocks', 'wp-i18n', 'wp-element', 'wp-components', 'wp-editor' ],
+        [ 'wp-blocks'],
         filemtime( get_stylesheet_directory() . '/build/index.js' )	
     );
 

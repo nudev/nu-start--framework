@@ -3,7 +3,24 @@
  *
  */
 //
+add_action('get_header', 'fix_adminbar');
 
+function fix_adminbar()
+{
+    if (is_admin_bar_showing()) {
+        remove_action('wp_head', '_admin_bar_bump_cb');
+        add_action(
+            'wp_head', function () {
+            ob_start();
+            _admin_bar_bump_cb();
+            $code = ob_get_clean();
+            $code = str_replace('margin', 'padding', $code);
+            $code = preg_replace('/{/', '{ box-sizing: border-box;', $code, 1);
+            echo $code;
+        }
+        );
+    }
+}
 
 
 /**

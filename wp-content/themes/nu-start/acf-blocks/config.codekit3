@@ -7,7 +7,7 @@
       "uuidString" : "9C01D8C0-547B-4B7A-98FB-E9779D0F4399"
     }
   ],
-  "creatorBuild" : "34335",
+  "creatorBuild" : "34214",
   "files" : {
     "\/breadcrumbs\/breadcrumbs.css" : {
       "aP" : 1,
@@ -203,6 +203,81 @@
       "pg" : 0,
       "sct" : 0
     },
+    "\/posts-grid\/src\/_is-initiative.scss" : {
+      "aP" : 0,
+      "bl" : 0,
+      "co" : 0,
+      "dP" : 10,
+      "ec" : 1,
+      "ft" : 4,
+      "ma" : 0,
+      "oA" : 1,
+      "oAP" : "\/posts-grid\/src\/_is-initiative.css",
+      "oF" : 0,
+      "oS" : 0,
+      "pg" : 0,
+      "sct" : 0
+    },
+    "\/posts-grid\/src\/_is-page.scss" : {
+      "aP" : 0,
+      "bl" : 0,
+      "co" : 0,
+      "dP" : 10,
+      "ec" : 1,
+      "ft" : 4,
+      "ma" : 0,
+      "oA" : 1,
+      "oAP" : "\/posts-grid\/src\/_is-page.css",
+      "oF" : 0,
+      "oS" : 0,
+      "pg" : 0,
+      "sct" : 0
+    },
+    "\/posts-grid\/src\/_nu-events.scss" : {
+      "aP" : 0,
+      "bl" : 0,
+      "co" : 0,
+      "dP" : 10,
+      "ec" : 1,
+      "ft" : 4,
+      "ma" : 0,
+      "oA" : 1,
+      "oAP" : "\/posts-grid\/src\/_nu-events.css",
+      "oF" : 0,
+      "oS" : 0,
+      "pg" : 0,
+      "sct" : 0
+    },
+    "\/posts-grid\/src\/_nu-news.scss" : {
+      "aP" : 0,
+      "bl" : 0,
+      "co" : 0,
+      "dP" : 10,
+      "ec" : 1,
+      "ft" : 4,
+      "ma" : 0,
+      "oA" : 1,
+      "oAP" : "\/posts-grid\/src\/_nu-news.css",
+      "oF" : 0,
+      "oS" : 0,
+      "pg" : 0,
+      "sct" : 0
+    },
+    "\/posts-grid\/src\/_nu-people.scss" : {
+      "aP" : 0,
+      "bl" : 0,
+      "co" : 0,
+      "dP" : 10,
+      "ec" : 1,
+      "ft" : 4,
+      "ma" : 0,
+      "oA" : 1,
+      "oAP" : "\/posts-grid\/src\/_nu-people.css",
+      "oF" : 0,
+      "oS" : 0,
+      "pg" : 0,
+      "sct" : 0
+    },
     "\/posts-grid\/src\/_pagination.scss" : {
       "aP" : 0,
       "bl" : 0,
@@ -213,111 +288,6 @@
       "ma" : 0,
       "oA" : 1,
       "oAP" : "\/posts-grid\/src\/_pagination.css",
-      "oF" : 0,
-      "oS" : 0,
-      "pg" : 0,
-      "sct" : 0
-    },
-    "\/posts-grid\/src\/grid-item-template-styles\/_is-initiative.scss" : {
-      "aP" : 0,
-      "bl" : 0,
-      "co" : 0,
-      "dP" : 10,
-      "ec" : 1,
-      "ft" : 4,
-      "ma" : 0,
-      "oA" : 1,
-      "oAP" : "\/posts-grid\/src\/grid-item-template-styles\/_is-initiative.css",
-      "oF" : 0,
-      "oS" : 0,
-      "pg" : 0,
-      "sct" : 0
-    },
-    "\/posts-grid\/src\/grid-item-template-styles\/_is-page.scss" : {
-      "aP" : 0,
-      "bl" : 0,
-      "co" : 0,
-      "dP" : 10,
-      "ec" : 1,
-      "ft" : 4,
-      "ma" : 0,
-      "oA" : 1,
-      "oAP" : "\/posts-grid\/src\/grid-item-template-styles\/_is-page.css",
-      "oF" : 0,
-      "oS" : 0,
-      "pg" : 0,
-      "sct" : 0
-    },
-    "\/posts-grid\/src\/grid-item-template-styles\/_is-profile.scss" : {
-      "aP" : 0,
-      "bl" : 0,
-      "co" : 0,
-      "dP" : 10,
-      "ec" : 1,
-      "ft" : 4,
-      "ma" : 0,
-      "oA" : 1,
-      "oAP" : "\/posts-grid\/src\/grid-item-template-styles\/_is-profile.css",
-      "oF" : 0,
-      "oS" : 0,
-      "pg" : 0,
-      "sct" : 0
-    },
-    "\/posts-grid\/src\/grid-item-template-styles\/_is-project.scss" : {
-      "aP" : 0,
-      "bl" : 0,
-      "co" : 0,
-      "dP" : 10,
-      "ec" : 1,
-      "ft" : 4,
-      "ma" : 0,
-      "oA" : 1,
-      "oAP" : "\/posts-grid\/src\/grid-item-template-styles\/_is-project.css",
-      "oF" : 0,
-      "oS" : 0,
-      "pg" : 0,
-      "sct" : 0
-    },
-    "\/posts-grid\/src\/grid-item-template-styles\/_nu-events.scss" : {
-      "aP" : 0,
-      "bl" : 0,
-      "co" : 0,
-      "dP" : 10,
-      "ec" : 1,
-      "ft" : 4,
-      "ma" : 0,
-      "oA" : 1,
-      "oAP" : "\/posts-grid\/src\/grid-item-template-styles\/_nu-events.css",
-      "oF" : 0,
-      "oS" : 0,
-      "pg" : 0,
-      "sct" : 0
-    },
-    "\/posts-grid\/src\/grid-item-template-styles\/_nu-news.scss" : {
-      "aP" : 0,
-      "bl" : 0,
-      "co" : 0,
-      "dP" : 10,
-      "ec" : 1,
-      "ft" : 4,
-      "ma" : 0,
-      "oA" : 1,
-      "oAP" : "\/posts-grid\/src\/grid-item-template-styles\/_nu-news.css",
-      "oF" : 0,
-      "oS" : 0,
-      "pg" : 0,
-      "sct" : 0
-    },
-    "\/posts-grid\/src\/grid-item-template-styles\/_nu-people.scss" : {
-      "aP" : 0,
-      "bl" : 0,
-      "co" : 0,
-      "dP" : 10,
-      "ec" : 1,
-      "ft" : 4,
-      "ma" : 0,
-      "oA" : 1,
-      "oAP" : "\/posts-grid\/src\/grid-item-template-styles\/_nu-people.css",
       "oF" : 0,
       "oS" : 0,
       "pg" : 0,
@@ -359,7 +329,7 @@
   },
   "projectAttributes" : {
     "creationDate" : 641409171.05603194,
-    "displayValue" : "NU-Start ACF Blocks (OHDSI)",
+    "displayValue" : "NU-Start ACF Blocks (AcademicPlan)",
     "displayValueWasSetByUser" : 1,
     "iconImageName" : "brackets_orange",
     "iconImageWasSetByUser" : 0
@@ -660,6 +630,144 @@
     "buildFolderActive" : 0,
     "buildFolderName" : "build",
     "cleanBuild" : 1,
+    "coffeeLintFlags2" : {
+      "arrow_spacing" : {
+        "active" : 0,
+        "flagValue" : -1
+      },
+      "camel_case_classes" : {
+        "active" : 1,
+        "flagValue" : -1
+      },
+      "colon_assignment_spacing" : {
+        "active" : 0,
+        "flagValue" : 1
+      },
+      "cyclomatic_complexity" : {
+        "active" : 0,
+        "flagValue" : 10
+      },
+      "duplicate_key" : {
+        "active" : 1,
+        "flagValue" : -1
+      },
+      "empty_constructor_needs_parens" : {
+        "active" : 0,
+        "flagValue" : -1
+      },
+      "ensure_comprehensions" : {
+        "active" : 1,
+        "flagValue" : -1
+      },
+      "indentation" : {
+        "active" : 1,
+        "flagValue" : 2
+      },
+      "line_endings" : {
+        "active" : 0,
+        "flagValue" : 0
+      },
+      "max_line_length" : {
+        "active" : 0,
+        "flagValue" : 150
+      },
+      "missing_fat_arrows" : {
+        "active" : 0,
+        "flagValue" : -1
+      },
+      "newlines_after_classes" : {
+        "active" : 0,
+        "flagValue" : 3
+      },
+      "no_backticks" : {
+        "active" : 1,
+        "flagValue" : -1
+      },
+      "no_debugger" : {
+        "active" : 1,
+        "flagValue" : -1
+      },
+      "no_empty_functions" : {
+        "active" : 0,
+        "flagValue" : -1
+      },
+      "no_empty_param_list" : {
+        "active" : 0,
+        "flagValue" : -1
+      },
+      "no_implicit_braces" : {
+        "active" : 1,
+        "flagValue" : -1
+      },
+      "no_implicit_parens" : {
+        "active" : 0,
+        "flagValue" : -1
+      },
+      "no_interpolation_in_single_quotes" : {
+        "active" : 0,
+        "flagValue" : -1
+      },
+      "no_nested_string_interpolation" : {
+        "active" : 1,
+        "flagValue" : -1
+      },
+      "no_plusplus" : {
+        "active" : 0,
+        "flagValue" : -1
+      },
+      "no_private_function_fat_arrows" : {
+        "active" : 1,
+        "flagValue" : -1
+      },
+      "no_stand_alone_at" : {
+        "active" : 1,
+        "flagValue" : -1
+      },
+      "no_tabs" : {
+        "active" : 1,
+        "flagValue" : -1
+      },
+      "no_this" : {
+        "active" : 0,
+        "flagValue" : -1
+      },
+      "no_throwing_strings" : {
+        "active" : 1,
+        "flagValue" : -1
+      },
+      "no_trailing_semicolons" : {
+        "active" : 1,
+        "flagValue" : -1
+      },
+      "no_trailing_whitespace" : {
+        "active" : 1,
+        "flagValue" : -1
+      },
+      "no_unnecessary_double_quotes" : {
+        "active" : 0,
+        "flagValue" : -1
+      },
+      "no_unnecessary_fat_arrows" : {
+        "active" : 1,
+        "flagValue" : -1
+      },
+      "non_empty_constructor_needs_parens" : {
+        "active" : 0,
+        "flagValue" : -1
+      },
+      "prefer_english_operator" : {
+        "active" : 0,
+        "flagValue" : -1
+      },
+      "space_operators" : {
+        "active" : 0,
+        "flagValue" : -1
+      },
+      "spacing_after_comma" : {
+        "active" : 1,
+        "flagValue" : -1
+      }
+    },
     "cssoForceMediaMerge" : 0,
     "cssoRestructure" : 1,
     "environmentVariableEntries" : [
@@ -1372,9 +1480,6 @@
       "no-unused-labels" : {
         "active" : 1
       },
-      "no-unused-private-class-members" : {
-        "active" : 0
-      },
       "no-unused-vars" : {
         "active" : 0,
         "optionString" : "{'vars': 'all', 'args': 'after-used', 'caughtErrors': 'none', 'ignoreRestSiblings': false}"
@@ -1493,9 +1598,6 @@
       "prefer-numeric-literals" : {
         "active" : 0
       },
-      "prefer-object-has-own" : {
-        "active" : 0
-      },
       "prefer-object-spread" : {
         "active" : 0
       },
@@ -1528,8 +1630,7 @@
         "optionString" : "'always'"
       },
       "require-atomic-updates" : {
-        "active" : 0,
-        "optionString" : "{'allowProperties': false}"
+        "active" : 0
       },
       "require-await" : {
         "active" : 0
@@ -1665,6 +1766,7 @@
       "minifierStyle" : 0,
       "outputStyle" : 0,
       "sourceMapStyle" : 0,
+      "syntaxCheckerStyle" : 1,
       "transpilerStyle" : 1
     },
     "languageDefaultsCSS" : {

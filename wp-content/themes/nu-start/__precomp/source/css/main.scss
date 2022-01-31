@@ -7,8 +7,11 @@
 // include rfs and other library stuff
 @import './library';
 
+// include core styles for both front and back ends (DRY)
+@import './partials/core/';
+
 // include frontend only styles
-@import './frontend';
+@import './partials/frontend-only/';
 
 // include styles for blocks
 @import './gutenberg';

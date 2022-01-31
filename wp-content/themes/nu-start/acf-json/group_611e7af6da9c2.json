@@ -40,7 +40,7 @@
             "placeholder": "",
             "maxlength": "",
             "rows": "",
-            "new_lines": "br",
+            "new_lines": "",
             "acfe_textarea_code": 0,
             "acfe_field_group_condition": 0
         },
@@ -101,7 +101,6 @@
     "hide_on_screen": "",
     "active": true,
     "description": "adds data points to the person custom post type",
-    "show_in_rest": 0,
     "acfe_autosync": [
         "json"
     ],
@@ -109,7 +108,7 @@
     "acfe_display_title": "",
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1642794795,
+    "modified": 1633630691,
     "acfe_categories": {
         "custom-post-metadata": "Custom Post Metadata"
     }

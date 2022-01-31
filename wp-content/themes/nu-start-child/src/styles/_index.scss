@@ -1,7 +1,60 @@
-// 
-// 
-// 
+//
+//
+//
 
 // ? @import "./files-to-import/here";
+//
+// @import './inc/tweak-gutenslider';
 
-@import './src/hotfixing';
+@import "./gutenslider-overrides/is-naturally-fullscreen";
+@import "./vendor/mc-custom-scrollbar";
+
+.wp-block-eedee-block-gutenslider {
+  .mCustomScrollBox .mCSB_container {
+    margin: 0;
+    margin-right: 0px;
+    padding-right: $margin_4x;
+    @include media("<=medium") {
+      padding-right: $margin_2x;
+    }
+  }
+
+  @import "./gutenslider-overrides/nav-controls";
+  @import "./gutenslider-overrides/misc-elements";
+
+  &.shim-fullscreen-slider {
+    overflow: hidden;
+
+    .eedee-swiper-outer {
+      @include media(">medium") {
+        height: calc(100vh - 48px - 120px);
+      }
+    }
+
+    .wp-block-eedee-block-gutenslide {
+      overflow: hidden;
+    }
+
+    .swiper-wrapper {
+      min-height: 0px !important;
+    }
+  }
+}
+
+body.admin-bar {
+  .wp-block-eedee-block-gutenslider {
+    &.shim-fullscreen-slider {
+      .eedee-swiper-outer {
+        @include media(">medium") {
+          height: calc(100vh - 81px - 120px);
+        }
+      }
+    }
+  }
+}
+
+// override last block pushes down footer
+.blocks--wrapper
+  > .wp-block-eedee-block-gutenslider:last-child:not(.alignfull.has-background) {
+  margin-bottom: 0;
+}

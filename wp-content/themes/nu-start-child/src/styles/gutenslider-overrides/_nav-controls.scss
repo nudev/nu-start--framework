@@ -1,0 +1,48 @@
+.eedee-gutenslider-nav.eedee-gutenslider-prev,
+.eedee-gutenslider-nav.eedee-gutenslider-next {
+  @include rfs(14px);
+  @include rfs(20px, line-height);
+  @extend %transition;
+  z-index: 2;
+  border-radius: 0px;
+  width: auto;
+  height: auto;
+  white-space: nowrap;
+  padding: $half-margin $base-margin;
+  top: 95% !important;
+  min-width: 100px;
+  opacity: 0.8;
+  color: var(--wp--preset--color--black-3) !important;
+  background-color: var(--wp--preset--color--white-1) !important;
+  border: 1px solid var(--wp--preset--color--white-1) !important;
+  &:hover,
+  &:focus {
+    opacity: 1;
+    background-color: var(--wp--preset--color--white-1) !important;
+    color: var(--wp--preset--color--black-1) !important;
+  }
+  &::before {
+    content: "\e5c8" !important;
+    font-size: 20px !important;
+    color: inherit !important;
+  }
+  &.eedee-gutenslider-prev {
+    &::before {
+      content: "\e5c4" !important;
+      margin: 0 $half-margin 0 0;
+    }
+  }
+  &.eedee-gutenslider-next {
+    direction: rtl;
+    &::before {
+      margin: 0 0 0 $half-margin;
+    }
+  }
+  &.swiper-button-disabled {
+    opacity: 0;
+  }
+  // under 1024
+  @include media("<=medium") {
+    position: fixed !important;
+  }
+}

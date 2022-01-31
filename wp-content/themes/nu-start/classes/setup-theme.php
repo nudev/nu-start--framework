@@ -216,6 +216,16 @@ class SetupTheme
 			,true
 		);
 
+		// register malihu scrollbar scripts
+		wp_register_script(
+			'mscrollbar'
+			, get_template_directory_uri() . '/__precomp/vendor/js/jquery.mCustomScrollbar.concat.min.js'
+			,array()
+			,false
+			,true
+		);
+
+		wp_enqueue_script( 'mscrollbar' );
 		wp_enqueue_script( 'select2' );
 		wp_enqueue_script( 'magnific' );
 		wp_enqueue_script( 'nav' );
@@ -266,6 +276,14 @@ class SetupTheme
 			'magnific'
 			, get_template_directory_uri() . '/__precomp/vendor/css/magnific-popup.css'
 		);
+
+
+		// register select2 (core styles)
+		wp_register_style(
+			'mscrollbar'
+			, get_template_directory_uri() . '/__precomp/vendor/css/jquery.mCustomScrollbar.min.css'
+		);
+
 		// register select2 (core styles)
 		wp_register_style(
 			'select2'
@@ -287,6 +305,7 @@ class SetupTheme
 
 
 		// enqueue the registered styles
+		wp_enqueue_style( 'mscrollbar' );
 		wp_enqueue_style( 'magnific' );
 		wp_enqueue_style( 'select2' );
 		wp_enqueue_style( 'select2-theme' );

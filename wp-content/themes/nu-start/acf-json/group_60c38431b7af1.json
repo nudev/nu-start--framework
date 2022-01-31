@@ -1,6 +1,6 @@
 {
     "key": "group_60c38431b7af1",
-    "title": "Events Item: Custom Metadata",
+    "title": "Event Date and Time",
     "fields": [
         {
             "key": "field_611aa713193d1",
@@ -233,46 +233,6 @@
                     "acfe_field_group_condition": 0
                 }
             ]
-        },
-        {
-            "key": "field_61eb14511565e",
-            "label": "Location",
-            "name": "location",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": "",
-            "acfe_field_group_condition": 0
-        },
-        {
-            "key": "field_61ef12cf856d1",
-            "label": "Hashtags",
-            "name": "hashtags",
-            "type": "text",
-            "instructions": "Hashtags should be one word. Separate hashtags by commas.",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": "",
-            "acfe_field_group_condition": 0
         }
     ],
     "location": [
@@ -281,6 +241,13 @@
                 "param": "post_type",
                 "operator": "==",
                 "value": "nu_events"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "nu_news"
             }
         ]
     ],
@@ -292,7 +259,6 @@
     "hide_on_screen": "",
     "active": true,
     "description": "- just scaffolding",
-    "show_in_rest": 0,
     "acfe_autosync": [
         "json"
     ],
@@ -300,7 +266,7 @@
     "acfe_display_title": "",
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1643057937,
+    "modified": 1634074669,
     "acfe_categories": {
         "custom-post-metadata": "Custom Post Metadata"
     }
