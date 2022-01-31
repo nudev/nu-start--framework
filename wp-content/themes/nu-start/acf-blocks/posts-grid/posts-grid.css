@@ -975,13 +975,16 @@ body.wp-admin .nu_posts-grid .grid-item a {
 @media (min-width: 1024px) {
   .nu_posts-grid .nu_profiles.grid-item.has-layout-horizontal > .contains-clickable-area > figure,
 .nu_posts-grid .nu_profiles.grid-item.has-layout-horizontal > figure {
-    flex: 1 0 66%;
-    max-width: none;
+    flex: 1 1 50%;
+    max-width: 50%;
     max-height: 320px;
     order: 2;
   }
   .nu_posts-grid .nu_profiles.grid-item.has-layout-horizontal > .contains-clickable-area .grid-item-content,
 .nu_posts-grid .nu_profiles.grid-item.has-layout-horizontal .grid-item-content {
+    flex: 1 1 50%;
+    max-width: 50%;
+    padding: 32px !important;
     justify-content: center;
   }
 }

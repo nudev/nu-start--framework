@@ -4,12 +4,15 @@
 .nu_posts-grid .nu_profiles.grid-item.has-layout-horizontal {
 	@include media(">=medium") {
 		> figure {
-			flex: 1 0 66%;
-			max-width: none;
+			flex: 1 1 50%;
+			max-width: 50%;
 			max-height: 320px;
 			order: 2;
 		}
 		.grid-item-content {
+			flex: 1 1 50%;
+			max-width: 50%;
+			padding: $margin_2x !important;
 			justify-content: center;
 		}
 	}

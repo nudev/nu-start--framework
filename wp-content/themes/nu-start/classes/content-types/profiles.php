@@ -27,6 +27,20 @@ NU__ContentTypes::_register_custom_taxonomy(
 	$singular = 'Profile Tag',
 	$hierarchical = false
 );
+NU__ContentTypes::_register_custom_taxonomy(
+	$literal = 'profiles-research-center',
+	$post_type = 'profiles',
+	$name = 'Profiles Research Center',
+	$singular = 'Profile Research Center',
+	$hierarchical = false
+);
+NU__ContentTypes::_register_custom_taxonomy(
+	$literal = 'profiles-academic-title',
+	$post_type = 'profiles',
+	$name = 'Profiles Academic Titles',
+	$singular = 'Profile Academic Title',
+	$hierarchical = false
+);
 
 
 ?>
