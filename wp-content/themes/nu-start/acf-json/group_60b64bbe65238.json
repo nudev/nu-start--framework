@@ -157,10 +157,11 @@
                 "nu_people",
                 "post",
                 "nu_events",
-                "nu_programs",
                 "page",
-                "nu_component-demos",
-                "nu_news"
+                "nu_news",
+                "nu_projects",
+                "nu_programs",
+                "nu_profiles"
             ],
             "taxonomy": "",
             "filters": [
@@ -172,12 +173,9 @@
             "min": "",
             "max": "",
             "return_format": "id",
-            "acfe_add_post": 0,
-            "acfe_edit_post": 0,
             "acfe_bidirectional": {
                 "acfe_bidirectional_enabled": "0"
-            },
-            "acfe_field_group_condition": 0
+            }
         },
         {
             "key": "field_60c257da7f635",
@@ -222,14 +220,12 @@
                         "post",
                         "nu_events",
                         "nu_people",
-                        "nu_component-demos",
-                        "nu_initiatives",
-                        "nu_locations",
+                        "nu_news",
+                        "nu_projects",
                         "nu_programs",
-                        "nu_news"
+                        "nu_profiles"
                     ],
                     "field_type": "select",
-                    "max": "",
                     "default_value": [],
                     "return_format": "name",
                     "allow_null": 0,
@@ -238,7 +234,6 @@
                     "ajax": 0,
                     "search_placeholder": "",
                     "allow_custom": 0,
-                    "acfe_field_group_condition": 0,
                     "choices": [],
                     "placeholder": "",
                     "layout": "",
@@ -510,14 +505,14 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
+    "acfe_display_title": "",
     "acfe_autosync": [
         "json"
     ],
     "acfe_form": 0,
-    "acfe_display_title": "",
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1642458411,
+    "modified": 1643298486,
     "acfe_categories": {
         "acf-block": "ACF Block"
     }

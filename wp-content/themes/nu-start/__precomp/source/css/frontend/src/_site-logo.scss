@@ -16,14 +16,11 @@ footer {
 			display: block;
             max-width: 300px;
 			width: 100%;
-            img {
-                display: block;
-                max-height: 100%;
-            }
+            img,
 			svg {
 				display: block;
 				min-height: 100%;
-				
+                max-width: 220px;
 			}
         }
         &.logo--text {

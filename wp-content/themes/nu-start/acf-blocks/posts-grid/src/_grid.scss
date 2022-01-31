@@ -112,7 +112,7 @@ body.wp-admin {
 			width: 100%;
 		}
 		figure {
-			flex: 1 0 auto;
+			flex: none;
 		}
 		img {
 			@extend %transition;
@@ -242,11 +242,13 @@ body.wp-admin {
 	}
 }
 
-@import "./nu-people";
-@import "./nu-events";
-@import "./nu-news";
-@import "./is-page";
-@import "./is-initiative";
+@import "./grid-item-template-styles/nu-people";
+@import "./grid-item-template-styles/nu-events";
+@import "./grid-item-template-styles/nu-news";
+@import "./grid-item-template-styles/is-page";
+@import "./grid-item-template-styles/is-initiative";
+@import "./grid-item-template-styles/is-project";
+@import "./grid-item-template-styles/is-profile";
 
 li.grid-item.broken {
 	&:only-child {

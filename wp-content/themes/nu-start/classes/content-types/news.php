@@ -26,13 +26,6 @@ NU__ContentTypes::_register_custom_taxonomy(
 	$singular = 'News Tag',
 	$hierarchical = false
 );
-NU__ContentTypes::_register_custom_taxonomy(
-	$literal = 'news-type',
-	$post_type = 'news',
-	$name = 'News Types',
-	$singular = 'News Type',
-	$hierarchical = false
-);
 
 
 $reusableHero = new  WP_Query([

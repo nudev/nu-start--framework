@@ -3,20 +3,30 @@
 */
 
 .nu_posts-grid .nu__grid .grid-item.nu_news {
-
+	
+	.is-the-publication-date {
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content: space-between;
+	}
+	
 	// ? the date-time block is not loading this properly idk why
 	// todo: fix this so its DRY
 	.nu__datetime {
 		@include nu__date_time_block_styles();
 	}
-
+	
 	// ? handle interaction with zooming image and underlining title
-	> a {
+	> a.contains-clickable-area {
+		background-color: var(--wp--preset--color--white-2); 
 		border: none 0;
 		display: flex;
-		.post-title span {
-			border-bottom: 2px solid transparent;
-		}
+		.post-title {
+			margin-top: $base-margin; 
+			span {
+				border-bottom: 2px solid transparent;
+			}
+		} 
 		&:hover,
 		&:focus {
 			border: none 0;
@@ -32,6 +42,15 @@
 	.grid-item-content {
 		padding: $base-margin;
 		padding: $margin_2x;
+		justify-content: center;
+
+		.is-the-publication-date {
+			justify-content: flex-end; 
+		}
+
+		.is-the-publication-publisher {
+			font-style: italic; 
+		}
 		> :first-child {
 			margin-top: 0;
 		}
