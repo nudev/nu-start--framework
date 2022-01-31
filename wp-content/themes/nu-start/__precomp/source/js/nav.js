@@ -46,7 +46,10 @@
 
 			_didClickParent: function (e) {
 				// ? stop the click from navigating (only toggles the menu open) --- for mobile
-				if ( window.innerWidth < 1025 && !$(e.target.offsetParent).hasClass("revealed")  ) {
+				if (
+					window.innerWidth < 1025 &&
+					!$(e.target.offsetParent).hasClass("revealed")
+				) {
 					e.preventDefault();
 				}
 
