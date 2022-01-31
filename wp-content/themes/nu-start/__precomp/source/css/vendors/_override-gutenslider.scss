@@ -87,6 +87,11 @@
 			&:focus {
 				background-color: var(--wp--preset--color--white-2) !important;
 			}
+			&.eedee-gutenslider-next,
+			&.eedee-gutenslider-prev{
+				top: calc(100% - 64px) !important;
+				transform: translateY(-100%) !important;
+			}
 		}
 
 		> .eedee-swiper-outer {
@@ -155,5 +160,14 @@
 				}
 			}
 		}
+	}
+}
+
+html body {
+
+	.wp-block-eedee-block-gutenslider.arrow-position-sides .eedee-gutenslider-prev,
+	.wp-block-eedee-block-gutenslider.arrow-position-sides .eedee-gutenslider-next {
+		top: calc(100% - $margin_4x) !important;
+		transform: translateY(-100%) !important;
 	}
 }

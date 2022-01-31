@@ -1,7 +1,7 @@
 (function (factory) {
   typeof define === 'function' && define.amd ? define(factory) :
   factory();
-}((function () { 'use strict';
+})((function () { 'use strict';
 
   class Accordion {
     constructor(el) {
@@ -130,7 +130,6 @@
   	 *   ... code in here will run after jQuery says document is ready
   	 */
   	$(function () {
-
   		let custom_scrollbars_handler = {
   			_init: function () {
   				if (window.innerWidth < 960) {
@@ -225,7 +224,6 @@
   						};
   					}
 
-
   					custom_scrollbars_handler._build_new_instance(
   						element,
   						mcs_theme,
@@ -242,12 +240,11 @@
   					".fixed-height-scrolling-content-area"
   				);
 
-  				$(scrolling_area).each(function(index, element){
-
-  					if( $(element).is('.academic-plan-timeline-table') ){
-  						mcs_theme = 'dark-thin';
+  				$(scrolling_area).each(function (index, element) {
+  					if ($(element).is(".academic-plan-timeline-table")) {
+  						mcs_theme = "dark-thin";
   					}
-  					
+
   					$(element).mCustomScrollbar({
   						theme: mcs_theme,
   						axis: "y",
@@ -311,6 +308,15 @@
   			_init: function () {
   				let slider_instance = $(".wp-block-eedee-block-gutenslider")[0]
   					.gutenslider.swiperInstance;
+
+  				let video = $(".wp-block-video video");
+  				let video_copy_overlay = $(
+  					".page-title-is-hidden-while-playing"
+  				);
+
+  				video.on("play pause", function (e) {
+  					$(video_copy_overlay).fadeToggle();
+  				});
 
   				slider_instance.allowTouchMove = false;
 
@@ -489,5 +495,5 @@
   	});
   })(window.jQuery, window);
 
-})));
+}));
 //# sourceMappingURL=main-min.js.map

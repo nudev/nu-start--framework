@@ -7,18 +7,14 @@
 	}
 }
 
-
 .page-title-is-hidden-while-playing {
 	position: absolute;
 	top: 50%;
-	right: 5%;
+	right: 10%;
 	transform: translate(0, -50%);
-	// padding: $margin_2x !important;
-	// background-color: rgba(0,0,0,0.75) !important;
-	// border-radius: 2rem;
 	color: white;
 	z-index: 1;
-	max-width: 500px !important;
+	max-width: 640px !important;
 }
 
 .nu_section--similar-events {
@@ -150,5 +146,3 @@ figure.wp-block-embed {
 		}
 	}
 }
-
-

@@ -1426,6 +1426,17 @@
       "pg" : 0,
       "sct" : 0
     },
+    "\/source\/js\/_academic-plan.js" : {
+      "bF" : 0,
+      "ft" : 64,
+      "ma" : 0,
+      "mi" : 1,
+      "oA" : 1,
+      "oAP" : "\/build\/js\/_academic-plan-min.js",
+      "oF" : 0,
+      "sC" : 3,
+      "tS" : 0
+    },
     "\/source\/js\/admin.js" : {
       "bF" : 0,
       "ft" : 64,
