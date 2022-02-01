@@ -97,12 +97,6 @@ body.single-nu_news {
 .wp-block-nu-blocks-accordion-item {
 	.wp-block-nublocks-accordion-item__content {
 		@extend %transition;
-		// opacity: 1;
-		&:not(.revealed) {
-			// opacity: 0;
-			// height: 0;
-			// @include displayedInvisible;
-		}
 	}
 }
 

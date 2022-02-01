@@ -23,7 +23,11 @@
 				);
 
 				//
-				$("header.header").on( "click", ".navicons", this._didClickNavIcons);
+				$("header.header").on(
+					"click",
+					".navicons",
+					this._didClickNavIcons
+				);
 
 				$(window).on("resize scroll", this._onResizeScroll);
 
@@ -41,8 +45,11 @@
 			},
 
 			_didClickParent: function (e) {
-				// stop the click from navigating (only toggles the menu open)
-				if (!$(e.target.offsetParent).hasClass("revealed")) {
+				// ? stop the click from navigating (only toggles the menu open) --- for mobile
+				if (
+					window.innerWidth < 1025 &&
+					!$(e.target.offsetParent).hasClass("revealed")
+				) {
 					e.preventDefault();
 				}
 

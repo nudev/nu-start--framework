@@ -3,11 +3,11 @@
     "title": "Appearance Settings",
     "fields": [
         {
-            "key": "field_60a6a0d734ae2",
-            "label": "Color Palette",
-            "name": "color_palette",
-            "type": "select",
-            "instructions": "Select which color option you would like your site to use: Dark (default) or light. This will change the colors of the site header and site footer.",
+            "key": "field_61f1b2bb46b70",
+            "label": "Appearance Settings",
+            "name": "appearance_settings",
+            "type": "group",
+            "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -15,21 +15,40 @@
                 "class": "",
                 "id": ""
             },
-            "choices": {
-                "light": "Light (Default)",
-                "dark": "Dark"
-            },
-            "default_value": false,
-            "allow_null": 0,
-            "multiple": 0,
-            "max": "",
-            "ui": 1,
-            "ajax": 0,
-            "return_format": "value",
-            "allow_custom": 0,
-            "search_placeholder": "Select color option...",
-            "acfe_field_group_condition": 0,
-            "placeholder": ""
+            "layout": "block",
+            "acfe_seamless_style": 0,
+            "acfe_group_modal": 0,
+            "sub_fields": [
+                {
+                    "key": "field_60a6a0d734ae2",
+                    "label": "Color Palette",
+                    "name": "color_palette",
+                    "type": "select",
+                    "instructions": "Select which color option you would like your site to use: Dark (default) or light. This will change the colors of the site header and site footer.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "light": "Light (Default)",
+                        "dark": "Dark"
+                    },
+                    "default_value": false,
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "max": "",
+                    "ui": 1,
+                    "ajax": 0,
+                    "return_format": "value",
+                    "allow_custom": 0,
+                    "search_placeholder": "Select color option...",
+                    "acfe_field_group_condition": 0,
+                    "placeholder": ""
+                }
+            ]
         }
     ],
     "location": [
@@ -49,15 +68,16 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
+    "show_in_rest": 0,
+    "acfe_display_title": "",
     "acfe_autosync": [
         "json"
     ],
     "acfe_form": 0,
-    "acfe_display_title": "",
     "acfe_meta": "",
     "acfe_note": "",
+    "modified": 1643229904,
     "acfe_categories": {
         "theme-settings-v1": "Theme Settings - V1"
-    },
-    "modified": 1630613089
+    }
 }

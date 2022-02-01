@@ -13,8 +13,6 @@
 	}
 }
 
-
-
 .wp-block-column {
 	> .wp-block-group {
 		&:not(:first-child) {
@@ -22,13 +20,10 @@
 		}
 	}
 
-
-	@include media( "<phone" ){
-
+	@include media("<phone") {
 		margin-top: $margin_2x;
 		&:first-child {
 			margin-top: 0;
 		}
-
 	}
 }

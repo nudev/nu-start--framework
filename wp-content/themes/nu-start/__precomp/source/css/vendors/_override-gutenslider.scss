@@ -1,10 +1,12 @@
 .wp-block-eedee-block-gutenslider {
+
+	
 	&.alignfull {
 		&.content-change {
 			margin-top: 0;
 		}
 	}
-
+	
 	.eedee-swiper-outer {
 		.eedee-gutenslider-nav {
 			@extend %transition;
@@ -42,11 +44,15 @@
 			}
 		}
 
-		.slide-content {
-			padding: $margin_4x;
+		.swiper-container {
+			.swiper-slide {
+				.slide-content {
+					padding: $margin_4x;
 
-			.alignfull {
-				width: 100%;
+					.alignfull {
+						width: 100%;
+					}
+				}
 			}
 		}
 	}
@@ -86,11 +92,6 @@
 			&:hover,
 			&:focus {
 				background-color: var(--wp--preset--color--white-2) !important;
-			}
-			&.eedee-gutenslider-next,
-			&.eedee-gutenslider-prev{
-				top: calc(100% - 64px) !important;
-				transform: translateY(-100%) !important;
 			}
 		}
 
@@ -160,14 +161,5 @@
 				}
 			}
 		}
-	}
-}
-
-html body {
-
-	.wp-block-eedee-block-gutenslider.arrow-position-sides .eedee-gutenslider-prev,
-	.wp-block-eedee-block-gutenslider.arrow-position-sides .eedee-gutenslider-next {
-		top: calc(100% - $margin_4x) !important;
-		transform: translateY(-100%) !important;
 	}
 }

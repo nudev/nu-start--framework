@@ -1,0 +1,299 @@
+// ? the custom SVG icons currently just used in the footer
+.nu__customsvg {
+	display: inline-block;
+	margin: 0 auto 0 auto;
+	svg {
+		width: 20px;
+		height: 20px;
+		path {
+			@extend %transition;
+			fill: var(--wp--preset--color--white-1);
+		}
+	}
+	a {
+		display: block;
+		border: none 0;
+		&:hover,
+		&:focus,
+		&:active {
+			border: none 0;
+			svg path {
+				fill: var(--wp--preset--color--white);
+			}
+		}
+	}
+}
+
+// *			Pagination
+.pagination {
+	text-align: center;
+	margin: 0 auto $margin_2x auto;
+
+	// some harder resets for these elements
+	a.page-numbers,
+	span.page-numbers {
+		display: block;
+		background: none;
+		padding: 0 0 0 0;
+		margin: 0 0 0 0;
+		border: none 0;
+		@extend %transition;
+		font-weight: normal;
+		width: 24px;
+		height: 24px;
+		line-height: 1;
+		border-radius: 50%;
+		border: 2px solid var(--wp--preset--color--black-1);
+		color: var(--wp--preset--color--black-1);
+		// ? a custom <span> wrapper is around both the prev/next and numbers
+		position: relative;
+		> span {
+			@include font-size(0.875rem);
+			line-height: 1;
+			@extend %absolutely_centered;
+		}
+		&.next,
+		&.prev {
+			border: 2px solid var(--wp--preset--color--black-1);
+			> span {
+				display: none;
+			}
+			@include nu_micon("\e5cb", after);
+			&.next:after {
+				content: "\e5cc";
+			}
+			&:after {
+				line-height: 1;
+				@extend %absolutely_centered;
+			}
+		}
+
+		&.current {
+			border: 2px solid var(--wp--preset--color--black-1);
+			background-color: black;
+			color: white;
+		}
+	}
+
+	> ul.page-numbers {
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content: center;
+		align-items: center;
+		list-style-type: none;
+		padding: 0;
+
+		> li {
+			margin: 0 $half-margin 0 0;
+			&:last-child {
+				margin: 0;
+			}
+
+			> a {
+				&:hover,
+				&:focus,
+				&:active {
+					color: var(--wp--preset--color--black-1);
+					border-color: var(--wp--preset--color--black-1);
+					&.next,
+					&.prev {
+						border: 2px solid var(--wp--preset--color--black-1);
+					}
+				}
+			}
+		}
+	}
+
+	&:last-of-type {
+		margin: $margin_4x auto 0 auto;
+	}
+}
+
+#wpadminbar {
+	overflow: hidden;
+}
+
+.mfp-iframe-holder .mfp-content {
+	max-width: 1024px;
+}
+
+.clearfix {
+	@include clearfix;
+}
+
+// * background images
+.bgimage {
+	@include bgImage;
+}
+
+#nu__cookiewarning {
+	display: none;
+	position: fixed;
+	z-index: 9999;
+	background-color: var(--wp--preset--color--black-2);
+	color: var(--wp--preset--color--white-1);
+	width: 90%;
+	max-width: 960px;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: 0 auto;
+	padding: $margin_2x;
+	border: 1px solid var(--wp--preset--color--black-2);
+	@include nu__boxshadow(2);
+
+	p {
+		color: var(--wp--preset--color--white-1);
+
+		strong {
+			color: inherit;
+		}
+		a {
+			color: inherit;
+		}
+	}
+
+	.closeicon {
+		padding: 5px;
+		position: absolute;
+		z-index: 1;
+		cursor: pointer;
+		top: $base-margin;
+		right: $base-margin;
+		font-size: 20px;
+		&:after {
+			display: block;
+			@extend %transition;
+			transform: scale(1);
+			content: "\e5cd";
+		}
+		&:hover {
+			&:after {
+				transform: scale(1.2);
+				content: "\e888";
+			}
+		}
+	}
+
+	button.button {
+		@extend %nu__buttonstyle;
+		border: 2px solid white;
+		margin-bottom: 0;
+		background-color: var(--wp--preset--color--black-3);
+	}
+
+	@include flush_inner_content_vertical();
+}
+
+.material-icons-outlined,
+.material-icons {
+	font-family: "Material Icons";
+	font-weight: normal;
+	font-style: normal;
+	font-size: 24px;
+	/* Preferred icon size */
+	display: inline-block;
+	line-height: 1;
+	text-transform: none;
+	letter-spacing: normal;
+	word-wrap: normal;
+	white-space: nowrap;
+	direction: ltr;
+
+	/* Support for all WebKit browsers. */
+	-webkit-font-smoothing: antialiased;
+	/* Support for Safari and Chrome. */
+	text-rendering: optimizeLegibility;
+
+	/* Support for Firefox. */
+	-moz-osx-font-smoothing: grayscale;
+
+	/* Support for IE. */
+	font-feature-settings: "liga";
+}
+
+footer.site-footer {
+	.nu__footer-sidebar {
+		* {
+			color: var(--wp--preset--color--white-1);
+		}
+
+		div.wpforms-container-full {
+			form.wpforms-form {
+				display: flex;
+				flex-flow: row nowrap;
+				align-items: flex-start;
+
+				.wpforms-submit-container {
+					margin-top: 22px; // ? WTF
+					button.wpforms-submit {
+						margin: 0;
+						height: 38px;
+						background-color: var(--wp--preset--color--red-3);
+						border: 1px solid var(--wp--preset--color--red-3);
+						color: var(--wp--preset--color--white-1);
+						&:hover,
+						&:focus {
+							border: 1px solid var(--wp--preset--color--red-3);
+							color: var(--wp--preset--color--red-3);
+							background-color: var(--wp--preset--color--white-1);
+						}
+					}
+				}
+			}
+		}
+	}
+}
+#nu_dev_utility {
+	position: fixed;
+	z-index: 9;
+	top: 15%;
+	left: 0;
+	background-color: var(--wp--preset--color--black-3);
+	color: var(--wp--preset--color--white-1);
+	padding: $base-margin;
+	-webkit-backdrop-filter: blur(16px);
+	backdrop-filter: blur(16px);
+	@extend %transition;
+
+	.devkit-title {
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content: space-between;
+		align-items: center;
+		border-bottom: 1px solid var(--wp--preset--color--white-1);
+	}
+
+	.nu__icon {
+		display: none;
+	}
+
+	.nu__icon--expand {
+		display: block;
+	}
+	.nu__icon--collapse {
+	}
+
+	> section {
+		display: none;
+	}
+
+	&:hover,
+	&:focus,
+	&:active {
+		background-color: var(--wp--preset--color--black-4);
+	}
+
+	&.revealed {
+		> section {
+			display: block;
+		}
+
+		.nu__icon--expand {
+			display: none;
+		}
+		.nu__icon--collapse {
+			display: block;
+		}
+	}
+}

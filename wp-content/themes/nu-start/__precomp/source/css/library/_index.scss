@@ -2,16 +2,34 @@
 @use "sass:math";
 
 // ? vendor extensions
-@import './extensions/rfs';							// @link https://github.com/twbs/rfs
-@import './extensions/include-media'; 				// @link https://eduardoboucas.github.io/include-media/
-@import './extensions/deep-get-set';				// @link https://gist.github.com/zellwk/b7f3317a56ad52b7700e
+@import "./extensions/rfs"; // @link https://github.com/twbs/rfs
+@import "./extensions/include-media"; // @link https://eduardoboucas.github.io/include-media/
+@import "./extensions/deep-get-set"; // @link https://gist.github.com/zellwk/b7f3317a56ad52b7700e
 
 // ? functions; variables; mixins; extends ( order matters )
-@import './required/vars'; 							// variables
-@import './required/mixins'; 						// mixins
-@import './required/extends';						// extends
-
-
-@import './required/normalize'; 						// normalize dropped into a scss file
+@import "./required/vars"; // variables
+@import "./required/mixins"; // mixins
+@import "./required/extends"; // extends
 
 /* ... project styles will always load after this ... */
+
+html {
+	box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}
+
+// reset body styling to brand
+html :where(body:not(.wp-admin), .editor-styles-wrapper) {
+	@extend %base_body_style;
+	position: relative;
+	z-index: 1;
+
+	a {
+		color: currentColor;
+		text-decoration: none;
+	}
+}

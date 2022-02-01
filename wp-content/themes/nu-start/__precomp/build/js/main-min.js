@@ -389,7 +389,16 @@
   			},
   		};
   		academic_plan_slider._init();
+  	});
+  })(window.jQuery, window);
 
+  (function ($, window, document) {
+
+  	/**
+  	 *
+  	 *   ... code in here will run after jQuery says document is ready
+  	 */
+  	$(function () {
   		let nav_block_customization = {
   			_init: function () {
   				$(".open-on-click.wp-block-navigation-submenu").on(
@@ -401,7 +410,6 @@
   				);
   			},
   		};
-
   		nav_block_customization._init();
 
   		//
@@ -492,8 +500,9 @@
   		$(".js__magnific.mfp-iframe .wp-block-button__link").magnificPopup({
   			type: "ajax",
   		});
+
   	});
-  })(window.jQuery, window);
+  })(window.jQuery);
 
 }));
 //# sourceMappingURL=main-min.js.map

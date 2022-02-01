@@ -1,3 +1,8 @@
+/* 
+	? the navigation block is NOT USED for the header or footer
+	? this is strictly for nav menus as part of page content; like a sidebar
+*/
+
 .wp-block-post-navigation-link {
 	&.post-navigation-link-next a {
 		@include nu_micon("\e5cc", after);
@@ -22,6 +27,10 @@ nav.wp-block-navigation {
 	margin: 0 auto;
 	text-align: left;
 
+	.wp-block-navigation__container {
+		// gap: 0;
+	}
+
 	&.has-background {
 		padding: $base-margin;
 	}
@@ -34,7 +43,7 @@ nav.wp-block-navigation {
 		bottom: 0;
 	}
 
-	.wp-block-navigation-link__label {
+	.wp-block-navigation-item__label {
 		border: none 0;
 		@extend %transition;
 		border-left: 2px solid white;
@@ -91,7 +100,7 @@ nav.wp-block-navigation {
 
 	.wp-block-navigation-item {
 		&.current-menu-item {
-			.wp-block-navigation-link__label {
+			.wp-block-navigation-item__label {
 				border: none 0;
 				@extend %transition;
 				border-left: 2px solid white;
