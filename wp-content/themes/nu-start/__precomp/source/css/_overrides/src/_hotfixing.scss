@@ -7,16 +7,6 @@
 	}
 }
 
-.page-title-is-hidden-while-playing {
-	position: absolute;
-	top: 50%;
-	right: 10%;
-	transform: translate(0, -50%);
-	color: white;
-	z-index: 1;
-	max-width: 640px !important;
-}
-
 .nu_section--similar-events {
 	&:last-child:not(.has-background) {
 		margin-bottom: 0 !important;
