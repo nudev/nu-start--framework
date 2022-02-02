@@ -1,249 +1,211 @@
 #nu-global-footer {
-  display: none;
+	display: none;
 }
 
 .wp-block-eedee-block-gutenslider {
-  // ? conditional class if the slider is using fullscreen background
-  &.is-full {
-    z-index: 0 !important;
+	// ? conditional class if the slider is using fullscreen background
+	&.is-full {
+		z-index: 0 !important;
 
-    .eedee-background-div__overlay {
-      transition: background-color 0.4s ease, color 0.4s ease;
-    }
+		.eedee-background-div__overlay {
+			transition: background-color 0.4s ease, color 0.4s ease;
+		}
 
-    .shim-crossfade-gallery {
-      @include media("<medium") {
-        display: none;
-      }
-      > .wp-block-image {
-        transition: opacity 0.3s ease;
-        position: absolute;
-        top: 0;
-        right: 0;
-        width: 50%;
-        height: 100%;
-        opacity: 0;
-        overflow: hidden;
-        > img {
-          height: 100%;
-          min-width: 100%;
-        }
-        &.image-is-revealed {
-          opacity: 1;
-        }
-        &:first-of-type {
-          opacity: 1;
-        }
-      }
-    }
+		.shim-crossfade-gallery {
+			@include media("<medium") {
+				display: none;
+			}
+			> .wp-block-image {
+				transition: opacity 0.3s ease;
+				position: absolute;
+				top: 0;
+				right: 0;
+				width: 50%;
+				min-width: 50%;
+				height: 100%;
+				opacity: 0;
+				overflow: hidden;
+				> img {
+					height: 100%;
+					min-width: 100%;
+				}
+				&.image-is-revealed {
+					opacity: 1;
+				}
+				&:first-of-type {
+					opacity: 1;
+				}
+			}
+		}
 
-    .fixed-height-scrolling-content-area {
-      padding: 0;
-      @include media(">medium") {
-        max-height: 75vh;
-        overflow-y: scroll;
-        padding: $margin_4x 0;
-      }
+		.fixed-height-scrolling-content-area {
+			padding: 0;
+			@include media(">medium") {
+				max-height: 75vh;
+				overflow-y: scroll;
+				padding: $margin_4x 0;
+			}
 
-      .wp-block-group > .wp-block-image {
-        margin-bottom: $margin_2x;
-      }
+			.wp-block-group > .wp-block-image {
+				margin-bottom: $margin_2x;
+			}
 
-      .mCSB_container > .wp-block-group,
-      > .wp-block-group {
-        margin-top: $margin_3x;
-        &:first-of-type {
-          margin-top: 0;
-        }
-        p {
-          margin: $base-margin 0 $half-margin 0;
-        }
-      }
-      @include media(">=medium") {
-        .wp-block-group {
-          > .wp-block-image {
-            display: none;
-          }
-        }
-      }
-    }
+			.mCSB_container > .wp-block-group,
+			> .wp-block-group {
+				margin-top: $margin_3x;
+				&:first-of-type {
+					margin-top: 0;
+				}
+				p {
+					margin: $base-margin 0 $half-margin 0;
+				}
+			}
+			@include media(">=medium") {
+				.wp-block-group {
+					> .wp-block-image {
+						display: none;
+					}
+				}
+			}
+		}
 
-    @include media(">medium") {
-      .wp-block-column:first-child {
-        .fixed-height-scrolling-content-area {
-          color: var(--wp--preset--color--white-1) !important;
-        }
-      }
-      .color-swap-triggered {
-        .wp-block-column:first-child {
-          .fixed-height-scrolling-content-area {
-            color: var(--wp--preset--color--black-1) !important;
-          }
-        }
-        &[aria-label="3 / 4"] {
-          .eedee-background-div .eedee-background-div__overlay {
-            background-color: white !important;
-          }
-        }
-      }
-    }
+		@include media(">medium") {
+			.wp-block-column:first-child {
+				.fixed-height-scrolling-content-area {
+					color: var(--wp--preset--color--white-1) !important;
+				}
+			}
+			.color-swap-triggered {
+				.wp-block-column:first-child {
+					.fixed-height-scrolling-content-area {
+						color: var(--wp--preset--color--black-1) !important;
+					}
+				}
+				&[aria-label="3 / 4"] {
+					.eedee-background-div .eedee-background-div__overlay {
+						background-color: white !important;
+					}
+				}
+			}
+		}
 
-    figure.wp-block-video {
-      background-color: var(--wp--preset--color--black-1);
-      width: 100%;
-      height: 100%;
-      video {
-        object-fit: cover;
-        width: 100%;
-        height: 100%;
-      }
-    }
+		figure.wp-block-video {
+			background-color: var(--wp--preset--color--black-1);
+			width: 100%;
+			height: 100%;
+			video {
+				object-fit: cover;
+				width: 100%;
+				height: 100%;
+			}
+		}
 
-    // ? handle re-styling for mobile when under 1024px; including breaking the columns into rows early
-    @include media("<=medium") {
-      .eedee-background-div {
-        display: none;
-      }
-      .slide-content > .wp-block-columns {
-        flex-flow: column nowrap;
-        > .wp-block-column {
-          margin-top: 0;
-        }
-      }
-    }
+		// ? handle re-styling for mobile when under 1024px; including breaking the columns into rows early
+		@include media("<=medium") {
+			.eedee-background-div {
+				display: none;
+			}
+			.slide-content > .wp-block-columns {
+				flex-flow: column nowrap;
+				> .wp-block-column {
+					margin-top: 0;
+				}
+			}
+		}
 
-    // * only when the screen is over desktop breakpoint (1025px)
-    @include media(">medium") {
-      // ? slides backgrounds are most often cut to 50%
-      .eedee-background-div {
-        .eedee-background-div__overlay,
-        img {
-          width: 50% !important;
-        }
-      }
-      // ? if the slide has a background color it will most often appear on the left side
-      .swiper-slide.ed-bg-color {
-        .eedee-background-div {
-          .eedee-background-div__overlay,
-          img {
-            margin: 0 auto 0 0;
-          }
-        }
-      }
+		// * only when the screen is over desktop breakpoint (1025px)
+		@include media(">medium") {
+			// ? slides backgrounds are most often cut to 50%
+			.eedee-background-div {
+				.eedee-background-div__overlay,
+				img {
+					width: 50% !important;
+				}
+			}
+			// ? if the slide has a background color it will most often appear on the left side
+			.swiper-slide.ed-bg-color {
+				.eedee-background-div {
+					.eedee-background-div__overlay,
+					img {
+						margin: 0 auto 0 0;
+					}
+				}
+			}
 
-      // ? if the slide has a background image it will most often appear on the right side
-      .swiper-slide {
-        .eedee-background-div {
-          .eedee-background-div__overlay,
-          img {
-            margin: 0 0 0 auto;
-            + .eedee-background-div__overlay {
-              margin: 0 auto 0 0;
-              background-color: black;
-            }
-          }
-        }
-      }
-    }
-
-    .slide-content {
-      padding: 0 !important;
-      > *:only-child {
-        overflow: hidden;
-        // width: 100%;
-        @include media("<=phone") {
-          &.wp-block-columns {
-            margin: 0 $base-margin;
-          }
-        }
-        @include media(">phone") {
-          &.wp-block-columns {
-            margin: 0 5%;
-          }
-        }
-        @include media(">medium") {
-          min-height: 100%;
-          &.wp-block-columns {
-            margin: 0 10%;
-            // padding-bottom: $margin_4x;
-            > .wp-block-column {
-              &:first-child {
-                padding-right: $margin_4x;
-                padding-right: 10vw;
-              }
-              &:last-child {
-                padding-left: $margin_4x;
-                padding-left: 10vw;
-              }
-            }
-          }
-        }
-      }
-    }
-  }
+			// ? if the slide has a background image it will most often appear on the right side
+			.swiper-slide {
+				.eedee-background-div {
+					.eedee-background-div__overlay,
+					img {
+						margin: 0 0 0 auto;
+						+ .eedee-background-div__overlay {
+							margin: 0 auto 0 0;
+							background-color: black;
+						}
+					}
+				}
+			}
+		}
+	}
 }
 
 @include media(">medium") {
-  .swiper-slide[aria-label="4 / 4"] {
-    .slide-content {
-      > .wp-block-columns {
-        margin-right: 5% !important;
-        > .wp-block-column {
-          padding-left: 5% !important;
-        }
-      }
-    }
-  }
+	.swiper-slide[aria-label="4 / 4"] {
+		.slide-content {
+			> .wp-block-columns {
+				margin-right: 5% !important;
+				> .wp-block-column {
+					padding-left: 5% !important;
+				}
+			}
+		}
+	}
 }
 
 @include media("<=medium") {
-  .slide-content {
-    .has-white-1-color {
-      color: var(--wp--preset--color--black-1) !important;
-    }
-  }
-  .slide-content > .wp-block-columns > .wp-block-column {
-    margin-left: 0 !important;
-    &:last-child {
-      margin-top: $margin_2x;
-    }
-  }
+	.slide-content {
+		.has-white-1-color {
+			color: var(--wp--preset--color--black-1) !important;
+		}
+	}
+	.slide-content > .wp-block-columns > .wp-block-column {
+		margin-left: 0 !important;
+		&:last-child {
+			margin-top: $margin_2x;
+		}
+	}
 }
 @include media("<=small") {
-  .wp-block-eedee-block-gutenslider
-    .wp-block-eedee-block-gutenslide:not([aria-label="1 / 4"])
-    .slide-content {
-    padding: $margin_2x 0 $margin_4x 0 !important;
-    > .wp-block-columns > .wp-block-column {
-      margin-top: $margin_4x;
-      &:first-child {
-        margin-top: 0;
-      }
-    }
-    > .wp-block-columns {
-      overflow-y: auto;
-    }
-  }
+	.wp-block-eedee-block-gutenslider .wp-block-eedee-block-gutenslide:not([aria-label="1 / 4"]) .slide-content {
+		padding: $margin_2x 0 $margin_4x 0 !important;
+		> .wp-block-columns > .wp-block-column {
+			margin-top: $margin_4x;
+			&:first-child {
+				margin-top: 0;
+			}
+		}
+		> .wp-block-columns {
+			overflow-y: auto;
+		}
+	}
 }
 
 html body:not(.blog):not(.archive) .wp-block-eedee-block-gutenslider.is-full {
-  --gutenslider-min-height-md: 0px !important;
-  --gutenslider-min-height-sm: 0px !important;
-  --gutenslider-min-height: 0px !important;
-  position: relative !important;
-  .swiper-wrapper,
-  & {
-    height: calc(100vh - 48px) !important;
-  }
-  .swiper-slide {
-    height: 100%;
-  }
+	--gutenslider-min-height-md: 0px !important;
+	--gutenslider-min-height-sm: 0px !important;
+	--gutenslider-min-height: 0px !important;
+	position: relative !important;
+	.swiper-wrapper,
+	& {
+		height: calc(100vh - 48px) !important;
+	}
+	.swiper-slide {
+		height: 100%;
+	}
 }
-html
-  body.admin-bar:not(.blog):not(.archive)
-  .wp-block-eedee-block-gutenslider.is-full {
-  .swiper-wrapper,
-  & {
-    height: calc(100vh - 80px) !important;
-  }
+html body.admin-bar:not(.blog):not(.archive) .wp-block-eedee-block-gutenslider.is-full {
+	.swiper-wrapper,
+	& {
+		height: calc(100vh - 80px) !important;
+	}
 }

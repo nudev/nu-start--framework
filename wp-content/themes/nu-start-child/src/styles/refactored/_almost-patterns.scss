@@ -1,0 +1,17 @@
+// 
+// 
+.page-title-is-hidden-while-playing {
+	position: absolute;
+	top: 50%;
+	transform: translate(0, -50%);
+	color: white;
+	z-index: 1;
+	padding: 0 $base-margin 40px $base-margin;
+	@include media(">=small") {
+		right: 10%;
+		max-width: 640px !important;
+	}
+}
+//
+//
+//

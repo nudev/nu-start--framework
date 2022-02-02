@@ -130,6 +130,46 @@
   	 *   ... code in here will run after jQuery says document is ready
   	 */
   	$(function () {
+  		/* 
+  			NOTES:
+  			1 - handle our custom scrollbars; which may interact with page scroll or slide shown
+  			2 - handle the timeline feature
+  			3 - handle the overall ap slider
+  		*/
+
+  		let timeline_table = {
+  			$elems: "",
+
+  			_init: function () {
+  				if (
+  					!$(
+  						".swiper-slide:not(.swiper-slide-duplicate) .wp-block-table.is-the-vertical-timeline"
+  					).length
+  				) {
+  					return;
+  				}
+
+  				$(
+  					".swiper-slide:not(.swiper-slide-duplicate) .wp-block-table.is-the-vertical-timeline"
+  				)
+  					.find("tr")
+  					.each(function (index, element) {
+  						let timeout = index * 300;
+  						setTimeout(() => {
+  							$(element).addClass(
+  								"animate__fadeInUp animate__animated animate__delay-1s"
+  							);
+  						}, timeout);
+  					});
+  			},
+  		};
+  		// ? init is deferred until an event fires from the slider
+  		// timeline_table._init();
+
+
+
+
+  		
   		let custom_scrollbars_handler = {
   			_init: function () {
   				if (window.innerWidth < 960) {
@@ -259,46 +299,6 @@
   		};
   		custom_scrollbars_handler._init();
 
-  		/* 
-  			? handle the animation for the timeline table on the last slide
-  		*/
-
-  		let handle_timeline_table = {
-  			_init: function () {
-  				let $el = $(".academic-plan-timeline-table");
-
-  				$el.find(".wp-block-column p");
-
-  				let $left_paragraphs = $el.find(
-  					".wp-block-column:first-child p"
-  				);
-
-  				let $right_paragraphs = $el.find(
-  					".wp-block-column:last-child p"
-  				);
-
-  				for (let index = 0; index < $right_paragraphs.length; index++) {
-  					let timeout = index * 200;
-  					const element = $right_paragraphs[index];
-  					setTimeout(() => {
-  						$(element).addClass("timeline-row-is-revealed");
-  					}, timeout);
-  				}
-  				for (let index = 0; index < $left_paragraphs.length; index++) {
-  					let timeout = index * 200;
-  					const element = $left_paragraphs[index];
-  					setTimeout(() => {
-  						$(element).addClass("timeline-row-is-revealed");
-  					}, timeout);
-  				}
-  			},
-  		};
-  		// handle_timeline_table._init(); // ! hold back init until an event is triggered
-
-  		/* 
-  		
-  		*/
-
   		// object literal container holds all the academic plan slider (swiper) customizations and extensions
   		let academic_plan_slider = {
   			$instance: undefined,
@@ -306,6 +306,9 @@
   			$slideNames: ["Video", "Intro", "Pillars", "Planning Process"],
   			//
   			_init: function () {
+  				if (!$(".wp-block-eedee-block-gutenslider").length) {
+  					return;
+  				}
   				let slider_instance = $(".wp-block-eedee-block-gutenslider")[0]
   					.gutenslider.swiperInstance;
 
@@ -367,7 +370,8 @@
   					$nextButtonText = academic_plan_slider.$slideNames[0];
 
   					// ? trigger the timeline table animation
-  					handle_timeline_table._init();
+  					// handle_timeline_table._init();
+  					timeline_table._init();
   				}
 
   				slider_instance.navigation.$prevEl[0].innerHTML =

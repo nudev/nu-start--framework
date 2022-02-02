@@ -372,7 +372,7 @@
         "typography": {
           "fontWeight": "400",
           "fontFamily": "Lato",
-          "lineHeight": "1.375",
+          "lineHeight": "1",
           "fontSize": "var(--wp--preset--font-size--48-48)"
         }
       },

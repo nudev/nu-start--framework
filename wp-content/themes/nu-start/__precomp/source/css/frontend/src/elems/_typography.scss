@@ -17,7 +17,8 @@ a {
 
 // * enable RFS for the existing theme.json font sizes
 // * RFS will auto-convert these to REM (16px === 1rem && 36px === 2rem)
-body {
+
+html body {
 	@include rfs(128px, --wp--preset--font-size--128-128);
 	@include rfs(96px, --wp--preset--font-size--96-96);
 	@include rfs(72px, --wp--preset--font-size--72-72);

@@ -46,16 +46,6 @@
 	}
 }
 
-body.single-nu_news {
-	.nu_section--similar-events {
-		> .wp-block-group.alignfull.has-background:last-child {
-			&::before {
-				// background-color: #ecf0f3;
-			}
-		}
-	}
-}
-
 .wp-block-group.is-style-hero-slider {
 	margin-top: 0;
 

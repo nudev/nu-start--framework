@@ -1,0 +1,49 @@
+// select the timeline table at the block level
+.wp-block-table.is-the-vertical-timeline {
+	overflow: hidden;
+	tr {
+		// transition: opacity 0.5s ease;
+		opacity: 0;
+		&.animate__animated {
+			opacity: 1;
+		}
+	}
+	td {
+		border: 0px solid transparent;
+		padding: $base-margin $margin_2x;
+
+		// the last column in each row holds our little red dots and the connecting line
+		&:last-child {
+			position: relative;
+			border-left: 1px solid var(--wp--preset--color--black-1);
+			&:before,
+			&:after {
+				content: "";
+				display: block;
+				margin: 0;
+				margin-left: -1px;
+				position: absolute;
+				left: 0;
+				top: 50%;
+				border-radius: 100%;
+				transform: translate(-50%, -50%);
+			}
+			// ring around red bullseye
+			&:before {
+				z-index: 1;
+				width: 26px;
+				height: 26px;
+				border: 1px solid var(--wp--preset--color--black-4);
+				background-color: white;
+			}
+			// red bullseye inside ring
+			&:after {
+				border-radius: 100%;
+				width: 12px;
+				height: 12px;
+				background-color: var(--wp--preset--color--red-3);
+				z-index: 2;
+			}
+		}
+	}
+}
