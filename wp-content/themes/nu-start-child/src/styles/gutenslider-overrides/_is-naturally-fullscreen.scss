@@ -2,7 +2,7 @@
 	display: none;
 }
 
-.wp-block-eedee-block-gutenslider {
+.wp-block-eedee-block-gutenslider.academic-plan-fs-slider {
 	// ? conditional class if the slider is using fullscreen background
 	&.is-full {
 		z-index: 0 !important;
@@ -13,7 +13,7 @@
 
 		.shim-crossfade-gallery {
 			@include media("<medium") {
-				display: none;
+				display: none !important;
 			}
 			> .wp-block-image {
 				transition: opacity 0.3s ease;
@@ -176,7 +176,7 @@
 	}
 }
 @include media("<=small") {
-	.wp-block-eedee-block-gutenslider .wp-block-eedee-block-gutenslide:not([aria-label="1 / 4"]) .slide-content {
+	.wp-block-eedee-block-gutenslider.academic-plan-fs-slider .wp-block-eedee-block-gutenslide:not([aria-label="1 / 4"]) .slide-content {
 		padding: $margin_2x 0 $margin_4x 0 !important;
 		> .wp-block-columns > .wp-block-column {
 			margin-top: $margin_4x;
@@ -190,7 +190,7 @@
 	}
 }
 
-html body:not(.blog):not(.archive) .wp-block-eedee-block-gutenslider.is-full {
+html body:not(.blog):not(.archive) .academic-plan-fs-slider.wp-block-eedee-block-gutenslider.is-full {
 	--gutenslider-min-height-md: 0px !important;
 	--gutenslider-min-height-sm: 0px !important;
 	--gutenslider-min-height: 0px !important;
@@ -203,7 +203,7 @@ html body:not(.blog):not(.archive) .wp-block-eedee-block-gutenslider.is-full {
 		height: 100%;
 	}
 }
-html body.admin-bar:not(.blog):not(.archive) .wp-block-eedee-block-gutenslider.is-full {
+html body.admin-bar:not(.blog):not(.archive) .academic-plan-fs-slider.wp-block-eedee-block-gutenslider.is-full {
 	.swiper-wrapper,
 	& {
 		height: calc(100vh - 80px) !important;

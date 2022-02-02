@@ -4,9 +4,9 @@
 	// is top level width styles
 	.slide-content {
 		padding: 0 !important;
-		overflow: hidden;
 		> * {
 			// ? top level blocks widths
+			margin: 0 auto;
 			max-width: 90%;
 			&.alignwide {
 				max-width: 90%;
@@ -65,7 +65,9 @@
 			display: flex;
 			flex-flow: column nowrap;
 			justify-content: center;
-			margin-left: 0 !important;
+			&:last-child {
+				margin-left: 0 !important;
+			}
 		}
 	}
 
