@@ -161,7 +161,8 @@
                 "nu_news",
                 "nu_projects",
                 "nu_programs",
-                "nu_profiles"
+                "nu_profiles",
+                "nu_faces"
             ],
             "taxonomy": "",
             "filters": [
@@ -223,7 +224,8 @@
                         "nu_news",
                         "nu_projects",
                         "nu_programs",
-                        "nu_profiles"
+                        "nu_profiles",
+                        "nu_faces"
                     ],
                     "field_type": "select",
                     "default_value": [],
@@ -512,7 +514,7 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1643298486,
+    "modified": 1643904451,
     "acfe_categories": {
         "acf-block": "ACF Block"
     }

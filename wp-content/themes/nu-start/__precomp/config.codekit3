@@ -15,6 +15,12 @@
       "oAP" : "\/build\/build",
       "oF" : 0
     },
+    "\/node_modules" : {
+      "ft" : 65536,
+      "oA" : 2,
+      "oAP" : "\/build\/node_modules",
+      "oF" : 0
+    },
     "\/source\/css\/_overrides\/_index.scss" : {
       "aP" : 1,
       "bl" : 0,
@@ -1420,7 +1426,7 @@
   },
   "projectAttributes" : {
     "creationDate" : 640198575.32200801,
-    "displayValue" : "NU-Start Framework (Kernl)",
+    "displayValue" : "NU-Start Framework (RE-Roux)",
     "displayValueWasSetByUser" : 1,
     "iconImageName" : "brackets-ucla",
     "iconImageWasSetByUser" : 0,
