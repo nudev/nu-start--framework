@@ -311,6 +311,47 @@ html :where(body:not(.wp-admin), .editor-styles-wrapper) a {
   background-color: var(--wp--preset--color--white-1) !important;
   color: var(--wp--preset--color--black-1) !important;
 }
+.wp-block-eedee-block-gutenslider.academic-plan-fs-slider .wp-block-group.pillar {
+  margin-top: 128px;
+}
+.wp-block-eedee-block-gutenslider.academic-plan-fs-slider .wp-block-group.pillar > .wp-block-group {
+  margin-top: 32px;
+}
+@media (max-width: 1023px) {
+  .wp-block-eedee-block-gutenslider.academic-plan-fs-slider .shim-crossfade-gallery {
+    display: none !important;
+  }
+}
+.wp-block-eedee-block-gutenslider.academic-plan-fs-slider .shim-crossfade-gallery .is-image-with-blurb {
+  margin: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  min-width: 50%;
+  height: 100%;
+  opacity: 0;
+  overflow: hidden;
+  transition: opacity 0.3s ease;
+}
+.wp-block-eedee-block-gutenslider.academic-plan-fs-slider .shim-crossfade-gallery .is-image-with-blurb > p {
+  position: absolute;
+  top: 32px;
+  left: 32px;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 32px;
+  color: var(--wp--preset--color--white-1);
+}
+.wp-block-eedee-block-gutenslider.academic-plan-fs-slider .shim-crossfade-gallery .is-image-with-blurb > .wp-block-image > img {
+  height: 100%;
+  min-width: 100%;
+}
+.wp-block-eedee-block-gutenslider.academic-plan-fs-slider .shim-crossfade-gallery .is-image-with-blurb:first-of-type {
+  opacity: 1;
+}
+.wp-block-eedee-block-gutenslider.academic-plan-fs-slider .shim-crossfade-gallery .is-image-with-blurb.image-is-revealed {
+  opacity: 1;
+}
 
 #nu-global-footer {
   display: none;
@@ -321,32 +362,6 @@ html :where(body:not(.wp-admin), .editor-styles-wrapper) a {
 }
 .wp-block-eedee-block-gutenslider.academic-plan-fs-slider.is-full .eedee-background-div__overlay {
   transition: background-color 0.4s ease, color 0.4s ease;
-}
-@media (max-width: 1023px) {
-  .wp-block-eedee-block-gutenslider.academic-plan-fs-slider.is-full .shim-crossfade-gallery {
-    display: none !important;
-  }
-}
-.wp-block-eedee-block-gutenslider.academic-plan-fs-slider.is-full .shim-crossfade-gallery > .wp-block-image {
-  transition: opacity 0.3s ease;
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 50%;
-  min-width: 50%;
-  height: 100%;
-  opacity: 0;
-  overflow: hidden;
-}
-.wp-block-eedee-block-gutenslider.academic-plan-fs-slider.is-full .shim-crossfade-gallery > .wp-block-image > img {
-  height: 100%;
-  min-width: 100%;
-}
-.wp-block-eedee-block-gutenslider.academic-plan-fs-slider.is-full .shim-crossfade-gallery > .wp-block-image.image-is-revealed {
-  opacity: 1;
-}
-.wp-block-eedee-block-gutenslider.academic-plan-fs-slider.is-full .shim-crossfade-gallery > .wp-block-image:first-of-type {
-  opacity: 1;
 }
 .wp-block-eedee-block-gutenslider.academic-plan-fs-slider.is-full .fixed-height-scrolling-content-area {
   padding: 0;
@@ -360,18 +375,6 @@ html :where(body:not(.wp-admin), .editor-styles-wrapper) a {
 }
 .wp-block-eedee-block-gutenslider.academic-plan-fs-slider.is-full .fixed-height-scrolling-content-area .wp-block-group > .wp-block-image {
   margin-bottom: 32px;
-}
-.wp-block-eedee-block-gutenslider.academic-plan-fs-slider.is-full .fixed-height-scrolling-content-area .mCSB_container > .wp-block-group,
-.wp-block-eedee-block-gutenslider.academic-plan-fs-slider.is-full .fixed-height-scrolling-content-area > .wp-block-group {
-  margin-top: 48px;
-}
-.wp-block-eedee-block-gutenslider.academic-plan-fs-slider.is-full .fixed-height-scrolling-content-area .mCSB_container > .wp-block-group:first-of-type,
-.wp-block-eedee-block-gutenslider.academic-plan-fs-slider.is-full .fixed-height-scrolling-content-area > .wp-block-group:first-of-type {
-  margin-top: 0;
-}
-.wp-block-eedee-block-gutenslider.academic-plan-fs-slider.is-full .fixed-height-scrolling-content-area .mCSB_container > .wp-block-group p,
-.wp-block-eedee-block-gutenslider.academic-plan-fs-slider.is-full .fixed-height-scrolling-content-area > .wp-block-group p {
-  margin: 16px 0 8px 0;
 }
 @media (min-width: 1024px) {
   .wp-block-eedee-block-gutenslider.academic-plan-fs-slider.is-full .fixed-height-scrolling-content-area .wp-block-group > .wp-block-image {

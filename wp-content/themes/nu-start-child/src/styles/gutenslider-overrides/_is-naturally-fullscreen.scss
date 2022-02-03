@@ -11,33 +11,6 @@
 			transition: background-color 0.4s ease, color 0.4s ease;
 		}
 
-		.shim-crossfade-gallery {
-			@include media("<medium") {
-				display: none !important;
-			}
-			> .wp-block-image {
-				transition: opacity 0.3s ease;
-				position: absolute;
-				top: 0;
-				right: 0;
-				width: 50%;
-				min-width: 50%;
-				height: 100%;
-				opacity: 0;
-				overflow: hidden;
-				> img {
-					height: 100%;
-					min-width: 100%;
-				}
-				&.image-is-revealed {
-					opacity: 1;
-				}
-				&:first-of-type {
-					opacity: 1;
-				}
-			}
-		}
-
 		.fixed-height-scrolling-content-area {
 			padding: 0;
 			@include media(">medium") {
@@ -50,16 +23,6 @@
 				margin-bottom: $margin_2x;
 			}
 
-			.mCSB_container > .wp-block-group,
-			> .wp-block-group {
-				margin-top: $margin_3x;
-				&:first-of-type {
-					margin-top: 0;
-				}
-				p {
-					margin: $base-margin 0 $half-margin 0;
-				}
-			}
 			@include media(">=medium") {
 				.wp-block-group {
 					> .wp-block-image {

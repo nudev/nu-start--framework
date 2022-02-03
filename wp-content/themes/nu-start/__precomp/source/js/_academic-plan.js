@@ -112,7 +112,7 @@
 									}
 
 									// ? this handles switching in the "pillars images" as we scroll
-									let container_offset = this.offsetTop * 2;
+									let container_offset = this.offsetTop * 2 + 90;
 
 									let pillars = $(this).find(
 										".wp-block-group.pillar:not(:first-of-type)"
@@ -126,13 +126,13 @@
 										) {
 											$(
 												$(
-													".shim-crossfade-gallery > .wp-block-image"
+													".shim-crossfade-gallery .is-image-with-blurb"
 												)[index]
 											).addClass("image-is-revealed");
 										} else {
 											$(
 												$(
-													".shim-crossfade-gallery > .wp-block-image"
+													".shim-crossfade-gallery .is-image-with-blurb"
 												)[index]
 											).removeClass("image-is-revealed");
 										}
