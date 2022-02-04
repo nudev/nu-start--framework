@@ -68,6 +68,7 @@ header.header > .container {
       position: relative;
       > .wp-block-group {
         padding: $margin_4x;
+        padding-bottom: 0;
         transform: translateX(-$margin_4x);
       }
     }

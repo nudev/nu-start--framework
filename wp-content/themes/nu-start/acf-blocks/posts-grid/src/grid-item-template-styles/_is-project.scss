@@ -1,0 +1,15 @@
+.nu_posts-grid
+	.nu_projects.grid-item.has-layout-horizontal
+	> .contains-clickable-area,
+.nu_posts-grid .nu_projects.grid-item.has-layout-horizontal {
+	@include media(">=medium") {
+		> figure {
+			flex: 1 0 66%;
+			max-width: none;
+			max-height: 320px;
+		}
+		.grid-item-content {
+			justify-content: center;
+		}
+	}
+}

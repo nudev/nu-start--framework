@@ -9,7 +9,7 @@ header.header {
 		background: var(--wp--preset--color--white-2);
 		height: 30px;
 		top: 0;
-		left: 0;
+		left: -9999px;
 		padding: 8px;
 		position: absolute;
 		transform: translateY(-100%);
@@ -63,14 +63,14 @@ header.header {
 			display: inline-block;
 		}
 		&:hover,
-		&:focus {
+		&:active {
 			@include nav_item_is_active();
 		}
 	}
 
 	.site-search-icon {
 		line-height: 1.5;
-		color: var(--wp--preset--color--black-2);
+		// color: var(--wp--preset--color--black-2);
 	}
 
 	// ? navlinks styling at any screen size
@@ -123,7 +123,7 @@ header.header {
 				}
 				// * hover to reveal sub-menus (allow clicking parent to nav to that location)
 				&:hover,
-				&:focus {
+				&:active {
 					> a > span {
 						&::after {
 							transform: translateY(-50%) rotate(90deg);
@@ -223,7 +223,7 @@ header.header {
 
 		.navlinks .menu-item {
 			&:hover,
-			&:focus {
+			&:active {
 				> .sub-menu {
 					display: flex;
 				}
@@ -267,7 +267,7 @@ header.header {
 					}
 
 					&:hover,
-					&:focus {
+					&:active {
 						background-color: initial;
 						&:before {
 							width: 100%;
@@ -495,6 +495,29 @@ body {
 					margin-top: (
 						$headerHeight + $globalHeaderHeight + $utilityNavHeight
 					);
+				}
+			}
+		}
+	}
+}
+
+
+body.is-dark-header {
+	header.header {
+		.logo {
+			&, svg path {
+				fill: var(--wp--preset--color--white-1);
+			}
+		}
+		.navlinks, & {
+			background-color: var(--wp--preset--color--black-1);
+			color: var(--wp--preset--color--white-1);
+		}
+		.navlinks > ul > li > a {
+			color: var(--wp--preset--color--white-1);
+			@include media("<=medium"){
+				&:hover {
+					color: var(--wp--preset--color--black-1);
 				}
 			}
 		}

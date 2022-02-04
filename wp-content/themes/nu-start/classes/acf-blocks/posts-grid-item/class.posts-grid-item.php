@@ -75,6 +75,9 @@ class PostsGrid_Item
 			case 'nu_initiatives':
 				include( get_template_directory( ) . '/classes/acf-blocks/posts-grid-item/templates/initiative.php' );
 				break;
+			case 'nu_profiles':
+				include( get_template_directory( ) . '/classes/acf-blocks/posts-grid-item/templates/profiles.php' );
+				break;
 			case 'nu_programs':
 				include( get_template_directory( ) . '/classes/acf-blocks/posts-grid-item/templates/program.php' );
 				break;
@@ -90,7 +93,7 @@ class PostsGrid_Item
 			
 			default:
 				$guides['grid-item-default'] = '
-					<li class="grid-item%1$s%7$s%8$s">
+					<li class="is-default grid-item%1$s%7$s%8$s">
 						<a class="contains-clickable-area" href="%6$s" title="Read More about '.get_the_title( ).'"%9$s>
 							%2$s
 							<div class="grid-item-content">%3$s%4$s%5$s</div>

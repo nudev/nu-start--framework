@@ -335,7 +335,7 @@
         "normal": "400"
       },
       "footer-background": {
-        "dark": "var(--wp--preset--color--black-2)"
+        "dark": "#1f1f1f"
       }
     },
     "blocks": {

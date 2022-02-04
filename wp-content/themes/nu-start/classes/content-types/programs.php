@@ -6,27 +6,31 @@
 // 
 
 NU__ContentTypes::_register_custom_post_type(
-	$literal = 'partnerships',
-	$name = 'Partnerships',
-	$singular = 'Partnership Item',
+	$literal = 'programs',
+	$name = 'Programs',
+	$singular = 'Program',
 	$rewrite = '',
 	$hierarchical = false, 
-	$dashicon = 'dashicons-bank'
+	$dashicon = 'dashicons-clipboard'
 );
+
+
 NU__ContentTypes::_register_custom_taxonomy(
-	$literal = 'partnerships-categories',
-	$post_type = 'partnerships',
-	$name = 'Partnership Item Categories',
-	$singular = 'Partnership Item Category',
-	$rewrite = 'Partnership Item Categories'
+	$literal = 'programs-subjects',
+	$post_type = 'programs',
+	$name = 'Programs Subjects',
+	$singular = 'Program Subject',
+	$rewrite = 'Programs Subjects'
 );
-NU__ContentTypes::_register_custom_taxonomy(
-	$literal = 'partnerships-tags',
-	$post_type = 'partnerships',
-	$name = 'Partnership Item Tags',
-	$singular = 'Partnership Item Tag',
-	$hierarchical = false
-);
+
+
+// NU__ContentTypes::_register_custom_taxonomy(
+// 	$literal = 'programs-tags',
+// 	$post_type = 'programs',
+// 	$name = 'Programs Tags',
+// 	$singular = 'Program Tag',
+// 	$hierarchical = false
+// );
 
 
 ?>

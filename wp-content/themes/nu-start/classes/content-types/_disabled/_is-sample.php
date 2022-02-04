@@ -1,10 +1,11 @@
 <?php
 /**
- * 
+ * 		? a sample registration ( real )
  * 
  */
 // 
 
+// ? register the post type itself (note, the class loader will prefix $literal with "nu_".$literal )
 NU__ContentTypes::_register_custom_post_type(
 	$literal = 'initiatives',
 	$name = 'Initiatives',
@@ -13,6 +14,9 @@ NU__ContentTypes::_register_custom_post_type(
 	$hierarchical = false, 
 	$dashicon = 'dashicons-smiley'
 );
+
+// ? register a custom category taxonomy for this post type to avoid mixing
+// ? copy this to add new taxonomies that are categories (hierarchical is true)
 NU__ContentTypes::_register_custom_taxonomy(
 	$literal = 'initiatives-categories',
 	$post_type = 'initiatives',
@@ -20,6 +24,9 @@ NU__ContentTypes::_register_custom_taxonomy(
 	$singular = 'Initiatives Category',
 	$rewrite = 'Initiatives Categories'
 );
+
+// ? register a custom tags taxonomy for this post type to avoid mixing
+// ? copy this to add new taxonomies that are tags (hierarchical is false)
 NU__ContentTypes::_register_custom_taxonomy(
 	$literal = 'initiatives-tags',
 	$post_type = 'initiatives',
@@ -27,6 +34,10 @@ NU__ContentTypes::_register_custom_taxonomy(
 	$singular = 'Initiatives Tag',
 	$hierarchical = false
 );
+
+
+
+// ? further extend this post type with additional custom taxonomies
 NU__ContentTypes::_register_custom_taxonomy(
 	$literal = 'initiatives-schools',
 	$post_type = 'initiatives',
