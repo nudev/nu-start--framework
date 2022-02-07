@@ -242,7 +242,7 @@ body.wp-admin .nu_posts-grid .grid-item a {
   width: 100%;
 }
 .nu_posts-grid .grid-item figure {
-  flex: 0 1 auto;
+  flex: none;
 }
 .nu_posts-grid .grid-item-content {
   padding: 16px 32px;
@@ -644,7 +644,13 @@ body.wp-admin .nu_posts-grid .grid-item a {
 
 /* 
 
+	? TREVOR WILL COMMENT THIS FILE
+
 */
+.nu_posts-grid .nu__grid .grid-item.nu_people {
+  box-shadow: none;
+  border: none;
+}
 .nu_posts-grid .nu__grid .grid-item.nu_people .nu_posts-grid-readmore {
   display: block;
   margin: 64px 0 0 0;
@@ -654,6 +660,12 @@ body.wp-admin .nu_posts-grid .grid-item a {
 }
 .nu_posts-grid .nu__grid .grid-item.nu_people .moretext:after {
   display: none;
+}
+.nu_posts-grid .nu__grid .grid-item.nu_people .grid-item-content {
+  padding: 16px;
+}
+.nu_posts-grid .nu__grid .grid-item.nu_people > a.contains-clickable-area .grid-item-content {
+  background-color: var(--wp--preset--color--white-1);
 }
 
 /* 
@@ -957,6 +969,36 @@ body.wp-admin .nu_posts-grid .grid-item a {
 }
 .nu_posts-grid .nu__grid.cols-1 .grid-item.nu_initiatives .featured-tags {
   font-weight: normal;
+}
+
+@media (min-width: 1024px) {
+  .nu_posts-grid .nu_projects.grid-item.has-layout-horizontal > .contains-clickable-area > figure,
+.nu_posts-grid .nu_projects.grid-item.has-layout-horizontal > figure {
+    flex: 1 0 66%;
+    max-width: none;
+    max-height: 320px;
+  }
+  .nu_posts-grid .nu_projects.grid-item.has-layout-horizontal > .contains-clickable-area .grid-item-content,
+.nu_posts-grid .nu_projects.grid-item.has-layout-horizontal .grid-item-content {
+    justify-content: center;
+  }
+}
+
+@media (min-width: 1024px) {
+  .nu_posts-grid .nu_profiles.grid-item.has-layout-horizontal > .contains-clickable-area > figure,
+.nu_posts-grid .nu_profiles.grid-item.has-layout-horizontal > figure {
+    flex: 1 1 50%;
+    max-width: 50%;
+    max-height: 320px;
+    order: 2;
+  }
+  .nu_posts-grid .nu_profiles.grid-item.has-layout-horizontal > .contains-clickable-area .grid-item-content,
+.nu_posts-grid .nu_profiles.grid-item.has-layout-horizontal .grid-item-content {
+    flex: 1 1 50%;
+    max-width: 50%;
+    padding: 32px !important;
+    justify-content: center;
+  }
 }
 
 li.grid-item.broken:only-child {

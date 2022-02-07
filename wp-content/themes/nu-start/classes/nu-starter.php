@@ -56,8 +56,9 @@ class NU__Starter
 	
 
 	public static function __init(){
+		NU__Starter::$themeSettings = [];
 		NU__Starter::$themeSettings['seo'] = get_field('analytics_&_seo_settings', 'option') ?: [];
-		NU__Starter::$themeSettings['appear'] = get_field('appearance', 'option') ?: [];
+		NU__Starter::$themeSettings['appearance'] = get_field('appearance_settings', 'option') ?: [];
 		NU__Starter::$themeSettings['social'] = get_field('social_settings', 'option') ?: [];
 		NU__Starter::$themeSettings['dev'] = get_field('developer_settings', 'option') ?: [];
 		NU__Starter::$themeSettings['footer'] = get_field('footer_settings', 'option') ?: [];

@@ -130,8 +130,7 @@
 	display: none;
 	position: fixed;
 	z-index: 9999;
-	background-color: var(--wp--preset--color--black-1);
-	background-color: var(--wp--preset--color--black-3);
+	background-color: var(--wp--preset--color--black-2);
 	color: var(--wp--preset--color--white-1);
 	width: 90%;
 	max-width: 960px;
@@ -140,7 +139,7 @@
 	bottom: 0;
 	margin: 0 auto;
 	padding: $margin_2x;
-	border: 1px solid var(--wp--preset--color--black-3);
+	border: 1px solid var(--wp--preset--color--black-2);
 	@include nu__boxshadow(2);
 
 	p {

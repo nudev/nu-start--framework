@@ -16,10 +16,9 @@
 		// todo: existing favicon stuff is super messy and old, so its wrapped up in a function
 		echo NU__Starter::_get_all_favicons();
 
-
-
 		// ? set any body classes manually
 		$bodyClasses = [];
+		$bodyClasses[] = NU__Starter::$themeSettings['appearance']['color_palette'] == 'dark' ? 'is-dark-header' : '';
 		$bodyClasses[] = !empty(NU__Starter::$themeSettings['header']['status']) ? 'has-local-header' : '';
 		$bodyClasses[] = !empty(NU__Starter::$themeSettings['global']['global_header__footer']['status']) ? 'has-nu-global-header-footer' : '';
 		$bodyClasses[] = empty(NU__Starter::$themeSettings['dev']['build_status']) ? 'prod--disabled' : '';
@@ -27,7 +26,6 @@
 		
 		// ? init wp head
 		wp_head();
-
 
 
 		// ? handle the required global header / footer scripts

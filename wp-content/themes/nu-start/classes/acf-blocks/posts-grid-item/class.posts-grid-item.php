@@ -58,6 +58,7 @@ class PostsGrid_Item
 
 		// ? if a custom URL is entered to override the permalink we also open in a new tab/window
 		$maybe_target = !empty($fields['custom_permalink_redirect']) ? ' target="_blank"' : '';
+		$will_open_new_tab = !empty($fields['custom_permalink_redirect']) ? ' [will open in a new tab/window]' : '';
 		
 		// ? check for the actual post_excerpt and possibly use it
 		$the_basic_excerpt = has_excerpt() ? '<p class="post-excerpt">'.get_the_excerpt( ).'</p>' : '';
@@ -65,7 +66,7 @@ class PostsGrid_Item
 		// the featured image in markup
 		$the_cover_image = !empty($item_styles['display_featured_image']) && has_post_thumbnail( ) ? '<figure>'.get_the_post_thumbnail( ).'</figure>' : '';
 
-		$the_title_attribute = ' title="Read More about '.get_the_title( ).'"';
+		$the_title_attribute = ' title="Read More about '.get_the_title( ).$will_open_new_tab.'"';
 
 
 		$guides = [];
@@ -74,6 +75,9 @@ class PostsGrid_Item
 		switch ($post_type) {
 			case 'nu_initiatives':
 				include( get_template_directory( ) . '/classes/acf-blocks/posts-grid-item/templates/initiative.php' );
+				break;
+			case 'nu_profiles':
+				include( get_template_directory( ) . '/classes/acf-blocks/posts-grid-item/templates/profiles.php' );
 				break;
 			case 'nu_programs':
 				include( get_template_directory( ) . '/classes/acf-blocks/posts-grid-item/templates/program.php' );
@@ -90,7 +94,7 @@ class PostsGrid_Item
 			
 			default:
 				$guides['grid-item-default'] = '
-					<li class="grid-item%1$s%7$s%8$s">
+					<li class="is-default grid-item%1$s%7$s%8$s">
 						<a class="contains-clickable-area" href="%6$s" title="Read More about '.get_the_title( ).'"%9$s>
 							%2$s
 							<div class="grid-item-content">%3$s%4$s%5$s</div>
