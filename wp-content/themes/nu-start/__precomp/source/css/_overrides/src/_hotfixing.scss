@@ -130,3 +130,21 @@ figure.wp-block-embed {
 		}
 	}
 }
+
+
+.blocks--wrapper.experimental-sidebar-layout {
+	display: flex;
+	flex-flow: row nowrap;
+	> .is-the-sidebar-area {
+		flex: 1 1 20%;
+		nav.navlinks {
+			ul.menu {
+				display: flex;
+				flex-flow: column nowrap;
+			}
+		}
+	}
+	> .is-the-content-area {
+		flex: 1 1 80%;
+	}
+}
