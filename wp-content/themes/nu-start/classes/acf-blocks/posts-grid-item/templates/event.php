@@ -31,25 +31,6 @@ extra data:
 */
 
 $event_location = !empty($fields['location']) ? '<p>'.$fields['location'].'</p>' : '';
-// if !empty($fields['hashtags']) {
-
-// }
-// $event_hashtags = !empty($fields['hashstags']) ? '<p>'.$fields['hashstags'].'</p>' : '';
-
-
-
-
-
-// set and use a guide string for this item
-$guides['event-item'] = '
-  <li>
-
-  </li>
-';
-
-// append this item to the return string
-$return .= sprintf();
-
 
 
 // This template is loaded by the post grid
@@ -73,17 +54,17 @@ $guides['grid-item-event'] = '
 
 $return .= sprintf(
 $guides['grid-item-event'],
-' '.$post_type,
-$the_cover_image,
-$the_date_time,
-$the_post_title,
-$event_location,
-$the_basic_excerpt,
-$determined_permalink,
-$aspect_ratio_class,
-$orientationClass,
-$maybe_target,
-$post_type_label
+  ' '.$post_type,
+  $the_cover_image,
+  $the_date_time,
+  $the_post_title,
+  $event_location,
+  $the_basic_excerpt,
+  $determined_permalink,
+  $aspect_ratio_class,
+  $orientationClass,
+  $maybe_target,
+  $post_type_label
 );
 
 

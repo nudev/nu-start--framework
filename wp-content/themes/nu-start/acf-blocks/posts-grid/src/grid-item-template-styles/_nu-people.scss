@@ -1,26 +1,12 @@
 /* 
 
+	? TREVOR WILL COMMENT THIS FILE
+
 */
 
 .nu_posts-grid .nu__grid .grid-item.nu_people {
-	// figure {
-	// 	min-height: 280px;
-	// 	@media screen and (min-width: 1281px) {
-	// 		max-height: 20vw;
-	// 	}
-	// }
-
-
-	// .featured-tags {
-	// 	width: 100%;
-	// 	.tags {
-	// 		font-weight: normal;
-	// 		font-size: normal;
-	// 	}
-	// 	.cats {
-	// 		font-size: smaller;
-	// 	}
-	// }
+	box-shadow: none;
+	border: none;
 
 	.nu_posts-grid-readmore {
 		display: block;
@@ -36,6 +22,20 @@
 	.moretext {
 		&:after {
 			display: none;
+		}
+	}
+
+	.grid-item-content {
+		padding: $base-margin;
+	}
+
+	// &:hover
+
+	> a {
+		&.contains-clickable-area {
+			.grid-item-content {
+				background-color: var(--wp--preset--color--white-1);
+			}
 		}
 	}
 }
