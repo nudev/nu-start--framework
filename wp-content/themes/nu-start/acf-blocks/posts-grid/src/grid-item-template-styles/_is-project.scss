@@ -1,7 +1,19 @@
-.nu_posts-grid
-	.nu_projects.grid-item.has-layout-horizontal
-	> .contains-clickable-area,
+.nu_posts-grid .nu_projects.grid-item.has-layout-horizontal	> .contains-clickable-area,
 .nu_posts-grid .nu_projects.grid-item.has-layout-horizontal {
+	border: none; 
+	box-shadow: none;
+
+	> .grid-item-content {
+	}
+
+	> a.contains-clickable-area {
+		background-color: var(--wp--preset--color--white-2); 
+		@include nu_micon("\e5c8", after);
+		&::after {
+			transform: rotate(315deg) translate(80px, 35px); 
+		}
+	}
+
 	@include media(">=medium") {
 		> figure {
 			flex: 1 0 66%;

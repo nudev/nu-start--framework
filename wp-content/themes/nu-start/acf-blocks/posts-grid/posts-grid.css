@@ -971,6 +971,40 @@ body.wp-admin .nu_posts-grid .grid-item a {
   font-weight: normal;
 }
 
+.nu_posts-grid .nu_projects.grid-item.has-layout-horizontal > .contains-clickable-area,
+.nu_posts-grid .nu_projects.grid-item.has-layout-horizontal {
+  border: none;
+  box-shadow: none;
+}
+.nu_posts-grid .nu_projects.grid-item.has-layout-horizontal > .contains-clickable-area > a.contains-clickable-area,
+.nu_posts-grid .nu_projects.grid-item.has-layout-horizontal > a.contains-clickable-area {
+  background-color: var(--wp--preset--color--white-2);
+  position: relative;
+}
+.nu_posts-grid .nu_projects.grid-item.has-layout-horizontal > .contains-clickable-area > a.contains-clickable-area:after,
+.nu_posts-grid .nu_projects.grid-item.has-layout-horizontal > a.contains-clickable-area:after {
+  content: "\e5c8";
+  font-family: "Material Icons";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  line-height: inherit;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  vertical-align: middle;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  font-feature-settings: "liga";
+  -moz-font-feature-settings: "liga";
+  -moz-osx-font-smoothing: grayscale;
+}
+.nu_posts-grid .nu_projects.grid-item.has-layout-horizontal > .contains-clickable-area > a.contains-clickable-area::after,
+.nu_posts-grid .nu_projects.grid-item.has-layout-horizontal > a.contains-clickable-area::after {
+  transform: rotate(315deg) translate(80px, 35px);
+}
 @media (min-width: 1024px) {
   .nu_posts-grid .nu_projects.grid-item.has-layout-horizontal > .contains-clickable-area > figure,
 .nu_posts-grid .nu_projects.grid-item.has-layout-horizontal > figure {
