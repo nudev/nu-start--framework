@@ -339,6 +339,34 @@
       }
     },
     "blocks": {
+      "core/button": {
+        "appearanceTools": true,
+        "color": {
+          "palette": [
+            {
+              "name": "White",
+              "slug": "white-1",
+              "color": "#FFFFFF"
+            },
+            {
+              "name": "Black",
+              "slug": "black-1",
+              "color": "#000000"
+            },
+            {
+              "name": "Red 3",
+              "slug": "red-3",
+              "color": "#C8102E"
+            }
+          ]
+        }
+      },
+      "core/buttons": {
+        "appearanceTools": true,
+        "color": {
+          "palette": []
+        }
+      },
       "core/navigation": {
         "spacing": {
           "blockGap": true

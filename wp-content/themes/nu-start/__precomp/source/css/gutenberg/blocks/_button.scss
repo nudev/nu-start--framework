@@ -1,0 +1,55 @@
+/* 
+
+*/
+
+.wp-block-button {
+	// * fill is default and may not have a class
+	&:not(.is-style-outline) {
+		//
+		//
+		a.wp-block-button__link {
+			border: 2px solid;
+			//
+			//
+			&:not(.has-background) {
+				&:hover,
+				&:focus {
+					color: var(--wp--preset--color--black-1);
+					background-color: var(--wp--preset--color--white-1);
+					border-color: var(--wp--preset--color--black-1);
+				}
+			}
+		}
+	}
+
+	// * outline style defined by having this class
+	&.is-style-outline {
+		//
+		//
+		a.wp-block-button__link {
+			background-color: var(--wp--preset--color--white-1);
+			//
+			//
+			&:not(.has-text-color) {
+				&:hover,
+				&:focus {
+					color: var(--wp--preset--color--white-1);
+					background-color: var(--wp--preset--color--black-1);
+					border-color: var(--wp--preset--color--black-1);
+				}
+			}
+			&.has-text-color {
+				&.has-red-3-color {
+					&:hover,
+					&:focus {
+						color: var(
+							--wp--preset--color--white-1
+						) !important; // ? the added color property has the important tag, we must have one to override it.
+						background-color: var(--wp--preset--color--red-3);
+						border-color: var(--wp--preset--color--red-3);
+					}
+				}
+			}
+		}
+	}
+}

@@ -300,6 +300,21 @@
       "pg" : 0,
       "sct" : 0
     },
+    "\/source\/css\/gutenberg\/blocks\/_button.scss" : {
+      "aP" : 1,
+      "bl" : 0,
+      "co" : 0,
+      "dP" : 10,
+      "ec" : 1,
+      "ft" : 4,
+      "ma" : 1,
+      "oA" : 1,
+      "oAP" : "\/build\/css\/gutenberg\/blocks\/_button.css",
+      "oF" : 0,
+      "oS" : 0,
+      "pg" : 0,
+      "sct" : 0
+    },
     "\/source\/css\/gutenberg\/blocks\/_buttons.scss" : {
       "aP" : 1,
       "bl" : 0,

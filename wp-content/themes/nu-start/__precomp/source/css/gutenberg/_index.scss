@@ -4,27 +4,30 @@
 @import './content-types';
 
 
-.has-background {
 
-	padding: $margin_2x;
 
-	&.wp-block-group {
-		padding: $base-margin;
-	}
-	&.wp-block-button__link {
-		padding: $half-margin $base-margin;
-	}
+// ? it is confusing to add padding globally like this
+// .has-background {
+
+// 	padding: $margin_2x;
+
+// 	&.wp-block-group {
+// 		padding: $base-margin;
+// 	}
+// 	&.wp-block-button__link {
+// 		padding: $half-margin $base-margin;
+// 	}
 	
-	@media screen and ( max-width: 781px ){
+// 	@media screen and ( max-width: 781px ){
 		
-		padding: $base-margin;
+// 		padding: $base-margin;
 		
-		&.wp-block-button__link {
-			padding: $half-margin $base-margin;
-		}
-	}
+// 		&.wp-block-button__link {
+// 			padding: $half-margin $base-margin;
+// 		}
+// 	}
 	
-	&.wp-block-separator {
-		padding: 0;
-	}
-}
+// 	&.wp-block-separator {
+// 		padding: 0;
+// 	}
+// }
