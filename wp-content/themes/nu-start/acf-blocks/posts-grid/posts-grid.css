@@ -983,7 +983,7 @@ body.wp-admin .nu_posts-grid .grid-item a {
 }
 .nu_posts-grid .nu_projects.grid-item.has-layout-horizontal > .contains-clickable-area > a.contains-clickable-area:after,
 .nu_posts-grid .nu_projects.grid-item.has-layout-horizontal > a.contains-clickable-area:after {
-  content: "\e5c8";
+  content: "\e0b2";
   font-family: "Material Icons";
   font-weight: normal;
   font-style: normal;
@@ -1001,9 +1001,18 @@ body.wp-admin .nu_posts-grid .grid-item a {
   -moz-font-feature-settings: "liga";
   -moz-osx-font-smoothing: grayscale;
 }
-.nu_posts-grid .nu_projects.grid-item.has-layout-horizontal > .contains-clickable-area > a.contains-clickable-area::after,
-.nu_posts-grid .nu_projects.grid-item.has-layout-horizontal > a.contains-clickable-area::after {
-  transform: rotate(315deg) translate(80px, 35px);
+.nu_posts-grid .nu_projects.grid-item.has-layout-horizontal > .contains-clickable-area > a.contains-clickable-area:after,
+.nu_posts-grid .nu_projects.grid-item.has-layout-horizontal > a.contains-clickable-area:after {
+  position: absolute;
+  right: 15px;
+  top: 10px;
+}
+@media screen and (max-width: 782px) {
+  .nu_posts-grid .nu_projects.grid-item.has-layout-horizontal > .contains-clickable-area > a.contains-clickable-area:after,
+.nu_posts-grid .nu_projects.grid-item.has-layout-horizontal > a.contains-clickable-area:after {
+    top: unset;
+    bottom: 10px;
+  }
 }
 @media (min-width: 1024px) {
   .nu_posts-grid .nu_projects.grid-item.has-layout-horizontal > .contains-clickable-area > figure,
