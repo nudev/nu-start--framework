@@ -91,7 +91,6 @@ class SetupTheme
 			,'footer_1' => __( 'Footer', 'nu-start' )
 			,'footer_2' => __( 'Footer (2nd column)', 'nu-start' )
 			,'utility' => __( 'Utility Nav', 'nu-start' )
-			,'sidebar_menu_1' => __( 'Experimental Sidebar Nav', 'nu-start' )
 		));
 
 	}
@@ -159,19 +158,6 @@ class SetupTheme
 				'description'   => __( 'These alerts (should) appear everywhere.' ),
 				'before_widget' => '<div class="nu__alerts--wrapper"><div id="%1$s" class="widget nu__alerts nu__alerts-sitewide %2$s">',
 				'after_widget'  => '<span class="material-icons-outlined closeicon">highlight_off</span></div></div>',
-				'before_title'  => '<p class="widget-title">',
-				'after_title'   => '</p>',
-			)
-		);
-
-		// ? lets try a "real" sidebar?
-		register_sidebar(
-			array(
-				'id'            => 'experimental-sidebar-as-menu',
-				'name'          => __( 'Experimental Sidebar Menu' ),
-				'description'   => __( 'This works towards having a template level sidebar nav (instead of the header, or in tandem)' ),
-				'before_widget' => '<div class="nu__sidebar_menu--experimental"><div id="%1$s" class="widget %2$s">',
-				'after_widget'  => '</div></div>',
 				'before_title'  => '<p class="widget-title">',
 				'after_title'   => '</p>',
 			)

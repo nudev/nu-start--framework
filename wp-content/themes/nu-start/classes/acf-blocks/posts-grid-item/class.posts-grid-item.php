@@ -58,6 +58,7 @@ class PostsGrid_Item
 
 		// ? if a custom URL is entered to override the permalink we also open in a new tab/window
 		$maybe_target = !empty($fields['custom_permalink_redirect']) ? ' target="_blank"' : '';
+		$will_open_new_tab = !empty($fields['custom_permalink_redirect']) ? ' [will open in a new tab/window]' : '';
 		
 		// ? check for the actual post_excerpt and possibly use it
 		$the_basic_excerpt = has_excerpt() ? '<p class="post-excerpt">'.get_the_excerpt( ).'</p>' : '';
@@ -65,7 +66,7 @@ class PostsGrid_Item
 		// the featured image in markup
 		$the_cover_image = !empty($item_styles['display_featured_image']) && has_post_thumbnail( ) ? '<figure>'.get_the_post_thumbnail( ).'</figure>' : '';
 
-		$the_title_attribute = ' title="Read More about '.get_the_title( ).'"';
+		$the_title_attribute = ' title="Read More about '.get_the_title( ).$will_open_new_tab.'"';
 
 
 		$guides = [];

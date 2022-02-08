@@ -7,6 +7,48 @@
 	}
 }
 
+
+body.single-nu_partnerships {
+	.blocks--wrapper > .wp-block-group.alignfull:first-child {
+		margin-top: 0;
+	}
+}
+
+.wp-block-eedee-block-gutenslider.the-timeline-slider {
+	.slide-content {
+		padding: 0 !important;
+	}
+	// handle adjustments to the arrows; they "wrap" the year
+	.eedee-gutenslider-nav {
+		transform: translateY(-50%);
+		&.eedee-gutenslider-prev {
+		}
+		&.eedee-gutenslider-next {
+			right: 0 !important;
+			left: auto !important;
+		}
+		
+	}
+	// handle adjustments to the bullets - they become a timeline!
+	.eedee-gutenslider-pagination.swiper-pagination-bullets {
+		width: 100%;
+		border-bottom: 1px solid var(--wp--preset--color--white-2);
+		.swiper-pagination-bullet {
+			width: auto;
+			height: auto;
+			margin: 0 0 0 $base-margin;
+			background-color: transparent;
+			&:first-child {
+				margin: 0 0 0 0;
+			}
+			&.swiper-pagination-bullet-active {
+			}
+		}
+	}
+}
+
+// ! FIX ALL OF THIS WHAT IS THIS OMG
+
 .nu_section--similar-events {
 	&:last-child:not(.has-background) {
 		margin-bottom: 0 !important;
@@ -128,23 +170,5 @@ figure.wp-block-embed {
 		iframe {
 			@include nu__boxshadow(4);
 		}
-	}
-}
-
-
-.blocks--wrapper.experimental-sidebar-layout {
-	display: flex;
-	flex-flow: row nowrap;
-	> .is-the-sidebar-area {
-		flex: 1 1 20%;
-		nav.navlinks {
-			ul.menu {
-				display: flex;
-				flex-flow: column nowrap;
-			}
-		}
-	}
-	> .is-the-content-area {
-		flex: 1 1 80%;
 	}
 }

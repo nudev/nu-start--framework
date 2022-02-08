@@ -644,7 +644,13 @@ body.wp-admin .nu_posts-grid .grid-item a {
 
 /* 
 
+	? TREVOR WILL COMMENT THIS FILE
+
 */
+.nu_posts-grid .nu__grid .grid-item.nu_people {
+  box-shadow: none;
+  border: none;
+}
 .nu_posts-grid .nu__grid .grid-item.nu_people .nu_posts-grid-readmore {
   display: block;
   margin: 64px 0 0 0;
@@ -654,6 +660,12 @@ body.wp-admin .nu_posts-grid .grid-item a {
 }
 .nu_posts-grid .nu__grid .grid-item.nu_people .moretext:after {
   display: none;
+}
+.nu_posts-grid .nu__grid .grid-item.nu_people .grid-item-content {
+  padding: 16px;
+}
+.nu_posts-grid .nu__grid .grid-item.nu_people > a.contains-clickable-area .grid-item-content {
+  background-color: var(--wp--preset--color--white-1);
 }
 
 /* 

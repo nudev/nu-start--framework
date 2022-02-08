@@ -127,6 +127,37 @@
   	 *   ... code in here will run after jQuery says document is ready
   	 */
   	$(function () {
+  		let timeline_slider = {
+  			$years: undefined,
+  			_init: function () {
+
+  				if( !$(".wp-block-eedee-block-gutenslider.the-timeline-slider").length ){
+  					return;
+  				}
+  				
+  				// grab the real instance of this slider
+  				let $instance = $(
+  					".wp-block-eedee-block-gutenslider.the-timeline-slider"
+  				)[0].gutenslider.swiperInstance;
+  				// adjust settings not exposed in the CMS
+  				$instance.allowTouchMove = false;
+  				// get the actual bullets from the actual instance (do not look thru the DOM)
+  				let $bullets = $instance.pagination.$el[0];
+  				//
+  				self.$years = $(
+  					".wp-block-eedee-block-gutenslider.the-timeline-slider"
+  				).find(
+  					".swiper-slide:not(.swiper-slide-duplicate) .has-the-timeline-slide-year"
+  				);
+  				$($bullets)
+  					.children()
+  					.each(function (index, element) {
+  						$(element).html(self.$years[index].innerHTML);
+  					});
+  			},
+  		};
+  		timeline_slider._init();
+
   		let nav_block_customization = {
   			_init: function () {
   				$(".open-on-click.wp-block-navigation-submenu").on(
@@ -138,6 +169,7 @@
   				);
   			},
   		};
+
   		nav_block_customization._init();
 
   		//
@@ -198,6 +230,30 @@
   			$(".nu__alerts--wrapper").hide();
   			localStorage.setItem("alertsHidden", "true");
   		});
+
+  		//
+  		//
+  		//
+  		//
+  		// if ($("body").hasClass("prod--disabled")) {
+  		// 	if ($theme_info) {
+  		// 		$("main").append($theme_info["devpanel"]);
+
+  		// 		$("#nu_dev_utility .window-width span").html(
+  		// 			window.innerWidth + "px"
+  		// 		);
+
+  		// 		$(window).on("resize", function () {
+  		// 			$("#nu_dev_utility .window-width span").html(
+  		// 				window.innerWidth + "px"
+  		// 			);
+  		// 		});
+
+  		// 		$("#nu_dev_utility").on("click", function (e) {
+  		// 			$(this).toggleClass("revealed");
+  		// 		});
+  		// 	}
+  		// }
 
   		//
   		//
