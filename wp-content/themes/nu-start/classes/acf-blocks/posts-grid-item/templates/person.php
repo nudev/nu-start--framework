@@ -32,6 +32,8 @@ if( !empty($person_metadata) ){
   
   // ? get the display name or nothing
   $the_display_name = !empty($person_metadata['display_name']) ? $person_metadata['display_name'] : $the_post_title;
+
+  $the_primary_title = !empty($person_metadata['primary_title']) ? $person_metadata['primary_title'] : $the_basic_excerpt; 
   
   $the_phone_number = !empty($person_metadata['person_phone_number']) ? $person_metadata['person_phone_number'] : ''; 
 
@@ -47,11 +49,13 @@ $guides['person'] = '
     <a class="contains-clickable-area" href="%5$s"'.$the_title_attribute.' %8$s>
       %2$s 
       <div class="grid-item-content">
-        %3$s
+        <p class="post-title has-24-32-font-size">
+          %3$s
+        </p>
         <div class="is_the_rich_text_person_excerpt">
-          %4$s
-          %9$s
-          %10$s
+          <em>
+            %4$s
+          </em>
         </div>
       </div>
     </a>
