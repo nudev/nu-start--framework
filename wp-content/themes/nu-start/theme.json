@@ -362,10 +362,7 @@
         }
       },
       "core/buttons": {
-        "appearanceTools": true,
-        "color": {
-          "palette": []
-        }
+        "appearanceTools": true
       },
       "core/navigation": {
         "spacing": {

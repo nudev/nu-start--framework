@@ -7,8 +7,7 @@
 	&:not(.is-style-outline) {
 		//
 		//
-		a.wp-block-button__link {
-			border: 2px solid;
+		.wp-block-button__link {
 			//
 			//
 			&:not(.has-background) {
@@ -19,6 +18,21 @@
 					border-color: var(--wp--preset--color--black-1);
 				}
 			}
+			&:not(.has-text-color) {
+				border: 2px solid var(--wp--preset--color--black-1);
+			}
+			&.has-background {
+				&.has-red-3-background-color {
+					border-color: var(--wp--preset--color--red-3);
+					&:hover,
+					&:focus {
+						background-color: var(
+							--wp--preset--color--white-1
+						) !important; // ? the added color property has the important tag, we must have one to override it.
+						color: var(--wp--preset--color--red-3);
+					}
+				}
+			}
 		}
 	}
 
@@ -26,7 +40,7 @@
 	&.is-style-outline {
 		//
 		//
-		a.wp-block-button__link {
+		.wp-block-button__link {
 			background-color: var(--wp--preset--color--white-1);
 			//
 			//
@@ -36,6 +50,10 @@
 					color: var(--wp--preset--color--white-1);
 					background-color: var(--wp--preset--color--black-1);
 					border-color: var(--wp--preset--color--black-1);
+				}
+			}
+			&.has-background {
+				&.has-red-3-background-color {
 				}
 			}
 			&.has-text-color {
