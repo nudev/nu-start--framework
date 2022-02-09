@@ -12,21 +12,21 @@ class PIM_Handler
 	public static function _init(){
 
 		$endpoints = [
-			'https://pim.northeastern.edu/api/v2/program/18826' // MS in Cybersecurity
-			,'https://pim.northeastern.edu/api/v2/program/18827' // Molecular Biotech Cert
-			,'https://pim.northeastern.edu/api/v2/program/18825' // MPS Applied Machine Intelligence
-			,'https://pim.northeastern.edu/api/v2/program/18380' // Master of Science in Bioinformatics
-			,'https://pim.northeastern.edu/api/v2/program/18383' // Graduate Certificate in Bioinformatics Portland
-			,'https://pim.northeastern.edu/api/v2/program/18385' // Graduate Certificate in Biotechnology
-			,'https://pim.northeastern.edu/api/v2/program/18388' // Graduate Certificate in Cloud Software Development
-			,'https://pim.northeastern.edu/api/v2/program/18389' // Graduate Certificate in Project Management
-			,'https://pim.northeastern.edu/api/v2/program/18397' // Graduate Certificate in Applied Analytics
-			,'https://pim.northeastern.edu/api/v2/program/18384' // Master of Professional Studies in Analytics
-			,'https://pim.northeastern.edu/api/v2/program/18386' // Master of Science in Project Management
-			,'https://pim.northeastern.edu/api/v2/program/18387' // Master of Science in Biotechnology
-			,'https://pim.northeastern.edu/api/v2/program/18390' // Master of Science in Computer Science
-			,'https://pim.northeastern.edu/api/v2/program/18391' // Master of Science in Computer Science Align
-			,'https://pim.northeastern.edu/api/v2/program/18806' // MSDS Portland
+			// 'https://pim.northeastern.edu/api/v2/program/18826' // MS in Cybersecurity
+			// ,'https://pim.northeastern.edu/api/v2/program/18827' // Molecular Biotech Cert
+			// ,'https://pim.northeastern.edu/api/v2/program/18825' // MPS Applied Machine Intelligence
+			// ,'https://pim.northeastern.edu/api/v2/program/18380' // Master of Science in Bioinformatics
+			// ,'https://pim.northeastern.edu/api/v2/program/18383' // Graduate Certificate in Bioinformatics Portland
+			// ,'https://pim.northeastern.edu/api/v2/program/18385' // Graduate Certificate in Biotechnology
+			// ,'https://pim.northeastern.edu/api/v2/program/18388' // Graduate Certificate in Cloud Software Development
+			// ,'https://pim.northeastern.edu/api/v2/program/18389' // Graduate Certificate in Project Management
+			// ,'https://pim.northeastern.edu/api/v2/program/18397' // Graduate Certificate in Applied Analytics
+			// ,'https://pim.northeastern.edu/api/v2/program/18384' // Master of Professional Studies in Analytics
+			// ,'https://pim.northeastern.edu/api/v2/program/18386' // Master of Science in Project Management
+			// ,'https://pim.northeastern.edu/api/v2/program/18387' // Master of Science in Biotechnology
+			// ,'https://pim.northeastern.edu/api/v2/program/18390' // Master of Science in Computer Science
+			// ,'https://pim.northeastern.edu/api/v2/program/18391' // Master of Science in Computer Science Align
+			'https://pim.northeastern.edu/api/v2/program/18806' // MSDS Portland
 			,'https://pim.northeastern.edu/api/v2/program/18807' // MSDS Align Portland
 		];
 
@@ -78,7 +78,7 @@ class PIM_Handler
 		$filename = $basename . $json['data'][0]['id'];
 		$filename .= '.json';
 
-		file_put_contents($filename, $programData);
+		file_put_contents($filename, $programData); 	// will over-write the existing pim
 
 	}
 
@@ -215,7 +215,7 @@ class PIM_Handler
 	
 }
 
-// add_action('nu__pullPrograms_cron', array( 'PIM_Handler', '_init' ) );
+add_action('nu__pullPrograms_cron', array( 'PIM_Handler', '_init' ) );
 
 // 
 // 

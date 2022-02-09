@@ -1,0 +1,117 @@
+// 
+// 
+@import '../../__precomp/source/css/library';
+
+.nu_program {
+
+	position: relative;
+
+	div.debugging {
+		padding: $margin_4x;
+		border: 1px solid lightcoral;
+	}
+
+
+	section.overview {
+
+		div.main-content {
+			margin: $margin_2x;
+
+			hr {
+				margin: $margin_4x 0;
+			}
+			.collapse.wrapper {
+				// border-bottom: 1px solid $grey_4;
+
+				> * {
+					display: none;
+				}
+				> h4 {
+					display: block;
+					@include nu_micon('\e145', before);
+				}
+			}
+			
+
+			
+		}
+		.testimonials {
+			> .container {
+				margin: $margin_4x;
+				.testimonial {
+					max-width: 420px;
+					.quote {
+						font-style: italic;
+					}
+					.source {
+						margin: 5px 0 0 0;
+					}
+				}
+			}
+		}
+
+	}
+
+
+	.intro-before-overview {
+
+		> ul  {
+			display: flex;
+			flex-flow: row nowrap;
+			list-style-type: none;
+			list-style: none;
+			li {
+				flex: 1 0 20%;
+				text-align: center;
+				position: relative;
+				@include aspect-ratio(1,1);
+				// background-color: $grey_2;
+				margin: $margin_2x 0 0 $margin_2x;
+				&:first-child {
+					margin-left: 0;
+				}
+				> div {
+					@include center_absolute;
+				}
+
+			}
+		}
+	}
+
+	.programs-jumpnav {
+		background-color: black;
+		justify-content: space-between;
+		margin: 0 0 $margin_4x 0;
+		ul, & {
+			display: flex;
+			flex-flow: row nowrap;
+			align-items: center;
+		}
+		ul {
+			list-style-type: none;
+			list-style: none;
+		}
+		> div:last-child {
+
+		}
+		button.button {
+			appearance: none;
+			@extend %nu__buttonstyle;
+		}
+	}
+
+
+	> div > section {
+		width: 100%;
+		// border-top: 1px solid $grey_4;
+		padding: $margin_4x 0;
+		position: relative;
+		> span.anchor {
+			position: absolute;
+			top: 0;
+			left: 0;
+			border-top: 2px solid blue;
+			padding: $margin_2x;
+		}
+	}
+}

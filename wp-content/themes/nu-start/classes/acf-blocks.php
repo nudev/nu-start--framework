@@ -46,7 +46,7 @@ class NU_ACF_Blocks
 
 		
 		// ! DEPRECATED
-		// require_once( get_template_directory(  ) . '/classes/acf-blocks/class.pim-programs.php' );
+		require_once( get_template_directory(  ) . '/classes/acf-blocks/class.pim-programs.php' );
 	}
 	
 }

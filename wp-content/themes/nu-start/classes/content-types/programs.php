@@ -16,7 +16,7 @@ NU__ContentTypes::_register_custom_post_type(
 
 
 NU__ContentTypes::_register_custom_taxonomy(
-	$literal = 'programs-subjects',
+	$literal = 'programs-categories',
 	$post_type = 'programs',
 	$name = 'Programs Subjects',
 	$singular = 'Program Subject',

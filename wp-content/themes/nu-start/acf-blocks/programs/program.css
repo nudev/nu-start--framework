@@ -1,0 +1,178 @@
+/**
+*
+* *		Setup Document Model Vars / Breakpoints
+*
+*/
+/* 
+	because the block may or may not be loaded when we call this in (the posts grid just calls it in for now)
+*/
+/**
+ * Clearfix
+ *
+ */
+html :where(body:not(.wp-admin), .editor-styles-wrapper) {
+  color: var(--wp--preset--color--black-2);
+  font-family: "Lato", sans-serif, "Material Icons";
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.375;
+}
+
+.nu_program .programs-jumpnav button.button {
+  transition: all 0.1s ease-in-out;
+}
+
+.nu_program .programs-jumpnav button.button {
+  border-radius: 0;
+  border: 2px solid transparent;
+  box-shadow: none;
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  overflow-wrap: break-word;
+  margin: 0.5em 0.5em 0.5em 0;
+  min-height: none 0;
+  font-weight: normal;
+  letter-spacing: 0.2px;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  padding: 0.625rem 1rem;
+  border: 2px solid var(--wp--preset--color--black-1);
+  background-color: var(--wp--preset--color--black-1);
+  color: var(--wp--preset--color--white-1);
+}
+.nu_program .programs-jumpnav button.button:hover {
+  background-color: var(--wp--preset--color--white-1);
+  border: 2px solid var(--wp--preset--color--black-1);
+  color: var(--wp--preset--color--black-1);
+}
+
+/* ... project styles will always load after this ... */
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+html :where(body:not(.wp-admin), .editor-styles-wrapper) {
+  position: relative;
+  z-index: 1;
+}
+html :where(body:not(.wp-admin), .editor-styles-wrapper) a {
+  color: currentColor;
+  text-decoration: none;
+}
+
+.nu_program {
+  position: relative;
+}
+.nu_program div.debugging {
+  padding: 64px;
+  border: 1px solid lightcoral;
+}
+.nu_program section.overview div.main-content {
+  margin: 32px;
+}
+.nu_program section.overview div.main-content hr {
+  margin: 64px 0;
+}
+.nu_program section.overview div.main-content .collapse.wrapper > * {
+  display: none;
+}
+.nu_program section.overview div.main-content .collapse.wrapper > h4 {
+  display: block;
+  position: relative;
+}
+.nu_program section.overview div.main-content .collapse.wrapper > h4:before {
+  content: "\e145";
+  font-family: "Material Icons";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  line-height: inherit;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  vertical-align: middle;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  font-feature-settings: "liga";
+  -moz-font-feature-settings: "liga";
+  -moz-osx-font-smoothing: grayscale;
+}
+.nu_program section.overview .testimonials > .container {
+  margin: 64px;
+}
+.nu_program section.overview .testimonials > .container .testimonial {
+  max-width: 420px;
+}
+.nu_program section.overview .testimonials > .container .testimonial .quote {
+  font-style: italic;
+}
+.nu_program section.overview .testimonials > .container .testimonial .source {
+  margin: 5px 0 0 0;
+}
+.nu_program .intro-before-overview > ul {
+  display: flex;
+  flex-flow: row nowrap;
+  list-style-type: none;
+  list-style: none;
+}
+.nu_program .intro-before-overview > ul li {
+  flex: 1 0 20%;
+  text-align: center;
+  position: relative;
+  position: relative;
+  margin: 32px 0 0 32px;
+}
+.nu_program .intro-before-overview > ul li:before {
+  display: block;
+  content: "";
+  width: 100%;
+  padding-top: 100%;
+}
+.nu_program .intro-before-overview > ul li:first-child {
+  margin-left: 0;
+}
+.nu_program .intro-before-overview > ul li > div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.nu_program .programs-jumpnav {
+  background-color: black;
+  justify-content: space-between;
+  margin: 0 0 64px 0;
+}
+.nu_program .programs-jumpnav ul, .nu_program .programs-jumpnav {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+.nu_program .programs-jumpnav ul {
+  list-style-type: none;
+  list-style: none;
+}
+.nu_program .programs-jumpnav button.button {
+  appearance: none;
+}
+.nu_program > div > section {
+  width: 100%;
+  padding: 64px 0;
+  position: relative;
+}
+.nu_program > div > section > span.anchor {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-top: 2px solid blue;
+  padding: 32px;
+}

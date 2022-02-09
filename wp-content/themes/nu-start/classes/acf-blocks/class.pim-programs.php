@@ -357,7 +357,7 @@ class PIM_Program
 		self::build_intro_before_overview($data);
 		self::build_the_overview_section($data);
 		self::build_the_admissions_section($data);
-		// self::build_the_curriculum_section($data);
+		self::build_the_curriculum_section($data);
 
 	}
 
