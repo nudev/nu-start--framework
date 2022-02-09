@@ -49,9 +49,9 @@ $guides['person'] = '
     <a class="contains-clickable-area" href="%5$s"'.$the_title_attribute.' %8$s>
       %2$s 
       <div class="grid-item-content">
-        <p class="post-title has-24-32-font-size">
+        <span class="post-title has-24-32-font-size">
           %3$s
-        </p>
+        </span>
         <div class="is_the_rich_text_person_excerpt">
           <em>
             %4$s
