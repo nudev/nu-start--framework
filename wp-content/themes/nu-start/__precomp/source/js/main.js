@@ -34,14 +34,33 @@ import "../../vendor/js/waapi-animate-details";
 	 *   ... code in here will run after jQuery says document is ready
 	 */
 	$(function () {
+		//
+
+		$(".is-experimental-sidebar-toggle").on("click", function (e) {
+			let $sidebar = $(".is-the-template-sidebar");
+			let $content = $(".is-the-template-content");
+
+			$sidebar.toggleClass("is-tucked");
+		});
+
+		//
+		//
+		//
+		//
+		//
+		//
+		//
+
 		let timeline_slider = {
 			$years: undefined,
 			_init: function () {
-
-				if( !$(".wp-block-eedee-block-gutenslider.the-timeline-slider").length ){
+				if (
+					!$(".wp-block-eedee-block-gutenslider.the-timeline-slider")
+						.length
+				) {
 					return;
 				}
-				
+
 				// grab the real instance of this slider
 				let $instance = $(
 					".wp-block-eedee-block-gutenslider.the-timeline-slider"

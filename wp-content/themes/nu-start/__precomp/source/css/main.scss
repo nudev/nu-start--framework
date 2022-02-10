@@ -13,6 +13,9 @@
 // include frontend only styles
 @import './frontend';
 
+// import template-specific styles (may want to not do this)
+@import './templates';
+
 @import './vendors';
 
 @import './_overrides';

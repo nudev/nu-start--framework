@@ -350,6 +350,7 @@
         },
         "custom": {},
         "color": {
+          "custom": false,
           "palette": [
             {
               "name": "White",

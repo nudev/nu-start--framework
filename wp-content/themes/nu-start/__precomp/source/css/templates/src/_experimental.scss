@@ -1,0 +1,54 @@
+body.experimental-page-template {
+	div.blocks--wrapper {
+		display: flex;
+		flex-flow: row nowrap;
+
+		> .is-the-template-content,
+		> .is-the-template-sidebar {
+			@extend %transition;
+		}
+
+		> .is-the-template-sidebar {
+			flex-basis: 20%;
+			margin: 0;
+
+			&.is-tucked {
+				flex-basis: $margin_4x;
+				.widget_nav_menu {
+					display: none;
+				}
+			}
+		}
+		> .is-the-template-content {
+			flex-basis: 75%;
+			width: 75%;
+		}
+
+		@include media("<=medium") {
+			flex-flow: column nowrap;
+		}
+	}
+
+	.nu__sidebar_menu--experimental {
+		&,
+		.widget_block,
+		.widget_block > .wp-block-group {
+			height: 100%;
+		}
+
+		div.widget_block {
+			.widgettitle {
+				margin-top: 0;
+				display: none;
+			}
+			.widget_nav_menu {
+				ul.menu {
+					margin: 0;
+				}
+			}
+
+			.is-experimental-sidebar-toggle {
+			}
+		}
+	}
+}
