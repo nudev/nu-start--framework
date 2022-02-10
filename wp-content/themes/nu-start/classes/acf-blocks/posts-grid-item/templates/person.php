@@ -27,11 +27,9 @@ $the_email_address = '';
 // if we have data
 if( !empty($person_metadata) ){
   
-  // print_r($person_metadata);
-  // name, phone, email, primary title
   
   // ? get the display name or nothing
-  $the_display_name = !empty($person_metadata['display_name']) ? $person_metadata['display_name'] : $the_post_title;
+  $the_display_name = !empty($person_metadata['full_name']) ? '<span>'.$person_metadata['full_name'].'</span>' : $the_post_title;
 
   $the_primary_title = !empty($person_metadata['primary_title']) ? $person_metadata['primary_title'] : $the_basic_excerpt; 
   
@@ -49,9 +47,9 @@ $guides['person'] = '
     <a class="contains-clickable-area" href="%5$s"'.$the_title_attribute.' %8$s>
       %2$s 
       <div class="grid-item-content">
-        <span class="post-title has-24-32-font-size">
+        <div class="post-title has-24-32-font-size">
           %3$s
-        </span>
+        </div>
         <div class="is_the_rich_text_person_excerpt">
           <em>
             %4$s
@@ -72,6 +70,8 @@ $return .= sprintf(
     $aspect_ratio_class,
     $orientationClass,
     $maybe_target,
+    $the_first_name, 
+    $the_last_name,
     $the_phone_number,
     $the_email_address
 );

@@ -20,9 +20,47 @@
             "acfe_group_modal": 0,
             "sub_fields": [
                 {
+                    "key": "field_62053be7cc844",
+                    "label": "Full Name",
+                    "name": "full_name",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
                     "key": "field_62028a721dce9",
-                    "label": "Display Name",
-                    "name": "display_name",
+                    "label": "First Name",
+                    "name": "first_name",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_620524793d821",
+                    "label": "Last Name",
+                    "name": "last_name",
                     "type": "text",
                     "instructions": "",
                     "required": 0,
@@ -124,7 +162,7 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1644340888,
+    "modified": 1644510264,
     "acfe_categories": {
         "custom-post-metadata": "Custom Post Metadata"
     }
