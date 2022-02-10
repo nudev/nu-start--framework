@@ -20,7 +20,7 @@ if( is_active_sidebar( 'alerts-sitewide' ) ){
 ?>
 
 <div class="blocks--wrapper">
-	<section class="is-the-template-sidebar">
+	<section class="is-the-template-sidebar is-tucked">
 		<?php
 			$experimental_sidebar = '';
 			if( is_active_sidebar( 'experimental-sidebar-as-menu' ) ){

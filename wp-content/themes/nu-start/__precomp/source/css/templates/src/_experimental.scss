@@ -1,5 +1,10 @@
-body.experimental-page-template {
+body.page-template-experimental {
+	main {
+		display: flex;
+		flex-flow: column nowrap;
+	}
 	div.blocks--wrapper {
+		flex: 1 0 auto;
 		display: flex;
 		flex-flow: row nowrap;
 
@@ -7,21 +12,26 @@ body.experimental-page-template {
 		> .is-the-template-sidebar {
 			@extend %transition;
 		}
-
+		
 		> .is-the-template-sidebar {
 			flex-basis: 20%;
 			margin: 0;
-
+			
+			.is-hidden-when-tucked {
+				// display: none;
+				opacity: 1;
+				@extend %transition;
+			}
+			
 			&.is-tucked {
 				flex-basis: $margin_4x;
-				.widget_nav_menu {
-					display: none;
+				.is-hidden-when-tucked {
+					// display: none;
+					opacity: 0;
+				}
+				+ .is-the-template-content {
 				}
 			}
-		}
-		> .is-the-template-content {
-			flex-basis: 75%;
-			width: 75%;
 		}
 
 		@include media("<=medium") {
