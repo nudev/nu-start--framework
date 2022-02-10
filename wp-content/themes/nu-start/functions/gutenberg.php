@@ -4,6 +4,22 @@
  */
 // 
 
+// add_action( 'after_setup_theme', function() {
+// 	// Same args used for wp_enqueue_style().
+// 	$args = array(
+// 			'handle' => 'my-theme-site-title',
+// 			'src'    => get_theme_file_uri( 'assets/blocks/site-title.css' ),
+// 	);
+
+// 	// Add "path" to allow inlining asset if the theme opts-in.
+// 	$args['path'] = get_theme_file_path( 'assets/blocks/site-title.css' );
+
+// 	// Enqueue asset.
+// 	wp_enqueue_block_style( 'core/site-title', $args );
+// } );
+
+
+
 // Add frontend styles.
 add_action( 'wp_enqueue_scripts', 'nu__enqueue_each_block_styles' );
 // Add editor styles.
@@ -15,7 +31,7 @@ add_action( 'admin_init', 'nu__enqueue_each_block_styles' );
  */
 function nu__enqueue_each_block_styles() {
 	// An array of blocks.
-	$styled_blocks = [ 'button' ];
+	$styled_blocks = [ 'button', 'column', 'cover', 'group', 'mediatext', 'navigation', 'paragraph', 'pullquote', 'separator', 'table' ];
 
 	foreach ( $styled_blocks as $block_name ) {
 		// Get the stylesheet handle. This is backwards-compatible and checks the

@@ -1,0 +1,61 @@
+/**
+*
+* *		Setup Document Model Vars / Breakpoints
+*
+*/
+/* 
+	because the block may or may not be loaded when we call this in (the posts grid just calls it in for now)
+*/
+/**
+ * Clearfix
+ *
+ */
+html :where(body:not(.wp-admin), .editor-styles-wrapper) {
+  color: var(--wp--preset--color--black-2);
+  font-family: "Lato", sans-serif, "Material Icons";
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.375;
+}
+
+.wp-block-media-text figure img {
+  transition: all 0.1s ease-in-out;
+}
+
+/* ... project styles will always load after this ... */
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+html :where(body:not(.wp-admin), .editor-styles-wrapper) {
+  position: relative;
+  z-index: 1;
+}
+html :where(body:not(.wp-admin), .editor-styles-wrapper) a {
+  color: currentColor;
+  text-decoration: none;
+}
+
+.wp-block-media-text figure img {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+.wp-block-media-text figure > a {
+  display: block;
+  border: none 0;
+}
+.wp-block-media-text figure > a:hover, .wp-block-media-text figure > a:focus, .wp-block-media-text figure > a:active {
+  border: none 0;
+}
+.wp-block-media-text figure > a:hover img, .wp-block-media-text figure > a:focus img, .wp-block-media-text figure > a:active img {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+/*# sourceMappingURL=mediatext.css.map */

@@ -1,0 +1,78 @@
+/* 
+
+*/
+/**
+*
+* *		Setup Document Model Vars / Breakpoints
+*
+*/
+/* 
+	because the block may or may not be loaded when we call this in (the posts grid just calls it in for now)
+*/
+/**
+ * Clearfix
+ *
+ */
+html :where(body:not(.wp-admin), .editor-styles-wrapper) {
+  color: var(--wp--preset--color--black-2);
+  font-family: "Lato", sans-serif, "Material Icons";
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.375;
+}
+
+/* ... project styles will always load after this ... */
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+html :where(body:not(.wp-admin), .editor-styles-wrapper) {
+  position: relative;
+  z-index: 1;
+}
+html :where(body:not(.wp-admin), .editor-styles-wrapper) a {
+  color: currentColor;
+  text-decoration: none;
+}
+
+.wp-block-pullquote {
+  border: none 0;
+  border-bottom: none 0;
+  border-top: none 0;
+  text-align: left;
+  padding: 0;
+}
+.wp-block-pullquote blockquote {
+  padding-left: 32px;
+}
+.wp-block-pullquote blockquote > *:first-child:not(.wp-block-pullquote__citation) {
+  position: relative;
+}
+.wp-block-pullquote blockquote > *:first-child:not(.wp-block-pullquote__citation):before {
+  content: url("/wp-content/themes/nu-start/__lib/icons/quotes.svg");
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: -16px;
+  -webkit-transform: translate(-100%, -50%);
+          transform: translate(-100%, -50%);
+}
+.wp-block-pullquote cite {
+  margin-top: 16px;
+  display: inline-block;
+  text-transform: none;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+}
+.wp-block-pullquote cite strong {
+  text-transform: uppercase;
+  font-weight: normal;
+}
+
+/*# sourceMappingURL=pullquote.css.map */

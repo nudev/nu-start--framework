@@ -3,10 +3,10 @@
     "title": "Person: MetaData",
     "fields": [
         {
-            "key": "field_611e7b014431f",
-            "label": "Excerpt Title",
-            "name": "excerpt_title",
-            "type": "textarea",
+            "key": "field_620289321dce8",
+            "label": "Person: MetaData",
+            "name": "person_metadata",
+            "type": "group",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -15,73 +15,88 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
-            "placeholder": "",
-            "maxlength": "",
-            "rows": "",
-            "new_lines": "",
-            "acfe_textarea_code": 0,
-            "acfe_field_group_condition": 0
-        },
-        {
-            "key": "field_611e7b0f44320",
-            "label": "Excerpt Body",
-            "name": "excerpt_body",
-            "type": "textarea",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "maxlength": "",
-            "rows": "",
-            "new_lines": "br",
-            "acfe_textarea_code": 0,
-            "acfe_field_group_condition": 0
-        },
-        {
-            "key": "field_615f38861d72a",
-            "label": "Email",
-            "name": "person_email",
-            "type": "email",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "acfe_field_group_condition": 0
-        },
-        {
-            "key": "field_615f38951d72b",
-            "label": "Phone Number",
-            "name": "person_phone_number",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": "",
-            "acfe_field_group_condition": 0
+            "layout": "block",
+            "acfe_seamless_style": 1,
+            "acfe_group_modal": 0,
+            "sub_fields": [
+                {
+                    "key": "field_62028a721dce9",
+                    "label": "Display Name",
+                    "name": "display_name",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_615f38951d72b",
+                    "label": "Phone Number",
+                    "name": "person_phone_number",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": "",
+                    "acfe_field_group_condition": 0
+                },
+                {
+                    "key": "field_615f38861d72a",
+                    "label": "Email",
+                    "name": "person_email",
+                    "type": "email",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "acfe_field_group_condition": 0
+                },
+                {
+                    "key": "field_611e7b014431f",
+                    "label": "Primary Title",
+                    "name": "primary_title",
+                    "type": "wysiwyg",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "tabs": "all",
+                    "toolbar": "basic",
+                    "media_upload": 0,
+                    "delay": 1
+                }
+            ]
         }
     ],
     "location": [
@@ -102,14 +117,14 @@
     "active": true,
     "description": "adds data points to the person custom post type",
     "show_in_rest": 0,
+    "acfe_display_title": "",
     "acfe_autosync": [
         "json"
     ],
     "acfe_form": 0,
-    "acfe_display_title": "",
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1642794795,
+    "modified": 1644433710,
     "acfe_categories": {
         "custom-post-metadata": "Custom Post Metadata"
     }

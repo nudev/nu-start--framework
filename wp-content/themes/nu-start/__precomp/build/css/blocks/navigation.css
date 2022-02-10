@@ -1,0 +1,188 @@
+/**
+*
+* *		Setup Document Model Vars / Breakpoints
+*
+*/
+/* 
+	because the block may or may not be loaded when we call this in (the posts grid just calls it in for now)
+*/
+/**
+ * Clearfix
+ *
+ */
+html :where(body:not(.wp-admin), .editor-styles-wrapper) {
+  color: var(--wp--preset--color--black-2);
+  font-family: "Lato", sans-serif, "Material Icons";
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.375;
+}
+
+nav.wp-block-navigation .wp-block-navigation-item.current-menu-item .wp-block-navigation-item__label, nav.wp-block-navigation .wp-block-navigation-item__label {
+  transition: all 0.1s ease-in-out;
+}
+
+/* ... project styles will always load after this ... */
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+html :where(body:not(.wp-admin), .editor-styles-wrapper) {
+  position: relative;
+  z-index: 1;
+}
+html :where(body:not(.wp-admin), .editor-styles-wrapper) a {
+  color: currentColor;
+  text-decoration: none;
+}
+
+.wp-block-post-navigation-link.post-navigation-link-next a {
+  position: relative;
+}
+.wp-block-post-navigation-link.post-navigation-link-next a:after {
+  content: "\e5cc";
+  font-family: "Material Icons";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  line-height: inherit;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  vertical-align: middle;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: "liga";
+          font-feature-settings: "liga";
+  -moz-font-feature-settings: "liga";
+  -moz-osx-font-smoothing: grayscale;
+}
+.wp-block-post-navigation-link.post-navigation-link-next a:after {
+  display: inline;
+}
+.wp-block-post-navigation-link.post-navigation-link-previous a {
+  position: relative;
+}
+.wp-block-post-navigation-link.post-navigation-link-previous a:before {
+  content: "\e5cb";
+  font-family: "Material Icons";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  line-height: inherit;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  vertical-align: middle;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: "liga";
+          font-feature-settings: "liga";
+  -moz-font-feature-settings: "liga";
+  -moz-osx-font-smoothing: grayscale;
+}
+.wp-block-post-navigation-link.post-navigation-link-previous a:after {
+  display: inline;
+}
+.wp-block-post-navigation-link > a {
+  white-space: pre-wrap;
+}
+
+nav.wp-block-navigation {
+  width: auto;
+  margin: 0 auto;
+  text-align: left;
+}
+nav.wp-block-navigation.has-background {
+  padding: 16px;
+}
+nav.wp-block-navigation .has-child :where(.wp-block-navigation__submenu-container) {
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+nav.wp-block-navigation .wp-block-navigation-item__label {
+  border: none 0;
+  border-left: 2px solid white;
+  padding-left: 5px;
+}
+nav.wp-block-navigation .wp-block-navigation-item__label:hover, nav.wp-block-navigation .wp-block-navigation-item__label:focus {
+  border: none 0;
+  border-left: 2px solid var(--wp--preset--color--red-3);
+}
+nav.wp-block-navigation li.wp-block-navigation-item {
+  align-items: flex-start;
+  margin-top: 8px;
+}
+nav.wp-block-navigation li.wp-block-navigation-item.has-child.open-on-click {
+  display: flex;
+  flex-flow: column nowrap;
+}
+nav.wp-block-navigation li.wp-block-navigation-item.has-child.open-on-click .wp-block-navigation__submenu-container {
+  height: 0;
+}
+nav.wp-block-navigation li.wp-block-navigation-item.has-child.open-on-click.reveal-submenu .wp-block-navigation__submenu-container {
+  height: auto;
+  min-width: 200px;
+  opacity: 1;
+  visibility: visible;
+  width: auto;
+  padding-left: 16px;
+}
+nav.wp-block-navigation li.wp-block-navigation-item.has-child.open-on-click.reveal-submenu .wp-block-navigation__submenu-icon svg {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+nav.wp-block-navigation .wp-block-navigation-item__content {
+  margin: 0;
+  padding: 0;
+}
+nav.wp-block-navigation .wp-block-navigation-item__content.wp-block-navigation-link__content {
+  border: 0px solid transparent;
+}
+nav.wp-block-navigation .wp-block-navigation-item__content.wp-block-navigation-link__content:hover, nav.wp-block-navigation .wp-block-navigation-item__content.wp-block-navigation-link__content:focus {
+  border: 0px solid transparent;
+}
+nav.wp-block-navigation .wp-block-navigation-item.current-menu-item .wp-block-navigation-item__label {
+  border: none 0;
+  border-left: 2px solid white;
+  border-left: 2px solid var(--wp--preset--color--red-3);
+  padding-left: 5px;
+}
+nav.wp-block-navigation .wp-block-navigation-item.current-menu-item a,
+nav.wp-block-navigation .wp-block-navigation-item.current-menu-item span {
+  border-bottom: 0px solid transparent;
+}
+
+.wp-block-navigation.is-style-horizontal .wp-block-navigation__container {
+  padding: 16px 32px;
+  border-bottom: 1px solid var(--wp--preset--color--white-5);
+}
+
+nav.wp-block.wp-block-navigation .wp-block-navigation__submenu-container.block-editor-block-list__layout {
+  padding: 0;
+  display: none;
+}
+nav.wp-block.wp-block-navigation div.wp-block.wp-block-navigation-item {
+  flex-flow: column nowrap;
+}
+nav.wp-block.wp-block-navigation div.wp-block.wp-block-navigation-item.has-background {
+  padding: 0;
+}
+nav.wp-block.wp-block-navigation div.wp-block.wp-block-navigation-item.is-selected .wp-block-navigation__submenu-container.block-editor-block-list__layout {
+  display: flex;
+}
+
+/*# sourceMappingURL=navigation.css.map */

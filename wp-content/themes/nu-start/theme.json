@@ -340,7 +340,15 @@
     },
     "blocks": {
       "core/button": {
-        "appearanceTools": true,
+        "appearanceTools": false,
+        "border": {
+          "radius": false
+        },
+        "typography": {},
+        "spacing": {
+          "units": ["px", "rem", "%"]
+        },
+        "custom": {},
         "color": {
           "palette": [
             {
@@ -362,7 +370,7 @@
         }
       },
       "core/buttons": {
-        "appearanceTools": true
+        "appearanceTools": false
       },
       "core/navigation": {
         "spacing": {

@@ -1,0 +1,83 @@
+/**
+*
+* *		Setup Document Model Vars / Breakpoints
+*
+*/
+/* 
+	because the block may or may not be loaded when we call this in (the posts grid just calls it in for now)
+*/
+/**
+ * Clearfix
+ *
+ */
+html :where(body:not(.wp-admin), .editor-styles-wrapper) {
+  color: var(--wp--preset--color--black-2);
+  font-family: "Lato", sans-serif, "Material Icons";
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.375;
+}
+
+/* ... project styles will always load after this ... */
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+html :where(body:not(.wp-admin), .editor-styles-wrapper) {
+  position: relative;
+  z-index: 1;
+}
+html :where(body:not(.wp-admin), .editor-styles-wrapper) a {
+  color: currentColor;
+  text-decoration: none;
+}
+
+.wp-block-group.has-background {
+  padding: 0;
+}
+.wp-block-group > * {
+  margin-top: 32px;
+}
+.wp-block-group.has-text-color * {
+  color: inherit;
+}
+.wp-block-group > p,
+.wp-block-group .wp-block-paragraph {
+  margin-top: 8px;
+}
+.wp-block-group > :first-child {
+  margin-top: 0;
+}
+.wp-block-group > :last-child {
+  margin-bottom: 0;
+}
+
+.wp-block-group.is-style-card-outlined {
+  border: 1px solid var(--wp--preset--color--black-3);
+}
+.wp-block-group.is-style-card-outlined.has-background, .wp-block-group.is-style-card-outlined {
+  padding: 32px;
+}
+.wp-block-group.is-style-card-outlined > .wp-block-media-text,
+.wp-block-group.is-style-card-outlined > .wp-block-image.size-full {
+  position: relative;
+  top: -32px;
+  left: -32px;
+  width: calc(100% + 64px);
+  max-width: calc(100% + 64px);
+}
+.wp-block-group.is-style-card-outlined > .wp-block-media-text img,
+.wp-block-group.is-style-card-outlined > .wp-block-image.size-full img {
+  width: 100%;
+}
+.wp-block-group.is-style-card-outlined > .wp-block-media-text {
+  margin-bottom: -64px;
+}
+
+/*# sourceMappingURL=group.css.map */

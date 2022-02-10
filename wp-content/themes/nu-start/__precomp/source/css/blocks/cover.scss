@@ -1,3 +1,5 @@
+@import '../library/';
+
 .wp-block-cover {
 	// TODO: change this to rely on being a top-level block at the very least? cover is used too much to be faking a hero block
 	// TODO: ??? --- maybe drop this and include it within a style or custom class?

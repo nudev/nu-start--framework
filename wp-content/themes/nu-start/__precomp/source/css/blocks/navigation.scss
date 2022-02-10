@@ -1,7 +1,4 @@
-/* 
-	? the navigation block is NOT USED for the header or footer
-	? this is strictly for nav menus as part of page content; like a sidebar
-*/
+@import '../library/';
 
 .wp-block-post-navigation-link {
 	&.post-navigation-link-next a {
