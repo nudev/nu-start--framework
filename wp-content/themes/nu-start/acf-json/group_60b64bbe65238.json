@@ -3,6 +3,22 @@
     "title": "Block: Posts Grid",
     "fields": [
         {
+            "key": "field_620a75578057e",
+            "label": "Settings",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
             "key": "field_60b64c1af5170",
             "label": "Options",
             "name": "options",
@@ -240,6 +256,38 @@
                     "toggle": 0
                 },
                 {
+                    "key": "field_620a7430f158b",
+                    "label": "Chronological",
+                    "name": "chronological",
+                    "type": "true_false",
+                    "instructions": "For events, select from upcoming or past based on their end date.",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_60c2520e28a92",
+                                "operator": "==",
+                                "value": "1"
+                            },
+                            {
+                                "field": "field_60d208713a1fe",
+                                "operator": "==",
+                                "value": "nu_events"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "",
+                    "default_value": 0,
+                    "ui": 1,
+                    "ui_on_text": "Future",
+                    "ui_off_text": "Past"
+                },
+                {
                     "key": "field_61620e12a5c26",
                     "label": "Stop After",
                     "name": "stop_after",
@@ -381,6 +429,22 @@
             ]
         },
         {
+            "key": "field_620a733739b84",
+            "label": "Style",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
             "key": "field_611e8c90f2592",
             "label": "Item Style",
             "name": "item_style",
@@ -512,7 +576,7 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1643298486,
+    "modified": 1644852650,
     "acfe_categories": {
         "acf-block": "ACF Block"
     }

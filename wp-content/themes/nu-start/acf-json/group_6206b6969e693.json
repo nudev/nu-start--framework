@@ -1,0 +1,90 @@
+{
+    "key": "group_6206b6969e693",
+    "title": "Block: Content Query Item",
+    "fields": [
+        {
+            "key": "field_620a6d505214e",
+            "label": "Post Type",
+            "name": "post_type",
+            "type": "acfe_post_types",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "nu_events",
+                "nu_news",
+                "nu_partnerships",
+                "nu_people",
+                "nu_profiles",
+                "nu_programs",
+                "nu_projects"
+            ],
+            "field_type": "select",
+            "default_value": [],
+            "return_format": "name",
+            "allow_null": 1,
+            "multiple": 0,
+            "ui": 1,
+            "ajax": 0,
+            "placeholder": "",
+            "search_placeholder": "",
+            "allow_custom": 0,
+            "choices": [],
+            "layout": "",
+            "toggle": 0
+        },
+        {
+            "key": "field_620a701a37462",
+            "label": "Test Text",
+            "name": "test_text",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/nu--content-query-item"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "side",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "tooltip",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "acfe_display_title": "",
+    "acfe_autosync": [
+        "json"
+    ],
+    "acfe_form": 0,
+    "acfe_meta": "",
+    "acfe_note": "",
+    "modified": 1644851237,
+    "acfe_categories": {
+        "acf-block": "ACF Block"
+    }
+}

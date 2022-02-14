@@ -32,7 +32,9 @@ if( is_active_sidebar( 'alerts-sitewide' ) ){
 		?>
 	</section>
 	<section class="is-the-template-content">
-		<?php the_content(); ?>
+		<?php 
+			the_content();
+		?>
 	</section>
 </div>
 

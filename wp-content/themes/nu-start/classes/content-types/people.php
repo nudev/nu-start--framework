@@ -43,7 +43,7 @@ $reusableHero = new  WP_Query([
 ]);
 
 
-if( !empty( $reusableHero->posts ) ){
+// if( !empty( $reusableHero->posts ) ){
 	
 	$post_type_object = get_post_type_object( 'nu_people' );
 	/**
@@ -52,17 +52,20 @@ if( !empty( $reusableHero->posts ) ){
 	 * 				if you see [] that is attrs or should break to a new line of blocks
 	 * 
 	 */
+	// $post_type_object->template = array(
+	// 	array( 'acf/nu-person', [ 'align' => 'full' ], [
+	// 		array( 'core/block', [ 'ref' => $reusableHero->posts[0]->ID ] ),
+	// 		array( 'core/paragraph', [ 'placeholder' => 'Insert a pattern here?' ] ),
+	// 	]),
+	// );
 	$post_type_object->template = array(
-		array( 'acf/nu-person', [ 'align' => 'full' ], [
-			array( 'core/block', [ 'ref' => $reusableHero->posts[0]->ID ] ),
-			array( 'core/paragraph', [ 'placeholder' => 'Insert a pattern here?' ] ),
-		]),
+		array( 'core/paragraph', [ 'placeholder' => 'Insert a pattern here? PLEASE WORK KIM!!! PLEASE!!!' ] ),
 	);
 	
 	$post_type_object->template_lock = '';
 	$post_type_object->templateInsertUpdatesSelection = 'true';
 	
-}
+// }
 
 
 ?>

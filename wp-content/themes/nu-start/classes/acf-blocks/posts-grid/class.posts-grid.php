@@ -85,16 +85,16 @@ class PostsGrid
 			$this->_build_manual_query();
 		}
 
-		if( self::$post_fields['autoselect_posts']['post_type'] == 'nu_people' ){
-			add_filter( 'posts_orderby' , 'posts_orderby_lastname' ); // order by last name alphabetically; does not effect the manually added posts
-		}
+		// if( self::$post_fields['autoselect_posts']['post_type'] == 'nu_people' ){
+		// 	add_filter( 'posts_orderby' , 'posts_orderby_lastname' ); // order by last name alphabetically; does not effect the manually added posts
+		// }
 		// do the WP Query
 		$this->wp_query = new WP_Query($this->wp_query_args);
 		self::$the_wp_query = $this->wp_query;
 
-		if( self::$post_fields['autoselect_posts']['post_type'] == 'nu_people' ){
-			remove_filter( 'posts_orderby' , 'posts_orderby_lastname' ); // order by last name alphabetically; does not effect the manually added posts
-		}
+		// if( self::$post_fields['autoselect_posts']['post_type'] == 'nu_people' ){
+		// 	remove_filter( 'posts_orderby' , 'posts_orderby_lastname' ); // order by last name alphabetically; does not effect the manually added posts
+		// }
 
 		// maybe build pagination
 		if( !empty( self::$post_fields['options']['pagination'] ) ){
@@ -327,6 +327,52 @@ class PostsGrid
 			}
 
 		}
+
+
+		if( $selected_post_type == 'nu_events' ){
+			$this->wp_query_args['orderby'] = 'meta_value_num';
+			$this->wp_query_args['order'] = 'ASC';			
+			$this->wp_query_args['meta_query'] = [
+				'relation' => 'OR',
+				array(
+					'relation' => 'AND',
+					array(
+						'key' 			=> 'spans_multiple_days',
+						'compare'		=> '=',
+						'value'			=> 0
+					),
+					array(
+						'key' 			=> 'one_day_happens_on',
+						'compare'		=> 'EXISTS'
+					),
+					array(
+						'key' 			=> 'one_day_happens_on',
+						'compare' => !empty(self::$post_fields['autoselect_posts']['chronological']) ? '>=' : '<',
+						'value' => date("Ymd"),
+						'type' => 'DATE'
+					),
+				),
+				array(
+					'relation' => 'AND',
+					array(
+						'key' 			=> 'spans_multiple_days',
+						'compare'		=> '!=',
+						'value'			=> 0
+					),
+					array(
+						'key' 			=> 'multiple_days_ends_on',
+						'compare'		=> 'EXISTS'
+					),
+					array(
+						'key' 			=> 'multiple_days_ends_on',
+						'compare' => !empty(self::$post_fields['autoselect_posts']['chronological']) ? '>=' : '<',
+						'value' => date("Ymd"),
+						'type' => 'DATE'
+					),
+				)
+			];
+		}
+
 
 		// append the auto-query to the initial wp query
 		$this->wp_query = new WP_Query($this->wp_query_args);

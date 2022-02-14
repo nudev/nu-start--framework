@@ -245,6 +245,76 @@ if( function_exists('acf_register_block_type') ):
 		'active' => true,
 	));
 	
+	
+	
+	acf_register_block_type(array(
+		'name' => 'nu--content-query',
+		'title' => 'Content Query',
+		'description' => 'Query the DB for items of a content type; with related functionality like filtering and pagination.',
+		'category' => 'nu-blocks',
+		'keywords' => array(
+		),
+		'post_types' => array(
+		),
+		'mode' => 'preview',
+		'align' => '',
+		'align_content' => NULL,
+		'render_template' => get_template_directory(  ) . '/acf-blocks/content-query/content-query.php',
+		'render_callback' => '',
+		'enqueue_style' => get_template_directory_uri(  ) . '/acf-blocks/content-query/content-query.css',
+		'enqueue_script' => get_template_directory_uri(  ) . '/acf-blocks/content-query/content-query-min.js',
+		'enqueue_assets' => '',
+		'icon' => '',
+		'supports' => array(
+			'align' => array(
+				'wide',
+				'full'
+			),
+			'mode' => false,
+			'multiple' => true,
+			'jsx' => true,
+			'align_content' => false,
+			'anchor' => true,
+		),
+		'active' => true,
+	));
+
+	acf_register_block_type(array(
+		'name' => 'nu--content-query-item',
+		'title' => 'Content Query Item',
+		'description' => 'Wrapper for the item template returned by the Content Query',
+		'category' => 'nu-blocks',
+		'parent' => ['nu--content-query'],
+		'keywords' => array(
+		),
+		'post_types' => array(
+		),
+		'mode' => 'preview',
+		'align' => '',
+		'align_content' => NULL,
+		'render_template' => get_template_directory(  ) . '/acf-blocks/content-query-item/content-query-item.php',
+		'render_callback' => '',
+		'enqueue_style' => get_template_directory_uri(  ) . '/acf-blocks/content-query-item/content-query-item.css',
+		'enqueue_script' => get_template_directory_uri(  ) . '/acf-blocks/content-query-item/content-query-item-min.js',
+		'enqueue_assets' => '',
+		'icon' => '',
+		'supports' => array(
+			'align' => array(
+				'wide',
+				'full'
+			),
+			'mode' => false,
+			'multiple' => true,
+			'jsx' => true,
+			'align_content' => false,
+			'anchor' => true,
+		),
+		'active' => true,
+	));
+	
+
+	
+	
 	acf_register_block_type(array(
 		'name' => 'nu-datetime-range',
 		'title' => 'Date and Time Range',

@@ -152,9 +152,9 @@
             "sub_fields": [
                 {
                     "key": "field_611aa8be3b40d",
-                    "label": "Date Range",
-                    "name": "date_range",
-                    "type": "acfe_date_range_picker",
+                    "label": "Starts On",
+                    "name": "starts_on",
+                    "type": "date_picker",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -165,20 +165,24 @@
                     },
                     "display_format": "d\/m\/Y",
                     "return_format": "Ymd",
-                    "first_day": 1,
-                    "placeholder": "",
-                    "separator": "-",
-                    "default_start": "",
-                    "default_end": "",
-                    "min_days": "",
-                    "max_days": "",
-                    "min_date": "",
-                    "max_date": "",
-                    "custom_ranges": "",
-                    "no_weekends": 0,
-                    "auto_close": 0,
-                    "allow_null": 0,
-                    "acfe_field_group_condition": 0
+                    "first_day": 1
+                },
+                {
+                    "key": "field_620a8f89c55e7",
+                    "label": "Ends On",
+                    "name": "ends_on",
+                    "type": "date_picker",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "display_format": "d\/m\/Y",
+                    "return_format": "Ymd",
+                    "first_day": 1
                 },
                 {
                     "key": "field_611aa7e55efad",
@@ -233,46 +237,6 @@
                     "acfe_field_group_condition": 0
                 }
             ]
-        },
-        {
-            "key": "field_61eb14511565e",
-            "label": "Location",
-            "name": "location",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": "",
-            "acfe_field_group_condition": 0
-        },
-        {
-            "key": "field_61ef12cf856d1",
-            "label": "Hashtags",
-            "name": "hashtags",
-            "type": "text",
-            "instructions": "Hashtags should be one word. Separate hashtags by commas.",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": "",
-            "acfe_field_group_condition": 0
         }
     ],
     "location": [
@@ -293,14 +257,14 @@
     "active": true,
     "description": "- just scaffolding",
     "show_in_rest": 0,
+    "acfe_display_title": "",
     "acfe_autosync": [
         "json"
     ],
     "acfe_form": 0,
-    "acfe_display_title": "",
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1643057937,
+    "modified": 1644859287,
     "acfe_categories": {
         "custom-post-metadata": "Custom Post Metadata"
     }

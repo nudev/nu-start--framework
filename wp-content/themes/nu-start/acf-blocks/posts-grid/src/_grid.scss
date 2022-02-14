@@ -138,6 +138,9 @@ body.wp-admin {
 			margin: 0;
 		}
 		.post-title {
+			span {
+				display: inline;
+			}
 			margin: 0 0 0 0;
 		}
 		.post-excerpt {

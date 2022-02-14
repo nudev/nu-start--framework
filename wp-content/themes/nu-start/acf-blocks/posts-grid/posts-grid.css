@@ -10,38 +10,11 @@
  * Clearfix
  *
  */
-html :where(body:not(.wp-admin), .editor-styles-wrapper) {
-  color: var(--wp--preset--color--black-2);
-  font-family: "Lato", sans-serif, "Material Icons";
-  font-size: 1rem;
-  font-weight: 300;
-  line-height: 1.375;
-}
-
 .nu_posts-grid .nu__grid .grid-item.page > a figure img, .nu_posts-grid .nu__grid .grid-item.page > a .post-title span, .nu_posts-grid .nu__grid .grid-item.nu_events > a.contains-clickable-area:after, .nu_posts-grid .grid-item .grid-item-content, .nu_posts-grid .grid-item, .nu_posts-grid a.nu_posts-grid-readmore span, .nu_posts-grid .grid-item img {
   transition: all 0.1s ease-in-out;
 }
 
 /* ... project styles will always load after this ... */
-html {
-  box-sizing: border-box;
-}
-
-*,
-*:before,
-*:after {
-  box-sizing: inherit;
-}
-
-html :where(body:not(.wp-admin), .editor-styles-wrapper) {
-  position: relative;
-  z-index: 1;
-}
-html :where(body:not(.wp-admin), .editor-styles-wrapper) a {
-  color: currentColor;
-  text-decoration: none;
-}
-
 /* 
 
 	this file handles styling the posts-grid block filtering form
@@ -263,6 +236,9 @@ body.wp-admin .nu_posts-grid .grid-item a {
 }
 .nu_posts-grid .grid-item-content .post-title {
   margin: 0 0 0 0;
+}
+.nu_posts-grid .grid-item-content .post-title span {
+  display: inline;
 }
 .nu_posts-grid .grid-item-content .post-excerpt {
   font-size: 14px;
