@@ -595,6 +595,7 @@ body.wp-admin .nu_posts-grid .grid-item a {
   }
   .nu_posts-grid .grid-item.has-layout-horizontal > .contains-clickable-area > .grid-item-content, .nu_posts-grid .grid-item.has-layout-horizontal > .grid-item-content {
     flex: 1 1 auto;
+    justify-content: center;
   }
 }
 .nu_posts-grid .grid-item:hover, .nu_posts-grid .grid-item:focus {
