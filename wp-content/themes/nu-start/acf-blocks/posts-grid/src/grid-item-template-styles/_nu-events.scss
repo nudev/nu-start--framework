@@ -6,38 +6,36 @@
 
 */
 
-
-
 .nu_posts-grid .nu__grid .grid-item.nu_events {
 	> a.contains-clickable-area {
-		padding: 0; 
+		
+		padding: 0;
 		@include nu_micon("\e5cc", after);
 		&:after {
 			position: absolute;
 			// top: 90%;
-			bottom: $base-margin; 
-			right: $base-margin; 
+			bottom: $half-margin;
+			right: $half-margin;
 			line-height: 1;
 			// transform: translateY(-50%) translateX(-20px);
 			@extend %transition;
 		}
-		&:hover, &:active {
+		&:hover,
+		&:active {
 			background-color: var(--wp--preset--color--white-2);
 		}
 		.grid-item-content {
-		
-			justify-content: center;
-	
+			padding: $base-margin;
+			padding-bottom: $margin_2x;
 		}
 	}
-
 
 	.is-post-type-label {
 		text-transform: uppercase;
 		letter-spacing: 2px;
 		margin: $half-margin 0;
 		&:before {
-			content: '';
+			content: "";
 			display: inline-block;
 			border: 1px solid var(--wp--preset--color--black-1);
 			border-radius: 50%;
@@ -53,20 +51,13 @@
 		@include nu__date_time_block_styles();
 	}
 
-
-
-
-	
-	
-	
-	
 	// ! FUCK THIS CODE
 	// ? handle interaction with zooming image and underlining title
 	> a {
 		border: none 0;
 		display: flex;
-		.post-title  {
-			margin: $base-margin 0; 
+		.post-title {
+			margin: $base-margin 0;
 			span {
 				border-bottom: 2px solid transparent;
 			}
@@ -82,6 +73,4 @@
 			}
 		}
 	}
-
-
 }

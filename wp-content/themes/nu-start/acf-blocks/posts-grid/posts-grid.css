@@ -219,6 +219,8 @@ body.wp-admin .nu_posts-grid .grid-item a {
 }
 .nu_posts-grid .grid-item figure {
   flex: none;
+  max-width: 100%;
+  overflow: hidden;
 }
 .nu_posts-grid .grid-item-content {
   padding: 16px 32px;
@@ -679,15 +681,16 @@ body.wp-admin .nu_posts-grid .grid-item a {
 }
 .nu_posts-grid .nu__grid .grid-item.nu_events > a.contains-clickable-area:after {
   position: absolute;
-  bottom: 16px;
-  right: 16px;
+  bottom: 8px;
+  right: 8px;
   line-height: 1;
 }
 .nu_posts-grid .nu__grid .grid-item.nu_events > a.contains-clickable-area:hover, .nu_posts-grid .nu__grid .grid-item.nu_events > a.contains-clickable-area:active {
   background-color: var(--wp--preset--color--white-2);
 }
 .nu_posts-grid .nu__grid .grid-item.nu_events > a.contains-clickable-area .grid-item-content {
-  justify-content: center;
+  padding: 16px;
+  padding-bottom: 32px;
 }
 .nu_posts-grid .nu__grid .grid-item.nu_events .is-post-type-label {
   text-transform: uppercase;

@@ -330,50 +330,47 @@ class PostsGrid
 
 		$this->wp_query_args['meta_query'] = [];
 
+		if( $selected_post_type == 'nu_events' ){
 
-		// THIS IS CRUSHING THE CMS
-		if( $selected_post_type == '~disabled~nu_events' ){
-			$this->wp_query_args['order'] = 'DESC';
-			$this->wp_query_args['orderby'] = 'meta_value_num';
-			$this->wp_query_args['meta_query'] = [
-				'relation' => 'OR',
+			
+			// if spans multiple days and uses the ends_on datapoint
+			$ends_on_meta_query = array(
+				'relation' => 'AND',
 				array(
-					'relation' => 'AND',
-					array(
-						'key' 			=> 'spans_multiple_days',
-						'compare'		=> '=',
-						'value'			=> 0
-					),
-					array(
-						'key' 			=> 'one_day_happens_on',
-						'compare'		=> 'EXISTS'
-					),
-					array(
-						'key' 			=> 'one_day_happens_on',
-						'compare' => !empty(self::$post_fields['autoselect_posts']['chronological']) ? '>=' : '<',
-						'value' => date("Ymd"),
-						'type' => 'DATE'
-					),
+					'key' 			=> 'event_item_metadata_spans_multiple_days',
+					'compare'		=> '=',
+					'value'			=> 1
 				),
 				array(
-					'relation' => 'AND',
-					array(
-						'key' 			=> 'spans_multiple_days',
-						'compare'		=> '!=',
-						'value'			=> 0
-					),
-					array(
-						'key' 			=> 'multiple_days_ends_on',
-						'compare'		=> 'EXISTS'
-					),
-					array(
-						'key' 			=> 'multiple_days_ends_on',
-						'compare' => !empty(self::$post_fields['autoselect_posts']['chronological']) ? '>=' : '<',
-						'value' => date("Ymd"),
-						'type' => 'DATE'
-					),
-				)
+					'key' 			=> 'event_item_metadata_multiple_days_ends_on',
+					'compare' => !empty(self::$post_fields['autoselect_posts']['chronological']) ? '>=' : '<',
+					'value' => date("Ymd"),
+					'type' => 'DATE'
+				),
+			);
+			
+			// else, uses the happens_on datapoint
+			$happens_on_meta_query = array(
+				'relation' => 'AND',
+				array(
+					'key' 			=> 'event_item_metadata_spans_multiple_days',
+					'compare'		=> '=',
+					'value'			=> 0
+				),
+				array(
+					'key' 			=> 'event_item_metadata_one_day_happens_on',
+					'compare' => !empty(self::$post_fields['autoselect_posts']['chronological']) ? '>=' : '<',
+					'value' => date("Ymd"),
+					'type' => 'DATE'
+				),
+			);
+			
+			$this->wp_query_args['meta_query'] = [
+				'relation' => 'OR',
+				$happens_on_meta_query,
+				$ends_on_meta_query
 			];
+
 		}
 
 		if( $selected_post_type == 'nu_people' ){
@@ -388,6 +385,8 @@ class PostsGrid
 		}
 
 
+		// print_r($this->wp_query_args);
+		
 		// append the auto-query to the initial wp query
 		$this->wp_query = new WP_Query($this->wp_query_args);
 

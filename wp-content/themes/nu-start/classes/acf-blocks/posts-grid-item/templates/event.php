@@ -30,7 +30,7 @@ extra data:
 - events have a location
 */
 
-$event_location = !empty($fields['location']) ? '<p>'.$fields['location'].'</p>' : '';
+$event_location = !empty($event_item_metadata['location']) ? '<p>'.$event_item_metadata['location'].'</p>' : '';
 
 
 // This template is loaded by the post grid

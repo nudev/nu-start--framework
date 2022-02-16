@@ -116,6 +116,8 @@ body.wp-admin {
 		}
 		figure {
 			flex: none;
+			max-width: 100%;
+			overflow: hidden;
 		}
 		img {
 			@extend %transition;

@@ -55,7 +55,12 @@ $innerBlocks =  '<InnerBlocks allowedBlocks="' . esc_attr( wp_json_encode( $allo
 <div id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?>">
 	<div>
 		<?php 
-			echo $innerBlocks;
+
+			// initialize plugin and return instance
+			$instance = Content_Query::instance();
+			// error_log(print_r($instance, true));
+
+			// echo $innerBlocks;
 		?>
 	</div>
 </div>
