@@ -1,5 +1,21 @@
+/**
+*
+* *		Setup Document Model Vars / Breakpoints
+*
+*/
+/* 
+	because the block may or may not be loaded when we call this in (the posts grid just calls it in for now)
+*/
+/**
+ * Clearfix
+ *
+ */
+/* ... project styles will always load after this ... */
 /* 
 
 */
+.wp-block-group.is-pattern--landing-page-has-sidebar {
+  outline: 2px solid red;
+}
 
 /*# sourceMappingURL=patterns.css.map */

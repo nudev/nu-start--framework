@@ -313,12 +313,21 @@ class SetupTheme
 			,filemtime(get_template_directory() . '/__precomp/build/css/main.css')
 		);
 
+		// register patterns stylesheet
+		wp_register_style(
+			'patterns'
+			,get_template_directory_uri() . '/__precomp/build/css/patterns/patterns.css'
+			,array()
+			,filemtime(get_template_directory() . '/__precomp/build/css/patterns/patterns.css')
+		);
+
 
 		// enqueue the registered styles
 		wp_enqueue_style( 'magnific' );
 		wp_enqueue_style( 'select2' );
 		wp_enqueue_style( 'select2-theme' );
 		wp_enqueue_style( 'main' );
+		wp_enqueue_style( 'patterns' );
 
 
 	}
