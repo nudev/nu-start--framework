@@ -91,6 +91,9 @@ body.wp-admin {
 */
 
 .nu_posts-grid {
+	&:not(:first-child){
+		margin-top: $margin_4x;
+	}
 	// ? resets just in case
 	ul {
 		list-style: none;

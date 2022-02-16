@@ -86,11 +86,12 @@ class PostsGrid_Item
 				include( get_template_directory( ) . '/classes/acf-blocks/posts-grid-item/templates/project.php' );
 				break;
 			case 'nu_people':
-				$person_metadata = !empty( $fields['person_metadata'] ) ? $fields['person_metadata'] : '';
-				include( get_template_directory( ) . '/classes/acf-blocks/posts-grid-item/templates/person.php' );
+					$person_metadata = !empty( $fields['person_metadata'] ) ? $fields['person_metadata'] : '';
+					include( get_template_directory( ) . '/classes/acf-blocks/posts-grid-item/templates/person.php' );
 				break;
-			case 'nu_events':
-				include( get_template_directory( ) . '/classes/acf-blocks/posts-grid-item/templates/event.php' );
+				case 'nu_events':
+					$event_item_metadata = !empty( $fields['event_item_metadata'] ) ? $fields['event_item_metadata'] : '';
+					include( get_template_directory( ) . '/classes/acf-blocks/posts-grid-item/templates/event.php' );
 				break;
 			case 'nu_news':
 				include( get_template_directory( ) . '/classes/acf-blocks/posts-grid-item/templates/news-item.php' );

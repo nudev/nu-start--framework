@@ -1,3 +1,25 @@
+
+div.breadcrumbs[typeof="BreadcrumbList"] {
+	font-size: 12px;
+
+	a {
+		border-bottom: 1px solid transparent;
+		&:hover,
+		&:focus {
+			border-bottom: 1px solid black;
+		}
+	}
+
+	span.material-icons-outlined {
+		display: inline-block;
+		vertical-align: middle;
+		font-size: 14px;
+		line-height: 14px;
+		margin: 0 ($half-margin * 0.5);
+		border-bottom: 1px solid transparent;
+	}
+}
+
 .widget_nav_menu {
 	ul.menu {
 		padding: 0;

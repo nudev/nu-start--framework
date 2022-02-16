@@ -196,6 +196,9 @@ body.wp-admin .nu_posts-grid .grid-item a {
 
 
 */
+.nu_posts-grid:not(:first-child) {
+  margin-top: 64px;
+}
 .nu_posts-grid ul {
   list-style: none;
   list-style-type: none;

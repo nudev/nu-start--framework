@@ -1230,6 +1230,21 @@
       "pg" : 0,
       "sct" : 0
     },
+    "\/source\/css\/patterns\/sample-category\/sample-pattern.scss" : {
+      "aP" : 1,
+      "bl" : 0,
+      "co" : 0,
+      "dP" : 10,
+      "ec" : 1,
+      "ft" : 4,
+      "ma" : 1,
+      "oA" : 0,
+      "oAP" : "\/build\/css\/patterns\/sample-category\/sample-pattern.css",
+      "oF" : 0,
+      "oS" : 0,
+      "pg" : 0,
+      "sct" : 0
+    },
     "\/source\/css\/templates\/_index.scss" : {
       "aP" : 1,
       "bl" : 0,
@@ -1323,6 +1338,17 @@
       "mi" : 1,
       "oA" : 0,
       "oAP" : "\/build\/js\/editor-min.js",
+      "oF" : 0,
+      "sC" : 3,
+      "tS" : 0
+    },
+    "\/source\/js\/experimental.js" : {
+      "bF" : 0,
+      "ft" : 64,
+      "ma" : 0,
+      "mi" : 1,
+      "oA" : 0,
+      "oAP" : "\/build\/js\/experimental-min.js",
       "oF" : 0,
       "sC" : 3,
       "tS" : 0

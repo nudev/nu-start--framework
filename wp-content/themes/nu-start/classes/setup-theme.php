@@ -203,6 +203,15 @@ class SetupTheme
 			, true
 		);
 
+		// register experimental theme scripts
+		wp_register_script(
+			'experimental'
+			, get_template_directory_uri() . '/__precomp/build/js/experimental-min.js'
+			, array('jquery', 'main')
+			, filemtime(get_template_directory() . '/__precomp/build/js/experimental-min.js')
+			, true
+		);
+
 		// register theme main menu nav scripts
 		wp_register_script(
 			'nav'
@@ -230,12 +239,17 @@ class SetupTheme
 			,true
 		);
 
+		self::localize_developer_panel();
+		
 		wp_enqueue_script( 'select2' );
 		wp_enqueue_script( 'magnific' );
 		wp_enqueue_script( 'nav' );
+
+		if( is_page_template( 'templates/experimental.php' ) ){
+			wp_enqueue_script( 'experimental' );
+		}
 		
 		
-		self::localize_developer_panel();
 	}
 
 	public static function localize_developer_panel(){

@@ -3,10 +3,10 @@
     "title": "Events Item: Custom Metadata",
     "fields": [
         {
-            "key": "field_611aa713193d1",
-            "label": "Spans Multiple Days",
-            "name": "spans_multiple_days",
-            "type": "true_false",
+            "key": "field_620d1a26a2bda",
+            "label": "Event Item Metadata",
+            "name": "event_item_metadata",
+            "type": "group",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -15,44 +15,15 @@
                 "class": "",
                 "id": ""
             },
-            "message": "",
-            "default_value": 0,
-            "ui": 1,
-            "ui_on_text": "",
-            "ui_off_text": "",
-            "acfe_field_group_condition": 0
-        },
-        {
-            "key": "field_611aa73f193d2",
-            "label": "One Day",
-            "name": "one_day",
-            "type": "group",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_611aa713193d1",
-                        "operator": "!=",
-                        "value": "1"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
             "layout": "block",
-            "acfe_seamless_style": 1,
+            "acfe_seamless_style": 0,
             "acfe_group_modal": 0,
-            "acfe_field_group_condition": 0,
             "sub_fields": [
                 {
-                    "key": "field_611aa7615efa9",
-                    "label": "Happens On",
-                    "name": "happens_on",
-                    "type": "date_picker",
+                    "key": "field_611aa713193d1",
+                    "label": "Spans Multiple Days",
+                    "name": "spans_multiple_days",
+                    "type": "true_false",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -61,117 +32,234 @@
                         "class": "",
                         "id": ""
                     },
-                    "display_format": "d\/m\/Y",
-                    "return_format": "Ymd",
-                    "first_day": 1,
-                    "placeholder": "",
-                    "min_date": "",
-                    "max_date": "",
-                    "no_weekends": 0,
+                    "message": "",
+                    "default_value": 0,
+                    "ui": 1,
+                    "ui_on_text": "",
+                    "ui_off_text": "",
                     "acfe_field_group_condition": 0
                 },
                 {
-                    "key": "field_611aa77d5efaa",
-                    "label": "Starts At",
-                    "name": "starts_at",
-                    "type": "time_picker",
+                    "key": "field_611aa73f193d2",
+                    "label": "One Day",
+                    "name": "one_day",
+                    "type": "group",
                     "instructions": "",
                     "required": 0,
-                    "conditional_logic": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_611aa713193d1",
+                                "operator": "!=",
+                                "value": "1"
+                            }
+                        ]
+                    ],
                     "wrapper": {
                         "width": "",
                         "class": "",
                         "id": ""
                     },
-                    "display_format": "g:i a",
-                    "return_format": "H:i:s",
-                    "placeholder": "",
-                    "min_time": "",
-                    "max_time": "",
-                    "min_hour": "",
-                    "max_hour": "",
-                    "min_min": "",
-                    "max_min": "",
-                    "min_sec": "",
-                    "max_sec": "",
-                    "acfe_field_group_condition": 0
+                    "layout": "block",
+                    "acfe_seamless_style": 1,
+                    "acfe_group_modal": 0,
+                    "acfe_field_group_condition": 0,
+                    "sub_fields": [
+                        {
+                            "key": "field_611aa7615efa9",
+                            "label": "Happens On",
+                            "name": "happens_on",
+                            "type": "date_picker",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "display_format": "d\/m\/Y",
+                            "return_format": "Ymd",
+                            "first_day": 1,
+                            "placeholder": "",
+                            "min_date": "",
+                            "max_date": "",
+                            "no_weekends": 0,
+                            "acfe_field_group_condition": 0
+                        },
+                        {
+                            "key": "field_611aa77d5efaa",
+                            "label": "Starts At",
+                            "name": "starts_at",
+                            "type": "time_picker",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "display_format": "g:i a",
+                            "return_format": "H:i:s",
+                            "placeholder": "",
+                            "min_time": "",
+                            "max_time": "",
+                            "min_hour": "",
+                            "max_hour": "",
+                            "min_min": "",
+                            "max_min": "",
+                            "min_sec": "",
+                            "max_sec": "",
+                            "acfe_field_group_condition": 0
+                        },
+                        {
+                            "key": "field_611aa78a5efab",
+                            "label": "Ends At",
+                            "name": "ends_at",
+                            "type": "time_picker",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "display_format": "g:i a",
+                            "return_format": "H:i:s",
+                            "placeholder": "",
+                            "min_time": "",
+                            "max_time": "",
+                            "min_hour": "",
+                            "max_hour": "",
+                            "min_min": "",
+                            "max_min": "",
+                            "min_sec": "",
+                            "max_sec": "",
+                            "acfe_field_group_condition": 0
+                        }
+                    ]
                 },
                 {
-                    "key": "field_611aa78a5efab",
-                    "label": "Ends At",
-                    "name": "ends_at",
-                    "type": "time_picker",
+                    "key": "field_611aa74a193d3",
+                    "label": "Multiple Days",
+                    "name": "multiple_days",
+                    "type": "group",
                     "instructions": "",
                     "required": 0,
-                    "conditional_logic": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_611aa713193d1",
+                                "operator": "==",
+                                "value": "1"
+                            }
+                        ]
+                    ],
                     "wrapper": {
                         "width": "",
                         "class": "",
                         "id": ""
                     },
-                    "display_format": "g:i a",
-                    "return_format": "H:i:s",
-                    "placeholder": "",
-                    "min_time": "",
-                    "max_time": "",
-                    "min_hour": "",
-                    "max_hour": "",
-                    "min_min": "",
-                    "max_min": "",
-                    "min_sec": "",
-                    "max_sec": "",
-                    "acfe_field_group_condition": 0
-                }
-            ]
-        },
-        {
-            "key": "field_611aa74a193d3",
-            "label": "Multiple Days",
-            "name": "multiple_days",
-            "type": "group",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_611aa713193d1",
-                        "operator": "==",
-                        "value": "1"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "layout": "block",
-            "acfe_seamless_style": 1,
-            "acfe_group_modal": 0,
-            "acfe_field_group_condition": 0,
-            "sub_fields": [
-                {
-                    "key": "field_611aa8be3b40d",
-                    "label": "Starts On",
-                    "name": "starts_on",
-                    "type": "date_picker",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "display_format": "d\/m\/Y",
-                    "return_format": "Ymd",
-                    "first_day": 1
+                    "layout": "block",
+                    "acfe_seamless_style": 1,
+                    "acfe_group_modal": 0,
+                    "acfe_field_group_condition": 0,
+                    "sub_fields": [
+                        {
+                            "key": "field_611aa8be3b40d",
+                            "label": "Starts On",
+                            "name": "starts_on",
+                            "type": "date_picker",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "display_format": "d\/m\/Y",
+                            "return_format": "Ymd",
+                            "first_day": 1
+                        },
+                        {
+                            "key": "field_620a8f89c55e7",
+                            "label": "Ends On",
+                            "name": "ends_on",
+                            "type": "date_picker",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "display_format": "d\/m\/Y",
+                            "return_format": "Ymd",
+                            "first_day": 1
+                        },
+                        {
+                            "key": "field_611aa7e55efad",
+                            "label": "Starts At",
+                            "name": "starts_at",
+                            "type": "time_picker",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "display_format": "g:i a",
+                            "return_format": "H:i:s",
+                            "placeholder": "",
+                            "min_time": "",
+                            "max_time": "",
+                            "min_hour": "",
+                            "max_hour": "",
+                            "min_min": "",
+                            "max_min": "",
+                            "min_sec": "",
+                            "max_sec": "",
+                            "acfe_field_group_condition": 0
+                        },
+                        {
+                            "key": "field_611aa8025efae",
+                            "label": "Ends At",
+                            "name": "ends_at",
+                            "type": "time_picker",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "display_format": "g:i a",
+                            "return_format": "H:i:s",
+                            "placeholder": "",
+                            "min_time": "",
+                            "max_time": "",
+                            "min_hour": "",
+                            "max_hour": "",
+                            "min_min": "",
+                            "max_min": "",
+                            "min_sec": "",
+                            "max_sec": "",
+                            "acfe_field_group_condition": 0
+                        }
+                    ]
                 },
                 {
-                    "key": "field_620a8f89c55e7",
-                    "label": "Ends On",
-                    "name": "ends_on",
-                    "type": "date_picker",
+                    "key": "field_620d1b6217f34",
+                    "label": "Location",
+                    "name": "location",
+                    "type": "textarea",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -180,61 +268,12 @@
                         "class": "",
                         "id": ""
                     },
-                    "display_format": "d\/m\/Y",
-                    "return_format": "Ymd",
-                    "first_day": 1
-                },
-                {
-                    "key": "field_611aa7e55efad",
-                    "label": "Starts At",
-                    "name": "starts_at",
-                    "type": "time_picker",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "display_format": "g:i a",
-                    "return_format": "H:i:s",
+                    "default_value": "",
                     "placeholder": "",
-                    "min_time": "",
-                    "max_time": "",
-                    "min_hour": "",
-                    "max_hour": "",
-                    "min_min": "",
-                    "max_min": "",
-                    "min_sec": "",
-                    "max_sec": "",
-                    "acfe_field_group_condition": 0
-                },
-                {
-                    "key": "field_611aa8025efae",
-                    "label": "Ends At",
-                    "name": "ends_at",
-                    "type": "time_picker",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "display_format": "g:i a",
-                    "return_format": "H:i:s",
-                    "placeholder": "",
-                    "min_time": "",
-                    "max_time": "",
-                    "min_hour": "",
-                    "max_hour": "",
-                    "min_min": "",
-                    "max_min": "",
-                    "min_sec": "",
-                    "max_sec": "",
-                    "acfe_field_group_condition": 0
+                    "maxlength": "",
+                    "rows": "",
+                    "new_lines": "",
+                    "acfe_textarea_code": 0
                 }
             ]
         }
@@ -262,9 +301,14 @@
         "json"
     ],
     "acfe_form": 0,
-    "acfe_meta": "",
+    "acfe_meta": {
+        "acfcloneindex": {
+            "acfe_meta_key": "",
+            "acfe_meta_value": ""
+        }
+    },
     "acfe_note": "",
-    "modified": 1644859287,
+    "modified": 1645026492,
     "acfe_categories": {
         "custom-post-metadata": "Custom Post Metadata"
     }

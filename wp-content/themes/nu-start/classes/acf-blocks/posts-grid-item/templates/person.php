@@ -24,6 +24,11 @@ $the_primary_title = $the_basic_excerpt;
 $the_phone_number = ''; 
 $the_email_address = ''; 
 
+$the_first_name = '';
+$the_last_name = '';
+// $the_first_name = !empty($fields['person_metadata']['first_name']) ? $fields['person_metadata']['first_name'] : '';
+// $the_last_name = !empty($fields['person_metadata']['last_name']) ? $fields['person_metadata']['last_name'] : '';
+
 // if we have data
 if( !empty($person_metadata) ){
   
@@ -53,6 +58,8 @@ $guides['person'] = '
         <div class="is_the_rich_text_person_excerpt">
           <em>
             %4$s
+            %9$s
+            %10$s
           </em>
         </div>
       </div>

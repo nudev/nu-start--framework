@@ -328,10 +328,13 @@ class PostsGrid
 
 		}
 
+		$this->wp_query_args['meta_query'] = [];
 
-		if( $selected_post_type == 'nu_events' ){
+
+		// THIS IS CRUSHING THE CMS
+		if( $selected_post_type == '~disabled~nu_events' ){
+			$this->wp_query_args['order'] = 'DESC';
 			$this->wp_query_args['orderby'] = 'meta_value_num';
-			$this->wp_query_args['order'] = 'ASC';			
 			$this->wp_query_args['meta_query'] = [
 				'relation' => 'OR',
 				array(
@@ -371,6 +374,17 @@ class PostsGrid
 					),
 				)
 			];
+		}
+
+		if( $selected_post_type == 'nu_people' ){
+			$this->wp_query_args['orderby'] = 'meta_value';
+			$this->wp_query_args['meta_key'] = 'person_metadata_last_name';
+		}
+
+		if( $selected_post_type == 'nu_news' ){
+			$this->wp_query_args['order'] = 'DESC';
+			$this->wp_query_args['orderby'] = 'meta_value_num';
+			$this->wp_query_args['meta_key'] = 'publication_info_date';
 		}
 
 

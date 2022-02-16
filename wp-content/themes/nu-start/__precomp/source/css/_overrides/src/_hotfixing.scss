@@ -8,6 +8,20 @@
 }
 
 
+.is-content-type-archive-page-style-a {
+	
+}
+
+.is-the-content-types-sidebar-nav {
+	margin: 0 $margin_2x 0 0;
+	padding: $base-margin 0;
+	$black: rgba(#2d2926, 0.4);
+	border-right: 1px solid $black;
+	.wp-block-separator {
+		margin: $margin_2x 0;
+	}
+}
+
 body.single-nu_partnerships {
 	.blocks--wrapper > .wp-block-group.alignfull:first-child {
 		margin-top: 0;
@@ -27,7 +41,6 @@ body.single-nu_partnerships {
 			right: 0 !important;
 			left: auto !important;
 		}
-		
 	}
 	// handle adjustments to the bullets - they become a timeline!
 	.eedee-gutenslider-pagination.swiper-pagination-bullets {

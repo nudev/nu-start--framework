@@ -177,7 +177,8 @@
                 "nu_news",
                 "nu_projects",
                 "nu_programs",
-                "nu_profiles"
+                "nu_profiles",
+                "nu_partnerships"
             ],
             "taxonomy": "",
             "filters": [
@@ -239,7 +240,8 @@
                         "nu_news",
                         "nu_projects",
                         "nu_programs",
-                        "nu_profiles"
+                        "nu_profiles",
+                        "nu_partnerships"
                     ],
                     "field_type": "select",
                     "default_value": [],
@@ -449,7 +451,7 @@
             "label": "Item Style",
             "name": "item_style",
             "type": "group",
-            "instructions": "",
+            "instructions": "Configure a consistent style across all grid items. Customizing a single item in the grid is not allowed.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -460,14 +462,13 @@
             "layout": "block",
             "acfe_seamless_style": 1,
             "acfe_group_modal": 0,
-            "acfe_field_group_condition": 0,
             "sub_fields": [
                 {
                     "key": "field_612e302ed48ae",
-                    "label": "Display Featured Image",
+                    "label": "Featured Image",
                     "name": "display_featured_image",
                     "type": "true_false",
-                    "instructions": "",
+                    "instructions": "Hide or show featured images for all grid items",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -478,16 +479,15 @@
                     "message": "",
                     "default_value": 0,
                     "ui": 1,
-                    "ui_on_text": "",
-                    "ui_off_text": "",
-                    "acfe_field_group_condition": 0
+                    "ui_on_text": "Enabled",
+                    "ui_off_text": "Disabled"
                 },
                 {
                     "key": "field_611e8ce3f2594",
-                    "label": "Image Dimensions",
+                    "label": "Aspect Ratio",
                     "name": "image_dimensions",
                     "type": "button_group",
-                    "instructions": "",
+                    "instructions": "Either enforce a consistent aspect ratio for all images in the grid, <br \/>\r\nor allow a jagged layout where items retain their native aspect ratios.",
                     "required": 0,
                     "conditional_logic": [
                         [
@@ -511,18 +511,17 @@
                         "wide": "Wide",
                         "very-wide": "Very Wide"
                     },
-                    "allow_null": 1,
+                    "allow_null": 0,
                     "default_value": "auto",
                     "layout": "vertical",
-                    "return_format": "value",
-                    "acfe_field_group_condition": 0
+                    "return_format": "value"
                 },
                 {
                     "key": "field_611e8c98f2593",
                     "label": "Orientation",
                     "name": "orientation",
                     "type": "button_group",
-                    "instructions": "",
+                    "instructions": "Orient featured image \/ teaser content as a column or row within the available space",
                     "required": 0,
                     "conditional_logic": [
                         [
@@ -545,8 +544,7 @@
                     "allow_null": 0,
                     "default_value": "vertical",
                     "layout": "horizontal",
-                    "return_format": "value",
-                    "acfe_field_group_condition": 0
+                    "return_format": "value"
                 }
             ]
         }
@@ -574,9 +572,14 @@
         "json"
     ],
     "acfe_form": 0,
-    "acfe_meta": "",
+    "acfe_meta": {
+        "acfcloneindex": {
+            "acfe_meta_key": "",
+            "acfe_meta_value": ""
+        }
+    },
     "acfe_note": "",
-    "modified": 1644852650,
+    "modified": 1645025463,
     "acfe_categories": {
         "acf-block": "ACF Block"
     }
