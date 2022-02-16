@@ -502,6 +502,7 @@ body.wp-admin .nu_posts-grid .grid-item a {
 }
 .nu_posts-grid .grid-item {
   background-color: white;
+  max-height: min(300px, 5vw);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.06);
 }
 .nu_posts-grid .grid-item figure {
@@ -571,7 +572,7 @@ body.wp-admin .nu_posts-grid .grid-item a {
     flex-flow: row nowrap;
   }
   .nu_posts-grid .grid-item.has-layout-horizontal > .contains-clickable-area > figure, .nu_posts-grid .grid-item.has-layout-horizontal > figure {
-    flex: 1 0 300px;
+    flex: 0 1 300px;
     max-width: 50%;
   }
   .nu_posts-grid .grid-item.has-layout-horizontal > .contains-clickable-area > .grid-item-content, .nu_posts-grid .grid-item.has-layout-horizontal > .grid-item-content {

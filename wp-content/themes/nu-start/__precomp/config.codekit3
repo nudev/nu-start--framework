@@ -9,12 +9,6 @@
   ],
   "creatorBuild" : "34335",
   "files" : {
-    "\/build" : {
-      "ft" : 65536,
-      "oA" : 1,
-      "oAP" : "\/build\/build",
-      "oF" : 0
-    },
     "\/source\/css\/_overrides\/_index.scss" : {
       "aP" : 1,
       "bl" : 0,
@@ -1230,7 +1224,22 @@
       "pg" : 0,
       "sct" : 0
     },
-    "\/source\/css\/patterns\/sample-category\/sample-pattern.scss" : {
+    "\/source\/css\/patterns\/landing-pages\/_landing-page-has-sidebar.scss" : {
+      "aP" : 1,
+      "bl" : 0,
+      "co" : 0,
+      "dP" : 10,
+      "ec" : 1,
+      "ft" : 4,
+      "ma" : 1,
+      "oA" : 1,
+      "oAP" : "\/build\/css\/patterns\/landing-pages\/_landing-page-has-sidebar.css",
+      "oF" : 0,
+      "oS" : 0,
+      "pg" : 0,
+      "sct" : 0
+    },
+    "\/source\/css\/patterns\/patterns.scss" : {
       "aP" : 1,
       "bl" : 0,
       "co" : 0,
@@ -1239,7 +1248,22 @@
       "ft" : 4,
       "ma" : 1,
       "oA" : 0,
-      "oAP" : "\/build\/css\/patterns\/sample-category\/sample-pattern.css",
+      "oAP" : "\/build\/css\/patterns\/patterns.css",
+      "oF" : 0,
+      "oS" : 0,
+      "pg" : 0,
+      "sct" : 0
+    },
+    "\/source\/css\/patterns\/sample-category\/_sample-pattern.scss" : {
+      "aP" : 1,
+      "bl" : 0,
+      "co" : 0,
+      "dP" : 10,
+      "ec" : 1,
+      "ft" : 4,
+      "ma" : 1,
+      "oA" : 0,
+      "oAP" : "\/build\/css\/patterns\/sample-category\/_sample-pattern.css",
       "oF" : 0,
       "oS" : 0,
       "pg" : 0,
@@ -1405,7 +1429,7 @@
     "displayValueWasSetByUser" : 1,
     "iconImageName" : "brackets-ucla",
     "iconImageWasSetByUser" : 0,
-    "lastBuiltDate" : 666193393.05329394
+    "lastBuiltDate" : 666730383.54261506
   },
   "projectSettings" : {
     "abortBuildOnError" : 1,

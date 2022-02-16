@@ -62,7 +62,7 @@
 			@media screen and (min-width: 781px) {
 				flex-flow: row nowrap;
 				> figure {
-					flex: 1 0 300px;
+					flex: 0 1 300px;
 					max-width: 50%;
 				}
 				> .grid-item-content {
@@ -200,6 +200,10 @@ body.wp-admin {
 		@include nu__grid_item_cover_ratios();
 		@include nu__grid_item_orientation();
 		background-color: white;
+
+		// * restrict max height sometimes it blows out
+		// great time to use clamp, min, or max
+		max-height: min(300px, 5vw);
 
 		.grid-item-content,
 		& {
