@@ -1438,12 +1438,11 @@ header.header .sub-menu {
     position: relative;
   }
 
-  main#main div.blocks--wrapper div.is-pattern--landing-page-has-sidebar .wp-block-columns {
+  main.main div.blocks--wrapper div.is-pattern--landing-page-has-sidebar .wp-block-columns {
     flex-wrap: wrap;
   }
-  main#main div.blocks--wrapper div.is-pattern--landing-page-has-sidebar .wp-block-columns .wp-block-column {
+  main.main div.blocks--wrapper div.is-pattern--landing-page-has-sidebar .wp-block-columns .wp-block-column {
     flex-basis: 100% !important;
-    margin: 0;
   }
 }
 @media screen and (max-width: 600px) {

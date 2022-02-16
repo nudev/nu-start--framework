@@ -335,6 +335,7 @@ header.header {
 // *
 // *
 @include media("<=medium") {
+
 	header.header {
 		// ? content container to match width with content/blocks on the page
 		> .container {
@@ -432,7 +433,23 @@ header.header {
 			}
 		}
 	}
+
+	main#main {
+		div.blocks--wrapper {
+			div.is-pattern--landing-page-has-sidebar {
+				.wp-block-columns {
+					flex-wrap: wrap; 
+
+					.wp-block-column {
+						flex-basis: 100% !important; 
+						margin: 0; 
+					}
+				}
+			}
+		}
+	}
 }
+
 
 // ? conditional body classes for <main> header offset
 body {

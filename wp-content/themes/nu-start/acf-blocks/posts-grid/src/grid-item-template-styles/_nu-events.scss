@@ -25,8 +25,13 @@
 			background-color: var(--wp--preset--color--white-2);
 		}
 		.grid-item-content {
-			padding: $base-margin;
+			// padding: $base-margin;
+			padding: $base-margin 0; 
 			padding-bottom: $margin_2x;
+
+			> :not(figure) {
+				padding: 0 $base-margin;
+			}
 		}
 	}
 
