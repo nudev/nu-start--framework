@@ -23,6 +23,9 @@
   margin: 32px 0;
 }
 @media (min-width: 1025px) {
+  .wp-block-group.is-pattern--landing-page-has-sidebar .wp-block-columns .wp-block-column:first-child {
+    flex-basis: 280px;
+  }
   .wp-block-group.is-pattern--landing-page-has-sidebar .is-the-sidebar-navicon {
     display: none;
   }
