@@ -14,8 +14,65 @@
 /* 
 
 */
-.wp-block-group.is-pattern--landing-page-has-sidebar {
-  outline: 2px solid red;
+.wp-block-group.is-pattern--landing-page-has-sidebar .is-the-content-types-sidebar-nav {
+  margin: 0 32px 0 0;
+  padding: 16px 0;
+  border-right: 1px solid rgba(45, 41, 38, 0.4);
+}
+.wp-block-group.is-pattern--landing-page-has-sidebar .is-the-content-types-sidebar-nav .wp-block-separator {
+  margin: 32px 0;
+}
+@media (min-width: 1025px) {
+  .wp-block-group.is-pattern--landing-page-has-sidebar .is-the-sidebar-navicon {
+    display: none;
+  }
+}
+@media (max-width: 1024px) {
+  .wp-block-group.is-pattern--landing-page-has-sidebar .wp-block-columns {
+    flex-wrap: wrap;
+  }
+  .wp-block-group.is-pattern--landing-page-has-sidebar .wp-block-columns .wp-block-column {
+    flex-basis: 100% !important;
+    margin: 0;
+  }
+  .wp-block-group.is-pattern--landing-page-has-sidebar .wp-block-columns .wp-block-column:first-child {
+    margin-right: 0;
+  }
+  .wp-block-group.is-pattern--landing-page-has-sidebar .wp-block-columns .wp-block-column:not(:first-child) {
+    margin-left: 0;
+  }
+  .wp-block-group.is-pattern--landing-page-has-sidebar .is-the-content-types-sidebar-nav {
+    margin: 0;
+  }
+  .wp-block-group.is-pattern--landing-page-has-sidebar .is-the-sidebar-navicon .icon {
+    cursor: pointer;
+    margin-right: 16px;
+  }
+  .wp-block-group.is-pattern--landing-page-has-sidebar .is-the-sidebar-navicon .icon .icon {
+    position: relative;
+    z-index: 99;
+  }
+  .wp-block-group.is-pattern--landing-page-has-sidebar .wp-block-navigation.is-vertical {
+    display: none;
+  }
+}
+.wp-block-group.is-pattern--landing-page-has-sidebar .is-the-content-types-sidebar-nav {
+  position: relative;
+}
+.wp-block-group.is-pattern--landing-page-has-sidebar .is-the-content-types-sidebar-nav.sidebar-nav-is-revealed .wp-block-navigation.is-vertical {
+  background-color: var(--wp--preset--color--white-1);
+  display: block;
+  position: absolute;
+  top: 100%;
+  left: 1px;
+  width: 100%;
+  border: 1px solid rgba(45, 41, 38, 0.4);
+  border-top: 0px solid transparent;
+  padding: 16px;
+  box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1), 0px 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+.wp-block-group.is-pattern--landing-page-has-sidebar .is-the-content-types-sidebar-nav li.wp-block-navigation-link > a, .wp-block-group.is-pattern--landing-page-has-sidebar .is-the-content-types-sidebar-nav li.wp-block-navigation-link {
+  width: 100%;
 }
 
 /*# sourceMappingURL=patterns.css.map */

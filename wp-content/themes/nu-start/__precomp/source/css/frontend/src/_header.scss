@@ -433,21 +433,6 @@ header.header {
 			}
 		}
 	}
-
-	main#main {
-		div.blocks--wrapper {
-			div.is-pattern--landing-page-has-sidebar {
-				.wp-block-columns {
-					flex-wrap: wrap; 
-
-					.wp-block-column {
-						flex-basis: 100% !important; 
-						margin: 0; 
-					}
-				}
-			}
-		}
-	}
 }
 
 

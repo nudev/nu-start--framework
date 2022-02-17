@@ -91,7 +91,7 @@ body.wp-admin {
 */
 
 .nu_posts-grid {
-	&:not(:first-child){
+	&:not(:first-child) {
 		margin-top: $margin_4x;
 	}
 	// ? resets just in case
@@ -219,15 +219,13 @@ body.wp-admin {
 			&.contains-clickable-area {
 				border: none 0;
 				.post-title span {
-					@include accentUnderline();
+					border-bottom: 0px solid currentColor;
 				}
 				&:hover,
 				&:focus {
 					border: none 0;
 					.post-title span {
-						&:before {
-							width: 100%;
-						}
+						border-bottom: 1px solid currentColor;
 					}
 					img {
 						transform: scale(1.2);

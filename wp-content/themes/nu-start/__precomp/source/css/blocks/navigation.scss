@@ -1,4 +1,4 @@
-@import '../library/';
+@import "../library/";
 
 .wp-block-post-navigation-link {
 	&.post-navigation-link-next a {
@@ -40,15 +40,19 @@ nav.wp-block-navigation {
 		bottom: 0;
 	}
 
-	.wp-block-navigation-item__label {
-		border: none 0;
-		@extend %transition;
-		border-left: 2px solid white;
-		padding-left: 5px;
+	.wp-block-navigation-item__content {
+		.wp-block-navigation-item__label {
+			border: none 0;
+			@extend %transition;
+			border-left: 2px solid white;
+			padding-left: 5px;
+		}
 		&:hover,
 		&:focus {
-			border: none 0;
-			border-left: 2px solid var(--wp--preset--color--red-3);
+			.wp-block-navigation-item__label {
+				border: none 0;
+				border-left: 2px solid var(--wp--preset--color--red-3);
+			}
 		}
 	}
 

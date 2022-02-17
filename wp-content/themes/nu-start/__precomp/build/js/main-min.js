@@ -136,6 +136,35 @@
   			$sidebar.toggleClass("is-tucked");
   		});
 
+  		let content_types_sidebar_pattern = {
+  			_init: function () {
+  				this._clickHandler();
+  				// this._doCloseModal();
+  			},
+  			_doCloseModal: function () {
+  				// 
+  				// ? we need to say if you click anywhere outside the dropdown/modal to close it
+  				// ? maybe even more; like what if you resize window, etc...
+  				// 
+  			},
+  			_clickHandler: function () {
+  				$(".is-the-content-types-sidebar-nav").on(
+  					"click",
+  					".is-the-sidebar-navicon .icon",
+  					function (e) {
+  						$(e.delegateTarget).toggleClass(
+  							"sidebar-nav-is-revealed"
+  						);
+
+  						// toggle between the icon-menu and icon-close classes
+  						$(e.target).toggleClass("icon-menu");
+  						$(e.target).toggleClass("icon-close");
+  					}
+  				);
+  			},
+  		};
+  		content_types_sidebar_pattern._init();
+
   		//
   		//
   		//

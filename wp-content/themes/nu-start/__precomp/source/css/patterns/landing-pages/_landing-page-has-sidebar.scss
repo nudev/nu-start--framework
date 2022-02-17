@@ -1,8 +1,88 @@
 /* 
 
 */
-.wp-block-group.is-pattern--landing-page-has-sidebar {
 
-	outline: 2px solid red;
-	
+.wp-block-group.is-pattern--landing-page-has-sidebar {
+	// outline: 2px solid red;
+	$black: rgba(#2d2926, 0.4);
+
+	.is-the-content-types-sidebar-nav {
+		margin: 0 $margin_2x 0 0;
+		padding: $base-margin 0;
+		border-right: 1px solid $black;
+		.wp-block-separator {
+			margin: $margin_2x 0;
+		}
+	}
+
+	@include media(">medium") {
+		.is-the-sidebar-navicon {
+			display: none;
+		}
+	}
+	@include media("<=medium") {
+		//
+		// ? break the sidebar layout columns early; when the mobile nav comes in, allowing more grid space
+		//
+		.wp-block-columns {
+			flex-wrap: wrap;
+			.wp-block-column {
+				flex-basis: 100% !important;
+				margin: 0;
+				&:first-child {
+					margin-right: 0;
+				}
+				&:not(:first-child) {
+					margin-left: 0;
+				}
+			}
+		}
+		.is-the-content-types-sidebar-nav {
+			margin: 0;
+		}
+
+		//
+		// ? collapse the sidebar navigation into a mobile version - see note below
+		// * this is probably going to be useful outside this pattern - we should either use a mixin/extend or prepare to convert to one
+		//
+		.is-the-sidebar-navicon .icon {
+			cursor: pointer;
+			margin-right: $base-margin;
+			.icon {
+				position: relative;
+				z-index: 99;
+			}
+		}
+		.wp-block-navigation.is-vertical {
+			display: none;
+		}
+	}
+
+	//
+	// ? handle expand class styles
+	//
+	.is-the-content-types-sidebar-nav {
+		position: relative;
+		&.sidebar-nav-is-revealed {
+			.wp-block-navigation.is-vertical {
+				background-color: var(--wp--preset--color--white-1);
+				display: block;
+				position: absolute;
+				top: 100%;
+				left: 1px;
+				width: 100%;
+				border: 1px solid $black;
+				border-top: 0px solid transparent;
+				padding: $base-margin;
+				@include nu__boxshadow(4);
+			}
+		}
+
+		li.wp-block-navigation-link {
+			> a,
+			& {
+				width: 100%;
+			}
+		}
+	}
 }

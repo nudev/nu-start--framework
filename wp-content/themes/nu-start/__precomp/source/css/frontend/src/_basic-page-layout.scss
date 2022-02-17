@@ -62,7 +62,7 @@ body {
 	}
 	@include media("<=phone") {
 		> :not(.alignfull):not(.is-reusable) {
-			max-width: calc(100% - $base-margin);
+			max-width: calc(100% - $margin_2x);
 		}
 		> :last-child:not(.alignfull.has-background) {
 			margin-bottom: $margin_4x;
@@ -70,6 +70,10 @@ body {
 	}
 }
 
+
+// ? using a group as a wrapper for top-level "sections" blows out the vertical rhythm
+// ? css expects the hero to come first - maybe in a group wrapper - and not count
+.blocks--wrapper > .wp-block-group.alignfull:not(:first-child),
 .block-editor-block-list__layout.is-root-container,
 .blocks--wrapper {
 	//
