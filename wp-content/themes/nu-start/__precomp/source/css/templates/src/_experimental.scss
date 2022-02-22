@@ -1,4 +1,8 @@
 body.page-template-experimental {
+
+	.is-the-template-content {
+		@include the_top_level_blocks_container();
+	}
 	main {
 		display: flex;
 		flex-flow: column nowrap;
@@ -10,19 +14,20 @@ body.page-template-experimental {
 
 		> .is-the-template-content,
 		> .is-the-template-sidebar {
+			padding: 0;
 			@extend %transition;
 		}
-		
+
 		> .is-the-template-sidebar {
 			flex-basis: 20%;
 			margin: 0;
-			
+
 			.is-hidden-when-tucked {
 				// display: none;
 				opacity: 1;
 				@extend %transition;
 			}
-			
+
 			&.is-tucked {
 				flex-basis: $margin_4x;
 				.is-hidden-when-tucked {

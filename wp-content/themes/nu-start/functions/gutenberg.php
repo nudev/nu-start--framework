@@ -229,15 +229,17 @@ if( function_exists('acf_register_block_type') ):
 		},
 		'icon' => '',
 		'supports' => array(
+			'anchor' => true,
 			// enable/disable alignment toolbar (true by default)
 			'align' => true,
-			// Show text alignment toolbar.
+			// hide/show text alignment toolbar.
 			'align_text' => true,
-			'mode' => true,
+			// hide/show content alignment toolbar.
+			'align_content' => false,
+			// disable preview/edit toggle
+			'mode' => false,
 			'multiple' => true,
 			'jsx' => true,
-			'align_content' => false,
-			'anchor' => true,
 		),
 		'active' => true,
 	));
