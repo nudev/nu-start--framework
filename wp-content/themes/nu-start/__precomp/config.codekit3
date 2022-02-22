@@ -180,6 +180,21 @@
       "pg" : 0,
       "sct" : 0
     },
+    "\/source\/css\/blocks\/posts-grid.scss" : {
+      "aP" : 1,
+      "bl" : 0,
+      "co" : 0,
+      "dP" : 10,
+      "ec" : 1,
+      "ft" : 4,
+      "ma" : 1,
+      "oA" : 0,
+      "oAP" : "\/build\/css\/blocks\/posts-grid.css",
+      "oF" : 0,
+      "oS" : 0,
+      "pg" : 0,
+      "sct" : 0
+    },
     "\/source\/css\/blocks\/pullquote.scss" : {
       "aP" : 1,
       "bl" : 0,
@@ -1215,6 +1230,18 @@
       "pg" : 0,
       "sct" : 0
     },
+    "\/source\/css\/main.css" : {
+      "aP" : 1,
+      "bl" : 0,
+      "ci" : 0,
+      "co" : 0,
+      "ft" : 16,
+      "ma" : 0,
+      "oA" : 0,
+      "oAP" : "\/build\/css\/main-min.css",
+      "oF" : 0,
+      "pg" : 0
+    },
     "\/source\/css\/main.scss" : {
       "aP" : 1,
       "bl" : 0,
@@ -1346,6 +1373,17 @@
       "sC" : 3,
       "tS" : 0
     },
+    "\/source\/js\/blocks\/posts-grid.js" : {
+      "bF" : 0,
+      "ft" : 64,
+      "ma" : 0,
+      "mi" : 1,
+      "oA" : 0,
+      "oAP" : "\/build\/js\/blocks\/posts-grid-min.js",
+      "oF" : 0,
+      "sC" : 3,
+      "tS" : 0
+    },
     "\/source\/js\/editor.js" : {
       "bF" : 0,
       "ft" : 64,
@@ -1420,7 +1458,7 @@
     "displayValueWasSetByUser" : 1,
     "iconImageName" : "brackets-ucla",
     "iconImageWasSetByUser" : 0,
-    "lastBuiltDate" : 666730700.81946003
+    "lastBuiltDate" : 667233815.23637402
   },
   "projectSettings" : {
     "abortBuildOnError" : 1,

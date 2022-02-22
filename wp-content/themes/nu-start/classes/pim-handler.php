@@ -12,22 +12,10 @@ class PIM_Handler
 	public static function _init(){
 
 		$endpoints = [
-			// 'https://pim.northeastern.edu/api/v2/program/18826' // MS in Cybersecurity
-			// ,'https://pim.northeastern.edu/api/v2/program/18827' // Molecular Biotech Cert
-			// ,'https://pim.northeastern.edu/api/v2/program/18825' // MPS Applied Machine Intelligence
-			// ,'https://pim.northeastern.edu/api/v2/program/18380' // Master of Science in Bioinformatics
-			// ,'https://pim.northeastern.edu/api/v2/program/18383' // Graduate Certificate in Bioinformatics Portland
-			// ,'https://pim.northeastern.edu/api/v2/program/18385' // Graduate Certificate in Biotechnology
-			// ,'https://pim.northeastern.edu/api/v2/program/18388' // Graduate Certificate in Cloud Software Development
-			// ,'https://pim.northeastern.edu/api/v2/program/18389' // Graduate Certificate in Project Management
-			// ,'https://pim.northeastern.edu/api/v2/program/18397' // Graduate Certificate in Applied Analytics
-			// ,'https://pim.northeastern.edu/api/v2/program/18384' // Master of Professional Studies in Analytics
-			// ,'https://pim.northeastern.edu/api/v2/program/18386' // Master of Science in Project Management
-			// ,'https://pim.northeastern.edu/api/v2/program/18387' // Master of Science in Biotechnology
-			// ,'https://pim.northeastern.edu/api/v2/program/18390' // Master of Science in Computer Science
-			// ,'https://pim.northeastern.edu/api/v2/program/18391' // Master of Science in Computer Science Align
-			'https://pim.northeastern.edu/api/v2/program/18806' // MSDS Portland
-			,'https://pim.northeastern.edu/api/v2/program/18807' // MSDS Align Portland
+			'https://pim.northeastern.edu/api/v2/program/18806'
+			,'https://pim.northeastern.edu/api/v2/program/18807'
+			,'https://pim.northeastern.edu/api/v2/program/19055'
+			,'https://pim.northeastern.edu/api/v2/program/19056'
 		];
 
 		foreach( $endpoints as $endpoint ){

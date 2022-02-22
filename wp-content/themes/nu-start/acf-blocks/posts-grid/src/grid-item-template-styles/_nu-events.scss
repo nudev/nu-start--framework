@@ -1,80 +1,56 @@
 /* 
-
-	i.e.,
-	
-	.has-24-32-font-size
-
+*			NU EVENTS TEASER STYLES
+* 		UNDER DEVELOPMENT
 */
 
-.nu_posts-grid .nu__grid .grid-item.nu_events {
-	> a.contains-clickable-area {
-		
-		padding: 0;
-		@include nu_micon("\e5cc", after);
-		&:after {
-			position: absolute;
-			// top: 90%;
-			bottom: $half-margin;
-			right: $half-margin;
-			line-height: 1;
-			// transform: translateY(-50%) translateX(-20px);
-			@extend %transition;
+.nu_posts-grid .nu__grid {
+	.grid-item.nu_events {
+		// ? because the date-time block is not actually loaded we need to pull the styles in directly
+		.nu__datetime {
+			@include nu__date_time_block_styles();
 		}
-		&:hover,
-		&:active {
-			background-color: var(--wp--preset--color--white-2);
-		}
-		.grid-item-content {
-			// padding: $base-margin;
-			padding: $base-margin 0; 
-			padding-bottom: $margin_2x;
 
-			> :not(figure) {
-				padding: 0 $base-margin;
+		p.post-title {
+			margin: $base-margin 0 $half-margin 0;
+		}
+
+		> a.contains-clickable-area {
+			padding: 0;
+			@include nu_micon("\e5cc", after);
+			&:after {
+				position: absolute;
+				bottom: $half-margin;
+				right: $half-margin;
+				line-height: 1;
+				@extend %transition;
+			}
+			.grid-item-content {
+				padding: 0;
+				> :not(figure) {
+					padding: 0 $base-margin;
+				}
+			}
+
+			&:hover,
+			&:focus {
+				&:after {
+					color: var(--wp--preset--color--red-3);
+				}
 			}
 		}
-	}
 
-	.is-post-type-label {
-		text-transform: uppercase;
-		letter-spacing: 2px;
-		margin: $half-margin 0;
-		&:before {
-			content: "";
-			display: inline-block;
-			border: 1px solid var(--wp--preset--color--black-1);
-			border-radius: 50%;
-			width: 8px;
-			height: 8px;
-			margin: 0 $base-margin 0 0;
-		}
-	}
-
-	// ? the date-time block is not loading this properly idk why
-	// todo: fix this so its DRY
-	.nu__datetime {
-		@include nu__date_time_block_styles();
-	}
-
-	// ! FUCK THIS CODE
-	// ? handle interaction with zooming image and underlining title
-	> a {
-		border: none 0;
-		display: flex;
-		.post-title {
-			margin: $base-margin 0;
-			span {
-				border-bottom: 2px solid transparent;
-			}
-		}
-		&:hover,
-		&:focus {
-			border: none 0;
-			.post-title span {
-				border-bottom: 2px solid currentColor;
-			}
-			img {
-				transform: scale(1.2);
+		.is-post-type-label {
+			text-transform: uppercase;
+			letter-spacing: 2px;
+			margin: $half-margin 0;
+			&:before {
+				content: "";
+				display: inline-block;
+				border: 1px solid var(--wp--preset--color--black-1);
+				border-radius: 50%;
+				width: 8px;
+				height: 8px;
+				margin: 0 $base-margin 0 0;
 			}
 		}
 	}

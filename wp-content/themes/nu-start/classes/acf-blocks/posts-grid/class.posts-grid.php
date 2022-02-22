@@ -329,34 +329,14 @@ class PostsGrid
 		}
 
 		$this->wp_query_args['meta_query'] = [];
-
+		
 		if( $selected_post_type == 'nu_events' ){
+			
+			$this->wp_query_args['order'] = !empty(self::$post_fields['autoselect_posts']['chronological']) ? 'ASC' : 'DESC';
+			$this->wp_query_args['orderby'] = 'meta_value_num';
+			$this->wp_query_args['meta_key'] = 'event_item_metadata_one_day_happens_on';
 
-			
-			// if spans multiple days and uses the ends_on datapoint
-			$ends_on_meta_query = array(
-				'relation' => 'AND',
-				array(
-					'key' 			=> 'event_item_metadata_spans_multiple_days',
-					'compare'		=> '=',
-					'value'			=> 1
-				),
-				array(
-					'key' 			=> 'event_item_metadata_multiple_days_ends_on',
-					'compare' => !empty(self::$post_fields['autoselect_posts']['chronological']) ? '>=' : '<',
-					'value' => date("Ymd"),
-					'type' => 'DATE'
-				),
-			);
-			
-			// else, uses the happens_on datapoint
-			$happens_on_meta_query = array(
-				'relation' => 'AND',
-				array(
-					'key' 			=> 'event_item_metadata_spans_multiple_days',
-					'compare'		=> '=',
-					'value'			=> 0
-				),
+			$this->wp_query_args['meta_query'] = array(
 				array(
 					'key' 			=> 'event_item_metadata_one_day_happens_on',
 					'compare' => !empty(self::$post_fields['autoselect_posts']['chronological']) ? '>=' : '<',
@@ -364,11 +344,52 @@ class PostsGrid
 					'type' => 'DATE'
 				),
 			);
+
+		}
+		if( $selected_post_type == '~disabled~nu_events' ){
+
+			// if spans multiple days and uses the ends_on datapoint
+			// $ends_on_meta_query = array(
+			// 	'relation' => 'AND',
+			// 	array(
+			// 		'key' 			=> 'event_item_metadata_spans_multiple_days',
+			// 		'compare'		=> '=',
+			// 		'value'			=> 1
+			// 	),
+			// 	array(
+			// 		'key' 			=> 'event_item_metadata_multiple_days_ends_on',
+			// 		'compare' => !empty(self::$post_fields['autoselect_posts']['chronological']) ? '>=' : '<',
+			// 		'value' => date("Ymd"),
+			// 		'type' => 'DATE'
+			// 	),
+			// );
 			
+			// else, uses the happens_on datapoint
+			$happens_on_meta_query = array(
+				'relation' => 'AND',
+				// array(
+				// 	'key' 			=> 'event_item_metadata_spans_multiple_days',
+				// 	'compare'		=> '=',
+				// 	'value'			=> 0
+				// ),
+				array(
+					'key' 			=> 'event_item_metadata_one_day_happens_on',
+					'compare' => !empty(self::$post_fields['autoselect_posts']['chronological']) ? '>=' : '<',
+					'value' => date("Ymd"),
+					'type' => 'DATE'
+				),
+			);
+
+
+			$this->wp_query_args['order'] = 'ASC';
+			$this->wp_query_args['orderby'] = 'custom_event_sorting';
 			$this->wp_query_args['meta_query'] = [
-				'relation' => 'OR',
-				$happens_on_meta_query,
-				$ends_on_meta_query
+				'custom_event_sorting' => [
+					// 'relation' => 'OR',
+					'relation' => 'AND',
+					'happensOn' => $happens_on_meta_query,
+					// 'endsOn' => $ends_on_meta_query
+				]
 			];
 
 		}
@@ -385,11 +406,12 @@ class PostsGrid
 		}
 
 
-		// print_r($this->wp_query_args);
 		
 		// append the auto-query to the initial wp query
 		$this->wp_query = new WP_Query($this->wp_query_args);
 
+
+	
 	}
 
 

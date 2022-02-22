@@ -218,24 +218,21 @@ if( function_exists('acf_register_block_type') ):
 		'title' => 'Posts Grid',
 		'description' => '',
 		'category' => 'nu-blocks',
-		'keywords' => array(
-		),
-		'post_types' => array(
-		),
-		'mode' => 'edit',
-		'align' => '',
-		'align_content' => NULL,
-		'render_template' => get_template_directory(  ) . '/acf-blocks/posts-grid/posts-grid.php',
+		'mode' => 'preview',
 		'render_callback' => '',
-		'enqueue_style' => get_template_directory_uri(  ) . '/acf-blocks/posts-grid/posts-grid.css',
-		'enqueue_script' => get_template_directory_uri(  ) . '/acf-blocks/posts-grid/posts-grid-min.js',
-		'enqueue_assets' => '',
+		'render_template' => get_template_directory().'/acf-blocks/posts-grid/posts-grid.php',
+		'enqueue_style' => get_template_directory_uri().'/acf-blocks/posts-grid/posts-grid.css',
+		'enqueue_script' => get_template_directory_uri().'/acf-blocks/posts-grid/posts-grid-min.js',
+		'enqueue_assets' => function(){
+			wp_enqueue_style( 'block-posts-grid', get_template_directory_uri() . '/__precomp/build/css/blocks/posts-grid.css' );
+			wp_enqueue_script( 'block-posts-grid', get_template_directory_uri() . '/__precomp/build/js/blocks/posts-grid-min.js', array('jquery'), '', true );
+		},
 		'icon' => '',
 		'supports' => array(
-			'align' => array(
-				'wide',
-				'full'
-			),
+			// enable/disable alignment toolbar (true by default)
+			'align' => true,
+			// Show text alignment toolbar.
+			'align_text' => true,
 			'mode' => true,
 			'multiple' => true,
 			'jsx' => true,

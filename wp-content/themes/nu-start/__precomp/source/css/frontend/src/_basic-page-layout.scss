@@ -25,13 +25,13 @@ body {
 		margin: $margin_8x auto 0 auto;
 
 		// ? top level blocks widths
-		max-width: 80%;
+		// max-width: 80%;
 		&.alignwide {
-			max-width: 90%;
+			// max-width: 90%;
 		}
 		&.alignfull,
 		&.is-reusable {
-			max-width: 100%;
+			// max-width: 100%;
 		}
 	}
 	> p,

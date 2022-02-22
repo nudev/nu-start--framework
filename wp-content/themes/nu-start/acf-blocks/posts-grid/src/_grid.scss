@@ -195,6 +195,12 @@ body.wp-admin {
 		@include nu__responsive_grid_layout();
 	}
 
+	// .nu__grid.cols-1 {
+	.grid-item figure {
+		max-height: 320px;
+	}
+	// }
+
 	// restrict to any grid item for basics
 	.grid-item {
 		@include nu__grid_item_cover_ratios();
@@ -225,13 +231,13 @@ body.wp-admin {
 				&:focus {
 					border: none 0;
 					.post-title span {
-						border-bottom: 1px solid currentColor;
+						border-bottom: 2px solid currentColor;
 					}
 					img {
 						transform: scale(1.2);
 					}
 					.grid-item-content {
-						background-color: var(--wp--preset--color--white-2);
+						// background-color: var(--wp--preset--color--white-2);
 					}
 				}
 			}

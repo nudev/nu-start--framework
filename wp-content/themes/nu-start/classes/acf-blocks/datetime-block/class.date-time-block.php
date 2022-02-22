@@ -31,8 +31,8 @@ class NU_DateTime_Helper
 		';
 		$guides['multiple-days'] = '
 			<div class="nu__datetime">
-				%1$s
 				%2$s
+				%1$s
 			</div>
 		';
 

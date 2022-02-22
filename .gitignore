@@ -107,6 +107,7 @@ Thumbs.db
 # add your own entries here
 
 #!wp-content/mu-plugins/example-mu-plugin/
+!wp-content/mu-plugins/disable_extendify.php/
 
 #!wp-content/plugins/example-plugin/
 

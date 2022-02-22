@@ -36,8 +36,7 @@
                     "default_value": 0,
                     "ui": 1,
                     "ui_on_text": "",
-                    "ui_off_text": "",
-                    "acfe_field_group_condition": 0
+                    "ui_off_text": ""
                 },
                 {
                     "key": "field_611aa73f193d2",
@@ -272,7 +271,7 @@
                     "placeholder": "",
                     "maxlength": "",
                     "rows": "",
-                    "new_lines": "",
+                    "new_lines": "br",
                     "acfe_textarea_code": 0
                 }
             ]
@@ -308,7 +307,7 @@
         }
     },
     "acfe_note": "",
-    "modified": 1645026492,
+    "modified": 1645206425,
     "acfe_categories": {
         "custom-post-metadata": "Custom Post Metadata"
     }
