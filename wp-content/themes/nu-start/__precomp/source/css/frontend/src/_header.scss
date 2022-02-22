@@ -122,14 +122,14 @@ header.header {
 					}
 				}
 				// * hover to reveal sub-menus (allow clicking parent to nav to that location)
-				&:hover,
-				&:active {
-					> a > span {
-						&::after {
-							transform: translateY(-50%) rotate(90deg);
-						}
-					}
-				}
+				// &:hover,
+				// &:active {
+				// 	> a > span {
+				// 		&::after {
+				// 			transform: translateY(-50%) rotate(90deg);
+				// 		}
+				// 	}
+				// }
 			}
 		}
 	}
@@ -221,13 +221,71 @@ header.header {
 			margin: 0 $margin_4x;
 		}
 
-		.navlinks .menu-item {
-			&:hover,
-			&:active {
-				> .sub-menu {
-					display: flex;
+
+		.navlinks ul li.menu-item-has-children.menu-item-is-open,
+		.navlinks ul li.menu-item-has-children.neu__dropdown--active {
+			& a {
+				background-position: -100% 100%;
+				//color: var(--c-black);
+			}
+
+			& .menu-item-toggle::after {
+				transform: rotate(180deg);
+			}
+
+			& ul.sub-menu {
+				display: block;
+				& li {
+					& a {
+						background-image: none;
+						background-position: 0 0;
+					}
 				}
 			}
+		}
+
+	.screen-reader-text {
+	    clip: rect(1px,1px,1px,1px);
+	    height: 1px;
+	    overflow: hidden;
+	    position: absolute !important;
+	    width: 1px;
+	    word-wrap: normal !important;
+			border:0;
+			clip-path: inset(50%);
+			margin:-1px;
+			padding:0;
+
+	}
+
+		.menu-item-toggle {
+			background: transparent;
+			border: 0;
+			cursor: pointer;
+			margin-left: 7px;
+			padding: 0;
+			position: relative;
+			z-index: 1;
+
+			&:hover {
+				z-index: 3;
+			}
+
+			&::after {
+				content: "\e313";
+				display: inline-block;
+				font-family: "Material Icons";
+				vertical-align: middle;
+			}
+		}
+
+		.navlinks .menu-item {
+			// &:hover,
+			// &:active {
+			// 	> .sub-menu {
+			// 		display: flex;
+			// 	}
+			// }
 		}
 
 		.navlinks {

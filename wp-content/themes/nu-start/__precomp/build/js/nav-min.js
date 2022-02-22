@@ -9,67 +9,140 @@
 	 */
 	//
 	$(function () {
-		var tr_nav = {
-			navlinks_el: $("header.header .navlinks"),
-			navicons_el: $("header.header .navicons"),
+		// var tr_nav = {
+		// 	navlinks_el: $("header.header .navlinks"),
+		// 	navicons_el: $("header.header .navicons"),
+		//
+		// 	// Constructor
+		// 	_init: function () {
+		// 		// ! disabled because it makes you click twice --- but i think i needed it for keyboard nav
+		// 		$("header.header .navlinks").on(
+		// 			"click",
+		// 			"li.menu-item-has-children > a",
+		// 			this._didClickParent
+		// 		);
+		//
+		// 		//
+		// 		$("header.header").on(
+		// 			"click",
+		// 			".navicons",
+		// 			this._didClickNavIcons
+		// 		);
+		//
+		// 		$(window).on("resize scroll", this._onResizeScroll);
+		//
+		// 		$("#nu__sitesearch").on(
+		// 			"click",
+		// 			"a, button",
+		// 			this._siteSearchHandler
+		// 		);
+		// 	},
+		//
+		// 	// Methods
+		// 	_didClickNavIcons: function (e) {
+		// 		$(this).toggleClass("revealed");
+		// 		$(this).next(".navlinks").toggleClass("revealed");
+		// 	},
+		//
+		// 	_didClickParent: function (e) {
+		// 		// ? stop the click from navigating (only toggles the menu open) --- for mobile
+		// 		if ( window.innerWidth < 1025 && !$(e.target.offsetParent).hasClass("revealed")  ) {
+		// 			e.preventDefault();
+		// 		}
+		//
+		// 		$(e.target.offsetParent).siblings().removeClass("revealed");
+		//
+		// 		$(e.target.offsetParent).toggleClass("revealed"); // toggle this <li> reveal class (active state)
+		// 	},
+		//
+		// 	_onResizeScroll: function (e) {
+		// 		$(
+		// 			"header.header .navicons.revealed, header.header .navlinks.revealed, li.menu-item-has-children.revealed"
+		// 		).removeClass("revealed");
+		// 	},
+		//
+		// 	//
+		// 	_siteSearchHandler: function (e) {
+		// 		if (e.currentTarget.type == "button") {
+		// 			$(e.delegateTarget).removeClass("revealed");
+		// 		} else {
+		// 			$(e.delegateTarget).addClass("revealed");
+		// 		}
+		// 	},
+		// };
+		// tr_nav._init();
 
-			// Constructor
-			_init: function () {
-				// ! disabled because it makes you click twice --- but i think i needed it for keyboard nav
-				$("header.header .navlinks").on(
-					"click",
-					"li.menu-item-has-children > a",
-					this._didClickParent
-				);
+		/**
+			* Handle the Desktop Nav Behaviors
+			*/
+			var Theme = {};
 
-				//
-				$("header.header").on(
-					"click",
-					".navicons",
-					this._didClickNavIcons
-				);
+		Theme.Nav = {
+			// all li
+			toplevel: $('.navlinks > ul > li'),
+			// li with dropdowns
+			dropdowns: $('.navlinks > ul > li.menu-item-has-children'),
+			mq: window.matchMedia('(min-width: 80em)'),
 
-				$(window).on("resize scroll", this._onResizeScroll);
+			/**
+			* initialize nav scripts
+			*/
+			_init: function _init() {
+				// add a menu toggle button for keyboard users
+				Theme.Nav.dropdowns.each(function (i) {
+					var link = $(this).find('> a');
+					var linkText = link.text();
+					var menu = $(this).find('.sub-menu');
+					var buttonText = $('<span>', {
+						'text': "Toggle ".concat(linkText, " submenu"),
+						'class': 'screen-reader-text'
+					});
+					var button = $('<button>', {
+						'class': 'menu-item-toggle',
+						'aria-controls': "dropdown-".concat(i),
+						'aria-expanded': false
+					});
+					console.log(link);
+					button.append(buttonText);
+					menu.attr('id', "dropdown-".concat(i));
+					button.insertAfter(link);
+					button.on('click', Theme.Nav._doDropdowns);
+				}); // handle clicks on the dropdown parent items
 
-				$("#nu__sitesearch").on(
-					"click",
-					"a, button",
-					this._siteSearchHandler
-				);
+				Theme.Nav.dropdowns.on('hover', Theme.Nav._doDropdowns);
 			},
 
-			// Methods
-			_didClickNavIcons: function (e) {
-				$(this).toggleClass("revealed");
-				$(this).next(".navlinks").toggleClass("revealed");
-			},
-
-			_didClickParent: function (e) {
-				// ? stop the click from navigating (only toggles the menu open) --- for mobile
-				if ( window.innerWidth < 1025 && !$(e.target.offsetParent).hasClass("revealed")  ) {
-					e.preventDefault();
+			/**
+				* Handle Dropdowns Clicks
+				* @param {event} e
+				*/
+			_doDropdowns: function _doDropdowns(e) {
+				if (!Theme.Nav.mq.matches && ('mouseenter' === e.type || 'mouseleave' === e.type)) {
+					return;
 				}
 
-				$(e.target.offsetParent).siblings().removeClass("revealed");
+				var $el = $(this);
 
-				$(e.target.offsetParent).toggleClass("revealed"); // toggle this <li> reveal class (active state)
-			},
+				if ($(this).hasClass('menu-item-toggle')) {
+					$el = $(this).parent();
+				}
 
-			_onResizeScroll: function (e) {
-				$(
-					"header.header .navicons.revealed, header.header .navlinks.revealed, li.menu-item-has-children.revealed"
-				).removeClass("revealed");
-			},
+				$el.toggleClass('neu__dropdown--active'); // toggle aria expanded
 
-			//
-			_siteSearchHandler: function (e) {
-				if (e.currentTarget.type == "button") {
-					$(e.delegateTarget).removeClass("revealed");
+				if ($el.hasClass('neu__dropdown--active')) {
+					$el.find('.menu-item-toggle').attr('aria-expanded', 'true');
 				} else {
-					$(e.delegateTarget).addClass("revealed");
-				}
-			},
+					$el.find('.menu-item-toggle').attr('aria-expanded', 'false');
+				} // always clear active class from other dropdowns
+
+
+				Theme.Nav.dropdowns.not($el).removeClass('neu__dropdown--active'); // always set other dropdowns aria-expanded to false
+
+				Theme.Nav.dropdowns.not($el).find('.menu-item-toggle').attr('aria-expanded', 'false');
+			}
 		};
-		tr_nav._init();
+
+		Theme.Nav._init();
+
 	});
 })(window.jQuery, window, document);
