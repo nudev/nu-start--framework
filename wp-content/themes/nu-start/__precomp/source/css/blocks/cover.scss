@@ -7,7 +7,8 @@
 	&[data-align="full"] {
 		padding: $base-margin 0;
 		.wp-block-cover__inner-container {
-			max-width: 80%;
+			// max-width: 80%;
+			max-width: var(--wp--custom--content-size);
 			margin: 0 auto;
 			.wp-block {
 				margin: $base-margin auto 0 auto;

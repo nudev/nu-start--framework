@@ -2,7 +2,7 @@
 	PostsGrid Block Stylesheet
 */
 @import "../library/";
-.nu_posts-grid.nu-acf-block {
+.nu_posts-grid {
 	// ? basics for aspect ratio for all items here
 	@mixin nu__grid_item_cover_ratios {
 		figure {
@@ -105,6 +105,7 @@
 	}
 
 	a.contains-clickable-area {
+		@include nu__boxshadow(0);
 		display: block;
 		text-decoration: none;
 		color: currentColor;
@@ -117,12 +118,32 @@
 		&:focus {
 			border: none;
 			.post-title span {
-				border-bottom: 2px solid currentColor;
+				border-bottom: 1px solid currentColor;
 			}
 			img {
 				transform: scale(1.2);
 			}
+
+			@include nu__boxshadow(5);
 		}
+	}
+
+	.grid-item-content {
+		padding: $margin_2x;
+	}
+
+	.post-title {
+		font-size: var(--wp--preset--font-size--20-28);
+		font-weight: 300;
+	}
+	
+}
+
+.grid-item.nu_people {
+	.primary-title {
+		margin-top: $base-margin;
+		font-size: var(--wp--preset--font-size--14-20);
+		font-weight: 300;
 	}
 }
 

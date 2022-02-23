@@ -1245,6 +1245,36 @@
       "pg" : 0,
       "sct" : 0
     },
+    "\/source\/css\/patterns\/content-types\/_people-related-patterns.scss" : {
+      "aP" : 1,
+      "bl" : 0,
+      "co" : 0,
+      "dP" : 10,
+      "ec" : 1,
+      "ft" : 4,
+      "ma" : 1,
+      "oA" : 1,
+      "oAP" : "\/build\/css\/patterns\/content-types\/_people-related-patterns.css",
+      "oF" : 0,
+      "oS" : 0,
+      "pg" : 0,
+      "sct" : 0
+    },
+    "\/source\/css\/patterns\/heroes\/_shared-people-hero.scss" : {
+      "aP" : 1,
+      "bl" : 0,
+      "co" : 0,
+      "dP" : 10,
+      "ec" : 1,
+      "ft" : 4,
+      "ma" : 1,
+      "oA" : 1,
+      "oAP" : "\/build\/css\/patterns\/heroes\/_shared-people-hero.css",
+      "oF" : 0,
+      "oS" : 0,
+      "pg" : 0,
+      "sct" : 0
+    },
     "\/source\/css\/patterns\/landing-pages\/_landing-page-has-sidebar.scss" : {
       "aP" : 1,
       "bl" : 0,

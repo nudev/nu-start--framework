@@ -1,0 +1,13 @@
+.is-people-archive-hero {
+
+	>.wp-block-group,
+	>.wp-block-cover {
+		border-bottom: 1px solid var(--wp--preset--color--white-5);
+	}
+	> .wp-block-group {
+		margin: 0;
+		.nu__breadcrumbs {
+			padding: $margin_2x 0;
+		}
+	}
+}

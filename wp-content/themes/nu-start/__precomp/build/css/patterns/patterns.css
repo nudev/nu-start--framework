@@ -78,4 +78,22 @@
   width: 100%;
 }
 
+.is-people-archive-hero > .wp-block-group,
+.is-people-archive-hero > .wp-block-cover {
+  border-bottom: 1px solid var(--wp--preset--color--white-5);
+}
+.is-people-archive-hero > .wp-block-group {
+  margin: 0;
+}
+.is-people-archive-hero > .wp-block-group .nu__breadcrumbs {
+  padding: 32px 0;
+}
+
+.is-people-archive-with-horz-nav .wp-block-navigation {
+  border-bottom: 1px solid var(--wp--preset--color--white-5);
+}
+.is-people-archive-with-horz-nav .nu_posts-grid {
+  margin-top: 64px;
+}
+
 /*# sourceMappingURL=patterns.css.map */

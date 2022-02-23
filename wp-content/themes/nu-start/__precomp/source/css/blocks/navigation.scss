@@ -22,6 +22,52 @@ nav.wp-block-navigation {
 		> .wp-block-navigation__container {
 			gap: $margin_2x;
 		}
+		.wp-block-navigation-item__content {
+			border-bottom: 2px solid transparent;
+			padding: $margin_2x;
+			&:hover,
+			&:focus {
+				border-bottom: 2px solid var(--wp--preset--color--black-1);
+			}
+		}
+		.current-menu-item :where(.wp-block-navigation-item__content) {
+			border-bottom: 2px solid var(--wp--preset--color--black-1);
+		}
+	}
+
+	// ? vertical style gets an accent on the left
+	&.is-vertical {
+		.wp-block-navigation-item__content {
+			.wp-block-navigation-item__label {
+				border: none 0;
+				@extend %transition;
+				border-left: 2px solid white;
+				padding-left: 5px;
+			}
+			&:hover,
+			&:focus {
+				.wp-block-navigation-item__label {
+					border: none 0;
+					border-left: 2px solid var(--wp--preset--color--red-3);
+				}
+			}
+		}
+
+		.wp-block-navigation-item {
+			&.current-menu-item {
+				.wp-block-navigation-item__label {
+					border: none 0;
+					@extend %transition;
+					border-left: 2px solid white;
+					border-left: 2px solid var(--wp--preset--color--red-3);
+					padding-left: 5px;
+				}
+				a,
+				span {
+					border-bottom: 0px solid transparent;
+				}
+			}
+		}
 	}
 
 	// ? i think this resets the submenu (which is set up for mobile, improve this using hook to conditional)
@@ -31,23 +77,6 @@ nav.wp-block-navigation {
 		left: 0;
 		right: 0;
 		bottom: 0;
-	}
-
-	// ? idk
-	.wp-block-navigation-item__content {
-		.wp-block-navigation-item__label {
-			border: none 0;
-			@extend %transition;
-			border-left: 2px solid white;
-			padding-left: 5px;
-		}
-		&:hover,
-		&:focus {
-			.wp-block-navigation-item__label {
-				border: none 0;
-				border-left: 2px solid var(--wp--preset--color--red-3);
-			}
-		}
 	}
 
 	.wp-block-navigation-item {
@@ -74,20 +103,6 @@ nav.wp-block-navigation {
 						transform: rotate(180deg);
 					}
 				}
-			}
-		}
-
-		&.current-menu-item {
-			.wp-block-navigation-item__label {
-				border: none 0;
-				@extend %transition;
-				border-left: 2px solid white;
-				border-left: 2px solid var(--wp--preset--color--red-3);
-				padding-left: 5px;
-			}
-			a,
-			span {
-				border-bottom: 0px solid transparent;
 			}
 		}
 	}

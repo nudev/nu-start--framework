@@ -15,7 +15,7 @@
   padding: 16px 0;
 }
 .wp-block-cover.alignfull .wp-block-cover__inner-container, .wp-block-cover[data-align=full] .wp-block-cover__inner-container {
-  max-width: 80%;
+  max-width: var(--wp--custom--content-size);
   margin: 0 auto;
 }
 .wp-block-cover.alignfull .wp-block-cover__inner-container .wp-block, .wp-block-cover[data-align=full] .wp-block-cover__inner-container .wp-block {
