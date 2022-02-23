@@ -1,0 +1,71 @@
+/* 
+
+Person Info Stylesheet
+
+*/
+
+@import "../library/";
+
+.person-info {
+    // Kyle's stuff
+    > div {
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: flex-start;
+        color: var(--wp--preset--color--black-2); 
+    }
+
+    p {
+        margin-bottom: 0; 
+        .material-icons-outlined {
+            font-size: 20px; 
+            line-height: 20px; 
+            margin-top: -4px; 
+        }
+        // 
+        &:where(.full-name) {
+            font-size: var(--wp--preset--font-size--30-36);
+            
+        }
+        // 
+        &:where(.primary-title) {
+            font-size: var(--wp--preset--font-size--20-28);
+        }
+        // 
+        &:where(.email, .phone-number) {
+            font-size: var(--wp--preset--font-size--14-20);
+            padding: $half-margin; 
+            border-radius: 2px; 
+            @extend %transition; 
+
+            span {
+                &.icon-email, &.icon-call {
+                    margin-right: $base-margin; 
+                }
+                &.icon-content-copy {
+                    @extend %transition; 
+                    opacity: 0; 
+                    cursor: pointer; 
+                    margin-left: $base-margin; 
+                }
+            }
+
+            span, & {
+                vertical-align: middle;
+            }
+
+            &:hover, &:focus {
+                .icon-content-copy {
+                    opacity: 1; 
+                }
+            }
+            
+        }
+        // ? email has content copy icon, phone number does not at this time
+        &:where(.email) {
+            &:hover, &:focus {
+                background-color: var(--wp--preset--color--white-2);
+            }
+        }
+    }
+}

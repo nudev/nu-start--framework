@@ -36,8 +36,8 @@ $person_info = sprintf(
 	'%1$s%2$s%3$s%4$s',
 	!empty($person_metadata['full_name']) ? '<p class="full-name">'.$person_metadata['full_name'].'</p>' : '',
 	!empty($person_metadata['primary_title']) ? '<p class="primary-title">'.$person_metadata['primary_title'].'</p>' : '',
-	!empty($person_metadata['email']) ? '<p class="email"><span class="material-icons-outlined">call</span>'.$person_metadata['email'].'</p>' : '',
-	!empty($person_metadata['phone_number']) ? '<p class="phone-number"><span class="material-icons-outlined">email</span>'.$person_metadata['phone_number'].'<span class="material-icons-outlined">content_copy</span></p>' : '',
+	!empty($person_metadata['email']) ? '<p class="email"><span class="material-icons-outlined icon-email">email</span>'.$person_metadata['email'].'<span class="material-icons-outlined icon-content-copy">content_copy</span></p>' : '',
+	!empty($person_metadata['phone_number']) ? '<p class="phone-number"><span class="material-icons-outlined icon-call">call</span>'.$person_metadata['phone_number'].'</p>' : '',
 );
 
 
