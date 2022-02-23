@@ -1,22 +1,10 @@
-@import "../library/";
+/* 
+	* WordPress Core Navigation Block (NU Brand Guidelines Stylesheet)
+	? This file is appended to the native block stylesheet whenever it loads (block is present)
+*/
 
-.wp-block-post-navigation-link {
-	&.post-navigation-link-next a {
-		@include nu_micon("\e5cc", after);
-		&:after {
-			display: inline;
-		}
-	}
-	&.post-navigation-link-previous a {
-		@include nu_micon("\e5cb", before);
-		&:after {
-			display: inline;
-		}
-	}
-	> a {
-		white-space: pre-wrap;
-	}
-}
+// import theme variables, mixins etc --- (not styles)
+@import "../library/";
 
 // ? make required adjustments to the default settings of the nav block
 nav.wp-block-navigation {
@@ -24,20 +12,19 @@ nav.wp-block-navigation {
 	margin: 0 auto;
 	text-align: left;
 
-	&:not(.is-vertical){
-		> ul {
+	// ? override the core default gap with our base margin
+	> .wp-block-navigation__container {
+		gap: $base-margin;
+	}
+
+	// * the navigation block gets the .is-vertical class; so :not(.is-vertical) targets the horizontal orientation
+	&:not(.is-vertical) {
+		> .wp-block-navigation__container {
 			gap: $margin_2x;
 		}
 	}
 
-	.wp-block-navigation__container {
-		gap: 0;
-	}
-
-	&.has-background {
-		padding: $base-margin;
-	}
-
+	// ? i think this resets the submenu (which is set up for mobile, improve this using hook to conditional)
 	.has-child :where(.wp-block-navigation__submenu-container) {
 		position: relative;
 		top: 0;
@@ -46,6 +33,7 @@ nav.wp-block-navigation {
 		bottom: 0;
 	}
 
+	// ? idk
 	.wp-block-navigation-item__content {
 		.wp-block-navigation-item__label {
 			border: none 0;
@@ -62,9 +50,8 @@ nav.wp-block-navigation {
 		}
 	}
 
-	li.wp-block-navigation-item {
+	.wp-block-navigation-item {
 		align-items: flex-start;
-		margin-top: $half-margin;
 
 		&.has-child.open-on-click {
 			display: flex;
@@ -89,6 +76,20 @@ nav.wp-block-navigation {
 				}
 			}
 		}
+
+		&.current-menu-item {
+			.wp-block-navigation-item__label {
+				border: none 0;
+				@extend %transition;
+				border-left: 2px solid white;
+				border-left: 2px solid var(--wp--preset--color--red-3);
+				padding-left: 5px;
+			}
+			a,
+			span {
+				border-bottom: 0px solid transparent;
+			}
+		}
 	}
 
 	// ? item content
@@ -104,49 +105,26 @@ nav.wp-block-navigation {
 			}
 		}
 	}
-
-	.wp-block-navigation-item {
-		&.current-menu-item {
-			.wp-block-navigation-item__label {
-				border: none 0;
-				@extend %transition;
-				border-left: 2px solid white;
-				border-left: 2px solid var(--wp--preset--color--red-3);
-				padding-left: 5px;
-			}
-			a,
-			span {
-				border-bottom: 0px solid transparent;
-			}
-		}
-	}
 }
 
-.wp-block-navigation {
-	&.is-style-horizontal {
-		.wp-block-navigation__container {
-			padding: $base-margin $margin_2x;
-			border-bottom: 1px solid var(--wp--preset--color--white-5);
+/* 
+	experimental and/or related styles below (CUT ME)
+*/
+// ? previous/next post navigation block styles here (experimental)
+.wp-block-post-navigation-link {
+	&.post-navigation-link-next a {
+		@include nu_micon("\e5cc", after);
+		&:after {
+			display: inline;
 		}
 	}
-}
-
-// ! hacky solution to touching up the back end
-nav.wp-block.wp-block-navigation {
-	.wp-block-navigation__submenu-container.block-editor-block-list__layout {
-		padding: 0;
-		display: none;
+	&.post-navigation-link-previous a {
+		@include nu_micon("\e5cb", before);
+		&:after {
+			display: inline;
+		}
 	}
-	div.wp-block.wp-block-navigation-item {
-		flex-flow: column nowrap;
-		&.has-background {
-			padding: 0;
-		}
-
-		&.is-selected {
-			.wp-block-navigation__submenu-container.block-editor-block-list__layout {
-				display: flex;
-			}
-		}
+	> a {
+		white-space: pre-wrap;
 	}
 }
