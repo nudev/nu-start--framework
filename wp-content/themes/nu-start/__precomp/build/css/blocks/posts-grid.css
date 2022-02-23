@@ -20,7 +20,8 @@
 
 /* ... project styles will always load after this ... */
 .nu_posts-grid.nu-acf-block {
-  margin: 32px 0 16px 0;
+  margin-top: 32px;
+  margin-bottom: 16px;
 }
 .nu_posts-grid.nu-acf-block figure {
   max-height: 320px;

@@ -79,7 +79,7 @@
                 {
                     "key": "field_615f38951d72b",
                     "label": "Phone Number",
-                    "name": "person_phone_number",
+                    "name": "phone_number",
                     "type": "text",
                     "instructions": "",
                     "required": 0,
@@ -93,13 +93,12 @@
                     "placeholder": "",
                     "prepend": "",
                     "append": "",
-                    "maxlength": "",
-                    "acfe_field_group_condition": 0
+                    "maxlength": ""
                 },
                 {
                     "key": "field_615f38861d72a",
                     "label": "Email",
-                    "name": "person_email",
+                    "name": "email",
                     "type": "email",
                     "instructions": "",
                     "required": 0,
@@ -112,14 +111,13 @@
                     "default_value": "",
                     "placeholder": "",
                     "prepend": "",
-                    "append": "",
-                    "acfe_field_group_condition": 0
+                    "append": ""
                 },
                 {
                     "key": "field_611e7b014431f",
                     "label": "Primary Title",
                     "name": "primary_title",
-                    "type": "wysiwyg",
+                    "type": "text",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -129,10 +127,10 @@
                         "id": ""
                     },
                     "default_value": "",
-                    "tabs": "all",
-                    "toolbar": "basic",
-                    "media_upload": 0,
-                    "delay": 1
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
                 }
             ]
         }
@@ -160,9 +158,14 @@
         "json"
     ],
     "acfe_form": 0,
-    "acfe_meta": "",
+    "acfe_meta": {
+        "acfcloneindex": {
+            "acfe_meta_key": "",
+            "acfe_meta_value": ""
+        }
+    },
     "acfe_note": "",
-    "modified": 1644945805,
+    "modified": 1645630927,
     "acfe_categories": {
         "custom-post-metadata": "Custom Post Metadata"
     }

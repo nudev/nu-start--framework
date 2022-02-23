@@ -21,6 +21,28 @@ body {
 
 @mixin the_top_level_blocks_container() {
 
+	> :not(.alignfull, .alignwide) {
+		max-width: var(--wp--custom--content-size);
+		margin-left: auto;
+		margin-right: auto;
+	}
+	> .alignwide {
+		max-width: var(--wp--custom--wide-size);
+		margin-left: auto;
+		margin-right: auto;
+	}
+	> .alignfull {
+		max-width: none;
+	}
+	> .alignleft {
+		float: left;
+		margin-left: $base-margin;
+	}
+	> .alignright {
+		float: right;
+		margin-right: $base-margin;
+	}
+	
 	// ? most blocks pad from the edge by base margin
 	> :not(.alignfull, .is-reusable) {
 		padding: 0 $base-margin;
@@ -28,6 +50,11 @@ body {
 	// ? most blocks (as sections) vertical spacing is $margin_8x except typographical elements like paragraphs
 	> :not(p, .wp-block-paragraph, .wp-block-spacer) {
 		margin: $margin_8x auto 0 auto;
+	}
+
+	// ? alignfull first block assumed to be a hero
+	> .alignfull:first-child {
+		margin-top: 0;
 	}
 }
 
@@ -85,7 +112,7 @@ body {
 
 // ? using a group as a wrapper for top-level "sections" blows out the vertical rhythm
 // ? css expects the hero to come first - maybe in a group wrapper - and not count
-.blocks--wrapper > .wp-block-group.alignfull:not(:first-child),
+// .blocks--wrapper > .wp-block-group.alignfull:not(:first-child),
 .block-editor-block-list__layout.is-root-container,
 .blocks--wrapper {
 	//

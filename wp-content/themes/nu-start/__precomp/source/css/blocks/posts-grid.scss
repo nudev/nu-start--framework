@@ -74,7 +74,8 @@
 		}
 	}
 
-	margin: $margin_2x 0 $base-margin 0;
+	margin-top: $margin_2x;
+	margin-bottom: $base-margin;
 
 	figure {
 		max-height: 320px; // ! need to restrict this to cols-1 or something, maybe horz layout?

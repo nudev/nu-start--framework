@@ -76,6 +76,9 @@ nav.wp-block-navigation {
   margin: 0 auto;
   text-align: left;
 }
+nav.wp-block-navigation:not(.is-vertical) > ul {
+  gap: 32px;
+}
 nav.wp-block-navigation .wp-block-navigation__container {
   gap: 0;
 }

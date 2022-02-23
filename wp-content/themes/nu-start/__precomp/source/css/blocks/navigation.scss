@@ -24,6 +24,12 @@ nav.wp-block-navigation {
 	margin: 0 auto;
 	text-align: left;
 
+	&:not(.is-vertical){
+		> ul {
+			gap: $margin_2x;
+		}
+	}
+
 	.wp-block-navigation__container {
 		gap: 0;
 	}

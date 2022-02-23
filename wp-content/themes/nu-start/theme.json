@@ -319,6 +319,8 @@
       ]
     },
     "custom": {
+      "contentSize": "1280px",
+      "wideSize": "1620px",
       "font-primary": "Lato, sans-serif",
       "line-height": {
         "body": 1.375,

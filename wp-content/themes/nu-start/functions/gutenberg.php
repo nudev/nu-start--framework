@@ -243,74 +243,37 @@ if( function_exists('acf_register_block_type') ):
 		),
 		'active' => true,
 	));
-	
-	
-	
-	acf_register_block_type(array(
-		'name' => 'nu--content-query',
-		'title' => 'Content Query',
-		'description' => 'Query the DB for items of a content type; with related functionality like filtering and pagination.',
-		'category' => 'nu-blocks',
-		'keywords' => array(
-		),
-		'post_types' => array(
-		),
-		'mode' => 'preview',
-		'align' => '',
-		'align_content' => NULL,
-		'render_template' => get_template_directory(  ) . '/acf-blocks/content-query/content-query.php',
-		'render_callback' => '',
-		'enqueue_style' => get_template_directory_uri(  ) . '/acf-blocks/content-query/content-query.css',
-		'enqueue_script' => get_template_directory_uri(  ) . '/acf-blocks/content-query/content-query-min.js',
-		'enqueue_assets' => '',
-		'icon' => '',
-		'supports' => array(
-			'align' => array(
-				'wide',
-				'full'
-			),
-			'mode' => false,
-			'multiple' => true,
-			'jsx' => true,
-			'align_content' => false,
-			'anchor' => true,
-		),
-		'active' => true,
-	));
 
 	acf_register_block_type(array(
-		'name' => 'nu--content-query-item',
-		'title' => 'Content Query Item',
-		'description' => 'Wrapper for the item template returned by the Content Query',
+		'name' => 'person-info',
+		'title' => 'Person Info',
+		'description' => 'Fetch and display info for a Person.',
 		'category' => 'nu-blocks',
-		'parent' => ['nu--content-query'],
-		'keywords' => array(
-		),
-		'post_types' => array(
-		),
 		'mode' => 'preview',
-		'align' => '',
-		'align_content' => NULL,
-		'render_template' => get_template_directory(  ) . '/acf-blocks/content-query-item/content-query-item.php',
-		'render_callback' => '',
-		'enqueue_style' => get_template_directory_uri(  ) . '/acf-blocks/content-query-item/content-query-item.css',
-		'enqueue_script' => get_template_directory_uri(  ) . '/acf-blocks/content-query-item/content-query-item-min.js',
-		'enqueue_assets' => '',
+		// 'render_callback' => '',
+		'render_template' => get_template_directory().'/acf-blocks/person-info/person-info.php',
+		// 'enqueue_style' => get_template_directory_uri().'/acf-blocks/person-info/person-info.css',
+		// 'enqueue_script' => get_template_directory_uri().'/acf-blocks/person-info/person-info-min.js',
+		'enqueue_assets' => function(){
+			wp_enqueue_style( 'block-person-info', get_template_directory_uri() . '/__precomp/build/css/blocks/person-info.css' );
+			// wp_enqueue_script( 'block-person-info', get_template_directory_uri() . '/__precomp/build/js/blocks/person-info-min.js', array('jquery'), '', true );
+		},
 		'icon' => '',
 		'supports' => array(
-			'align' => array(
-				'wide',
-				'full'
-			),
+			'anchor' => true,
+			// enable/disable alignment toolbar (true by default)
+			'align' => true,
+			// hide/show text alignment toolbar.
+			'align_text' => true,
+			// hide/show content alignment toolbar.
+			'align_content' => false,
+			// disable preview/edit toggle
 			'mode' => false,
 			'multiple' => true,
 			'jsx' => true,
-			'align_content' => false,
-			'anchor' => true,
 		),
 		'active' => true,
 	));
-	
 
 	
 	
