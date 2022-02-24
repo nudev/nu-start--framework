@@ -109,16 +109,17 @@ header.header {
 				> a {
 					> span {
 						padding-right: $half-margin;
-						@include nu_micon("\e5cf", after);
-						&:after {
-							position: absolute;
-							top: 50%;
-							right: -$half-margin;
-							line-height: 1;
-							transform: translateY(-50%) rotate(0deg);
-							@extend %transition;
-							font-size: 18px;
-						}
+						//@include nu_micon("\e5cf", after);
+						// &:after {
+						// 	position: absolute;
+						// 	top: 50%;
+						// 	right: -$half-margin;
+						// 	line-height: 1;
+						// 	transform: translateY(-50%) rotate(0deg);
+						// 	@extend %transition;
+						// 	font-size: 18px;
+						//
+						// }
 					}
 				}
 				// * hover to reveal sub-menus (allow clicking parent to nav to that location)
@@ -266,16 +267,36 @@ header.header {
 			padding: 0;
 			position: relative;
 			z-index: 1;
+			// display: flex;
+			// justify-content: center;
+			position: absolute;
+			top:40%;
+			right:0;
+			// &:hover {
+			// 	z-index: 3;
+			// }
+			//
+			// button {
+			// 	position: absolute;
+			// 	top:50%;
+			// 	right:0;
+			// }
 
-			&:hover {
-				z-index: 3;
-			}
+
 
 			&::after {
 				content: "\e313";
 				display: inline-block;
 				font-family: "Material Icons";
 				vertical-align: middle;
+				position: absolute;
+				top: 0;
+				right: 0;
+				line-height: 1;
+				//transform: translateY(-50%) rotate(0deg);
+				//@extend %transition;
+				font-size: 18px;
+
 			}
 		}
 

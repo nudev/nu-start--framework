@@ -102,7 +102,7 @@
 						'aria-controls': "dropdown-".concat(i),
 						'aria-expanded': false
 					});
-					console.log(link);
+
 					button.append(buttonText);
 					menu.attr('id', "dropdown-".concat(i));
 					button.insertAfter(link);
