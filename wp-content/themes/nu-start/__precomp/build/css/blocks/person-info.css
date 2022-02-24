@@ -24,26 +24,30 @@ Person Info Stylesheet
   display: flex;
   flex-flow: column nowrap;
   align-items: flex-start;
+}
+.person-info h2, .person-info h3, .person-info p {
+  margin: 16px 0 0;
+  font-weight: 300;
   color: var(--wp--preset--color--black-2);
 }
+.person-info h2 {
+  font-size: var(--wp--preset--font-size--30-36);
+}
+.person-info h3 {
+  font-size: var(--wp--preset--font-size--20-28);
+}
 .person-info p {
-  margin-bottom: 0;
+  font-weight: 400;
 }
 .person-info p .material-icons-outlined {
   font-size: 20px;
   line-height: 20px;
   margin-top: -4px;
 }
-.person-info p:where(.full-name) {
-  font-size: var(--wp--preset--font-size--30-36);
-}
-.person-info p:where(.primary-title) {
-  font-size: var(--wp--preset--font-size--20-28);
-}
 .person-info p:where(.email, .phone-number) {
   font-size: var(--wp--preset--font-size--14-20);
-  padding: 8px;
-  border-radius: 2px;
+  padding: 8px 16px;
+  border-radius: 5px;
 }
 .person-info p:where(.email, .phone-number) span.icon-email, .person-info p:where(.email, .phone-number) span.icon-call {
   margin-right: 16px;
@@ -56,11 +60,15 @@ Person Info Stylesheet
 .person-info p:where(.email, .phone-number) span, .person-info p:where(.email, .phone-number) {
   vertical-align: middle;
 }
+.person-info p:where(.email, .phone-number):hover, .person-info p:where(.email, .phone-number):focus {
+  background-color: var(--wp--preset--color--white-2);
+  color: var(--wp--preset--color--black-1);
+}
 .person-info p:where(.email, .phone-number):hover .icon-content-copy, .person-info p:where(.email, .phone-number):focus .icon-content-copy {
   opacity: 1;
 }
-.person-info p:where(.email):hover, .person-info p:where(.email):focus {
-  background-color: var(--wp--preset--color--white-2);
+.person-info a {
+  border-bottom: none !important;
 }
 
 /*# sourceMappingURL=person-info.css.map */
