@@ -145,7 +145,7 @@ class PostsGrid
 
 	private function _build_acf_block_output(){
 
-		$guides['acf-block-container'] = '<div id="%1$s" class="nu-acf-block nu_posts-grid%2$s%3$s">%7$s<div class="nu__grid cols-%4$s"><ul>%5$s</ul>%6$s</div></div>';
+		$guides['acf-block-container'] = '<div id="%1$s" class="nu-acf-block nu_posts-grid%2$s%3$s%8$s">%7$s<div class="nu__grid cols-%4$s"><ul>%5$s</ul>%6$s</div></div>';
 
 		$return = sprintf(
 			$guides['acf-block-container'],
@@ -155,7 +155,8 @@ class PostsGrid
 			self::$post_fields['options']['columns'],  // column count value (required field)
 			$this->grid_items_str,
 			$this->pagination_str,
-			self::$the_filtering_form_return_string
+			self::$the_filtering_form_return_string,
+			!empty(self::$block['align_text']) ? ' has-text-align-'.self::$block['align_text'] : '',
 		);
 
 		echo $return;
