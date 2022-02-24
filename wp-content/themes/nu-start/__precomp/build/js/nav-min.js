@@ -160,16 +160,28 @@
 		//
 		// });
 
+		// if ($('.navlinks li').hasClass('active')){
+		// 	alert('has class');
+		// }
+
+
 
 		function initMenu() {
 	    $('.sub-menu').hide(); // Start with sub-menus hidden
+			//$('.navlinks li').removeClass('active');
 	    $('.menu-item-toggle').click(function() {
 	      var checkElement = $(this).next();
-
+				//var test = $(this).closest('li').toggleClass('active');
+				//console.log(checkElement);
+				$(this).parent().parent().find('.sub-menu.active').removeClass('active');
+				$('.navlinks > .menu li.trent').removeClass('trent');
 	      // When an `<a>` with a sub-menu that isn't visible is clicked (tapped)...
 	      if ((checkElement.is('.sub-menu')) && (!checkElement.is(':visible'))) {
 	        // Open the clicked (tapped) sub-menu of `<a>`
+					$(this).closest('li').addClass('trent');
+					$(this).closest('li').find('ul').addClass("active");
 	        $(this).addClass("active");
+
 	        checkElement.slideDown(165, 'linear');
 	        // Go to the other `<a>` elements of that sub-menu scope and close them
 	        // (without closing sub-menus of other scopes, above or below)
