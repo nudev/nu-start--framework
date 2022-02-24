@@ -7,78 +7,35 @@
  */
 // 
 
-/* 
-  pseudo-code / explain behavior:
-  - clickable-area
-  - no action items on this view
-*/
+$full_name = !empty($person_metadata['full_name']) ? '<h2 class="full-name post-title"><span>'.$person_metadata['full_name'].'</span></h2>' : $the_post_title;
+$primary_title = !empty($person_metadata['primary_title']) ? '<div class="primary-title">'.$person_metadata['primary_title'].'</div>' : '';
 
-
-// set the display fallback to post title
-$the_display_name = $the_post_title;
-
-// this fallback makes no damn sense but it works for now
-$the_primary_title = $the_basic_excerpt;
-
-// Contact fallbacks
-$the_phone_number = ''; 
-$the_email_address = ''; 
-
-$the_first_name = '';
-$the_last_name = '';
-// $the_first_name = !empty($fields['person_metadata']['first_name']) ? $fields['person_metadata']['first_name'] : '';
-// $the_last_name = !empty($fields['person_metadata']['last_name']) ? $fields['person_metadata']['last_name'] : '';
-
-// if we have data
-if( !empty($person_metadata) ){
-  
-  
-  // ? get the display name or nothing
-  $the_display_name = !empty($person_metadata['full_name']) ? '<span>'.$person_metadata['full_name'].'</span>' : $the_post_title;
-
-  $the_primary_title = !empty($person_metadata['primary_title']) ? $person_metadata['primary_title'] : $the_basic_excerpt; 
-  
-  $the_phone_number = !empty($person_metadata['person_phone_number']) ? $person_metadata['person_phone_number'] : ''; 
-
-  $the_email_address = !empty($person_metadata['person_email']) ? $person_metadata['person_email'] : '';
-
-}
-
-
-// This template is loaded by the post grid
-
-$guides['person'] = '
-  <li class="grid-item%1$s%6$s%7$s">
-    <a class="contains-clickable-area" href="%5$s"'.$the_title_attribute.' %8$s>
-      %2$s 
+$guides['person-teaser'] = '
+  <li class="grid-item%1$s%2$s%3$s">
+    <a class="contains-clickable-area" href="%4$s"%5$s%6$s>
+      %7$s
       <div class="grid-item-content">
-        <h2 class="full-name post-title">
-          %3$s
-        </h2>
-        <div class="primary-title">
-          %4$s
-          %9$s
-          %10$s
-        </div>
+        %8$s
+        %9$s
       </div>
     </a>
   </li>
 ';
 
+
 $return .= sprintf(
-  $guides['person'],
-    ' '.$post_type,
-    $the_cover_image,
-    $the_display_name,
-    $the_primary_title,
-    $determined_permalink,
-    $aspect_ratio_class,
-    $orientationClass,
-    $maybe_target,
-    $the_first_name, 
-    $the_last_name,
-    $the_phone_number,
-    $the_email_address
+  $guides['person-teaser'],
+  // ? generic grid-item args...
+  ' '.$post_type,
+  $aspect_ratio_class,
+  $orientationClass,
+  $determined_permalink,
+  $the_title_attribute,
+  $maybe_target,
+  $the_cover_image,
+  // ? person-specific args...
+  $full_name,
+  $primary_title,
 );
 
 
