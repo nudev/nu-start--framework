@@ -2,6 +2,43 @@
 
 
 */
+//mega menu stuff
+// div.mega-menu-wrapper {
+// 	position: fixed;
+// 	z-index: -999;
+// 	top: 140px;
+// 	left: 0;
+// 	display: block;
+// 	background-color: rgba(249, 250, 247, 1.0);
+// 	opacity: 1;
+// 	width:100%;
+// 	// width: calc(100% - 128px);
+// 	margin:0 64px;
+// 	border-top: 1px solid #e1e6da;
+// 	display: flex;
+// 	> div.mega-menu-col {
+// 		width: 33%;
+// 		padding: 30px 0;
+// 		position: relative;
+// 		background:#fff;
+// 		> ul.sub-menu {
+// 			width:100%;
+// 			top:0 !important;
+// 			box-shadow: none !important;
+// 			position: relative !important;
+// 		}
+// 	}
+// 	&:nth-child(2){
+//
+// 		> div.mega-menu-col {
+// 			margin-left:33%;
+// 			border-left:1px solid red;
+// 			border-right:1px solid red;
+// 		}
+// 	}
+// }
+
+
 
 // ? styles for all screen sizes
 header.header {
@@ -63,6 +100,7 @@ header.header {
 			display: inline-block;
 		}
 		&:hover,
+		&:focus,
 		&:active {
 			@include nav_item_is_active();
 		}
@@ -258,7 +296,7 @@ header.header {
 			padding:0;
 
 	}
-
+	//PARENT TOP LEVEL CHEVRON
 		.menu-item-toggle {
 			background: transparent;
 			border: 0;
@@ -267,23 +305,13 @@ header.header {
 			padding: 0;
 			position: relative;
 			z-index: 1;
-			// display: flex;
-			// justify-content: center;
 			position: absolute;
 			top:40%;
+	    -webkit-transform: translateY(-40%);
+	    -moz-transform: translateY(-40%);
+	    -ms-transform: translateY(-40%);
+	    transform: translateY(-40%);
 			right:0;
-			// &:hover {
-			// 	z-index: 3;
-			// }
-			//
-			// button {
-			// 	position: absolute;
-			// 	top:50%;
-			// 	right:0;
-			// }
-
-
-
 			&::after {
 				content: "\e313";
 				display: inline-block;
@@ -293,21 +321,16 @@ header.header {
 				top: 0;
 				right: 0;
 				line-height: 1;
-				//transform: translateY(-50%) rotate(0deg);
-				//@extend %transition;
 				font-size: 18px;
-
+			}
+			&.active {
+				&:after {
+					transform: translateY(0%) rotate(90deg);
+				}
 			}
 		}
 
-		.navlinks .menu-item {
-			// &:hover,
-			// &:active {
-			// 	> .sub-menu {
-			// 		display: flex;
-			// 	}
-			// }
-		}
+
 
 		.navlinks {
 			// * in desktop view; top-level nav items underline is at the bottom of the header; not under the text
@@ -346,6 +369,7 @@ header.header {
 					}
 
 					&:hover,
+					&:focus,
 					&:active {
 						background-color: initial;
 						&:before {
@@ -597,10 +621,21 @@ body.is-dark-header {
 		.navlinks > ul > li > a {
 			color: var(--wp--preset--color--white-1);
 			@include media("<=medium"){
-				&:hover {
+				&:hover,
+				&:focus, {
 					color: var(--wp--preset--color--black-1);
 				}
 			}
 		}
 	}
 }
+
+// .navlinks > .menu > .menu-item > .sub-menu {
+// 	display: none;
+// 	&.sub-menu {
+// 		display: none;
+// 		&.sub-menu {
+// 			display: none;
+// 		}
+// 	}
+// }

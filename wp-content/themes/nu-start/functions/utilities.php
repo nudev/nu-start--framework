@@ -14,6 +14,25 @@
  * @param [type] $menu
  * @return void
  */
+
+
+
+ class Child_Wrap extends Walker_Nav_Menu {
+     function start_lvl(&$output, $depth = 0, $args = array())
+     {
+         $indent = str_repeat("\t", $depth);
+         $output .= "\n$indent<div class=\"mega-menu-wrapper\"><div class=\"mega-menu-col\"><ul class=\"sub-menu\">\n";
+     }
+     function end_lvl(&$output, $depth = 0, $args = array())
+     {
+         $indent = str_repeat("\t", $depth);
+         $output .= "$indent</ul></div></div>\n";
+     }
+ }
+
+
+
+
 function nu__getMenu($location = '', $echo = false, $menu = ''){
 
 	// dynamically set args
@@ -27,6 +46,8 @@ function nu__getMenu($location = '', $echo = false, $menu = ''){
 		,'echo' => $echo
 		,'theme_location' => $location
 		,'menu' => $menu
+		//, 'walker' => new Child_Wrap()
+
 	);
 
 	// return the menu call
@@ -38,7 +59,10 @@ function nu__getMenu($location = '', $echo = false, $menu = ''){
 
 
 
-function posts_orderby_lastname ($orderby_statement) 
+
+
+
+function posts_orderby_lastname ($orderby_statement)
 {
   $orderby_statement = "RIGHT(post_title, LOCATE(' ', REVERSE(post_title)) - 1) ASC";
 	return $orderby_statement;
@@ -48,7 +72,7 @@ function get_featured_tagstring($post){
 
 	$post = get_post($post);
 
-	
+
 	$featuredTag = '';
 	$catString = '';
 	$tagString = '';

@@ -81,7 +81,7 @@
 			// all li
 			toplevel: $('.navlinks > ul > li'),
 			// li with dropdowns
-			dropdowns: $('.navlinks > ul > li.menu-item-has-children'),
+			dropdowns: $('.navlinks > ul > li.menu-item-has-children, .navlinks > ul > li.menu-item-has-children ul li.menu-item-has-children'),
 			mq: window.matchMedia('(min-width: 80em)'),
 
 			/**
@@ -102,11 +102,12 @@
 						'aria-controls': "dropdown-".concat(i),
 						'aria-expanded': false
 					});
-					console.log(link);
+
 					button.append(buttonText);
 					menu.attr('id', "dropdown-".concat(i));
 					button.insertAfter(link);
 					button.on('click', Theme.Nav._doDropdowns);
+
 				}); // handle clicks on the dropdown parent items
 
 				Theme.Nav.dropdowns.on('hover', Theme.Nav._doDropdowns);
@@ -116,33 +117,79 @@
 				* Handle Dropdowns Clicks
 				* @param {event} e
 				*/
-			_doDropdowns: function _doDropdowns(e) {
-				if (!Theme.Nav.mq.matches && ('mouseenter' === e.type || 'mouseleave' === e.type)) {
-					return;
-				}
+			// _doDropdowns: function _doDropdowns(e) {
+			// 	if (!Theme.Nav.mq.matches && ('mouseenter' === e.type || 'mouseleave' === e.type)) {
+			// 		return;
+			// 	}
+			//
+			// 	var $el = $(this);
+			//
+			// 	if ($(this).hasClass('menu-item-toggle')) {
+			// 		$el = $(this).parent();
+			// 	}
+			//
+			// 	$el.toggleClass('neu__dropdown--active'); // toggle aria expanded
+			//
+			// 	if ($el.hasClass('neu__dropdown--active')) {
+			// 		$el.find('.menu-item-toggle').attr('aria-expanded', 'true');
+			// 	} else {
+			// 		$el.find('.menu-item-toggle').attr('aria-expanded', 'false');
+			// 	} // always clear active class from other dropdowns
+			//
+			//
+			// 	Theme.Nav.dropdowns.not($el).removeClass('neu__dropdown--active'); // always set other dropdowns aria-expanded to false
+			//
+			// 	Theme.Nav.dropdowns.not($el).find('.menu-item-toggle').attr('aria-expanded', 'false');
+			// }
 
-				var $el = $(this);
 
-				if ($(this).hasClass('menu-item-toggle')) {
-					$el = $(this).parent();
-				}
-
-				$el.toggleClass('neu__dropdown--active'); // toggle aria expanded
-
-				if ($el.hasClass('neu__dropdown--active')) {
-					$el.find('.menu-item-toggle').attr('aria-expanded', 'true');
-				} else {
-					$el.find('.menu-item-toggle').attr('aria-expanded', 'false');
-				} // always clear active class from other dropdowns
-
-
-				Theme.Nav.dropdowns.not($el).removeClass('neu__dropdown--active'); // always set other dropdowns aria-expanded to false
-
-				Theme.Nav.dropdowns.not($el).find('.menu-item-toggle').attr('aria-expanded', 'false');
-			}
 		};
 
 		Theme.Nav._init();
+		//
+		// $("button.menu-item-toggle").on("click", function (event) {
+		// 	event.preventDefault();
+		// 	$(this).toggleClass('active');
+		//   var test = $(this).closest('li').find('ul');
+		// 	if ($(this).hasClass('active')) {
+		// 		//alert('fd');
+		// 	}else {
+		// 		$(test).css("display", "block");
+		// 	}
+		//
+		//
+		// });
+
+
+		function initMenu() {
+	    $('.sub-menu').hide(); // Start with sub-menus hidden
+	    $('.menu-item-toggle').click(function() {
+	      var checkElement = $(this).next();
+
+	      // When an `<a>` with a sub-menu that isn't visible is clicked (tapped)...
+	      if ((checkElement.is('.sub-menu')) && (!checkElement.is(':visible'))) {
+	        // Open the clicked (tapped) sub-menu of `<a>`
+	        $(this).addClass("active");
+	        checkElement.slideDown(165, 'linear');
+	        // Go to the other `<a>` elements of that sub-menu scope and close them
+	        // (without closing sub-menus of other scopes, above or below)
+	        $(this).parent().siblings("li").children("a").removeClass("active");
+	        $(this).parent().siblings("li").children("a").next(".sub-menu").slideUp(160, 'linear');
+	        return false;
+	      }
+
+	      if($(this).hasClass("active")) {
+	        $(this).removeClass("active");
+	        checkElement.slideUp(160, 'linear');
+	      }
+	    });
+	  } // End initMenu()
+
+	  initMenu();
+
+	  $('.menu').click(function (e) {
+	    e.stopPropagation();
+	  });
 
 	});
 })(window.jQuery, window, document);
