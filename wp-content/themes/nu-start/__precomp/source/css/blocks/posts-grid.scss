@@ -77,10 +77,6 @@
 	margin-top: $margin_2x;
 	margin-bottom: $base-margin;
 
-	figure {
-		max-height: 320px; // ! need to restrict this to cols-1 or something, maybe horz layout?
-	}
-
 	// ? handle adjusting base styles of contained elements
 	a.contains-clickable-area:after,
 	img {

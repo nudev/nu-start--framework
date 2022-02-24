@@ -180,6 +180,21 @@
       "pg" : 0,
       "sct" : 0
     },
+    "\/source\/css\/blocks\/person-info.scss" : {
+      "aP" : 1,
+      "bl" : 0,
+      "co" : 0,
+      "dP" : 10,
+      "ec" : 1,
+      "ft" : 4,
+      "ma" : 1,
+      "oA" : 0,
+      "oAP" : "\/build\/css\/blocks\/person-info.css",
+      "oF" : 0,
+      "oS" : 0,
+      "pg" : 0,
+      "sct" : 0
+    },
     "\/source\/css\/blocks\/posts-grid.scss" : {
       "aP" : 1,
       "bl" : 0,
@@ -1476,7 +1491,7 @@
     "displayValueWasSetByUser" : 1,
     "iconImageName" : "brackets-ucla",
     "iconImageWasSetByUser" : 0,
-    "lastBuiltDate" : 667244100.08113503
+    "lastBuiltDate" : 667344083.27196896
   },
   "projectSettings" : {
     "abortBuildOnError" : 1,
