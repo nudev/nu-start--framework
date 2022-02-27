@@ -82,7 +82,7 @@
 			toplevel: $('.navlinks > ul > li'),
 			// li with dropdowns
 			dropdowns: $('.navlinks > ul > li.menu-item-has-children, .navlinks > ul > li.menu-item-has-children ul li.menu-item-has-children'),
-			mq: window.matchMedia('(min-width: 80em)'),
+			//mq: window.matchMedia('(min-width: 80em)'),
 
 			/**
 			* initialize nav scripts
@@ -98,7 +98,7 @@
 						'class': 'screen-reader-text'
 					});
 					var button = $('<button>', {
-						'class': 'menu-item-toggle',
+						'class': 'menu-item-toggle ',
 						'aria-controls': "dropdown-".concat(i),
 						'aria-expanded': false
 					});
@@ -166,36 +166,60 @@
 
 
 
+		// function initMenu() {
+	  //   $('.sub-menu').hide(); // Start with sub-menus hidden
+	  //   $('.menu-item-toggle').click(function() {
+	  //     var checkElement = $(this).next();
+		// 		//$('.sub-menu.active').not(checkElement).slideUp(160, 'linear');
+		// 	  //$('.menu-item-toggle.active').removeClass('active');
+		// 		//$('.menu-item-toggle').parent().find('.sub-menu.active').removeClass('active');
+	  //     if ((checkElement.is('.sub-menu')) && (!checkElement.is(':visible'))) {
+		// 			//$(this).parent().addClass('dropdown--active');
+		// 			$(this).closest('li').find('ul').toggleClass("active");
+	  //       $(this).toggleClass("active");
+	  //       checkElement.slideDown(165, 'linear');
+		// 			$(this).parent().siblings('li').children('a').next('.sub-menu').slideUp(160, 'linear');
+	  //       // $(this).parent().siblings("li").children("a").removeClass("active");
+	  //       //$(this).parent().siblings("li").children("a").next(".sub-menu").slideUp(160, 'linear');
+	  //       return false;
+	  //     }
+	  //     if($(this).hasClass("active")) {
+	  //       $(this).removeClass("active");
+	  //       checkElement.slideUp(160, 'linear');
+	  //     }
+	  //   });
+	  // }
+
 		function initMenu() {
-	    $('.sub-menu').hide(); // Start with sub-menus hidden
-			//$('.navlinks li').removeClass('active');
-	    $('.menu-item-toggle').click(function() {
-	      var checkElement = $(this).next();
-				//var test = $(this).closest('li').toggleClass('active');
-				//console.log(checkElement);
-				$(this).parent().parent().find('.sub-menu.active').removeClass('active');
-				$('.navlinks > .menu li.trent').removeClass('trent');
-	      // When an `<a>` with a sub-menu that isn't visible is clicked (tapped)...
-	      if ((checkElement.is('.sub-menu')) && (!checkElement.is(':visible'))) {
-	        // Open the clicked (tapped) sub-menu of `<a>`
-					$(this).closest('li').addClass('trent');
-					$(this).closest('li').find('ul').addClass("active");
-	        $(this).addClass("active");
+			$('button').on('click', function(e) {
+				//$(this).toggleClass('active');//controls active state of chevron on button
 
-	        checkElement.slideDown(165, 'linear');
-	        // Go to the other `<a>` elements of that sub-menu scope and close them
-	        // (without closing sub-menus of other scopes, above or below)
-	        $(this).parent().siblings("li").children("a").removeClass("active");
-	        $(this).parent().siblings("li").children("a").next(".sub-menu").slideUp(160, 'linear');
-	        return false;
-	      }
+			  // $(this).next('ul').toggle().addClass('open');
+			  // $(this).siblings('li').find('ul').hide();
 
-	      if($(this).hasClass("active")) {
-	        $(this).removeClass("active");
-	        checkElement.slideUp(160, 'linear');
-	      }
-	    });
-	  } // End initMenu()
+				$(this).parent().siblings().children('button').removeClass('active').next().slideUp(10);
+    	  $(this).toggleClass('active').next().slideToggle();
+				// if ($('ul > li > button').not('ul li ul button')) {
+				// 	alert('fda');
+				// }
+			  e.stopPropagation();
+			});
+
+			// $('ul > li > button').not('ul li ul button').on('click', function(e) {
+			// 	e.stopPropagation();
+			// 	// if ($('.sub-menu.open').hasClass('open')){
+			// 	// 	$('.sub-menu').hide();
+			// 	// }
+			//
+			// 	//$('.sub-menu.open').removeClass('open');
+			//
+			// 	//console.log('close');
+			// 	//if ($('')).hasClass('');
+			//
+			// });
+		}
+
+
 
 	  initMenu();
 

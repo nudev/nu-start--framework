@@ -329,6 +329,10 @@ header.header {
 			}
 		}
 
+		ul li ul li > button {
+			top:30% !important;
+		}
+
 
 
 		.navlinks {
@@ -627,6 +631,10 @@ body.is-dark-header {
 			}
 		}
 	}
+}
+
+.sub-menu {
+	display: none;
 }
 
 // .navlinks > .menu > .menu-item > .sub-menu {
