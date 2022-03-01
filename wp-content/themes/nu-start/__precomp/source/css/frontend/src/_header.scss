@@ -95,6 +95,7 @@ header.header {
 		font-size: var(--wp--preset--font-size--14-20);
 		padding: $half-margin $base-margin;
 		color: var(--wp--preset--color--black-2);
+		white-space: nowrap;
 		> span {
 			display: inline-block;
 		}
