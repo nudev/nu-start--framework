@@ -146,23 +146,6 @@
 		};
 
 		Theme.Nav._init();
-		//
-		// $("button.menu-item-toggle").on("click", function (event) {
-		// 	event.preventDefault();
-		// 	$(this).toggleClass('active');
-		//   var test = $(this).closest('li').find('ul');
-		// 	if ($(this).hasClass('active')) {
-		// 		//alert('fd');
-		// 	}else {
-		// 		$(test).css("display", "block");
-		// 	}
-		//
-		//
-		// });
-
-		// if ($('.navlinks li').hasClass('active')){
-		// 	alert('has class');
-		// }
 
 
 
@@ -190,15 +173,41 @@
 	  //   });
 	  // }
 
-		function initMenu() {
-			$('button').on('click', function(e) {
-				//$(this).toggleClass('active');//controls active state of chevron on button
+		$('.navicons > span').on('click', function() {
+			//alert('fad');
+			$('.navicons').toggleClass("revealed");
+			//$(this).addClass("revealed");
+			$('.menu').toggleClass("revealed");
+		});
 
+		function initMenu() {
+			$('button.menu-item-toggle').on('click', function(e) {
+				//$(this).toggleClass('active');//controls active state of chevron on button
+				var $el = $(this);
 			  // $(this).next('ul').toggle().addClass('open');
 			  // $(this).siblings('li').find('ul').hide();
 
-				$(this).parent().siblings().children('button').removeClass('active').next().slideUp(10);
+				$(this).parent().siblings().children('button.menu-item-toggle').removeClass('active').next().slideUp(100);
     	  $(this).toggleClass('active').next().slideToggle();
+
+				// $('.menu-item-toggle').not(this).removeClass('active'); // always set other dropdowns aria-expanded to false
+				// //
+				// $('.menu-item-toggle').not($el).find('.menu-item-toggle').attr('aria-expanded', 'false');
+
+				// if ($(this).hasClass('menu-item-toggle')) {
+				// 		$el = $(this).parent();
+				// 	}
+				//
+				// 	//$el.toggleClass('active'); // toggle aria expanded
+				//
+				// 	if ($el.hasClass('active')) {
+				// 		$el.find('.menu-item-toggle').attr('aria-expanded', 'true');
+				// 	} else {
+				// 		$el.find('.menu-item-toggle').attr('aria-expanded', 'false');
+				// 	} // always clear active class from other dropdowns
+
+
+
 				// if ($('ul > li > button').not('ul li ul button')) {
 				// 	alert('fda');
 				// }
