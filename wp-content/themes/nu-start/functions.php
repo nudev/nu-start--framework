@@ -59,7 +59,11 @@ require_once(  get_template_directory() . '/classes/pim-handler.php');
 
 
 
+// !
 
+require_once( get_template_directory().'/classes/vendors/class.taxonomy-single-term.php' );
+$custom_tax_mb = new Taxonomy_Single_Term( 'nu_news-categories', 'nu_news' );
+$custom_tax_mb = new Taxonomy_Single_Term( 'nu_events-topics', 'nu_events' );
 
 function add_my_icons($file) {
     $file = get_template_directory().'/__lib/icons/material-icons/config.json';

@@ -11,9 +11,17 @@
 		margin-top: $margin_4x;
 
 		.nu__grid > ul {
-			grid-row-gap: 0 !important;
+			grid-row-gap: $margin_4x - $half-margin !important;
 			grid-column-gap: 0 !important;
 		}
+
+		.contains-clickable-area {
+			position: relative;
+			&:hover, &:focus {
+				z-index: 2;
+			}
+		}
+		
 	}
 }
 

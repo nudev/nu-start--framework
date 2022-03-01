@@ -5,16 +5,14 @@
  *    This template will render a single Event item into the Posts Grid.
  *    - this is a "clickable area" template
  */
+// 
 
 $event_location = !empty($event_item_metadata['location']) ? '<p>'.$event_item_metadata['location'].'</p>' : '';
 
-// ! active development
-/* 
 
-  - use terms instead of post type in the banner above the feat image
-  - 
+$checkTerms = get_the_terms( $post, 'nu_events-topics' );
 
-*/
+$event_topic = !empty( $checkTerms ) ? '<div class="event-topic">'.$checkTerms[0]->name.'</div>' : '';
 
 
 // This template is loaded by the post grid
@@ -22,8 +20,8 @@ $guides['grid-item-event'] = '
   <li class="grid-item%1$s%8$s%9$s">
     <a class="contains-clickable-area" href="%7$s"'.$the_title_attribute.' %10$s>
       <div class="grid-item-content">
-        %11$s
         %2$s
+        %11$s
         %4$s
         <div class="date_time_container">
           %3$s
@@ -47,7 +45,7 @@ $guides['grid-item-event'],
   $aspect_ratio_class,
   $orientationClass,
   $maybe_target,
-  $post_type_label
+  $event_topic
 );
 
 

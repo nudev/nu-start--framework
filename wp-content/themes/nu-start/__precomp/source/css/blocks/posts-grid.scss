@@ -247,6 +247,7 @@ body.wp-admin {
 
 		// ? we are using post type as a placeholder for a "single select term"; need to convert a taxonomy to a radio select or something
 		// ? in the future, this will be a "single term" or a grouping of terms --- TBD
+		.event-topic,
 		.is-post-type-label {
 			text-transform: uppercase;
 			letter-spacing: 2px;

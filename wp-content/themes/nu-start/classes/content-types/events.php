@@ -12,22 +12,6 @@ NU__ContentTypes::_register_custom_post_type(
 	$hierarchical = false, 
 	$dashicon = 'dashicons-calendar'
 );
-NU__ContentTypes::_register_custom_taxonomy(
-	$literal = 'events-categories',
-	$post_type = 'events',
-	$name = 'Events Categories',
-	$singular = 'Events Category',
-	$rewrite = 'Events Categories'
-);
-NU__ContentTypes::_register_custom_taxonomy(
-	$literal = 'events-tags',
-	$post_type = 'events',
-	$name = 'Events Tags',
-	$singular = 'Events Tag',
-	$hierarchical = false
-);
-
-
 
 NU__ContentTypes::_register_custom_taxonomy(
 	$literal = 'events-topics',
@@ -47,6 +31,13 @@ NU__ContentTypes::_register_custom_taxonomy(
 );
 
 
+NU__ContentTypes::_register_custom_taxonomy(
+	$literal = 'events-tags',
+	$post_type = 'events',
+	$name = 'Events Tags',
+	$singular = 'Events Tag',
+	$hierarchical = false
+);
 
 
 

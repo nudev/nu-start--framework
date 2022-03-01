@@ -98,8 +98,14 @@
   margin-top: 64px;
 }
 .is-people-archive-with-horz-nav .nu_posts-grid .nu__grid > ul {
-  grid-row-gap: 0 !important;
+  grid-row-gap: 56px !important;
   grid-column-gap: 0 !important;
+}
+.is-people-archive-with-horz-nav .nu_posts-grid .contains-clickable-area {
+  position: relative;
+}
+.is-people-archive-with-horz-nav .nu_posts-grid .contains-clickable-area:hover, .is-people-archive-with-horz-nav .nu_posts-grid .contains-clickable-area:focus {
+  z-index: 2;
 }
 
 @media (max-width: 1023px) {
