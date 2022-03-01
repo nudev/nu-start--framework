@@ -303,6 +303,9 @@ header.header {
 			> .menu > .menu-item {
 				// * generic styling for any sub-menu
 				padding:0 10px;
+				&:last-of-type {
+					padding-right:0;
+				}
 
 				.sub-menu {
 					flex-flow: column nowrap;
@@ -459,10 +462,14 @@ header.header {
 			max-height: calc(100vh - $globalHeaderHeight - $headerHeight);
 			overflow: hidden;
 			overflow-y: auto;
+			a {
+				display: inline-block;
+				width:90%;
+			}
 
 
 				> ul {
-					display: block !important;
+					//display: block !important;
 					> li {
 						//display: flex;
 						> a {
