@@ -1,4 +1,4 @@
-/* 
+/*
 	Site Footer
 */
 footer.site-footer {
@@ -6,8 +6,8 @@ footer.site-footer {
 	&.disabled {
 		display: none;
 	}
-	
-	
+
+
 	// ? switch svg fill to white, or invert img
 	a.logo {
 		border-bottom: none 0;
@@ -27,6 +27,7 @@ footer.site-footer {
 		padding: 0;
 		&.sub-menu {
 			padding-left: $half-margin;
+			display: block;
 		}
 	}
 	background-color: var(--wp--preset--color--black-2);
@@ -78,7 +79,7 @@ footer.site-footer {
 		@include media("<=xlarge") {
 			flex-flow: column nowrap;
 		}
-		
+
 		.navlinks {
 			//
 			.menu-item {
@@ -138,7 +139,7 @@ footer.site-footer {
 				}
 			}
 		}
-		
+
 
 		//
 		//
@@ -260,7 +261,7 @@ footer.site-footer {
 		}
 	}
 	.nu__footer-sidebar {
-		
+
 		div.wpforms-container-full {
 			* {
 				color: var(--wp--preset--color--white-1);

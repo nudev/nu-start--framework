@@ -21,14 +21,15 @@
      function start_lvl(&$output, $depth = 0, $args = array())
      {
          $indent = str_repeat("\t", $depth);
-         $output .= "\n$indent<div class=\"mega-menu-wrapper\"><div class=\"mega-menu-col\"><ul class=\"sub-menu\">\n";
+         $output .= "\n$indent<div class=\"mega-menu-col\"><ul class=\"sub-menu\">\n";
      }
      function end_lvl(&$output, $depth = 0, $args = array())
      {
          $indent = str_repeat("\t", $depth);
-         $output .= "$indent</ul></div></div>\n";
+         $output .= "$indent</ul></div>\n";
      }
  }
+
 
 
 

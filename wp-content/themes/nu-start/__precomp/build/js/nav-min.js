@@ -9,12 +9,12 @@
 	 */
 	//
 	$(function () {
-		// var tr_nav = {
+		var tr_nav = {
 		// 	navlinks_el: $("header.header .navlinks"),
 		// 	navicons_el: $("header.header .navicons"),
 		//
 		// 	// Constructor
-		// 	_init: function () {
+		 		_init: function () {
 		// 		// ! disabled because it makes you click twice --- but i think i needed it for keyboard nav
 		// 		$("header.header .navlinks").on(
 		// 			"click",
@@ -31,12 +31,12 @@
 		//
 		// 		$(window).on("resize scroll", this._onResizeScroll);
 		//
-		// 		$("#nu__sitesearch").on(
-		// 			"click",
-		// 			"a, button",
-		// 			this._siteSearchHandler
-		// 		);
-		// 	},
+				$("#nu__sitesearch").on(
+					"click",
+					"a, button",
+					this._siteSearchHandler
+				);
+			},
 		//
 		// 	// Methods
 		// 	_didClickNavIcons: function (e) {
@@ -62,15 +62,15 @@
 		// 	},
 		//
 		// 	//
-		// 	_siteSearchHandler: function (e) {
-		// 		if (e.currentTarget.type == "button") {
-		// 			$(e.delegateTarget).removeClass("revealed");
-		// 		} else {
-		// 			$(e.delegateTarget).addClass("revealed");
-		// 		}
-		// 	},
-		// };
-		// tr_nav._init();
+			_siteSearchHandler: function (e) {
+				if (e.currentTarget.type == "button") {
+					$(e.delegateTarget).removeClass("revealed");
+				} else {
+					$(e.delegateTarget).addClass("revealed");
+				}
+			},
+		};
+		tr_nav._init();
 
 		/**
 			* Handle the Desktop Nav Behaviors
@@ -79,9 +79,9 @@
 
 		Theme.Nav = {
 			// all li
-			toplevel: $('.navlinks > ul > li'),
+			toplevel: $('header.header .navlinks > ul > li'),
 			// li with dropdowns
-			dropdowns: $('.navlinks > ul > li.menu-item-has-children, .navlinks > ul > li.menu-item-has-children ul li.menu-item-has-children'),
+			dropdowns: $('header.header .navlinks > ul > li.menu-item-has-children, header.header .navlinks > ul > li.menu-item-has-children ul li.menu-item-has-children'),
 			//mq: window.matchMedia('(min-width: 80em)'),
 
 			/**
@@ -173,22 +173,46 @@
 	  //   });
 	  // }
 
+
+
+		//Controls mobile hamburger click event
 		$('.navicons > span').on('click', function() {
-			//alert('fad');
 			$('.navicons').toggleClass("revealed");
-			//$(this).addClass("revealed");
 			$('.menu').toggleClass("revealed");
 		});
 
+
+
 		function initMenu() {
+
+			// $("#nu__sitesearch").on("click","a, button",this._siteSearchHandler);
+			// _siteSearchHandler: function (e) {
+			// 		if (e.currentTarget.type == "button") {
+			// 			$(e.delegateTarget).removeClass("revealed");
+			// 		} else {
+			// 			$(e.delegateTarget).addClass("revealed");
+			// 		}
+			// 	},
+
+			$('header.header .navlinks ul.sub-menu').hide();
+
 			$('button.menu-item-toggle').on('click', function(e) {
 				//$(this).toggleClass('active');//controls active state of chevron on button
 				var $el = $(this);
-			  // $(this).next('ul').toggle().addClass('open');
-			  // $(this).siblings('li').find('ul').hide();
+
+				//$('li.current-menu-item').removeClass('current-menu-item');
+
+				// $(this).parent('li').toggleClass('current-menu-item');//add active class to li that has children
+			 //$('nav.navlinks > ul').not(".sub-menu").toggleClass('current-menu-item');//add active class to li that has children
+
+			 	//$('nav.navlinks > ul > li.active').removeClass('active');
+				$('header.header nav.navlinks > ul > li.active').removeClass('active');
+
 
 				$(this).parent().siblings().children('button.menu-item-toggle').removeClass('active').next().slideUp(100);
     	  $(this).toggleClass('active').next().slideToggle();
+
+
 
 				// $('.menu-item-toggle').not(this).removeClass('active'); // always set other dropdowns aria-expanded to false
 				// //
@@ -197,15 +221,19 @@
 				// if ($(this).hasClass('menu-item-toggle')) {
 				// 		$el = $(this).parent();
 				// 	}
-				//
-				// 	//$el.toggleClass('active'); // toggle aria expanded
-				//
-				// 	if ($el.hasClass('active')) {
-				// 		$el.find('.menu-item-toggle').attr('aria-expanded', 'true');
-				// 	} else {
-				// 		$el.find('.menu-item-toggle').attr('aria-expanded', 'false');
-				// 	} // always clear active class from other dropdowns
 
+					// $("div:not(:contains('John'))").css("text-decoration", "underline");
+
+
+				//
+					// $el.toggleClass('active'); // toggle aria expanded
+					//
+					// if ($el.hasClass('active')) {
+					// 	$el.find('.menu-item-toggle').attr('aria-expanded', 'true');
+					// } else {
+					// 	$el.find('.menu-item-toggle').attr('aria-expanded', 'false');
+					// } // always clear active class from other dropdowns
+					//
 
 
 				// if ($('ul > li > button').not('ul li ul button')) {
