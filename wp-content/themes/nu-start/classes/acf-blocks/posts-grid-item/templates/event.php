@@ -5,36 +5,19 @@
  *    This template will render a single Event item into the Posts Grid.
  *    - this is a "clickable area" template
  */
-// 
-
-/* 
-
-pseudo-code / explain
-
-behavior:
-- clickable-area
-- no action items on this view
-
-
-data:
-- category w/ color code (events, in the news, etc)
-- featured image
-- post title
-- date/time (custom field)
-- location (custom field)
-- excerpt (custom field)
-- tags
-
-extra data:
-- possible custom URL override
-- events have a location
-*/
 
 $event_location = !empty($event_item_metadata['location']) ? '<p>'.$event_item_metadata['location'].'</p>' : '';
 
+// ! active development
+/* 
+
+  - use terms instead of post type in the banner above the feat image
+  - 
+
+*/
+
 
 // This template is loaded by the post grid
-
 $guides['grid-item-event'] = '
   <li class="grid-item%1$s%8$s%9$s">
     <a class="contains-clickable-area" href="%7$s"'.$the_title_attribute.' %10$s>

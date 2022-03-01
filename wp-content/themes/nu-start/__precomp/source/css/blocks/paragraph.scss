@@ -1,16 +1,20 @@
-@import '../library/';
+/* 
+	? paragraph block styles
+	? (maybe see typography file)
+*/
+//
+//
+//
 
-p {
-	a {
-		border-bottom: 2px solid transparent;
-		&:hover,
-		&:focus {
-			border-bottom: 2px solid currentColor;
-		}
-	}
-	&.has-text-color {
-		strong {
-			color: inherit;
-		}
+//
+//
+@import "../library/";
+
+//
+//
+//
+.blocks--wrapper {
+	.wp-block-paragraph,
+	p {
 	}
 }

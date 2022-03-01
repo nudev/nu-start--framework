@@ -78,7 +78,6 @@
   width: 100%;
 }
 
-.is-people-archive-hero > .wp-block-group,
 .is-people-archive-hero > .wp-block-cover {
   border-bottom: 1px solid var(--wp--preset--color--white-5);
 }
@@ -86,14 +85,57 @@
   margin: 0;
 }
 .is-people-archive-hero > .wp-block-group .nu__breadcrumbs {
-  padding: 32px 0;
+  padding: 16px 0;
 }
 
+.is-people-archive-with-horz-nav.wp-block-group {
+  margin-top: 0;
+}
 .is-people-archive-with-horz-nav .wp-block-navigation {
   border-bottom: 1px solid var(--wp--preset--color--white-5);
 }
 .is-people-archive-with-horz-nav .nu_posts-grid {
   margin-top: 64px;
+}
+.is-people-archive-with-horz-nav .nu_posts-grid .nu__grid > ul {
+  grid-row-gap: 0 !important;
+  grid-column-gap: 0 !important;
+}
+
+@media (max-width: 1023px) {
+  body.single-nu_people .wp-block-columns.is-headshot-and-bio {
+    flex-flow: column nowrap;
+  }
+  body.single-nu_people .wp-block-columns.is-headshot-and-bio > .wp-block-column:last-child {
+    margin-left: 0;
+  }
+  body.single-nu_people .wp-block-columns.is-headshot-and-bio > .wp-block-column:last-child figure {
+    max-width: 300px;
+  }
+  body.single-nu_people .wp-block-columns.is-headshot-and-bio > .wp-block-column:first-child {
+    order: 1;
+  }
+}
+@media (min-width: 1024px) {
+  body.single-nu_people .wp-block-columns.is-headshot-and-bio > .wp-block-column:first-child {
+    padding-right: 32px;
+  }
+  body.single-nu_people .wp-block-columns.is-headshot-and-bio > .wp-block-column:last-child {
+    margin-left: 128px;
+  }
+  body.single-nu_people .wp-block-columns.is-headshot-and-bio .acf-block.person-info {
+    margin-bottom: 128px;
+  }
+}
+
+.pattern--hero-basic-breadcrumbs > .wp-block-cover {
+  border-bottom: 1px solid var(--wp--preset--color--white-5);
+}
+.pattern--hero-basic-breadcrumbs > .wp-block-group {
+  margin: 0;
+}
+.pattern--hero-basic-breadcrumbs > .wp-block-group .nu__breadcrumbs {
+  padding: 16px 0;
 }
 
 /*# sourceMappingURL=patterns.css.map */

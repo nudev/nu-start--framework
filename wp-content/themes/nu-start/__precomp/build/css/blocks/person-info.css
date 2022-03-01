@@ -15,60 +15,56 @@ Person Info Stylesheet
  * Clearfix
  *
  */
-.person-info p:where(.email, .phone-number) span.icon-content-copy, .person-info p:where(.email, .phone-number) {
-  transition: all 0.1s ease-in-out;
-}
-
 /* ... project styles will always load after this ... */
+.person-info {
+  color: var(--wp--preset--color--black-2);
+}
 .person-info > div {
   display: flex;
   flex-flow: column nowrap;
   align-items: flex-start;
 }
-.person-info h2, .person-info h3, .person-info p {
-  margin: 16px 0 0;
-  font-weight: 300;
+.person-info .about h2,
+.person-info .about h3 {
   color: var(--wp--preset--color--black-2);
+  font-weight: 300;
+  margin: 0;
 }
-.person-info h2 {
-  font-size: var(--wp--preset--font-size--30-36);
-}
-.person-info h3 {
+.person-info .about h3 {
+  margin-top: 16px;
   font-size: var(--wp--preset--font-size--20-28);
 }
-.person-info p {
-  font-weight: 400;
+.person-info .contact {
+  margin-top: 32px;
+  color: #545454;
 }
-.person-info p .material-icons-outlined {
-  font-size: 20px;
-  line-height: 20px;
-  margin-top: -4px;
-}
-.person-info p:where(.email, .phone-number) {
+.person-info .contact p {
+  margin: 0;
   font-size: var(--wp--preset--font-size--14-20);
-  padding: 8px 16px;
-  border-radius: 5px;
 }
-.person-info p:where(.email, .phone-number) span.icon-email, .person-info p:where(.email, .phone-number) span.icon-call {
-  margin-right: 16px;
+.person-info .contact p:not(:first-child) {
+  margin-top: 8px;
 }
-.person-info p:where(.email, .phone-number) span.icon-content-copy {
-  opacity: 0;
-  cursor: pointer;
-  margin-left: 16px;
-}
-.person-info p:where(.email, .phone-number) span, .person-info p:where(.email, .phone-number) {
+.person-info .has-inline-icon a,
+.person-info .has-inline-icon span {
+  display: inline-block;
   vertical-align: middle;
 }
-.person-info p:where(.email, .phone-number):hover, .person-info p:where(.email, .phone-number):focus {
+.person-info .has-inline-icon a {
+  border-radius: 5px;
+  padding: 8px 16px;
+  border-bottom: 0px solid transparent;
   background-color: var(--wp--preset--color--white-2);
-  color: var(--wp--preset--color--black-1);
 }
-.person-info p:where(.email, .phone-number):hover .icon-content-copy, .person-info p:where(.email, .phone-number):focus .icon-content-copy {
-  opacity: 1;
+.person-info .has-inline-icon a:hover, .person-info .has-inline-icon a:focus {
+  border-bottom: 0px solid transparent;
 }
-.person-info a {
-  border-bottom: none !important;
+.person-info .material-icons-outlined {
+  font-size: 20px;
+  line-height: 20px;
+}
+.person-info .material-icons-outlined.icon-email, .person-info .material-icons-outlined.icon-call {
+  margin-right: 16px;
 }
 
 /*# sourceMappingURL=person-info.css.map */

@@ -7,75 +7,67 @@ Person Info Stylesheet
 @import "../library/";
 
 .person-info {
-    // Kyle's stuff
-    > div {
-        display: flex;
-        flex-flow: column nowrap;
-        align-items: flex-start;
-    }
+	color: var(--wp--preset--color--black-2);
 
-    // margin-bottom: 0; 
-    h2, h3, p {
-        margin: $base-margin 0 0; 
-        font-weight: 300; 
-        color: var(--wp--preset--color--black-2); 
-    }
+	> div {
+		display: flex;
+		flex-flow: column nowrap;
+		align-items: flex-start;
+	}
 
-    h2 {
-        font-size: var(--wp--preset--font-size--30-36);
-    }
+	// resets for about section
+	.about {
+		h2,
+		h3 {
+			color: var(--wp--preset--color--black-2);
+			font-weight: 300;
+			margin: 0;
+		}
+		h3 {
+			margin-top: $base-margin;
+			font-size: var(--wp--preset--font-size--20-28);
+		}
+	}
 
-    h3 {
-        font-size: var(--wp--preset--font-size--20-28);
-    }
+	// resets for contact section
+	.contact {
+		margin-top: $margin_2x;
+		color: #545454;
+		p {
+			margin: 0;
+			font-size: var(--wp--preset--font-size--14-20);
+			&:not(:first-child) {
+				margin-top: $half-margin;
+			}
+		}
+	}
 
-    p {
-        font-weight: 400; 
-        .material-icons-outlined {
-            font-size: 20px; 
-            line-height: 20px; 
-            margin-top: -4px; 
-        }
-        &:where(.email, .phone-number) {
-            font-size: var(--wp--preset--font-size--14-20);
-            padding: $half-margin $base-margin; 
-            border-radius: 5px; 
-            @extend %transition; 
+	// styles for our inline "button-ish" elements
+	.has-inline-icon {
+		a,
+		span {
+			display: inline-block;
+			vertical-align: middle;
+		}
+		a {
+			border-radius: 5px;
+			padding: $half-margin $base-margin;
+			border-bottom: 0px solid transparent;
+			background-color: var(--wp--preset--color--white-2);
+			&:hover,
+			&:focus {
+				border-bottom: 0px solid transparent;
+			}
+		}
+	}
 
-            span {
-                &.icon-email, &.icon-call {
-                    margin-right: $base-margin; 
-                }
-                &.icon-content-copy {
-                    @extend %transition; 
-                    opacity: 0; 
-                    cursor: pointer; 
-                    margin-left: $base-margin; 
-                }
-            }
-
-            span, & {
-                vertical-align: middle;
-            }
-
-            &:hover, &:focus {
-                background-color: var(--wp--preset--color--white-2);
-                color: var(--wp--preset--color--black-1); 
-                .icon-content-copy {
-                    opacity: 1; 
-                }
-            }
-            
-        }
-        // // ? email has content copy icon, phone number does not at this time
-        // &:where(.email) {
-        //     &:hover, &:focus {
-        //         background-color: var(--wp--preset--color--white-2);
-        //     }
-        // }
-    }
-
-    a {
-        border-bottom: none !important; 
-    }
+	// styles and layout for our material icons
+	.material-icons-outlined {
+		font-size: 20px;
+		line-height: 20px;
+		&.icon-email,
+		&.icon-call {
+			margin-right: $base-margin;
+		}
+	}
 }

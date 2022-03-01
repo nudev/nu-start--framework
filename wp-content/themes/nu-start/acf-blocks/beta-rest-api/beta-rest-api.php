@@ -1,9 +1,7 @@
 <?php
 /**
  * 
- * 	?		The "Program" Custom Post / Content Type
- * 	?		v1 is trying to use innerblocks for all content and ACF only for attributes and customizations
- * 
+ * 	?		REST API via Block Editor --- TEST
  * 
  * @param   array $block The block settings and attributes.
  * @param   string $content The block inner HTML (empty).
@@ -13,35 +11,38 @@
 // 
 
 
+
 // Create id attribute allowing for custom "anchor" value.
-$id = 'nu_program-' . $block['id'];
+$id = 'beta-rest-api--' . $block['id'];
 
 if( !empty($block['anchor']) ) {
-    $id = $block['anchor'];
+	$id = $block['anchor'];
 }
 
 
-$programID = get_field('pim_id', $post_id);
-
 // Create class attribute allowing for custom "className" and "align" values.
-$className = 'nu_program';
+$className = 'acf-block beta-rest-api';
 if( !empty($block['className']) ) {
-    $className .= ' ' . $block['className'];
+	$className .= ' ' . $block['className'];
 }
 
 if( !empty($block['align']) ) {
-    $className .= ' align' . $block['align'];
+	$className .= ' align' . $block['align'];
 }
+
+// $person_metadata = !empty( get_fields($post_id) ) ? get_fields($post_id)['person_metadata'] : null;
+// $request = new WP_REST_Request( 'GET', 'https://nudvohdsi.wpengine.com/wp-json/wp/v2/nu_events' );
+$request = new WP_REST_Request( 'GET', 'https://nudvohdsi.wpengine.com/wp-json/wp/v2/' );
+
+$return = sprintf(
+	'%1$s',
+	print_r($request, true) //
+);
+
 
 ?>
 <div id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?>">
 	<div>
-		<?php 
-
-		
-			$thisProgram = new PIM_Program($programID);
-
-			
-		 ?>
+		<?= $return; ?>
 	</div>
 </div>

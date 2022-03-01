@@ -119,10 +119,13 @@ class PIM_Handler
 	// 
 	public static function _insertProgramPost( $programID, $programJSON, $post_ID = '' ){
 
-		$reusable_hero_string = '';
-
+		// 
 		$program_category = !empty($programJSON['field_degree_type']['entities'][0]['name'][0]['value']) ? $programJSON['field_degree_type']['entities'][0]['name'][0]['value'] : '';
 
+
+		// 
+		$reusable_hero_string = '';
+		// 
 		if( !isset( self::$reusableHero ) ){
 
 			self::$reusableHero = new WP_Query([
@@ -132,53 +135,23 @@ class PIM_Handler
 
 		}
 
-			
+		// 
 		if( !empty( self::$reusableHero->posts ) ){
 			$reusable_hero_string = '<!-- wp:block {"ref":'.self::$reusableHero->posts[0]->ID.'} /-->';
 		} else {
 			self::$reusableHero = false;
 		}
 		
-
+		//
 		if( !term_exists( $program_category, 'nu_programs-categories' ) ){
 			wp_insert_term( $program_category, 'nu_programs-categories' );
 		}
 
+		// 
+		$working_template = $reusable_hero_string.'<!-- wp:acf/nu-program {"id":"block_6105ba18591e0","name":"acf/nu-program","align":"","mode":"preview"} /-->';
 
 
-		$working_template = '
-			'.$reusable_hero_string.'
-
-			<!-- wp:heading {"className":"is-style-display"} -->
-			<h2 class="is-style-display">Everything you see was<br>created <strong>automatically on sync</strong>.</h2>
-			<!-- /wp:heading -->
-
-			<!-- wp:heading {"textAlign":"right","className":"is-style-display"} -->
-			<h2 class="has-text-align-right is-style-display">This template was <strong>built in the editor</strong>,<br>and is now part of the Framework.</h2>
-			<!-- /wp:heading -->
-
-			<!-- wp:columns -->
-			<div class="wp-block-columns"><!-- wp:column {"width":50} -->
-			<div class="wp-block-column" style="flex-basis:50%"><!-- wp:paragraph {"fontSize":"larger"} -->
-			<p class="has-larger-font-size">We are now able to build this template freehand in the editor, switch to the code editor view, and directly copy/paste the contents into the framework iteratively, refining existing templates and creating new ones, without ever making destructive edits to our existing work.</p>
-			<!-- /wp:paragraph --></div>
-			<!-- /wp:column -->
-
-			<!-- wp:column {"width":50} -->
-			<div class="wp-block-column" style="flex-basis:50%"><!-- wp:paragraph {"fontSize":"larger"} -->
-			<p class="has-larger-font-size">A reusable block as a shared hero that includes dynamic content like the post title block and breadcrumbs block allows for zero-touch consistency across each program.</p>
-			<!-- /wp:paragraph -->
-
-			<!-- wp:paragraph {"fontSize":"larger"} -->
-			<p class="has-larger-font-size">We now save the program data into the framework assigning only the ID to this post, and have a block that matches the ID to the data and loads a template file.</p>
-			<!-- /wp:paragraph --></div>
-			<!-- /wp:column --></div>
-			<!-- /wp:columns -->
-
-			<!-- wp:acf/nu-program {"id":"block_6105ba18591e0","name":"acf/nu-program","align":"","mode":"preview"} /-->
-		';
-
-
+		// 
 		$postarr = [
 			'ID'			=> 		$post_ID,
 			'post_type' 	=> 		'nu_programs',

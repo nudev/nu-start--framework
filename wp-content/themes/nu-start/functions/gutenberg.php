@@ -255,6 +255,36 @@ if( function_exists('acf_register_block_type') ):
 		'active' => true,
 	));
 
+
+
+	
+	acf_register_block_type(array(
+		'name' => 'beta-rest-api',
+		'title' => '(beta) REST API',
+		'description' => 'Discover how to integrate REST with Block Editor',
+		'category' => 'nu-blocks',
+		'mode' => 'preview',
+		'render_template' => get_template_directory().'/acf-blocks/beta-rest-api/beta-rest-api.php',
+		'enqueue_assets' => function(){
+			wp_enqueue_style( 'block-beta-rest-api', get_template_directory_uri() . '/__precomp/build/css/blocks/beta-rest-api.css' );
+		},
+		'icon' => '',
+		'supports' => array(
+			'anchor' => true,
+			// enable/disable alignment toolbar (true by default)
+			'align' => true,
+			// hide/show text alignment toolbar.
+			'align_text' => true,
+			// hide/show content alignment toolbar.
+			'align_content' => false,
+			// disable preview/edit toggle
+			'mode' => false,
+			'multiple' => true,
+			'jsx' => true,
+		),
+		'active' => true,
+	));
+
 	
 	
 	acf_register_block_type(array(

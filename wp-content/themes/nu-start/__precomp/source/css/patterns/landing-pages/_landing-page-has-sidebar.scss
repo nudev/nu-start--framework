@@ -15,10 +15,9 @@
 		}
 	}
 
-
-	// 
+	//
 	// ? styles only above mobile-nav breakpoint
-	// 
+	//
 	@include media(">medium") {
 		.wp-block-columns .wp-block-column:first-child {
 			flex-basis: 280px;
@@ -28,11 +27,9 @@
 		}
 	}
 
-
-
-	// 
+	//
 	// ? styles only equal to or below mobile-nav breakpoint
-	// 
+	//
 	@include media("<=medium") {
 		//
 		// ? break the sidebar layout columns early; when the mobile nav comes in, allowing more grid space

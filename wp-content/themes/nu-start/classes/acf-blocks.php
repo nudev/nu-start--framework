@@ -46,7 +46,6 @@ class NU_ACF_Blocks
 
 		
 		// UNDER DEVELOPMENT - UNSTABLE
-		require_once( get_template_directory(  ) . '/classes/acf-blocks/content-query/content-query.php' );
 		require_once( get_template_directory(  ) . '/classes/acf-blocks/class.pim-programs.php' );
 	}
 	

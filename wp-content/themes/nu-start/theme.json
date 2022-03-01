@@ -4,8 +4,8 @@
   "settings": {
     "appearanceTools": true,
     "layout": {
-      "contentSize": "80%",
-      "wideSize": "90%"
+      "contentSize": "1280px",
+      "wideSize": "1440px"
     },
     "border": {
       "color": true,
@@ -320,7 +320,7 @@
     },
     "custom": {
       "contentSize": "1280px",
-      "wideSize": "1620px",
+      "wideSize": "1440px",
       "font-primary": "Lato, sans-serif",
       "line-height": {
         "body": 1.375,
@@ -330,7 +330,11 @@
       "spacing": {
         "unit": "16px",
         "horizontal": "32px",
-        "vertical": "32px"
+        "vertical": "32px",
+        "small": "max(1.25rem, 5vw)",
+				"medium": "clamp(2rem, 8vw, calc(4 * var(--wp--style--block-gap)))",
+				"large": "clamp(4rem, 10vw, 8rem)",
+				"outer": "var(--wp--custom--spacing--small, 1.25rem)"
       },
       "font-weight": {
         "light": "300",

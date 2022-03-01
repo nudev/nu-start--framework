@@ -1,5 +1,4 @@
-@import '../library/';
-
+@import "../library/";
 
 .wp-block-group {
 	&.has-background {
@@ -34,16 +33,14 @@
 
 // * the "card style" adds a border and padding; and some inner content behaves differently
 .wp-block-group.is-style-card-outlined {
-
-	border: 1px solid var(--wp--preset--color--black-3);  // ? this may be overriden by the CMS
+	border: 1px solid var(--wp--preset--color--black-3); // ? this may be overriden by the CMS
 
 	// ? force through a specific level of padding
-	&.has-background, & {
+	&.has-background,
+	& {
 		padding: $margin_2x;
 	}
-	
 
-	
 	// ? tuck over the padding, flush with top and side edges
 	> .wp-block-media-text,
 	> .wp-block-image.size-full {

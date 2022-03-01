@@ -28,17 +28,24 @@ nav.wp-block-navigation > .wp-block-navigation__container {
   gap: 16px;
 }
 nav.wp-block-navigation:not(.is-vertical) > .wp-block-navigation__container {
-  gap: 32px;
+  gap: 64px;
 }
 nav.wp-block-navigation:not(.is-vertical) .wp-block-navigation-item__content {
-  border-bottom: 2px solid transparent;
-  padding: 32px;
+  border-bottom: 4px solid transparent;
+  padding: 32px 0;
 }
 nav.wp-block-navigation:not(.is-vertical) .wp-block-navigation-item__content:hover, nav.wp-block-navigation:not(.is-vertical) .wp-block-navigation-item__content:focus {
-  border-bottom: 2px solid var(--wp--preset--color--black-1);
+  border-bottom: 4px solid var(--wp--preset--color--black-1);
 }
 nav.wp-block-navigation:not(.is-vertical) .current-menu-item :where(.wp-block-navigation-item__content) {
-  border-bottom: 2px solid var(--wp--preset--color--black-1);
+  border-bottom: 4px solid var(--wp--preset--color--black-1);
+}
+nav.wp-block-navigation:not(.is-vertical) .wp-block-navigation-item__label {
+  font-size: var(--wp--preset--font-size--12-16);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 400;
 }
 nav.wp-block-navigation.is-vertical .wp-block-navigation-item__content .wp-block-navigation-item__label {
   border: none 0;

@@ -20,18 +20,25 @@ nav.wp-block-navigation {
 	// * the navigation block gets the .is-vertical class; so :not(.is-vertical) targets the horizontal orientation
 	&:not(.is-vertical) {
 		> .wp-block-navigation__container {
-			gap: $margin_2x;
+			gap: $margin_4x;
 		}
 		.wp-block-navigation-item__content {
-			border-bottom: 2px solid transparent;
-			padding: $margin_2x;
+			border-bottom: 4px solid transparent;
+			padding: $margin_2x 0;
 			&:hover,
 			&:focus {
-				border-bottom: 2px solid var(--wp--preset--color--black-1);
+				border-bottom: 4px solid var(--wp--preset--color--black-1);
 			}
 		}
 		.current-menu-item :where(.wp-block-navigation-item__content) {
-			border-bottom: 2px solid var(--wp--preset--color--black-1);
+			border-bottom: 4px solid var(--wp--preset--color--black-1);
+		}
+		.wp-block-navigation-item__label {
+			font-size: var(--wp--preset--font-size--12-16);
+			letter-spacing: 0.2em;
+			text-transform: uppercase;
+			text-align: center;
+			font-weight: 400;
 		}
 	}
 

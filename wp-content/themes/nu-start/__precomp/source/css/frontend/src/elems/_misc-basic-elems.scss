@@ -5,12 +5,36 @@
 // image elements
 video,
 img {
-    max-width: 100%;
-    height: auto;
-    vertical-align: bottom;
-    object-fit: cover;
+	max-width: 100%;
+	height: auto;
+	vertical-align: bottom;
+	object-fit: cover;
 }
 
-button.button {
-	@extend %nu__buttonstyle;
+figure {
+	max-width: 100%;
+}
+
+a {
+	text-decoration: none;
+	font-style: normal;
+}
+
+/* 
+	? 	styles below restricted to within the blocks wrapper -- avoid touching footer/header etc
+*/
+.blocks--wrapper {
+	button.button {
+		@extend %nu__buttonstyle;
+	}
+
+	// ?
+	p a {
+		border-bottom: 2px solid currentColor;
+		&:hover,
+		&:focus {
+			color: var(--wp--preset--color--red-3);
+			border-bottom: 2px solid var(--wp--preset--color--red-3);
+		}
+	}
 }

@@ -1,3 +1,7 @@
+/* 
+	? paragraph block styles
+	? (maybe see typography file)
+*/
 /**
 *
 * *		Setup Document Model Vars / Breakpoints
@@ -11,14 +15,5 @@
  *
  */
 /* ... project styles will always load after this ... */
-p a {
-  border-bottom: 2px solid transparent;
-}
-p a:hover, p a:focus {
-  border-bottom: 2px solid currentColor;
-}
-p.has-text-color strong {
-  color: inherit;
-}
 
 /*# sourceMappingURL=paragraph.css.map */
