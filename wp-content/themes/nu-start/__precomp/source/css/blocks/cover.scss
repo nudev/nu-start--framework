@@ -1,4 +1,4 @@
-@import '../library/';
+@import "../library/";
 
 .wp-block-cover {
 	// TODO: change this to rely on being a top-level block at the very least? cover is used too much to be faking a hero block
@@ -7,16 +7,10 @@
 	&[data-align="full"] {
 		padding: $base-margin 0;
 		.wp-block-cover__inner-container {
-			// max-width: 80%;
 			max-width: var(--wp--custom--content-size);
 			margin: 0 auto;
 			.wp-block {
 				margin: $base-margin auto 0 auto;
-			}
-		}
-		@media screen and (max-width: 640px) {
-			.wp-block-cover__inner-container {
-				max-width: 90%;
 			}
 		}
 	}
@@ -58,7 +52,7 @@
 		// padding-bottom: $margin_12x;
 		+ .wp-block,
 		+ .wp-block-columns,
-		+ .nu_posts-grid,
+		+ .posts-grid,
 		+ .wp-block-image,
 		+ .wp-block-group,
 		+ .wp-block-buttons {

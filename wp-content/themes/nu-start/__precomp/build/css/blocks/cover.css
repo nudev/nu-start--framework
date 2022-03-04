@@ -21,11 +21,6 @@
 .wp-block-cover.alignfull .wp-block-cover__inner-container .wp-block, .wp-block-cover[data-align=full] .wp-block-cover__inner-container .wp-block {
   margin: 16px auto 0 auto;
 }
-@media screen and (max-width: 640px) {
-  .wp-block-cover.alignfull .wp-block-cover__inner-container, .wp-block-cover[data-align=full] .wp-block-cover__inner-container {
-    max-width: 90%;
-  }
-}
 .wp-block-cover .wp-block-cover__inner-container {
   max-width: 80%;
 }
@@ -58,24 +53,24 @@
 }
 .wp-block-group.has-style-tucks-next-block-over + .wp-block,
 .wp-block-group.has-style-tucks-next-block-over + .wp-block-columns,
-.wp-block-group.has-style-tucks-next-block-over + .nu_posts-grid,
+.wp-block-group.has-style-tucks-next-block-over + .posts-grid,
 .wp-block-group.has-style-tucks-next-block-over + .wp-block-image,
 .wp-block-group.has-style-tucks-next-block-over + .wp-block-group,
 .wp-block-group.has-style-tucks-next-block-over + .wp-block-buttons, .wp-block-group.cover_tucks_next_block + .wp-block,
 .wp-block-group.cover_tucks_next_block + .wp-block-columns,
-.wp-block-group.cover_tucks_next_block + .nu_posts-grid,
+.wp-block-group.cover_tucks_next_block + .posts-grid,
 .wp-block-group.cover_tucks_next_block + .wp-block-image,
 .wp-block-group.cover_tucks_next_block + .wp-block-group,
 .wp-block-group.cover_tucks_next_block + .wp-block-buttons,
 .wp-block-cover.has-style-tucks-next-block-over + .wp-block,
 .wp-block-cover.has-style-tucks-next-block-over + .wp-block-columns,
-.wp-block-cover.has-style-tucks-next-block-over + .nu_posts-grid,
+.wp-block-cover.has-style-tucks-next-block-over + .posts-grid,
 .wp-block-cover.has-style-tucks-next-block-over + .wp-block-image,
 .wp-block-cover.has-style-tucks-next-block-over + .wp-block-group,
 .wp-block-cover.has-style-tucks-next-block-over + .wp-block-buttons,
 .wp-block-cover.cover_tucks_next_block + .wp-block,
 .wp-block-cover.cover_tucks_next_block + .wp-block-columns,
-.wp-block-cover.cover_tucks_next_block + .nu_posts-grid,
+.wp-block-cover.cover_tucks_next_block + .posts-grid,
 .wp-block-cover.cover_tucks_next_block + .wp-block-image,
 .wp-block-cover.cover_tucks_next_block + .wp-block-group,
 .wp-block-cover.cover_tucks_next_block + .wp-block-buttons {

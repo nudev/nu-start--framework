@@ -205,8 +205,8 @@ if( function_exists('acf_register_block_type') ):
 		'mode' => 'preview',
 		'render_callback' => '',
 		'render_template' => get_template_directory().'/acf-blocks/posts-grid/posts-grid.php',
-		'enqueue_style' => get_template_directory_uri().'/acf-blocks/posts-grid/posts-grid.css',
-		'enqueue_script' => get_template_directory_uri().'/acf-blocks/posts-grid/posts-grid-min.js',
+		// 'enqueue_style' => get_template_directory_uri().'/acf-blocks/posts-grid/posts-grid.css',
+		// 'enqueue_script' => get_template_directory_uri().'/acf-blocks/posts-grid/posts-grid-min.js',
 		'enqueue_assets' => function(){
 			wp_enqueue_style( 'block-posts-grid', get_template_directory_uri() . '/__precomp/build/css/blocks/posts-grid.css' );
 			wp_enqueue_script( 'block-posts-grid', get_template_directory_uri() . '/__precomp/build/js/blocks/posts-grid-min.js', array('jquery'), '', true );
@@ -268,6 +268,36 @@ if( function_exists('acf_register_block_type') ):
 		'enqueue_assets' => function(){
 			wp_enqueue_style( 'block-beta-rest-api', get_template_directory_uri() . '/__precomp/build/css/blocks/beta-rest-api.css' );
 		},
+		'icon' => '',
+		'supports' => array(
+			'anchor' => true,
+			// enable/disable alignment toolbar (true by default)
+			'align' => true,
+			// hide/show text alignment toolbar.
+			'align_text' => true,
+			// hide/show content alignment toolbar.
+			'align_content' => false,
+			// disable preview/edit toggle
+			'mode' => false,
+			'multiple' => true,
+			'jsx' => true,
+		),
+		'active' => true,
+	));
+
+
+
+	acf_register_block_type(array(
+		'name' => 'beta-postsgrid-filtering',
+		'title' => '(beta) PostsGrid Filtering Discrete Block',
+		'description' => 'PostsGrid Filtering Discrete Block',
+		'category' => 'nu-blocks',
+		'mode' => 'preview',
+		'render_template' => get_template_directory().'/acf-blocks/beta-postsgrid-filtering/beta-postsgrid-filtering.php',
+		'enqueue_assets' => function(){
+			// wp_enqueue_style( 'block-beta-postsgrid-filtering', get_template_directory_uri() . '/__precomp/build/css/blocks/beta-postsgrid-filtering.css' );
+		},
+		'parent' => 'posts-grid',
 		'icon' => '',
 		'supports' => array(
 			'anchor' => true,

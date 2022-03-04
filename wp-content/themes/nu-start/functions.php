@@ -63,7 +63,7 @@ require_once(  get_template_directory() . '/classes/pim-handler.php');
 
 require_once( get_template_directory().'/classes/vendors/class.taxonomy-single-term.php' );
 $custom_tax_mb = new Taxonomy_Single_Term( 'nu_news-categories', 'nu_news' );
-$custom_tax_mb = new Taxonomy_Single_Term( 'nu_events-topics', 'nu_events' );
+$custom_tax_mb = new Taxonomy_Single_Term( 'nu_events-types', 'nu_events' );
 
 function add_my_icons($file) {
     $file = get_template_directory().'/__lib/icons/material-icons/config.json';
@@ -79,6 +79,42 @@ add_filter( 'jvm_richtext_icons_iconset_file', 'add_my_icons');
 
 add_filter( 'jvm_richtext_icons_css_file', 'add_my_css');
 
+
+function handle_postsgrid_filtering(){
+
+    $chronological_value = $_POST['chronological_value'];
+
+    // $ajaxposts = new WP_Query([
+    //   'post_type' => 'projecten',
+    //   'posts_per_page' => -1,
+    //   'category_name' => $catSlug,
+    //   'orderby' => 'menu_order', 
+    //   'order' => 'desc',
+    // ]);
+
+    $response = '';
+  
+    // if($ajaxposts->have_posts()) {
+    //   while($ajaxposts->have_posts()) : $ajaxposts->the_post();
+    //     $response .= get_template_part('templates/_components/project-list-item');
+    //   endwhile;
+    // } else {
+    //   $response = 'empty';
+    // }
+
+    $placeholder = '
+        <ul>
+            <li class="grid-item broken"><p class="has-smaller-font-size">Sorry! We are developing AJAX support for filtering by: <strong>'.$chronological_value.'</strong></p></li>
+        </ul>
+    ';
+
+    $response .= $placeholder;
+  
+    echo $response;
+    exit;
+}
+// add_action('wp_ajax_handle_postsgrid_filtering', 'handle_postsgrid_filtering');
+// add_action('wp_ajax_nopriv_handle_postsgrid_filtering', 'handle_postsgrid_filtering');
 
 // 
 ?>

@@ -4,8 +4,8 @@
   "settings": {
     "appearanceTools": true,
     "layout": {
-      "contentSize": "1280px",
-      "wideSize": "1440px"
+      "contentSize": "1440px",
+      "wideSize": "1620px"
     },
     "border": {
       "color": true,
@@ -319,8 +319,8 @@
       ]
     },
     "custom": {
-      "contentSize": "1280px",
-      "wideSize": "1440px",
+      "contentSize": "1440px",
+      "wideSize": "1620px",
       "font-primary": "Lato, sans-serif",
       "line-height": {
         "body": 1.375,

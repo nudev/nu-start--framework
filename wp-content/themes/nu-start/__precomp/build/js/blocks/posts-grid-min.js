@@ -1,0 +1,1 @@
+!function($,t,e){$((function(){$(".acf-block.posts-grid").each((function(t,e){$(this).attr("id");let i=$(this).find("form");$(this).find(".nu__grid"),i.attr("name");$(".js__filteringform select").each((function(t,e){var i=$(e).data("placeholder");$(e).select2({placeholder:i,theme:"bootstrap4",minimumResultsForSearch:1/0})}))}))}))}(window.jQuery,window,document);

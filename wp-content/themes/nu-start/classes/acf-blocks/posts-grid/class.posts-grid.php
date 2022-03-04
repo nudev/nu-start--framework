@@ -4,7 +4,6 @@
  */
 // 
 
-
 /**
  * *	include the FilteringForm class extension 
  */
@@ -34,22 +33,16 @@ class PostsGrid
 	public static $allowed_terms, $disallowed_terms, $the_post_type, $the_associated_taxonomies;
 
 	// ? DRY destructured data 
-	public static $the_wp_query;
+	public static $the_wp_query, $grid_items_str;
 
 	// ? partial return strings
 	public static $the_filtering_form_return_string;
-
-
-
-
-
-
 
 	// internal methods will hoist data to these properties to avoid repetitive calls
 	public $wp_query, $wp_query_args, $httpAPI, $queried_posts;
 
 	// store various return strings or null values to handle these optional components
-	public $grid_items_str, $pagination_str, $filtering_str;
+	public $pagination_str, $filtering_str;
 
 
 
@@ -85,16 +78,9 @@ class PostsGrid
 			$this->_build_manual_query();
 		}
 
-		// if( self::$post_fields['autoselect_posts']['post_type'] == 'nu_people' ){
-		// 	add_filter( 'posts_orderby' , 'posts_orderby_lastname' ); // order by last name alphabetically; does not effect the manually added posts
-		// }
 		// do the WP Query
 		$this->wp_query = new WP_Query($this->wp_query_args);
 		self::$the_wp_query = $this->wp_query;
-
-		// if( self::$post_fields['autoselect_posts']['post_type'] == 'nu_people' ){
-		// 	remove_filter( 'posts_orderby' , 'posts_orderby_lastname' ); // order by last name alphabetically; does not effect the manually added posts
-		// }
 
 		// maybe build pagination
 		if( !empty( self::$post_fields['options']['pagination'] ) ){
@@ -104,7 +90,7 @@ class PostsGrid
 		
 		if( !empty( self::$post_fields['options']['show_filter'] ) && !is_admin() ){
 			FilteringForm::_handle_get_query();
-			FilteringForm::_build_form_return_string();
+			FilteringForm::_build_form_return_string(self::$post_fields);
 		}
 
 		
@@ -117,6 +103,11 @@ class PostsGrid
 		
 	}
 
+
+	/**
+	 * 
+	 * 
+	 */
 	private function _build_pagination(){
 		
 		
@@ -143,55 +134,95 @@ class PostsGrid
 	}
 	
 
+
+	/**
+	 * 
+	 * 
+	 * 
+	 */
 	private function _build_acf_block_output(){
 
-		$guides['acf-block-container'] = '<div id="%1$s" class="nu-acf-block nu_posts-grid%2$s%3$s%8$s">%7$s<div class="nu__grid cols-%4$s"><ul>%5$s</ul>%6$s</div></div>';
+		$guides['acf-block-container'] = '
+			%4$s
+			<div class="nu__grid cols-%1$s">
+				<ul>
+					%2$s
+				</ul>
+				%3$s
+			</div>
+		';
 
 		$return = sprintf(
 			$guides['acf-block-container'],
-			!empty( self::$block['anchor' ]) ? self::$block['anchor'] : self::$block['id'],	// block anchor or a unique ID
-			!empty(self::$block['className']) ? ' '.self::$block['className'] : '',
-			!empty(self::$block['align']) ? ' justify-'.self::$block['align'] : '',
 			self::$post_fields['options']['columns'],  // column count value (required field)
-			$this->grid_items_str,
+			self::$grid_items_str,
 			$this->pagination_str,
 			self::$the_filtering_form_return_string,
-			!empty(self::$block['align_text']) ? ' has-text-align-'.self::$block['align_text'] : '',
 		);
 
 		echo $return;
 		
 	}
 
+
+
+
+	/**
+	 * Runs the loop and sets a string of <li> items to a class variable
+	 * - return oops item if nothing found (should never fail)
+	 *
+	 * @return void
+	 */
 	private function _build_griditems_return_string(){
+
+		// ? reference the $wp_query stored in the class variable as it is often modified:
+		// ? note to use self:: instead of $this because it may be called outside the constructor!
+		$wp_query = self::$the_wp_query;
+
+		// the pattern is the pattern...
+		$guides = [];
 		$return = '';
 
-		// todo: i am tired, i dont actually know why this is working so well!
+
+		// ? wp guidelines for arbitrarily large number fallback, or specific count number
 		$count = 9999;
 		$limit = !empty(self::$post_fields['autoselect_posts']['stop_after']) ? self::$post_fields['autoselect_posts']['stop_after'] : 9999;
 		if( !empty($limit) ){
 			$count = 0;
 		}
 
-
-		$wp_query = $this->wp_query;
-
+		// ? if there are no posts to loop we display an oops message
 		if( !$wp_query->have_posts() ){
 			$return .= '<li class="grid-item broken"><p class="has-smaller-font-size">Sorry, I wasn\'t able to find anything... Perhaps try somewhere else?</p></li>';
 		}
-		while( $wp_query->have_posts() && $count < $limit ) : $count++; $wp_query->the_post();
-		
-			global $post;
-			$return .= PostsGrid_Item::init($post, self::$post_fields);
-			
-		endwhile;
-		wp_reset_postdata(  );
+		// ? otherwise we do the loop here - note we are using a custom counter and limit to account for pagination
+		else {
+			while( $wp_query->have_posts() && $count < $limit ) {
+	
+				// ? progress counter and move query to next post
+				$count++;
+				$wp_query->the_post();				
+				// ? honestly unsure if we need global scope!
+				global $post;
 
-		$this->grid_items_str = $return;
-		
+				// TODO: comments help - keep commenting, but also refactor more noob
+				// ? init the other class that returns an item string
+				$return .= PostsGrid_Item::init($post, self::$post_fields);
+			}
+			// ? this is like undo for global $post, i think.
+			wp_reset_postdata(  );
+		}
+		// ? instead of actually returning the compiled string, we will set it to a class level variable
+		self::$grid_items_str = $return;
 	}
 	
 	
+
+	/**
+	 * 		This handles manually selected items in a specific order
+	 *
+	 * @return void
+	 */
 	private function _build_manual_query(){
 		
 		// 
@@ -208,12 +239,6 @@ class PostsGrid
 		
 	}
 	
-
-
-
-
-
-
 
 
 	/**
@@ -333,65 +358,39 @@ class PostsGrid
 		
 		if( $selected_post_type == 'nu_events' ){
 			
-			$this->wp_query_args['order'] = !empty(self::$post_fields['autoselect_posts']['chronological']) ? 'ASC' : 'DESC';
-			$this->wp_query_args['orderby'] = 'meta_value_num';
-			$this->wp_query_args['meta_key'] = 'event_item_metadata_one_day_happens_on';
+			if( self::$post_fields['autoselect_posts']['chronological'] != "all" ){
 
-			$this->wp_query_args['meta_query'] = array(
-				array(
-					'key' 			=> 'event_item_metadata_one_day_happens_on',
-					'compare' => !empty(self::$post_fields['autoselect_posts']['chronological']) ? '>=' : '<',
-					'value' => date("Ymd"),
-					'type' => 'DATE'
-				),
-			);
+				$this->wp_query_args['order'] = self::$post_fields['autoselect_posts']['chronological'] == "upcoming" ? 'ASC' : 'DESC';
+				$this->wp_query_args['orderby'] = 'meta_value_num';
+				$this->wp_query_args['meta_key'] = 'event_item_metadata_one_day_happens_on';
 
-		}
-		if( $selected_post_type == '~disabled~nu_events' ){
+				$this->wp_query_args['meta_query'] = array(
+					array(
+						'key' 			=> 'event_item_metadata_one_day_happens_on',
+						'compare' => self::$post_fields['autoselect_posts']['chronological'] == "upcoming" ? '>=' : '<',
+						'value' => date("Ymd"),
+						'type' => 'DATE'
+					),
+				);
 
-			// if spans multiple days and uses the ends_on datapoint
-			// $ends_on_meta_query = array(
-			// 	'relation' => 'AND',
-			// 	array(
-			// 		'key' 			=> 'event_item_metadata_spans_multiple_days',
-			// 		'compare'		=> '=',
-			// 		'value'			=> 1
-			// 	),
-			// 	array(
-			// 		'key' 			=> 'event_item_metadata_multiple_days_ends_on',
-			// 		'compare' => !empty(self::$post_fields['autoselect_posts']['chronological']) ? '>=' : '<',
-			// 		'value' => date("Ymd"),
-			// 		'type' => 'DATE'
-			// 	),
-			// );
-			
-			// else, uses the happens_on datapoint
-			$happens_on_meta_query = array(
-				'relation' => 'AND',
-				// array(
-				// 	'key' 			=> 'event_item_metadata_spans_multiple_days',
-				// 	'compare'		=> '=',
-				// 	'value'			=> 0
-				// ),
-				array(
-					'key' 			=> 'event_item_metadata_one_day_happens_on',
-					'compare' => !empty(self::$post_fields['autoselect_posts']['chronological']) ? '>=' : '<',
-					'value' => date("Ymd"),
-					'type' => 'DATE'
-				),
-			);
+			}
+			$getValue = !empty($_GET['chronological']) ? $_GET['chronological'] : '';
+			if( $getValue ){
 
+				$this->wp_query_args['order'] = $getValue == "upcoming" ? 'ASC' : 'DESC';
+				$this->wp_query_args['orderby'] = 'meta_value_num';
+				$this->wp_query_args['meta_key'] = 'event_item_metadata_one_day_happens_on';
 
-			$this->wp_query_args['order'] = 'ASC';
-			$this->wp_query_args['orderby'] = 'custom_event_sorting';
-			$this->wp_query_args['meta_query'] = [
-				'custom_event_sorting' => [
-					// 'relation' => 'OR',
-					'relation' => 'AND',
-					'happensOn' => $happens_on_meta_query,
-					// 'endsOn' => $ends_on_meta_query
-				]
-			];
+				$this->wp_query_args['meta_query'] = array(
+					array(
+						'key' 			=> 'event_item_metadata_one_day_happens_on',
+						'compare' => $getValue == "upcoming" ? '>=' : '<',
+						'value' => date("Ymd"),
+						'type' => 'DATE'
+					),
+				);
+
+			}
 
 		}
 
@@ -416,23 +415,5 @@ class PostsGrid
 	}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-} // ? end of PostsGrid class
-
-
-
+}
 ?>

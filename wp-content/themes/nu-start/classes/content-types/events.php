@@ -40,6 +40,15 @@ NU__ContentTypes::_register_custom_taxonomy(
 );
 
 
+NU__ContentTypes::_register_custom_taxonomy(
+	$literal = 'events-types',
+	$post_type = 'events',
+	$name = 'Events Types',
+	$singular = 'Events Type',
+	$hierarchical = false
+);
+
+
 
 
 $reusableHero = new  WP_Query([

@@ -1,0 +1,61 @@
+/* 
+	style select2 elements rendered in place of our native form elements
+*/
+
+// styling for select2 - note is married to the theme that select2 is using to some extent
+.select2.select2-container {
+	font-size: var(--wp--preset--font-size--14-20);
+	.select2-selection {
+		@include nu_micon("\e313", after);
+		&:after {
+			position: absolute;
+			right: 0;
+			top: 50%;
+			transform: translateY(-50%);
+			color: var(--wp--preset--color--black-2);
+			opacity: 0.8;
+			font-size: 20px;
+		}
+	}
+
+	ul.select2-selection__rendered {
+		padding: $half-margin;
+		font-size: var(--wp--preset--font-size--14-20);
+	}
+
+	.select2-selection__choice {
+		margin: 0;
+		&:not(:first-child) {
+			margin-left: $half-margin;
+		}
+
+		+ .select2-search.select2-search--inline {
+			display: none;
+		}
+	}
+
+	// styles for the multi-select field
+	.select2-selection--multiple {
+		background-color: transparent !important;
+		min-height: 48px;
+		display: flex;
+		flex-flow: row nowrap;
+		align-items: center;
+
+		// style the selected choices - basically floating badges
+		.select2-selection__choice {
+			display: inline-block;
+			background-color: var(--wp--preset--color--black-2) !important;
+			color: var(--wp--preset--color--white-1) !important;
+			border-radius: 24px !important;
+			padding: $half-margin !important;
+		}
+	}
+	input.select2-search__field {
+		background-color: transparent;
+		letter-spacing: 1px;
+		display: block;
+		margin: 0;
+		font-size: var(--wp--preset--font-size--14-20);
+	}
+}

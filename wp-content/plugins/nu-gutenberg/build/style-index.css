@@ -1,2 +1,200 @@
-.wp-block-nu-blocks-accordion.is-style-icon-appears-before-title .wp-block-nu-blocks-accordion-item .wp-block-nublocks-accordion-item__title:before{transition:all .1s ease-in-out}.wp-block-nu-blocks-accordion.is-style-icon-appears-before-title .wp-block-nu-blocks-accordion-item .wp-block-nublocks-accordion-item__title{position:relative}.wp-block-nu-blocks-accordion.is-style-icon-appears-before-title .wp-block-nu-blocks-accordion-item .wp-block-nublocks-accordion-item__title:before{word-wrap:normal;font-feature-settings:"liga";-moz-font-feature-settings:"liga";-moz-osx-font-smoothing:grayscale;content:"";direction:ltr;display:inline-block;font-family:Material Icons;font-size:24px;font-size:20px;font-style:normal;font-weight:400;letter-spacing:normal;line-height:inherit;line-height:1;margin-right:8px;text-transform:none;vertical-align:middle;vertical-align:text-top;white-space:nowrap}.wp-block-nu-blocks-accordion.is-style-icon-appears-before-title .wp-block-nu-blocks-accordion-item .wp-block-nublocks-accordion-item__title:after{display:none}.wp-block-nu-blocks-accordion.is-style-icon-appears-before-title .wp-block-nu-blocks-accordion-item details[open]>.wp-block-nublocks-accordion-item__title:before{transform:rotate(90deg)}.wp-block-nu-blocks-accordion.is-style-icon-appears-before-title .wp-block-nu-blocks-accordion-item details[open]>.wp-block-nublocks-accordion-item__title:after{display:none}
-.wp-block-nu-blocks-accordion .wp-block-nu-blocks-accordion-item .wp-block-nublocks-accordion-item__content,.wp-block-nu-blocks-accordion .wp-block-nu-blocks-accordion-item .wp-block-nublocks-accordion-item__title,.wp-block-nu-blocks-accordion .wp-block-nu-blocks-accordion-item summary{transition:all .1s ease-in-out}.wp-block-nu-blocks-accordion{margin:64px 0 auto}.wp-block-nu-blocks-accordion:first-of-type{margin:0 auto}.wp-block-nu-blocks-accordion .wp-block-nu-blocks-accordion-item{margin:16px 0 0}.wp-block-nu-blocks-accordion .wp-block-nu-blocks-accordion-item details summary::-webkit-details-marker{display:none}.wp-block-nu-blocks-accordion .wp-block-nu-blocks-accordion-item .dashicon.dashicons{display:none}.wp-block-nu-blocks-accordion .wp-block-nu-blocks-accordion-item:first-child{margin:0}.wp-block-nu-blocks-accordion .wp-block-nu-blocks-accordion-item summary::-webkit-details-marker,.wp-block-nu-blocks-accordion .wp-block-nu-blocks-accordion-item summary::marker{display:none}.wp-block-nu-blocks-accordion .wp-block-nu-blocks-accordion-item .wp-block-nublocks-accordion-item__title{border:1px solid var(--wp--preset--color--black-5);cursor:pointer;font-weight:400;padding:16px 64px 16px 16px;position:relative}.wp-block-nu-blocks-accordion .wp-block-nu-blocks-accordion-item .wp-block-nublocks-accordion-item__title::marker{content:"";display:none}.wp-block-nu-blocks-accordion .wp-block-nu-blocks-accordion-item .wp-block-nublocks-accordion-item__title:after{word-wrap:normal;font-feature-settings:"liga";-moz-font-feature-settings:"liga";-moz-osx-font-smoothing:grayscale;content:"";direction:ltr;display:inline-block;font-family:Material Icons;font-size:24px;font-size:20px;font-style:normal;font-weight:400;letter-spacing:normal;line-height:1;line-height:inherit;position:absolute;right:16px;text-transform:none;top:50%;transform:translateY(-50%);vertical-align:middle;white-space:nowrap}.wp-block-nu-blocks-accordion .wp-block-nu-blocks-accordion-item .wp-block-nublocks-accordion-item__title:focus,.wp-block-nu-blocks-accordion .wp-block-nu-blocks-accordion-item .wp-block-nublocks-accordion-item__title:hover{background-color:var(--wp--preset--color--white-2)}.wp-block-nu-blocks-accordion .wp-block-nu-blocks-accordion-item .wp-block-nublocks-accordion-item__content{border:1px solid var(--wp--preset--color--black-5);border-top:none;padding:32px 16px}.wp-block-nu-blocks-accordion .wp-block-nu-blocks-accordion-item .wp-block-nublocks-accordion-item__content>p:last-child{margin-bottom:0}.wp-block-nu-blocks-accordion .wp-block-nu-blocks-accordion-item details[open]>.wp-block-nublocks-accordion-item__title{background-color:var(--wp--preset--color--white-3);position:relative}.wp-block-nu-blocks-accordion .wp-block-nu-blocks-accordion-item details[open]>.wp-block-nublocks-accordion-item__title:after{word-wrap:normal;font-feature-settings:"liga";-moz-font-feature-settings:"liga";-moz-osx-font-smoothing:grayscale;content:"";direction:ltr;display:inline-block;font-family:Material Icons;font-size:24px;font-size:20px;font-style:normal;font-weight:400;letter-spacing:normal;line-height:1;line-height:inherit;position:absolute;right:16px;text-transform:none;top:50%;transform:translateY(-50%);vertical-align:middle;white-space:nowrap}.wp-block-nu-blocks-accordion .wp-block-nu-blocks-accordion-item details[open]>.wp-block-nublocks-accordion-item__title:hover{background-color:var(--wp--preset--color--white-4)}.blocks--wrapper>.wp-block-nu-blocks-accordion:first-of-type{margin-top:128px}@media(max-width:1024px){.blocks--wrapper>.wp-block-nu-blocks-accordion:first-of-type{margin-top:64px}}
+/*!***************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[3].use[3]!./src/block-library/accordion/style.scss ***!
+  \***************************************************************************************************************************************************************************************************************************************************************/
+/* 
+	sample block - style.scss
+*/
+/**
+*
+* *		Setup Document Model Vars / Breakpoints
+*
+*/
+/* 
+	because the block may or may not be loaded when we call this in (the posts grid just calls it in for now)
+*/
+/**
+ * Clearfix
+ *
+ */
+.wp-block-nu-blocks-accordion.is-style-icon-appears-before-title .wp-block-nu-blocks-accordion-item .wp-block-nublocks-accordion-item__title:before {
+  transition: all 0.1s ease-in-out;
+}
+
+/* ... project styles will always load after this ... */
+.wp-block-nu-blocks-accordion.is-style-icon-appears-before-title .wp-block-nu-blocks-accordion-item .wp-block-nublocks-accordion-item__title {
+  position: relative;
+  position: relative;
+}
+.wp-block-nu-blocks-accordion.is-style-icon-appears-before-title .wp-block-nu-blocks-accordion-item .wp-block-nublocks-accordion-item__title:before {
+  content: "\e5cc";
+  font-family: "Material Icons";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  line-height: inherit;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  vertical-align: middle;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  font-feature-settings: "liga";
+  -moz-font-feature-settings: "liga";
+  -moz-osx-font-smoothing: grayscale;
+}
+.wp-block-nu-blocks-accordion.is-style-icon-appears-before-title .wp-block-nu-blocks-accordion-item .wp-block-nublocks-accordion-item__title:before {
+  font-size: 20px;
+  line-height: 1;
+  vertical-align: text-top;
+  margin-right: 8px;
+}
+.wp-block-nu-blocks-accordion.is-style-icon-appears-before-title .wp-block-nu-blocks-accordion-item .wp-block-nublocks-accordion-item__title:after {
+  display: none;
+}
+.wp-block-nu-blocks-accordion.is-style-icon-appears-before-title .wp-block-nu-blocks-accordion-item details[open] > .wp-block-nublocks-accordion-item__title::before {
+  transform: rotate(90deg);
+}
+.wp-block-nu-blocks-accordion.is-style-icon-appears-before-title .wp-block-nu-blocks-accordion-item details[open] > .wp-block-nublocks-accordion-item__title:after {
+  display: none;
+}
+/*!********************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[3].use[3]!./src/block-library/accordion-item/style.scss ***!
+  \********************************************************************************************************************************************************************************************************************************************************************/
+/* 
+	sample block - style.scss
+*/
+/**
+*
+* *		Setup Document Model Vars / Breakpoints
+*
+*/
+/* 
+	because the block may or may not be loaded when we call this in (the posts grid just calls it in for now)
+*/
+/**
+ * Clearfix
+ *
+ */
+.wp-block-nu-blocks-accordion .wp-block-nu-blocks-accordion-item .wp-block-nublocks-accordion-item__content, .wp-block-nu-blocks-accordion .wp-block-nu-blocks-accordion-item .wp-block-nublocks-accordion-item__title, .wp-block-nu-blocks-accordion .wp-block-nu-blocks-accordion-item summary {
+  transition: all 0.1s ease-in-out;
+}
+
+/* ... project styles will always load after this ... */
+.wp-block-nu-blocks-accordion {
+  margin: 64px 0 auto 0;
+}
+.wp-block-nu-blocks-accordion:first-of-type {
+  margin: 0 auto 0 auto;
+}
+.wp-block-nu-blocks-accordion .wp-block-nu-blocks-accordion-item {
+  margin: 16px 0 0 0;
+}
+.wp-block-nu-blocks-accordion .wp-block-nu-blocks-accordion-item details summary::-webkit-details-marker {
+  display: none;
+}
+.wp-block-nu-blocks-accordion .wp-block-nu-blocks-accordion-item .dashicon.dashicons {
+  display: none;
+}
+.wp-block-nu-blocks-accordion .wp-block-nu-blocks-accordion-item:first-child {
+  margin: 0;
+}
+.wp-block-nu-blocks-accordion .wp-block-nu-blocks-accordion-item summary::marker, .wp-block-nu-blocks-accordion .wp-block-nu-blocks-accordion-item summary::-webkit-details-marker {
+  display: none;
+}
+.wp-block-nu-blocks-accordion .wp-block-nu-blocks-accordion-item .wp-block-nublocks-accordion-item__title {
+  cursor: pointer;
+  padding: 16px;
+  padding-right: 64px;
+  border: 1px solid var(--wp--preset--color--black-5);
+  font-weight: normal;
+  position: relative;
+  position: relative;
+}
+.wp-block-nu-blocks-accordion .wp-block-nu-blocks-accordion-item .wp-block-nublocks-accordion-item__title::marker {
+  display: none;
+  content: "";
+}
+.wp-block-nu-blocks-accordion .wp-block-nu-blocks-accordion-item .wp-block-nublocks-accordion-item__title:after {
+  content: "\e145";
+  font-family: "Material Icons";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  line-height: inherit;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  vertical-align: middle;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  font-feature-settings: "liga";
+  -moz-font-feature-settings: "liga";
+  -moz-osx-font-smoothing: grayscale;
+}
+.wp-block-nu-blocks-accordion .wp-block-nu-blocks-accordion-item .wp-block-nublocks-accordion-item__title:after {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+}
+.wp-block-nu-blocks-accordion .wp-block-nu-blocks-accordion-item .wp-block-nublocks-accordion-item__title:hover, .wp-block-nu-blocks-accordion .wp-block-nu-blocks-accordion-item .wp-block-nublocks-accordion-item__title:focus {
+  background-color: var(--wp--preset--color--white-2);
+}
+.wp-block-nu-blocks-accordion .wp-block-nu-blocks-accordion-item .wp-block-nublocks-accordion-item__content {
+  padding: 32px 16px;
+  border: 1px solid var(--wp--preset--color--black-5);
+  border-top: none;
+}
+.wp-block-nu-blocks-accordion .wp-block-nu-blocks-accordion-item .wp-block-nublocks-accordion-item__content > p:last-child {
+  margin-bottom: 0;
+}
+.wp-block-nu-blocks-accordion .wp-block-nu-blocks-accordion-item details[open] > .wp-block-nublocks-accordion-item__title {
+  background-color: var(--wp--preset--color--white-3);
+  position: relative;
+  position: relative;
+}
+.wp-block-nu-blocks-accordion .wp-block-nu-blocks-accordion-item details[open] > .wp-block-nublocks-accordion-item__title:after {
+  content: "\e15b";
+  font-family: "Material Icons";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  line-height: inherit;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  vertical-align: middle;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  font-feature-settings: "liga";
+  -moz-font-feature-settings: "liga";
+  -moz-osx-font-smoothing: grayscale;
+}
+.wp-block-nu-blocks-accordion .wp-block-nu-blocks-accordion-item details[open] > .wp-block-nublocks-accordion-item__title:after {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+}
+.wp-block-nu-blocks-accordion .wp-block-nu-blocks-accordion-item details[open] > .wp-block-nublocks-accordion-item__title:hover {
+  background-color: var(--wp--preset--color--white-4);
+}
+
+.blocks--wrapper > .wp-block-nu-blocks-accordion:first-of-type {
+  margin-top: 128px;
+}
+@media (max-width: 1024px) {
+  .blocks--wrapper > .wp-block-nu-blocks-accordion:first-of-type {
+    margin-top: 64px;
+  }
+}
+
+/*# sourceMappingURL=style-index.css.map*/

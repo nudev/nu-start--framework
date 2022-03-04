@@ -78,33 +78,23 @@
   width: 100%;
 }
 
-.is-people-archive-hero > .wp-block-cover {
-  border-bottom: 1px solid var(--wp--preset--color--white-5);
-}
-.is-people-archive-hero > .wp-block-group {
-  margin: 0;
-}
-.is-people-archive-hero > .wp-block-group .nu__breadcrumbs {
-  padding: 16px 0;
-}
-
 .is-people-archive-with-horz-nav.wp-block-group {
   margin-top: 0;
 }
 .is-people-archive-with-horz-nav .wp-block-navigation {
   border-bottom: 1px solid var(--wp--preset--color--white-5);
 }
-.is-people-archive-with-horz-nav .nu_posts-grid {
+.is-people-archive-with-horz-nav .posts-grid {
   margin-top: 64px;
 }
-.is-people-archive-with-horz-nav .nu_posts-grid .nu__grid > ul {
+.is-people-archive-with-horz-nav .posts-grid .nu__grid > ul {
   grid-row-gap: 56px !important;
   grid-column-gap: 0 !important;
 }
-.is-people-archive-with-horz-nav .nu_posts-grid .contains-clickable-area {
+.is-people-archive-with-horz-nav .posts-grid .contains-clickable-area {
   position: relative;
 }
-.is-people-archive-with-horz-nav .nu_posts-grid .contains-clickable-area:hover, .is-people-archive-with-horz-nav .nu_posts-grid .contains-clickable-area:focus {
+.is-people-archive-with-horz-nav .posts-grid .contains-clickable-area:hover, .is-people-archive-with-horz-nav .posts-grid .contains-clickable-area:focus {
   z-index: 2;
 }
 
@@ -134,13 +124,16 @@
   }
 }
 
+/* 
+	?		Pattern Category - Heroes
+*/
 .pattern--hero-basic-breadcrumbs > .wp-block-cover {
   border-bottom: 1px solid var(--wp--preset--color--white-5);
 }
 .pattern--hero-basic-breadcrumbs > .wp-block-group {
   margin: 0;
 }
-.pattern--hero-basic-breadcrumbs > .wp-block-group .nu__breadcrumbs {
+.pattern--hero-basic-breadcrumbs .nu__breadcrumbs {
   padding: 16px 0;
 }
 

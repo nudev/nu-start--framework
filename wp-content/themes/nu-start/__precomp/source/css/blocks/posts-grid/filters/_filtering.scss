@@ -1,0 +1,96 @@
+/* 
+
+	this file handles styling the posts-grid block filtering form
+	(this is all leading up to a leap to the query block and extensions for it)
+
+*/
+
+.filteringform {
+	@import "./nu-select2";
+
+	+ .nu__grid {
+		margin-top: $margin_4x;
+	}
+	// ? select fills the space it is in
+	select {
+		width: 100%;
+	}
+
+	// ? when select2 is disabled this helps see what is going on
+	option[selected="selected"] {
+		font-weight: bold;
+		font-style: italic;
+	}
+
+	> form {
+		position: relative;
+		background-color: var(--wp--preset--color--white-1);
+		display: flex;
+		@include media(">=medium") {
+			flex-flow: row nowrap;
+			justify-content: space-between;
+			.submission {
+				margin-left: $margin_2x;
+			}
+		}
+	}
+
+	//
+	//
+	//
+	.filters {
+		display: flex;
+		flex-flow: row nowrap;
+		align-items: center;
+		.filters-filter {
+			min-width: 180px;
+			&:not(:first-child) {
+				margin-left: $margin_2x;
+			}
+			&.is-terms-select {
+				label {
+					@include displayedInvisible();
+				}
+			}
+		}
+
+		.is-events-chronological-buttons {
+			margin: 0;
+			margin-right: $margin_2x;
+			label {
+				position: relative;
+				text-align: center;
+				font-size: var(--wp--preset--font-size--14-20);
+				padding: $base-margin $margin_2x;
+				border: 1px solid #ece9e6;
+				font-weight: 400;
+				border-radius: 48px;
+				span.material-icons-outlined {
+					position: absolute;
+					top: 50%;
+					transform: translateY(-50%);
+					right: $half-margin;
+					font-size: 20px;
+					line-height: 1;
+					vertical-align: middle;
+					margin-left: $half-margin;
+					opacity: 0;
+				}
+				&:last-child {
+					margin-left: $base-margin;
+				}
+			}
+			input {
+				@include displayedInvisible();
+
+				&:checked + label {
+					border: 1px solid #ece9e6;
+					background-color: #f4f2f0;
+					span.material-icons-outlined {
+						opacity: 1;
+					}
+				}
+			}
+		}
+	}
+}

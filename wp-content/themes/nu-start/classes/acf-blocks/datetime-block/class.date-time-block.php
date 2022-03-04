@@ -19,7 +19,11 @@ class NU_DateTime_Helper
 
 	public static function build_datetime_return_string(){
 
-		$fields = self::$fields['event_item_metadata'];
+		$fields = !empty(self::$fields['event_item_metadata']) ? self::$fields['event_item_metadata'] : '';
+
+		if( empty($fields) ){
+			return;
+		}
 
 		$return = '';
 		$guides = [];

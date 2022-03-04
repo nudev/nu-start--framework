@@ -1,9 +1,7 @@
 <?php
 /**
- * 		NU Block: Posts Grid
  * 
- * 
- * ?		ACF makes the following parameters available in this scope
+ * 	?		REST API via Block Editor --- TEST
  * 
  * @param   array $block The block settings and attributes.
  * @param   string $content The block inner HTML (empty).
@@ -13,8 +11,9 @@
 // 
 
 
+
 // Create id attribute allowing for custom "anchor" value.
-$id = 'posts-grid--' . $block['id'];
+$id = 'beta-postsgrid-filtering--' . $block['id'];
 
 if( !empty($block['anchor']) ) {
 	$id = $block['anchor'];
@@ -22,7 +21,7 @@ if( !empty($block['anchor']) ) {
 
 
 // Create class attribute allowing for custom "className" and "align" values.
-$className = 'acf-block posts-grid';
+$className = 'acf-block beta-postsgrid-filtering';
 if( !empty($block['className']) ) {
 	$className .= ' ' . $block['className'];
 }
@@ -31,14 +30,10 @@ if( !empty($block['align']) ) {
 	$className .= ' align' . $block['align'];
 }
 
-// 
+
 
 ?>
 <div id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?>">
-	<?php 
-		$instance = new PostsGrid( $block, $content, $is_preview, $post_id );
-
-		$allowed_blocks = array( 'core/paragraph','acf/beta-postsgrid-filtering' );
-		// echo '<InnerBlocks allowedBlocks="' . esc_attr( wp_json_encode( $allowed_blocks ) ) . '" />';
-	?>
+	<div>
+	</div>
 </div>

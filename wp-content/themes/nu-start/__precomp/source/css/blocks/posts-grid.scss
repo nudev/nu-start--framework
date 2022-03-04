@@ -8,7 +8,10 @@
 @import "../library/";
 
 // ? scope and begin styling...
-.nu-acf-block.nu_posts-grid {
+.acf-block.posts-grid {
+
+	@import './posts-grid/filters/filtering';
+	
 	margin-top: $margin_2x;
 	margin-bottom: $base-margin;
 
@@ -74,196 +77,20 @@
 	}
 }
 
-.grid-item.nu_people {
-	// remove default margins from name
-	.full-name {
-		margin: 0;
-	}
-	// pad the content area
-	.grid-item-content {
-		padding: $margin_2x;
-		padding-bottom: $margin_3x + $half-margin;
-	}
-	// custom margin push title down from name
-	.primary-title {
-		margin-top: $base-margin + $half-margin;
-		font-size: var(--wp--preset--font-size--14-20);
-		font-weight: 300;
-	}
-}
-
 // ? be sure to disable click-events on teasers in the CMS
 body.wp-admin {
-	.nu_posts-grid {
+	.posts-grid {
 		.grid-item a {
 			pointer-events: none;
 		}
 	}
 }
 
-// !
-// !
-// !
-// !
-
-// ? hot potato drop in of all the previous teasers
-
-.nu_posts-grid .nu__grid .grid-item.page {
-	> a {
-		border: none 0;
-		.post-title span {
-			border-bottom: 2px solid transparent;
-			@extend %transition;
-		}
-		figure {
-			overflow: hidden;
-			img {
-				transform: scale(1);
-				@extend %transition;
-			}
-		}
-		&:hover,
-		&:focus,
-		&:active {
-			border: none 0;
-			.post-title span {
-				border-bottom: 2px solid currentColor;
-			}
-
-			img {
-				transform: scale(1.2);
-			}
-		}
-	}
-}
-
-.nu_posts-grid
-	.nu_projects.grid-item.has-layout-horizontal
-	> .contains-clickable-area,
-.nu_posts-grid .nu_projects.grid-item.has-layout-horizontal {
-	@include media(">=medium") {
-		> figure {
-			flex: 1 0 66%;
-			max-width: none;
-			max-height: 320px;
-		}
-		.grid-item-content {
-			justify-content: center;
-		}
-	}
-}
-
-/* 
-
-*/
-
-.nu_posts-grid .nu__grid .grid-item.nu_news {
-	.is-the-publication-date {
-		display: flex;
-		flex-flow: row nowrap;
-		justify-content: space-between;
-	}
-
-	// ? the date-time block is not loading this properly idk why
-	// todo: fix this so its DRY
-	.nu__datetime {
-		@include nu__date_time_block_styles();
-	}
-
-	// ? handle interaction with zooming image and underlining title
-	> a.contains-clickable-area {
-		background-color: var(--wp--preset--color--white-2);
-		border: none 0;
-		display: flex;
-		.post-title {
-			margin-top: $base-margin;
-			span {
-				border-bottom: 2px solid transparent;
-			}
-		}
-		&:hover,
-		&:focus {
-			border: none 0;
-			.post-title span {
-				border-bottom: 2px solid currentColor;
-			}
-			img {
-				transform: scale(1.2);
-			}
-		}
-	}
-
-	.grid-item-content {
-		padding: $base-margin;
-		padding: $margin_2x;
-		justify-content: center;
-
-		.is-the-publication-date {
-			justify-content: flex-end;
-		}
-
-		.is-the-publication-publisher {
-			font-style: italic;
-		}
-		> :first-child {
-			margin-top: 0;
-		}
-	}
-}
-
-/* 
-*			NU EVENTS TEASER STYLES
-* 		UNDER DEVELOPMENT
-*/
-
-.nu_posts-grid .nu__grid {
-	.grid-item.nu_events {
-		// ? because the date-time block is not actually loaded we need to pull the styles in directly
-		.nu__datetime {
-			@include nu__date_time_block_styles();
-		}
-
-		p.post-title {
-			margin: $base-margin 0 $half-margin 0;
-		}
-
-		> a.contains-clickable-area {
-			padding: 0;
-			@include nu_micon("\e5cc", after);
-			&:after {
-				position: absolute;
-				bottom: $half-margin;
-				right: $half-margin;
-				line-height: 1;
-			}
-
-			&:hover,
-			&:focus {
-				&:after {
-					color: var(--wp--preset--color--red-3);
-				}
-			}
-		}
-
-		// ? we are using post type as a placeholder for a "single select term"; need to convert a taxonomy to a radio select or something
-		// ? in the future, this will be a "single term" or a grouping of terms --- TBD
-		.event-topic,
-		.is-post-type-label {
-			text-transform: uppercase;
-			letter-spacing: 2px;
-			margin: $half-margin 0;
-			&:before {
-				content: "";
-				display: inline-block;
-				border: 1px solid var(--wp--preset--color--black-1);
-				border-radius: 50%;
-				width: 8px;
-				height: 8px;
-				margin: 0 $base-margin 0 0;
-			}
-		}
-	}
-}
+@import "./posts-grid/teasers/events-teaser";
+@import "./posts-grid/teasers/person-teaser";
+@import "./posts-grid/teasers/news-teaser";
+@import "./posts-grid/teasers/page-teaser";
+@import "./posts-grid/teasers/projects-teaser";
 
 li.grid-item.broken {
 	&:only-child {
