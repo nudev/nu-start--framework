@@ -5,9 +5,9 @@
 
 */
 
-.filteringform {
-	@import "./nu-select2";
+@import "./nu-select2";
 
+.filteringform {
 	+ .nu__grid {
 		margin-top: $margin_4x;
 	}
@@ -23,6 +23,8 @@
 	}
 
 	> form {
+		padding: $base-margin;
+		border: 1px solid #ece9e6;
 		position: relative;
 		background-color: var(--wp--preset--color--white-1);
 		display: flex;
@@ -62,9 +64,9 @@
 				text-align: center;
 				font-size: var(--wp--preset--font-size--14-20);
 				padding: $base-margin $margin_2x;
-				border: 1px solid #ece9e6;
 				font-weight: 400;
 				border-radius: 48px;
+				border: 1px solid #ece9e6;
 				span.material-icons-outlined {
 					position: absolute;
 					top: 50%;

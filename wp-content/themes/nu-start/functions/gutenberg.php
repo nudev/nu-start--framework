@@ -21,9 +21,9 @@
 
 
 // Add frontend styles.
-add_action( 'wp_enqueue_scripts', 'nu__enqueue_each_block_styles' );
+// add_action( 'wp_enqueue_scripts', 'nu__enqueue_each_block_styles' );
 // Add editor styles.
-add_action( 'admin_init', 'nu__enqueue_each_block_styles' );
+// add_action( 'admin_init', 'nu__enqueue_each_block_styles' );
 
 
 /**
@@ -176,7 +176,7 @@ if( function_exists('acf_register_block_type') ):
 		'render_template' => get_template_directory(  ) . '/acf-blocks/breadcrumbs/breadcrumbs.php',
 		'render_callback' => '',
 		'enqueue_assets' => function(){
-			wp_enqueue_style( 'block-breadcrumbs', get_template_directory_uri() . '/__precomp/build/css/blocks/breadcrumbs.css' );
+			// wp_enqueue_style( 'block-breadcrumbs', get_template_directory_uri() . '/__precomp/build/css/blocks/breadcrumbs.css' );
 		},
 		'icon' => '',
 		'supports' => array(
@@ -208,7 +208,7 @@ if( function_exists('acf_register_block_type') ):
 		// 'enqueue_style' => get_template_directory_uri().'/acf-blocks/posts-grid/posts-grid.css',
 		// 'enqueue_script' => get_template_directory_uri().'/acf-blocks/posts-grid/posts-grid-min.js',
 		'enqueue_assets' => function(){
-			wp_enqueue_style( 'block-posts-grid', get_template_directory_uri() . '/__precomp/build/css/blocks/posts-grid.css' );
+			// wp_enqueue_style( 'block-posts-grid', get_template_directory_uri() . '/__precomp/build/css/blocks/posts-grid.css' );
 			wp_enqueue_script( 'block-posts-grid', get_template_directory_uri() . '/__precomp/build/js/blocks/posts-grid-min.js', array('jquery'), '', true );
 		},
 		'icon' => '',
@@ -236,7 +236,7 @@ if( function_exists('acf_register_block_type') ):
 		'mode' => 'preview',
 		'render_template' => get_template_directory().'/acf-blocks/person-info/person-info.php',
 		'enqueue_assets' => function(){
-			wp_enqueue_style( 'block-person-info', get_template_directory_uri() . '/__precomp/build/css/blocks/person-info.css' );
+			// wp_enqueue_style( 'block-person-info', get_template_directory_uri() . '/__precomp/build/css/blocks/person-info.css' );
 		},
 		'icon' => '',
 		'supports' => array(
@@ -266,7 +266,7 @@ if( function_exists('acf_register_block_type') ):
 		'mode' => 'preview',
 		'render_template' => get_template_directory().'/acf-blocks/beta-rest-api/beta-rest-api.php',
 		'enqueue_assets' => function(){
-			wp_enqueue_style( 'block-beta-rest-api', get_template_directory_uri() . '/__precomp/build/css/blocks/beta-rest-api.css' );
+			// wp_enqueue_style( 'block-beta-rest-api', get_template_directory_uri() . '/__precomp/build/css/blocks/beta-rest-api.css' );
 		},
 		'icon' => '',
 		'supports' => array(
@@ -332,7 +332,7 @@ if( function_exists('acf_register_block_type') ):
 		'render_template' => get_template_directory().'/acf-blocks/datetime-range/datetime-range.php',
 		'render_callback' => '',
 		'enqueue_assets' => function(){
-			wp_enqueue_style( 'block-person-info', get_template_directory_uri() . '/__precomp/build/css/blocks/date-time.css' );
+			// wp_enqueue_style( 'block-person-info', get_template_directory_uri() . '/__precomp/build/css/blocks/date-time.css' );
 		},
 		'icon' => '',
 		'supports' => array(

@@ -72,13 +72,18 @@ class FilteringForm extends PostsGrid
 		$chronological_buttons = '';
 		if( !empty($fields) && $fields['autoselect_posts']['post_type'] == 'nu_events' ){
 
+			
 			$if_checked_archived = '';
 			$if_checked_upcoming = '';
 			if( !empty($_GET['chronological']) ){
 
 				$if_checked_archived = $_GET['chronological'] == 'archived' ? ' checked="checked"' : '';
 				$if_checked_upcoming = $_GET['chronological'] == 'upcoming' ? ' checked="checked"' : '';
-
+				
+			} else {
+				$if_checked_archived = $fields['autoselect_posts']['chronological'] == 'archived' ? ' checked="checked"' : '';
+				$if_checked_upcoming = $fields['autoselect_posts']['chronological'] == 'upcoming' ? ' checked="checked"' : '';
+				
 			}
 
 			$chronological_buttons = sprintf(

@@ -24,6 +24,8 @@ a {
 	? 	styles below restricted to within the blocks wrapper -- avoid touching footer/header etc
 */
 .blocks--wrapper {
+
+	a.button,
 	button.button {
 		@extend %nu__buttonstyle;
 	}

@@ -7,10 +7,12 @@
 // ? import vars,mixins,etc...
 @import "../library/";
 
+@import './posts-grid/filters/filtering';
+
+
 // ? scope and begin styling...
 .acf-block.posts-grid {
 
-	@import './posts-grid/filters/filtering';
 	
 	margin-top: $margin_2x;
 	margin-bottom: $base-margin;

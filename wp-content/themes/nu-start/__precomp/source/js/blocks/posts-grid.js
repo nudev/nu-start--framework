@@ -25,17 +25,33 @@
 
 			let $formID = $filterForm.attr("name");
 
-
-
 			$(".js__filteringform select").each(function (index, element) {
-				var $placeholder = $(element).data("placeholder");
+				let $placeholder = $(element).data("placeholder");
+
 				$(element).select2({
 					placeholder: $placeholder,
 					theme: "bootstrap4",
-					minimumResultsForSearch: Infinity,
+					minimumResultsForSearch: -1, // disables search box - *only works for single-select element*
+					closeOnSelect: false,
+					templateSelection: function (data) {
+						console.log(data);
+						return data.text;
+					},
 				});
+
+				// NOTE:
+				// 		For multi-select boxes, there is no distinct search control.
+				// 		So, to disable search for multi-select boxes, you will need to set the disabled property to true whenever the dropdown is opened or closed
+				$(element).on(
+					"select2:opening select2:closing",
+					function (event) {
+						var $searchfield = $(this)
+							.parent()
+							.find(".select2-search__field");
+						$searchfield.prop("disabled", true);
+					}
+				);
 			});
-			
 
 			// $filterForm.find("input").on("input", function (e) {
 			// 	$selectedValue = $(this).val();
@@ -57,10 +73,6 @@
 			// 		},
 			// 	});
 			// });
-
-
-
-
 		});
 
 		// code was poetry...
