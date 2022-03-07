@@ -8,6 +8,25 @@
 	 *   ... code in here will run after jQuery says document is ready
 	 */
 	$(function () {
+		let play_button_shim = {
+			_init: function () {
+				$(".is-the-play-button-shim").on("click", "a", function (e) {
+					e.preventDefault();
+					let video = $(this).parents(".slide-content").find("video");
+					video.each(function (index, element) {
+						element.play();
+						$(element).on("click", function (e) {
+							if (!element.paused) {
+								element.pause();
+								$(element).parent().removeClass("is-playing");
+							}
+						});
+					});
+				});
+			},
+		};
+		play_button_shim._init();
+
 		/* 
 			NOTES:
 			1 - handle our custom scrollbars; which may interact with page scroll or slide shown
@@ -44,10 +63,6 @@
 		// ? init is deferred until an event fires from the slider
 		// timeline_table._init();
 
-
-
-
-		
 		let custom_scrollbars_handler = {
 			_init: function () {
 				if (window.innerWidth < 960) {
@@ -69,12 +84,12 @@
 					mcs_custom_callbacks = {};
 
 					// ? only slide 2 has a dark scrollbar by default
-					if ($(element).attr("aria-label") == "2 / 4") {
-						mcs_theme = "dark-thin";
-						mcs_custom_callbacks = {};
-					}
+					// if ($(element).attr("aria-label") == "2 / 4") {
+					// 	mcs_theme = "dark-thin";
+					// 	mcs_custom_callbacks = {};
+					// }
 					// ? only slide 3 has a color inversion on scroll
-					if ($(element).attr("aria-label") == "3 / 4") {
+					if ($(element).attr("aria-label") == "2 / 3") {
 						if (window.innerWidth < 960) {
 							mcs_theme = "dark-thin";
 						}
@@ -112,7 +127,8 @@
 									}
 
 									// ? this handles switching in the "pillars images" as we scroll
-									let container_offset = this.offsetTop * 2 + 90;
+									let container_offset =
+										this.offsetTop * 2 + 90;
 
 									let pillars = $(this).find(
 										".wp-block-group.pillar:not(:first-of-type)"
@@ -181,7 +197,7 @@
 		let academic_plan_slider = {
 			$instance: undefined,
 			// store an array of all the button labels (each slide has a name)
-			$slideNames: ["Video", "Intro", "Pillars", "Planning Process"],
+			$slideNames: ["Intro", "Pillars", "Planning Process"],
 			//
 			_init: function () {
 				if (!$(".wp-block-eedee-block-gutenslider").length) {
@@ -244,7 +260,7 @@
 				} else {
 					$(slider_instance.navigation.$prevEl[0]).show();
 				}
-				if ($index == 3) {
+				if ($index == 2) {
 					$nextButtonText = academic_plan_slider.$slideNames[0];
 
 					// ? trigger the timeline table animation

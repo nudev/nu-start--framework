@@ -135,9 +135,7 @@ import "../../vendor/js/waapi-animate-details";
 		$(".js__magnific.mfp-iframe .wp-block-button__link").magnificPopup({
 			type: "ajax",
 		});
-
 	});
 })(window.jQuery, window, document);
 
-
-import './_academic-plan';
+import "./_academic-plan";

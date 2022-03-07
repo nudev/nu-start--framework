@@ -8,8 +8,8 @@
 	z-index: 1;
 	padding: 0 $base-margin 40px $base-margin;
 	@include media(">=small") {
-		right: 10%;
-		max-width: 640px !important;
+		right: 5%;
+		max-width: 720px !important;
 	}
 }
 //

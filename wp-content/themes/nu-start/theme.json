@@ -239,8 +239,8 @@
       "fontWeight": true,
       "lineHeight": true,
       "dropCap": false,
-      "letterSpacing": false,
-      "textTransform": false,
+      "letterSpacing": true,
+      "textTransform": true,
       "textDecoration": false,
       "customFontSize": false,
       "fontFamilies": [

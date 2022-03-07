@@ -13,10 +13,10 @@
 
 		.fixed-height-scrolling-content-area {
 			padding: 0;
+			max-height: 85vh;
+			// overflow-y: scroll;
 			@include media(">medium") {
-				max-height: 75vh;
-				overflow-y: scroll;
-				padding: $margin_4x 0;
+				// padding: $margin_4x 0;
 			}
 
 			.wp-block-group > .wp-block-image {
@@ -44,7 +44,7 @@
 						color: var(--wp--preset--color--black-1) !important;
 					}
 				}
-				&[aria-label="3 / 4"] {
+				&[aria-label="2 / 3"] {
 					.eedee-background-div .eedee-background-div__overlay {
 						background-color: white !important;
 					}
@@ -113,7 +113,23 @@
 }
 
 @include media(">medium") {
-	.swiper-slide[aria-label="4 / 4"] {
+	.swiper-slide[aria-label="1 / 3"] {
+		.fixed-height-scrolling-content-area {
+			p.has-36-40-font-size {
+				margin: 0;
+				margin-top: $margin_2x;
+			}
+			p.has-60-60-font-size {
+				margin: 0;
+			}
+
+			.wp-block-group {
+				margin-top: $margin_2x;
+			}
+		}
+	}
+
+	.swiper-slide[aria-label="3 / 3"] {
 		.slide-content {
 			> .wp-block-columns {
 				margin-right: 5% !important;
@@ -139,7 +155,7 @@
 	}
 }
 @include media("<=small") {
-	.wp-block-eedee-block-gutenslider.academic-plan-fs-slider .wp-block-eedee-block-gutenslide:not([aria-label="1 / 4"]) .slide-content {
+	.wp-block-eedee-block-gutenslider.academic-plan-fs-slider .wp-block-eedee-block-gutenslide:not([aria-label="1 / 3"]) .slide-content {
 		padding: $margin_2x 0 $margin_4x 0 !important;
 		> .wp-block-columns > .wp-block-column {
 			margin-top: $margin_4x;
@@ -149,6 +165,28 @@
 		}
 		> .wp-block-columns {
 			overflow-y: auto;
+		}
+	}
+
+	.swiper-slide[aria-label="1 / 3"] {
+		.fixed-height-scrolling-content-area {
+			left: 0;
+			right: 0;
+			p.has-36-40-font-size {
+				line-height: 1;
+				margin: 0;
+				margin-top: $base-margin;
+			}
+			p.has-60-60-font-size {
+				margin: 0;
+			}
+
+			.wp-block-group {
+				margin-top: $base-margin;
+			}
+			.wp-block-group p {
+				font-size: var(--wp--preset--font-size--14-20) !important;
+			}
 		}
 	}
 }

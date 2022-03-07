@@ -25,7 +25,7 @@ html :where(body:not(.wp-admin), .editor-styles-wrapper) {
   line-height: 1.375;
 }
 
-.wp-block-eedee-block-gutenslider.academic-plan-fs-slider .eedee-gutenslider-nav.eedee-gutenslider-prev,
+.wp-block-eedee-block-gutenslider.academic-plan-fs-slider p.is-the-play-button-shim a i.icon, .wp-block-eedee-block-gutenslider.academic-plan-fs-slider .eedee-gutenslider-nav.eedee-gutenslider-prev,
 .wp-block-eedee-block-gutenslider.academic-plan-fs-slider .eedee-gutenslider-nav.eedee-gutenslider-next {
   transition: all 0.1s ease-in-out;
 }
@@ -160,8 +160,9 @@ html :where(body:not(.wp-admin), .editor-styles-wrapper) a {
 }
 .wp-block-eedee-block-gutenslider.academic-plan-fs-slider .eedee-gutenslider-nav.eedee-gutenslider-prev,
 .wp-block-eedee-block-gutenslider.academic-plan-fs-slider .eedee-gutenslider-nav.eedee-gutenslider-next {
-  font-size: 0.875rem;
+  font-size: 1.125rem;
   line-height: 1.25rem;
+  letter-spacing: 2px;
   z-index: 2;
   border-radius: 0px;
   width: auto;
@@ -221,8 +222,8 @@ html :where(body:not(.wp-admin), .editor-styles-wrapper) a {
 }
 @media (min-width: 780px) {
   .wp-block-eedee-block-gutenslider.academic-plan-fs-slider .page-title-is-hidden-while-playing {
-    right: 10%;
-    max-width: 640px !important;
+    right: 5%;
+    max-width: 720px !important;
   }
 }
 .wp-block-eedee-block-gutenslider.academic-plan-fs-slider .wp-block-eedee-block-gutenslide .slide-content {
@@ -311,6 +312,35 @@ html :where(body:not(.wp-admin), .editor-styles-wrapper) a {
   background-color: var(--wp--preset--color--white-1) !important;
   color: var(--wp--preset--color--black-1) !important;
 }
+.wp-block-eedee-block-gutenslider.academic-plan-fs-slider p.is-the-play-button-shim {
+  margin-top: 32px;
+}
+.wp-block-eedee-block-gutenslider.academic-plan-fs-slider p.is-the-play-button-shim a {
+  border-bottom: 0px solid transparent;
+}
+.wp-block-eedee-block-gutenslider.academic-plan-fs-slider p.is-the-play-button-shim a strong {
+  border-bottom: 1px solid transparent;
+  font-weight: 300;
+}
+.wp-block-eedee-block-gutenslider.academic-plan-fs-slider p.is-the-play-button-shim a i.icon, .wp-block-eedee-block-gutenslider.academic-plan-fs-slider p.is-the-play-button-shim a {
+  display: inline-block;
+  vertical-align: middle;
+}
+.wp-block-eedee-block-gutenslider.academic-plan-fs-slider p.is-the-play-button-shim a i.icon {
+  font-size: var(--wp--preset--font-size--60-60);
+  line-height: 0;
+  transform: scale(1);
+}
+.wp-block-eedee-block-gutenslider.academic-plan-fs-slider p.is-the-play-button-shim a:hover, .wp-block-eedee-block-gutenslider.academic-plan-fs-slider p.is-the-play-button-shim a:focus {
+  border-bottom: 0px solid transparent;
+}
+.wp-block-eedee-block-gutenslider.academic-plan-fs-slider p.is-the-play-button-shim a:hover strong, .wp-block-eedee-block-gutenslider.academic-plan-fs-slider p.is-the-play-button-shim a:focus strong {
+  border-bottom: 1px solid currentColor;
+}
+.wp-block-eedee-block-gutenslider.academic-plan-fs-slider p.is-the-play-button-shim a:hover i.icon, .wp-block-eedee-block-gutenslider.academic-plan-fs-slider p.is-the-play-button-shim a:focus i.icon {
+  color: var(--wp--preset--color--red-3);
+  transform: scale(1.2);
+}
 .wp-block-eedee-block-gutenslider.academic-plan-fs-slider .wp-block-group.pillar {
   margin-top: 128px;
 }
@@ -332,17 +362,24 @@ html :where(body:not(.wp-admin), .editor-styles-wrapper) a {
   height: 100%;
   opacity: 0;
   overflow: hidden;
-  transition: opacity 0.3s ease;
+  transition: opacity 1s ease;
 }
 .wp-block-eedee-block-gutenslider.academic-plan-fs-slider .shim-crossfade-gallery .is-image-with-blurb > p {
+  opacity: 0;
   position: absolute;
-  top: 32px;
-  left: 32px;
+  bottom: 0;
+  transform: translateY(-100%);
+  left: 64px;
   background-color: rgba(0, 0, 0, 0.8);
   padding: 32px;
   color: var(--wp--preset--color--white-1);
+  max-width: 400px;
+}
+.wp-block-eedee-block-gutenslider.academic-plan-fs-slider .shim-crossfade-gallery .is-image-with-blurb > .wp-block-image {
+  transition: opacity 1s ease;
 }
 .wp-block-eedee-block-gutenslider.academic-plan-fs-slider .shim-crossfade-gallery .is-image-with-blurb > .wp-block-image > img {
+  transition: opacity 1s ease;
   height: 100%;
   min-width: 100%;
 }
@@ -350,6 +387,9 @@ html :where(body:not(.wp-admin), .editor-styles-wrapper) a {
   opacity: 1;
 }
 .wp-block-eedee-block-gutenslider.academic-plan-fs-slider .shim-crossfade-gallery .is-image-with-blurb.image-is-revealed {
+  opacity: 1;
+}
+.wp-block-eedee-block-gutenslider.academic-plan-fs-slider .shim-crossfade-gallery .is-image-with-blurb.image-is-revealed > p {
   opacity: 1;
 }
 
@@ -365,13 +405,7 @@ html :where(body:not(.wp-admin), .editor-styles-wrapper) a {
 }
 .wp-block-eedee-block-gutenslider.academic-plan-fs-slider.is-full .fixed-height-scrolling-content-area {
   padding: 0;
-}
-@media (min-width: 1025px) {
-  .wp-block-eedee-block-gutenslider.academic-plan-fs-slider.is-full .fixed-height-scrolling-content-area {
-    max-height: 75vh;
-    overflow-y: scroll;
-    padding: 64px 0;
-  }
+  max-height: 85vh;
 }
 .wp-block-eedee-block-gutenslider.academic-plan-fs-slider.is-full .fixed-height-scrolling-content-area .wp-block-group > .wp-block-image {
   margin-bottom: 32px;
@@ -388,7 +422,7 @@ html :where(body:not(.wp-admin), .editor-styles-wrapper) a {
   .wp-block-eedee-block-gutenslider.academic-plan-fs-slider.is-full .color-swap-triggered .wp-block-column:first-child .fixed-height-scrolling-content-area {
     color: var(--wp--preset--color--black-1) !important;
   }
-  .wp-block-eedee-block-gutenslider.academic-plan-fs-slider.is-full .color-swap-triggered[aria-label="3 / 4"] .eedee-background-div .eedee-background-div__overlay {
+  .wp-block-eedee-block-gutenslider.academic-plan-fs-slider.is-full .color-swap-triggered[aria-label="2 / 3"] .eedee-background-div .eedee-background-div__overlay {
     background-color: white !important;
   }
 }
@@ -435,10 +469,21 @@ html :where(body:not(.wp-admin), .editor-styles-wrapper) a {
 }
 
 @media (min-width: 1025px) {
-  .swiper-slide[aria-label="4 / 4"] .slide-content > .wp-block-columns {
+  .swiper-slide[aria-label="1 / 3"] .fixed-height-scrolling-content-area p.has-36-40-font-size {
+    margin: 0;
+    margin-top: 32px;
+  }
+  .swiper-slide[aria-label="1 / 3"] .fixed-height-scrolling-content-area p.has-60-60-font-size {
+    margin: 0;
+  }
+  .swiper-slide[aria-label="1 / 3"] .fixed-height-scrolling-content-area .wp-block-group {
+    margin-top: 32px;
+  }
+
+  .swiper-slide[aria-label="3 / 3"] .slide-content > .wp-block-columns {
     margin-right: 5% !important;
   }
-  .swiper-slide[aria-label="4 / 4"] .slide-content > .wp-block-columns > .wp-block-column {
+  .swiper-slide[aria-label="3 / 3"] .slide-content > .wp-block-columns > .wp-block-column {
     padding-left: 5% !important;
   }
 }
@@ -455,17 +500,36 @@ html :where(body:not(.wp-admin), .editor-styles-wrapper) a {
   }
 }
 @media (max-width: 780px) {
-  .wp-block-eedee-block-gutenslider.academic-plan-fs-slider .wp-block-eedee-block-gutenslide:not([aria-label="1 / 4"]) .slide-content {
+  .wp-block-eedee-block-gutenslider.academic-plan-fs-slider .wp-block-eedee-block-gutenslide:not([aria-label="1 / 3"]) .slide-content {
     padding: 32px 0 64px 0 !important;
   }
-  .wp-block-eedee-block-gutenslider.academic-plan-fs-slider .wp-block-eedee-block-gutenslide:not([aria-label="1 / 4"]) .slide-content > .wp-block-columns > .wp-block-column {
+  .wp-block-eedee-block-gutenslider.academic-plan-fs-slider .wp-block-eedee-block-gutenslide:not([aria-label="1 / 3"]) .slide-content > .wp-block-columns > .wp-block-column {
     margin-top: 64px;
   }
-  .wp-block-eedee-block-gutenslider.academic-plan-fs-slider .wp-block-eedee-block-gutenslide:not([aria-label="1 / 4"]) .slide-content > .wp-block-columns > .wp-block-column:first-child {
+  .wp-block-eedee-block-gutenslider.academic-plan-fs-slider .wp-block-eedee-block-gutenslide:not([aria-label="1 / 3"]) .slide-content > .wp-block-columns > .wp-block-column:first-child {
     margin-top: 0;
   }
-  .wp-block-eedee-block-gutenslider.academic-plan-fs-slider .wp-block-eedee-block-gutenslide:not([aria-label="1 / 4"]) .slide-content > .wp-block-columns {
+  .wp-block-eedee-block-gutenslider.academic-plan-fs-slider .wp-block-eedee-block-gutenslide:not([aria-label="1 / 3"]) .slide-content > .wp-block-columns {
     overflow-y: auto;
+  }
+
+  .swiper-slide[aria-label="1 / 3"] .fixed-height-scrolling-content-area {
+    left: 0;
+    right: 0;
+  }
+  .swiper-slide[aria-label="1 / 3"] .fixed-height-scrolling-content-area p.has-36-40-font-size {
+    line-height: 1;
+    margin: 0;
+    margin-top: 16px;
+  }
+  .swiper-slide[aria-label="1 / 3"] .fixed-height-scrolling-content-area p.has-60-60-font-size {
+    margin: 0;
+  }
+  .swiper-slide[aria-label="1 / 3"] .fixed-height-scrolling-content-area .wp-block-group {
+    margin-top: 16px;
+  }
+  .swiper-slide[aria-label="1 / 3"] .fixed-height-scrolling-content-area .wp-block-group p {
+    font-size: var(--wp--preset--font-size--14-20) !important;
   }
 }
 html body:not(.blog):not(.archive) .academic-plan-fs-slider.wp-block-eedee-block-gutenslider.is-full {

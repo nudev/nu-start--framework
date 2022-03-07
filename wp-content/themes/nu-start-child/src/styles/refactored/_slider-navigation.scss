@@ -1,7 +1,8 @@
 .eedee-gutenslider-nav.eedee-gutenslider-prev,
 .eedee-gutenslider-nav.eedee-gutenslider-next {
-	@include rfs(14px);
+	@include rfs(18px);
 	@include rfs(20px, line-height);
+	letter-spacing: 2px;
 	@extend %transition;
 	z-index: 2;
 	border-radius: 0px;

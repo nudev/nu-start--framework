@@ -28,19 +28,25 @@
 		height: 100%;
 		opacity: 0;
 		overflow: hidden;
-		transition: opacity 0.3s ease;
-
+		transition: opacity 1s ease;
+		
 		> p {
+			opacity: 0;
 			position: absolute;
-			top: $margin_2x;
-			left: $margin_2x;
+			// top: $margin_2x;
+			bottom: 0;
+			transform: translateY(-100%);
+			left: $margin_4x;
 			background-color: rgba(0,0,0,0.8);
 			padding: $margin_2x;
 			color: var(--wp--preset--color--white-1);
+			max-width: 400px;
 		}
-
+		
 		> .wp-block-image {
+			transition: opacity 1s ease;
 			> img {
+				transition: opacity 1s ease;
 				height: 100%;
 				min-width: 100%;
 			}
@@ -50,6 +56,9 @@
 		}
 		&.image-is-revealed {
 			opacity: 1;
+			> p {
+				opacity: 1;
+			}
 		}
 	}
 }
