@@ -144,6 +144,35 @@ if( function_exists('acf_register_block_type') ):
 		'active' => true,
 	));
 
+	
+	
+	acf_register_block_type(array(
+		'name' => 'event-info',
+		'title' => 'Event Info',
+		'description' => 'Fetch and display info for an Event.',
+		'category' => 'nu-blocks',
+		'mode' => 'preview',
+		'render_template' => get_template_directory().'/acf-blocks/event-info/event-info.php',
+		'enqueue_assets' => function(){
+			// wp_enqueue_style( 'block-event-info', get_template_directory_uri() . '/__precomp/build/css/blocks/event-info.css' );
+		},
+		'icon' => '',
+		'supports' => array(
+			'anchor' => true,
+			// enable/disable alignment toolbar (true by default)
+			'align' => true,
+			// hide/show text alignment toolbar.
+			'align_text' => true,
+			// hide/show content alignment toolbar.
+			'align_content' => false,
+			// disable preview/edit toggle
+			'mode' => false,
+			'multiple' => true,
+			'jsx' => true,
+		),
+		'active' => true,
+	));
+
 
 
 	

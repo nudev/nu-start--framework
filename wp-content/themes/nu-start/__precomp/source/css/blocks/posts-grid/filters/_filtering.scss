@@ -28,11 +28,61 @@
 		position: relative;
 		background-color: var(--wp--preset--color--white-1);
 		display: flex;
-		@include media(">=medium") {
+		flex-flow: column nowrap;
+		align-items: center;
+
+		@include media("<large") {
+			.filters {
+				margin: $margin_2x 0;
+				display: grid;
+				grid-row-gap: $base-margin;
+				grid-column-gap: $base-margin;
+				grid-template-columns: repeat(2, 1fr);
+				.filters-filter {
+					&:not(:first-child) {
+						margin-left: 0;
+					}
+				}
+			}
+		}
+		@include media("<small") {
+			.filters {
+				grid-template-columns: repeat(1, 1fr);
+			}
+		}
+
+		@include media(">=large") {
 			flex-flow: row nowrap;
 			justify-content: space-between;
 			.submission {
 				margin-left: $margin_2x;
+			}
+		}
+	}
+
+	.filtering-navicon {
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content: space-between;
+		padding: $base-margin;
+		border: 1px solid var(--wp--preset--color--black-1);
+		.icon--close {
+			display: none;
+		}
+		@include media("<medium") {
+			+ form {
+				display: none;
+			}
+		}
+		@include media(">=medium") {
+			display: none;
+		}
+		&.is-revealed {
+			.icon--menu {
+				display: none;
+			}
+			.icon--close {
+				display: inline-block;
 			}
 		}
 	}
@@ -55,42 +105,43 @@
 				}
 			}
 		}
-
-		.is-events-chronological-buttons {
-			margin: 0;
-			margin-right: $margin_2x;
-			label {
-				position: relative;
-				text-align: center;
-				font-size: var(--wp--preset--font-size--14-20);
-				padding: $base-margin $margin_2x;
-				font-weight: 400;
-				border-radius: 48px;
-				border: 1px solid #ece9e6;
-				span.material-icons-outlined {
-					position: absolute;
-					top: 50%;
-					transform: translateY(-50%);
-					right: $half-margin;
-					font-size: 20px;
-					line-height: 1;
-					vertical-align: middle;
-					margin-left: $half-margin;
-					opacity: 0;
-				}
-				&:last-child {
-					margin-left: $base-margin;
-				}
+	}
+	.is-events-chronological-buttons {
+		margin: 0;
+		label {
+			display: inline-block;
+			position: relative;
+			text-align: center;
+			font-size: var(--wp--preset--font-size--14-20);
+			padding: $base-margin $margin_2x;
+			font-weight: 400;
+			border-radius: 48px;
+			border: 1px solid #ece9e6;
+			span.material-icons-outlined {
+				position: absolute;
+				top: 50%;
+				transform: translateY(-50%);
+				right: $half-margin;
+				font-size: 20px;
+				line-height: 1;
+				vertical-align: middle;
+				margin-left: $half-margin;
+				opacity: 0;
 			}
-			input {
-				@include displayedInvisible();
+			&:last-child {
+				margin-left: $base-margin;
+			}
+		}
 
-				&:checked + label {
-					border: 1px solid #ece9e6;
-					background-color: #f4f2f0;
-					span.material-icons-outlined {
-						opacity: 1;
-					}
+		//
+		input {
+			@include displayedInvisible();
+
+			&:checked + label {
+				border: 1px solid #ece9e6;
+				background-color: #f4f2f0;
+				span.material-icons-outlined {
+					opacity: 1;
 				}
 			}
 		}

@@ -49,9 +49,14 @@ class FilteringForm extends PostsGrid
 		$guides = [];
 		$guides['form'] = '
 			<div class="filteringform js__filteringform">
+				<div class="filtering-navicon">
+					<span>Filter Results:</span>
+					<span class="material-icons-outlined icon--menu">menu</span>
+					<span class="material-icons-outlined icon--close">close</span>
+				</div>
 				<form name="postsgrid_filter-'.self::$block['id'].'">
+					%1$s
 					<div class="filters">
-						%1$s
 						%2$s
 					</div>
 					<div class="submission">

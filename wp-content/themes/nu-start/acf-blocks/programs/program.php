@@ -36,12 +36,8 @@ if( !empty($block['align']) ) {
 ?>
 <div id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?>">
 	<div>
-		<?php 
-
-		
+		<?php
 			$thisProgram = new PIM_Program($programID);
-
-			
 		 ?>
 	</div>
 </div>

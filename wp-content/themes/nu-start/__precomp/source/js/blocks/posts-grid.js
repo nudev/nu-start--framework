@@ -25,6 +25,13 @@
 
 			let $formID = $filterForm.attr("name");
 
+			let $filtering_navicon = $(this).find(".filtering-navicon");
+
+			$filtering_navicon.on("click", function (e) {
+				$(this).toggleClass('is-revealed');
+				$filterForm.slideToggle();
+			});
+
 			$(".js__filteringform select").each(function (index, element) {
 				let $placeholder = $(element).data("placeholder");
 
