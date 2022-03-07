@@ -125,6 +125,15 @@
 }
 
 /* 
+
+*/
+@media (min-width: 1024px) {
+  .pattern--is-basic-event-detail > .wp-block-columns > .wp-block-column .wp-block-post-featured-image {
+    max-width: 80%;
+  }
+}
+
+/* 
 	?		Pattern Category - Heroes
 */
 .pattern--hero-basic-breadcrumbs > .wp-block-cover {

@@ -32,11 +32,36 @@ class SetupTheme
 
 		// 
 		add_action( 'widgets_init', 'SetupTheme::nu__register_sidebars' );
+
+		// 
+		add_action( 'admin_menu', 'SetupTheme::_do_admin_menu_handler' );
 		
+
 		// 
 		SetupTheme::clean_head();
 	}
 
+
+	public static function _do_admin_menu_handler(){
+
+
+		// ? add reusable blocks to the main menu to allow editor access
+		add_menu_page(
+			'Reusable Blocks',
+			'Reusable Blocks',
+			'manage_options',
+			'edit.php?post_type=wp_block',
+			'',
+			'dashicons-editor-table',
+			'3.1'
+		);
+
+	}
+
+
+
+	
+	
 	// ?
 	public static function enqueue_scripts(){
 		SetupTheme::_do_enqueueStyles();
@@ -52,7 +77,7 @@ class SetupTheme
 
 		// stylesheet only loaded in the block editor (for blocks)
 		// ? this lets us "ram in" a stylesheet; but we already have the hook in add_theme_support( 'editor-styles' );
-		wp_enqueue_style( 'nu-blocks-styles', get_template_directory_uri() . '/__precomp/build/css/blocks-styles.css', [], filemtime( get_template_directory() . '/__precomp/build/css/blocks-styles.css' ) );
+		// wp_enqueue_style( 'nu-blocks-styles', get_template_directory_uri() . '/__precomp/build/css/blocks-styles.css', [], filemtime( get_template_directory() . '/__precomp/build/css/blocks-styles.css' ) );
 		
 		// scripts only loaded in the block editor (for blocks)
 		wp_enqueue_script( 'nu-block-editor', get_template_directory_uri() . '/__precomp/build/js/editor-min.js', array( 'wp-blocks' ), filemtime( get_template_directory() . '/__precomp/build/js/editor-min.js' ), true );

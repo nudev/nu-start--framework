@@ -7,13 +7,10 @@
 // ? import vars,mixins,etc...
 @import "../library/";
 
-@import './posts-grid/filters/filtering';
-
+@import "./posts-grid/filters/filtering";
 
 // ? scope and begin styling...
 .acf-block.posts-grid {
-
-	
 	margin-top: $margin_2x;
 	margin-bottom: $base-margin;
 
@@ -79,12 +76,13 @@
 	}
 }
 
-// ? be sure to disable click-events on teasers in the CMS
-body.wp-admin {
-	.posts-grid {
-		.grid-item a {
-			pointer-events: none;
-		}
+// ? this is the block editor equivalent of body.wp-admin
+// ? styles for just the editor go here for now; rather than in another set of files
+.is-root-container.block-editor-block-list__layout {
+
+	// disable posts grid items that are clickable areas from working in the CMS
+	.grid-item a.contains-clickable-area {
+		pointer-events: none;
 	}
 }
 

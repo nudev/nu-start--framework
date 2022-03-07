@@ -3,118 +3,10 @@
  * 
  */
 // 
-
-// add_action( 'after_setup_theme', function() {
-// 	// Same args used for wp_enqueue_style().
-// 	$args = array(
-// 			'handle' => 'my-theme-site-title',
-// 			'src'    => get_theme_file_uri( 'assets/blocks/site-title.css' ),
-// 	);
-
-// 	// Add "path" to allow inlining asset if the theme opts-in.
-// 	$args['path'] = get_theme_file_path( 'assets/blocks/site-title.css' );
-
-// 	// Enqueue asset.
-// 	wp_enqueue_block_style( 'core/site-title', $args );
-// } );
-
-
-
-// Add frontend styles.
-// add_action( 'wp_enqueue_scripts', 'nu__enqueue_each_block_styles' );
-// Add editor styles.
-// add_action( 'admin_init', 'nu__enqueue_each_block_styles' );
-
-
-/**
- * Attach extra styles to multiple blocks.
- */
-function nu__enqueue_each_block_styles() {
-	// An array of blocks.
-	$styled_blocks = [ 'button', 'column', 'cover', 'group', 'mediatext', 'navigation', 'paragraph', 'pullquote', 'separator', 'table' ];
-
-	foreach ( $styled_blocks as $block_name ) {
-		// Get the stylesheet handle. This is backwards-compatible and checks the
-		// availability of the `wp_should_load_separate_core_block_assets` function,
-		// and whether we want to load separate styles per-block or not.
-		$handle = (
-			function_exists( 'wp_should_load_separate_core_block_assets' ) &&
-			wp_should_load_separate_core_block_assets()
-		) ? "wp-block-$block_name" : 'wp-block-library';
-
-		// Get the styles.
-		$styles = file_get_contents( get_theme_file_path( "__precomp/build/css/blocks/$block_name.css" ) );
-
-		// Add frontend styles.
-		wp_add_inline_style( $handle, $styles );
-
-		// Add editor styles.
-		add_editor_style( "__precomp/build/css/blocks/$block_name.css" );
-		if ( file_exists( get_theme_file_path( "__precomp/build/css/blocks/$block_name-editor.css" ) ) ) {
-			add_editor_style( "__precomp/build/css/blocks/$block_name-editor.css" );
-		}
-	}
-}
-
-
-
-
-// add reusable blocks to the main menu
-add_action( 'admin_menu', 'nu__reusable_blocks_in_admin_menu' );
-if( !function_exists('nu__reusable_blocks_in_admin_menu') ){
-	function nu__reusable_blocks_in_admin_menu() {
-	
-		add_menu_page(
-			'Reusable Blocks',
-			'Reusable Blocks',
-			'manage_options',
-			'edit.php?post_type=wp_block',
-			'',
-			'dashicons-editor-table',
-			'3.1'
-		);
-	
-	}
-}
-
-
-
-
-// add/remove block categories
-add_filter( 'block_categories_all', 'nu__manage_block_categories', 10, 2 );
-if( !function_exists('nu__manage_block_categories') ){
-	function nu__manage_block_categories( $block_categories, $block_editor_context  ) {
-
-		// create the nu-blocks category
-		return array_merge(
-			$block_categories,
-			array(
-				array(
-					'slug' => 'nu-blocks',
-					'title' => __( 'NU Blocks', 'nu-start' ),
-					'icon'  => 'f131',
-				)
-			)
-		);
-	}
-}
-
-
-
-
-
-
-
-
-
-
-
-
 add_action( 'init', 'nu__register_block_styles' );
 if( !function_exists( 'nu__register_block_styles' ) ){
 	function nu__register_block_styles(){
-
-		// register our styles onto Gutenslider block
+		// ? custom styles for Gutenslider block --- vendor plugin
 		register_block_style(
 			'eedee/block-gutenslider',
 			array(
@@ -122,9 +14,7 @@ if( !function_exists( 'nu__register_block_styles' ) ){
 				'label'        => __( 'Alternate', 'nu-start' ),
 			)
 		);
-
-
-		// register our styles onto the EP tabs block
+		// ? custom styles for the EP tabs block --- vendor plugin
 		register_block_style(
 			'ep/tabs',
 			array(
@@ -147,7 +37,6 @@ if( !function_exists( 'nu__register_block_styles' ) ){
 				'is_default'	=> true
 			)
 		);
-
 	}
 }
 
@@ -296,6 +185,35 @@ if( function_exists('acf_register_block_type') ):
 		'render_template' => get_template_directory().'/acf-blocks/beta-postsgrid-filtering/beta-postsgrid-filtering.php',
 		'enqueue_assets' => function(){
 			// wp_enqueue_style( 'block-beta-postsgrid-filtering', get_template_directory_uri() . '/__precomp/build/css/blocks/beta-postsgrid-filtering.css' );
+		},
+		'parent' => 'posts-grid',
+		'icon' => '',
+		'supports' => array(
+			'anchor' => true,
+			// enable/disable alignment toolbar (true by default)
+			'align' => true,
+			// hide/show text alignment toolbar.
+			'align_text' => true,
+			// hide/show content alignment toolbar.
+			'align_content' => false,
+			// disable preview/edit toggle
+			'mode' => false,
+			'multiple' => true,
+			'jsx' => true,
+		),
+		'active' => true,
+	));
+
+
+	acf_register_block_type(array(
+		'name' => 'beta-postsgrid-pagination',
+		'title' => '(beta) PostsGrid Pagination Discrete Block',
+		'description' => 'PostsGrid Pagination Discrete Block',
+		'category' => 'nu-blocks',
+		'mode' => 'preview',
+		'render_template' => get_template_directory().'/acf-blocks/beta-postsgrid-pagination/beta-postsgrid-pagination.php',
+		'enqueue_assets' => function(){
+			// wp_enqueue_style( 'block-beta-postsgrid-pagination', get_template_directory_uri() . '/__precomp/build/css/blocks/beta-postsgrid-pagination.css' );
 		},
 		'parent' => 'posts-grid',
 		'icon' => '',

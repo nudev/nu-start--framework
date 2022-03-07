@@ -1,5 +1,11 @@
 <?php
 /**
+ * 	Default Page Template
+ * 	
+ * 
+ * 	notes:
+ * 		- this is super bare bones on purpose
+ * 		- we should make some named templates for experimenting
  * 
  */
 // 

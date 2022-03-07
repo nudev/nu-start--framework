@@ -9,6 +9,12 @@
   ],
   "creatorBuild" : "34335",
   "files" : {
+    "\/build" : {
+      "ft" : 65536,
+      "oA" : 1,
+      "oAP" : "\/build\/build",
+      "oF" : 0
+    },
     "\/source\/css\/_overrides\/_index.scss" : {
       "aP" : 1,
       "bl" : 0,
@@ -1404,6 +1410,51 @@
       "pg" : 0,
       "sct" : 0
     },
+    "\/source\/css\/partials\/_index.scss" : {
+      "aP" : 1,
+      "bl" : 0,
+      "co" : 0,
+      "dP" : 10,
+      "ec" : 1,
+      "ft" : 4,
+      "ma" : 1,
+      "oA" : 1,
+      "oAP" : "\/build\/css\/partials\/_index.css",
+      "oF" : 0,
+      "oS" : 0,
+      "pg" : 0,
+      "sct" : 0
+    },
+    "\/source\/css\/partials\/_pagination.scss" : {
+      "aP" : 1,
+      "bl" : 0,
+      "co" : 0,
+      "dP" : 10,
+      "ec" : 1,
+      "ft" : 4,
+      "ma" : 1,
+      "oA" : 1,
+      "oAP" : "\/build\/css\/partials\/_pagination.css",
+      "oF" : 0,
+      "oS" : 0,
+      "pg" : 0,
+      "sct" : 0
+    },
+    "\/source\/css\/patterns\/content-types\/_event-related-patterns.scss" : {
+      "aP" : 1,
+      "bl" : 0,
+      "co" : 0,
+      "dP" : 10,
+      "ec" : 1,
+      "ft" : 4,
+      "ma" : 1,
+      "oA" : 1,
+      "oAP" : "\/build\/css\/patterns\/content-types\/_event-related-patterns.css",
+      "oF" : 0,
+      "oS" : 0,
+      "pg" : 0,
+      "sct" : 0
+    },
     "\/source\/css\/patterns\/content-types\/_people-related-patterns.scss" : {
       "aP" : 1,
       "bl" : 0,
@@ -1635,7 +1686,7 @@
     "displayValueWasSetByUser" : 1,
     "iconImageName" : "brackets-ucla",
     "iconImageWasSetByUser" : 0,
-    "lastBuiltDate" : 668107628.24425399
+    "lastBuiltDate" : 668292349.40264797
   },
   "projectSettings" : {
     "abortBuildOnError" : 1,

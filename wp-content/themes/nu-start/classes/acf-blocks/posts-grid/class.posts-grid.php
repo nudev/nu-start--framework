@@ -9,6 +9,7 @@
  */
 if( !is_admin()){
 	include_once(  get_template_directory().'/classes/acf-blocks/posts-grid/filtering-form.php' );
+	include_once(  get_template_directory().'/classes/acf-blocks/posts-grid/pg.pagination.php' );
 }
 
 
@@ -45,8 +46,6 @@ class PostsGrid
 	public $pagination_str, $filtering_str;
 
 
-
-
 	/**
 	 * PostsGrid Class Constructor
 	 * takes the exact same variables / args as an ACF block
@@ -81,10 +80,12 @@ class PostsGrid
 		// do the WP Query
 		$this->wp_query = new WP_Query($this->wp_query_args);
 		self::$the_wp_query = $this->wp_query;
+		
 
 		// maybe build pagination
 		if( !empty( self::$post_fields['options']['pagination'] ) ){
-			$this->_build_pagination();
+			$pagination = nu__get_pagination($this->wp_query);
+			$this->pagination_str = '<div class="pagination">'.$pagination.'</div>';
 		}
 
 		
@@ -102,38 +103,6 @@ class PostsGrid
 		$this->_build_acf_block_output();
 		
 	}
-
-
-	/**
-	 * 
-	 * 
-	 */
-	private function _build_pagination(){
-		
-		
-		$total_pages = $this->wp_query->max_num_pages;
-
-		global $wp_query;
-		$wp_query = $this->wp_query;
-		
-		$big = 9999999; // need an unlikely integer
-		$pagination = paginate_links(array(
-			'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
-			'format' => '?paged=%#%',
-			'current' => max( 1, get_query_var('paged') ),
-			'total' => $total_pages,
-			'type' => 'list',
-			'prev_text' => '<span><</span>',
-			'next_text' => '<span>></span>',
-			'before_page_number' => '<span>',
-			'after_page_number' => '</span>',
-			'mid_size' => 5
-		));
-		
-		$this->pagination_str = '<div class="pagination">'.$pagination.'</div>';
-	}
-	
-
 
 	/**
 	 * 

@@ -30,10 +30,10 @@ if( !empty( NU__Starter::$themeSettings['header']['status'] ) ){
 	// * build the header
 	$return .= sprintf(
 		$guides['nav-header']
-		,nu__getLogo()
-		,has_nav_menu('header') ? $nu_mobileNavIcon.nu__getMenu('header') : ''
+		,nu__get_site_logo()
+		,has_nav_menu('header') ? $nu_mobileNavIcon.nu__get_nav_menu('header') : ''
 		,NU__Starter::nu__includeSiteSearch()
-		,has_nav_menu('utility') ? '<div class="utilitynav">'.$nu_mobileNavIcon.nu__getMenu('utility').'</div>' : ''
+		,has_nav_menu('utility') ? '<div class="utilitynav">'.$nu_mobileNavIcon.nu__get_nav_menu('utility').'</div>' : ''
 	);
 
 }

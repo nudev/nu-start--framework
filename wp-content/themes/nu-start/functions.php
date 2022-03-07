@@ -37,9 +37,9 @@ require_once(  get_template_directory() . '/classes/content-types.php');
 
 
 /**
- * 		registers our block styles, pattern categories, block categories
- * 		enqueues some block assets
- * 		handles some filters / utilities specifically related to blocks
+ * ? server-side functionality for gutenberg / block editor
+ * ? - register block styles
+ * ? - register custom ACF blocks
  */
 require_once(  get_template_directory() . '/functions/gutenberg.php');
 
@@ -58,12 +58,11 @@ require_once(  get_template_directory() . '/classes/pim-handler.php');
 
 
 
-
-// !
-
 require_once( get_template_directory().'/classes/vendors/class.taxonomy-single-term.php' );
 $custom_tax_mb = new Taxonomy_Single_Term( 'nu_news-categories', 'nu_news' );
 $custom_tax_mb = new Taxonomy_Single_Term( 'nu_events-types', 'nu_events' );
+
+
 
 function add_my_icons($file) {
     $file = get_template_directory().'/__lib/icons/material-icons/config.json';

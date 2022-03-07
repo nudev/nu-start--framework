@@ -59,90 +59,15 @@ div.breadcrumbs[typeof="BreadcrumbList"] {
 	}
 }
 
-// *			Pagination
-.pagination {
-	text-align: center;
-	margin: 0 auto $margin_2x auto;
 
-	// some harder resets for these elements
-	a.page-numbers,
-	span.page-numbers {
-		display: block;
-		background: none;
-		padding: 0 0 0 0;
-		margin: 0 0 0 0;
-		border: none 0;
-		@extend %transition;
-		font-weight: normal;
-		width: 24px;
-		height: 24px;
-		line-height: 1;
-		border-radius: 50%;
-		border: 2px solid var(--wp--preset--color--black-1);
-		color: var(--wp--preset--color--black-1);
-		// ? a custom <span> wrapper is around both the prev/next and numbers
-		position: relative;
-		> span {
-			@include font-size(0.875rem);
-			line-height: 1;
-			@extend %absolutely_centered;
-		}
-		&.next,
-		&.prev {
-			border: 2px solid var(--wp--preset--color--black-1);
-			> span {
-				display: none;
-			}
-			@include nu_micon("\e5cb", after);
-			&.next:after {
-				content: "\e5cc";
-			}
-			&:after {
-				line-height: 1;
-				@extend %absolutely_centered;
-			}
-		}
 
-		&.current {
-			border: 2px solid var(--wp--preset--color--black-1);
-			background-color: black;
-			color: white;
-		}
-	}
 
-	> ul.page-numbers {
-		display: flex;
-		flex-flow: row nowrap;
-		justify-content: center;
-		align-items: center;
-		list-style-type: none;
-		padding: 0;
 
-		> li {
-			margin: 0 $half-margin 0 0;
-			&:last-child {
-				margin: 0;
-			}
 
-			> a {
-				&:hover,
-				&:focus,
-				&:active {
-					color: var(--wp--preset--color--black-1);
-					border-color: var(--wp--preset--color--black-1);
-					&.next,
-					&.prev {
-						border: 2px solid var(--wp--preset--color--black-1);
-					}
-				}
-			}
-		}
-	}
 
-	&:last-of-type {
-		margin: $margin_4x auto 0 auto;
-	}
-}
+
+
+
 
 #wpadminbar {
 	overflow: hidden;
