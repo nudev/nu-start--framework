@@ -9,28 +9,36 @@
 	 */
 	//
 	$(function () {
+		// 
+		// ? 	nav menu handler below
+		// 
+
 		var tr_nav = {
 			navlinks_el: $("header.header .navlinks"),
 			navicons_el: $("header.header .navicons"),
 
 			// Constructor
 			_init: function () {
-				// ! disabled because it makes you click twice --- but i think i needed it for keyboard nav
+
+				
+				// ? attach handler for sub-menus
 				$("header.header .navlinks").on(
 					"click",
 					"li.menu-item-has-children > a",
 					this._didClickParent
 				);
 
-				//
+				// ? attach handler for navicon / close (mobile)
 				$("header.header").on(
 					"click",
 					".navicons",
 					this._didClickNavIcons
 				);
 
+				// ? handle behavior when window resizes or scrolls
 				$(window).on("resize scroll", this._onResizeScroll);
 
+				// ? attach handler for revealing site-search
 				$("#nu__sitesearch").on(
 					"click",
 					"a, button",
@@ -45,6 +53,7 @@
 			},
 
 			_didClickParent: function (e) {
+
 				// ? stop the click from navigating (only toggles the menu open) --- for mobile
 				if ( window.innerWidth < 1025 && !$(e.target.offsetParent).hasClass("revealed")  ) {
 					e.preventDefault();

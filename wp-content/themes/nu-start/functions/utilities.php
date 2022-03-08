@@ -8,6 +8,22 @@
 //
 
 
+add_filter( 'walker_nav_menu_start_el', 'add_icons_to_submenu_parents',10,4);
+
+
+function add_icons_to_submenu_parents( $output, $item, $depth, $args ){
+	//Only add class to 'top level' items on the 'primary' menu.
+	if('header' == $args->theme_location ){
+		if (in_array("menu-item-has-children", $item->classes)) {
+			$output = str_replace('</a>', '<span class="sub-menu-toggle material-icons-outlined">expand_more</span></a>', $output);
+		}
+	}
+	return $output;
+}
+
+
+
+
 if( !function_exists('nu__get_nav_menu') ){
 
 	/**
@@ -25,7 +41,7 @@ if( !function_exists('nu__get_nav_menu') ){
 			// static $args:
 			'container' => 'nav'                   // all nav menus use nav.navlinks pattern
 			,'container_class' => 'navlinks'        // all nav menus use nav.navlinks pattern
-			,'link_before' => '<span>'              // wrap link text in <span> for accentUnderlines
+			,'link_before' => '<span class="link-text">'              // wrap link text in <span> for accentUnderlines
 			,'link_after' => '</span>'              // wrap link text in <span> for accentUnderlines
 			// dynamic $args:
 			,'echo' => $echo

@@ -1,6 +1,7 @@
-/*
-
-
+/* 
+?		Main Navigation Styles
+?		- header navigation styles and some css behavior here
+?		- 
 */
 
 // ? styles for all screen sizes
@@ -18,10 +19,11 @@ header.header {
 			transform: translateY(0%);
 		}
 	}
+
 	@mixin nav_item_is_active {
 		opacity: 1;
 		background-color: var(--wp--preset--color--white-2);
-		> span {
+		> .link-text {
 			&:before {
 				width: 100%;
 			}
@@ -61,6 +63,7 @@ header.header {
 		color: var(--wp--preset--color--black-2);
 		> span {
 			display: inline-block;
+			vertical-align: middle;
 		}
 		&:hover,
 		&:active {
@@ -68,18 +71,17 @@ header.header {
 		}
 	}
 
-	.site-search-icon {
-		line-height: 1.5;
-		// color: var(--wp--preset--color--black-2);
-	}
-
+	/* 
+	
+	
+	*/
 	// ? navlinks styling at any screen size
 	.navlinks {
 		background-color: var(--wp--preset--color--white-1);
 
 		.menu-item {
 			> a {
-				span {
+				.link-text {
 					@include accentUnderline();
 				}
 			}
@@ -90,7 +92,7 @@ header.header {
 			&.current_page_ancestor {
 				> a {
 					opacity: 1;
-					span:before {
+					.link-text:before {
 						width: $base-margin;
 					}
 				}
@@ -107,27 +109,17 @@ header.header {
 
 				// parent item link has chevron
 				> a {
-					> span {
-						padding-right: $half-margin;
-						@include nu_micon("\e5cf", after);
-						&:after {
-							position: absolute;
-							top: 50%;
-							right: -$half-margin;
-							line-height: 1;
-							transform: translateY(-50%) rotate(0deg);
-							@extend %transition;
-							font-size: 18px;
-						}
+					> .sub-menu-toggle {
+						font-size: 20px;
+						@extend %transition;
+						margin-left: $half-margin;
 					}
 				}
 				// * hover to reveal sub-menus (allow clicking parent to nav to that location)
 				&:hover,
 				&:active {
-					> a > span {
-						&::after {
-							transform: translateY(-50%) rotate(90deg);
-						}
+					> a > .sub-menu-toggle {
+						transform: rotate(90deg);
 					}
 				}
 			}
@@ -255,6 +247,7 @@ header.header {
 						transform: translateX(-100%);
 					}
 				}
+
 				> a {
 					padding: 2px $base-margin;
 					height: $headerHeight;
@@ -274,16 +267,23 @@ header.header {
 						}
 					}
 					// ? vertically center the text inside the click area
-					span {
+					> .sub-menu-toggle,
+					> .link-text {
 						position: relative;
 						top: 50%;
 						transform: translateY(-50%);
-						&:after {
-							right: -$base-margin;
-						}
+					}
+					> .link-text {
 						&:before {
 							display: none;
 						}
+					}
+				}
+
+				&:hover,
+				&:focus {
+					> a > .sub-menu-toggle {
+						transform: translateY(-50%) rotate(90deg);
 					}
 				}
 				&.current-menu-item,
@@ -335,7 +335,6 @@ header.header {
 // *
 // *
 @include media("<=medium") {
-
 	header.header {
 		// ? content container to match width with content/blocks on the page
 		> .container {
@@ -420,7 +419,7 @@ header.header {
 						1
 					);
 
-					> a > span:before {
+					> a > .link-text:before {
 						width: 100%;
 					}
 
@@ -432,9 +431,12 @@ header.header {
 				}
 			}
 		}
+
+		#nu__sitesearch + .navicons {
+			margin-right: $margin_2x;
+		}
 	}
 }
-
 
 // ? conditional body classes for <main> header offset
 body {
@@ -503,21 +505,22 @@ body {
 	}
 }
 
-
 body.is-dark-header {
 	header.header {
 		.logo {
-			&, svg path {
+			&,
+			svg path {
 				fill: var(--wp--preset--color--white-1);
 			}
 		}
-		.navlinks, & {
+		.navlinks,
+		& {
 			background-color: var(--wp--preset--color--black-1);
 			color: var(--wp--preset--color--white-1);
 		}
 		.navlinks > ul > li > a {
 			color: var(--wp--preset--color--white-1);
-			@include media("<=medium"){
+			@include media("<=medium") {
 				&:hover {
 					color: var(--wp--preset--color--black-1);
 				}

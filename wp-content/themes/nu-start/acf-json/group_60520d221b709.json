@@ -60,6 +60,47 @@
                     "acfe_textarea_code": 1,
                     "acfe_field_group_condition": 0,
                     "new_lines": ""
+                },
+                {
+                    "key": "field_62275e9b0d91c",
+                    "label": "Nav Menu Settings",
+                    "name": "nav_menu_settings",
+                    "type": "group",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "layout": "block",
+                    "acfe_seamless_style": 0,
+                    "acfe_group_modal": 0,
+                    "sub_fields": [
+                        {
+                            "key": "field_62275ebe0d91d",
+                            "label": "Submenus Reveal",
+                            "name": "submenus_reveal",
+                            "type": "button_group",
+                            "instructions": "By default sub-menu will reveal on hover, otherwise opening on click of the parent item. Clicking a parent item that has focus or is revealed will navigate to that link.\r\nAlternatively; enable Icon mode to restrict sub-menus to only opening when their dropdown icon is clicked; and always navigating when the link is clicked.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "icon": "Icon",
+                                "click": "Click"
+                            },
+                            "allow_null": 0,
+                            "default_value": "click",
+                            "layout": "horizontal",
+                            "return_format": "value"
+                        }
+                    ]
                 }
             ]
         }
@@ -81,15 +122,21 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
+    "show_in_rest": 0,
+    "acfe_display_title": "",
     "acfe_autosync": [
         "json"
     ],
     "acfe_form": 0,
-    "acfe_display_title": "",
-    "acfe_meta": "",
+    "acfe_meta": {
+        "acfcloneindex": {
+            "acfe_meta_key": "",
+            "acfe_meta_value": ""
+        }
+    },
     "acfe_note": "",
+    "modified": 1646747560,
     "acfe_categories": {
         "theme-settings-v1": "Theme Settings - V1"
-    },
-    "modified": 1630613090
+    }
 }
