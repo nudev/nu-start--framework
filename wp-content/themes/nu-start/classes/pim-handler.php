@@ -147,10 +147,39 @@ class PIM_Handler
 			wp_insert_term( $program_category, 'nu_programs-categories' );
 		}
 
-		// 
-		$working_template = $reusable_hero_string.'<!-- wp:acf/nu-program {"id":"block_6105ba18591e0","name":"acf/nu-program","align":"","mode":"preview"} /-->';
 
 
+		$acf_block = '<!-- wp:acf/nu-program {"id":"block_6105ba18591e0","name":"acf/nu-program","align":"","mode":"preview"} /-->';
+
+
+
+		$working_template = '
+			<!-- wp:group {"align":"full","className":"pattern\u002d\u002dhero-basic-breadcrumbs","epGeneratedClass":"eplus-wrapper"} -->
+			<div class="pattern--hero-basic-breadcrumbs wp-block-group alignfull eplus-wrapper"><!-- wp:cover {"dimRatio":0,"minHeight":420,"isDark":false,"align":"full","epGeneratedClass":"eplus-wrapper"} -->
+			<div class="wp-block-cover alignfull is-light eplus-wrapper" style="min-height:420px"><span aria-hidden="true" class="has-background-dim-0 wp-block-cover__gradient-background has-background-dim"></span><div class="wp-block-cover__inner-container"><!-- wp:group {"epGeneratedClass":"eplus-wrapper"} -->
+			<div class="wp-block-group eplus-wrapper"><!-- wp:paragraph {"epGeneratedClass":"eplus-wrapper"} -->
+			<p class=" eplus-wrapper">'.$program_category.'</p>
+			<!-- /wp:paragraph -->
+			
+			<!-- wp:post-title {"level":1,"epGeneratedClass":"eplus-wrapper"} /--></div>
+			<!-- /wp:group --></div></div>
+			<!-- /wp:cover -->
+			
+			<!-- wp:group {"layout":{"inherit":true},"epGeneratedClass":"eplus-wrapper"} -->
+			<div class="wp-block-group eplus-wrapper"><!-- wp:acf/breadcrumbs {"id":"block_61e98e692aabc","name":"acf/breadcrumbs","mode":"preview","align_text":"left"} /--></div>
+			<!-- /wp:group --></div>
+			<!-- /wp:group -->
+			
+			<!-- wp:image {"sizeSlug":"large","epGeneratedClass":"eplus-wrapper"} -->
+			<figure class="wp-block-image size-large eplus-wrapper"><img src="'.$programJSON['field_hero_image'][0]['uri'].'" alt=""/></figure>
+			<!-- /wp:image -->
+			
+			<!-- wp:paragraph {"epGeneratedClass":"eplus-wrapper"} -->
+			<p class=" eplus-wrapper">'.preg_replace('/~[[:cntrl:]]~/', '', $programJSON['body'][0]['value']).'</p>
+			<!-- /wp:paragraph -->
+			'.$acf_block.'
+		';
+		
 		// 
 		$postarr = [
 			'ID'			=> 		$post_ID,

@@ -132,6 +132,18 @@
     max-width: 80%;
   }
 }
+.pattern--is-basic-event-detail .event-type {
+  font-weight: 400;
+}
+.pattern--is-basic-event-detail .wp-block-group + .wp-block-buttons {
+  margin-top: 40px;
+}
+.pattern--is-basic-event-detail .event-info:last-child {
+  margin-top: 0;
+}
+.pattern--is-basic-event-detail .wp-block-post-title {
+  margin: 40px 0;
+}
 
 /* 
 	?		Pattern Category - Heroes

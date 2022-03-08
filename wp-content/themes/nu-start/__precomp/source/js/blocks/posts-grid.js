@@ -35,16 +35,33 @@
 			$(".js__filteringform select").each(function (index, element) {
 				let $placeholder = $(element).data("placeholder");
 
-				$(element).select2({
-					placeholder: $placeholder,
-					theme: "bootstrap4",
-					minimumResultsForSearch: -1, // disables search box - *only works for single-select element*
-					closeOnSelect: false,
-					templateSelection: function (data) {
-						console.log(data);
-						return data.text;
-					},
+				// $(element).select2({
+				// 	placeholder: $placeholder,
+				// 	theme: "bootstrap4",
+				// 	minimumResultsForSearch: -1, // disables search box - *only works for single-select element*
+				// 	closeOnSelect: false,
+				// 	templateSelection: function (data) {
+				// 		console.log(data);
+				// 		return data.text;
+				// 	},
+				// });
+
+				// initialize the Selectize control
+				var $select = $(element).selectize({
+					
 				});
+				// fetch the instance
+				var selectize = $select[0].selectize;
+
+				selectize.on('change', function(e){
+					
+					let string_of_chosen_options = '<span>'+selectize.items.join(', ')+'</span>';
+
+					$filterForm.find('.is-exposed-chosen-items').html(string_of_chosen_options);
+					
+				});
+
+				window.selectize = selectize;
 
 				// NOTE:
 				// 		For multi-select boxes, there is no distinct search control.

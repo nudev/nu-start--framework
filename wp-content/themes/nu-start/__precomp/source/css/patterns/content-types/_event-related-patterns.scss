@@ -11,4 +11,23 @@
 			}
 		}
 	}
+
+
+	.event-type {
+		font-weight: 400;
+	}
+	
+	.wp-block-group + .wp-block-buttons {
+		margin-top: ($margin_2x + $half-margin);
+	}
+	.event-info:last-child {
+		margin-top: 0;
+	}
+
+	.wp-block-post-title {
+		margin: ($margin_2x + $half-margin) 0;
+	}
+	
+	
+	
 }

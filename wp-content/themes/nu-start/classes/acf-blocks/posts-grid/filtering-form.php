@@ -62,6 +62,7 @@ class FilteringForm extends PostsGrid
 					<div class="submission">
 						<button type="submit" value="Filter" class="button is-style-default">Filter</button><a href="'.get_permalink(self::$post_id).'" class="is-style-outline button">Clear</a>
 					</div>
+					<div class="is-exposed-chosen-items"></div>
 				</form>
 			</div>
 		';

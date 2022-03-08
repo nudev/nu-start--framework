@@ -15,6 +15,12 @@
 			// ? because the date-time block is not actually loaded we need to pull the styles in directly
 			.date_time_container {
 				margin-top: $margin_2x;
+				.location,
+				.nu__datetime-times{
+					color: #545454;
+					font-size: var(--wp--preset--font-size--12-16) !important;
+					line-height: 16px;
+				}
 			}
 			.nu__datetime {
 				@include nu__date_time_block_styles();
@@ -34,9 +40,9 @@
 
 			// ? set to specific brand value for now
 			.post-title {
-				margin: 0;
+				margin: $base-margin 0 $half-margin 0;
 				font-weight: 700;
-				font-size: var(--wp--preset--font-size--20-28);
+				font-size: var(--wp--preset--font-size--16-24);
 			}
 
 			// ? set to specific brand value for now
@@ -62,6 +68,7 @@
 				letter-spacing: 2px;
 				// padding: $base-margin;
 				font-size: var(--wp--preset--font-size--12-16);
+				line-height: 16px;
 
 				// ? we have disabled this little tick
 				&:before {
@@ -83,6 +90,9 @@
 					flex-flow: column nowrap;
 					.grid-item-content {
 						flex: 1 0 auto;
+						display: flex;
+						flex-flow: column nowrap;
+						justify-content: space-between;
 					}
 				}
 			}
@@ -93,29 +103,25 @@
 			.grid-item-content + .nu__datetime {
 				@extend %transition;
 				position: absolute;
-				padding: $half-margin;
 				top: $half-margin;
 				right: $half-margin;
-				min-width: 96px;
 				color: white;
 				background-color: var(--wp--preset--color--black-2);
-				border-radius: 5px;
+				border-radius: 2px;
+				width: 80px;
+				height: 80px;
 
 				.nu__datetime-dates {
 					text-align: center;
 					&:before {
-						// display: block;
 						display: none;
-						position: relative;
-						top: 0;
-						left: 0;
-						margin: 0;
 					}
 				}
 
 				.day,
 				.month,
 				.year {
+					color: white;
 					display: inline-block;
 					font-weight: 300;
 					line-height: 1;
@@ -125,10 +131,10 @@
 				}
 				.day {
 					font-size: var(--wp--preset--font-size--36-40);
-					margin: 4px 0;
 				}
 				.year {
 					font-size: var(--wp--preset--font-size--12-16);
+					display: none;
 				}
 			}
 			// ? end of happens-on 'badge'
@@ -155,7 +161,7 @@
 			}
 
 			.grid-item-content {
-				padding: $base-margin $margin_2x;
+				padding: ($base-margin + $half-margin) $margin_2x;
 				@include flush_inner_content_vertical;
 			}
 		}

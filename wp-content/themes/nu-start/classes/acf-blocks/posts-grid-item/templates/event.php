@@ -52,8 +52,10 @@ $guides['grid-item-event'] = '
     <a class="contains-clickable-area" href="%7$s"'.$the_title_attribute.' %10$s>
       %2$s
       <div class="grid-item-content">
-        %11$s
-        %4$s
+        <div>
+          %11$s
+          %4$s
+        </div>
         <div class="date_time_container">
           %3$s
           %6$s

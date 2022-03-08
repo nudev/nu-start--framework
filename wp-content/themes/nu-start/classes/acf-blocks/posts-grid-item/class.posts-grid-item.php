@@ -51,7 +51,7 @@ class PostsGrid_Item
 		}
 
 		// ? the fully formatted post title markup
-		$the_post_title = '<p class="post-title has-24-32-font-size"><span>'.get_the_title( ).'</span></p>';
+		$the_post_title = '<p class="post-title"><span>'.get_the_title( ).'</span></p>';
 
 		// ? either use a custom url redirect via a known custom field; or just the normal get_permalink
 		$determined_permalink = !empty($fields['custom_permalink_redirect']) ? $fields['custom_permalink_redirect'] : esc_url( get_the_permalink( ) );

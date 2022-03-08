@@ -8,6 +8,15 @@
 @import "./nu-select2";
 
 .filteringform {
+
+	.is-exposed-chosen-items {
+		position: absolute;
+		top: 100%;
+		left: 0;
+		width: 100%;
+	}
+	
+	
 	+ .nu__grid {
 		margin-top: $margin_4x;
 	}

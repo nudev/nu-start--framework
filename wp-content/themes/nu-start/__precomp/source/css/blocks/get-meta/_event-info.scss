@@ -8,8 +8,8 @@
 		text-transform: uppercase;
 		letter-spacing: 2px;
 		// padding: $base-margin;
-		font-size: var(--wp--preset--font-size--12-16);
-
+		font-size: var(--wp--preset--font-size--16-24);
+		line-height: 16px;
 		// ? we have disabled this little tick
 		&:before {
 			content: "";
@@ -22,12 +22,16 @@
 			display: none; // ! disabled for now
 		}
 	}
+	
 
 	p.location {
 		margin: 0;
 		margin-top: $half-margin;
 		font-weight: 400;
+		// font-size: var(--wp--preset--font-size--16-24);
+		color: #545454;
 		font-size: var(--wp--preset--font-size--16-24);
+		line-height: 16px;
 		span {
 			display: inline-block;
 			vertical-align: middle;

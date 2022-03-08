@@ -264,9 +264,19 @@ class SetupTheme
 			,true
 		);
 
+		// register select2 core scripts
+		wp_register_script(
+			'selectize'
+			, get_template_directory_uri() . '/__precomp/vendor/js/selectize.min.js'
+			,array()
+			,false
+			,true
+		);
+
 		self::localize_developer_panel();
 		
 		wp_enqueue_script( 'select2' );
+		wp_enqueue_script( 'selectize' );
 		wp_enqueue_script( 'magnific' );
 		wp_enqueue_script( 'nav' );
 
@@ -319,6 +329,12 @@ class SetupTheme
 			'magnific'
 			, get_template_directory_uri() . '/__precomp/vendor/css/magnific-popup.css'
 		);
+
+		// ? register selectize boostrap 5 stylesheet
+		wp_register_style(
+			'selectize'
+			, get_template_directory_uri() . '/__precomp/vendor/css/selectize.bootstrap5.css'
+		);
 		// register select2 (core styles)
 		wp_register_style(
 			'select2'
@@ -349,6 +365,7 @@ class SetupTheme
 
 		// enqueue the registered styles
 		wp_enqueue_style( 'magnific' );
+		wp_enqueue_style( 'selectize' );
 		wp_enqueue_style( 'select2' );
 		wp_enqueue_style( 'select2-theme' );
 		wp_enqueue_style( 'main' );
