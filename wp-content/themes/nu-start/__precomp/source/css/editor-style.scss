@@ -13,3 +13,46 @@
 @import './blocks';
 
 @import './vendors/override-editors-plus.scss';
+
+
+
+// * enable RFS for the existing theme.json font sizes
+// * RFS will auto-convert these to REM (16px === 1rem && 36px === 2rem)
+:root,
+body {
+	@include rfs(128px, --wp--preset--font-size--128-128);
+	@include rfs(96px, --wp--preset--font-size--96-96);
+	@include rfs(72px, --wp--preset--font-size--72-72);
+	@include rfs(60px, --wp--preset--font-size--60-60);
+	@include rfs(48px, --wp--preset--font-size--48-48);
+	@include rfs(36px, --wp--preset--font-size--36-40);
+	@include rfs(30px, --wp--preset--font-size--30-36);
+	@include rfs(24px, --wp--preset--font-size--24-32);
+	@include rfs(20px, --wp--preset--font-size--20-28);
+	@include rfs(18px, --wp--preset--font-size--18-28);
+	@include rfs(16px, --wp--preset--font-size--16-24);
+	@include rfs(14px, --wp--preset--font-size--14-20);
+	@include rfs(12px, --wp--preset--font-size--12-16);
+}
+
+$fz_lh_pairs: (
+	"128": "128",
+	"96": "96",
+	"72": "72",
+	"60": "60",
+	"48": "48",
+	"36": "40",
+	"30": "36",
+	"24": "32",
+	"20": "28",
+	"18": "28",
+	"16": "24",
+	"14": "20",
+	"12": "16",
+);
+
+@each $fz, $lh in $fz_lh_pairs {
+	.has-#{$fz}-#{$lh}-font-size {
+		@include rfs(#{$lh}px, line-height);
+	}
+}
