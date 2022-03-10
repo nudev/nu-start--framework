@@ -1,117 +1,117 @@
 <?php
 /**
+ * 		utility functions 
+ * 		- 
+ * 
  *
  */
 //
 
 
+add_filter( 'walker_nav_menu_start_el', 'add_icons_to_submenu_parents',10,4);
 
-/**
- * 	Return or echo a nav menu from a location or by id
- *
- * @param boolean $echo
- * @param [type] $location
- * @param [type] $menu
- * @return void
- */
-function nu__getMenu($location = '', $echo = false, $menu = ''){
 
-	// dynamically set args
-	$args = array(
-		// static $args:
-		'container' => 'nav'                   // all nav menus use nav.navlinks pattern
-		,'container_class' => 'navlinks'        // all nav menus use nav.navlinks pattern
-		,'link_before' => '<span>'              // wrap link text in <span> for accentUnderlines
-		,'link_after' => '</span>'              // wrap link text in <span> for accentUnderlines
-		// dynamic $args:
-		,'echo' => $echo
-		,'theme_location' => $location
-		,'menu' => $menu
-	);
-
-	// return the menu call
-	return wp_nav_menu($args);
+function add_icons_to_submenu_parents( $output, $item, $depth, $args ){
+	//Only add class to 'top level' items on the 'primary' menu.
+	if( 'header' == $args->theme_location || 'utility' == $args->theme_location ){
+		if (in_array("menu-item-has-children", $item->classes)) {
+			$output = str_replace('</a>', '<span class="sub-menu-toggle material-icons-outlined">expand_more</span></a>', $output);
+		}
+	}
+	return $output;
 }
 
 
 
 
+if( !function_exists('nu__get_nav_menu') ){
 
-
-function posts_orderby_lastname ($orderby_statement) 
-{
-  $orderby_statement = "RIGHT(post_title, LOCATE(' ', REVERSE(post_title)) - 1) ASC";
-	return $orderby_statement;
-}
-
-function get_featured_tagstring($post){
-
-	$post = get_post($post);
-
+	/**
+	 * 	Return or echo a nav menu from a location or by id
+	 *
+	 * @param boolean $echo
+	 * @param [type] $location
+	 * @param [type] $menu
+	 * @return void
+	 */
+	function nu__get_nav_menu($location = '', $echo = false, $menu = ''){
 	
-	$featuredTag = '';
-	$catString = '';
-	$tagString = '';
-
-	if( $post->post_type == 'post' ){
-
-		$theseCatsArray = get_the_terms( $post, 'category' );
-		$theseTagsArray = get_the_terms( $post, 'post_tag' );
-
-	} else {
-
-		$theseCatsArray = get_the_terms( $post, $post->post_type . '-categories' );
-		$theseTagsArray = get_the_terms( $post, $post->post_type . '-tags' );
-
-	}
-
-
-
-	if( !empty($theseCatsArray) && !is_wp_error( ($theseCatsArray) ) ){
-		$diffOut = [];
-		$theseCatsArray = array_diff(wp_list_pluck($theseCatsArray, 'name'), $diffOut);
-		$catString = join(' - ', $theseCatsArray);
-	}
-
-	if( !empty($theseTagsArray) && !is_wp_error( ($theseTagsArray) ) ){
-		$tagString = join(' - ', wp_list_pluck($theseTagsArray, 'name'));
-	}
-
-	if( !empty($catString) || !empty($tagString) ){
-		$featuredTag = sprintf(
-			'%1$s%2$s%3$s'
-			,!empty($tagString) ? '<span class="tags">'.$tagString.'</span>' : ''
-			,!empty($tagString) && !empty($catString) ? ' | ' : ''
-			,!empty($catString) ? '<span class="cats">'.$catString.'</span>' : ''
+		// dynamically set args
+		$args = array(
+			// static $args:
+			'container' => 'nav'                   // all nav menus use nav.navlinks pattern
+			,'container_class' => 'navlinks'        // all nav menus use nav.navlinks pattern
+			,'link_before' => '<span class="link-text">'              // wrap link text in <span> for accentUnderlines
+			,'link_after' => '</span>'              // wrap link text in <span> for accentUnderlines
+			// dynamic $args:
+			,'echo' => $echo
+			,'theme_location' => $location
+			,'menu' => $menu
 		);
+	
+		// return the menu call
+		return wp_nav_menu($args);
 	}
+}
 
-	return '<p class="featured-tags has-smaller-font-size">'.$featuredTag.'</p>';
+
+if( function_exists('nu__getGoogleMapAddress') ){
+	/**
+	 * Undocumented function
+	 *
+	 * @param [type] $location
+	 * @return void
+	 */
+	function nu__getGoogleMapAddress( $location ){
+		if( $location && !empty($location['address'])) {
+			$return = '';
+			$guides['address'] = '
+				<a href="https://maps.google.com/maps/search/'.$location['address'].'" title="opens location in google maps" target="_blank">%1$s%2$s%3$s%4$s%5$s%6$s</a>
+			';
+	
+			$return .= sprintf(
+				$guides['address']
+				,!empty($location['street_number']) ? $location['street_number'] : ''
+				,!empty($location['street_name']) ? ' '.trim($location['street_name']) : ''
+				,!empty($location['city']) ? '<br />'.$location['city'] : ''
+				,!empty($location['state']) ? ', '.$location['state'] : ''
+				,!empty($location['post_code']) ? ' '.$location['post_code'] : ''
+				// ,!empty($location['country']) ? '' : '' // ? this tends to be disabled but ill leave it here
+				,'' // ? this is just kind of placeholding a nothing for the country code (may be needed)
+			);
+	
+			return $return;
+		}
+	}
 }
 
 
 
-function nu__getGoogleMapAddress( $location ){
 
+if( !function_exists('nu__get_site_logo') ){
 
-	if( $location && !empty($location['address'])) {
-
+	/**
+	 * Undocumented function
+	 *
+	 * @return void
+	 */
+	function nu__get_site_logo(){
 		$return = '';
-		$guides['address'] = '
-			<a href="https://maps.google.com/maps/search/'.$location['address'].'" title="opens location in google maps" target="_blank">%1$s%2$s%3$s%4$s%5$s%6$s</a>
+		$guides = [];
+		$guides['site-logo'] = '
+			<a href="%1$s" title="Visit %2$s" class="logo%3$s">
+				%4$s
+			</a>
 		';
-
-		$return .= sprintf(
-			$guides['address']
-			,!empty($location['street_number']) ? $location['street_number'] : ''
-			,!empty($location['street_name']) ? ' '.trim($location['street_name']) : ''
-			,!empty($location['city']) ? '<br />'.$location['city'] : ''
-			,!empty($location['state']) ? ', '.$location['state'] : ''
-			,!empty($location['post_code']) ? ' '.$location['post_code'] : ''
-			// ,!empty($location['country']) ? '' : '' // ? this tends to be disabled but ill leave it here
-			,'' // ? this is just kind of placeholding a nothing for the country code (may be needed)
+	
+		$return = sprintf(
+			$guides['site-logo'],
+			site_url(),
+			get_bloginfo( 'name' ),
+			!empty(NU__Starter::$themeSettings['header']['site_logo']) ? ' logo--image' : ' logo--text',
+			!empty(NU__Starter::$themeSettings['header']['site_logo']) ? NU__Starter::$themeSettings['header']['site_logo'] : get_bloginfo( 'name' )
 		);
-
+	
 		return $return;
 	}
 
@@ -119,56 +119,42 @@ function nu__getGoogleMapAddress( $location ){
 
 
 
-/**
- *	get either a text or image logo for use in the header and/or footer
- *
- * @return string
- */
-function nu__getLogo(){
 
-	return !empty(NU__Starter::$themeSettings['header']['site_logo']) ? '<a href="'.site_url().'" title="Visit '.get_bloginfo('name').'" class="logo logo--image">'.NU__Starter::$themeSettings['header']['site_logo'].'</a>' : '<a href="'.site_url().'" title="Visit '.get_bloginfo('name').'" class="logo logo--text"><span>'.get_bloginfo('name').'</span></a>';
+
+if( !function_exists('nu__get_pagination') ){
+
+	/**
+	 * Wrapper function for paginate_links for consistency
+	 *
+	 * @param string $custom_query
+	 * @return void
+	 */
+	function nu__get_pagination( $custom_query = '' ){
+
+		global $wp_query;
+
+		if( !empty($custom_query) ){
+			$wp_query = $custom_query;
+		}
+
+		$big = 999999; // need an unlikely integer
+		$pagination = paginate_links(array(
+			'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+			'format' => '?paged=%#%',
+			'current' => max( 1, get_query_var('paged') ),
+			'total' => $wp_query->max_num_pages,
+			'type' => 'list',
+			'prev_text' => '<span class="prev"><</span>',
+			'next_text' => '<span class="next">></span>',
+			'before_page_number' => '<span class="pagenum">',
+			'after_page_number' => '</span>',
+			'mid_size' => 5
+		));
+
+		return $pagination;
+	}
 
 }
-
-
-
-
-
-// Pagination for paged posts, Page 1, Page 2, Page 3, with Next and Previous Links, No plugin
-function nu__do_pagination(){
-	global $wp_query;
-	$big = 999999999;
-	echo paginate_links(array(
-		'base' => str_replace($big, '%#%', get_pagenum_link($big)),
-		'format' => '?paged=%#%',
-		'current' => max(1, get_query_var('paged')),
-		'total' => $wp_query->max_num_pages,
-		'prev_text' => '<span><</span>',
-		'next_text' => '<span>></span>',
-		'before_page_number' => '<span>',
-		'after_page_number' => '</span>',
-	));
-	wp_reset_postdata();
-}
-
-
-
-// ? this is a hacky solution to pagination not working for secondary loops and/or on the component-demo pages
-add_action( 'template_redirect', function() {
-    if ( is_singular( 'nu_component-demos' ) ) {
-        global $wp_query;
-        $page = ( int ) $wp_query->get( 'page' );
-        if ( $page > 1 ) {
-            // convert 'page' to 'paged'
-            $wp_query->set( 'page', 1 );
-            $wp_query->set( 'paged', $page );
-        }
-        // prevent redirect
-        remove_action( 'template_redirect', 'redirect_canonical' );
-    }
-}, 0 ); // on priority 0 to remove 'redirect_canonical' added with priority 10
-
-
 
 //
 ?>

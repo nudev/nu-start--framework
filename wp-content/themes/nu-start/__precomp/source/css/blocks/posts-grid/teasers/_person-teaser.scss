@@ -1,0 +1,18 @@
+
+.grid-item.nu_people {
+	// remove default margins from name
+	.full-name {
+		margin: 0;
+	}
+	// pad the content area
+	.grid-item-content {
+		padding: $margin_2x;
+		padding-bottom: $margin_3x + $half-margin;
+	}
+	// custom margin push title down from name
+	.primary-title {
+		margin-top: $base-margin;
+		font-size: var(--wp--preset--font-size--14-20);
+		font-weight: 300;
+	}
+}

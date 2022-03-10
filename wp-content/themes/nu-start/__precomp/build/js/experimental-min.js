@@ -1,0 +1,1 @@
+!function($,e,n){$((function(){console.log("this is an experimental template and script file");var e=new ScrollMagic.Controller;console.log(e),new ScrollMagic.Scene({duration:100,offset:50}).setPin("#my-sticky-element").addTo(e)}))}(window.jQuery,window,document);

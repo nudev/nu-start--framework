@@ -7,11 +7,19 @@
 // include rfs and other library stuff
 @import './library';
 
-// include frontend only styles
-@import './frontend';
+
+@import './partials';
 
 // include styles for blocks
 @import './gutenberg';
+
+@import './blocks';
+
+// include frontend only styles
+@import './frontend';
+
+// import template-specific styles (may want to not do this)
+@import './templates';
 
 @import './vendors';
 

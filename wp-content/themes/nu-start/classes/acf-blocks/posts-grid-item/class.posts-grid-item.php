@@ -51,7 +51,7 @@ class PostsGrid_Item
 		}
 
 		// ? the fully formatted post title markup
-		$the_post_title = '<p class="post-title has-24-32-font-size"><span>'.get_the_title( ).'</span></p>';
+		$the_post_title = '<h2 class="post-title"><span>'.get_the_title( ).'</span></h2>';
 
 		// ? either use a custom url redirect via a known custom field; or just the normal get_permalink
 		$determined_permalink = !empty($fields['custom_permalink_redirect']) ? $fields['custom_permalink_redirect'] : esc_url( get_the_permalink( ) );
@@ -73,26 +73,20 @@ class PostsGrid_Item
 		$return = '';
 
 		switch ($post_type) {
-			case 'nu_initiatives':
-				include( get_template_directory( ) . '/classes/acf-blocks/posts-grid-item/templates/initiative.php' );
-				break;
-			case 'nu_profiles':
-				include( get_template_directory( ) . '/classes/acf-blocks/posts-grid-item/templates/profiles.php' );
-				break;
-			case 'nu_programs':
-				include( get_template_directory( ) . '/classes/acf-blocks/posts-grid-item/templates/program.php' );
-				break;
 			case 'nu_people':
-				$person_metadata = !empty( $fields['person_metadata'] ) ? $fields['person_metadata'] : '';
-				include( get_template_directory( ) . '/classes/acf-blocks/posts-grid-item/templates/person.php' );
+					$person_metadata = !empty( $fields['person_metadata'] ) ? $fields['person_metadata'] : '';
+					include( get_template_directory( ) . '/classes/acf-blocks/posts-grid-item/templates/person.php' );
 				break;
 			case 'nu_events':
-				include( get_template_directory( ) . '/classes/acf-blocks/posts-grid-item/templates/event.php' );
+					$event_item_metadata = !empty( $fields['event_item_metadata'] ) ? $fields['event_item_metadata'] : '';
+					include( get_template_directory( ) . '/classes/acf-blocks/posts-grid-item/templates/event.php' );
 				break;
 			case 'nu_news':
 				include( get_template_directory( ) . '/classes/acf-blocks/posts-grid-item/templates/news-item.php' );
 				break;
-			
+			case 'nu_programs':
+				include( get_template_directory( ) . '/classes/acf-blocks/posts-grid-item/templates/program.php' );
+				break;
 			default:
 				$guides['grid-item-default'] = '
 					<li class="is-default grid-item%1$s%7$s%8$s">
@@ -117,7 +111,7 @@ class PostsGrid_Item
 					$orientationClass,
 					$maybe_target
 				);
-				break;
+			break;
 		}
 
 		return $return;

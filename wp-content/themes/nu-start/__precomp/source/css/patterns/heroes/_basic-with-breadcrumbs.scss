@@ -1,0 +1,22 @@
+/* 
+	?		Pattern Category - Heroes
+*/
+
+// ? basic hero with breadcrumbs (scaffold)
+.pattern--hero-basic-breadcrumbs {
+
+	// 
+	> .wp-block-cover {
+		border-bottom: 1px solid var(--wp--preset--color--white-5);
+	}
+
+	// 
+	> .wp-block-group {
+		margin: 0;
+	}
+	
+	// 
+	.nu__breadcrumbs {
+		padding: $base-margin 0;
+	}
+}

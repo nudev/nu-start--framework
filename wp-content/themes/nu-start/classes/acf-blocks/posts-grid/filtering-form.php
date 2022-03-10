@@ -18,6 +18,9 @@ class FilteringForm extends PostsGrid
 
 	public static function _handle_get_query(){
 
+		if( is_admin() || empty($_GET) ){
+			return;
+		}
 
 		$all_filtered_terms = [];
 
@@ -38,22 +41,64 @@ class FilteringForm extends PostsGrid
 	}
 	
 
-	public static function _build_form_return_string(){
+	public static function _build_form_return_string($fields = ''){
 
-			// ? the pattern is the pattern...
-			$return = '';
-			$guides = [];
-			$guides['form'] = '
+
+		// ? the pattern is the pattern...
+		$return = '';
+		$guides = [];
+		$guides['form'] = '
 			<div class="filteringform js__filteringform">
+				<div class="filtering-navicon">
+					<span>Filter Results:</span>
+					<span class="material-icons-outlined icon--menu">menu</span>
+					<span class="material-icons-outlined icon--close">close</span>
+				</div>
 				<form name="postsgrid_filter-'.self::$block['id'].'">
 					%1$s
+					<div class="filters">
+						%2$s
+					</div>
 					<div class="submission">
 						<button type="submit" value="Filter" class="button is-style-default">Filter</button><a href="'.get_permalink(self::$post_id).'" class="is-style-outline button">Clear</a>
 					</div>
 				</form>
 			</div>
-			';
-			// ? sprintf guides above
+		';
+		$guides['chronological-buttons'] = '
+			<div class="is-events-chronological-buttons">
+				%1$s
+				%2$s
+			</div>
+		';
+
+
+		
+		$chronological_buttons = '';
+		if( !empty($fields) && $fields['autoselect_posts']['post_type'] == 'nu_events' ){
+
+			
+			$if_checked_archived = '';
+			$if_checked_upcoming = '';
+			if( !empty($_GET['chronological']) ){
+
+				$if_checked_archived = $_GET['chronological'] == 'archived' ? ' checked="checked"' : '';
+				$if_checked_upcoming = $_GET['chronological'] == 'upcoming' ? ' checked="checked"' : '';
+				
+			} else {
+				$if_checked_archived = $fields['autoselect_posts']['chronological'] == 'archived' ? ' checked="checked"' : '';
+				$if_checked_upcoming = $fields['autoselect_posts']['chronological'] == 'upcoming' ? ' checked="checked"' : '';
+				
+			}
+
+			$chronological_buttons = sprintf(
+				$guides['chronological-buttons'],
+				'<input value="upcoming"'.$if_checked_upcoming.' id="upcoming" name="chronological" type="radio"></input><label for="upcoming">Upcoming<span class="material-icons-outlined">done</span></label>',
+				'<input value="archived"'.$if_checked_archived.' id="archived" name="chronological" type="radio"></input><label for="archived">Archived<span class="material-icons-outlined">done</span></label>',
+			);
+			
+		}
+
 
 		// 
 		$taxonomy_filters_return_string = '';
@@ -65,10 +110,12 @@ class FilteringForm extends PostsGrid
 
 		$taxonomy_filters_return_string = self::_return_the_taxonomy_filters( self::$the_associated_taxonomies );
 
+
 		// 
 		$return = sprintf(
 			$guides['form'],
-			'<div class="filters">' . $taxonomy_filters_return_string . '</div>',
+			$chronological_buttons, // maybe chronological if events
+			$taxonomy_filters_return_string,
 		);
 		
 		// ? hoist the final return string for the filteringform (could be filtered here!)
@@ -97,14 +144,19 @@ class FilteringForm extends PostsGrid
 
 
 	private static function _return_the_taxonomy_filters( $taxonomies ){
+
+		if( is_admin() ){
+			return;
+		}
+		
 		// ? the pattern is the pattern...
 		$return = '';
 		$guides = [];
 		$guides['option'] = '<option value="%2$s"%3$s>%1$s</option>';
 		$guides['taxonomy-filter'] = '
-		<div class="filters-filter" data-taxonomy="%1$s">
+		<div class="filters-filter is-terms-select" data-taxonomy="%1$s">
 			<label for="%1$s">%2$s</label>
-			<select name="%1$s[]" data-placeholder="%2$s" multiple="multiple">
+			<select name="%1$s[]" data-placeholder="Filter by %2$s" multiple="multiple">
 				%3$s
 			</select>
 		</div>
@@ -130,7 +182,7 @@ class FilteringForm extends PostsGrid
 					$guides['option'],
 					$term_object->name,
 					$term_object->slug,
-					in_array($term_object->term_id, self::$all_filtered_terms) ? ' selected="selected"' : ''
+					in_array($term_object->term_id, (array) self::$all_filtered_terms) ? ' selected="selected"' : ''
 				);
 				
 			}

@@ -110,7 +110,15 @@
         "json"
     ],
     "acfe_form": 0,
-    "acfe_meta": "",
+    "acfe_meta": {
+        "acfcloneindex": {
+            "acfe_meta_key": "",
+            "acfe_meta_value": ""
+        }
+    },
     "acfe_note": "",
-    "modified": 1643395562
+    "modified": 1645627543,
+    "acfe_categories": {
+        "custom-post-metadata": "Custom Post Metadata"
+    }
 }

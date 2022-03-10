@@ -1,0 +1,105 @@
+/* 
+
+	Posts-Grid Block Stylesheet
+	
+*/
+
+// ? import vars,mixins,etc...
+@import "../library/";
+
+@import "./posts-grid/filters/filtering";
+
+// ? scope and begin styling...
+.acf-block.posts-grid {
+	margin-top: $margin_2x;
+	margin-bottom: $base-margin;
+
+	// ? handle adjusting base styles of contained elements
+	a.contains-clickable-area:after,
+	img {
+		@extend %transition;
+	}
+
+	ul {
+		list-style: none;
+		list-style-type: none;
+		padding: 0;
+	}
+
+	a.contains-clickable-area {
+		@include nu__boxshadow(0);
+		display: block;
+		text-decoration: none;
+		color: currentColor;
+		border: none;
+		&:hover,
+		&:focus {
+			border: none;
+			img {
+				transform: scale(1.2);
+			}
+
+			@include nu__boxshadow(5);
+		}
+	}
+
+	// ?
+	.nu__grid {
+		@include nu__responsive_grid_layout();
+	}
+
+	//
+	.grid-item {
+		@include nu__grid_item_cover_ratios();
+		@include nu__grid_item_orientation();
+		background-color: var(--wp--preset--color--white-1);
+
+		// is-horizontal modifier
+		&.has-layout-horizontal {
+			> .contains-clickable-area {
+				display: flex;
+				flex-flow: row nowrap;
+				figure {
+					flex: 0 1 220px;
+				}
+			}
+		}
+	}
+
+	.grid-item-content {
+		padding: $margin_2x;
+	}
+
+	.post-title {
+		font-size: var(--wp--preset--font-size--20-28);
+		font-weight: 300;
+	}
+}
+
+// ? this is the block editor equivalent of body.wp-admin
+// ? styles for just the editor go here for now; rather than in another set of files
+.is-root-container.block-editor-block-list__layout {
+
+	// disable posts grid items that are clickable areas from working in the CMS
+	.grid-item a.contains-clickable-area {
+		pointer-events: none;
+	}
+}
+
+@import "./posts-grid/teasers/events-teaser";
+@import "./posts-grid/teasers/person-teaser";
+@import "./posts-grid/teasers/news-teaser";
+@import "./posts-grid/teasers/page-teaser";
+@import "./posts-grid/teasers/projects-teaser";
+
+li.grid-item.broken {
+	&:only-child {
+		flex: 1 0 100% !important;
+		width: 100% !important;
+		p {
+			text-align: center;
+			padding: $base-margin;
+			font-style: italic;
+		}
+	}
+}

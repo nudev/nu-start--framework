@@ -1,0 +1,170 @@
+/* 
+
+*/
+
+// ? traversal and/or specificity matching
+.posts-grid {
+	// ? traversal and/or specificity matching
+	.nu__grid {
+		// ? set to specific brand value for now
+		> ul {
+			grid-row-gap: $margin_4x - $half-margin !important;
+		}
+
+		.grid-item.nu_events {
+			// ? because the date-time block is not actually loaded we need to pull the styles in directly
+			.date_time_container {
+				margin-top: $margin_2x;
+				.location,
+				.nu__datetime-times{
+					color: #545454;
+					font-size: var(--wp--preset--font-size--12-16) !important;
+					line-height: 16px;
+				}
+			}
+			.nu__datetime {
+				@include nu__date_time_block_styles();
+			}
+
+			// ? very-wide image
+			figure {
+				@include aspect-ratio(16, 9);
+				img {
+					position: absolute;
+					width: 100%;
+					height: 100%;
+					top: 0;
+					left: 0;
+				}
+			}
+
+			// ? set to specific brand value for now
+			.post-title {
+				margin: $base-margin 0 $half-margin 0;
+				font-weight: 700;
+				font-size: var(--wp--preset--font-size--16-24);
+				line-height: 24px;
+			}
+
+			// ? set to specific brand value for now
+			.location {
+				margin: 0;
+				margin-top: $half-margin;
+				font-weight: 400;
+				font-size: var(--wp--preset--font-size--16-24);
+				span {
+					display: inline-block;
+					vertical-align: middle;
+					&.material-icons-outlined {
+						margin-right: $half-margin;
+						font-size: 16px;
+						line-height: 1;
+					}
+				}
+			}
+
+			.event-type {
+				width: 100%;
+				text-transform: uppercase;
+				letter-spacing: 2px;
+				// padding: $base-margin;
+				font-size: var(--wp--preset--font-size--12-16);
+				line-height: 16px;
+
+				// ? we have disabled this little tick
+				&:before {
+					content: "";
+					display: inline-block;
+					border: 1px solid var(--wp--preset--color--black-1);
+					border-radius: 50%;
+					width: 8px;
+					height: 8px;
+					margin: 0 $base-margin 0 0;
+					display: none; // ! disabled for now
+				}
+			}
+
+			&.has-layout-vertical {
+				.contains-clickable-area {
+					height: 100%;
+					display: flex;
+					flex-flow: column nowrap;
+					.grid-item-content {
+						flex: 1 0 auto;
+						display: flex;
+						flex-flow: column nowrap;
+						justify-content: space-between;
+					}
+				}
+			}
+			&.has-layout-horizontal {
+			}
+
+			// ? happens-on 'badge'
+			.grid-item-content + .nu__datetime {
+				@extend %transition;
+				position: absolute;
+				top: $half-margin;
+				right: $half-margin;
+				color: white;
+				background-color: var(--wp--preset--color--black-2);
+				border-radius: 2px;
+				width: 80px;
+				height: 80px;
+
+				.nu__datetime-dates {
+					text-align: center;
+					&:before {
+						display: none;
+					}
+				}
+
+				.day,
+				.month,
+				.year {
+					color: white;
+					display: inline-block;
+					font-weight: 300;
+					line-height: 1;
+				}
+				.month {
+					font-size: var(--wp--preset--font-size--16-24);
+				}
+				.day {
+					font-size: var(--wp--preset--font-size--36-40);
+				}
+				.year {
+					font-size: var(--wp--preset--font-size--12-16);
+					display: none;
+				}
+			}
+			// ? end of happens-on 'badge'
+
+			> a.contains-clickable-area {
+				background-color: #fafafa;
+
+				// ! disable the tick for now
+				@include nu_micon("\e5cc", after);
+				&:after {
+					position: absolute;
+					bottom: $half-margin;
+					right: $half-margin;
+					line-height: 1;
+					display: none;
+				}
+
+				&:hover,
+				&:focus {
+					&:after {
+						color: var(--wp--preset--color--red-3);
+					}
+				}
+			}
+
+			.grid-item-content {
+				padding: ($base-margin + $half-margin) $margin_2x;
+				@include flush_inner_content_vertical;
+			}
+		}
+	}
+}

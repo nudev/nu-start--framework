@@ -1,0 +1,45 @@
+/* 
+
+*/
+
+.acf-block.event-info {
+	.event-type {
+		width: 100%;
+		text-transform: uppercase;
+		letter-spacing: 2px;
+		// padding: $base-margin;
+		font-size: var(--wp--preset--font-size--16-24);
+		line-height: 16px;
+		// ? we have disabled this little tick
+		&:before {
+			content: "";
+			display: inline-block;
+			border: 1px solid var(--wp--preset--color--black-1);
+			border-radius: 50%;
+			width: 8px;
+			height: 8px;
+			margin: 0 $base-margin 0 0;
+			display: none; // ! disabled for now
+		}
+	}
+	
+
+	p.location {
+		margin: 0;
+		margin-top: $half-margin;
+		font-weight: 400;
+		// font-size: var(--wp--preset--font-size--16-24);
+		color: #545454;
+		font-size: var(--wp--preset--font-size--16-24);
+		line-height: 16px;
+		span {
+			display: inline-block;
+			vertical-align: middle;
+			&.material-icons-outlined {
+				margin-right: $half-margin;
+				font-size: 16px;
+				line-height: 1;
+			}
+		}
+	}
+}

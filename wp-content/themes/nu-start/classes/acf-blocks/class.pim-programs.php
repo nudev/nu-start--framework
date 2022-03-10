@@ -242,6 +242,16 @@ class PIM_Program
 		// * clean up the data array some (maybe not needed tbh)
 		$data = self::get_program_data($programID);
 		$data = self::array_remove_empty($data);
+		self::do_build_sections($programID, $data);
+
+		unset($data['field_curriculum']);
+		var_dump($data);
+
+	}
+
+
+	private static function do_build_sections( $programID, $data ){
+
 
 		self::$formattedTitle = $data['field_formatted_title'][0]['value'];
 
@@ -353,12 +363,12 @@ class PIM_Program
 		self::$marketo_forms['field_marketo_form_three'] = $data['field_marketo_form_three'];
 		self::$marketo_forms['field_marketo_form_four'] = $data['field_marketo_form_four'];
 
-		self::build_meta_and_navigation($data);
-		self::build_intro_before_overview($data);
-		self::build_the_overview_section($data);
-		self::build_the_admissions_section($data);
+		// self::build_meta_and_navigation($data);
+		// self::build_intro_before_overview($data);
+		// self::build_the_overview_section($data);
+		// self::build_the_admissions_section($data);
 		// self::build_the_curriculum_section($data);
-
+		
 	}
 
 

@@ -1,0 +1,158 @@
+/* 
+
+	this file handles styling the posts-grid block filtering form
+	(this is all leading up to a leap to the query block and extensions for it)
+
+*/
+
+@import "./nu-select2";
+
+.filteringform {
+
+	.is-exposed-chosen-items {
+		position: absolute;
+		top: 100%;
+		left: 0;
+		width: 100%;
+	}
+	
+	
+	+ .nu__grid {
+		margin-top: $margin_4x;
+	}
+	// ? select fills the space it is in
+	select {
+		width: 100%;
+	}
+
+	// ? when select2 is disabled this helps see what is going on
+	option[selected="selected"] {
+		font-weight: bold;
+		font-style: italic;
+	}
+
+	> form {
+		padding: $base-margin;
+		border: 1px solid #ece9e6;
+		position: relative;
+		background-color: var(--wp--preset--color--white-1);
+		display: flex;
+		flex-flow: column nowrap;
+		align-items: center;
+
+		@include media("<large") {
+			.filters {
+				margin: $margin_2x 0;
+				display: grid;
+				grid-row-gap: $base-margin;
+				grid-column-gap: $base-margin;
+				grid-template-columns: repeat(2, 1fr);
+				.filters-filter {
+					&:not(:first-child) {
+						margin-left: 0;
+					}
+				}
+			}
+		}
+		@include media("<small") {
+			.filters {
+				grid-template-columns: repeat(1, 1fr);
+			}
+		}
+
+		@include media(">=large") {
+			flex-flow: row nowrap;
+			justify-content: space-between;
+			.submission {
+				margin-left: $margin_2x;
+			}
+		}
+	}
+
+	.filtering-navicon {
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content: space-between;
+		padding: $base-margin;
+		border: 1px solid var(--wp--preset--color--black-1);
+		.icon--close {
+			display: none;
+		}
+		@include media("<medium") {
+			+ form {
+				display: none;
+			}
+		}
+		@include media(">=medium") {
+			display: none;
+		}
+		&.is-revealed {
+			.icon--menu {
+				display: none;
+			}
+			.icon--close {
+				display: inline-block;
+			}
+		}
+	}
+
+	//
+	//
+	//
+	.filters {
+		display: flex;
+		flex-flow: row nowrap;
+		align-items: center;
+		.filters-filter {
+			min-width: 180px;
+			&:not(:first-child) {
+				margin-left: $margin_2x;
+			}
+			&.is-terms-select {
+				label {
+					@include displayedInvisible();
+				}
+			}
+		}
+	}
+	.is-events-chronological-buttons {
+		margin: 0;
+		label {
+			display: inline-block;
+			position: relative;
+			text-align: center;
+			font-size: var(--wp--preset--font-size--14-20);
+			padding: $base-margin $margin_2x;
+			font-weight: 400;
+			border-radius: 48px;
+			border: 1px solid #ece9e6;
+			span.material-icons-outlined {
+				position: absolute;
+				top: 50%;
+				transform: translateY(-50%);
+				right: $half-margin;
+				font-size: 20px;
+				line-height: 1;
+				vertical-align: middle;
+				margin-left: $half-margin;
+				opacity: 0;
+			}
+			&:last-child {
+				margin-left: $base-margin;
+			}
+		}
+
+		//
+		input {
+			@include displayedInvisible();
+
+			&:checked + label {
+				border: 1px solid #ece9e6;
+				background-color: #f4f2f0;
+				span.material-icons-outlined {
+					opacity: 1;
+				}
+			}
+		}
+	}
+}

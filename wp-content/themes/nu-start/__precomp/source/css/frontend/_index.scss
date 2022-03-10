@@ -7,7 +7,7 @@
 @import './src/site-logo';
 @import './src/widgets-as-alerts';
 @import './src/nu_global_elements';
-
+@import './src/wp-forms';
 
 
 @import './src/elems/typography';
@@ -15,3 +15,25 @@
 @import './src/elems/misc-custom-elems';
 
 // 
+
+
+html {
+	box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}
+
+// reset body styling to brand
+html :where(body:not(.wp-admin), .editor-styles-wrapper) {
+	@extend %base_body_style;
+	position: relative;
+	z-index: 1;
+
+	a {
+		color: currentColor;
+		text-decoration: none;
+	}
+}

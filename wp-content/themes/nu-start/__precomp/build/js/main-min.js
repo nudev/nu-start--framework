@@ -127,14 +127,62 @@
   	 *   ... code in here will run after jQuery says document is ready
   	 */
   	$(function () {
+  		//
+
+  		$(".is-experimental-sidebar-toggle").on("click", function (e) {
+  			let $sidebar = $(".is-the-template-sidebar");
+  			$(".is-the-template-content");
+
+  			$sidebar.toggleClass("is-tucked");
+  		});
+
+  		let content_types_sidebar_pattern = {
+  			_init: function () {
+  				this._clickHandler();
+  				// this._doCloseModal();
+  			},
+  			_doCloseModal: function () {
+  				// 
+  				// ? we need to say if you click anywhere outside the dropdown/modal to close it
+  				// ? maybe even more; like what if you resize window, etc...
+  				// 
+  			},
+  			_clickHandler: function () {
+  				$(".is-the-content-types-sidebar-nav").on(
+  					"click",
+  					".is-the-sidebar-navicon .icon",
+  					function (e) {
+  						$(e.delegateTarget).toggleClass(
+  							"sidebar-nav-is-revealed"
+  						);
+
+  						// toggle between the icon-menu and icon-close classes
+  						$(e.target).toggleClass("icon-menu");
+  						$(e.target).toggleClass("icon-close");
+  					}
+  				);
+  			},
+  		};
+  		content_types_sidebar_pattern._init();
+
+  		//
+  		//
+  		//
+  		//
+  		//
+  		//
+  		//
+
   		let timeline_slider = {
   			$years: undefined,
   			_init: function () {
-
-  				if( !$(".wp-block-eedee-block-gutenslider.the-timeline-slider").length ){
+  				if (
+  					!$(".wp-block-eedee-block-gutenslider.the-timeline-slider")
+  						.length
+  				) {
   					return;
   				}
-  				
+
   				// grab the real instance of this slider
   				let $instance = $(
   					".wp-block-eedee-block-gutenslider.the-timeline-slider"

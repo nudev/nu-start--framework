@@ -86,8 +86,8 @@ if( is_active_sidebar( 'footer-social' ) ){
 
 $return['footer'] = sprintf(
 	$guides['footer']
-	,nu__getLogo()
-	,has_nav_menu('footer_1') ? nu__getMenu('footer_1') : ''
+	,nu__get_site_logo()
+	,has_nav_menu('footer_1') ? nu__get_nav_menu('footer_1') : ''
 	,!empty(NU__Starter::$themeSettings['social']['google_address']) ? '<div class="address">' . nu__getGoogleMapAddress(NU__Starter::$themeSettings['social']['google_address']) . '</div>' : ''
 	,!empty($social_icon_sidebar) ? $social_icon_sidebar :''
 	,$footer_sidebar

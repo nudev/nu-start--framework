@@ -3,6 +3,22 @@
     "title": "Block: Posts Grid",
     "fields": [
         {
+            "key": "field_620a75578057e",
+            "label": "Settings",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
             "key": "field_60b64c1af5170",
             "label": "Options",
             "name": "options",
@@ -161,7 +177,8 @@
                 "nu_news",
                 "nu_projects",
                 "nu_programs",
-                "nu_profiles"
+                "nu_profiles",
+                "nu_partnerships"
             ],
             "taxonomy": "",
             "filters": [
@@ -223,7 +240,8 @@
                         "nu_news",
                         "nu_projects",
                         "nu_programs",
-                        "nu_profiles"
+                        "nu_profiles",
+                        "nu_partnerships"
                     ],
                     "field_type": "select",
                     "default_value": [],
@@ -238,6 +256,42 @@
                     "placeholder": "",
                     "layout": "",
                     "toggle": 0
+                },
+                {
+                    "key": "field_620a7430f158b",
+                    "label": "Chronological",
+                    "name": "chronological",
+                    "type": "button_group",
+                    "instructions": "For events, select from upcoming or past based on their end date.",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_60c2520e28a92",
+                                "operator": "==",
+                                "value": "1"
+                            },
+                            {
+                                "field": "field_60d208713a1fe",
+                                "operator": "==",
+                                "value": "nu_events"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "all": "All",
+                        "upcoming": "Upcoming",
+                        "archived": "Archived"
+                    },
+                    "allow_null": 0,
+                    "default_value": "upcoming",
+                    "layout": "horizontal",
+                    "return_format": "value"
                 },
                 {
                     "key": "field_61620e12a5c26",
@@ -381,11 +435,27 @@
             ]
         },
         {
+            "key": "field_620a733739b84",
+            "label": "Style",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
             "key": "field_611e8c90f2592",
             "label": "Item Style",
             "name": "item_style",
             "type": "group",
-            "instructions": "",
+            "instructions": "Configure a consistent style across all grid items. Customizing a single item in the grid is not allowed.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -396,14 +466,13 @@
             "layout": "block",
             "acfe_seamless_style": 1,
             "acfe_group_modal": 0,
-            "acfe_field_group_condition": 0,
             "sub_fields": [
                 {
                     "key": "field_612e302ed48ae",
-                    "label": "Display Featured Image",
+                    "label": "Featured Image",
                     "name": "display_featured_image",
                     "type": "true_false",
-                    "instructions": "",
+                    "instructions": "Hide or show featured images for all grid items",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -414,16 +483,15 @@
                     "message": "",
                     "default_value": 0,
                     "ui": 1,
-                    "ui_on_text": "",
-                    "ui_off_text": "",
-                    "acfe_field_group_condition": 0
+                    "ui_on_text": "Enabled",
+                    "ui_off_text": "Disabled"
                 },
                 {
                     "key": "field_611e8ce3f2594",
-                    "label": "Image Dimensions",
+                    "label": "Aspect Ratio",
                     "name": "image_dimensions",
                     "type": "button_group",
-                    "instructions": "",
+                    "instructions": "Either enforce a consistent aspect ratio for all images in the grid, <br \/>\r\nor allow a jagged layout where items retain their native aspect ratios.",
                     "required": 0,
                     "conditional_logic": [
                         [
@@ -447,18 +515,17 @@
                         "wide": "Wide",
                         "very-wide": "Very Wide"
                     },
-                    "allow_null": 1,
+                    "allow_null": 0,
                     "default_value": "auto",
                     "layout": "vertical",
-                    "return_format": "value",
-                    "acfe_field_group_condition": 0
+                    "return_format": "value"
                 },
                 {
                     "key": "field_611e8c98f2593",
                     "label": "Orientation",
                     "name": "orientation",
                     "type": "button_group",
-                    "instructions": "",
+                    "instructions": "Orient featured image \/ teaser content as a column or row within the available space",
                     "required": 0,
                     "conditional_logic": [
                         [
@@ -481,8 +548,7 @@
                     "allow_null": 0,
                     "default_value": "vertical",
                     "layout": "horizontal",
-                    "return_format": "value",
-                    "acfe_field_group_condition": 0
+                    "return_format": "value"
                 }
             ]
         }
@@ -510,9 +576,14 @@
         "json"
     ],
     "acfe_form": 0,
-    "acfe_meta": "",
+    "acfe_meta": {
+        "acfcloneindex": {
+            "acfe_meta_key": "",
+            "acfe_meta_value": ""
+        }
+    },
     "acfe_note": "",
-    "modified": 1643298486,
+    "modified": 1646333604,
     "acfe_categories": {
         "acf-block": "ACF Block"
     }

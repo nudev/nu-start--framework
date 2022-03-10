@@ -57,6 +57,15 @@ wp.domReady(function () {
 		"core/more",
 		"core/code",
 		"core/nextpage",
+		// VENDOR BLOCKS BELOW
+		"ep/rating",
+		"ep/counter",
+		"ep/progress-bar",
+		"ep/toggles",
+		"ep/icon",
+		"ep/lottie",
+		"ep/countdown",
+
 	];
 	for (i = disallowed_blocks.length - 1; i >= 0; i--) {
 		wp.blocks.unregisterBlockType(disallowed_blocks[i]);

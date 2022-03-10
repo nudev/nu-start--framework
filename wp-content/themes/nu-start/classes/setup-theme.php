@@ -32,11 +32,36 @@ class SetupTheme
 
 		// 
 		add_action( 'widgets_init', 'SetupTheme::nu__register_sidebars' );
+
+		// 
+		add_action( 'admin_menu', 'SetupTheme::_do_admin_menu_handler' );
 		
+
 		// 
 		SetupTheme::clean_head();
 	}
 
+
+	public static function _do_admin_menu_handler(){
+
+
+		// ? add reusable blocks to the main menu to allow editor access
+		add_menu_page(
+			'Reusable Blocks',
+			'Reusable Blocks',
+			'manage_options',
+			'edit.php?post_type=wp_block',
+			'',
+			'dashicons-editor-table',
+			'3.1'
+		);
+
+	}
+
+
+
+	
+	
 	// ?
 	public static function enqueue_scripts(){
 		SetupTheme::_do_enqueueStyles();
@@ -52,7 +77,7 @@ class SetupTheme
 
 		// stylesheet only loaded in the block editor (for blocks)
 		// ? this lets us "ram in" a stylesheet; but we already have the hook in add_theme_support( 'editor-styles' );
-		wp_enqueue_style( 'nu-blocks-styles', get_template_directory_uri() . '/__precomp/build/css/blocks-styles.css', [], filemtime( get_template_directory() . '/__precomp/build/css/blocks-styles.css' ) );
+		// wp_enqueue_style( 'nu-blocks-styles', get_template_directory_uri() . '/__precomp/build/css/blocks-styles.css', [], filemtime( get_template_directory() . '/__precomp/build/css/blocks-styles.css' ) );
 		
 		// scripts only loaded in the block editor (for blocks)
 		wp_enqueue_script( 'nu-block-editor', get_template_directory_uri() . '/__precomp/build/js/editor-min.js', array( 'wp-blocks' ), filemtime( get_template_directory() . '/__precomp/build/js/editor-min.js' ), true );
@@ -91,6 +116,7 @@ class SetupTheme
 			,'footer_1' => __( 'Footer', 'nu-start' )
 			,'footer_2' => __( 'Footer (2nd column)', 'nu-start' )
 			,'utility' => __( 'Utility Nav', 'nu-start' )
+			,'sidebar_menu_1' => __( 'Experimental Sidebar Nav', 'nu-start' )
 		));
 
 	}
@@ -163,6 +189,19 @@ class SetupTheme
 			)
 		);
 
+		// ? lets try a "real" sidebar?
+		register_sidebar(
+			array(
+				'id'            => 'experimental-sidebar-as-menu',
+				'name'          => __( 'Experimental Sidebar Menu' ),
+				'description'   => __( 'This works towards having a template level sidebar nav (instead of the header, or in tandem)' ),
+				'before_widget' => '<div class="nu__sidebar_menu--experimental"><div id="%1$s" class="widget %2$s">',
+				'after_widget'  => '</div></div>',
+				'before_title'  => '<p class="widget-title">',
+				'after_title'   => '</p>',
+			)
+		);
+
 
 	}
 
@@ -186,6 +225,15 @@ class SetupTheme
 			, get_template_directory_uri() . '/__precomp/build/js/main-min.js'
 			, array('jquery')
 			, filemtime(get_template_directory() . '/__precomp/build/js/main-min.js')
+			, true
+		);
+
+		// register experimental theme scripts
+		wp_register_script(
+			'experimental'
+			, get_template_directory_uri() . '/__precomp/build/js/experimental-min.js'
+			, array('jquery', 'main')
+			, filemtime(get_template_directory() . '/__precomp/build/js/experimental-min.js')
 			, true
 		);
 
@@ -216,12 +264,39 @@ class SetupTheme
 			,true
 		);
 
+		// register select2 core scripts
+		wp_register_script(
+			'selectize'
+			, get_template_directory_uri() . '/__precomp/vendor/js/selectize.min.js'
+			,array()
+			,false
+			,true
+		);
+
+		self::localize_developer_panel();
+		
 		wp_enqueue_script( 'select2' );
+		wp_enqueue_script( 'selectize' );
 		wp_enqueue_script( 'magnific' );
 		wp_enqueue_script( 'nav' );
+
+		if( is_page_template( 'templates/experimental.php' ) ){
+			wp_enqueue_script( 'experimental' );
+		}
+
+		wp_enqueue_script( 'block-posts-grid', get_template_directory_uri() . '/__precomp/build/js/blocks/posts-grid-min.js', array('jquery'), '', true );
+
+		wp_localize_script(
+			'block-posts-grid',
+			'postsgrid_ajax_object',
+			array(
+					'phpversion' => PHP_VERSION,
+					'ajaxurl'    => admin_url( 'admin-ajax.php' ),
+					'ajax_nonce' => wp_create_nonce( 'postsgrid_ajax_object' )
+			)
+		);
 		
 		
-		self::localize_developer_panel();
 	}
 
 	public static function localize_developer_panel(){
@@ -266,6 +341,12 @@ class SetupTheme
 			'magnific'
 			, get_template_directory_uri() . '/__precomp/vendor/css/magnific-popup.css'
 		);
+
+		// ? register selectize boostrap 5 stylesheet
+		wp_register_style(
+			'selectize'
+			, get_template_directory_uri() . '/__precomp/vendor/css/selectize.bootstrap5.css'
+		);
 		// register select2 (core styles)
 		wp_register_style(
 			'select2'
@@ -285,12 +366,22 @@ class SetupTheme
 			,filemtime(get_template_directory() . '/__precomp/build/css/main.css')
 		);
 
+		// register patterns stylesheet
+		wp_register_style(
+			'patterns'
+			,get_template_directory_uri() . '/__precomp/build/css/patterns/patterns.css'
+			,array()
+			,filemtime(get_template_directory() . '/__precomp/build/css/patterns/patterns.css')
+		);
+
 
 		// enqueue the registered styles
 		wp_enqueue_style( 'magnific' );
+		wp_enqueue_style( 'selectize' );
 		wp_enqueue_style( 'select2' );
 		wp_enqueue_style( 'select2-theme' );
 		wp_enqueue_style( 'main' );
+		wp_enqueue_style( 'patterns' );
 
 
 	}
@@ -310,6 +401,9 @@ class SetupTheme
 		wp_enqueue_style( 'admin' );
 		//
 		wp_enqueue_script( 'admin' );
+
+	
+
 	}
 
 

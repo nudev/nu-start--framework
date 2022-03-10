@@ -62,6 +62,7 @@ class NU__ContentTypes
 				'labels' => $labels,
 				'show_ui' => $ui,
 				'show_in_rest' =>  true,
+				'show_in_menu' =>  true,
 				'show_admin_column' => true,
 				'query_var' => true,
 				'rewrite' => array( 'slug' => empty($rewrite) ? sanitize_title( $name ) : sanitize_title( $rewrite ) ),

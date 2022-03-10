@@ -13,23 +13,23 @@
 
 /* ... project styles will always load after this ... */
 
-html {
-	box-sizing: border-box;
-}
-*,
-*:before,
-*:after {
-	box-sizing: inherit;
-}
+// html {
+// 	box-sizing: border-box;
+// }
+// *,
+// *:before,
+// *:after {
+// 	box-sizing: inherit;
+// }
 
-// reset body styling to brand
-html :where(body:not(.wp-admin), .editor-styles-wrapper) {
-	@extend %base_body_style;
-	position: relative;
-	z-index: 1;
+// // reset body styling to brand
+// html :where(body:not(.wp-admin), .editor-styles-wrapper) {
+// 	@extend %base_body_style;
+// 	position: relative;
+// 	z-index: 1;
 
-	a {
-		color: currentColor;
-		text-decoration: none;
-	}
-}
+// 	a {
+// 		color: currentColor;
+// 		text-decoration: none;
+// 	}
+// }

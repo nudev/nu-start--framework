@@ -1,0 +1,33 @@
+/* 
+
+*/
+.pattern--is-basic-event-detail {
+	> .wp-block-columns {
+		@include media(">=medium") {
+			> .wp-block-column {
+				.wp-block-post-featured-image {
+					max-width: 80%;
+				}
+			}
+		}
+	}
+
+
+	.event-type {
+		font-weight: 400;
+	}
+	
+	.wp-block-group + .wp-block-buttons {
+		margin-top: ($margin_2x + $half-margin);
+	}
+	.event-info:last-child {
+		margin-top: 0;
+	}
+
+	.wp-block-post-title {
+		margin: ($margin_2x + $half-margin) 0;
+	}
+	
+	
+	
+}

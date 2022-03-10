@@ -1,0 +1,58 @@
+.is-people-archive-with-horz-nav {
+	&.wp-block-group {
+		margin-top: 0;
+	}
+
+	.wp-block-navigation {
+		border-bottom: 1px solid var(--wp--preset--color--white-5);
+	}
+
+	.posts-grid {
+		margin-top: $margin_4x;
+
+		.nu__grid > ul {
+			grid-row-gap: $margin_4x - $half-margin !important;
+			grid-column-gap: 0 !important;
+		}
+
+		.contains-clickable-area {
+			position: relative;
+			&:hover, &:focus {
+				z-index: 2;
+			}
+		}
+		
+	}
+}
+
+// ? the detail view (single template)
+body.single-nu_people {
+
+	// 2-col layout outer container
+	.wp-block-columns.is-headshot-and-bio {
+		@include media("<medium") {
+			flex-flow: column nowrap;
+			> .wp-block-column:last-child {
+				margin-left: 0;
+				figure {
+					max-width: 300px;
+				}
+			}
+			> .wp-block-column:first-child {
+				order: 1;
+			}
+		}
+
+		@include media(">=medium") {
+			> .wp-block-column:first-child {
+				padding-right: $margin_2x;
+			}
+			> .wp-block-column:last-child {
+				margin-left: $margin_8x;
+			}
+			.acf-block.person-info {
+				margin-bottom: $margin_8x;
+			}
+		}
+	}
+}

@@ -6,6 +6,16 @@
 // ? seems stable
 @import "./library";
 
+
+// * having some issues with loading the fonts into the block editor
+// * this resolves it... but it feels weird
+.is-root-container.block-editor-block-list__layout {
+	font-family: "Lato", sans-serif, "Material Icons";
+	.material-icons-outlined {
+		font-family: "Material Icons";
+	}
+}
+
 .wp-block-widget-area.components-panel .components-panel__body-title {
 	z-index: 2 !important;
 }

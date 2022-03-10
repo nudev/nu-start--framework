@@ -45,8 +45,8 @@ class NU_ACF_Blocks
 		require_once( get_template_directory(  ) . '/classes/acf-blocks/datetime-block/class.date-time-block.php' );
 
 		
-		// ! DEPRECATED
-		// require_once( get_template_directory(  ) . '/classes/acf-blocks/class.pim-programs.php' );
+		// UNDER DEVELOPMENT - UNSTABLE
+		require_once( get_template_directory(  ) . '/classes/acf-blocks/class.pim-programs.php' );
 	}
 	
 }

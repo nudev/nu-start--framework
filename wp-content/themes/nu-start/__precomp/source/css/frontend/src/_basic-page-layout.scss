@@ -19,63 +19,95 @@ body {
 	}
 }
 
-@mixin is_page_level_blocks_wrapper() {
-	> * {
-		// ? top level blocks margin
-		margin: $margin_8x auto 0 auto;
+@mixin the_top_level_blocks_container() {
+	overflow: visible;
+	overflow-x: hidden;
+	overflow-y: auto;
+	> :not(.alignfull, .alignwide) {
+		max-width: var(--wp--custom--content-size);
+		margin-left: auto;
+		margin-right: auto;
+	}
+	> .alignwide {
+		max-width: var(--wp--custom--wide-size);
+		margin-left: auto;
+		margin-right: auto;
+	}
+	> .alignfull {
+		max-width: none;
+	}
+	> .alignleft {
+		float: left;
+		margin-left: $base-margin;
+		@include clearfix;
+	}
+	> .alignright {
+		float: right;
+		margin-right: $base-margin;
+		@include clearfix;
+	}
 
-		// ? top level blocks widths
-		max-width: 80%;
-		&.alignwide {
-			max-width: 90%;
-		}
-		&.alignfull,
-		&.is-reusable {
-			max-width: 100%;
-		}
+	// ? most blocks (as sections) vertical spacing is $margin_8x except typographical elements like paragraphs
+	> :not(p, .wp-block-paragraph, .wp-block-spacer) {
+		margin: $margin_8x auto 0 auto;
 	}
-	> p,
-	> .wp-block-paragraph {
-		margin-top: $margin_4x;
-	}
-	// group, cover etc blocks alignfull and first child assumed to be "hero" ish
+
+	// ? alignfull first block assumed to be a hero
 	> .alignfull:first-child {
-		&.wp-block-group,
-		&.wp-block-cover {
+		margin-top: 0;
+	}
+
+	// ? special case: if this is a "wrapper" top level group at full width...
+	&.wp-block-group.alignfull {
+		> :first-child {
 			margin-top: 0;
 		}
 	}
-	> :last-child:not(.alignfull.has-background) {
-		margin-bottom: $margin_8x;
-	}
-
-	@include media("<=medium") {
+	@include media("<=large") {
 		> * {
-			margin-top: $margin_4x;
-		}
-		> :not(.alignfull):not(.is-reusable) {
-			max-width: 90%;
-		}
-		> :last-child:not(.alignfull.has-background) {
-			margin-bottom: $margin_4x;
-		}
-	}
-	@include media("<=phone") {
-		> :not(.alignfull):not(.is-reusable) {
-			max-width: calc(100% - $base-margin);
-		}
-		> :last-child:not(.alignfull.has-background) {
-			margin-bottom: $margin_4x;
+			padding-left: var(--wp--custom--spacing--outer);
+			padding-right: var(--wp--custom--spacing--outer);
+			&.alignfull,
+			&[data-align="full"] {
+				margin-left: calc(
+					-1 * var(--wp--custom--spacing--outer)
+				) !important;
+				margin-right: calc(
+					-1 * var(--wp--custom--spacing--outer)
+				) !important;
+				width: unset;
+			}
 		}
 	}
 }
 
+//
+.blocks--wrapper > .wp-block-group.alignfull > .wp-block-group,
+.blocks--wrapper > .wp-block-group.alignfull > .wp-block-cover.alignfull {
+	@include media("<=large") {
+		> * {
+			padding-left: var(--wp--custom--spacing--outer);
+			padding-right: var(--wp--custom--spacing--outer);
+			&.alignfull,
+			&[data-align="full"] {
+				margin-left: calc(
+					-1 * var(--wp--custom--spacing--outer)
+				) !important;
+				margin-right: calc(
+					-1 * var(--wp--custom--spacing--outer)
+				) !important;
+				width: unset;
+			}
+		}
+	}
+}
+
+// ? using a group as a wrapper for top-level "sections" blows out the vertical rhythm
+// ? css expects the hero to come first - maybe in a group wrapper - and not count
+.blocks--wrapper > .wp-block-group.alignfull:not(:first-child),
 .block-editor-block-list__layout.is-root-container,
 .blocks--wrapper {
-	//
-	@include is_page_level_blocks_wrapper();
-
-	//
+	@include the_top_level_blocks_container();
 	//
 	//
 	@include media(">=medium") {
