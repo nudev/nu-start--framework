@@ -595,6 +595,7 @@ body.wp-admin .nu_posts-grid .grid-item a {
   }
   .nu_posts-grid .grid-item.has-layout-horizontal > .contains-clickable-area > .grid-item-content, .nu_posts-grid .grid-item.has-layout-horizontal > .grid-item-content {
     flex: 1 1 auto;
+    justify-content: center;
   }
 }
 .nu_posts-grid .grid-item:hover, .nu_posts-grid .grid-item:focus {
@@ -971,6 +972,49 @@ body.wp-admin .nu_posts-grid .grid-item a {
   font-weight: normal;
 }
 
+.nu_posts-grid .nu_projects.grid-item.has-layout-horizontal > .contains-clickable-area,
+.nu_posts-grid .nu_projects.grid-item.has-layout-horizontal {
+  border: none;
+  box-shadow: none;
+}
+.nu_posts-grid .nu_projects.grid-item.has-layout-horizontal > .contains-clickable-area > a.contains-clickable-area,
+.nu_posts-grid .nu_projects.grid-item.has-layout-horizontal > a.contains-clickable-area {
+  background-color: var(--wp--preset--color--white-2);
+  position: relative;
+}
+.nu_posts-grid .nu_projects.grid-item.has-layout-horizontal > .contains-clickable-area > a.contains-clickable-area:after,
+.nu_posts-grid .nu_projects.grid-item.has-layout-horizontal > a.contains-clickable-area:after {
+  content: "\e0b2";
+  font-family: "Material Icons";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  line-height: inherit;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  vertical-align: middle;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  font-feature-settings: "liga";
+  -moz-font-feature-settings: "liga";
+  -moz-osx-font-smoothing: grayscale;
+}
+.nu_posts-grid .nu_projects.grid-item.has-layout-horizontal > .contains-clickable-area > a.contains-clickable-area:after,
+.nu_posts-grid .nu_projects.grid-item.has-layout-horizontal > a.contains-clickable-area:after {
+  position: absolute;
+  right: 15px;
+  top: 10px;
+}
+@media screen and (max-width: 782px) {
+  .nu_posts-grid .nu_projects.grid-item.has-layout-horizontal > .contains-clickable-area > a.contains-clickable-area:after,
+.nu_posts-grid .nu_projects.grid-item.has-layout-horizontal > a.contains-clickable-area:after {
+    top: unset;
+    bottom: 10px;
+  }
+}
 @media (min-width: 1024px) {
   .nu_posts-grid .nu_projects.grid-item.has-layout-horizontal > .contains-clickable-area > figure,
 .nu_posts-grid .nu_projects.grid-item.has-layout-horizontal > figure {

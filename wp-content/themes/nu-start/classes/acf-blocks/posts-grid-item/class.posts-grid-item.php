@@ -83,6 +83,7 @@ class PostsGrid_Item
 				include( get_template_directory( ) . '/classes/acf-blocks/posts-grid-item/templates/program.php' );
 				break;
 			case 'nu_people':
+				$person_metadata = !empty( $fields['person_metadata'] ) ? $fields['person_metadata'] : '';
 				include( get_template_directory( ) . '/classes/acf-blocks/posts-grid-item/templates/person.php' );
 				break;
 			case 'nu_events':

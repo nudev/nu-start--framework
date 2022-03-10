@@ -1,8 +1,8 @@
 <?php
 /**
- *    Posts Grid Item --- Person Template Type A
+ *    Posts Grid Item --- Project Template Type A
  * 
- *    This template will render a single Person item into the Posts Grid.
+ *    This template will render a single Project item into the Posts Grid.
  *    - this is a "clickable area" template
  */
 // 
@@ -20,22 +20,14 @@ $the_display_name = $the_post_title;
 // this fallback makes no damn sense but it works for now
 $the_primary_title = $the_basic_excerpt;
 
-// Contact fallbacks
-$the_phone_number = ''; 
-$the_email_address = ''; 
-
 // if we have data
 if( !empty($person_metadata) ){
   
+  // print_r($person_metadata);
+  // name, phone, email, primary title
   
   // ? get the display name or nothing
-  $the_display_name = !empty($person_metadata['full_name']) ? '<span>'.$person_metadata['full_name'].'</span>' : $the_post_title;
-
-  $the_primary_title = !empty($person_metadata['primary_title']) ? $person_metadata['primary_title'] : $the_basic_excerpt; 
-  
-  $the_phone_number = !empty($person_metadata['person_phone_number']) ? $person_metadata['person_phone_number'] : ''; 
-
-  $the_email_address = !empty($person_metadata['person_email']) ? $person_metadata['person_email'] : '';
+//   $the_display_name = !empty($person_metadata['display_name']) ? $person_metadata['display_name'] : $the_post_title;
 
 }
 
@@ -47,9 +39,9 @@ $guides['person'] = '
     <a class="contains-clickable-area" href="%5$s"'.$the_title_attribute.' %8$s>
       %2$s 
       <div class="grid-item-content">
-        <div class="post-title has-24-32-font-size">
+        <p class="post-title has-24-32-font-size">
           %3$s
-        </div>
+        </p>
         <div class="is_the_rich_text_person_excerpt">
           <em>
             %4$s
@@ -69,11 +61,7 @@ $return .= sprintf(
     $determined_permalink,
     $aspect_ratio_class,
     $orientationClass,
-    $maybe_target,
-    $the_first_name, 
-    $the_last_name,
-    $the_phone_number,
-    $the_email_address
+    $maybe_target
 );
 
 
