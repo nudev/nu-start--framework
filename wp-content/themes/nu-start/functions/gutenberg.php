@@ -98,7 +98,7 @@ if( function_exists('acf_register_block_type') ):
 		// 'enqueue_script' => get_template_directory_uri().'/acf-blocks/posts-grid/posts-grid-min.js',
 		'enqueue_assets' => function(){
 			// wp_enqueue_style( 'block-posts-grid', get_template_directory_uri() . '/__precomp/build/css/blocks/posts-grid.css' );
-			wp_enqueue_script( 'block-posts-grid', get_template_directory_uri() . '/__precomp/build/js/blocks/posts-grid-min.js', array('jquery'), '', true );
+			// wp_enqueue_script( 'block-posts-grid', get_template_directory_uri() . '/__precomp/build/js/blocks/posts-grid-min.js', array('jquery'), '', true );
 		},
 		'icon' => '',
 		'supports' => array(
@@ -116,6 +116,8 @@ if( function_exists('acf_register_block_type') ):
 		),
 		'active' => true,
 	));
+	
+	
 
 	acf_register_block_type(array(
 		'name' => 'person-info',

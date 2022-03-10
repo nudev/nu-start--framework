@@ -62,7 +62,6 @@ class FilteringForm extends PostsGrid
 					<div class="submission">
 						<button type="submit" value="Filter" class="button is-style-default">Filter</button><a href="'.get_permalink(self::$post_id).'" class="is-style-outline button">Clear</a>
 					</div>
-					<div class="is-exposed-chosen-items"></div>
 				</form>
 			</div>
 		';
@@ -157,7 +156,7 @@ class FilteringForm extends PostsGrid
 		$guides['taxonomy-filter'] = '
 		<div class="filters-filter is-terms-select" data-taxonomy="%1$s">
 			<label for="%1$s">%2$s</label>
-			<select name="%1$s[]" data-placeholder="%2$s" multiple="multiple">
+			<select name="%1$s[]" data-placeholder="Filter by %2$s" multiple="multiple">
 				%3$s
 			</select>
 		</div>

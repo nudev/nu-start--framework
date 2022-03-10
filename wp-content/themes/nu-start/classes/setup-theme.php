@@ -283,6 +283,18 @@ class SetupTheme
 		if( is_page_template( 'templates/experimental.php' ) ){
 			wp_enqueue_script( 'experimental' );
 		}
+
+		wp_enqueue_script( 'block-posts-grid', get_template_directory_uri() . '/__precomp/build/js/blocks/posts-grid-min.js', array('jquery'), '', true );
+
+		wp_localize_script(
+			'block-posts-grid',
+			'postsgrid_ajax_object',
+			array(
+					'phpversion' => PHP_VERSION,
+					'ajaxurl'    => admin_url( 'admin-ajax.php' ),
+					'ajax_nonce' => wp_create_nonce( 'postsgrid_ajax_object' )
+			)
+		);
 		
 		
 	}
@@ -389,6 +401,9 @@ class SetupTheme
 		wp_enqueue_style( 'admin' );
 		//
 		wp_enqueue_script( 'admin' );
+
+	
+
 	}
 
 
