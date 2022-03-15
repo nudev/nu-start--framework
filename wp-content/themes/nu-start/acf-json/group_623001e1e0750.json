@@ -1,9 +1,9 @@
 {
-    "key": "group_622526b44994b",
-    "title": "Block: Content Query Filter",
+    "key": "group_623001e1e0750",
+    "title": "Block: Content Query",
     "fields": [
         {
-            "key": "field_622526ba2678d",
+            "key": "field_623001e1e7a6c",
             "label": "Settings",
             "name": "",
             "type": "tab",
@@ -19,9 +19,9 @@
             "endpoint": 0
         },
         {
-            "key": "field_622526c42678f",
-            "label": "Enable Filtering",
-            "name": "enable_filtering",
+            "key": "field_62301084f84f8",
+            "label": "Manual Selection",
+            "name": "manual_selection",
             "type": "true_false",
             "instructions": "",
             "required": 0,
@@ -38,7 +38,35 @@
             "ui_off_text": ""
         },
         {
-            "key": "field_622526c02678e",
+            "key": "field_623010a4f84f9",
+            "label": "Query By",
+            "name": "query_by",
+            "type": "acfe_post_types",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": "",
+            "field_type": "select",
+            "default_value": [],
+            "return_format": "name",
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 1,
+            "ajax": 0,
+            "search_placeholder": "",
+            "allow_custom": 0,
+            "choices": [],
+            "placeholder": "",
+            "layout": "",
+            "toggle": 0
+        },
+        {
+            "key": "field_623001e1e7a99",
             "label": "Style",
             "name": "",
             "type": "tab",
@@ -59,15 +87,15 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "acf\/content-query-filtering"
+                "value": "acf\/content-query"
             }
         ]
     ],
     "menu_order": 0,
-    "position": "normal",
-    "style": "default",
-    "label_placement": "left",
-    "instruction_placement": "label",
+    "position": "side",
+    "style": "seamless",
+    "label_placement": "top",
+    "instruction_placement": "tooltip",
     "hide_on_screen": "",
     "active": true,
     "description": "",
@@ -84,7 +112,7 @@
         }
     },
     "acfe_note": "",
-    "modified": 1647313533,
+    "modified": 1647317462,
     "acfe_categories": {
         "acf-block": "ACF Block"
     }

@@ -1,6 +1,6 @@
 {
     "key": "group_6225203ed875c",
-    "title": "Block: Posts Grid Pagination",
+    "title": "Block: Content Query Showmore",
     "fields": [
         {
             "key": "field_622520c8dc751",
@@ -40,7 +40,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "acf\/beta-postsgrid-pagination"
+                "value": "acf\/content-query-showmore"
             }
         ]
     ],
@@ -65,5 +65,8 @@
         }
     },
     "acfe_note": "",
-    "modified": 1646600414
+    "modified": 1647315192,
+    "acfe_categories": {
+        "acf-block": "ACF Block"
+    }
 }

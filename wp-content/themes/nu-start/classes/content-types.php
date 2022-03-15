@@ -155,7 +155,7 @@ class NU__ContentTypes
 				$taxonomies = array( $post_type.'-categories', $post_type.'-tags' );
 	
 				foreach ( $taxonomies as $taxonomy_slug ) {
-	
+
 					// Retrieve taxonomy data
 					$taxonomy_obj = get_taxonomy( $taxonomy_slug );
 					$taxonomy_name = $taxonomy_obj->labels->name;

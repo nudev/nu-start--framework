@@ -1,80 +1,15 @@
 /* 
 
+?			Buttons Block
+
 */
 
-// ? square up the layout
-.wp-block-buttons{
+div.wp-block-buttons {
 	margin: $base-margin 0;
-	gap: $base-margin !important;
+	gap: $base-margin;
 }
 
-.wp-block-button {
-	
-	// * fill is default and may not have a class
-	&:not(.is-style-outline) {
-		//
-		//
-		.wp-block-button__link {
-			//
-			//
-			&:not(.has-background) {
-				&:hover,
-				&:focus {
-					color: var(--wp--preset--color--black-1);
-					background-color: var(--wp--preset--color--white-1);
-					border-color: var(--wp--preset--color--black-1);
-				}
-			}
-		&:not(.has-text-color) {
-				border: 2px solid var(--wp--preset--color--black-1);
-			}
-			&.has-background {
-				&.has-red-3-background-color {
-					border-color: var(--wp--preset--color--red-3);
-					&:hover,
-					&:focus {
-						background-color: var(
-							--wp--preset--color--white-1
-						) !important; // ? the added color property has the important tag, we must have one to override it.
-						color: var(--wp--preset--color--red-3);
-					}
-				}
-			}
-		}
-	}
-
-	// * outline style defined by having this class
+div.wp-block-button {
 	&.is-style-outline {
-		//
-		//
-		.wp-block-button__link {
-			background-color: var(--wp--preset--color--white-1);
-			//
-			//
-			&:not(.has-text-color) {
-				&:hover,
-				&:focus {
-					color: var(--wp--preset--color--white-1);
-					background-color: var(--wp--preset--color--black-1);
-					border-color: var(--wp--preset--color--black-1);
-				}
-			}
-			&.has-background {
-				&.has-red-3-background-color {
-				}
-			}
-			&.has-text-color {
-				&.has-red-3-color {
-					&:hover,
-					&:focus {
-						color: var(
-							--wp--preset--color--white-1
-						) !important; // ? the added color property has the important tag, we must have one to override it.
-						background-color: var(--wp--preset--color--red-3);
-						border-color: var(--wp--preset--color--red-3);
-					}
-				}
-			}
-		}
 	}
 }

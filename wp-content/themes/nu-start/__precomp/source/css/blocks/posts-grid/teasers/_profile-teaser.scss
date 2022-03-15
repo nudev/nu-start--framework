@@ -5,20 +5,13 @@
 .nu__grid {
 
 
-	.grid-item.nu_projects {
+	.grid-item.nu_profiles {
 		
 		position: relative;
-
-		.contains-clickable-area {
-			position: relative;
-		}
 		
 
 		.grid-item-content {
-			position: absolute;
-			bottom: $base-margin;
-			left: $base-margin;
-			max-width: 80%;
+			position: relative;
 			padding: $base-margin;
 			background-color: var(--wp--preset--color--white-1);
 			.post-title {
@@ -32,7 +25,7 @@
 				position: absolute;
 				top: 0;
 				right: 0;
-				transform: translateX(100%);
+				transform: translateY(-100%);
 				.material-icons-outlined {
 					font-size: 30px;
 					line-height: 30px;

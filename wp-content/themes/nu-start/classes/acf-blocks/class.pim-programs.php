@@ -245,7 +245,7 @@ class PIM_Program
 		self::do_build_sections($programID, $data);
 
 		unset($data['field_curriculum']);
-		var_dump($data);
+		print_r($data);
 
 	}
 

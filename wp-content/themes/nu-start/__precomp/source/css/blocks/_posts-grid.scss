@@ -66,31 +66,58 @@
 		}
 	}
 
+	.nu__grid {
+		&.cols-1 {
+			.grid-item {
+				&.has-layout-horizontal {
+					.contains-clickable-area {
+						// align-items: center;
+						figure {
+							// flex: 1 0 200px;
+						}
+						.grid-item-content {
+							flex: 1 1 75%;
+							max-width: 75%;
+						}
+					}
+				}
+			}
+		}
+	}
+
 	.grid-item-content {
 		padding: $margin_2x;
 	}
 
+	// ? set to specific brand value for now
 	.post-title {
-		font-size: var(--wp--preset--font-size--20-28);
-		font-weight: 300;
+		margin: $base-margin 0 $half-margin 0;
+		font-weight: 700;
+		font-size: var(--wp--preset--font-size--16-24);
+		line-height: 24px;
 	}
 }
 
 // ? this is the block editor equivalent of body.wp-admin
 // ? styles for just the editor go here for now; rather than in another set of files
 .is-root-container.block-editor-block-list__layout {
-
 	// disable posts grid items that are clickable areas from working in the CMS
 	.grid-item a.contains-clickable-area {
 		pointer-events: none;
 	}
 }
 
+
+@import './posts-grid/ext/filtering-block';
+@import './posts-grid/ext/pagination-block';
+
 @import "./posts-grid/teasers/events-teaser";
 @import "./posts-grid/teasers/person-teaser";
 @import "./posts-grid/teasers/news-teaser";
 @import "./posts-grid/teasers/page-teaser";
 @import "./posts-grid/teasers/projects-teaser";
+@import "./posts-grid/teasers/program-teaser";
+@import "./posts-grid/teasers/profile-teaser";
 
 li.grid-item.broken {
 	&:only-child {

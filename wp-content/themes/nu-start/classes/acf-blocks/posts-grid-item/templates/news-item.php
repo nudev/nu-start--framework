@@ -8,52 +8,52 @@
  */
 // 
 
-  $pub_date = !empty($fields['publication_info']['date']) ? '<span>'.DateTime::createFromFormat('Ymd', $fields['publication_info']['date'] )->format('M d, Y').'</span>' : '';
-  $pub_author = !empty($fields['publication_info']['author']) ? '<span>'.$fields['publication_info']['author'].'</span>' : '';
-  $pub_publisher = !empty($fields['publication_info']['publisher']) ? '<span>'.$fields['publication_info']['publisher'].'</span>' : '';
-  $publication_date = '<p class="is-the-publication-date">' . $pub_date . '</p>';
-  $publication_author = '<p class="is-the-publication-author">' . $pub_author . '</p>';
-  $publication_publisher = '<p class="is-the-publication-publisher">' . $pub_publisher . '</p>';
+
+  $pub_date = !empty($item_metadata['date']) ? '<span class="date">'.DateTime::createFromFormat('Ymd', $item_metadata['date'] )->format('M d, Y').'</span>' : '';
+  $pub_author = !empty($item_metadata['author']) ? '<span class="author">'.$item_metadata['author'].'</span>' : '';
+  $pub_publisher = !empty($item_metadata['publisher']) ? '<span class="publisher"><em>'.$item_metadata['publisher'].'</em></span>' : '';
+  
+  $publication_string = sprintf(
+    '<div class="publication-info">%1$s%2$s%3$s</div>',
+    !empty($pub_date) ? $pub_date : '',
+    !empty($pub_author) ? ' | '.$pub_author : '',
+    !empty($pub_publisher) ? ' | '.$pub_publisher : '',
+  );
 
 
-  // This template is loaded by the post grid
+  $external_icon = !empty($fields['custom_permalink_redirect']) ? '<div class="is-hanging-icon"><span class="material-icons-outlined">open_in_new</span></div>' : '';
 
-  // ? Do we want images, author names and excerpts? 
-
-  $guides['news-item'] = '
-    <li class="grid-item%1$s%7$s%8$s">
-      <a class="contains-clickable-area" href="%6$s"%10$s%9$s>
+  // 
+  $guides['newsitem'] = '
+    <li class="grid-item%1$s%6$s%7$s">
+      <a class="contains-clickable-area" href="%5$s"'.$the_title_attribute.' %8$s>
+        %2$s
         <div class="grid-item-content">
-          %11$s
           %3$s
-          %2$s
           %4$s
-          %5$s
-          %13$s
+          %9$s
+          %10$s
         </div>
       </a>
     </li>
   ';
 
-  if( $post_type == 'nu_news' ){
-    $the_date_time = '';
-  }
 
+  // 
   $return .= sprintf(
-    $guides['news-item'],
+    $guides['newsitem'],
     ' '.$post_type,
     $the_cover_image,
-    $the_date_time,
     $the_post_title,
     $the_basic_excerpt,
     $determined_permalink,
     $aspect_ratio_class,
     $orientationClass,
     $maybe_target,
-    $the_title_attribute,
-    $publication_date,
-    $publication_author,
-    $publication_publisher
+    $publication_string,
+    $external_icon
   );
+
+
 
 ?>

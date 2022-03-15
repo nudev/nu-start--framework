@@ -1,0 +1,20 @@
+/* 
+
+*/
+
+.posts-grid .nu__grid .grid-item.nu_programs {
+	.post-excerpt {
+		// display: none;
+	}
+	.program-category {
+		> span {
+			background-color: var(--wp--preset--color--black-1);
+			color: var(--wp--preset--color--white-1);
+			border-radius: 2px;
+			font-size: var(--wp--preset--font-size--14-20);
+			line-height: 20px;
+			padding: 4px 8px;
+			display: inline-block;
+		}
+	}
+}

@@ -1,53 +1,55 @@
+/* 
+	?			News Item
+*/
+
+//
 .posts-grid .nu__grid .grid-item.nu_news {
-	.is-the-publication-date {
-		display: flex;
-		flex-flow: row nowrap;
-		justify-content: space-between;
-	}
+	position: relative;
 
-	// ? the date-time block is not loading this properly idk why
-	// todo: fix this so its DRY
-	.nu__datetime {
-		@include nu__date_time_block_styles();
-	}
-
-	// ? handle interaction with zooming image and underlining title
-	> a.contains-clickable-area {
-		background-color: var(--wp--preset--color--white-2);
-		border: none 0;
-		display: flex;
-		.post-title {
-			margin-top: $base-margin;
-			span {
-				border-bottom: 2px solid transparent;
-			}
-		}
-		&:hover,
-		&:focus {
-			border: none 0;
-			.post-title span {
-				border-bottom: 2px solid currentColor;
-			}
-			img {
-				transform: scale(1.2);
-			}
-		}
+	.contains-clickable-area {
+		height: 100%;
 	}
 
 	.grid-item-content {
-		padding: $base-margin;
-		padding: $margin_2x;
-		justify-content: center;
+		background-color: #fafafa;
+		@include flush_inner_content_vertical();
 
-		.is-the-publication-date {
-			justify-content: flex-end;
+		// ? if there is no featured image this will be the only child
+		// ? it will be centered and the title is a bit larger
+		&:only-child {
+			height: 100%;
+			display: flex;
+			flex-flow: column nowrap;
+			justify-content: center;
+			.post-title {
+				font-size: var(--wp--preset--font-size--30-36);
+				@include rfs(36px, line-height);
+			}
 		}
+	}
 
-		.is-the-publication-publisher {
-			font-style: italic;
-		}
-		> :first-child {
-			margin-top: 0;
+	.publication-info {
+		font-size: var(--wp--preset--font-size--12-16);
+		line-height: 20px;
+	}
+
+	.post-title {
+		font-size: var(--wp--preset--font-size--20-28);
+		line-height: 28px;
+		font-weight: 400;
+	}
+
+	.is-hanging-icon {
+		z-index: 1;
+		position: absolute;
+		top: $base-margin;
+		right: $base-margin;
+	}
+
+	// ? if the hanging icon is over an image make it white
+	figure + .grid-item-content {
+		.is-hanging-icon {
+			color: var(--wp--preset--color--white-1);
 		}
 	}
 }
