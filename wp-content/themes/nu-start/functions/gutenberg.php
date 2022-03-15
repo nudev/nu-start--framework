@@ -120,6 +120,18 @@ if( function_exists('acf_register_block_type') ):
 		'supports' => $supports,
 	));
 
+	acf_register_block_type(array(
+		'name' => 'news-info',
+		'title' => 'News Info',
+		'description' => 'Fetch and display info for a News Item.',
+		'category' => 'nu-blocks',
+		'mode' => 'preview',
+		'render_template' => get_template_directory().'/acf-blocks/news-info/news-info.php',
+		'icon' => '',
+		'post_types' => ['nu_news'],
+		'supports' => $supports,
+	));
+
 	
 	acf_register_block_type(array(
 		'name' => 'beta-rest-api',

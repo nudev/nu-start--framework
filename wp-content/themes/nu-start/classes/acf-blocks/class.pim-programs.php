@@ -242,7 +242,7 @@ class PIM_Program
 		// * clean up the data array some (maybe not needed tbh)
 		$data = self::get_program_data($programID);
 		$data = self::array_remove_empty($data);
-		self::do_build_sections($programID, $data);
+		// self::do_build_sections($programID, $data);
 
 		unset($data['field_curriculum']);
 		print_r($data);

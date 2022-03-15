@@ -28,6 +28,7 @@ class PostsGrid_Item
 		// destructure meaningful data
 
 		$fields = get_fields($post->ID);
+
 		$post_type = $post->post_type;
 		$item_styles = !empty($gridOptions['item_style']) ? $gridOptions['item_style'] : '';
 
@@ -91,8 +92,11 @@ class PostsGrid_Item
 				$item_metadata = !empty( $fields['publication_info'] ) ? $fields['publication_info'] : '';
 				include( get_template_directory( ) . '/classes/acf-blocks/posts-grid-item/templates/news-item.php' );
 				break;
-			case 'nu_programs':
-				include( get_template_directory( ) . '/classes/acf-blocks/posts-grid-item/templates/program.php' );
+				case 'nu_programs':
+					$pim_id = !empty( $fields['pim_id'] ) ? $fields['pim_id'] : '';
+					$p_location = !empty( $fields['program_location'] ) ? $fields['program_location'] : '';
+					$p_duration = !empty( $fields['program_duration'] ) ? $fields['program_duration'] : '';
+					include( get_template_directory( ) . '/classes/acf-blocks/posts-grid-item/templates/program.php' );
 				break;
 			default:
 				$guides['grid-item-default'] = '

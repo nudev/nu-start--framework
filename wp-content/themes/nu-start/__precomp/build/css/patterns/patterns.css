@@ -146,6 +146,36 @@
 }
 
 /* 
+
+*/
+.pattern--is-basic-news-item-detail .wp-block-group + .wp-block-buttons {
+  margin-top: 40px;
+}
+.pattern--is-basic-news-item-detail .news-item-info:last-child {
+  margin-top: 0;
+}
+.pattern--is-basic-news-item-detail .wp-block-post-title {
+  margin: 40px 0;
+}
+.pattern--is-basic-news-item-detail .wp-block-post-featured-image {
+  margin: 32px 0;
+}
+
+/* 
+
+*/
+.pattern--is-basic-project-detail .wp-block-column > .wp-block-group + .wp-block-image {
+  margin: 32px 0;
+}
+
+/* 
+
+*/
+.pattern--is-basic-profile-detail .wp-block-column > .wp-block-group + .wp-block-image {
+  margin: 32px 0;
+}
+
+/* 
 	?		Pattern Category - Heroes
 */
 .pattern--hero-basic-breadcrumbs > .wp-block-cover {

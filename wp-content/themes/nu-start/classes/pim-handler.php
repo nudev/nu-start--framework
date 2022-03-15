@@ -121,7 +121,8 @@ class PIM_Handler
 
 		// 
 		$program_category = !empty($programJSON['field_degree_type']['entities'][0]['name'][0]['value']) ? $programJSON['field_degree_type']['entities'][0]['name'][0]['value'] : '';
-
+		$p_location = !empty($programJSON['field_location']['entities'][0]['name'][0]['value']) ? $programJSON['field_location']['entities'][0]['name'][0]['value'] : '';
+		$p_duration = !empty($programJSON['field_duration'][0]['value']) ? $programJSON['field_duration'][0]['value'] : '';
 
 		// 
 		$reusable_hero_string = '';
@@ -191,7 +192,9 @@ class PIM_Handler
 			'post_excerpt' 	=> 		preg_replace('/~[[:cntrl:]]~/', '', $programJSON['body'][0]['value']),
 			'post_title'	=> 		$formatted_post_title,
 			'meta_input'	=> 		[
-				'pim_id'	=> 			$programID
+				'pim_id'	=> 			$programID,
+				'program_location' => $p_location,
+				'program_duration' => $p_duration
 			],
 		];
 
@@ -200,6 +203,10 @@ class PIM_Handler
 
 		// set the category
 		wp_set_object_terms( $returned_ID, $program_category, 'nu_programs-categories' );
+
+		update_field( 'field_6230e094f19a3', $p_duration, $post_ID );
+		update_field( 'field_6230e08df19a2', $p_location, $post_ID );
+
 		
 		// try to attach the featured image
 		// self::attach_featured_image_to_post( $programJSON['field_hero_image'][0]['uri'], $formatted_post_title.' featured image', $post_ID );

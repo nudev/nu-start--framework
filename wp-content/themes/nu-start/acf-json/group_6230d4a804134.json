@@ -1,12 +1,12 @@
 {
-    "key": "group_60ddc6b25ef88",
-    "title": "Program: Post Meta",
+    "key": "group_6230d4a804134",
+    "title": "Block: Fetch a News Item Field",
     "fields": [
         {
-            "key": "field_60ddc6bc197da",
-            "label": "PIM ID",
-            "name": "pim_id",
-            "type": "number",
+            "key": "field_6230d4a811a4a",
+            "label": "Settings",
+            "name": "",
+            "type": "tab",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -15,20 +15,14 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "min": "",
-            "max": "",
-            "step": "",
-            "acfe_field_group_condition": 0
+            "placement": "top",
+            "endpoint": 0
         },
         {
-            "key": "field_6230e08df19a2",
-            "label": "Program Location",
-            "name": "program_location",
-            "type": "text",
+            "key": "field_6230d4a811a66",
+            "label": "Block Renders",
+            "name": "block_renders",
+            "type": "select",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -37,17 +31,26 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
+            "choices": {
+                "author": "Author",
+                "pubdate": "Pubdate",
+                "type": "Type"
+            },
+            "default_value": false,
+            "allow_null": 1,
+            "multiple": 0,
+            "ui": 1,
+            "ajax": 0,
+            "return_format": "value",
+            "allow_custom": 0,
+            "placeholder": "Fetch a News Item Field",
+            "search_placeholder": ""
         },
         {
-            "key": "field_6230e094f19a3",
-            "label": "Program Duration",
-            "name": "program_duration",
-            "type": "text",
+            "key": "field_6230d4a811a6e",
+            "label": "Style",
+            "name": "",
+            "type": "tab",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -56,30 +59,27 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
+            "placement": "top",
+            "endpoint": 0
         }
     ],
     "location": [
         [
             {
-                "param": "post_type",
+                "param": "block",
                 "operator": "==",
-                "value": "nu_programs"
+                "value": "acf\/news-info"
             }
         ]
     ],
     "menu_order": 0,
     "position": "side",
-    "style": "seamless",
+    "style": "default",
     "label_placement": "top",
     "instruction_placement": "tooltip",
     "hide_on_screen": "",
     "active": true,
-    "description": "adds data points to the program custom post type",
+    "description": "",
     "show_in_rest": 0,
     "acfe_display_title": "",
     "acfe_autosync": [
@@ -93,8 +93,8 @@
         }
     },
     "acfe_note": "",
-    "modified": 1647370397,
+    "modified": 1647367779,
     "acfe_categories": {
-        "custom-post-metadata": "Custom Post Metadata"
+        "acf-block": "ACF Block"
     }
 }

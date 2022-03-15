@@ -1,0 +1,20 @@
+/* 
+
+*/
+.pattern--is-basic-news-item-detail {
+	.wp-block-group + .wp-block-buttons {
+		margin-top: ($margin_2x + $half-margin);
+	}
+	.news-item-info:last-child {
+		margin-top: 0;
+	}
+
+	.wp-block-post-title {
+		margin: ($margin_2x + $half-margin) 0;
+	}
+
+	.wp-block-post-featured-image {
+		margin: $margin_2x 0;
+	}
+	
+}

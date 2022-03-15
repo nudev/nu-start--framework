@@ -92,7 +92,7 @@
     "label_placement": "top",
     "instruction_placement": "tooltip",
     "hide_on_screen": "",
-    "active": true,
+    "active": false,
     "description": "Fetch and render custom fields from content type items",
     "show_in_rest": 0,
     "acfe_display_title": "",
@@ -107,7 +107,7 @@
         }
     },
     "acfe_note": "",
-    "modified": 1647348586,
+    "modified": 1647354766,
     "acfe_categories": {
         "acf-block": "ACF Block"
     }
