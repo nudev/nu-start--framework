@@ -27,6 +27,8 @@
 	}
 
 	a.contains-clickable-area {
+		width: 100%;
+		height: 100%;
 		@include nu__boxshadow(0);
 		display: block;
 		text-decoration: none;
@@ -54,6 +56,12 @@
 		@include nu__grid_item_orientation();
 		background-color: var(--wp--preset--color--white-1);
 
+		&.has-layout-vertical {
+			figure {
+				min-height: 240px;
+			}
+		}
+
 		// is-horizontal modifier
 		&.has-layout-horizontal {
 			> .contains-clickable-area {
@@ -61,6 +69,9 @@
 				flex-flow: row nowrap;
 				figure {
 					flex: 0 1 220px;
+				}
+				figure + .grid-item-content {
+					max-width: 70%;
 				}
 			}
 		}
@@ -107,9 +118,8 @@
 	}
 }
 
-
-@import './posts-grid/ext/filtering-block';
-@import './posts-grid/ext/pagination-block';
+@import "./posts-grid/ext/filtering-block";
+@import "./posts-grid/ext/pagination-block";
 
 @import "./posts-grid/teasers/events-teaser";
 @import "./posts-grid/teasers/person-teaser";

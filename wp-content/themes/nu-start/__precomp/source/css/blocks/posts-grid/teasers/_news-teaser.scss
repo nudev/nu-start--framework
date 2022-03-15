@@ -6,11 +6,10 @@
 .posts-grid .nu__grid .grid-item.nu_news {
 	position: relative;
 
-	.contains-clickable-area {
-		height: 100%;
-	}
 
 	.grid-item-content {
+		flex: 1 1 auto;
+
 		background-color: #fafafa;
 		@include flush_inner_content_vertical();
 
@@ -52,4 +51,21 @@
 			color: var(--wp--preset--color--white-1);
 		}
 	}
+
+	// evenly space the vertical template
+	&.has-layout-vertical {
+		.contains-clickable-area {
+			height: 100%;
+			display: flex;
+			flex-flow: column nowrap;
+			justify-content: space-between;
+		}
+		.grid-item-content {
+			display: flex;
+			flex-flow: column nowrap;
+			justify-content: center;
+		}
+	}
+	
+	
 }
