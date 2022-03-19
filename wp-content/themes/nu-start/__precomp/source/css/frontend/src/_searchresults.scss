@@ -1,8 +1,6 @@
-//
-//
-//
-//
-
+/* 
+!		THIS NEEDS A LOT OF WORK!!!
+*/
 section.searchresults {
 	margin: 0 auto 50px auto;
 	width: 65vw;
@@ -115,88 +113,6 @@ section.searchresults {
 	}
 }
 
-header.header {
-	// * container for the entire sitesearch UI
-	#nu__sitesearch {
-		//
-		position: absolute;
-		z-index: 1;
-		right: 0;
-		top: 0;
-		height: 100%;
-		display: flex;
-		align-items: center;
-
-		// ? the navlinks are a sibling after this in the DOM, and can be offset here instead of conditionally classed
-		~ .navlinks {
-			margin-right: $margin_2x;
-		}
-
-		//
-		.nu__sitesearch-form--container {
-			position: relative;
-			left: $margin_2x;
-			height: 100%;
-			width: 0;
-			form {
-				@extend %transition;
-				transform: translateX(5%);
-				position: absolute;
-				top: 0;
-				left: 0;
-				display: flex;
-				flex-flow: row nowrap;
-				align-items: center;
-				height: 100%;
-				min-width: 50vw;
-				padding: $base-margin;
-				background-color: var(--wp--preset--color--white-1);
-				border: none 0;
-				input {
-					flex: 1 0 auto;
-					margin: 0 $margin_2x;
-					border: none 0;
-					border-bottom: 2px solid var(--wp--preset--color--black-3);
-					&:hover,
-					&:focus,
-					&:active {
-						outline: none;
-					}
-				}
-				button {
-					appearance: none;
-					background: none;
-					border: none 0;
-					padding: 0;
-					margin: 0 $base-margin -5px $base-margin;
-					cursor: pointer;
-					border-bottom: 2px solid transparent;
-					span {
-						margin-bottom: -7px; // just helps center inline
-					}
-
-					&:hover,
-					&:focus,
-					&:active {
-						border-bottom: 2px solid var(--wp--preset--color--black-3);
-					}
-				}
-			}
-		}
-
-		// ? handle this transition with just the revealed class
-		&.revealed {
-			.nu__sitesearch_toggle {
-				display: none;
-			}
-			.nu__sitesearch-form--container {
-				form {
-					transform: translateX(-100%);
-				}
-			}
-		}
-	}
-}
 
 div.gcsc-more-maybe-branding-root {
 	display: none !important;

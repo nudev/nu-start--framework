@@ -131,15 +131,15 @@ class NU__Starter
 			$str = '<div id="nu__sitesearch">';
 
 
-			$str .= '<a href="javascript:void(0);" class="nu__sitesearch_toggle"><span class="material-icons-outlined site-search-icon">search</span></a>';
+			$str .= '<a href="javascript:void(0);" class="nu__sitesearch_toggle"><span class="material-icons-outlined site-search-icon"></span></a>';
 
 			$str .= '
 				<div class="nu__sitesearch-form--container">
 					<form role="search" method="get" action="'.home_url().'" aria-label="site search form">
-						<button type="submit"><span class="material-icons-outlined site-search-icon">search</span></button>
+						<button type="submit"><span class="material-icons-outlined site-search-icon is-search"></span></button>
 						<label for="s"></label>
 						<input name="s" id="sitesearch-input" placeholder="Search here..." />
-						<button type="button" class="nu__sitesearch-close"><span class="material-icons-outlined">close</span></button>
+						<button type="button" class="nu__sitesearch-close"><span class="material-icons-outlined is-close"></span></button>
 					</form>
 				</div>
 			';
@@ -155,12 +155,12 @@ class NU__Starter
 			$str = '<div id="nu__sitesearch">';
 
 
-			$str .= '<a href="javascript:void(0);" class="nu__sitesearch_toggle"><span class="material-icons-outlined site-search-icon">search</span></a>';
+			$str .= '<a href="javascript:void(0);" class="nu__sitesearch_toggle"><span class="material-icons-outlined site-search-icon"></span></a>';
 
 			$str .= '
 				<div class="nu__sitesearch-form--container">
 					<form role="search" method="get" action="'.home_url().'/search" aria-label="site search form">
-						<button type="submit"><span class="material-icons-outlined site-search-icon">search</span></button>
+						<button type="submit"><span class="material-icons-outlined site-search-icon"></span></button>
 						<label for="query"></label>
 						<input name="query" id="sitesearch-input" placeholder="Search here..." />
 						<button type="button" class="nu__sitesearch-close"><span class="material-icons-outlined">close</span></button>

@@ -22,7 +22,7 @@
 		left: $base-margin;
 		max-width: 80%;
 		padding: $base-margin;
-		background-color: var(--wp--preset--color--white-1);
+		background-color: var(--wp--custom--elems--teasers--base--background);
 		.post-title {
 			margin-top: 0;
 		}
@@ -30,7 +30,7 @@
 			margin-bottom: 0;
 		}
 		.is-hanging-icon {
-			background-color: var(--wp--preset--color--white-1);
+			background-color: var(--wp--custom--elems--teasers--base--background);
 			position: absolute;
 			top: 0;
 			right: 0;

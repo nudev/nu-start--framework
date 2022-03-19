@@ -1,3 +1,48 @@
+/* 
+
+*/
+
+#wpadminbar {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 9999;
+}
+
+// ? skip nav for screen readers
+#skiptomaincontent {
+	background: var(--wp--preset--color--white-2);
+	height: 30px;
+	top: 0;
+	left: -9999px;
+	padding: 8px;
+	position: absolute;
+	transform: translateY(-100%);
+	transition: transform 0.3s;
+	&:focus {
+		transform: translateY(0%);
+	}
+}
+
+//
+// ? basic reset for our nav element
+//
+nav.navlinks {
+	ul,
+	.menu {
+		display: flex;
+		list-style-type: none;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+	// ?
+	.sub-menu {
+		display: flex;
+		flex-flow: column nowrap;
+	}
+}
+
 div.breadcrumbs[typeof="BreadcrumbList"] {
 	font-size: 12px;
 
@@ -58,16 +103,6 @@ div.breadcrumbs[typeof="BreadcrumbList"] {
 		}
 	}
 }
-
-
-
-
-
-
-
-
-
-
 
 #wpadminbar {
 	overflow: hidden;
@@ -153,7 +188,8 @@ div.breadcrumbs[typeof="BreadcrumbList"] {
 	font-size: 24px;
 	/* Preferred icon size */
 	display: inline-block;
-	line-height: 1;
+	// line-height: 1;
+	line-height: 24px;
 	text-transform: none;
 	letter-spacing: normal;
 	word-wrap: normal;

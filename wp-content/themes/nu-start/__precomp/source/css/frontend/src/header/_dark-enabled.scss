@@ -1,0 +1,31 @@
+/* 
+
+*/
+
+
+
+body.is-dark-header {
+	header.header {
+		.logo {
+			&,
+			svg path {
+				fill: var(--wp--preset--color--white-1);
+			}
+		}
+		.navlinks,
+		& {
+			background-color: var(--wp--preset--color--black-1);
+			color: var(--wp--preset--color--white-1);
+		}
+		.navlinks > ul > li > a {
+			color: var(--wp--preset--color--white-1);
+			@include media("<=medium") {
+				&:hover {
+					color: var(--wp--preset--color--black-1);
+				}
+			}
+		}
+	}
+}
+
+// 

@@ -3,9 +3,29 @@
  * 
  */
 // 
+add_action( 'init', 'remove_vendor_blocks_and_patterns' );
+if( !function_exists( 'remove_vendor_blocks_and_patterns' ) ){
+	function remove_vendor_blocks_and_patterns(){
+
+		if (!function_exists('unregister_block_pattern')) {
+			return;
+		}
+
+		// ? below is to help debugging
+		// $reg = WP_Block_Patterns_Registry::get_instance()->get_all_registered();
+		// error_log(print_r($reg,true));
+		// ? above is to help with debugging
+
+
+		unregister_block_pattern('gutenslider/pattern-testimonial-slider');
+	
+	}
+}
+
 add_action( 'init', 'nu__register_block_styles' );
 if( !function_exists( 'nu__register_block_styles' ) ){
 	function nu__register_block_styles(){
+	
 		// ? custom styles for Gutenslider block --- vendor plugin
 		register_block_style(
 			'eedee/block-gutenslider',
@@ -144,7 +164,29 @@ if( function_exists('acf_register_block_type') ):
 		'supports' => $supports,
 	));
 
-	
+	acf_register_block_type(array(
+		'name' => 'tabbed-content',
+		'title' => 'Tabs',
+		'description' => 'Tabs container.',
+		'category' => 'nu-blocks',
+		'mode' => 'preview',
+		'render_template' => get_template_directory().'/acf-blocks/tabbed-content/tabbed-content.php',
+		'icon' => '',
+		'supports' => $supports,
+		'enqueue_script' => get_template_directory_uri() . '/__precomp/build/js/blocks/tabbed-content-min.js',
+	));
+	acf_register_block_type(array(
+		'name' => 'tabbed-content-item',
+		'title' => 'Tabs Tab',
+		'description' => 'Tabs Tab!',
+		'category' => 'nu-blocks',
+		'mode' => 'preview',
+		'render_template' => get_template_directory().'/acf-blocks/tabbed-content/tabbed-content-item/tabbed-content-item.php',
+		'parent' => ['tabbed-content'],
+		'icon' => '',
+		'supports' => $supports,
+	));
+
 
 	acf_register_block_type(array(
 		'name' => 'content-query',

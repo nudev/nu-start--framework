@@ -1,0 +1,38 @@
+/* 
+
+*/
+
+header.header {
+	> .utilitynav {
+		position: relative;
+		margin: 0;
+		height: $utilityNavHeight;
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+		text-align: right;
+		border-bottom: 1px solid var(--wp--preset--color--black-3);
+		padding: 0 var(--wp--custom--spacing--outer);
+
+		.menu > .menu-item {
+			&:not(:first-child) {
+				margin-left: $base-margin;
+			}
+
+			.link-text {
+				font-size: var(--wp--preset--font-size--12-16);
+				line-height: 16px;
+			}
+		}
+
+		// hard disable showing sub-menus
+		.sub-menu {
+			display: none;
+		}
+
+		@include media("<medium"){
+			$utilityNavHeight : 32px;
+			height: $utilityNavHeight;
+		}
+	}
+}

@@ -15,7 +15,7 @@ function add_icons_to_submenu_parents( $output, $item, $depth, $args ){
 	//Only add class to 'top level' items on the 'primary' menu.
 	if( 'header' == $args->theme_location || 'utility' == $args->theme_location ){
 		if (in_array("menu-item-has-children", $item->classes)) {
-			$output = str_replace('</a>', '<span class="sub-menu-toggle material-icons-outlined">expand_more</span></a>', $output);
+			$output = $output.'<button aria-label="expand the '.esc_html(strtolower($item->title)).' submenu" class="navlinks-showsubmenu"></button>';
 		}
 	}
 	return $output;
