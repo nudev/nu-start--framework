@@ -6,7 +6,7 @@
 	position: fixed;
 	top: 0;
 	left: 0;
-	z-index: 9999;
+	z-index: 9;
 }
 
 // ? skip nav for screen readers
@@ -208,36 +208,6 @@ div.breadcrumbs[typeof="BreadcrumbList"] {
 	font-feature-settings: "liga";
 }
 
-footer.site-footer .nu__footer-sidebar {
-	* {
-		color: var(--wp--preset--color--white-1);
-	}
-
-	div.wpforms-container-full {
-		form.wpforms-form {
-			display: flex;
-			flex-flow: row nowrap;
-			align-items: flex-start;
-
-			.wpforms-submit-container {
-				margin-top: 22px; // ? WTF
-				button.wpforms-submit {
-					margin: 0;
-					height: 38px;
-					background-color: var(--wp--preset--color--red-3);
-					border: 1px solid var(--wp--preset--color--red-3);
-					color: var(--wp--preset--color--white-1);
-					&:hover,
-					&:focus {
-						border: 1px solid var(--wp--preset--color--red-3);
-						color: var(--wp--preset--color--red-3);
-						background-color: var(--wp--preset--color--white-1);
-					}
-				}
-			}
-		}
-	}
-}
 #nu_dev_utility {
 	position: fixed;
 	z-index: 9;
@@ -264,8 +234,6 @@ footer.site-footer .nu__footer-sidebar {
 
 	.nu__icon--expand {
 		display: block;
-	}
-	.nu__icon--collapse {
 	}
 
 	> section {

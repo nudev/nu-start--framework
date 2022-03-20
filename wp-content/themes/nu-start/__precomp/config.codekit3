@@ -780,6 +780,36 @@
       "pg" : 0,
       "sct" : 0
     },
+    "\/source\/css\/frontend\/src\/footer\/_form.scss" : {
+      "aP" : 1,
+      "bl" : 0,
+      "co" : 0,
+      "dP" : 10,
+      "ec" : 1,
+      "ft" : 4,
+      "ma" : 1,
+      "oA" : 1,
+      "oAP" : "\/build\/css\/frontend\/src\/footer\/_form.css",
+      "oF" : 0,
+      "oS" : 0,
+      "pg" : 0,
+      "sct" : 0
+    },
+    "\/source\/css\/frontend\/src\/footer\/_siteinfo.scss" : {
+      "aP" : 1,
+      "bl" : 0,
+      "co" : 0,
+      "dP" : 10,
+      "ec" : 1,
+      "ft" : 4,
+      "ma" : 1,
+      "oA" : 1,
+      "oAP" : "\/build\/css\/frontend\/src\/footer\/_siteinfo.css",
+      "oF" : 0,
+      "oS" : 0,
+      "pg" : 0,
+      "sct" : 0
+    },
     "\/source\/css\/frontend\/src\/header\/_dark-enabled.scss" : {
       "aP" : 1,
       "bl" : 0,

@@ -33,6 +33,7 @@ header.header {
 		@include media("<medium"){
 			$utilityNavHeight : 32px;
 			height: $utilityNavHeight;
+			display: none;
 		}
 	}
 }

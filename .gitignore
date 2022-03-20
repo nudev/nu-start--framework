@@ -120,6 +120,11 @@ Thumbs.db
 
 #!wp-content/themes/example-theme/
 !wp-content/themes/nu-start
+# ignore the (changing) enabled content types
+wp-content/themes/nu-start/classes/content-types/enabled/
+# ignore the (changing) PIM pulls folder
+wp-content/themes/nu-start/classes/pim-pulls/
+
 
 
 # anything below here would have been added by an app like github desktop

@@ -19,7 +19,7 @@ class NU__ContentTypes
 
 	public static function _init(){
 
-		$files = glob(get_template_directory()."/classes/content-types/*.php");
+		$files = glob(get_template_directory()."/classes/content-types/enabled/*.php");
 		foreach($files as $file){
 			include_once($file);
 		}

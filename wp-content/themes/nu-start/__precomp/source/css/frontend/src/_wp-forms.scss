@@ -24,7 +24,7 @@ div.wpforms-container-full {
 			font-weight: 400;
 			@include rfs(20px, line-height);
 			@include rfs(14px);
-			color: var(--wp--preset--color--black-2);
+			// color: var(--wp--preset--color--black-2);
 		}
 
 		// ? reset wpforms included styles for various elements
@@ -36,7 +36,7 @@ div.wpforms-container-full {
 				@include rfs(20px, line-height);
 				@include rfs(14px);
 				opacity: 0.8;
-				color: var(--wp--preset--color--black-2);
+				// color: var(--wp--preset--color--black-2);
 			}
 
 			input,

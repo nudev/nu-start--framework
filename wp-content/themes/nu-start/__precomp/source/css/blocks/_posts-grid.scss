@@ -10,7 +10,7 @@
 @import "./posts-grid/filters/filtering";
 
 // ? scope and begin styling...
-.acf-block.posts-grid {
+.posts-grid {
 	margin-top: $margin_2x;
 	margin-bottom: $base-margin;
 
@@ -53,7 +53,7 @@
 
 	// ?
 	.nu__grid {
-		padding: $margin_2x 0;
+		padding-bottom: $margin_2x;
 		@include nu__responsive_grid_layout();
 	}
 

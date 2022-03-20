@@ -18,6 +18,9 @@
   margin: 0 32px 0 0;
   padding: 16px 0;
   border-right: 1px solid rgba(45, 41, 38, 0.4);
+  background-color: var(--wp--preset--color--white-1);
+  z-index: 1;
+  position: relative;
 }
 .wp-block-group.is-pattern--landing-page-has-sidebar .is-the-content-types-sidebar-nav .wp-block-separator {
   margin: 32px 0;
