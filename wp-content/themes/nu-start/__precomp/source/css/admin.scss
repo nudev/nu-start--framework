@@ -6,6 +6,16 @@
 // ? seems stable
 @import "./library";
 
+.edit-post-visual-editor__post-title-wrapper {
+	margin-bottom: $margin_4x;
+	> h1 {
+		border-bottom: 1px solid rgba(124, 124, 124, 0.33);
+	}
+}
+
+.editor-styles-wrapper {
+	// padding: $base-margin;
+}
 
 // * having some issues with loading the fonts into the block editor
 // * this resolves it... but it feels weird
@@ -14,6 +24,10 @@
 	.material-icons-outlined {
 		font-family: "Material Icons";
 	}
+
+	// ?
+	// border: 1px solid rgba(124,124,124,0.33);
+	// border-bottom: 0px solid transparent;
 }
 
 .wp-block-widget-area.components-panel .components-panel__body-title {

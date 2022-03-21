@@ -9,12 +9,6 @@
   ],
   "creatorBuild" : "34335",
   "files" : {
-    "\/build" : {
-      "ft" : 65536,
-      "oA" : 1,
-      "oAP" : "\/build\/build",
-      "oF" : 0
-    },
     "\/source\/css\/_overrides\/_index.scss" : {
       "aP" : 1,
       "bl" : 0,
@@ -1952,7 +1946,7 @@
     "displayValueWasSetByUser" : 1,
     "iconImageName" : "brackets-ucla",
     "iconImageWasSetByUser" : 0,
-    "lastBuiltDate" : 669257492.17577803
+    "lastBuiltDate" : 669556652.569713
   },
   "projectSettings" : {
     "abortBuildOnError" : 1,

@@ -152,6 +152,18 @@ if( function_exists('acf_register_block_type') ):
 		'supports' => $supports,
 	));
 
+
+	acf_register_block_type(array(
+		'name' => 'fetch-custom-field',
+		'title' => 'Fetch Custom Field',
+		'description' => 'Fetch and display custom fields from custom post types.',
+		'category' => 'nu-blocks',
+		'mode' => 'preview',
+		'render_template' => get_template_directory().'/acf-blocks/fetch-custom-field/fetch-custom-field.php',
+		'icon' => '',
+		'supports' => $supports,
+	));
+
 	
 	acf_register_block_type(array(
 		'name' => 'beta-rest-api',

@@ -5,14 +5,12 @@ footer.site-footer {
 	//
 	//
 	//
-	padding: $margin_4x 0;
-	padding-left: var(--wp--custom--spacing--outer);
-	padding-right: var(--wp--custom--spacing--outer);
 
 	//
 	//
 	//
 	> .container {
+		padding: $margin_4x var(--wp--custom--spacing--outer);
 		display: flex;
 		flex-flow: row nowrap;
 		align-items: flex-start;
