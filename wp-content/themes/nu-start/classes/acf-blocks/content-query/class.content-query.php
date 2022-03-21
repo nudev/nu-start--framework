@@ -1,12 +1,15 @@
 <?php
+/* 
+
+*/
+// 
 
 
-class PG_Pagination extends PostsGrid
-{
-
-
-	// Hold the class instance.
+// General singleton class.
+class ContentQuery {
+  // Hold the class instance.
   private static $instance = null;
+
   
   // The constructor is private
   // to prevent initiation with outer code.
@@ -21,27 +24,44 @@ class PG_Pagination extends PostsGrid
   {
     if (self::$instance == null)
     {
-      self::$instance = new PG_Pagination();
+      self::$instance = new ContentQuery();
+			
     }
  
     return self::$instance;
   }
 
-	public static function _debugging(){
-
-
-		
+	public static function buildQueryArgs($fields){
+		$args = [
+			'post_type' 			=> $fields['query_by'],
+			'post_status' 		=> 		'publish',
+		];
 	}
-
-
 
   // 
   private function __clone(){}
   private function __wakeup(){}
+}
 
+
+class CQ_Filter extends ContentQuery
+{
+	
+}
+
+
+class CQ_ShowMore extends ContentQuery
+{
 	
 }
 
 
 
+
+
+
+
+
+
+// 
 ?>

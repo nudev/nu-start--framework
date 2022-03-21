@@ -1,0 +1,384 @@
+/* 
+
+*/
+
+//
+// ? additional traversal is needed to avoid targeting the utilitynav
+// ?
+//
+header.header {
+	.navicons {
+		height: 100%;
+		z-index: 999;
+		cursor: pointer;
+		span {
+			position: relative;
+			top: 50%;
+			transform: translateY(-50%);
+		}
+		span.close {
+			display: none;
+			&:before {
+				content: "\e5cd";
+			}
+		}
+		span.menu {
+			&:before {
+				content: "\e5d2";
+			}
+		}
+		&.revealed {
+			span.close {
+				display: block;
+			}
+
+			span.menu {
+				display: none;
+			}
+		}
+	}
+	.navlinks-showsubmenu {
+		all: unset;
+		appearance: none;
+		cursor: pointer;
+		display: inline-block;
+		color: inherit;
+		margin-left: $base-margin;
+		@extend %transition;
+		@include nu_micon("\e5cf", before);
+		&:before {
+			font-size: 24px;
+			line-height: 24px;
+			display: inline-block;
+			@extend %transition;
+			color: inherit;
+			margin-top: -2px;
+		}
+		&:after {
+			content: "";
+			width: 0;
+			height: 0;
+			border-radius: 50%;
+			border: 2px solid var(--wp--preset--color--black-2);
+			display: inline-block;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			opacity: 0;
+			@extend %transition;
+		}
+	}
+	//
+	//
+	// ? directly target any menu item link
+	.menu-item > a {
+		@extend %transition;
+		opacity: 0.8;
+		display: inline-block;
+		letter-spacing: 0.66px;
+		font-weight: 400;
+		white-space: nowrap;
+		> .link-text {
+			font-size: var(--wp--preset--font-size--14-20);
+			line-height: 20px;
+			display: inline-block;
+			vertical-align: middle;
+			@include accentUnderline();
+		}
+		&:hover,
+		&:active {
+			opacity: 1;
+			> .link-text {
+				&:before {
+					width: 100%;
+				}
+			}
+		}
+	}
+
+	// ? directly target any menu item that contains a submenu
+	.menu-item.menu-item-has-children {
+		position: relative;
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content: space-between;
+		align-items: center;
+
+		// hide submenu until revealed
+		.sub-menu {
+			flex-flow: column nowrap;
+			display: none;
+		}
+
+		&.revealed {
+			> .sub-menu {
+				display: flex;
+			}
+			> a + .navlinks-showsubmenu:before {
+				transform: rotate(90deg);
+			}
+			> a + .navlinks-showsubmenu:after {
+				width: 100%;
+				height: 100%;
+				opacity: 1;
+			}
+		}
+	}
+
+	// ? handle the active state of some wordpress conditional classes
+	.menu-item {
+		&.current-page-ancestor,
+		&.current-menu-ancestor,
+		&.current-menu-parent,
+		&.current-menu-item {
+			> a {
+				opacity: 1;
+				.link-text {
+					&:before {
+						width: $base-margin;
+					}
+				}
+			}
+		}
+	}
+
+	// ? only target the core nav menu
+	> .container {
+		> .navlinks--container {
+			height: 100%;
+			display: flex;
+			flex-flow: row nowrap;
+			> .navlinks {
+			}
+		}
+	}
+
+	//
+	// ? only target the utility nav menu
+	//
+	> .utilitynav {
+		> .navlinks--container {
+			display: flex;
+			flex-flow: row nowrap;
+			> .navlinks {
+			}
+		}
+	}
+}
+
+//
+//
+// ?		desktop only
+//
+//
+@include media(">medium") {
+	header.header {
+		// * mobile navicons hidden by default
+		.navicons {
+			display: none;
+		}
+
+		// ? any floating element neeeds white background color
+		.sub-menu,
+		.navlinks,
+		& {
+			background-color: var(--wp--preset--color--white-1);
+		}
+
+		// ? target any sub menu
+		.menu-item .sub-menu {
+			position: absolute;
+			top: 100%;
+			right: 0;
+			min-width: 220px;
+			padding: $margin_2x;
+			@include nu__boxshadow(2);
+			> li {
+				flex: 1 1 auto;
+			}
+			.menu-item {
+				&:not(:first-child) {
+					margin-top: $base-margin + $half-margin;
+				}
+			}
+		}
+
+		> .container {
+			//
+			//
+			// ? target only the top-level nav items
+			.navlinks > .menu > .menu-item {
+				&.current-menu-item,
+				&.current-page-ancestor,
+				&.current-menu-ancestor,
+				&.current-menu-parent {
+					> a:before {
+						width: 100%;
+					}
+				}
+
+				&:not(:first-child) {
+					margin-left: $base-margin + $half-margin;
+				}
+
+				> a {
+					height: $headerHeight;
+					@include accentUnderline();
+					// reposition the accent underline to the bottom
+					&:before {
+						bottom: 0;
+						left: auto;
+						right: 0;
+					}
+					> .link-text {
+						position: relative;
+						top: 50%;
+						transform: translateY(-50%);
+						&:before {
+							display: none;
+						}
+					}
+
+					&:hover {
+						&:before {
+							width: 100%;
+						}
+					}
+				}
+				> .sub-menu {
+					top: 90%;
+					top: 100%;
+					.sub-menu {
+						top: 0;
+						left: 0;
+						transform: translateX(-100%);
+					}
+				}
+			}
+			//
+			&.submenus-open-using-button {
+			}
+			&.submenus-open-using-hover {
+				.menu-item.menu-item-has-children {
+					&:hover {
+						> .sub-menu {
+							display: flex;
+						}
+						> a + .navlinks-showsubmenu:before {
+							transform: rotate(90deg);
+						}
+					}
+				}
+			}
+		}
+
+		//
+	}
+}
+
+//
+//
+// ?		mobile only
+//
+//
+@include media("<=medium") {
+	header.header > .container {
+		//
+		//
+		//
+		.menu-item {
+			padding: $half-margin 0;
+			&:not(:first-child) {
+				border-top: 1px solid rgba(236, 233, 230, 1);
+			}
+		}
+
+		//
+		//
+		//
+		.menu-item.menu-item-has-children {
+			flex-flow: row wrap;
+			.sub-menu {
+				box-shadow: none;
+				background-color: var(--wp--preset--color--white-1);
+			}
+			> .sub-menu {
+				width: 100%;
+				padding: 0 $base-margin;
+				margin-top: $base-margin;
+			}
+		}
+		//
+		//
+		//
+		> .navicons {
+			&.revealed {
+				position: fixed;
+				top: $half-margin;
+				right: $half-margin;
+				z-index: 1;
+				height: auto;
+				span {
+					transform: translate(0, 0);
+				}
+			}
+		}
+
+		//
+		//
+		//
+
+		> .navlinks--container {
+			display: none;
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100vh;
+			overflow: hidden;
+
+			//
+			//
+			//
+			> .navlinks {
+				height: calc(100% - 54px);
+				overflow-y: auto;
+				> .menu {
+					flex-flow: column nowrap;
+				}
+			}
+		}
+		//
+		//
+		//
+		> .navlinks--container.revealed {
+			display: flex;
+			flex-flow: column nowrap;
+			padding: $margin_3x 0 $base-margin 0;
+			background-color: rgba(244, 242, 240, 1);
+			// ? reverse order and set new margins
+			> .navlinks {
+				order: 1;
+				margin-top: $base-margin;
+				padding: 0 $base-margin;
+			}
+			//
+			#nu__sitesearch {
+				display: block;
+				margin-top: $base-margin;
+				height: $margin_3x;
+				padding: 0 $base-margin;
+			}
+		}
+
+		//
+		//
+	}
+}
+
+body.has-revealed-mobile-navmenu {
+	height: 100%;
+	max-height: 100%;
+	overflow: hidden;
+}

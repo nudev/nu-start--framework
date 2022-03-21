@@ -28,6 +28,7 @@ class PostsGrid_Item
 		// destructure meaningful data
 
 		$fields = get_fields($post->ID);
+
 		$post_type = $post->post_type;
 		$item_styles = !empty($gridOptions['item_style']) ? $gridOptions['item_style'] : '';
 
@@ -61,7 +62,7 @@ class PostsGrid_Item
 		$will_open_new_tab = !empty($fields['custom_permalink_redirect']) ? ' [will open in a new tab/window]' : '';
 		
 		// ? check for the actual post_excerpt and possibly use it
-		$the_basic_excerpt = has_excerpt() ? '<p class="post-excerpt">'.get_the_excerpt( ).'</p>' : '';
+		$the_basic_excerpt = has_excerpt() ? '<p class="post-excerpt">'.wp_strip_all_tags( wp_trim_words(  get_the_excerpt(), 30 ) ) .'</p>' : '';
 
 		// the featured image in markup
 		$the_cover_image = !empty($item_styles['display_featured_image']) && has_post_thumbnail( ) ? '<figure>'.get_the_post_thumbnail( ).'</figure>' : '';
@@ -81,11 +82,21 @@ class PostsGrid_Item
 					$event_item_metadata = !empty( $fields['event_item_metadata'] ) ? $fields['event_item_metadata'] : '';
 					include( get_template_directory( ) . '/classes/acf-blocks/posts-grid-item/templates/event.php' );
 				break;
+			case 'nu_profiles':
+				include( get_template_directory( ) . '/classes/acf-blocks/posts-grid-item/templates/profile.php' );
+				break;
+			case 'nu_projects':
+				include( get_template_directory( ) . '/classes/acf-blocks/posts-grid-item/templates/project.php' );
+				break;
 			case 'nu_news':
+				$item_metadata = !empty( $fields['publication_info'] ) ? $fields['publication_info'] : '';
 				include( get_template_directory( ) . '/classes/acf-blocks/posts-grid-item/templates/news-item.php' );
 				break;
-			case 'nu_programs':
-				include( get_template_directory( ) . '/classes/acf-blocks/posts-grid-item/templates/program.php' );
+				case 'nu_programs':
+					$pim_id = !empty( $fields['pim_id'] ) ? $fields['pim_id'] : '';
+					$p_location = !empty( $fields['program_location'] ) ? $fields['program_location'] : '';
+					$p_duration = !empty( $fields['program_duration'] ) ? $fields['program_duration'] : '';
+					include( get_template_directory( ) . '/classes/acf-blocks/posts-grid-item/templates/program.php' );
 				break;
 			default:
 				$guides['grid-item-default'] = '

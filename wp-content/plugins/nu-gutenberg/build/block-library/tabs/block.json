@@ -1,0 +1,38 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "nu-blocks/tabs",
+	"title": "Tabs",
+	"category": "nu-blocks",
+	"icon": "dashicons-star-empty",
+	"description": "Create a tabs block using tabs-item blocks",
+	"keywords": ["tabs", "nu"],
+	"supports": {
+		"html": false,
+		"align": ["left", "center", "right", "wide", "full"]
+	},
+	"attributes": {
+		"verticalAlignment": {
+			"type": "string"
+		},
+		"contentJustification": {
+			"type": "string"
+		},
+		"orientation": {
+			"type": "string",
+			"default": "horizontal"
+		},
+		"count": {
+			"type": "number",
+			"default": "1"
+		}
+	},
+	"styles": [
+		{ "name": "default", "label": "Default", "isDefault": true },
+		{ "name": "floating", "label": "Floating" }
+	],
+	"textdomain": "nublocks",
+	"editorScript": "file:../../../build/index.js",
+    "editorStyle": "file:../../../build/index.css",
+    "style": "file:../../../build/style-index.css"
+}

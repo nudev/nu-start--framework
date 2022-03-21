@@ -16,27 +16,11 @@
  * Clearfix
  *
  */
-html :where(.editor-styles-wrapper, .blocks--wrapper) {
-  color: var(--wp--preset--color--black-2);
-  font-family: "Lato", sans-serif, "Material Icons";
-  font-size: 1rem;
-  font-weight: 300;
-  line-height: 1.375;
-}
-
 .wp-block-nu-blocks-accordion.is-style-icon-appears-before-title .wp-block-nu-blocks-accordion-item .wp-block-nublocks-accordion-item__title:before {
   transition: all 0.1s ease-in-out;
 }
 
 /* ... project styles will always load after this ... */
-html :where(.editor-styles-wrapper, .blocks--wrapper) {
-  position: relative;
-  z-index: 1;
-}
-html :where(.editor-styles-wrapper, .blocks--wrapper) :where(p a) {
-  text-decoration: none;
-}
-
 .wp-block-nu-blocks-accordion.is-style-icon-appears-before-title .wp-block-nu-blocks-accordion-item .wp-block-nublocks-accordion-item__title {
   position: relative;
   position: relative;
@@ -93,27 +77,11 @@ html :where(.editor-styles-wrapper, .blocks--wrapper) :where(p a) {
  * Clearfix
  *
  */
-html :where(.editor-styles-wrapper, .blocks--wrapper) {
-  color: var(--wp--preset--color--black-2);
-  font-family: "Lato", sans-serif, "Material Icons";
-  font-size: 1rem;
-  font-weight: 300;
-  line-height: 1.375;
-}
-
 .wp-block-nu-blocks-accordion .wp-block-nu-blocks-accordion-item .wp-block-nublocks-accordion-item__content, .wp-block-nu-blocks-accordion .wp-block-nu-blocks-accordion-item .wp-block-nublocks-accordion-item__title, .wp-block-nu-blocks-accordion .wp-block-nu-blocks-accordion-item summary {
   transition: all 0.1s ease-in-out;
 }
 
 /* ... project styles will always load after this ... */
-html :where(.editor-styles-wrapper, .blocks--wrapper) {
-  position: relative;
-  z-index: 1;
-}
-html :where(.editor-styles-wrapper, .blocks--wrapper) :where(p a) {
-  text-decoration: none;
-}
-
 .wp-block-nu-blocks-accordion {
   margin: 64px 0 auto 0;
 }

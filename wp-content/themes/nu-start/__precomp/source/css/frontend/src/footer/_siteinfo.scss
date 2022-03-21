@@ -1,0 +1,46 @@
+//
+//
+//
+.footer-siteinfo {
+	> .logo {
+		margin-bottom: $base-margin;
+	}
+
+	.wp-block-social-links {
+		margin-top: $base-margin !important;
+	}
+	.address,
+	.contact,
+	.social {
+		margin: $base-margin 0 0 0;
+		@include font-size(0.875rem);
+
+		a {
+			color: var(--wp--preset--color--white-1);
+			border-bottom: 1px solid transparent;
+			font-weight: 300;
+
+			&:hover,
+			&:focus {
+				color: var(--wp--preset--color--white-1);
+			}
+		}
+	}
+
+	.contact {
+		display: flex;
+		flex-flow: column nowrap;
+	}
+
+	.social {
+		display: flex;
+		flex-flow: row nowrap;
+
+		.nu__customsvg {
+			margin: 0 0 0 $base-margin;
+			&:first-child {
+				margin: 0;
+			}
+		}
+	}
+}

@@ -13,7 +13,7 @@ $guides = [];
 
 // * guide string for the entire footer
 $guides['footer'] = '
-	<footer class="site-footer">
+	<footer class="site-footer is-style-dark">
 		<div class="container">
 			<section class="footer-siteinfo">%1$s%3$s%4$s</section>
 			<section class="footer-content">

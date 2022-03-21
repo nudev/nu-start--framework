@@ -1,6 +1,6 @@
 {
     "key": "group_622526b44994b",
-    "title": "Block: Posts Grid Filtering",
+    "title": "Block: Content Query Filter",
     "fields": [
         {
             "key": "field_622526ba2678d",
@@ -59,7 +59,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "acf\/beta-postsgrid-filtering"
+                "value": "acf\/content-query-filtering"
             }
         ]
     ],
@@ -84,5 +84,8 @@
         }
     },
     "acfe_note": "",
-    "modified": 1646601981
+    "modified": 1647313533,
+    "acfe_categories": {
+        "acf-block": "ACF Block"
+    }
 }

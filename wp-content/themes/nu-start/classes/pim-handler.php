@@ -121,7 +121,8 @@ class PIM_Handler
 
 		// 
 		$program_category = !empty($programJSON['field_degree_type']['entities'][0]['name'][0]['value']) ? $programJSON['field_degree_type']['entities'][0]['name'][0]['value'] : '';
-
+		$p_location = !empty($programJSON['field_location']['entities'][0]['name'][0]['value']) ? $programJSON['field_location']['entities'][0]['name'][0]['value'] : '';
+		$p_duration = !empty($programJSON['field_duration'][0]['value']) ? $programJSON['field_duration'][0]['value'] : '';
 
 		// 
 		$reusable_hero_string = '';
@@ -180,6 +181,8 @@ class PIM_Handler
 			'.$acf_block.'
 		';
 		
+		$formatted_post_title = preg_replace('/~[[:cntrl:]]~/', '', $programJSON['field_formatted_title'][0]['value']);
+		
 		// 
 		$postarr = [
 			'ID'			=> 		$post_ID,
@@ -187,19 +190,74 @@ class PIM_Handler
 			'post_status' 	=> 		'publish',
 			'post_content'	=>		$working_template,
 			'post_excerpt' 	=> 		preg_replace('/~[[:cntrl:]]~/', '', $programJSON['body'][0]['value']),
-			'post_title'	=> 		preg_replace('/~[[:cntrl:]]~/', '', $programJSON['field_formatted_title'][0]['value']),
+			'post_title'	=> 		$formatted_post_title,
 			'meta_input'	=> 		[
-				'pim_id'	=> 			$programID
+				'pim_id'	=> 			$programID,
+				'program_location' => $p_location,
+				'program_duration' => $p_duration
 			],
 		];
 
 		// set a variable as the return of wp insert post
 		$returned_ID = wp_insert_post( $postarr );
+
+		// set the category
 		wp_set_object_terms( $returned_ID, $program_category, 'nu_programs-categories' );
+
+		update_field( 'field_6230e094f19a3', $p_duration, $post_ID );
+		update_field( 'field_6230e08df19a2', $p_location, $post_ID );
+
+		
+		// try to attach the featured image
+		// self::attach_featured_image_to_post( $programJSON['field_hero_image'][0]['uri'], $formatted_post_title.' featured image', $post_ID );
 
 	}
 		
-		
+	public static function attach_featured_image_to_post( $image_url, $image_name, $post_id ){
+		// Add Featured Image to Post
+		// $image_url        = 'http://s.wordpress.org/style/images/wp-header-logo.png'; // Define the image URL here
+		// $image_name       = 'wp-header-logo.png';
+		$upload_dir       = wp_upload_dir(); // Set upload folder
+		$image_data       = file_get_contents($image_url); // Get image data
+		$unique_file_name = wp_unique_filename( $upload_dir['path'], $image_name ); // Generate unique name
+		$filename         = basename( $unique_file_name ); // Create image file name
+
+		// Check folder permission and define file location
+		if( wp_mkdir_p( $upload_dir['path'] ) ) {
+				$file = $upload_dir['path'] . '/' . $filename;
+		} else {
+				$file = $upload_dir['basedir'] . '/' . $filename;
+		}
+
+		// Create the image  file on the server
+		file_put_contents( $file, $image_data );
+
+		// Check image file type
+		$wp_filetype = wp_check_filetype( $filename, null );
+
+		// Set attachment data
+		$attachment = array(
+				'post_mime_type' => $wp_filetype['type'],
+				'post_title'     => sanitize_file_name( $filename ),
+				'post_content'   => '',
+				'post_status'    => 'inherit'
+		);
+
+		// Create the attachment
+		$attach_id = wp_insert_attachment( $attachment, $file, $post_id );
+
+		// Include image.php
+		require_once(ABSPATH . 'wp-admin/includes/image.php');
+
+		// Define attachment metadata
+		$attach_data = wp_generate_attachment_metadata( $attach_id, $file );
+
+		// Assign metadata to attachment
+		wp_update_attachment_metadata( $attach_id, $attach_data );
+
+		// And finally assign featured image to post
+		set_post_thumbnail( $post_id, $attach_id );
+	}
 
 	
 	

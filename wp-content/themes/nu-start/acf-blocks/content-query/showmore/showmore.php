@@ -1,7 +1,7 @@
 <?php
 /**
  * 
- * 	?		REST API via Block Editor --- TEST
+ * 	?		showmore
  * 
  * @param   array $block The block settings and attributes.
  * @param   string $content The block inner HTML (empty).
@@ -13,7 +13,7 @@
 
 
 // Create id attribute allowing for custom "anchor" value.
-$id = 'beta-postsgrid-filtering--' . $block['id'];
+$id = 'content-query-showmore--' . $block['id'];
 
 if( !empty($block['anchor']) ) {
 	$id = $block['anchor'];
@@ -21,7 +21,7 @@ if( !empty($block['anchor']) ) {
 
 
 // Create class attribute allowing for custom "className" and "align" values.
-$className = 'acf-block beta-postsgrid-filtering';
+$className = 'acf-block content-query-showmore';
 if( !empty($block['className']) ) {
 	$className .= ' ' . $block['className'];
 }
@@ -31,9 +31,25 @@ if( !empty($block['align']) ) {
 }
 
 
+// ? the pattern is the pattern...
+$guides = [];
+$return = '';
+$guides['content-query-showmore'] = '
+	%1$s
+';
+
+
+$return .= sprintf(
+	$guides['content-query-showmore'],
+	'Pagination Temporarily Disabled'
+);
 
 ?>
 <div id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?>">
 	<div>
+		<?php 
+			$instance = ContentQuery::getInstance();
+			echo $return;
+		?>
 	</div>
 </div>

@@ -7,6 +7,14 @@
 	// ? generally speaking, inner-blocks push from the top by a reduced margin compared to ungrouped blocks
 	> * {
 		margin-top: $margin_2x;
+		// ? first child should be flush with the top edge of the group
+		&:first-child {
+			margin-top: 0;
+		}
+		// ? last child should be flush with the bottom edge of the group
+		&:last-child {
+			margin-bottom: 0;
+		}
 	}
 
 	&.has-text-color {
@@ -19,15 +27,6 @@
 	> p,
 	.wp-block-paragraph {
 		margin-top: $half-margin;
-	}
-
-	// ? first child should be flush with the top edge of the group
-	> :first-child {
-		margin-top: 0;
-	}
-	// ? last child should be flush with the bottom edge of the group
-	> :last-child {
-		margin-bottom: 0;
 	}
 }
 

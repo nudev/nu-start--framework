@@ -25,10 +25,11 @@ $margin_8x: $base-margin * 8;
 $margin_10x: $base-margin * 10;
 $margin_12x: $base-margin * 12;
 
+
+
 // Elements
 $adminBarHeight: 32px;
-$headerHeight: 72px;
-$headerHeight: 92px;
 $globalHeaderHeight: 48px;
 $utilityNavHeight: 48px;
-$headerOffset: $headerHeight;
+$headerHeight: 92px;
+$offsetMain : $headerHeight;

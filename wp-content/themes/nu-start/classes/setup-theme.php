@@ -487,7 +487,7 @@ class SetupTheme
 		));
 
 		// ? theme supports related to the block editor
-		add_theme_support( 'align-wide' );								// enable wide alignment for blocks
+		add_theme_support( 'align-wide' );									// enable wide alignment for blocks
 		add_theme_support( 'wp-block-styles' );							//  enable fully opinionated block styles
 		add_theme_support( 'custom-spacing' );
 		// 

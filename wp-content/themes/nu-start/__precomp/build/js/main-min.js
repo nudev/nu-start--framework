@@ -142,10 +142,10 @@
   				// this._doCloseModal();
   			},
   			_doCloseModal: function () {
-  				// 
+  				//
   				// ? we need to say if you click anywhere outside the dropdown/modal to close it
   				// ? maybe even more; like what if you resize window, etc...
-  				// 
+  				//
   			},
   			_clickHandler: function () {
   				$(".is-the-content-types-sidebar-nav").on(

@@ -1,0 +1,43 @@
+/* 
+
+*/
+
+.nu__grid {
+	.grid-item.nu_profiles {
+		position: relative;
+		
+		.grid-item-content {
+			position: relative;
+			.post-title {
+				font-size: var(--wp--preset--font-size--30-36);
+				line-height: 36px;
+				font-weight: 300;
+				margin-top: 0;
+			}
+			.post-excerpt {
+				margin-top: $margin_2x;
+				margin-bottom: 0;
+				font-weight: 700;
+				font-size: var(--wp--preset--font-size--20-28);
+			}
+			.is-hanging-icon {
+				position: absolute;
+				top: 0;
+				right: 0;
+				transform: translateY(-100%);
+				.material-icons-outlined {
+					font-size: 30px;
+					line-height: 30px;
+					transform: rotate(-45deg);
+				}
+			}
+		}
+
+		&.has-layout-horizontal {
+			.is-hanging-icon {
+				transform: translateY(0);
+			}
+		}
+		
+	}
+}

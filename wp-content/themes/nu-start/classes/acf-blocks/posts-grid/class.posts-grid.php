@@ -9,7 +9,6 @@
  */
 if( !is_admin()){
 	include_once(  get_template_directory().'/classes/acf-blocks/posts-grid/filtering-form.php' );
-	include_once(  get_template_directory().'/classes/acf-blocks/posts-grid/pg.pagination.php' );
 }
 
 

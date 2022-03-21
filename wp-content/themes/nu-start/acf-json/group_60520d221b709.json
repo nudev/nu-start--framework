@@ -83,7 +83,7 @@
                             "label": "Submenus Reveal",
                             "name": "submenus_reveal",
                             "type": "button_group",
-                            "instructions": "By default sub-menu will reveal on hover, otherwise opening on click of the parent item. Clicking a parent item that has focus or is revealed will navigate to that link.\r\nAlternatively; enable Icon mode to restrict sub-menus to only opening when their dropdown icon is clicked; and always navigating when the link is clicked.",
+                            "instructions": "Do you go full button?",
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
@@ -92,11 +92,11 @@
                                 "id": ""
                             },
                             "choices": {
-                                "icon": "Icon",
-                                "click": "Click"
+                                "button": "Button",
+                                "hover": "Hover"
                             },
                             "allow_null": 0,
-                            "default_value": "click",
+                            "default_value": "button",
                             "layout": "horizontal",
                             "return_format": "value"
                         }
@@ -128,14 +128,9 @@
         "json"
     ],
     "acfe_form": 0,
-    "acfe_meta": {
-        "acfcloneindex": {
-            "acfe_meta_key": "",
-            "acfe_meta_value": ""
-        }
-    },
+    "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1646747560,
+    "modified": 1647457999,
     "acfe_categories": {
         "theme-settings-v1": "Theme Settings - V1"
     }

@@ -69,7 +69,7 @@ $guides['grid-item-event'] = '
 ';
 
 $return .= sprintf(
-$guides['grid-item-event'],
+  $guides['grid-item-event'],
   ' '.$post_type,
   $the_cover_image,
   // $the_date_time,

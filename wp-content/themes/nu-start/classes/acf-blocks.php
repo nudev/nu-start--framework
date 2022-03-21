@@ -39,6 +39,11 @@ class NU_ACF_Blocks
 	}
 
 	private function includes(){
+
+		
+		require_once( get_template_directory(  ) . '/classes/acf-blocks/content-query/class.content-query.php' );
+
+
 		// ... require_once template files here
 		require_once( get_template_directory(  ) . '/classes/acf-blocks/posts-grid/class.posts-grid.php' );
 		require_once( get_template_directory(  ) . '/classes/acf-blocks/posts-grid-item/class.posts-grid-item.php' );
@@ -51,7 +56,7 @@ class NU_ACF_Blocks
 	
 }
 
-NU_ACF_Blocks::instance();
+$do_acf_blocks = NU_ACF_Blocks::instance();
 
 
 

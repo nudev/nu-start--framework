@@ -9,6 +9,9 @@
 		margin: 0 $margin_2x 0 0;
 		padding: $base-margin 0;
 		border-right: 1px solid $black;
+		background-color: var(--wp--preset--color--white-1);
+		z-index: 1;
+		position: relative;
 		.wp-block-separator {
 			margin: $margin_2x 0;
 		}

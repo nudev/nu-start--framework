@@ -1,0 +1,47 @@
+/* 
+
+
+*/
+
+
+.acf-block.news-info {
+
+	margin: $half-margin 0 $half-margin 0;
+	p {
+		margin: 0;
+	}
+	
+	.author {
+		font-size: var(--wp--preset--font-size--20-28);
+		line-height: 28px;
+	}
+	
+	.pubdate {
+		font-size: var(--wp--preset--font-size--14-20);
+		line-height: 20px;
+		font-weight: 400;
+	}
+	
+
+	.news-item-category {
+		width: 100%;
+		text-transform: uppercase;
+		letter-spacing: 2px;
+		// padding: $base-margin;
+		font-size: var(--wp--preset--font-size--12-16);
+		line-height: 16px;
+		font-weight: 400;
+
+		// ? we have disabled this little tick
+		&:before {
+			content: "";
+			display: inline-block;
+			border: 1px solid var(--wp--preset--color--black-1);
+			border-radius: 50%;
+			width: 8px;
+			height: 8px;
+			margin: 0 $base-margin 0 0;
+			display: none; // ! disabled for now
+		}
+	}
+}

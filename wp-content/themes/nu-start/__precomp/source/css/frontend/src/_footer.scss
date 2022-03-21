@@ -1,299 +1,171 @@
-/* 
-	Site Footer
-*/
+//
+//
+//
 footer.site-footer {
+	//
+	//
+	//
 
-	margin-top: $margin_8x;
-
-	&.disabled {
-		display: none;
-	}
-	
-	
-	// ? switch svg fill to white, or invert img
-	a.logo {
-		border-bottom: none 0;
-
-		svg path {
-			fill: var(--wp--preset--color--white-1);
-		}
-		img {
-			filter: invert(100%);
-		}
-	}
-	ul,
-	ol {
-		list-style-type: none;
-		list-style: none;
-		margin: 0;
-		padding: 0;
-		&.sub-menu {
-			padding-left: $half-margin;
-		}
-	}
-	background-color: var(--wp--preset--color--black-2);
-
-	// custom background color; force social icons bg to match (blend in)
-	background-color: var(--wp--custom--footer-background--dark);
-	.wp-social-link {
-		background-color: var(--wp--custom--footer-background--dark) !important;
-	}
-	color: var(--wp--preset--color--white-1);
-	padding: $margin_2x 0 $margin_4x 0;
-
-	// ? match how the header container controls width
+	//
+	//
+	//
 	> .container {
-		margin: 0 $margin_4x;
+		padding: $margin_4x var(--wp--custom--spacing--outer);
 		display: flex;
 		flex-flow: row nowrap;
 		align-items: flex-start;
-		// justify the row of two main content aras
 		> section {
 			flex: 1 1 auto;
 		}
-		// ? mobile
-		@include media("<=medium") {
-			flex-flow: column nowrap;
-		}
-		// ? desktop
-		@include media(">=medium") {
-			align-items: flex-start;
-			justify-content: space-between; // forces outer groupings to l/r edges
-			> section {
-				&:not(:first-child) {
-					margin: 0 0 0 $margin_8x;
-				}
-			}
-		}
 	}
 
-	//
-	//
-	//
-	//
 	.footer-content {
 		display: flex;
 		flex-flow: row nowrap;
 		// break the sidebar to below nav before final breakpoint
 		justify-content: flex-end;
-		align-items: flex-end;
-		@include media("<=xlarge") {
-			flex-flow: column nowrap;
-		}
-		
-		.navlinks {
-			//
-			.menu-item {
-				> a {
-					margin: 0;
-					font-weight: 400;
-					@include rfs(20px, line-height);
-					@include rfs(14px, --wp--preset--font-size--14-20);
-					color: var(--wp--preset--color--white-1);
-					opacity: 0.8;
-					display: inline-block;
-					span {
-						font-weight: 400;
-						@include rfs(14px);
-						@include rfs(20px, line-height);
-						color: var(--wp--preset--color--white-1);
-						@include accentUnderline();
-					}
-					&:hover,
-					&:focus {
-						opacity: 1;
-						span:before {
-							width: $base-margin;
-						}
-					}
-				}
-				&.current-menu-item,
-				&.current_page_ancestor {
-					> a {
-						opacity: 1;
-						span:before {
-							width: $base-margin;
-						}
-					}
-				}
-			}
-			// ? top level navlinks menu container
-			> .menu {
-				max-width: map-get($breakpoints, "medium");
-				display: flex;
-				flex-flow: row wrap;
-
-				// ? top level nav items
-				> .menu-item {
-					flex: 1 1 auto;
-					margin: $margin_2x;
-					> a {
-						> span {
-							font-weight: bold;
-							@include rfs(16px);
-							@include rfs(24px, line-height);
-						}
-					}
-					> .sub-menu {
-						margin-top: $half-margin;
-					}
-				}
-			}
-		}
-		
-
-		//
-		//
-		//
-		@include media(">=medium") {
-			.navlinks {
-				> .menu {
-					> .menu-item {
-					}
-				}
-			}
-		}
-
-		//
-		//
-		//
-		@include media("<=medium") {
-			.navlinks {
-				> .menu {
-					> .menu-item {
-						margin-bottom: 0;
-					}
-				}
-			}
-		}
-		//
-		//
-		@include media("<=phone") {
-			width: 100%;
-			.navlinks {
-				> .menu {
-					flex-flow: column nowrap;
-					align-items: center;
-					width: 100%;
-					margin: 0;
-					> .menu-item {
-						width: 100%;
-						margin: $margin_2x 0 0 0;
-					}
-				}
-			}
-		}
 	}
 
 	//
 	//
 	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	.footer-siteinfo {
-		> .logo {
-			margin-top: $margin_2x;
+	.navlinks {
+		//
+		//
+		//
+		> .menu {
+			display: flex;
+			flex-flow: row wrap;
 		}
-		.address,
-		.contact,
-		.social {
-			margin: $base-margin 0 0 0;
-			@include font-size(0.875rem);
-
-			a {
-				color: var(--wp--preset--color--white-1);
-				border-bottom: 1px solid transparent;
-				font-weight: 300;
-
+		//
+		//
+		//
+		> .menu > .menu-item {
+			> a {
+				opacity: 0.8;
+				// ? elder menu item styled like a category label
+				.link-text {
+					font-weight: bold;
+					@include rfs(16px);
+					@include rfs(24px, line-height);
+				}
+			}
+			// ? push menu stack down from elder
+			> .sub-menu {
+				margin-top: $base-margin;
+			}
+		}
+		//
+		//
+		//
+		.menu-item {
+			> a {
+				opacity: 0.6;
+				.link-text {
+					font-weight: 400;
+					@include rfs(14px);
+					@include rfs(20px, line-height);
+					@include accentUnderline();
+				}
+				// currently highlighted item
 				&:hover,
 				&:focus {
-					color: var(--wp--preset--color--white-1);
+					opacity: 1;
+					> .link-text:before {
+						width: $base-margin;
+					}
 				}
 			}
-		}
-
-		.contact {
-			display: flex;
-			flex-flow: column nowrap;
-		}
-
-		.social {
-			display: flex;
-			flex-flow: row nowrap;
-
-			.nu__customsvg {
-				margin: 0 0 0 $base-margin;
-				&:first-child {
-					margin: 0;
-				}
-			}
-		}
-	}
-	.nu__footer-sidebar {
-		
-		div.wpforms-container-full {
-			* {
-				color: var(--wp--preset--color--white-1);
-			}
-			.wpforms-field-sublabel,
-			.wpforms-field-label-inline,
-			.wpforms-field-label{
-				color: var(--wp--preset--color--white-1);
-			}
-			form.wpforms-form {
-				display: flex;
-				flex-flow: row nowrap;
-				align-items: flex-start;
-
-				.wpforms-submit-container {
-					margin-top: 22px; // ? WTF
-					button.wpforms-submit {
-						margin: 0;
-						height: 38px;
-						background-color: var(--wp--preset--color--red-3);
-						border: 1px solid var(--wp--preset--color--red-3);
-						color: var(--wp--preset--color--white-1);
-						&:hover,
-						&:focus {
-							border: 1px solid var(--wp--preset--color--red-3);
-							color: var(--wp--preset--color--red-3);
-							background-color: var(--wp--preset--color--white-1);
-						}
+			// current page ancestry
+			&.current-menu-item,
+			&.current-page-ancestor {
+				> a {
+					opacity: 1;
+					span:before {
+						width: $base-margin;
 					}
 				}
 			}
 		}
 	}
+
+	//
+	//
+	//
+	&.is-style-dark {
+		background-color: var(--wp--custom--elems--footer--background--dark);
+		color: var(--wp--preset--color--white-1);
+		.wp-social-link {
+			background-color: var(
+				--wp--custom--elems--footer--background--dark
+			);
+		}
+		// ? switch svg fill to white, or invert img
+		a.logo {
+			svg path {
+				fill: var(--wp--preset--color--white-1);
+			}
+			img {
+				filter: invert(100%);
+			}
+		}
+	}
+	//
+	//
+	//
+	&.disabled {
+		display: none;
+	}
+
+	@include media("<=xlarge") {
+		.footer-content {
+			flex-flow: column nowrap;
+			.nu__footer-sidebar.wpforms-widget {
+				div.wpforms-container-full {
+					margin: $margin_4x 0 0 0;
+					form.wpforms-form {
+						margin: 0 auto;
+					}
+				}
+			}
+		}
+	}
+	//
+	//
+	//
+	// ? mobile
+	@include media("<medium") {
+		> .container {
+			flex-flow: column nowrap;
+		}
+		.navlinks {
+			margin-top: $margin_4x;
+			> .menu {
+				gap: $margin_2x;
+			}
+		}
+	}
+	// ? desktop
+	@include media(">=medium") {
+		align-items: flex-start;
+		justify-content: space-between; // forces outer groupings to l/r edges
+		> section {
+			&:not(:first-child) {
+				margin: 0 0 0 $margin_8x;
+			}
+		}
+
+		.navlinks {
+			margin-left: $margin_4x;
+			> .menu {
+				gap: $margin_4x;
+			}
+		}
+	}
+
+	//
+	//
+	//
+	@import "./footer/form";
+	@import "./footer/siteinfo";
 }

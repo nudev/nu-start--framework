@@ -1,3 +1,7 @@
+
+
+
+
 /* 
 	because the block may or may not be loaded when we call this in (the posts grid just calls it in for now)
 */
@@ -359,8 +363,7 @@
 			@media screen and (min-width: 781px) {
 				flex-flow: row nowrap;
 				> figure {
-					flex: 1 0 300px;
-					max-width: 50%;
+					// flex: 1 1 auto;
 				}
 				> .grid-item-content {
 					flex: 1 1 auto;

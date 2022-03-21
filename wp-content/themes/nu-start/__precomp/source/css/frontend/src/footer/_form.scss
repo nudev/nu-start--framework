@@ -1,0 +1,28 @@
+//
+//
+//
+.nu__footer-sidebar.wpforms-widget {
+	@include media(">=medium"){
+		margin-left: $margin_4x;
+	}
+	div.wpforms-container-full {
+		form.wpforms-form {
+			margin: 0;
+			max-width: 280px;
+			display: flex;
+			flex-flow: column nowrap;
+			.wpforms-submit-container {
+				button {
+					margin: 0;
+				}
+			}
+			>.wpforms-field-container {
+				> .wpforms-field {
+					&:first-child {
+						padding-top: 0;
+					}
+				}
+			}
+		}
+	}
+}
